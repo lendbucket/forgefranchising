@@ -158,7 +158,7 @@ export default function ServicesPage() {
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'Services' }]} />
           <div className="max-w-3xl">
-            <p className="text-amber font-semibold text-sm uppercase tracking-widest mb-4">Our Services</p>
+            <p className="eyebrow mb-4">Our Services</p>
             <h1 className="heading-1 mb-8">
               Everything You Need to Franchise Your Business. Nothing You Do Not.
             </h1>
@@ -186,7 +186,8 @@ export default function ServicesPage() {
               <a
                 key={service.id}
                 href={`#${service.id}`}
-                className="text-sm font-medium text-espresso bg-deep-cream px-4 py-2 rounded-full hover:bg-amber hover:text-cream transition-colors"
+                className="text-sm font-medium text-espresso bg-deep-cream px-4 py-2 hover:bg-amber hover:text-cream transition-colors"
+                style={{ borderRadius: '3px' }}
               >
                 {service.title}
               </a>
@@ -205,7 +206,7 @@ export default function ServicesPage() {
             <div className="grid lg:grid-cols-12 gap-12">
               <div className="lg:col-span-5">
                 <div className="sticky top-28">
-                  <p className="text-amber font-semibold text-sm uppercase tracking-widest mb-3">
+                  <p className="eyebrow mb-3">
                     {String(index + 1).padStart(2, '0')} / {String(services.length).padStart(2, '0')}
                   </p>
                   <h2 className="heading-2 mb-3">{service.title}</h2>

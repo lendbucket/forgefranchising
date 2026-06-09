@@ -30,6 +30,10 @@ const config: Config = {
       maxWidth: {
         '8xl': '88rem',
       },
+      spacing: {
+        '18': '4.5rem',
+        '22': '5.5rem',
+      },
     },
   },
   plugins: [],

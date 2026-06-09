@@ -100,7 +100,7 @@ export default function HowItWorksPage() {
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'How It Works' }]} />
           <div className="max-w-3xl">
-            <p className="text-amber font-semibold text-sm uppercase tracking-widest mb-4">Our Process</p>
+            <p className="eyebrow mb-4">Our Process</p>
             <h1 className="heading-1 mb-8">
               How to Franchise Your Business: The Four Phase Process
             </h1>
@@ -146,7 +146,7 @@ export default function HowItWorksPage() {
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-8 p-6 bg-deep-cream rounded-xl">
+                  <div className="mt-8 p-6 bg-deep-cream" style={{ borderRadius: '4px' }}>
                     <p className="font-semibold text-espresso mb-1">Phase Outcome:</p>
                     <p className="text-muted-brown">{phase.outcome}</p>
                   </div>

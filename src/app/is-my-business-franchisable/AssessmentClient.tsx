@@ -202,7 +202,7 @@ export function AssessmentClient() {
       <section className="bg-cream">
         <div className="container-wide section-padding">
           <div className="max-w-3xl">
-            <p className="text-amber font-semibold text-sm uppercase tracking-widest mb-4">
+            <p className="eyebrow mb-4">
               Franchise Readiness Assessment
             </p>
             <h1 className="heading-1 mb-6">
@@ -250,7 +250,7 @@ export function AssessmentClient() {
                       onClick={() =>
                         selectAnswer(currentQuestion.id, option.value, option.points)
                       }
-                      className={`w-full text-left p-4 rounded-xl border-2 transition-all duration-200 ${
+                      className={`w-full text-left p-4 border-2 transition-all duration-200 min-h-[52px] ${
                         isSelected
                           ? 'border-amber bg-amber/5 text-espresso'
                           : 'border-deep-cream hover:border-amber/40 bg-white text-espresso'

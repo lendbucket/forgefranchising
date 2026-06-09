@@ -394,7 +394,7 @@ export default function GlossaryPage() {
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'Learn', href: '/learn' }, { label: 'Franchise Glossary' }]} />
           <div className="max-w-3xl">
-            <p className="text-amber font-semibold text-sm uppercase tracking-widest mb-4">
+            <p className="eyebrow mb-4">
               Franchise Education
             </p>
             <h1 className="heading-1 mb-8">Franchise Glossary</h1>
@@ -413,7 +413,7 @@ export default function GlossaryPage() {
       </section>
 
       {/* Jump-to-Letter Navigation */}
-      <section className="bg-deep-cream border-b border-espresso/10 sticky top-0 z-40">
+      <section className="bg-deep-cream border-b border-espresso/10 sticky top-16 lg:top-20 z-40">
         <div className="container-wide py-4">
           <nav aria-label="Alphabetical navigation" className="flex flex-wrap gap-1 sm:gap-2 justify-center">
             {alphabet.map((letter) => {

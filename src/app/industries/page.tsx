@@ -18,7 +18,7 @@ export default function IndustriesPage() {
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'Industries' }]} />
           <div className="max-w-3xl">
-            <p className="text-amber font-semibold text-sm uppercase tracking-widest mb-4">Industries</p>
+            <p className="eyebrow mb-4">Industries</p>
             <h1 className="heading-1 mb-8">
               Every Industry Franchises Differently. Here Is What Matters in Yours.
             </h1>
@@ -46,7 +46,7 @@ export default function IndustriesPage() {
               <Link
                 key={industry.slug}
                 href={`/industries/${industry.slug}`}
-                className="card hover:shadow-lg transition-all hover:-translate-y-1 group"
+                className="card-interactive group"
               >
                 <h2 className="heading-4 mb-3 group-hover:text-amber transition-colors">
                   {industry.name}

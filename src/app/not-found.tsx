@@ -4,7 +4,7 @@ export default function NotFound() {
   return (
     <section className="bg-cream min-h-[70vh] flex items-center">
       <div className="container-wide section-padding text-center">
-        <p className="text-amber font-semibold text-sm uppercase tracking-widest mb-4">
+        <p className="eyebrow mb-4">
           Page Not Found
         </p>
         <h1 className="font-display text-7xl sm:text-8xl font-bold text-espresso mb-6">404</h1>

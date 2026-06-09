@@ -52,7 +52,7 @@ export default function BlogIndexPage() {
       <section className="bg-espresso text-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
           <div className="max-w-3xl">
-            <p className="text-amber font-semibold text-sm uppercase tracking-widest mb-4">
+            <p className="eyebrow mb-4">
               Franchise Knowledge Hub
             </p>
             <h1 className="heading-1 text-cream mb-6">
@@ -83,7 +83,8 @@ export default function BlogIndexPage() {
                 <button
                   key={category}
                   onClick={() => setActiveCategory(category)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
+                  style={{ borderRadius: '3px' }}
+                  className={`px-4 py-2 text-sm font-medium transition-colors duration-200 min-h-[44px] ${
                     activeCategory === category
                       ? 'bg-espresso text-cream'
                       : 'bg-deep-cream text-muted-brown hover:bg-espresso/10'
@@ -103,15 +104,16 @@ export default function BlogIndexPage() {
                 <Link
                   key={post.slug}
                   href={`/blog/${post.slug}`}
-                  className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-deep-cream/50 hover:shadow-md hover:border-amber/30 transition-all duration-300"
+                  className="card-interactive group block"
                 >
                   <div className="p-6 sm:p-8">
                     <div className="flex items-center gap-3 mb-4">
                       <span
-                        className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${
+                        className={`inline-block px-3 py-1 text-xs font-semibold ${
                           categoryColors[post.category] ||
                           'bg-gray-100 text-gray-700'
                         }`}
+                        style={{ borderRadius: '3px' }}
                       >
                         {post.category}
                       </span>

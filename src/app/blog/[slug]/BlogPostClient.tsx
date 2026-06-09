@@ -132,7 +132,7 @@ function MarkdownRenderer({ content }: { content: string }) {
               .filter(Boolean)
             const dataRows = rows.slice(2)
             return (
-              <div key={i} className="overflow-x-auto my-8">
+              <div key={i} className="overflow-scroll-x my-8">
                 <table className="w-full text-sm border-collapse">
                   <thead>
                     <tr className="border-b-2 border-espresso/20">
@@ -321,7 +321,7 @@ function TableOfContents({ headings }: { headings: Heading[] }) {
 
 function InlineCTA() {
   return (
-    <div className="my-12 bg-espresso rounded-2xl p-8 sm:p-10 text-center">
+    <div className="my-12 bg-espresso p-8 sm:p-10 text-center" style={{ borderRadius: '4px' }}>
       <h3 className="font-display text-xl sm:text-2xl font-bold text-cream mb-4">
         Want Expert Help Franchising Your Business?
       </h3>
@@ -331,7 +331,7 @@ function InlineCTA() {
       </p>
       <Link
         href="/contact"
-        className="inline-flex items-center justify-center px-8 py-4 bg-amber text-white font-semibold rounded-lg hover:bg-amber-hover transition-colors duration-200"
+        className="btn-primary"
       >
         Book a Free Call
       </Link>
@@ -394,7 +394,7 @@ export default function BlogPostClient({
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 mb-6">
               <span
-                className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${
+                className={`inline-block px-3 py-1 text-xs font-semibold ${
                   categoryColors[post.category] || 'bg-gray-100 text-gray-700'
                 }`}
               >
@@ -466,12 +466,12 @@ export default function BlogPostClient({
                 <Link
                   key={rp.slug}
                   href={`/blog/${rp.slug}`}
-                  className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-deep-cream/50 hover:shadow-md hover:border-amber/30 transition-all duration-300"
+                  className="card-interactive group block"
                 >
                   <div className="p-6 sm:p-8">
                     <div className="flex items-center gap-3 mb-4">
                       <span
-                        className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${
+                        className={`inline-block px-3 py-1 text-xs font-semibold ${
                           categoryColors[rp.category] ||
                           'bg-gray-100 text-gray-700'
                         }`}

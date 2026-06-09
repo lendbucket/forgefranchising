@@ -80,7 +80,8 @@ function InputField({
       <input
         {...props}
         required={required}
-        className="w-full px-4 py-3 border border-espresso/20 rounded-lg bg-white text-espresso placeholder:text-muted-brown/50 focus:outline-none focus:ring-2 focus:ring-amber/50 focus:border-amber transition-colors"
+        className="w-full px-4 py-3 border border-espresso/15 bg-white text-espresso placeholder:text-muted-brown/50 focus:outline-none focus:ring-2 focus:ring-amber/50 focus:border-amber transition-colors min-h-[48px]"
+        style={{ borderRadius: '3px' }}
       />
     </div>
   )
@@ -106,7 +107,8 @@ function SelectField({
       <select
         {...props}
         required={required}
-        className="w-full px-4 py-3 border border-espresso/20 rounded-lg bg-white text-espresso focus:outline-none focus:ring-2 focus:ring-amber/50 focus:border-amber transition-colors"
+        className="w-full px-4 py-3 border border-espresso/15 bg-white text-espresso focus:outline-none focus:ring-2 focus:ring-amber/50 focus:border-amber transition-colors min-h-[48px]"
+        style={{ borderRadius: '3px' }}
       >
         <option value="">{placeholder || 'Select...'}</option>
         {options.map((opt) => (
@@ -135,7 +137,8 @@ function TextAreaField({
       <textarea
         {...props}
         required={required}
-        className="w-full px-4 py-3 border border-espresso/20 rounded-lg bg-white text-espresso placeholder:text-muted-brown/50 focus:outline-none focus:ring-2 focus:ring-amber/50 focus:border-amber transition-colors resize-y"
+        className="w-full px-4 py-3 border border-espresso/15 bg-white text-espresso placeholder:text-muted-brown/50 focus:outline-none focus:ring-2 focus:ring-amber/50 focus:border-amber transition-colors resize-y"
+        style={{ borderRadius: '3px' }}
       />
     </div>
   )
@@ -197,7 +200,7 @@ export default function ContactPage() {
               </ol>
             </nav>
             <div className="max-w-2xl mx-auto text-center py-16 sm:py-24">
-              <div className="w-16 h-16 bg-amber/20 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-amber/20 flex items-center justify-center mx-auto mb-6" style={{ borderRadius: '4px' }}>
                 <svg className="w-8 h-8 text-amber" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
@@ -242,7 +245,7 @@ export default function ContactPage() {
             </ol>
           </nav>
           <div className="max-w-3xl">
-            <p className="text-amber font-semibold text-sm uppercase tracking-widest mb-4">
+            <p className="eyebrow mb-4">
               Start the Conversation
             </p>
             <h1 className="heading-1 mb-6">
@@ -388,7 +391,7 @@ export default function ContactPage() {
 
                 {/* Error State */}
                 {status === 'error' && (
-                  <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+                  <div className="p-4 bg-red-50 border border-red-200" style={{ borderRadius: '3px' }}>
                     <p className="text-red-800 text-sm">{errorMessage}</p>
                   </div>
                 )}
@@ -444,7 +447,7 @@ export default function ContactPage() {
                       },
                     ].map((item) => (
                       <li key={item.step} className="flex gap-4">
-                        <span className="flex-shrink-0 w-8 h-8 rounded-full bg-amber text-cream flex items-center justify-center text-sm font-bold">
+                        <span className="flex-shrink-0 w-8 h-8 bg-amber text-cream flex items-center justify-center text-sm font-bold" style={{ borderRadius: '3px' }}>
                           {item.step}
                         </span>
                         <div>

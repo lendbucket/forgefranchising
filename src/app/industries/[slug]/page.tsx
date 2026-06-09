@@ -48,7 +48,7 @@ export default async function IndustryPage({ params }: Props) {
             ]}
           />
           <div className="max-w-3xl">
-            <p className="text-amber font-semibold text-sm uppercase tracking-widest mb-4">
+            <p className="eyebrow mb-4">
               {industry.name} Franchising
             </p>
             <h1 className="heading-1 mb-8">
@@ -187,19 +187,19 @@ export default async function IndustryPage({ params }: Props) {
           <div className="max-w-4xl">
             <h2 className="heading-2 mb-8">Next Steps</h2>
             <div className="grid sm:grid-cols-3 gap-6">
-              <Link href="/how-it-works" className="card hover:shadow-lg transition-shadow">
+              <Link href="/how-it-works" className="card-interactive">
                 <h3 className="heading-4 mb-2">Our Process</h3>
                 <p className="text-muted-brown text-sm">
                   See the four phase franchise development process we use for every concept.
                 </p>
               </Link>
-              <Link href="/calculator" className="card hover:shadow-lg transition-shadow">
+              <Link href="/calculator" className="card-interactive">
                 <h3 className="heading-4 mb-2">Franchise Calculator</h3>
                 <p className="text-muted-brown text-sm">
                   Estimate your franchise development costs and potential ROI.
                 </p>
               </Link>
-              <Link href="/contact" className="card hover:shadow-lg transition-shadow">
+              <Link href="/contact" className="card-interactive">
                 <h3 className="heading-4 mb-2">Talk to Us</h3>
                 <p className="text-muted-brown text-sm">
                   Book a free feasibility call to discuss your {industry.name.toLowerCase()} concept.

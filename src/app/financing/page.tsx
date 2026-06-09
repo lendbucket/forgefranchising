@@ -17,7 +17,7 @@ export default function FinancingPage() {
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'Resources', href: '/learn' }, { label: 'Franchise Financing' }]} />
           <div className="max-w-3xl">
-            <p className="text-amber font-semibold text-sm uppercase tracking-widest mb-4">Franchise Financing</p>
+            <p className="eyebrow mb-4">Franchise Financing</p>
             <h1 className="heading-1 mb-8">
               How to Finance a Franchise: The Options Most Consultants Never Explain
             </h1>

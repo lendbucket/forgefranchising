@@ -150,7 +150,7 @@ export default function PackagesPage() {
             ]}
           />
           <div className="max-w-3xl">
-            <p className="text-amber font-semibold text-sm uppercase tracking-widest mb-4">Packages</p>
+            <p className="eyebrow mb-4">Packages</p>
             <h1 className="heading-1 mb-8">
               Three Tiers. Zero Guesswork. Pick the Level That Matches Your Business.
             </h1>
@@ -184,7 +184,7 @@ export default function PackagesPage() {
                 }`}
               >
                 {tier.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-amber text-cream text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-amber text-cream text-xs font-bold uppercase tracking-widest px-4 py-1.5" style={{ borderRadius: '3px', letterSpacing: '0.1em' }}>
                     Most Popular
                   </div>
                 )}
@@ -193,7 +193,7 @@ export default function PackagesPage() {
                   <p className="text-amber font-semibold text-sm">{tier.tagline}</p>
                 </div>
                 <p className="text-muted-brown leading-relaxed mb-6 text-sm">{tier.description}</p>
-                <div className="bg-deep-cream rounded-xl p-4 mb-6">
+                <div className="bg-deep-cream p-4 mb-6" style={{ borderRadius: '4px' }}>
                   <p className="text-espresso font-medium text-sm">{tier.priceHint}</p>
                 </div>
                 <ul className="space-y-3 mb-8 flex-1">
@@ -248,8 +248,8 @@ export default function PackagesPage() {
           <p className="body-large text-center max-w-3xl mx-auto mb-12">
             Every feature in every package, laid out so you can compare at a glance.
           </p>
-          <div className="overflow-x-auto">
-            <table className="w-full">
+          <div className="overflow-scroll-x">
+            <table className="w-full min-w-[600px]">
               <thead>
                 <tr className="border-b-2 border-espresso/10">
                   <th className="text-left py-4 pr-4 text-sm font-semibold text-espresso">Feature</th>

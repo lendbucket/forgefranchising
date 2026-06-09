@@ -17,7 +17,7 @@ export default function AboutPage() {
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'About Us' }]} />
           <div className="max-w-3xl">
-            <p className="text-amber font-semibold text-sm uppercase tracking-widest mb-4">About Us</p>
+            <p className="eyebrow mb-4">About Us</p>
             <h1 className="heading-1 mb-8">
               Operator Built. Not Consultant Assembled.
             </h1>

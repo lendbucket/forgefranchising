@@ -143,7 +143,7 @@ export function CalculatorClient() {
   }
 
   const inputClasses =
-    'w-full px-4 py-3 rounded-lg border border-deep-cream bg-white text-espresso placeholder-muted-brown/50 focus:outline-none focus:ring-2 focus:ring-amber/50 focus:border-amber transition-colors'
+    'w-full px-4 py-3 border border-deep-cream bg-white text-espresso placeholder-muted-brown/50 focus:outline-none focus:ring-2 focus:ring-amber/50 focus:border-amber transition-colors min-h-[48px]'
   const labelClasses = 'block text-sm font-semibold text-espresso mb-2'
 
   return (
@@ -152,7 +152,7 @@ export function CalculatorClient() {
       <section className="bg-cream">
         <div className="container-wide section-padding">
           <div className="max-w-3xl">
-            <p className="text-amber font-semibold text-sm uppercase tracking-widest mb-4">
+            <p className="eyebrow mb-4">
               Franchise Calculator
             </p>
             <h1 className="heading-1 mb-6">
@@ -296,7 +296,7 @@ export function CalculatorClient() {
                     </p>
 
                     <div className="space-y-4">
-                      <div className="flex items-center justify-between p-4 bg-deep-cream rounded-lg">
+                      <div className="flex items-center justify-between p-4 bg-deep-cream">
                         <div>
                           <div className="text-sm font-semibold text-espresso">Per Unit Royalty</div>
                           <div className="text-xs text-muted-brown">Annual, illustrative</div>
@@ -306,7 +306,7 @@ export function CalculatorClient() {
                         </div>
                       </div>
 
-                      <div className="flex items-center justify-between p-4 bg-deep-cream rounded-lg">
+                      <div className="flex items-center justify-between p-4 bg-deep-cream">
                         <div>
                           <div className="text-sm font-semibold text-espresso">At 10 Franchise Units</div>
                           <div className="text-xs text-muted-brown">Annual royalty income estimate</div>
@@ -316,7 +316,7 @@ export function CalculatorClient() {
                         </div>
                       </div>
 
-                      <div className="flex items-center justify-between p-4 bg-deep-cream rounded-lg">
+                      <div className="flex items-center justify-between p-4 bg-deep-cream">
                         <div>
                           <div className="text-sm font-semibold text-espresso">At 25 Franchise Units</div>
                           <div className="text-xs text-muted-brown">Annual royalty income estimate</div>
@@ -326,7 +326,7 @@ export function CalculatorClient() {
                         </div>
                       </div>
 
-                      <div className="flex items-center justify-between p-4 bg-espresso rounded-lg">
+                      <div className="flex items-center justify-between p-4 bg-espresso">
                         <div>
                           <div className="text-sm font-semibold text-cream">At 50 Franchise Units</div>
                           <div className="text-xs text-cream/60">Annual royalty income estimate</div>
@@ -420,7 +420,7 @@ export function CalculatorClient() {
                     </p>
 
                     {submitted ? (
-                      <div className="bg-amber/10 border border-amber/30 rounded-lg p-4">
+                      <div className="bg-amber/10 border border-amber/30 p-4">
                         <p className="text-cream font-semibold">
                           Thank you. We received your information and will be in touch within one business day.
                         </p>

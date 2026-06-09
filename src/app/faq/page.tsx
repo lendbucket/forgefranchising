@@ -166,7 +166,7 @@ export default function FAQPage() {
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'FAQ' }]} />
           <div className="max-w-3xl">
-            <p className="text-amber font-semibold text-sm uppercase tracking-widest mb-4">
+            <p className="eyebrow mb-4">
               Frequently Asked Questions
             </p>
             <h1 className="heading-1 mb-6">

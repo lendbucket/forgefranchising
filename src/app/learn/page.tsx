@@ -118,7 +118,7 @@ export default function LearnPage() {
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'Learn & Resources' }]} />
           <div className="max-w-3xl">
-            <p className="text-amber font-semibold text-sm uppercase tracking-widest mb-4">
+            <p className="eyebrow mb-4">
               Learn & Resources
             </p>
             <h1 className="heading-1 mb-8">

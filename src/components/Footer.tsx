@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { MISSION_STATEMENT } from '@/lib/constants'
 
 const footerLinks = {
@@ -7,6 +8,7 @@ const footerLinks = {
     { label: 'Our Services', href: '/services' },
     { label: 'Packages', href: '/packages' },
     { label: 'Is My Business Franchisable?', href: '/is-my-business-franchisable' },
+    { label: 'Financing', href: '/financing' },
   ],
   Industries: [
     { label: 'Restaurants & Food', href: '/industries/restaurants' },
@@ -20,7 +22,6 @@ const footerLinks = {
     { label: 'Franchise Glossary', href: '/glossary' },
     { label: 'Franchise Laws by State', href: '/franchise-laws' },
     { label: 'Franchise Calculator', href: '/calculator' },
-    { label: 'Financing Options', href: '/financing' },
     { label: 'FAQ', href: '/faq' },
   ],
   Company: [
@@ -34,21 +35,29 @@ const footerLinks = {
 export function Footer() {
   return (
     <footer className="bg-espresso text-cream/80">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-8">
+          {/* Brand column with white logo */}
           <div className="lg:col-span-2">
-            <div className="font-display font-bold text-2xl tracking-tight mb-6">
-              <span className="text-cream">Forge</span>{' '}
-              <span className="text-amber">Franchising</span>
-            </div>
-            <p className="text-cream/60 text-sm leading-relaxed max-w-md">
+            <Link href="/" className="inline-block mb-8">
+              <Image
+                src="/logo-white.png"
+                alt="Forge Franchising Group"
+                width={200}
+                height={54}
+                className="h-12 w-auto"
+                style={{ objectFit: 'contain' }}
+              />
+            </Link>
+            <p className="text-cream/50 text-sm leading-relaxed max-w-md">
               {MISSION_STATEMENT}
             </p>
           </div>
 
+          {/* Link columns */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h3 className="font-semibold text-cream text-sm uppercase tracking-wider mb-4">
+              <h3 className="font-semibold text-cream text-xs uppercase tracking-widest mb-6">
                 {category}
               </h3>
               <ul className="space-y-3">
@@ -56,7 +65,7 @@ export function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-cream/60 hover:text-amber transition-colors"
+                      className="text-sm text-cream/50 hover:text-amber transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -67,15 +76,15 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-16 pt-8 border-t border-cream/10 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-cream/40 text-sm">
+        <div className="mt-20 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4" style={{ borderTop: '1px solid rgba(250, 246, 239, 0.08)' }}>
+          <p className="text-cream/30 text-sm">
             &copy; {new Date().getFullYear()} Forge Franchising Group. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
-            <Link href="/privacy" className="text-sm text-cream/40 hover:text-cream/60 transition-colors">
+          <div className="flex items-center gap-8">
+            <Link href="/privacy" className="text-sm text-cream/30 hover:text-cream/50 transition-colors">
               Privacy
             </Link>
-            <Link href="/terms" className="text-sm text-cream/40 hover:text-cream/60 transition-colors">
+            <Link href="/terms" className="text-sm text-cream/30 hover:text-cream/50 transition-colors">
               Terms
             </Link>
           </div>

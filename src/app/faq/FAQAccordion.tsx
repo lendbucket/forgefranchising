@@ -56,7 +56,7 @@ export function FAQAccordion({ categories }: { categories: FAQCategory[] }) {
                   <button
                     type="button"
                     onClick={() => toggle(key)}
-                    className="flex items-center justify-between gap-4 w-full text-left px-6 py-5 hover:bg-cream/50 transition-colors"
+                    className="flex items-center justify-between gap-4 w-full text-left px-6 py-5 hover:bg-cream/50 transition-colors min-h-[52px]"
                     aria-expanded={isOpen}
                   >
                     <span className="font-semibold text-espresso pr-4">{item.question}</span>
