@@ -54,12 +54,22 @@ export default function RootLayout({
               '@type': 'Organization',
               name: SITE_NAME,
               url: SITE_URL,
+              logo: `${SITE_URL}/logo.png`,
               description: SITE_DESCRIPTION,
               contactPoint: {
                 '@type': 'ContactPoint',
                 email: 'ceo@36west.org',
                 contactType: 'sales',
               },
+              areaServed: {
+                '@type': 'Country',
+                name: 'United States',
+              },
+              serviceType: [
+                'Franchise Development',
+                'Franchise Consulting',
+                'Franchise Brokerage',
+              ],
             }),
           }}
         />

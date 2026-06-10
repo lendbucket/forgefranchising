@@ -5,24 +5,23 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 const megaMenu = {
-  Services: {
+  'Franchise Your Business': {
     links: [
       { label: 'How It Works', href: '/how-it-works', desc: 'Our four-phase franchise development process' },
-      { label: 'The Process', href: '/services', desc: 'Seven core services under one roof' },
+      { label: 'Services', href: '/services', desc: 'Seven core services under one roof' },
       { label: 'Packages', href: '/packages', desc: 'Engagement tiers for every stage' },
-      { label: 'Is My Business Franchisable?', href: '/is-my-business-franchisable', desc: 'Free five-minute assessment' },
+      { label: 'Is My Business Franchisable?', href: '/is-my-business-franchisable', desc: 'Free readiness assessment' },
       { label: 'Franchise Calculator', href: '/calculator', desc: 'Model your franchise economics' },
       { label: 'Financing', href: '/financing', desc: 'Funding options for franchise development' },
+      { label: 'Industries We Serve', href: '/industries', desc: 'Restaurants, salons, fitness, and more' },
     ],
   },
-  Industries: {
+  'Own a Franchise': {
     links: [
-      { label: 'All Industries', href: '/industries', desc: 'Every sector we serve' },
-      { label: 'Restaurants & Food', href: '/industries/restaurants', desc: 'Franchise your restaurant concept' },
-      { label: 'Salons & Beauty', href: '/industries/salons-beauty', desc: 'Scale your salon or med spa' },
-      { label: 'Fitness & Gyms', href: '/industries/fitness', desc: 'Build a national fitness brand' },
-      { label: 'Home Services', href: '/industries/home-services', desc: 'Replicate your home services model' },
-      { label: 'Health & Medical', href: '/industries/health-medical', desc: 'Franchise healthcare services' },
+      { label: 'The Opportunity', href: '/own-a-franchise', desc: 'Build a franchise consulting business' },
+      { label: 'Apply Now', href: '/own-a-franchise/apply', desc: 'Submit your franchise application' },
+      { label: 'Find Your Market', href: '/locations', desc: 'Franchise consulting by city' },
+      { label: 'Important Disclosures', href: '/own-a-franchise/disclosures', desc: 'Legal notices and disclaimers' },
     ],
   },
   Resources: {
@@ -207,28 +206,51 @@ export function Header() {
                   </div>
                 </div>
 
-                {/* Featured CTA card */}
+                {/* Featured CTA card: context-aware */}
                 <div className="col-span-4">
-                  <div className="bg-espresso rounded p-8 h-full flex flex-col justify-between">
-                    <div>
-                      <p className="text-amber text-xs font-semibold uppercase tracking-widest mb-3">
-                        Get Started
-                      </p>
-                      <h3 className="font-display font-bold text-xl text-cream mb-3" style={{ letterSpacing: '-0.02em' }}>
-                        See if your business qualifies
-                      </h3>
-                      <p className="text-cream/60 text-sm leading-relaxed mb-6">
-                        Take our free assessment and get a clear, honest answer in under five minutes.
-                      </p>
+                  {openPanel === 'Own a Franchise' ? (
+                    <div className="bg-espresso rounded p-8 h-full flex flex-col justify-between">
+                      <div>
+                        <p className="text-amber text-xs font-semibold uppercase tracking-widest mb-3">
+                          Franchise Opportunity
+                        </p>
+                        <h3 className="font-display font-bold text-xl text-cream mb-3" style={{ letterSpacing: '-0.02em' }}>
+                          Build a franchise consulting business
+                        </h3>
+                        <p className="text-cream/60 text-sm leading-relaxed mb-6">
+                          Work from home. Two income streams. $15,000 franchise fee. Limited territories.
+                        </p>
+                      </div>
+                      <Link
+                        href="/own-a-franchise/apply"
+                        className="btn-primary text-sm py-3 text-center w-full"
+                        onClick={() => setOpenPanel(null)}
+                      >
+                        Apply Now
+                      </Link>
                     </div>
-                    <Link
-                      href="/is-my-business-franchisable"
-                      className="btn-primary text-sm py-3 text-center w-full"
-                      onClick={() => setOpenPanel(null)}
-                    >
-                      Take the Assessment
-                    </Link>
-                  </div>
+                  ) : (
+                    <div className="bg-espresso rounded p-8 h-full flex flex-col justify-between">
+                      <div>
+                        <p className="text-amber text-xs font-semibold uppercase tracking-widest mb-3">
+                          Get Started
+                        </p>
+                        <h3 className="font-display font-bold text-xl text-cream mb-3" style={{ letterSpacing: '-0.02em' }}>
+                          See if your business qualifies
+                        </h3>
+                        <p className="text-cream/60 text-sm leading-relaxed mb-6">
+                          Take our free assessment and get a clear, honest answer in under five minutes.
+                        </p>
+                      </div>
+                      <Link
+                        href="/is-my-business-franchisable"
+                        className="btn-primary text-sm py-3 text-center w-full"
+                        onClick={() => setOpenPanel(null)}
+                      >
+                        Take the Assessment
+                      </Link>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

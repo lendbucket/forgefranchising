@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import { SITE_URL } from '@/lib/constants'
+import { cities } from '@/data/cities'
 
 const INDUSTRY_SLUGS = [
   'restaurants',
@@ -150,6 +151,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
+  // Franchise opportunity pages
+  const opportunityPages: MetadataRoute.Sitemap = [
+    {
+      url: `${SITE_URL}/own-a-franchise`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/own-a-franchise/apply`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/own-a-franchise/disclosures`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.4,
+    },
+  ]
+
   const indexPages: MetadataRoute.Sitemap = [
     {
       url: `${SITE_URL}/blog`,
@@ -168,6 +191,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.7,
+    },
+    {
+      url: `${SITE_URL}/locations`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
     },
   ]
 
@@ -192,5 +221,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }))
 
-  return [...corePages, ...indexPages, ...industryPages, ...statePages, ...blogPages]
+  const cityPages: MetadataRoute.Sitemap = cities.map((city) => ({
+    url: `${SITE_URL}/locations/${city.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }))
+
+  return [
+    ...corePages,
+    ...opportunityPages,
+    ...indexPages,
+    ...industryPages,
+    ...statePages,
+    ...blogPages,
+    ...cityPages,
+  ]
 }
