@@ -96,7 +96,7 @@ export function Header() {
     <>
       <header
         ref={headerRef}
-        className={`sticky top-0 z-50 transition-all duration-300 ${
+        className={`sticky top-0 z-50 transition-all duration-300 safe-top ${
           isTransparent
             ? 'bg-transparent'
             : 'bg-cream/97 backdrop-blur-md shadow-sm'

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter, Fraunces } from 'next/font/google'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
@@ -16,6 +16,11 @@ const fraunces = Fraunces({
   variable: '--font-fraunces',
   display: 'swap',
 })
+
+export const viewport: Viewport = {
+  viewportFit: 'cover',
+  themeColor: '#FAF6EF',
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

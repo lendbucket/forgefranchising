@@ -1,3 +1,4 @@
+import type { Viewport } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { createMetadata } from '@/lib/metadata'
@@ -12,6 +13,11 @@ export const metadata = createMetadata({
     'Forge Franchising Group helps profitable business owners turn their proven concept into a scalable franchise brand. Feasibility, FDD, operations, and franchise sales under one roof.',
   path: '',
 })
+
+export const viewport: Viewport = {
+  themeColor: '#281010',
+  viewportFit: 'cover',
+}
 
 const phases = [
   {
@@ -57,7 +63,10 @@ export default function HomePage() {
   return (
     <>
       {/* HERO: Full-bleed with centered logo, transparent header overlays this */}
-      <section className="relative bg-espresso overflow-hidden -mt-20">
+      <section
+        className="relative bg-espresso overflow-hidden"
+        style={{ marginTop: 'calc(-5rem - env(safe-area-inset-top, 0px))' }}
+      >
         {/* Background image: desktop right split */}
         <div className="absolute inset-0 hidden lg:block">
           <div className="absolute inset-y-0 right-0 w-1/2 hero-image-warm">
@@ -86,15 +95,18 @@ export default function HomePage() {
           />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 pt-28 sm:pt-36 lg:pt-32 pb-20 sm:pb-28 lg:pb-16">
-          {/* Centered animated logo */}
-          <div className="flex justify-center mb-10 sm:mb-12 lg:mb-10">
+        {/* Safe area spacer so content clears the status bar */}
+        <div className="relative z-10 safe-top" aria-hidden="true" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 pt-24 sm:pt-28 lg:pt-32 pb-20 sm:pb-28 lg:pb-16">
+          {/* Centered animated logo: mobile and tablet only */}
+          <div className="flex justify-center mb-8 sm:mb-10 lg:hidden">
             <Image
               src="/forge-franchising-logo-white.png"
               alt="Forge Franchising Group, franchise development and consulting company"
               width={400}
               height={108}
-              className="h-20 sm:h-24 lg:h-28 w-auto hero-logo-animate"
+              className="h-24 sm:h-28 w-auto hero-logo-animate"
               style={{ objectFit: 'contain' }}
               priority
             />
