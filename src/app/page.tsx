@@ -6,6 +6,7 @@ import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
 import { GuidedPath } from '@/components/GuidedPath'
 import { HomeClient } from '@/components/HomeClient'
+import { CredibilityBand } from '@/components/CredibilityBand'
 
 export const metadata = createMetadata({
   title: 'Franchise Your Proven Business',
@@ -64,7 +65,7 @@ export default function HomePage() {
     <>
       {/* HERO: Full-bleed with centered logo, transparent header overlays this */}
       <section
-        className="relative bg-espresso overflow-hidden"
+        className="relative bg-espresso overflow-hidden dark-depth"
         style={{ marginTop: 'calc(-5rem - env(safe-area-inset-top, 0px))' }}
       >
         {/* Background image: desktop right split */}
@@ -74,7 +75,7 @@ export default function HomePage() {
               src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=85"
               alt="Forge Franchising team planning a franchise development strategy in a modern office"
               fill
-              className="object-cover"
+              className="object-cover hero-image-breathe"
               priority
               sizes="50vw"
             />
@@ -89,7 +90,7 @@ export default function HomePage() {
             src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=75"
             alt="Forge Franchising franchise development consulting session"
             fill
-            className="object-cover opacity-15"
+            className="object-cover opacity-15 hero-image-breathe"
             priority
             sizes="100vw"
           />
@@ -126,7 +127,7 @@ export default function HomePage() {
               </Link>
               <Link
                 href="/how-it-works"
-                className="inline-flex items-center justify-center px-10 py-5 border-2 border-cream/20 text-cream font-semibold hover:bg-cream hover:text-espresso transition-all duration-200 text-lg active:scale-[0.98]"
+                className="inline-flex items-center justify-center px-10 py-5 border-2 border-cream/20 text-cream font-semibold hover:bg-cream hover:text-espresso transition-all duration-200 text-lg active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber focus-visible:outline-offset-2"
                 style={{ borderRadius: '3px' }}
               >
                 See the Process
@@ -139,17 +140,7 @@ export default function HomePage() {
         </div>
 
         {/* Credibility stat band */}
-        <div className="relative z-10 border-t border-cream/10">
-          <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 py-5">
-            <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4 sm:gap-10 text-cream/40 text-sm text-center sm:text-left">
-              <span>Franchising generates <strong className="text-cream/70">$827B</strong> in annual US output</span>
-              <span className="hidden sm:block w-px h-4 bg-cream/15" />
-              <span><strong className="text-cream/70">800,000+</strong> franchise locations nationwide</span>
-              <span className="hidden sm:block w-px h-4 bg-cream/15" />
-              <span><strong className="text-cream/70">8.5 million</strong> jobs created every year</span>
-            </div>
-          </div>
-        </div>
+        <CredibilityBand />
       </section>
 
       {/* Client-side interactive sections */}

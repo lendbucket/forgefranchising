@@ -209,6 +209,16 @@
   will-change: transform;
 }
 
+/* Hero image breathing: extremely slow scale loop */
+@keyframes hero-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+.hero-image-breathe {
+  animation: hero-breathe 30s ease-in-out infinite;
+  will-change: transform;
+}
+
 /* Hero warm duotone treatment */
 .hero-image-warm {
   filter: sepia(0.15) saturate(1.1) brightness(0.85);
@@ -315,6 +325,24 @@
     transform: none;
     animation: none;
   }
+  .hero-image-breathe {
+    animation: none;
+  }
+}
+
+/* Dark section depth: subtle radial vignette and warm gradient */
+.dark-depth {
+  position: relative;
+}
+.dark-depth::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at center, transparent 50%, rgba(20, 8, 8, 0.4) 100%),
+    linear-gradient(180deg, rgba(40, 16, 16, 0) 0%, rgba(50, 20, 10, 0.15) 50%, rgba(40, 16, 16, 0) 100%);
+  pointer-events: none;
+  z-index: 1;
 }
 
 /* Wide content scroll container (tables, code blocks) */
@@ -366,6 +394,17 @@ img {
   }
 }
 
+/* Phase cell hover lift: disabled under reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .phase-cell {
+    transition: none !important;
+  }
+  .phase-cell:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}
+
 /* Native mobile: tap feedback on interactive elements */
 .btn-primary:active,
 .btn-secondary:active {
@@ -374,6 +413,26 @@ img {
 .card-interactive:active {
   transform: translateY(0);
   box-shadow: none;
+}
+
+/* Keyboard focus ring: visible amber ring on all interactive elements */
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible {
+  outline: 2px solid #F87000;
+  outline-offset: 2px;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #F87000;
+  outline-offset: 2px;
+}
+.card-interactive:focus-visible {
+  outline: 2px solid #F87000;
+  outline-offset: 2px;
 }
 
 /* Momentum scrolling for overflow containers */

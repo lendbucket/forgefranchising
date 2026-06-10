@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { ScrollReveal } from '@/components/ScrollReveal'
 import { OpenLoop } from '@/components/OpenLoop'
 import { StickyCTA } from '@/components/StickyCTA'
+import { WhyForge } from '@/components/WhyForge'
 
 type Phase = {
   number: string
@@ -94,8 +95,21 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-espresso/8">
             {phases.map((phase, i) => (
               <ScrollReveal key={phase.number} delay={i as 1 | 2 | 3 | 4}>
-                <div className="bg-cream p-8 lg:p-10 h-full">
-                  <div className="stat-number mb-4" style={{ fontSize: '2.5rem' }}>{phase.number}</div>
+                <div className="bg-cream p-8 lg:p-10 h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-lg phase-cell">
+                  {/* Phase number with horizontal connector */}
+                  <div className="relative flex items-center mb-6">
+                    <span className="font-display font-bold text-amber relative z-10 bg-cream pr-3" style={{ fontSize: '2.5rem', letterSpacing: '-0.03em', lineHeight: '1' }}>
+                      {phase.number}
+                    </span>
+                    {/* Desktop horizontal hairline */}
+                    {i < phases.length - 1 && (
+                      <span className="hidden lg:block absolute top-1/2 left-0 w-full h-px bg-espresso/10" style={{ transform: 'translateY(-50%)' }} aria-hidden="true" />
+                    )}
+                    {/* Mobile vertical connector */}
+                    {i < phases.length - 1 && (
+                      <span className="lg:hidden absolute left-5 top-full w-px h-6 bg-espresso/10 sm:hidden" aria-hidden="true" />
+                    )}
+                  </div>
                   <h3 className="heading-4 mb-3">{phase.title}</h3>
                   <p className="text-muted-brown text-sm leading-relaxed">{phase.description}</p>
                 </div>
@@ -103,7 +117,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
             ))}
           </div>
           <ScrollReveal>
-            <div className="mt-12">
+            <div className="mt-12 text-center">
               <Link href="/how-it-works" className="btn-secondary">
                 Explore the Full Process
               </Link>
@@ -112,9 +126,12 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
         </div>
       </section>
 
+      {/* WHY FORGE: Differentiator section */}
+      <WhyForge />
+
       {/* MICRO-COMMITMENT: Assessment teaser. Full-bleed dark section. */}
-      <section className="py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 bg-espresso text-cream">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 bg-espresso text-cream dark-depth">
+        <div className="relative z-10 max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             <div>
               <ScrollReveal>
@@ -278,7 +295,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
           </div>
 
           <ScrollReveal>
-            <div className="mt-10">
+            <div className="mt-10 text-center">
               <Link href="/blog" className="btn-secondary">
                 Browse All Articles
               </Link>
