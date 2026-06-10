@@ -3,6 +3,8 @@
 import Link from 'next/link'
 import { ScrollReveal } from '@/components/ScrollReveal'
 import { CountUp } from '@/components/CountUp'
+import { OpenLoop } from '@/components/OpenLoop'
+import { StickyCTA } from '@/components/StickyCTA'
 
 type Phase = {
   number: string
@@ -42,6 +44,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={3}>
+                {/* Pull quote: creates breathing room, visual hierarchy */}
                 <div className="pull-quote text-espresso my-10">
                   That complexity is exactly why most franchise development attempts stall or fail.
                 </div>
@@ -83,10 +86,13 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
         </div>
       </section>
 
-      {/* Hairline divider */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="hairline" />
-      </div>
+      {/* Open loop: Zeigarnik effect teaser pointing to the process page */}
+      <OpenLoop
+        teaser="There is one structural mistake that ends most franchise systems before they reach ten units. Our four-phase process was built to prevent it."
+        linkText="See the four-phase process"
+        href="/how-it-works"
+        variant="section"
+      />
 
       {/* Process Overview */}
       <section className="section-padding bg-cream">
@@ -114,7 +120,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
           </div>
           <ScrollReveal>
             <div className="mt-12">
-              <Link href="/how-it-works" className="btn-primary">
+              <Link href="/how-it-works" className="btn-secondary">
                 Explore the Full Process
               </Link>
             </div>
@@ -122,7 +128,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
         </div>
       </section>
 
-      {/* Stats Section - Dark Espresso */}
+      {/* Stats Section - Dark Espresso for gravitas */}
       <section className="section-padding bg-espresso text-cream">
         <div className="container-wide">
           <ScrollReveal>
@@ -157,7 +163,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
         </div>
       </section>
 
-      {/* Industries */}
+      {/* Industries: fewer choices visible, clear hierarchy (Hick's law) */}
       <section className="section-padding bg-cream">
         <div className="container-wide">
           <div className="grid lg:grid-cols-12 gap-16 items-start">
@@ -197,7 +203,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
         </div>
       </section>
 
-      {/* Qualification Prompt */}
+      {/* Qualification Prompt: value-driven CTA, not generic "contact us" */}
       <section className="section-padding bg-deep-cream">
         <div className="container-wide">
           <div className="grid lg:grid-cols-12 gap-16 items-start">
@@ -210,15 +216,16 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
                   &quot;should I franchise, and what would it take?&quot;
                 </p>
                 <p className="body-large mb-10">
-                  Take our free assessment to get a clear, honest answer in under five minutes.
-                  No sales pitch attached.
+                  Take our free assessment to get a franchise readiness score with specific recommendations
+                  for your business. Two minutes. No sales pitch attached.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Link href="/is-my-business-franchisable" className="btn-primary">
-                    Take the Free Assessment
-                  </Link>
-                  <Link href="/calculator" className="btn-secondary">
-                    Try the Calculator
+                {/* Isolation effect: one primary CTA dominates */}
+                <Link href="/is-my-business-franchisable" className="btn-primary">
+                  Get Your Free Readiness Score
+                </Link>
+                <div className="mt-3">
+                  <Link href="/calculator" className="text-sm text-muted-brown link-underline">
+                    Or model your franchise economics first
                   </Link>
                 </div>
               </ScrollReveal>
@@ -252,7 +259,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
         </div>
       </section>
 
-      {/* Blog Teaser */}
+      {/* Blog Teaser with open loops */}
       <section className="section-padding bg-cream">
         <div className="container-wide">
           <ScrollReveal>
@@ -271,24 +278,30 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
                 title: 'How to Franchise Your Business: The Complete Guide',
                 href: '/blog/how-to-franchise-your-business',
                 category: 'Guide',
+                /* Open loop: curiosity gap in the teaser */
+                teaser: 'Most owners start with the legal work. That is backwards.',
               },
               {
                 title: 'What a Franchise Disclosure Document Is and Why It Matters',
                 href: '/blog/franchise-disclosure-document',
                 category: 'Education',
+                teaser: 'The FDD is not a formality. It is the single document that makes or breaks your franchise.',
               },
               {
                 title: 'How Much It Costs to Franchise a Business',
                 href: '/blog/cost-to-franchise-a-business',
                 category: 'Finance',
+                teaser: 'Anyone quoting $25,000 for a franchise package is cutting corners you cannot afford.',
               },
             ].map((post, i) => (
               <ScrollReveal key={post.href} delay={(i + 1) as 1 | 2 | 3}>
                 <Link href={post.href} className="card-interactive group block h-full">
                   <span className="eyebrow">{post.category}</span>
-                  <h3 className="heading-4 mt-4 mb-4 group-hover:text-amber transition-colors">{post.title}</h3>
+                  <h3 className="heading-4 mt-4 mb-3 group-hover:text-amber transition-colors">{post.title}</h3>
+                  {/* Curiosity gap: teases specific insight without resolving it */}
+                  <p className="text-sm text-muted-brown leading-relaxed mb-4">{post.teaser}</p>
                   <span className="text-amber text-sm font-medium link-underline">
-                    Read the guide
+                    Read the full guide
                   </span>
                 </Link>
               </ScrollReveal>
@@ -303,6 +316,12 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
           </ScrollReveal>
         </div>
       </section>
+
+      {/* Sticky CTA: appears after value delivery, not on load */}
+      <StickyCTA
+        text="Get Your Free Readiness Score"
+        href="/is-my-business-franchisable"
+      />
     </>
   )
 }

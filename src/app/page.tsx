@@ -2,6 +2,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { createMetadata } from '@/lib/metadata'
 import { SectionCTA } from '@/components/SectionCTA'
+import { ContinueLearning } from '@/components/ContinueLearning'
+import { GuidedPath } from '@/components/GuidedPath'
 import { HomeClient } from '@/components/HomeClient'
 
 export const metadata = createMetadata({
@@ -54,7 +56,7 @@ const industries = [
 export default function HomePage() {
   return (
     <>
-      {/* Hero */}
+      {/* Hero: single clear focal point, one primary CTA (Hick's law) */}
       <section className="relative bg-espresso overflow-hidden">
         <div className="absolute inset-0">
           <Image
@@ -78,9 +80,10 @@ export default function HomePage() {
               You built a business that works. We build the system that lets other people replicate it.
               No binders. No guesswork. A documented process backed by operating experience and technology.
             </p>
+            {/* Isolation effect: one dominant primary CTA, one soft secondary */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact" className="btn-primary text-lg py-5 px-10">
-                Book a Free Feasibility Call
+              <Link href="/is-my-business-franchisable" className="btn-primary text-lg py-5 px-10">
+                Get Your Free Readiness Score
               </Link>
               <Link
                 href="/how-it-works"
@@ -97,12 +100,37 @@ export default function HomePage() {
       {/* Client-side interactive sections */}
       <HomeClient phases={phases} industries={industries} />
 
-      {/* Final CTA */}
+      {/* Guided learning path: goal gradient pulls visitors through the site */}
+      <GuidedPath
+        heading="New to Franchising? Start Here."
+        subheading="Follow these five steps in order. By the end, you will know whether franchising is right for your business and exactly what the process looks like."
+        steps={[
+          { step: 1, title: 'Find out if your business qualifies', description: 'Take our free readiness assessment. Eight questions, two minutes, and you will know where you stand.', href: '/is-my-business-franchisable', time: '2 min' },
+          { step: 2, title: 'Understand the four-phase process', description: 'Learn exactly how a proven business becomes a franchise brand. No mysteries, no hand waving.', href: '/how-it-works', time: '5 min read' },
+          { step: 3, title: 'Model your franchise economics', description: 'Plug in your numbers and see what your franchise system could generate in royalty income at 10, 25, or 50 units.', href: '/calculator', time: '3 min' },
+          { step: 4, title: 'Read the complete franchise guide', description: 'Everything a business owner needs to know about franchising, from feasibility through FDD filing and first sale.', href: '/blog/how-to-franchise-your-business', time: '14 min read' },
+          { step: 5, title: 'Book your free feasibility call', description: 'Talk to our team about your specific business. We will tell you honestly whether franchising is the right path.', href: '/contact', time: '30 min call' },
+        ]}
+      />
+
+      {/* Continue Learning: three curated next steps for every visitor */}
+      <ContinueLearning
+        heading="Explore by Topic"
+        links={[
+          { label: 'What Does It Cost to Franchise?', href: '/blog/cost-to-franchise-a-business', description: 'Real numbers on franchise development investment, what drives the cost, and what to watch for.' },
+          { label: 'Franchise Laws by State', href: '/franchise-laws', description: 'Registration states, filing states, and what each one requires before you sell a single franchise.' },
+          { label: 'Browse All Industries', href: '/industries', description: 'See how franchising works in restaurants, salons, fitness, home services, and seven other sectors.' },
+        ]}
+      />
+
+      {/* Final CTA: value-driven, not generic */}
       <SectionCTA
-        heading="Ready to See If Your Business Can Franchise?"
-        body="Book a free feasibility call with our team. We will review your business model, your numbers, and your goals. If franchising is a fit, we will show you the exact roadmap. If it is not, we will tell you why."
-        buttonText="Book Your Free Call"
-        buttonHref="/contact"
+        heading="See What Your Business Could Look Like as a Franchise"
+        body="Take our two-minute assessment and get a franchise readiness score with personalized recommendations. No cost, no obligation, and no sales pitch unless you ask for one."
+        buttonText="Get Your Free Readiness Score"
+        buttonHref="/is-my-business-franchisable"
+        secondaryText="Or model your franchise economics with our calculator"
+        secondaryHref="/calculator"
       />
     </>
   )

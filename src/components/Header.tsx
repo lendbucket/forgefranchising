@@ -99,15 +99,16 @@ export function Header() {
           <div className={`flex items-center justify-between transition-all duration-300 ${
             scrolled ? 'h-16' : 'h-20'
           }`}>
-            {/* Logo - image only, no text wordmark */}
-            <Link href="/" className="flex items-center flex-shrink-0">
+            {/* Logo: mix-blend-multiply removes any white/light background
+                baked into the PNG, letting it sit naturally on cream */}
+            <Link href="/" className="flex items-center flex-shrink-0 py-1">
               <Image
                 src="/logo.png"
                 alt="Forge Franchising Group"
                 width={220}
                 height={60}
-                className={`transition-all duration-300 ${
-                  scrolled ? 'h-9 w-auto' : 'h-11 w-auto'
+                className={`transition-all duration-300 mix-blend-multiply ${
+                  scrolled ? 'h-10 w-auto' : 'h-12 w-auto'
                 }`}
                 style={{ objectFit: 'contain' }}
                 priority
@@ -178,7 +179,7 @@ export function Header() {
         {/* Desktop Mega Menu Panel */}
         {openPanel && (
           <div
-            className="hidden lg:block absolute left-0 right-0 top-full bg-white border-t border-deep-cream/30 shadow-lg z-50"
+            className="hidden lg:block absolute left-0 right-0 top-full bg-cream border-t border-deep-cream/30 shadow-lg z-50"
             onMouseEnter={() => { if (closeTimer.current) clearTimeout(closeTimer.current) }}
             onMouseLeave={handleMouseLeave}
             role="menu"
@@ -261,7 +262,7 @@ export function Header() {
                 alt="Forge Franchising Group"
                 width={180}
                 height={48}
-                className="h-9 w-auto"
+                className="h-10 w-auto mix-blend-multiply"
                 style={{ objectFit: 'contain' }}
                 priority
               />

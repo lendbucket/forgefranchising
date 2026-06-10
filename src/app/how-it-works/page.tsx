@@ -1,6 +1,11 @@
 import { createMetadata } from '@/lib/metadata'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
+import { ContinueLearning } from '@/components/ContinueLearning'
+import { OpenLoop } from '@/components/OpenLoop'
+import { KeyTakeaways } from '@/components/KeyTakeaways'
+import { StickyCTA } from '@/components/StickyCTA'
+import { ReadingProgress } from '@/components/ReadingProgress'
 import { SITE_URL } from '@/lib/constants'
 
 export const metadata = createMetadata({
@@ -77,6 +82,7 @@ const phases = [
 export default function HowItWorksPage() {
   return (
     <>
+      <ReadingProgress />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -109,10 +115,21 @@ export default function HowItWorksPage() {
               distinct phases, each building on the one before it. Skipping a phase or rushing through
               it is how franchise systems fail. Doing it right is how they scale to 50 or 100 units.
             </p>
-            <p className="body-large">
+            <p className="body-large mb-8">
               Here is exactly how we take a proven business and turn it into a franchise brand.
               No mysteries, no hand waving, no surprises.
             </p>
+            {/* Key takeaways: skimmers get value in 10 seconds */}
+            <KeyTakeaways
+              items={[
+                'Phase 1 Feasibility: 2 to 4 weeks to determine if franchising makes financial sense',
+                'Phase 2 Structure: 8 to 14 weeks to build your FDD, franchise agreement, and operations manual',
+                'Phase 3 Launch: 4 to 8 weeks for state registration and franchise sales preparation',
+                'Phase 4 Scale: Ongoing support to sell franchises and build network infrastructure',
+                'Total timeline from start to franchise ready: typically 4 to 8 months',
+              ]}
+              readTime="8 min read"
+            />
           </div>
         </div>
       </section>
@@ -180,12 +197,36 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
+      {/* Open loop: curiosity gap points to packages page */}
+      <OpenLoop
+        teaser="The investment for franchise development varies by complexity, but a single franchise sale can generate more than the entire development cost. See exactly what each engagement tier includes."
+        linkText="Compare our three packages"
+        href="/packages"
+        variant="section"
+      />
+
+      <ContinueLearning
+        heading="Go Deeper"
+        links={[
+          { label: 'What Each Service Includes', href: '/services', description: 'Seven services that build on each other in a specific sequence.' },
+          { label: 'Compare Our Packages', href: '/packages', description: 'Three engagement tiers. See exactly what is included at each level.' },
+          { label: 'What Does It Cost?', href: '/blog/cost-to-franchise-a-business', description: 'Real cost ranges, what drives them, and what to watch for.' },
+        ]}
+      />
+
       <SectionCTA
-        heading="Ready to Start the Process?"
-        body="Book a free feasibility call and we will tell you exactly where your business stands, what phase you are ready for, and what the roadmap looks like."
-        buttonText="Book Your Free Call"
-        buttonHref="/contact"
+        heading="Find Out Where Your Business Stands"
+        body="Take our two-minute franchise readiness assessment. You will get a score, personalized recommendations, and a clear picture of which phase you are ready for."
+        buttonText="Get Your Free Readiness Score"
+        buttonHref="/is-my-business-franchisable"
+        secondaryText="Or book a feasibility call to discuss your specific situation"
+        secondaryHref="/contact"
         variant="light"
+      />
+
+      <StickyCTA
+        text="See Which Phase You Are Ready For"
+        href="/is-my-business-franchisable"
       />
     </>
   )

@@ -2,6 +2,18 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { ContinueLearning } from '@/components/ContinueLearning'
+
+/**
+ * Assessment with email-gated results.
+ *
+ * Psychology: The assessment itself uses commitment and consistency
+ * (answering 8 questions builds investment). The score reveal is
+ * shown immediately (variable reward), but detailed recommendations
+ * are gated behind email (reciprocity: we gave you a score, now
+ * exchange email for the full breakdown). Partial lead capture
+ * even if they abandon the detail gate.
+ */
 
 type Question = {
   id: string
@@ -89,7 +101,6 @@ const QUESTIONS: Question[] = [
   },
 ]
 
-// Max possible score: 12 + 15 + 15 + 15 + 15 + 12 + 12 + 10 = 106
 const MAX_SCORE = 106
 
 type Outcome = {
@@ -160,6 +171,12 @@ export function AssessmentClient() {
   const [answers, setAnswers] = useState<Record<string, string>>({})
   const [scores, setScores] = useState<Record<string, number>>({})
   const [showResults, setShowResults] = useState(false)
+  /* Email gate state */
+  const [gateEmail, setGateEmail] = useState('')
+  const [gateName, setGateName] = useState('')
+  const [gateUnlocked, setGateUnlocked] = useState(false)
+  const [gateSubmitting, setGateSubmitting] = useState(false)
+  const [gateError, setGateError] = useState('')
 
   const totalQuestions = QUESTIONS.length
   const progress = showResults ? 100 : Math.round((currentStep / totalQuestions) * 100)
@@ -188,6 +205,40 @@ export function AssessmentClient() {
     setAnswers({})
     setScores({})
     setShowResults(false)
+    setGateUnlocked(false)
+    setGateEmail('')
+    setGateName('')
+  }
+
+  async function unlockResults(e: React.FormEvent) {
+    e.preventDefault()
+    if (!gateEmail.trim() || !gateName.trim()) return
+    setGateSubmitting(true)
+    setGateError('')
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fullName: gateName,
+          businessName: 'Assessment Lead',
+          email: gateEmail,
+          phone: 'Not provided',
+          industry: 'Not specified',
+          reasonForFranchising: `Assessment score: ${scorePct}% (${outcome.title}). Answers: ${JSON.stringify(answers)}`,
+        }),
+      })
+      if (res.ok) {
+        setGateUnlocked(true)
+      } else {
+        setGateError('Something went wrong. Please try again.')
+      }
+    } catch {
+      setGateError('Network error. Please try again.')
+    } finally {
+      setGateSubmitting(false)
+    }
   }
 
   const totalScore = Object.values(scores).reduce((sum, s) => sum + s, 0)
@@ -206,11 +257,11 @@ export function AssessmentClient() {
               Franchise Readiness Assessment
             </p>
             <h1 className="heading-1 mb-6">
-              Is Your Business Ready to Franchise?
+              Get Your Free Franchise Readiness Score
             </h1>
             <p className="body-large">
-              Answer eight questions about your business and get an honest, illustrative assessment
-              of your franchise readiness. Takes about two minutes. No sign-up required.
+              Answer eight questions about your business and get an honest assessment
+              of your franchise readiness. Takes about two minutes.
             </p>
           </div>
         </div>
@@ -219,7 +270,7 @@ export function AssessmentClient() {
       {/* Assessment */}
       <section className="section-padding bg-deep-cream">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Progress Bar */}
+          {/* Progress Bar: goal gradient pulls completion */}
           <div className="mb-8">
             <div className="flex items-center justify-between text-sm text-muted-brown mb-2">
               <span>
@@ -229,10 +280,10 @@ export function AssessmentClient() {
               </span>
               <span>{progress}%</span>
             </div>
-            <div className="w-full h-2 bg-white rounded-full overflow-hidden">
+            <div className="w-full h-2 bg-white overflow-hidden" style={{ borderRadius: '2px' }}>
               <div
-                className="h-full bg-amber rounded-full transition-all duration-500 ease-out"
-                style={{ width: `${progress}%` }}
+                className="h-full bg-amber transition-all duration-500 ease-out"
+                style={{ width: `${progress}%`, borderRadius: '2px' }}
               />
             </div>
           </div>
@@ -274,9 +325,9 @@ export function AssessmentClient() {
           ) : (
             /* Results */
             <div className="space-y-6">
-              {/* Score Card */}
+              {/* Score Card: shown immediately (variable reward) */}
               <div className="card text-center">
-                <p className="text-xs font-semibold text-amber uppercase tracking-widest mb-6">
+                <p className="eyebrow mb-6">
                   Your Franchise Readiness Score
                 </p>
                 <div className="relative w-32 h-32 mx-auto mb-6">
@@ -319,77 +370,121 @@ export function AssessmentClient() {
                 >
                   {outcome.title}
                 </h2>
-                <p className="text-xs text-muted-brown">
-                  This is an illustrative assessment based on self-reported answers, not a definitive evaluation.
+                <p className="text-sm text-muted-brown mb-4">{outcome.summary}</p>
+                <p className="text-xs text-muted-brown/60">
+                  Illustrative assessment based on self-reported answers.
                 </p>
               </div>
 
-              {/* Detailed Results */}
-              <div className="card">
-                <p className="text-xs font-semibold text-amber uppercase tracking-widest mb-4">
-                  What This Means For You
-                </p>
-                <p className="body-large mb-6">{outcome.summary}</p>
-                <div className="space-y-4">
-                  {outcome.details.map((detail, i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-amber/10 flex items-center justify-center mt-0.5">
-                        <span className="text-amber text-xs font-bold">{i + 1}</span>
-                      </span>
-                      <p className="text-sm text-muted-brown leading-relaxed">{detail}</p>
+              {/* Email gate: reciprocity (we gave score, now unlock the details) */}
+              {!gateUnlocked ? (
+                <div className="card bg-espresso border-espresso text-center">
+                  <h3 className="heading-4 text-cream mb-3">
+                    Get Your Personalized Recommendations
+                  </h3>
+                  <p className="text-sm text-cream/70 mb-6 max-w-md mx-auto">
+                    Enter your name and email to unlock your detailed franchise readiness
+                    breakdown with specific next steps for your score.
+                  </p>
+                  <form onSubmit={unlockResults} className="max-w-sm mx-auto space-y-3">
+                    <input
+                      type="text"
+                      value={gateName}
+                      onChange={(e) => setGateName(e.target.value)}
+                      placeholder="Your name"
+                      required
+                      className="w-full px-4 py-3 border border-cream/20 bg-white/10 text-cream placeholder:text-cream/40 focus:outline-none focus:ring-2 focus:ring-amber/50 min-h-[48px]"
+                      style={{ borderRadius: '3px' }}
+                    />
+                    <input
+                      type="email"
+                      value={gateEmail}
+                      onChange={(e) => setGateEmail(e.target.value)}
+                      placeholder="you@company.com"
+                      required
+                      className="w-full px-4 py-3 border border-cream/20 bg-white/10 text-cream placeholder:text-cream/40 focus:outline-none focus:ring-2 focus:ring-amber/50 min-h-[48px]"
+                      style={{ borderRadius: '3px' }}
+                    />
+                    {gateError && <p className="text-red-400 text-sm">{gateError}</p>}
+                    <button
+                      type="submit"
+                      disabled={gateSubmitting}
+                      className="btn-primary w-full disabled:opacity-60"
+                    >
+                      {gateSubmitting ? 'Unlocking...' : 'Unlock My Full Report'}
+                    </button>
+                    <p className="text-xs text-cream/40">No spam. We will follow up with your personalized analysis.</p>
+                  </form>
+                </div>
+              ) : (
+                <>
+                  {/* Detailed Results: unlocked after email */}
+                  <div className="card">
+                    <p className="eyebrow mb-4">
+                      What This Means For You
+                    </p>
+                    <div className="space-y-4">
+                      {outcome.details.map((detail, i) => (
+                        <div key={i} className="flex items-start gap-3">
+                          <span className="flex-shrink-0 w-6 h-6 bg-amber/10 flex items-center justify-center mt-0.5" style={{ borderRadius: '3px' }}>
+                            <span className="text-amber text-xs font-bold">{i + 1}</span>
+                          </span>
+                          <p className="text-sm text-muted-brown leading-relaxed">{detail}</p>
+                        </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
-              </div>
+                  </div>
 
-              {/* Answer Summary */}
-              <div className="card">
-                <p className="text-xs font-semibold text-amber uppercase tracking-widest mb-4">
-                  Your Responses
-                </p>
-                <div className="space-y-3">
-                  {QUESTIONS.map((q) => {
-                    const selected = q.options.find((o) => o.value === answers[q.id])
-                    return (
-                      <div key={q.id} className="flex items-start justify-between gap-4 py-2 border-b border-deep-cream last:border-0">
-                        <span className="text-sm text-muted-brown">{q.question}</span>
-                        <span className="text-sm font-semibold text-espresso text-right flex-shrink-0 max-w-[200px]">
-                          {selected?.label}
-                        </span>
-                      </div>
-                    )
-                  })}
-                </div>
-              </div>
+                  {/* Answer Summary */}
+                  <div className="card">
+                    <p className="eyebrow mb-4">
+                      Your Responses
+                    </p>
+                    <div className="space-y-3">
+                      {QUESTIONS.map((q) => {
+                        const selected = q.options.find((o) => o.value === answers[q.id])
+                        return (
+                          <div key={q.id} className="flex items-start justify-between gap-4 py-2 border-b border-deep-cream last:border-0">
+                            <span className="text-sm text-muted-brown">{q.question}</span>
+                            <span className="text-sm font-semibold text-espresso text-right flex-shrink-0 max-w-[200px]">
+                              {selected?.label}
+                            </span>
+                          </div>
+                        )
+                      })}
+                    </div>
+                  </div>
 
-              {/* CTA */}
-              <div className="card bg-espresso border-espresso">
-                <h3 className="heading-4 text-cream mb-3">
-                  {outcome.tier === 'strong'
-                    ? 'Ready to Move Forward? Let Us Run the Numbers.'
-                    : outcome.tier === 'promising'
-                    ? 'Want to Know Exactly What Needs to Happen?'
-                    : 'Questions About Your Path Forward?'}
-                </h3>
-                <p className="text-sm text-cream/70 mb-6">
-                  {outcome.tier === 'strong'
-                    ? 'Your assessment results look strong. A feasibility call with our team will confirm whether your business model, unit economics, and market position support a franchise launch. No cost, no obligation.'
-                    : outcome.tier === 'promising'
-                    ? 'You have real potential. A feasibility call will identify exactly which gaps to close and give you a clear timeline. Many businesses in your position are closer than they think.'
-                    : 'Even if franchising is not the right move today, a conversation can help you understand what it would take and whether alternative growth paths make more sense for your business.'}
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Link href="/contact" className="btn-primary flex-1 text-center">
-                    Book a Free Feasibility Call
-                  </Link>
-                  <Link
-                    href="/calculator"
-                    className="btn-secondary border-cream/30 text-cream hover:bg-cream hover:text-espresso flex-1 text-center"
-                  >
-                    Try the Franchise Calculator
-                  </Link>
-                </div>
-              </div>
+                  {/* CTA */}
+                  <div className="card bg-espresso border-espresso">
+                    <h3 className="heading-4 text-cream mb-3">
+                      {outcome.tier === 'strong'
+                        ? 'Your business looks ready. Let us confirm it.'
+                        : outcome.tier === 'promising'
+                        ? 'You are closer than you think. Let us show you the path.'
+                        : 'Want to know what it would take?'}
+                    </h3>
+                    <p className="text-sm text-cream/70 mb-6">
+                      {outcome.tier === 'strong'
+                        ? 'A feasibility call confirms whether your unit economics, market position, and operations support a franchise launch. No cost, no obligation.'
+                        : outcome.tier === 'promising'
+                        ? 'A feasibility call identifies exactly which gaps to close and gives you a clear timeline. Many businesses in your position are closer than they think.'
+                        : 'A conversation can help you understand what it would take and whether alternative growth paths make more sense right now.'}
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4">
+                      <Link href="/contact" className="btn-primary flex-1 text-center">
+                        Book a Free Feasibility Call
+                      </Link>
+                      <Link
+                        href="/calculator"
+                        className="btn-secondary border-cream/30 text-cream hover:bg-cream hover:text-espresso flex-1 text-center"
+                      >
+                        Model Your Franchise Economics
+                      </Link>
+                    </div>
+                  </div>
+                </>
+              )}
 
               {/* Restart */}
               <div className="text-center">
@@ -401,33 +496,43 @@ export function AssessmentClient() {
                 </button>
               </div>
 
-              {/* Disclaimer */}
               <p className="text-xs text-muted-brown/60 text-center leading-relaxed">
                 This assessment provides illustrative guidance based on self-reported answers.
                 It is not a guarantee of franchise viability, a legal opinion, or a financial projection.
-                Actual franchise readiness depends on many factors that require professional evaluation.
               </p>
             </div>
           )}
         </div>
       </section>
 
-      {/* Bottom CTA */}
+      {/* Open loop teaser below assessment */}
       {!showResults && (
         <section className="bg-espresso text-cream">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 text-center">
             <h2 className="heading-2 text-cream mb-6">
-              Want to Skip the Quiz? Talk to a Human.
+              Prefer to Talk to a Human?
             </h2>
-            <p className="body-large text-cream/70 mb-10 max-w-2xl mx-auto">
+            <p className="body-large !text-cream/60 mb-10 max-w-2xl mx-auto">
               If you already know you want to explore franchising, skip the self-assessment and book
               a feasibility call directly. Our team will evaluate your business and give you a straight answer.
             </p>
             <Link href="/contact" className="btn-primary">
-              Book a Free Feasibility Call
+              Get Your Free Franchise Evaluation
             </Link>
           </div>
         </section>
+      )}
+
+      {/* Continue learning after results */}
+      {showResults && gateUnlocked && (
+        <ContinueLearning
+          heading="Explore What Comes Next"
+          links={[
+            { label: 'How the Franchise Process Works', href: '/how-it-works', description: 'See the four phases every franchise we build moves through, from feasibility to scale.' },
+            { label: 'Model Your Franchise Economics', href: '/calculator', description: 'Plug in your numbers and see what your franchise system could generate in royalty income.' },
+            { label: 'The Complete Franchise Guide', href: '/blog/how-to-franchise-your-business', description: 'Everything a business owner needs to know about franchising, in one guide.' },
+          ]}
+        />
       )}
     </>
   )

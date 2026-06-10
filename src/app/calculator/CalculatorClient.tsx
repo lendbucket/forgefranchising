@@ -69,7 +69,6 @@ export function CalculatorClient() {
   const [margin, setMargin] = useState('')
   const [startupCost, setStartupCost] = useState('')
   const [results, setResults] = useState<Results | null>(null)
-  const [showForm, setShowForm] = useState(false)
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [submitting, setSubmitting] = useState(false)
@@ -377,107 +376,105 @@ export function CalculatorClient() {
                     </div>
                   </div>
 
-                  {/* Explanation */}
-                  <div className="card">
-                    <p className="text-xs font-semibold text-amber uppercase tracking-widest mb-4">
-                      What These Numbers Mean
-                    </p>
-                    <div className="space-y-3 text-sm text-muted-brown leading-relaxed">
-                      <p>
-                        The royalty income figures above represent the ongoing revenue you could collect as a
-                        franchisor, assuming each franchise unit generates the same annual revenue you reported
-                        ({formatCurrency(parseFloat(revenue))}) and pays a {(ROYALTY_RATE * 100).toFixed(0)}% royalty
-                        on gross sales. A {(ROYALTY_RATE * 100).toFixed(0)}% royalty is a common industry benchmark,
-                        though actual rates vary by industry and brand positioning.
+                  {/* Email gate: reciprocity (we showed the score, now unlock the full breakdown) */}
+                  {!submitted ? (
+                    <div className="card bg-espresso border-espresso text-center">
+                      <h3 className="heading-4 text-cream mb-3">
+                        Unlock Your Full Franchise Economics Breakdown
+                      </h3>
+                      <p className="text-sm text-cream/70 mb-6 max-w-md mx-auto">
+                        Enter your name and email to see the detailed analysis of what these numbers
+                        mean for your business, plus get a personalized follow-up from our team.
                       </p>
-                      <p>
-                        These estimates do not account for franchisor operating expenses (staff, marketing fund
-                        contributions, compliance costs, technology, or support infrastructure). Your actual net
-                        income as a franchisor will be lower than the gross royalty figures shown here.
-                      </p>
-                      <p>
-                        The readiness score is a simplified indicator based on three factors: your revenue per
-                        location, number of existing locations, and net margin. A real feasibility analysis
-                        considers dozens of additional variables including market demand, competitive landscape,
-                        operational documentation, brand strength, and regulatory requirements.
-                      </p>
-                      <p className="font-semibold text-espresso">
-                        All figures shown are illustrative estimates for educational purposes only. They are not
-                        projections, promises, or guarantees of any kind.
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* CTA */}
-                  <div className="card bg-espresso border-espresso">
-                    <h3 className="heading-4 text-cream mb-3">
-                      Want Real Numbers? Get a Feasibility Analysis.
-                    </h3>
-                    <p className="text-sm text-cream/70 mb-6">
-                      These illustrative estimates are a starting point. A real feasibility analysis from our
-                      team evaluates your specific business model, market conditions, competitive landscape, and
-                      unit economics to determine whether franchising is the right growth path for you.
-                    </p>
-
-                    {submitted ? (
-                      <div className="bg-amber/10 border border-amber/30 p-4">
-                        <p className="text-cream font-semibold">
-                          Thank you. We received your information and will be in touch within one business day.
-                        </p>
-                      </div>
-                    ) : !showForm ? (
-                      <button
-                        onClick={() => setShowForm(true)}
-                        className="btn-primary w-full"
-                      >
-                        Get Your Free Feasibility Analysis
-                      </button>
-                    ) : (
-                      <form onSubmit={handleSubmit} className="space-y-4">
-                        <div>
-                          <label htmlFor="leadName" className="block text-sm font-semibold text-cream mb-1">
-                            Your Name
-                          </label>
-                          <input
-                            id="leadName"
-                            type="text"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                            placeholder="Full name"
-                            className={inputClasses}
-                            required
-                          />
-                        </div>
-                        <div>
-                          <label htmlFor="leadEmail" className="block text-sm font-semibold text-cream mb-1">
-                            Email Address
-                          </label>
-                          <input
-                            id="leadEmail"
-                            type="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            placeholder="you@company.com"
-                            className={inputClasses}
-                            required
-                          />
-                        </div>
-                        {error && (
-                          <p className="text-sm text-red-400">{error}</p>
-                        )}
+                      <form onSubmit={handleSubmit} className="max-w-sm mx-auto space-y-3">
+                        <input
+                          type="text"
+                          value={name}
+                          onChange={(e) => setName(e.target.value)}
+                          placeholder="Your name"
+                          required
+                          className="w-full px-4 py-3 border border-cream/20 bg-white/10 text-cream placeholder:text-cream/40 focus:outline-none focus:ring-2 focus:ring-amber/50 min-h-[48px]"
+                          style={{ borderRadius: '3px' }}
+                        />
+                        <input
+                          type="email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          placeholder="you@company.com"
+                          required
+                          className="w-full px-4 py-3 border border-cream/20 bg-white/10 text-cream placeholder:text-cream/40 focus:outline-none focus:ring-2 focus:ring-amber/50 min-h-[48px]"
+                          style={{ borderRadius: '3px' }}
+                        />
+                        {error && <p className="text-red-400 text-sm">{error}</p>}
                         <button
                           type="submit"
                           disabled={submitting}
                           className="btn-primary w-full disabled:opacity-60"
                         >
-                          {submitting ? 'Sending...' : 'Send My Results and Request a Call'}
+                          {submitting ? 'Unlocking...' : 'Unlock Full Analysis'}
                         </button>
-                        <p className="text-xs text-cream/40 text-center">
-                          No spam. We will review your numbers and reach out within one business day.
-                        </p>
+                        <p className="text-xs text-cream/40">No spam. We will follow up with your personalized analysis.</p>
                       </form>
-                    )}
-                  </div>
+                    </div>
+                  ) : (
+                    <>
+                      {/* Detailed breakdown: unlocked after email */}
+                      <div className="card">
+                        <p className="text-xs font-semibold text-amber uppercase tracking-widest mb-4">
+                          What These Numbers Mean
+                        </p>
+                        <div className="space-y-3 text-sm text-muted-brown leading-relaxed">
+                          <p>
+                            The royalty income figures above represent the ongoing revenue you could collect as a
+                            franchisor, assuming each franchise unit generates the same annual revenue you reported
+                            ({formatCurrency(parseFloat(revenue))}) and pays a {(ROYALTY_RATE * 100).toFixed(0)}% royalty
+                            on gross sales. A {(ROYALTY_RATE * 100).toFixed(0)}% royalty is a common industry benchmark,
+                            though actual rates vary by industry and brand positioning.
+                          </p>
+                          <p>
+                            These estimates do not account for franchisor operating expenses (staff, marketing fund
+                            contributions, compliance costs, technology, or support infrastructure). Your actual net
+                            income as a franchisor will be lower than the gross royalty figures shown here.
+                          </p>
+                          <p>
+                            The readiness score is a simplified indicator based on three factors: your revenue per
+                            location, number of existing locations, and net margin. A real feasibility analysis
+                            considers dozens of additional variables including market demand, competitive landscape,
+                            operational documentation, brand strength, and regulatory requirements.
+                          </p>
+                          <p className="font-semibold text-espresso">
+                            All figures shown are illustrative estimates for educational purposes only. They are not
+                            projections, promises, or guarantees of any kind.
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* CTA after unlock */}
+                      <div className="card bg-espresso border-espresso">
+                        <h3 className="heading-4 text-cream mb-3">
+                          Want Real Numbers? Get a Feasibility Analysis.
+                        </h3>
+                        <p className="text-sm text-cream/70 mb-6">
+                          These illustrative estimates are a starting point. A real feasibility analysis from our
+                          team evaluates your specific business model, market conditions, competitive landscape, and
+                          unit economics to determine whether franchising is the right growth path.
+                        </p>
+                        <div className="bg-amber/10 border border-amber/30 p-4 mb-4" style={{ borderRadius: '3px' }}>
+                          <p className="text-cream font-semibold text-sm">
+                            We received your information and will be in touch within one business day.
+                          </p>
+                        </div>
+                        <div className="flex flex-col sm:flex-row gap-4">
+                          <Link href="/contact" className="btn-primary flex-1 text-center">
+                            Book a Free Feasibility Call
+                          </Link>
+                          <Link href="/is-my-business-franchisable" className="btn-secondary border-cream/30 text-cream hover:bg-cream hover:text-espresso flex-1 text-center">
+                            Take the Full Assessment
+                          </Link>
+                        </div>
+                      </div>
+                    </>
+                  )}
                 </div>
               )}
             </div>

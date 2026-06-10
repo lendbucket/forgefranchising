@@ -2,6 +2,9 @@ import Link from 'next/link'
 import { createMetadata } from '@/lib/metadata'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
+import { ContinueLearning } from '@/components/ContinueLearning'
+import { OpenLoop } from '@/components/OpenLoop'
+import { StickyCTA } from '@/components/StickyCTA'
 import { INDUSTRIES } from '@/lib/constants'
 
 export const metadata = createMetadata({
@@ -97,11 +100,35 @@ export default function IndustriesPage() {
         </div>
       </section>
 
+      {/* Open loop: curiosity about what makes certain industries fail */}
+      <OpenLoop
+        teaser="Some of the most profitable local businesses make terrible franchises. The difference comes down to three structural factors that most owners never think about until it is too late."
+        linkText="Learn what makes a business franchisable"
+        href="/blog/is-your-business-ready-to-franchise"
+        variant="section"
+      />
+
+      <ContinueLearning
+        heading="Keep Exploring"
+        links={[
+          { label: 'How Our Process Works', href: '/how-it-works', description: 'The four phases that take a business from proven concept to franchise brand.' },
+          { label: 'Franchise Glossary', href: '/glossary', description: 'Over 40 franchise terms defined in plain language with real context.' },
+          { label: 'Franchise Laws by State', href: '/franchise-laws', description: 'Know the regulatory landscape before you plan your expansion.' },
+        ]}
+      />
+
       <SectionCTA
         heading="Not Sure If Your Industry Is Right for Franchising?"
-        body="Book a free feasibility call. We will evaluate your business, your market, and your industry to give you a straight answer on whether franchising makes sense for your concept."
-        buttonText="Book a Free Feasibility Call"
-        buttonHref="/contact"
+        body="Take our two-minute assessment and get an honest answer. Your score reflects your specific business, not just your industry."
+        buttonText="See If Your Business Qualifies"
+        buttonHref="/is-my-business-franchisable"
+        secondaryText="Or talk to our team directly"
+        secondaryHref="/contact"
+      />
+
+      <StickyCTA
+        text="See If Your Business Qualifies"
+        href="/is-my-business-franchisable"
       />
     </>
   )

@@ -1,6 +1,9 @@
 import { createMetadata } from '@/lib/metadata'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
+import { ContinueLearning } from '@/components/ContinueLearning'
+import { OpenLoop } from '@/components/OpenLoop'
+import { StickyCTA } from '@/components/StickyCTA'
 import { FAQAccordion } from './FAQAccordion'
 
 export const metadata = createMetadata({
@@ -187,11 +190,35 @@ export default function FAQPage() {
         </div>
       </section>
 
+      {/* Open loop: Zeigarnik effect creates curiosity about cost */}
+      <OpenLoop
+        teaser="The most common question we get is about cost. The answer depends on six factors that most franchise consultants never explain. We break them all down with real numbers."
+        linkText="See the real cost breakdown"
+        href="/blog/cost-to-franchise-a-business"
+        variant="section"
+      />
+
+      <ContinueLearning
+        heading="Keep Exploring"
+        links={[
+          { label: 'How Our Process Works', href: '/how-it-works', description: 'See the four-phase process that takes a business from concept to franchise brand.' },
+          { label: 'What Does It Cost?', href: '/blog/cost-to-franchise-a-business', description: 'Real numbers on franchise development investment and what drives the cost.' },
+          { label: 'Franchise Glossary', href: '/glossary', description: 'Over 40 franchise terms defined in plain language with context.' },
+        ]}
+      />
+
       <SectionCTA
-        heading="Still Have Questions? Let Us Answer Them Personally."
-        body="Book a free feasibility call and we will walk through your specific situation. No generic answers. Just a real conversation about your business and whether franchising is the right move."
-        buttonText="Book a Free Feasibility Call"
-        buttonHref="/contact"
+        heading="Still Have Questions? Get a Specific Answer."
+        body="Take our two-minute assessment for a personalized readiness score, or book a call to discuss your specific situation."
+        buttonText="Get Your Free Readiness Score"
+        buttonHref="/is-my-business-franchisable"
+        secondaryText="Or book a feasibility call directly"
+        secondaryHref="/contact"
+      />
+
+      <StickyCTA
+        text="Get Your Free Readiness Score"
+        href="/is-my-business-franchisable"
       />
     </>
   )

@@ -3,6 +3,9 @@ import { notFound } from 'next/navigation'
 import { createMetadata } from '@/lib/metadata'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
+import { ContinueLearning } from '@/components/ContinueLearning'
+import { OpenLoop } from '@/components/OpenLoop'
+import { StickyCTA } from '@/components/StickyCTA'
 import { INDUSTRIES } from '@/lib/constants'
 import { INDUSTRY_DATA } from '@/data/industries'
 
@@ -210,11 +213,34 @@ export default async function IndustryPage({ params }: Props) {
         </div>
       </section>
 
+      <OpenLoop
+        teaser={`The franchise fee structure for ${industry.name.toLowerCase()} businesses depends on unit economics that most owners have never modeled. We walk through the math, the benchmarks, and the common mistakes.`}
+        linkText="See how franchise economics work"
+        href="/calculator"
+        variant="section"
+      />
+
+      <ContinueLearning
+        heading="Keep Exploring"
+        links={[
+          { label: 'How the Franchise Process Works', href: '/how-it-works', description: 'See the four phases every franchise we develop moves through.' },
+          { label: 'Compare Our Packages', href: '/packages', description: 'Three tiers with clear scoping so you know exactly what you get.' },
+          { label: 'Franchise Laws by State', href: '/franchise-laws', description: 'Know the regulatory landscape before you plan your rollout.' },
+        ]}
+      />
+
       <SectionCTA
         heading={`Ready to Franchise Your ${industry.shortName} Business?`}
         body={`We have helped ${industry.name.toLowerCase()} businesses evaluate their franchise potential and build the systems needed to scale. Book a free call and let us take a look at your concept.`}
-        buttonText="Book a Free Feasibility Call"
-        buttonHref="/contact"
+        buttonText={`See If Your ${industry.shortName} Business Qualifies`}
+        buttonHref="/is-my-business-franchisable"
+        secondaryText="Or book a feasibility call directly"
+        secondaryHref="/contact"
+      />
+
+      <StickyCTA
+        text={`See If Your ${industry.shortName} Business Qualifies`}
+        href="/is-my-business-franchisable"
       />
     </>
   )

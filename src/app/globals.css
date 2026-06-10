@@ -276,3 +276,39 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+/* Glossary / progressive disclosure letter grouping */
+.glossary-letter-badge {
+  @apply font-display font-bold text-amber;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+/* Guided path step connector line */
+.path-connector {
+  @apply relative;
+}
+.path-connector::after {
+  content: '';
+  @apply absolute left-5 top-full w-px bg-cream/15;
+  height: 1rem;
+}
+.path-connector:last-child::after {
+  display: none;
+}
+
+/* Micro-interaction: subtle pulse on amber badges for emphasis */
+@keyframes subtle-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+.pulse-subtle {
+  animation: subtle-pulse 2s ease-in-out infinite;
+}
+
+/* Reduced motion: disable all added animations */
+@media (prefers-reduced-motion: reduce) {
+  .pulse-subtle {
+    animation: none;
+  }
+}

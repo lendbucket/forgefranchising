@@ -2,6 +2,10 @@ import Link from 'next/link'
 import { createMetadata } from '@/lib/metadata'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
+import { ContinueLearning } from '@/components/ContinueLearning'
+import { OpenLoop } from '@/components/OpenLoop'
+import { StickyCTA } from '@/components/StickyCTA'
+import { ReadingProgress } from '@/components/ReadingProgress'
 import { SITE_NAME, SITE_URL } from '@/lib/constants'
 
 export const metadata = createMetadata({
@@ -122,6 +126,7 @@ const services = [
 export default function ServicesPage() {
   return (
     <>
+      <ReadingProgress />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -271,12 +276,36 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* Open loop: curiosity gap about cost */}
+      <OpenLoop
+        teaser="Your franchise fee structure determines both franchisee profitability and your own revenue model. Most new franchisors set their fees wrong. We explain the math and the common mistakes."
+        linkText="Read about franchise royalty structures"
+        href="/blog/franchise-royalty-structures"
+        variant="section"
+      />
+
+      <ContinueLearning
+        heading="Explore Further"
+        links={[
+          { label: 'See How the Process Works', href: '/how-it-works', description: 'Four phases, one system. Understand the sequence before you start.' },
+          { label: 'Compare Our Packages', href: '/packages', description: 'Three tiers with clear scoping so you know exactly what you are getting.' },
+          { label: 'Get Your Readiness Score', href: '/is-my-business-franchisable', description: 'A two-minute assessment to see where your business stands today.' },
+        ]}
+      />
+
       <SectionCTA
         heading="Not Sure Which Services You Need?"
-        body="Book a free feasibility call. We will assess where your business stands and tell you exactly which services apply to your situation. No obligations, no pressure, just a clear picture."
-        buttonText="Book a Free Feasibility Call"
-        buttonHref="/contact"
+        body="Take our free franchise readiness assessment. Your score will tell you exactly which phase and services apply to your situation."
+        buttonText="Get Your Free Readiness Score"
+        buttonHref="/is-my-business-franchisable"
+        secondaryText="Or book a call and we will walk through it together"
+        secondaryHref="/contact"
         variant="light"
+      />
+
+      <StickyCTA
+        text="Get a Tailored Service Recommendation"
+        href="/is-my-business-franchisable"
       />
     </>
   )

@@ -2,6 +2,11 @@ import Link from 'next/link'
 import { createMetadata } from '@/lib/metadata'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
+import { ContinueLearning } from '@/components/ContinueLearning'
+import { OpenLoop } from '@/components/OpenLoop'
+import { KeyTakeaways } from '@/components/KeyTakeaways'
+import { StickyCTA } from '@/components/StickyCTA'
+import { ReadingProgress } from '@/components/ReadingProgress'
 
 export const metadata = createMetadata({
   title: 'Franchise Financing Options',
@@ -13,6 +18,7 @@ export const metadata = createMetadata({
 export default function FinancingPage() {
   return (
     <>
+      <ReadingProgress />
       <section className="bg-cream">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'Resources', href: '/learn' }, { label: 'Franchise Financing' }]} />
@@ -27,13 +33,23 @@ export default function FinancingPage() {
               most franchise development firms gloss over the financing conversation entirely. They build your
               FDD, file your documents, and leave you to figure out the money side on your own.
             </p>
-            <p className="body-large">
+            <p className="body-large mb-8">
               That is a problem. Because financing is not just a franchisee concern. It directly affects how you
               structure your Item 7 (estimated initial investment), what territories you can realistically sell,
               and how fast your system can grow. This guide breaks down the major franchise financing vehicles
               so you understand what is available, what the trade offs are, and how each option fits into the
               broader franchise development picture.
             </p>
+            <KeyTakeaways
+              items={[
+                'SBA 7(a) loans are the most common franchise financing vehicle, with up to $5M available',
+                'ROBS lets franchisees use retirement funds without penalties, but carries real risk',
+                'Your FDD quality (especially Items 7 and 19) directly impacts franchisee loan approvals',
+                'Getting listed on the SBA Franchise Directory should be an early priority',
+                'Financing strategy should be part of franchise development, not an afterthought',
+              ]}
+              readTime="10 min read"
+            />
           </div>
         </div>
       </section>
@@ -311,28 +327,22 @@ export default function FinancingPage() {
         </div>
       </section>
 
-      {/* Related Resources */}
-      <section className="section-padding bg-deep-cream">
-        <div className="container-wide">
-          <div className="max-w-4xl">
-            <h2 className="heading-2 mb-8">Related Resources</h2>
-            <div className="grid sm:grid-cols-3 gap-6">
-              <Link href="/calculator" className="card hover:shadow-lg transition-shadow">
-                <h3 className="heading-4 mb-2">Franchise Calculator</h3>
-                <p className="text-muted-brown text-sm">Estimate franchise development costs and potential ROI for your concept.</p>
-              </Link>
-              <Link href="/how-it-works" className="card hover:shadow-lg transition-shadow">
-                <h3 className="heading-4 mb-2">How It Works</h3>
-                <p className="text-muted-brown text-sm">Our four phase franchise development process from feasibility to scale.</p>
-              </Link>
-              <Link href="/glossary" className="card hover:shadow-lg transition-shadow">
-                <h3 className="heading-4 mb-2">Franchise Glossary</h3>
-                <p className="text-muted-brown text-sm">Definitions for every franchise term mentioned in this guide and your FDD.</p>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Open loop: curiosity about FDD and its role in financing */}
+      <OpenLoop
+        teaser="Your Franchise Disclosure Document is not just a legal requirement. It is the single document that determines whether your franchisees can get funded, how fast you can sell, and whether state regulators approve your filing. We break down all 23 items."
+        linkText="Read the complete FDD guide"
+        href="/blog/franchise-disclosure-document"
+        variant="section"
+      />
+
+      <ContinueLearning
+        heading="Continue Your Research"
+        links={[
+          { label: 'Model Your Franchise Economics', href: '/calculator', description: 'Plug in your numbers and see what your franchise system could generate.' },
+          { label: 'How Our Process Works', href: '/how-it-works', description: 'The four phases from feasibility to scale, step by step.' },
+          { label: 'Franchise Glossary', href: '/glossary', description: 'Every franchise term you need to know, defined in plain language.' },
+        ]}
+      />
 
       {/* Disclaimer */}
       <section className="bg-cream border-t border-espresso/10">
@@ -351,6 +361,11 @@ export default function FinancingPage() {
         body="The financing conversation should happen early, not after your FDD is filed. Book a call and we will walk through how your Item 7, Item 19, and overall franchise structure affect your franchisees' ability to get funded."
         buttonText="Book a Free Feasibility Call"
         buttonHref="/contact"
+      />
+
+      <StickyCTA
+        text="Get Your Free Franchise Evaluation"
+        href="/contact"
       />
     </>
   )

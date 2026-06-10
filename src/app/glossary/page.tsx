@@ -1,6 +1,9 @@
 import { createMetadata } from '@/lib/metadata'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
+import { ContinueLearning } from '@/components/ContinueLearning'
+import { StickyCTA } from '@/components/StickyCTA'
+import { GlossaryTerms } from './GlossaryTerms'
 import { SITE_URL } from '@/lib/constants'
 
 export const metadata = createMetadata({
@@ -439,41 +442,32 @@ export default function GlossaryPage() {
         </div>
       </section>
 
-      {/* Glossary Terms */}
+      {/* Glossary Terms: progressive disclosure via expandable sections */}
       <section className="section-padding bg-cream">
         <div className="container-wide max-w-4xl">
-          {letters.map((letter) => (
-            <div key={letter} id={`letter-${letter}`} className="mb-16 scroll-mt-24">
-              <div className="flex items-center gap-4 mb-8">
-                <span className="text-4xl font-bold text-amber">{letter}</span>
-                <div className="h-px flex-1 bg-espresso/10" />
-              </div>
-              <div className="space-y-10">
-                {grouped[letter].map((term) => (
-                  <article key={term.slug} id={term.slug} className="scroll-mt-24">
-                    <h2 className="heading-3 mb-3">{term.term}</h2>
-                    <p className="text-muted-brown leading-relaxed mb-4">{term.definition}</p>
-                    <div className="bg-deep-cream rounded-lg p-5 border-l-4 border-amber">
-                      <p className="text-sm font-semibold text-espresso mb-1">
-                        Why this matters for your franchise:
-                      </p>
-                      <p className="text-muted-brown text-sm leading-relaxed">
-                        {term.whyItMatters}
-                      </p>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </div>
-          ))}
+          <GlossaryTerms grouped={grouped} letters={letters} />
         </div>
       </section>
+
+      <ContinueLearning
+        heading="Put These Terms in Context"
+        links={[
+          { label: 'How the Franchise Process Works', href: '/how-it-works', description: 'See where these terms fit in the four-phase franchise development process.' },
+          { label: 'What Is an FDD?', href: '/blog/franchise-disclosure-document', description: 'The most important franchise document, broken down item by item.' },
+          { label: 'Get Your Readiness Score', href: '/is-my-business-franchisable', description: 'Two-minute assessment to see if your business is ready to franchise.' },
+        ]}
+      />
 
       <SectionCTA
         heading="Know the Terms. Now Learn the Process."
         body="Understanding franchise terminology is the first step. The next step is understanding whether your business is ready to franchise. Book a free feasibility call and we will walk through it together."
         buttonText="Book a Free Feasibility Call"
         buttonHref="/contact"
+      />
+
+      <StickyCTA
+        text="Get Your Free Readiness Score"
+        href="/is-my-business-franchisable"
       />
     </>
   )

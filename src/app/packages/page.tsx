@@ -2,6 +2,9 @@ import Link from 'next/link'
 import { createMetadata } from '@/lib/metadata'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
+import { ContinueLearning } from '@/components/ContinueLearning'
+import { OpenLoop } from '@/components/OpenLoop'
+import { StickyCTA } from '@/components/StickyCTA'
 import { SITE_NAME, SITE_URL } from '@/lib/constants'
 
 export const metadata = createMetadata({
@@ -335,12 +338,36 @@ export default function PackagesPage() {
         </div>
       </section>
 
+      {/* Open loop: curiosity about what happens after choosing a package */}
+      <OpenLoop
+        teaser="Choosing a package is step one. There is a specific sequence of events that happens after you commit, and knowing it in advance removes 90% of the uncertainty. We walk through the entire timeline."
+        linkText="See the four-phase process"
+        href="/how-it-works"
+        variant="section"
+      />
+
+      <ContinueLearning
+        heading="Continue Your Research"
+        links={[
+          { label: 'How the Process Works', href: '/how-it-works', description: 'The four phases every franchise we build moves through, from feasibility to scale.' },
+          { label: 'What Does It Actually Cost?', href: '/blog/cost-to-franchise-a-business', description: 'Honest cost ranges, what drives them, and red flags to watch for.' },
+          { label: 'Model Your Franchise Economics', href: '/calculator', description: 'See what your franchise system could generate in fees and royalties.' },
+        ]}
+      />
+
       <SectionCTA
-        heading="Ready to See What Your Package Looks Like?"
-        body="Book a free feasibility call. We will assess your business, recommend the right package, and give you a tailored quote with a clear scope and timeline."
-        buttonText="Book a Free Feasibility Call"
-        buttonHref="/contact"
+        heading="Not Sure Which Package Fits?"
+        body="Take our free assessment first. Your franchise readiness score will tell you which tier matches your business today and what the roadmap looks like."
+        buttonText="Get Your Free Readiness Score"
+        buttonHref="/is-my-business-franchisable"
+        secondaryText="Or book a call for a tailored quote"
+        secondaryHref="/contact"
         variant="light"
+      />
+
+      <StickyCTA
+        text="Get Your Tailored Quote"
+        href="/contact"
       />
     </>
   )

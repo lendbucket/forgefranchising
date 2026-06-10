@@ -2,6 +2,9 @@ import Link from 'next/link'
 import { createMetadata } from '@/lib/metadata'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
+import { ContinueLearning } from '@/components/ContinueLearning'
+import { OpenLoop } from '@/components/OpenLoop'
+import { StickyCTA } from '@/components/StickyCTA'
 import {
   FRANCHISE_LAWS,
   getStatesByCategory,
@@ -377,9 +380,30 @@ export default function FranchiseLawsPage() {
         </div>
       </section>
 
+      <OpenLoop
+        teaser="State registration is just one piece of the franchise compliance puzzle. The FDD itself has 23 required items, and a mistake in any of them can delay your entire launch. We break down the full document."
+        linkText="Read the complete FDD guide"
+        href="/blog/franchise-disclosure-document"
+        variant="section"
+      />
+
+      <ContinueLearning
+        heading="Continue Your Research"
+        links={[
+          { label: 'Franchise Glossary', href: '/glossary', description: 'Every franchise term you will encounter during state registration and beyond.' },
+          { label: 'How the Process Works', href: '/how-it-works', description: 'See where state registration fits in the four-phase franchise development process.' },
+          { label: 'Get Your Readiness Score', href: '/is-my-business-franchisable', description: 'Two-minute assessment to see if your business is ready to franchise.' },
+        ]}
+      />
+
       <SectionCTA
         heading="Ready to Franchise Your Business?"
         body="State compliance is complex, but you do not have to figure it out alone. We manage the entire registration and filing process so you can focus on building your franchise brand."
+      />
+
+      <StickyCTA
+        text="Get Your Free Readiness Score"
+        href="/is-my-business-franchisable"
       />
     </>
   )

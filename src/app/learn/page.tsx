@@ -2,6 +2,8 @@ import Link from 'next/link'
 import { createMetadata } from '@/lib/metadata'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
+import { GuidedPath } from '@/components/GuidedPath'
+import { StickyCTA } from '@/components/StickyCTA'
 
 export const metadata = createMetadata({
   title: 'Learn & Resources',
@@ -53,7 +55,7 @@ const guides = [
     title: 'Is My Business Ready to Franchise?',
     description:
       'Not every successful business should franchise. This assessment walks you through the key indicators of franchise readiness, from unit economics to operational documentation.',
-    href: '/franchise-assessment',
+    href: '/is-my-business-franchisable',
     label: 'Take the Assessment',
   },
 ]
@@ -138,6 +140,19 @@ export default function LearnPage() {
           </div>
         </div>
       </section>
+
+      {/* Start Here: guided learning path (goal gradient effect) */}
+      <GuidedPath
+        heading="Not Sure Where to Start? Follow This Path."
+        subheading="These five steps take you from first question to informed decision. Work through them in order, or jump to the one that matches where you are right now."
+        steps={[
+          { step: 1, title: 'Find out if your business qualifies', description: 'Take our free readiness assessment. Eight questions, two minutes, honest answer.', href: '/is-my-business-franchisable', time: '2 min' },
+          { step: 2, title: 'Understand the four-phase process', description: 'See exactly how a proven business becomes a franchise brand, from feasibility to scale.', href: '/how-it-works', time: '5 min read' },
+          { step: 3, title: 'Model your franchise economics', description: 'Plug in your numbers and see what a franchise system could generate in fees and royalties.', href: '/calculator', time: '3 min' },
+          { step: 4, title: 'Read the complete franchise guide', description: 'Everything you need to know about franchising, from legal requirements to first sale.', href: '/blog/how-to-franchise-your-business', time: '14 min read' },
+          { step: 5, title: 'Book your free feasibility call', description: 'Talk to our team about your specific situation. Honest advice, no obligation.', href: '/contact', time: '30 min call' },
+        ]}
+      />
 
       {/* Tools & Quick References */}
       <section className="section-padding bg-deep-cream">
@@ -254,6 +269,11 @@ export default function LearnPage() {
         body="You have read the guides and run the numbers. The next step is a real conversation about your specific business, your market, and whether franchising is the right growth strategy for you."
         buttonText="Book a Free Feasibility Call"
         buttonHref="/contact"
+      />
+
+      <StickyCTA
+        text="Get Your Free Readiness Score"
+        href="/is-my-business-franchisable"
       />
     </>
   )

@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation'
 import { createMetadata } from '@/lib/metadata'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
+import { ContinueLearning } from '@/components/ContinueLearning'
+import { StickyCTA } from '@/components/StickyCTA'
 import {
   FRANCHISE_LAWS,
   getStateBySlug,
@@ -416,9 +418,23 @@ export default async function StateFranchiseLawPage({ params }: Props) {
         </div>
       </section>
 
+      <ContinueLearning
+        heading="Continue Your Research"
+        links={[
+          { label: 'All State Franchise Laws', href: '/franchise-laws', description: 'See requirements for all 50 states in one view.' },
+          { label: 'How Our Process Works', href: '/how-it-works', description: 'The four phases from feasibility to franchise brand, including state registration.' },
+          { label: 'Franchise Glossary', href: '/glossary', description: 'Every franchise term defined in plain language.' },
+        ]}
+      />
+
       <SectionCTA
         heading={`Need Help With ${stateData.name} Franchise Compliance?`}
         body={`We handle state franchise registrations, filings, and annual renewals so you can focus on growing your brand. Let us manage the ${stateData.name} process for you.`}
+      />
+
+      <StickyCTA
+        text="Get Your Free Readiness Score"
+        href="/is-my-business-franchisable"
       />
     </>
   )

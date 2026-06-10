@@ -1,6 +1,9 @@
 import { createMetadata } from '@/lib/metadata'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
+import { ContinueLearning } from '@/components/ContinueLearning'
+import { OpenLoop } from '@/components/OpenLoop'
+import { KeyTakeaways } from '@/components/KeyTakeaways'
 import { MISSION_STATEMENT } from '@/lib/constants'
 
 export const metadata = createMetadata({
@@ -26,11 +29,20 @@ export default function AboutPage() {
               have never actually operated a franchise. They have never opened a second location, trained
               a franchisee, or dealt with a state examiner who rejected their FDD filing.
             </p>
-            <p className="body-large">
+            <p className="body-large mb-8">
               We come from the operating side. We have built businesses, managed multi-unit operations,
               and learned what actually matters when you are trying to replicate something that works.
               That experience shapes everything we do.
             </p>
+            {/* Key takeaways: skimmers get value in 10 seconds (Miller's law) */}
+            <KeyTakeaways
+              items={[
+                'Operator built firm, not a consulting shop that has never run a business',
+                'Four-phase documented process: Feasibility, Structure, Launch, Scale',
+                'We say no to businesses that are not ready and explain what it would take',
+                'Modern technology, not Word documents and binders',
+              ]}
+            />
           </div>
         </div>
       </section>
@@ -121,11 +133,30 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Open loop: Zeigarnik effect creates curiosity gap */}
+      <OpenLoop
+        teaser="Most franchise development firms charge for the same seven services. The difference is in how they are built and whether the person building them has ever actually run a franchise. We break down the difference here."
+        linkText="See what our services include"
+        href="/services"
+        variant="section"
+      />
+
+      <ContinueLearning
+        heading="Understand Our Approach"
+        links={[
+          { label: 'How Our Process Works', href: '/how-it-works', description: 'See the four phases that take a business from proven concept to franchise brand.' },
+          { label: 'Our Services', href: '/services', description: 'Seven core services, all under one roof, built in a specific sequence.' },
+          { label: 'Get Your Readiness Score', href: '/is-my-business-franchisable', description: 'Answer eight questions and find out where your business stands.' },
+        ]}
+      />
+
       <SectionCTA
-        heading="Let Us Show You What Franchise Development Should Look Like"
-        body="Book a free call. We will walk through your business, your goals, and what the franchise development process looks like for a concept like yours."
-        buttonText="Book a Free Feasibility Call"
-        buttonHref="/contact"
+        heading="See If Your Business Has What It Takes"
+        body="Take our two-minute franchise readiness assessment. You will get a score, specific recommendations, and a clear picture of what comes next."
+        buttonText="Get Your Free Readiness Score"
+        buttonHref="/is-my-business-franchisable"
+        secondaryText="Or book a feasibility call directly"
+        secondaryHref="/contact"
       />
     </>
   )
