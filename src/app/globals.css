@@ -214,6 +214,26 @@
   filter: sepia(0.15) saturate(1.1) brightness(0.85);
 }
 
+/* Hero logo: gentle fade + scale-in + optional soft float */
+.hero-logo-animate {
+  opacity: 0;
+  transform: scale(0.92);
+  animation: hero-logo-in 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.05s forwards,
+             hero-logo-float 6s ease-in-out 1.3s infinite;
+}
+
+@keyframes hero-logo-in {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes hero-logo-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
 /* Hero entrance animations: tasteful stagger */
 .hero-entrance {
   opacity: 0;
@@ -290,6 +310,11 @@
     transform: none;
     animation: none;
   }
+  .hero-logo-animate {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
 }
 
 /* Wide content scroll container (tables, code blocks) */
@@ -339,4 +364,32 @@ img {
   .pulse-subtle {
     animation: none;
   }
+}
+
+/* Native mobile: tap feedback on interactive elements */
+.btn-primary:active,
+.btn-secondary:active {
+  transform: scale(0.98);
+}
+.card-interactive:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Momentum scrolling for overflow containers */
+.overflow-y-auto,
+[class*="overflow-y-auto"] {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+/* Touch target enforcement */
+a, button {
+  min-height: 44px;
+  min-width: 44px;
+}
+/* Allow inline text links to be smaller */
+p a, li a, span a, .text-sm a {
+  min-height: auto;
+  min-width: auto;
 }

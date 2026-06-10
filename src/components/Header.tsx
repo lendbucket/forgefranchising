@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef, useCallback } from 'react'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -44,6 +45,9 @@ const megaMenu = {
 const menuKeys = Object.keys(megaMenu) as (keyof typeof megaMenu)[]
 
 export function Header() {
+  const pathname = usePathname()
+  const isHome = pathname === '/'
+
   const [mobileOpen, setMobileOpen] = useState(false)
   const [openPanel, setOpenPanel] = useState<string | null>(null)
   const [scrolled, setScrolled] = useState(false)
@@ -85,23 +89,36 @@ export function Header() {
     }
   }, [])
 
+  /* Homepage: transparent until scrolled. All other pages: always solid cream. */
+  const isTransparent = isHome && !scrolled && !openPanel
+
   return (
     <>
       <header
         ref={headerRef}
-        className={`sticky top-0 z-50 bg-cream/97 backdrop-blur-md transition-all duration-300 ${
-          scrolled ? 'shadow-sm' : ''
+        className={`sticky top-0 z-50 transition-all duration-300 ${
+          isTransparent
+            ? 'bg-transparent'
+            : 'bg-cream/97 backdrop-blur-md shadow-sm'
         }`}
-        style={{ borderBottom: '1px solid rgba(40, 16, 16, 0.06)' }}
+        style={isTransparent ? {} : { borderBottom: '1px solid rgba(40, 16, 16, 0.06)' }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`flex items-center justify-between transition-all duration-300 ${
             scrolled ? 'h-16' : 'h-20'
           }`}>
-            <Link href="/" className="flex items-center flex-shrink-0 py-1">
+            {/* Corner logo: hidden on mobile homepage when transparent, always visible otherwise */}
+            <Link
+              href="/"
+              className={`flex items-center flex-shrink-0 py-1 transition-opacity duration-300 ${
+                isHome && !scrolled ? 'lg:opacity-100 opacity-0 pointer-events-none lg:pointer-events-auto' : 'opacity-100'
+              }`}
+              tabIndex={isHome && !scrolled ? -1 : 0}
+              aria-hidden={isHome && !scrolled ? true : undefined}
+            >
               <Image
-                src="/logo.png"
-                alt="Forge Franchising Group"
+                src={isTransparent ? '/forge-franchising-logo-white.png' : '/forge-franchising-logo.png'}
+                alt="Forge Franchising Group logo"
                 width={220}
                 height={60}
                 className={`transition-all duration-300 ${
@@ -124,7 +141,9 @@ export function Header() {
                   <button
                     type="button"
                     className={`px-4 py-2 text-sm font-medium transition-colors ${
-                      openPanel === key ? 'text-espresso' : 'text-espresso/70 hover:text-espresso'
+                      isTransparent
+                        ? (openPanel === key ? 'text-cream' : 'text-cream/70 hover:text-cream')
+                        : (openPanel === key ? 'text-espresso' : 'text-espresso/70 hover:text-espresso')
                     }`}
                     aria-expanded={openPanel === key}
                     aria-haspopup="true"
@@ -156,7 +175,9 @@ export function Header() {
             {/* Mobile hamburger */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden p-2 text-espresso min-w-[44px] min-h-[44px] flex items-center justify-center"
+              className={`lg:hidden p-2 min-w-[44px] min-h-[44px] flex items-center justify-center active:scale-95 transition-transform ${
+                isTransparent ? 'text-cream' : 'text-espresso'
+              }`}
               aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={mobileOpen}
             >
@@ -183,7 +204,6 @@ export function Header() {
           >
             <div className="max-w-7xl mx-auto px-8 py-10">
               <div className="grid grid-cols-12 gap-8">
-                {/* Menu links */}
                 <div className="col-span-8">
                   <p className="eyebrow mb-6">{openPanel}</p>
                   <div className="grid grid-cols-2 gap-x-12 gap-y-1">
@@ -191,7 +211,7 @@ export function Header() {
                       <Link
                         key={link.href}
                         href={link.href}
-                        className="group block py-3"
+                        className="group block py-3 active:opacity-70"
                         onClick={() => setOpenPanel(null)}
                         role="menuitem"
                       >
@@ -206,7 +226,6 @@ export function Header() {
                   </div>
                 </div>
 
-                {/* Featured CTA card: context-aware */}
                 <div className="col-span-4">
                   {openPanel === 'Own a Franchise' ? (
                     <div className="bg-espresso rounded p-8 h-full flex flex-col justify-between">
@@ -274,12 +293,11 @@ export function Header() {
           className="lg:hidden fixed inset-0 z-50 bg-cream flex flex-col safe-top"
           style={{ height: '100dvh' }}
         >
-          {/* Mobile header */}
           <div className="flex items-center justify-between px-4 h-20 flex-shrink-0" style={{ borderBottom: '1px solid rgba(40, 16, 16, 0.06)' }}>
             <Link href="/" className="flex items-center" onClick={() => setMobileOpen(false)}>
               <Image
-                src="/logo.png"
-                alt="Forge Franchising Group"
+                src="/forge-franchising-logo.png"
+                alt="Forge Franchising Group logo"
                 width={180}
                 height={48}
                 className="h-12 w-auto"
@@ -289,7 +307,7 @@ export function Header() {
             </Link>
             <button
               onClick={() => setMobileOpen(false)}
-              className="p-2 text-espresso min-w-[44px] min-h-[44px] flex items-center justify-center"
+              className="p-2 text-espresso min-w-[44px] min-h-[44px] flex items-center justify-center active:scale-95 transition-transform"
               aria-label="Close menu"
             >
               <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -298,14 +316,13 @@ export function Header() {
             </button>
           </div>
 
-          {/* Scrollable menu content */}
-          <div className="flex-1 overflow-y-auto px-4 py-6">
+          <div className="flex-1 overflow-y-auto px-4 py-6 overscroll-contain">
             {menuKeys.map((key) => (
               <div key={key} style={{ borderBottom: '1px solid rgba(40, 16, 16, 0.06)' }}>
                 <button
                   type="button"
                   onClick={() => setMobileAccordion(mobileAccordion === key ? null : key)}
-                  className="w-full flex items-center justify-between py-4 text-left min-h-[52px]"
+                  className="w-full flex items-center justify-between py-4 text-left min-h-[52px] active:opacity-70 transition-opacity"
                   aria-expanded={mobileAccordion === key}
                 >
                   <span className="text-lg font-display font-semibold text-espresso">{key}</span>
@@ -328,12 +345,10 @@ export function Header() {
                         key={link.href}
                         href={link.href}
                         onClick={() => setMobileOpen(false)}
-                        className="block py-3 min-h-[44px] flex items-start"
+                        className="block py-3 min-h-[44px] active:opacity-70 transition-opacity"
                       >
-                        <div>
-                          <span className="text-base font-medium text-espresso">{link.label}</span>
-                          <span className="block text-sm text-muted-brown/70 mt-0.5">{link.desc}</span>
-                        </div>
+                        <span className="text-base font-medium text-espresso">{link.label}</span>
+                        <span className="block text-sm text-muted-brown/70 mt-0.5">{link.desc}</span>
                       </Link>
                     ))}
                   </div>
@@ -342,12 +357,11 @@ export function Header() {
             ))}
           </div>
 
-          {/* Fixed bottom CTA */}
           <div className="flex-shrink-0 px-4 pb-6 pt-4 safe-bottom" style={{ borderTop: '1px solid rgba(40, 16, 16, 0.06)' }}>
             <Link
               href="/contact"
               onClick={() => setMobileOpen(false)}
-              className="btn-primary w-full text-center text-base py-4 block"
+              className="btn-primary w-full text-center text-base py-4 block active:scale-[0.98] transition-transform"
             >
               Book a Free Call
             </Link>

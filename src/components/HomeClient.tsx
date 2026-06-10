@@ -30,7 +30,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
                 <div className="relative aspect-[4/5] overflow-hidden" style={{ borderRadius: '4px' }}>
                   <Image
                     src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=800&q=80"
-                    alt="Business owner overwhelmed by franchise compliance documents"
+                    alt="Forge Franchising client reviewing franchise compliance and FDD documents"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 40vw"
@@ -219,7 +219,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
                 <div className="relative aspect-[16/10] overflow-hidden" style={{ borderRadius: '3px' }}>
                   <Image
                     src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80"
-                    alt="Business owner planning franchise strategy with documents and laptop"
+                    alt="Forge Franchising guide to franchise development strategy and business planning"
                     fill
                     className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
                     sizes="(max-width: 1024px) 100vw, 45vw"

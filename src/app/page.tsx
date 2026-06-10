@@ -56,79 +56,80 @@ const industries = [
 export default function HomePage() {
   return (
     <>
-      {/* HERO: Editorial split layout with warm duotone photograph */}
-      <section className="relative bg-espresso overflow-hidden">
-        <div className="relative max-w-8xl mx-auto">
-          <div className="grid lg:grid-cols-2 min-h-[85vh]">
-            {/* Left: Copy */}
-            <div className="relative z-10 flex flex-col justify-center px-6 sm:px-10 lg:px-16 xl:px-20 py-20 sm:py-28 lg:py-32">
-              <Image
-                src="/logo-white.png"
-                alt="Forge Franchising Group"
-                width={280}
-                height={76}
-                className="h-14 sm:h-16 w-auto mb-10 hero-entrance hero-entrance-1"
-                style={{ objectFit: 'contain' }}
-                priority
-              />
-              <h1 className="heading-1 text-cream mb-6 text-balance hero-entrance hero-entrance-2">
-                You Built a Business Worth Replicating. Now Build the System That Does It.
-              </h1>
-              <p className="text-lg sm:text-xl text-cream/60 leading-relaxed mb-10 max-w-xl hero-entrance hero-entrance-3">
-                Forge turns profitable, owner-operated businesses into franchise brands that grow on other people's capital, in other people's markets, under your name.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 hero-entrance hero-entrance-4">
-                <Link href="/is-my-business-franchisable" className="btn-primary text-lg py-5 px-10">
-                  Get Your Free Readiness Score
-                </Link>
-                <Link
-                  href="/how-it-works"
-                  className="inline-flex items-center justify-center px-10 py-5 border-2 border-cream/20 text-cream font-semibold hover:bg-cream hover:text-espresso transition-all duration-200 text-lg"
-                  style={{ borderRadius: '3px' }}
-                >
-                  See the Process
-                </Link>
-              </div>
-              <p className="text-cream/35 text-sm mt-4 hero-entrance hero-entrance-4">
-                Two minutes. Eight questions. No sales pitch.
-              </p>
-            </div>
-
-            {/* Right: Warm duotone photograph */}
-            <div className="relative hidden lg:block">
-              <div className="absolute inset-0 hero-image-warm">
-                <Image
-                  src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=85"
-                  alt="Business owner reviewing franchise growth plans with their team"
-                  fill
-                  className="object-cover"
-                  priority
-                  sizes="50vw"
-                />
-              </div>
-              {/* Warm duotone overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-espresso via-espresso/70 to-transparent z-10" />
-              <div className="absolute inset-0 mix-blend-multiply bg-amber/20" />
-            </div>
-          </div>
-
-          {/* Mobile: background image fallback */}
-          <div className="absolute inset-0 lg:hidden">
+      {/* HERO: Full-bleed with centered logo, transparent header overlays this */}
+      <section className="relative bg-espresso overflow-hidden -mt-20">
+        {/* Background image: desktop right split */}
+        <div className="absolute inset-0 hidden lg:block">
+          <div className="absolute inset-y-0 right-0 w-1/2 hero-image-warm">
             <Image
               src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=85"
-              alt="Business owner reviewing franchise growth plans with their team"
+              alt="Forge Franchising team planning a franchise development strategy in a modern office"
               fill
-              className="object-cover opacity-15"
+              className="object-cover"
               priority
-              sizes="100vw"
+              sizes="50vw"
             />
+          </div>
+          <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-r from-espresso via-espresso/70 to-transparent z-10" />
+          <div className="absolute inset-y-0 right-0 w-1/2 mix-blend-multiply bg-amber/20" />
+        </div>
+
+        {/* Background image: mobile subtle overlay */}
+        <div className="absolute inset-0 lg:hidden">
+          <Image
+            src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=85"
+            alt="Forge Franchising franchise development consulting session"
+            fill
+            className="object-cover opacity-15"
+            priority
+            sizes="100vw"
+          />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 pt-28 sm:pt-36 lg:pt-40 pb-20 sm:pb-28 lg:pb-32">
+          {/* Centered animated logo */}
+          <div className="flex justify-center mb-10 sm:mb-12 lg:mb-14">
+            <Image
+              src="/forge-franchising-logo-white.png"
+              alt="Forge Franchising Group, franchise development and consulting company"
+              width={400}
+              height={108}
+              className="h-20 sm:h-24 lg:h-28 w-auto hero-logo-animate"
+              style={{ objectFit: 'contain' }}
+              priority
+            />
+          </div>
+
+          {/* Hero copy: centered on mobile, left-aligned on desktop */}
+          <div className="max-w-3xl lg:max-w-2xl text-center lg:text-left mx-auto lg:mx-0">
+            <h1 className="heading-1 text-cream mb-6 text-balance hero-entrance hero-entrance-2">
+              You Built a Business Worth Replicating. Now Build the System That Does It.
+            </h1>
+            <p className="text-lg sm:text-xl text-cream/60 leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0 hero-entrance hero-entrance-3">
+              Forge turns profitable, owner-operated businesses into franchise brands that grow on other people's capital, in other people's markets, under your name.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start hero-entrance hero-entrance-4">
+              <Link href="/is-my-business-franchisable" className="btn-primary text-lg py-5 px-10">
+                Get Your Free Readiness Score
+              </Link>
+              <Link
+                href="/how-it-works"
+                className="inline-flex items-center justify-center px-10 py-5 border-2 border-cream/20 text-cream font-semibold hover:bg-cream hover:text-espresso transition-all duration-200 text-lg active:scale-[0.98]"
+                style={{ borderRadius: '3px' }}
+              >
+                See the Process
+              </Link>
+            </div>
+            <p className="text-cream/35 text-sm mt-4 hero-entrance hero-entrance-4 text-center lg:text-left">
+              Two minutes. Eight questions. No sales pitch.
+            </p>
           </div>
         </div>
 
         {/* Credibility stat band */}
         <div className="relative z-10 border-t border-cream/10">
           <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 py-5">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-10 text-cream/40 text-sm">
+            <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4 sm:gap-10 text-cream/40 text-sm text-center sm:text-left">
               <span>Franchising generates <strong className="text-cream/70">$827B</strong> in annual US output</span>
               <span className="hidden sm:block w-px h-4 bg-cream/15" />
               <span><strong className="text-cream/70">800,000+</strong> franchise locations nationwide</span>

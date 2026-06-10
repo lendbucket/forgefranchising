@@ -41,8 +41,8 @@ export function Footer() {
           <div className="col-span-2">
             <Link href="/" className="inline-block mb-8">
               <Image
-                src="/logo-white.png"
-                alt="Forge Franchising Group"
+                src="/forge-franchising-logo-white.png"
+                alt="Forge Franchising Group franchise development company logo"
                 width={200}
                 height={54}
                 className="h-14 w-auto"

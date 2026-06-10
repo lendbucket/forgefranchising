@@ -54,7 +54,7 @@ export default function RootLayout({
               '@type': 'Organization',
               name: SITE_NAME,
               url: SITE_URL,
-              logo: `${SITE_URL}/logo.png`,
+              logo: `${SITE_URL}/forge-franchising-logo.png`,
               description: SITE_DESCRIPTION,
               contactPoint: {
                 '@type': 'ContactPoint',
