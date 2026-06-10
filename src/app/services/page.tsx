@@ -11,7 +11,7 @@ import { SITE_NAME, SITE_URL } from '@/lib/constants'
 export const metadata = createMetadata({
   title: 'Franchise Development Services',
   description:
-    'Full service franchise development: feasibility studies, FDD preparation, operations manuals, state registration, training programs, franchise sales systems, and technology platforms.',
+    'Franchise development services including feasibility studies, FDD preparation, operations manuals, state registration, training programs, and sales systems.',
   path: '/services',
 })
 

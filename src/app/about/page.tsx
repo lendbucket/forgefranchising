@@ -9,7 +9,7 @@ import { MISSION_STATEMENT } from '@/lib/constants'
 export const metadata = createMetadata({
   title: 'About Us',
   description:
-    'Forge Franchising Group is an operator built franchise development firm. We turn proven local businesses into national franchise brands with real experience, modern software, and a documented process.',
+    'Forge Franchising Group is an operator built franchise development firm. We turn proven businesses into franchise brands with real experience and a clear path.',
   path: '/about',
 })
 

@@ -3,9 +3,9 @@ import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { AssessmentClient } from './AssessmentClient'
 
 export const metadata = createMetadata({
-  title: 'Is My Business Franchisable? Free Readiness Assessment',
+  title: 'Free Franchise Readiness Quiz',
   description:
-    'Take our free franchise readiness assessment to find out if your business is ready to franchise. Answer eight questions and get an honest evaluation of your franchise potential with specific guidance.',
+    'Take our free franchise readiness assessment to find out if your business can franchise. Answer eight questions and get an honest evaluation of your potential.',
   path: '/is-my-business-franchisable',
 })
 

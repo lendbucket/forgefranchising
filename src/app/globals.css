@@ -209,6 +209,29 @@
   will-change: transform;
 }
 
+/* Hero warm duotone treatment */
+.hero-image-warm {
+  filter: sepia(0.15) saturate(1.1) brightness(0.85);
+}
+
+/* Hero entrance animations: tasteful stagger */
+.hero-entrance {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: hero-fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.hero-entrance-1 { animation-delay: 0.1s; }
+.hero-entrance-2 { animation-delay: 0.25s; }
+.hero-entrance-3 { animation-delay: 0.4s; }
+.hero-entrance-4 { animation-delay: 0.55s; }
+
+@keyframes hero-fade-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Mega menu overlay */
 .menu-overlay {
   opacity: 0;
@@ -261,6 +284,11 @@
   }
   .link-underline::after {
     transition: none;
+  }
+  .hero-entrance {
+    opacity: 1;
+    transform: none;
+    animation: none;
   }
 }
 

@@ -11,7 +11,7 @@ import { ReadingProgress } from '@/components/ReadingProgress'
 export const metadata = createMetadata({
   title: 'Franchise Financing Options',
   description:
-    'Learn about franchise financing options including SBA 7(a) loans, ROBS rollovers, unsecured credit lines, and equipment financing. Educational guide for franchise business owners.',
+    'Franchise financing options explained: SBA 7(a) loans, ROBS rollovers, unsecured credit lines, and equipment financing. A practical guide for business owners.',
   path: '/financing',
 })
 

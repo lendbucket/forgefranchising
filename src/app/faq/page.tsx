@@ -9,7 +9,7 @@ import { FAQAccordion } from './FAQAccordion'
 export const metadata = createMetadata({
   title: 'Franchise FAQ',
   description:
-    'Answers to the most common questions about franchising your business. Costs, timelines, legal requirements, revenue models, financing, and what makes a business franchisable.',
+    'Answers to common questions about franchising your business: costs, timelines, legal requirements, revenue models, and what makes a business franchisable.',
   path: '/faq',
 })
 

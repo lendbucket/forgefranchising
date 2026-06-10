@@ -10,7 +10,7 @@ import { SITE_NAME, SITE_URL } from '@/lib/constants'
 export const metadata = createMetadata({
   title: 'Franchise Development Packages',
   description:
-    'Three engagement tiers for franchise development: Launch, Growth, and Empire. Each package is tailored to your business stage and growth goals. Contact us for a custom quote.',
+    'Franchise development packages in three tiers: Launch, Growth, and Empire. Each is tailored to your business stage and goals. Contact us for a custom quote.',
   path: '/packages',
 })
 

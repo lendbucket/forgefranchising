@@ -89,13 +89,13 @@ function InputField({
 } & React.InputHTMLAttributes<HTMLInputElement>) {
   return (
     <div>
-      <label className="block text-sm font-medium text-espresso mb-1.5">
+      <label className="block text-sm font-medium text-espresso mb-2">
         {label} {required && <span className="text-amber">*</span>}
       </label>
       <input
         {...props}
         required={required}
-        className="w-full px-4 py-3 border border-espresso/15 bg-white text-espresso placeholder:text-muted-brown/50 focus:outline-none focus:ring-2 focus:ring-amber/50 focus:border-amber transition-colors min-h-[48px]"
+        className="w-full px-5 py-4 border border-espresso/12 bg-white text-espresso placeholder:text-muted-brown/40 focus:outline-none focus:ring-2 focus:ring-amber/40 focus:border-amber/60 transition-all duration-200 min-h-[52px] text-base"
         style={{ borderRadius: '3px' }}
       />
     </div>
@@ -116,13 +116,13 @@ function SelectField({
 } & React.SelectHTMLAttributes<HTMLSelectElement>) {
   return (
     <div>
-      <label className="block text-sm font-medium text-espresso mb-1.5">
+      <label className="block text-sm font-medium text-espresso mb-2">
         {label} {required && <span className="text-amber">*</span>}
       </label>
       <select
         {...props}
         required={required}
-        className="w-full px-4 py-3 border border-espresso/15 bg-white text-espresso focus:outline-none focus:ring-2 focus:ring-amber/50 focus:border-amber transition-colors min-h-[48px]"
+        className="w-full px-5 py-4 border border-espresso/12 bg-white text-espresso focus:outline-none focus:ring-2 focus:ring-amber/40 focus:border-amber/60 transition-all duration-200 min-h-[52px] text-base"
         style={{ borderRadius: '3px' }}
       >
         <option value="">{placeholder || 'Select...'}</option>
@@ -146,13 +146,13 @@ function TextAreaField({
 } & React.TextareaHTMLAttributes<HTMLTextAreaElement>) {
   return (
     <div>
-      <label className="block text-sm font-medium text-espresso mb-1.5">
+      <label className="block text-sm font-medium text-espresso mb-2">
         {label} {required && <span className="text-amber">*</span>}
       </label>
       <textarea
         {...props}
         required={required}
-        className="w-full px-4 py-3 border border-espresso/15 bg-white text-espresso placeholder:text-muted-brown/50 focus:outline-none focus:ring-2 focus:ring-amber/50 focus:border-amber transition-colors resize-y"
+        className="w-full px-5 py-4 border border-espresso/12 bg-white text-espresso placeholder:text-muted-brown/40 focus:outline-none focus:ring-2 focus:ring-amber/40 focus:border-amber/60 transition-all duration-200 resize-y text-base leading-relaxed"
         style={{ borderRadius: '3px' }}
       />
     </div>
@@ -335,7 +335,7 @@ export default function ContactPage() {
                   <div className="card">
                     <h2 className="heading-3 mb-2">Tell us about you</h2>
                     <p className="text-sm text-muted-brown mb-6">We will use this to reach out after reviewing your inquiry.</p>
-                    <div className="grid sm:grid-cols-2 gap-5">
+                    <div className="grid sm:grid-cols-2 gap-6">
                       <InputField
                         label="Full Name"
                         name="fullName"
@@ -373,7 +373,7 @@ export default function ContactPage() {
                         onChange={handleChange}
                       />
                     </div>
-                    <div className="mt-8">
+                    <div className="mt-10">
                       <button
                         type="button"
                         onClick={nextStep}
@@ -381,6 +381,7 @@ export default function ContactPage() {
                       >
                         Continue to Business Details
                       </button>
+                      <p className="text-xs text-muted-brown/50 mt-3">Takes about 90 seconds total. We never share your information.</p>
                     </div>
                   </div>
                 )}
@@ -390,7 +391,7 @@ export default function ContactPage() {
                   <div className="card">
                     <h2 className="heading-3 mb-2">Tell us about your business</h2>
                     <p className="text-sm text-muted-brown mb-6">This helps us assess fit before your feasibility call.</p>
-                    <div className="grid sm:grid-cols-2 gap-5">
+                    <div className="grid sm:grid-cols-2 gap-6">
                       <SelectField
                         label="Industry"
                         name="industry"
@@ -465,7 +466,7 @@ export default function ContactPage() {
                   <div className="card">
                     <h2 className="heading-3 mb-2">What are your goals?</h2>
                     <p className="text-sm text-muted-brown mb-6">The more context you share, the more useful our first call will be.</p>
-                    <div className="space-y-5">
+                    <div className="space-y-6">
                       <TextAreaField
                         label="Why do you want to franchise your business?"
                         name="reasonForFranchising"
@@ -513,7 +514,7 @@ export default function ContactPage() {
                             Submitting...
                           </>
                         ) : (
-                          'Get Your Free Franchise Evaluation'
+                          'Submit and Schedule Your Free Call'
                         )}
                       </button>
                     </div>

@@ -9,9 +9,9 @@ import { ReadingProgress } from '@/components/ReadingProgress'
 import { SITE_URL } from '@/lib/constants'
 
 export const metadata = createMetadata({
-  title: 'How to Franchise Your Business',
+  title: 'How It Works: 4 Phase Process',
   description:
-    'Our proven four phase franchise development process: Feasibility, Structure, Launch, and Scale. Learn exactly how we turn proven businesses into franchise brands.',
+    'Our four phase franchise development process covers Feasibility, Structure, Launch, and Scale. See how we turn proven businesses into scalable franchise brands.',
   path: '/how-it-works',
 })
 

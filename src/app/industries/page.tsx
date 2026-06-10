@@ -8,9 +8,9 @@ import { StickyCTA } from '@/components/StickyCTA'
 import { INDUSTRIES } from '@/lib/constants'
 
 export const metadata = createMetadata({
-  title: 'Franchise Industries We Serve',
+  title: 'Industries We Franchise',
   description:
-    'Explore franchise development across 10 major industries. Learn which business types franchise best and what it takes to scale your concept nationally.',
+    'Franchise development across 10 major industries. Learn which business types franchise best and what it takes to scale your concept nationally with our help.',
   path: '/industries',
 })
 

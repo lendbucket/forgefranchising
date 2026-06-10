@@ -7,9 +7,9 @@ import { GlossaryTerms } from './GlossaryTerms'
 import { SITE_URL } from '@/lib/constants'
 
 export const metadata = createMetadata({
-  title: 'Franchise Glossary',
+  title: 'Franchise Glossary: 40+ Terms',
   description:
-    'A comprehensive glossary of 40+ franchise terms every business owner should know before franchising. Clear definitions, real context, and why each term matters for your franchise journey.',
+    'Franchise glossary with 40+ terms every business owner should know before franchising. Clear definitions, real context, and why each term matters to you.',
   path: '/glossary',
 })
 

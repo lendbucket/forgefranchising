@@ -7,9 +7,9 @@ import { GuidedPath } from '@/components/GuidedPath'
 import { HomeClient } from '@/components/HomeClient'
 
 export const metadata = createMetadata({
-  title: 'Forge Franchising Group | Turn Your Business Into a Franchise',
+  title: 'Forge Franchising Group | Franchise Development for Proven Businesses',
   description:
-    'Forge Franchising Group turns proven local businesses into national franchise brands. Operator built franchise development with real experience, modern software, and a documented process.',
+    'Forge Franchising Group helps profitable business owners turn their proven concept into a scalable franchise brand. Feasibility, FDD, operations, and franchise sales under one roof.',
   path: '',
 })
 
@@ -18,25 +18,25 @@ const phases = [
     number: '01',
     title: 'Feasibility',
     description:
-      'We evaluate your business model, unit economics, and market potential. You get a clear answer on whether franchising makes financial sense and a roadmap if it does.',
+      'We stress test your unit economics, market demand, and operational model. You get a clear yes or no and a roadmap if it is a yes.',
   },
   {
     number: '02',
     title: 'Structure',
     description:
-      'We build the legal and operational framework: your FDD, franchise agreement, operations manual, and franchisor entity. Everything an attorney reviews and the state regulators require.',
+      'FDD, franchise agreement, operations manual, and franchisor entity. Built to pass state examiner review the first time.',
   },
   {
     number: '03',
     title: 'Launch',
     description:
-      'We prepare your franchise for market. Registration filings, training programs, franchise sales materials, and the systems your first franchisees need from day one.',
+      'State registrations, training programs, sales materials, and the systems your first franchisees will depend on from day one.',
   },
   {
     number: '04',
     title: 'Scale',
     description:
-      'We help you sell franchises, onboard owners, and build the infrastructure that supports 10, 50, or 100 units without losing what made the original business work.',
+      'Franchise sales, franchisee onboarding, and the support infrastructure that holds at 10, 50, or 100 locations.',
   },
 ]
 
@@ -56,42 +56,84 @@ const industries = [
 export default function HomePage() {
   return (
     <>
-      {/* Hero: single clear focal point, one primary CTA (Hick's law) */}
+      {/* HERO: Editorial split layout with warm duotone photograph */}
       <section className="relative bg-espresso overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1920&q=80"
-            alt="Business professionals in a boardroom"
-            fill
-            className="object-cover opacity-20 hero-image"
-            priority
-            sizes="100vw"
-          />
+        <div className="relative max-w-8xl mx-auto">
+          <div className="grid lg:grid-cols-2 min-h-[85vh]">
+            {/* Left: Copy */}
+            <div className="relative z-10 flex flex-col justify-center px-6 sm:px-10 lg:px-16 xl:px-20 py-20 sm:py-28 lg:py-32">
+              <Image
+                src="/logo-white.png"
+                alt="Forge Franchising Group"
+                width={280}
+                height={76}
+                className="h-14 sm:h-16 w-auto mb-10 hero-entrance hero-entrance-1"
+                style={{ objectFit: 'contain' }}
+                priority
+              />
+              <h1 className="heading-1 text-cream mb-6 text-balance hero-entrance hero-entrance-2">
+                You Built a Business Worth Replicating. Now Build the System That Does It.
+              </h1>
+              <p className="text-lg sm:text-xl text-cream/60 leading-relaxed mb-10 max-w-xl hero-entrance hero-entrance-3">
+                Forge turns profitable, owner-operated businesses into franchise brands that grow on other people's capital, in other people's markets, under your name.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 hero-entrance hero-entrance-4">
+                <Link href="/is-my-business-franchisable" className="btn-primary text-lg py-5 px-10">
+                  Get Your Free Readiness Score
+                </Link>
+                <Link
+                  href="/how-it-works"
+                  className="inline-flex items-center justify-center px-10 py-5 border-2 border-cream/20 text-cream font-semibold hover:bg-cream hover:text-espresso transition-all duration-200 text-lg"
+                  style={{ borderRadius: '3px' }}
+                >
+                  See the Process
+                </Link>
+              </div>
+              <p className="text-cream/35 text-sm mt-4 hero-entrance hero-entrance-4">
+                Two minutes. Eight questions. No sales pitch.
+              </p>
+            </div>
+
+            {/* Right: Warm duotone photograph */}
+            <div className="relative hidden lg:block">
+              <div className="absolute inset-0 hero-image-warm">
+                <Image
+                  src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=85"
+                  alt="Business owner reviewing franchise growth plans with their team"
+                  fill
+                  className="object-cover"
+                  priority
+                  sizes="50vw"
+                />
+              </div>
+              {/* Warm duotone overlay */}
+              <div className="absolute inset-0 bg-gradient-to-r from-espresso via-espresso/70 to-transparent z-10" />
+              <div className="absolute inset-0 mix-blend-multiply bg-amber/20" />
+            </div>
+          </div>
+
+          {/* Mobile: background image fallback */}
+          <div className="absolute inset-0 lg:hidden">
+            <Image
+              src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=85"
+              alt="Business owner reviewing franchise growth plans with their team"
+              fill
+              className="object-cover opacity-15"
+              priority
+              sizes="100vw"
+            />
+          </div>
         </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 sm:py-36 lg:py-44">
-          <div className="max-w-3xl">
-            <p className="eyebrow mb-8">
-              Franchise Development, Operator Built
-            </p>
-            <h1 className="heading-1 text-cream mb-8 text-balance">
-              Turn Your Proven Business Into a Franchise Brand That Scales
-            </h1>
-            <p className="text-xl sm:text-2xl text-cream/60 leading-relaxed mb-12 max-w-2xl">
-              You built a business that works. We build the system that lets other people replicate it.
-              No binders. No guesswork. A documented process backed by operating experience and technology.
-            </p>
-            {/* Isolation effect: one dominant primary CTA, one soft secondary */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/is-my-business-franchisable" className="btn-primary text-lg py-5 px-10">
-                Get Your Free Readiness Score
-              </Link>
-              <Link
-                href="/how-it-works"
-                className="inline-flex items-center justify-center px-10 py-5 border-2 border-cream/20 text-cream font-semibold hover:bg-cream hover:text-espresso transition-all duration-200 text-lg"
-                style={{ borderRadius: '3px' }}
-              >
-                See How It Works
-              </Link>
+
+        {/* Credibility stat band */}
+        <div className="relative z-10 border-t border-cream/10">
+          <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 py-5">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-10 text-cream/40 text-sm">
+              <span>Franchising generates <strong className="text-cream/70">$827B</strong> in annual US output</span>
+              <span className="hidden sm:block w-px h-4 bg-cream/15" />
+              <span><strong className="text-cream/70">800,000+</strong> franchise locations nationwide</span>
+              <span className="hidden sm:block w-px h-4 bg-cream/15" />
+              <span><strong className="text-cream/70">8.5 million</strong> jobs created every year</span>
             </div>
           </div>
         </div>
@@ -100,33 +142,33 @@ export default function HomePage() {
       {/* Client-side interactive sections */}
       <HomeClient phases={phases} industries={industries} />
 
-      {/* Guided learning path: goal gradient pulls visitors through the site */}
+      {/* Guided learning path */}
       <GuidedPath
         heading="New to Franchising? Start Here."
-        subheading="Follow these five steps in order. By the end, you will know whether franchising is right for your business and exactly what the process looks like."
+        subheading="Five steps, each one building on the last. By the end you will know whether franchising fits your business and exactly what the path forward looks like."
         steps={[
-          { step: 1, title: 'Find out if your business qualifies', description: 'Take our free readiness assessment. Eight questions, two minutes, and you will know where you stand.', href: '/is-my-business-franchisable', time: '2 min' },
-          { step: 2, title: 'Understand the four-phase process', description: 'Learn exactly how a proven business becomes a franchise brand. No mysteries, no hand waving.', href: '/how-it-works', time: '5 min read' },
-          { step: 3, title: 'Model your franchise economics', description: 'Plug in your numbers and see what your franchise system could generate in royalty income at 10, 25, or 50 units.', href: '/calculator', time: '3 min' },
-          { step: 4, title: 'Read the complete franchise guide', description: 'Everything a business owner needs to know about franchising, from feasibility through FDD filing and first sale.', href: '/blog/how-to-franchise-your-business', time: '14 min read' },
-          { step: 5, title: 'Book your free feasibility call', description: 'Talk to our team about your specific business. We will tell you honestly whether franchising is the right path.', href: '/contact', time: '30 min call' },
+          { step: 1, title: 'Find out if your business qualifies', description: 'Eight questions, two minutes, and you will know where you stand.', href: '/is-my-business-franchisable', time: '2 min' },
+          { step: 2, title: 'Understand the four phases', description: 'See how a proven business becomes a franchise brand, step by step.', href: '/how-it-works', time: '5 min read' },
+          { step: 3, title: 'Model your franchise economics', description: 'Plug in your numbers and see projected royalty income at 10, 25, or 50 units.', href: '/calculator', time: '3 min' },
+          { step: 4, title: 'Read the complete franchise guide', description: 'Feasibility through FDD filing and first franchise sale, all in one guide.', href: '/blog/how-to-franchise-your-business', time: '14 min read' },
+          { step: 5, title: 'Book your free feasibility call', description: 'Talk to our team. We will tell you honestly whether franchising is the right move.', href: '/contact', time: '30 min call' },
         ]}
       />
 
-      {/* Continue Learning: three curated next steps for every visitor */}
+      {/* Continue Learning */}
       <ContinueLearning
         heading="Explore by Topic"
         links={[
-          { label: 'What Does It Cost to Franchise?', href: '/blog/cost-to-franchise-a-business', description: 'Real numbers on franchise development investment, what drives the cost, and what to watch for.' },
-          { label: 'Franchise Laws by State', href: '/franchise-laws', description: 'Registration states, filing states, and what each one requires before you sell a single franchise.' },
-          { label: 'Browse All Industries', href: '/industries', description: 'See how franchising works in restaurants, salons, fitness, home services, and seven other sectors.' },
+          { label: 'What Does It Actually Cost?', href: '/blog/cost-to-franchise-a-business', description: 'Real numbers on franchise development investment and what drives the price.' },
+          { label: 'Franchise Laws by State', href: '/franchise-laws', description: 'Registration states, filing states, and what each one requires before you sell.' },
+          { label: 'Browse All Industries', href: '/industries', description: 'How franchising works in restaurants, salons, fitness, home services, and more.' },
         ]}
       />
 
-      {/* Final CTA: value-driven, not generic */}
+      {/* Final CTA */}
       <SectionCTA
-        heading="See What Your Business Could Look Like as a Franchise"
-        body="Take our two-minute assessment and get a franchise readiness score with personalized recommendations. No cost, no obligation, and no sales pitch unless you ask for one."
+        heading="See What Your Business Looks Like as a Franchise"
+        body="Take our two-minute assessment and get a franchise readiness score with specific recommendations for your business. No cost, no obligation."
         buttonText="Get Your Free Readiness Score"
         buttonHref="/is-my-business-franchisable"
         secondaryText="Or model your franchise economics with our calculator"

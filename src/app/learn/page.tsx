@@ -6,9 +6,9 @@ import { GuidedPath } from '@/components/GuidedPath'
 import { StickyCTA } from '@/components/StickyCTA'
 
 export const metadata = createMetadata({
-  title: 'Learn & Resources',
+  title: 'Franchise Education Resources',
   description:
-    'Free franchise education for business owners. Guides, tools, glossary, state law breakdowns, and calculators to help you understand what franchising your business actually requires.',
+    'Free franchise education for business owners. Guides, tools, glossary, state law breakdowns, and calculators to help you understand what franchising requires.',
   path: '/learn',
 })
 
@@ -180,11 +180,11 @@ export default function LearnPage() {
         </div>
       </section>
 
-      {/* Guides & Deep Dives */}
+      {/* In-Depth Guides */}
       <section className="section-padding bg-cream">
         <div className="container-wide">
           <div className="text-center mb-12">
-            <h2 className="heading-2 mb-4">Guides and Deep Dives</h2>
+            <h2 className="heading-2 mb-4">In-Depth Guides</h2>
             <p className="body-large max-w-2xl mx-auto">
               Comprehensive resources that walk you through the most important aspects of franchise
               development. No fluff, no gated content, just the information you need.

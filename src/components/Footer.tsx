@@ -45,7 +45,7 @@ export function Footer() {
                 alt="Forge Franchising Group"
                 width={200}
                 height={54}
-                className="h-12 w-auto"
+                className="h-14 w-auto"
                 style={{ objectFit: 'contain' }}
               />
             </Link>

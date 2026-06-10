@@ -1,8 +1,8 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { ScrollReveal } from '@/components/ScrollReveal'
-import { CountUp } from '@/components/CountUp'
 import { OpenLoop } from '@/components/OpenLoop'
 import { StickyCTA } from '@/components/StickyCTA'
 
@@ -20,97 +20,80 @@ type Industry = {
 export function HomeClient({ phases, industries }: { phases: Phase[]; industries: Industry[] }) {
   return (
     <>
-      {/* Problem / Solution */}
-      <section className="section-padding bg-cream">
-        <div className="container-wide">
-          <div className="grid lg:grid-cols-12 gap-16 lg:gap-20 items-start">
-            <div className="lg:col-span-7">
+      {/* STAKES: Short, punchy problem statement. Image-led asymmetric layout. */}
+      <section className="py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 bg-cream">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+            {/* Photograph: real business scenario */}
+            <div className="lg:col-span-5 lg:order-2">
               <ScrollReveal>
-                <p className="eyebrow mb-6">The Challenge</p>
+                <div className="relative aspect-[4/5] overflow-hidden" style={{ borderRadius: '4px' }}>
+                  <Image
+                    src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=800&q=80"
+                    alt="Business owner overwhelmed by franchise compliance documents"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                  />
+                  <div className="absolute inset-0 mix-blend-multiply bg-amber/10" />
+                </div>
+              </ScrollReveal>
+            </div>
+            <div className="lg:col-span-7 lg:order-1">
+              <ScrollReveal>
+                <p className="eyebrow mb-6">The Problem</p>
                 <h2 className="heading-2 mb-8">
-                  Most Business Owners Have No Idea How to Franchise. That Is the Whole Point.
+                  Franchising Is a Regulated Industry. Most Business Owners Walk In Blind.
                 </h2>
               </ScrollReveal>
               <ScrollReveal delay={1}>
-                <p className="body-large mb-6">
-                  You spent years perfecting your business. The recipes, the systems, the culture, the way you hire and train.
-                  Franchising is how you let other people run that same playbook in new markets, on their capital, with your brand on the building.
+                <p className="body-large mb-8">
+                  You know your business inside and out. But franchising requires federal disclosure documents,
+                  state registrations, legal entity structures, and compliance systems that have nothing to do
+                  with running a great restaurant, salon, or gym.
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={2}>
-                <p className="body-large mb-6">
-                  But franchising is not just opening more locations. It is a regulated industry with federal disclosure requirements,
-                  state registrations, legal structures, and compliance obligations that most business owners have never encountered.
-                </p>
+                <div className="pull-quote text-espresso my-10">
+                  That gap between operating expertise and franchise development expertise is where most attempts fail.
+                </div>
               </ScrollReveal>
               <ScrollReveal delay={3}>
-                {/* Pull quote: creates breathing room, visual hierarchy */}
-                <div className="pull-quote text-espresso my-10">
-                  That complexity is exactly why most franchise development attempts stall or fail.
-                </div>
-              </ScrollReveal>
-              <ScrollReveal delay={4}>
                 <p className="body-large">
-                  Owners try to figure it out alone, hire the wrong consultant, or get handed a binder full of templates.
-                  We exist to fix that.
+                  Owners hire the wrong consultant, get handed a stack of templates, spend $50,000 to $150,000 on legal
+                  work that sits in a drawer, and never sell a single franchise. We built Forge to fix that.
                 </p>
-              </ScrollReveal>
-            </div>
-            <div className="lg:col-span-5">
-              <ScrollReveal>
-                <div className="bg-deep-cream p-8 sm:p-10" style={{ borderRadius: '4px' }}>
-                  <h3 className="heading-4 mb-6">What happens without a system:</h3>
-                  <ul className="space-y-4">
-                    {[
-                      'You spend $50,000 to $150,000 on legal documents that sit in a drawer',
-                      'Your FDD has gaps that a state examiner will reject',
-                      'Your operations manual reads like a rough draft, not a training tool',
-                      'You have no franchise sales process and no qualified leads',
-                      'Your first franchisee fails because the system was never really built',
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <span
-                          className="flex-shrink-0 w-6 h-6 flex items-center justify-center mt-0.5 text-xs font-bold text-espresso"
-                          style={{ border: '1px solid rgba(40, 16, 16, 0.15)', borderRadius: '2px' }}
-                        >
-                          {i + 1}
-                        </span>
-                        <span className="text-muted-brown text-sm leading-relaxed">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
               </ScrollReveal>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Open loop: Zeigarnik effect teaser pointing to the process page */}
+      {/* Open loop pulling to process page */}
       <OpenLoop
-        teaser="There is one structural mistake that ends most franchise systems before they reach ten units. Our four-phase process was built to prevent it."
+        teaser="There is one structural mistake that kills most franchise systems before they reach ten units. Our four-phase process was designed to prevent it."
         linkText="See the four-phase process"
         href="/how-it-works"
         variant="section"
       />
 
-      {/* Process Overview */}
-      <section className="section-padding bg-cream">
-        <div className="container-wide">
+      {/* AUTHORITY: Process overview. Horizontal timeline, not card grid. */}
+      <section className="py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 bg-cream">
+        <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <div className="max-w-2xl mb-16">
               <p className="eyebrow mb-4">Our Process</p>
               <h2 className="heading-2 mb-6">Four Phases. One System. Zero Guesswork.</h2>
               <p className="body-large">
-                Every franchise we develop moves through the same four phases. This is not a menu of services
-                you pick from. It is a proven sequence that builds a compliant, sellable franchise system.
+                Every franchise we develop moves through the same proven sequence, from feasibility through scale.
               </p>
             </div>
           </ScrollReveal>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Timeline layout on desktop, stacked on mobile */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-espresso/8">
             {phases.map((phase, i) => (
               <ScrollReveal key={phase.number} delay={i as 1 | 2 | 3 | 4}>
-                <div className="card-interactive h-full">
+                <div className="bg-cream p-8 lg:p-10 h-full">
                   <div className="stat-number mb-4" style={{ fontSize: '2.5rem' }}>{phase.number}</div>
                   <h3 className="heading-4 mb-3">{phase.title}</h3>
                   <p className="text-muted-brown text-sm leading-relaxed">{phase.description}</p>
@@ -128,52 +111,64 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
         </div>
       </section>
 
-      {/* Stats Section - Dark Espresso for gravitas */}
-      <section className="section-padding bg-espresso text-cream">
-        <div className="container-wide">
-          <ScrollReveal>
-            <div className="max-w-3xl mx-auto text-center mb-16">
-              <p className="eyebrow mb-4">
-                The Franchise Industry
-              </p>
-              <h2 className="heading-2 text-cream mb-6">
-                Franchising Built the Most Recognized Brands on Earth
-              </h2>
-              <p className="text-lg text-cream/50 leading-relaxed max-w-2xl mx-auto">
-                The franchise model has created more millionaires than any other business structure in history.
-                It works because it turns one owner&apos;s proven formula into a documented system that other
-                operators can follow.
-              </p>
+      {/* MICRO-COMMITMENT: Assessment teaser. Full-bleed dark section. */}
+      <section className="py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 bg-espresso text-cream">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            <div>
+              <ScrollReveal>
+                <p className="eyebrow mb-4">Are You Ready?</p>
+                <h2 className="heading-2 text-cream mb-6">The Real Question Is Not "Can I Franchise?" It Is "Should I, and What Would It Take?"</h2>
+                <p className="text-lg text-cream/50 leading-relaxed mb-10">
+                  Our free assessment evaluates seven readiness factors specific to your business.
+                  Two minutes, no login, and you get a score with specific recommendations.
+                </p>
+                <Link href="/is-my-business-franchisable" className="btn-primary">
+                  Take the Free Assessment
+                </Link>
+                <p className="text-cream/30 text-xs mt-3">No email required. Results are immediate.</p>
+              </ScrollReveal>
             </div>
-          </ScrollReveal>
-          <div className="grid sm:grid-cols-3 gap-8 lg:gap-16">
-            {[
-              { stat: '$827B', label: 'Annual franchise industry output in the United States' },
-              { stat: '800,000+', label: 'Franchise establishments operating across the country' },
-              { stat: '8.5M', label: 'Jobs created by the franchise industry every year' },
-            ].map((item) => (
-              <ScrollReveal key={item.stat}>
-                <div className="text-center">
-                  <CountUp end={item.stat} className="stat-number" />
-                  <p className="stat-label text-cream/40">{item.label}</p>
+            <div>
+              <ScrollReveal delay={1}>
+                <div className="bg-cream/5 border border-cream/10 p-8 sm:p-10" style={{ borderRadius: '4px' }}>
+                  <h3 className="heading-4 text-cream mb-6">7 signs your business is ready:</h3>
+                  <ul className="space-y-4">
+                    {[
+                      'Profitable for at least two years',
+                      'Runs without you in daily operations',
+                      'Someone new can learn your system in 90 days or less',
+                      'Real demand for your product or service in other markets',
+                      'A brand people recognize and trust',
+                      'Unit economics that support a strong franchisee return',
+                      'You are ready to lead a network, not just a location',
+                    ].map((sign, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <svg className="w-5 h-5 text-amber flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                        <span className="text-cream/60 text-sm leading-relaxed">{sign}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </ScrollReveal>
-            ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Industries: fewer choices visible, clear hierarchy (Hick's law) */}
-      <section className="section-padding bg-cream">
-        <div className="container-wide">
+      {/* INDUSTRIES: Text-led left + compact grid right */}
+      <section className="py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 bg-cream">
+        <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-12 gap-16 items-start">
             <div className="lg:col-span-5">
               <ScrollReveal>
                 <p className="eyebrow mb-4">Industries We Serve</p>
-                <h2 className="heading-2 mb-6">Franchise Development for Every Proven Business Model</h2>
+                <h2 className="heading-2 mb-6">Franchise Development Built for Your Industry</h2>
                 <p className="body-large mb-8">
-                  We work with business owners across industries that have strong unit economics, repeatable operations,
-                  and real demand for expansion.
+                  We work with owners across ten industries that have strong unit economics,
+                  repeatable operations, and genuine demand for expansion.
                 </p>
                 <Link href="/industries" className="btn-secondary">
                   View All Industries
@@ -203,102 +198,74 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
         </div>
       </section>
 
-      {/* Qualification Prompt: value-driven CTA, not generic "contact us" */}
-      <section className="section-padding bg-deep-cream">
-        <div className="container-wide">
-          <div className="grid lg:grid-cols-12 gap-16 items-start">
-            <div className="lg:col-span-6">
-              <ScrollReveal>
-                <p className="eyebrow mb-4">Are You Ready?</p>
-                <h2 className="heading-2 mb-6">Not Sure If Your Business Can Franchise?</h2>
-                <p className="body-large mb-6">
-                  Most owners ask the wrong question. They ask &quot;can I franchise?&quot; when the real question is
-                  &quot;should I franchise, and what would it take?&quot;
-                </p>
-                <p className="body-large mb-10">
-                  Take our free assessment to get a franchise readiness score with specific recommendations
-                  for your business. Two minutes. No sales pitch attached.
-                </p>
-                {/* Isolation effect: one primary CTA dominates */}
-                <Link href="/is-my-business-franchisable" className="btn-primary">
-                  Get Your Free Readiness Score
-                </Link>
-                <div className="mt-3">
-                  <Link href="/calculator" className="text-sm text-muted-brown link-underline">
-                    Or model your franchise economics first
-                  </Link>
-                </div>
-              </ScrollReveal>
-            </div>
-            <div className="lg:col-span-6">
-              <ScrollReveal delay={1}>
-                <div className="bg-white p-8 sm:p-10" style={{ borderRadius: '4px', border: '1px solid rgba(107, 87, 80, 0.08)' }}>
-                  <h3 className="heading-4 mb-6">7 signs your business is ready to franchise:</h3>
-                  <ul className="space-y-4">
-                    {[
-                      'You have been profitable for at least two years',
-                      'Your business model works without you running daily operations',
-                      'You can teach someone to replicate your results in 90 days or less',
-                      'There is demand for your product or service in other markets',
-                      'You have a brand that people recognize and trust',
-                      'Your unit economics support a franchisee earning a strong return',
-                      'You are ready to lead a network, not just run a location',
-                    ].map((sign, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <svg className="w-5 h-5 text-amber flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                        <span className="text-muted-brown text-sm leading-relaxed">{sign}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </ScrollReveal>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Blog Teaser with open loops */}
-      <section className="section-padding bg-cream">
-        <div className="container-wide">
+      {/* EDUCATION: Blog teasers. Asymmetric featured + two-column. */}
+      <section className="py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 bg-deep-cream">
+        <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <div className="max-w-2xl mb-12">
-              <p className="eyebrow mb-4">Learn</p>
-              <h2 className="heading-2 mb-6">Free Franchise Development Resources</h2>
+              <p className="eyebrow mb-4">Resources</p>
+              <h2 className="heading-2 mb-6">Learn Enough to Have an Informed Conversation</h2>
               <p className="body-large">
                 Everything we know about franchising, published for free. Read the guides, use the tools,
-                and learn enough to have an informed conversation with any franchise consultant, including us.
+                and judge any franchise consultant, including us, from a position of knowledge.
               </p>
             </div>
           </ScrollReveal>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          {/* Featured post: large */}
+          <ScrollReveal>
+            <Link href="/blog/how-to-franchise-your-business" className="group block mb-8">
+              <div className="grid lg:grid-cols-2 gap-8 bg-white p-8 sm:p-10 transition-all duration-300 hover:shadow-lg" style={{ borderRadius: '4px', border: '1px solid rgba(107, 87, 80, 0.08)' }}>
+                <div className="relative aspect-[16/10] overflow-hidden" style={{ borderRadius: '3px' }}>
+                  <Image
+                    src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80"
+                    alt="Business owner planning franchise strategy with documents and laptop"
+                    fill
+                    className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                    sizes="(max-width: 1024px) 100vw, 45vw"
+                  />
+                  <div className="absolute inset-0 mix-blend-multiply bg-amber/5" />
+                </div>
+                <div className="flex flex-col justify-center">
+                  <span className="eyebrow">Complete Guide</span>
+                  <h3 className="heading-3 mt-4 mb-3 group-hover:text-amber transition-colors">
+                    How to Franchise Your Business in 2026
+                  </h3>
+                  <p className="text-muted-brown text-base leading-relaxed mb-4">
+                    Most owners start with the legal work. That is backwards. This guide covers feasibility,
+                    structure, FDD filing, and your first franchise sale in the right order.
+                  </p>
+                  <span className="text-amber text-sm font-semibold">
+                    Read the full guide
+                    <svg className="inline-block ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </Link>
+          </ScrollReveal>
+
+          {/* Two secondary posts */}
+          <div className="grid sm:grid-cols-2 gap-6">
             {[
               {
-                title: 'How to Franchise Your Business: The Complete Guide',
-                href: '/blog/how-to-franchise-your-business',
-                category: 'Guide',
-                /* Open loop: curiosity gap in the teaser */
-                teaser: 'Most owners start with the legal work. That is backwards.',
-              },
-              {
                 title: 'What a Franchise Disclosure Document Is and Why It Matters',
-                href: '/blog/franchise-disclosure-document',
+                href: '/blog/franchise-disclosure-document-explained',
                 category: 'Education',
-                teaser: 'The FDD is not a formality. It is the single document that makes or breaks your franchise.',
+                teaser: 'The FDD is not a formality. It is the single document that determines whether your franchise can legally sell.',
               },
               {
                 title: 'How Much It Costs to Franchise a Business',
                 href: '/blog/cost-to-franchise-a-business',
                 category: 'Finance',
-                teaser: 'Anyone quoting $25,000 for a franchise package is cutting corners you cannot afford.',
+                teaser: 'Anyone quoting $25,000 for a full franchise package is cutting corners you cannot afford. Here is what real development costs.',
               },
             ].map((post, i) => (
-              <ScrollReveal key={post.href} delay={(i + 1) as 1 | 2 | 3}>
+              <ScrollReveal key={post.href} delay={(i + 1) as 1 | 2}>
                 <Link href={post.href} className="card-interactive group block h-full">
                   <span className="eyebrow">{post.category}</span>
                   <h3 className="heading-4 mt-4 mb-3 group-hover:text-amber transition-colors">{post.title}</h3>
-                  {/* Curiosity gap: teases specific insight without resolving it */}
                   <p className="text-sm text-muted-brown leading-relaxed mb-4">{post.teaser}</p>
                   <span className="text-amber text-sm font-medium link-underline">
                     Read the full guide
@@ -307,6 +274,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
               </ScrollReveal>
             ))}
           </div>
+
           <ScrollReveal>
             <div className="mt-10">
               <Link href="/blog" className="btn-secondary">
@@ -317,7 +285,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
         </div>
       </section>
 
-      {/* Sticky CTA: appears after value delivery, not on load */}
+      {/* Sticky CTA: appears after value delivery */}
       <StickyCTA
         text="Get Your Free Readiness Score"
         href="/is-my-business-franchisable"

@@ -13,7 +13,7 @@ import {
 export const metadata = createMetadata({
   title: 'Franchise Laws by State',
   description:
-    'Comprehensive guide to franchise registration and filing requirements in all 50 US states. Learn which states require FDD registration, filing, or have no state-level franchise law.',
+    'Franchise registration and filing requirements in all 50 states. Learn which states require FDD registration, which require filing, and which have no law.',
   path: '/franchise-laws',
 })
 

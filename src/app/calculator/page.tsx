@@ -3,9 +3,9 @@ import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { CalculatorClient } from './CalculatorClient'
 
 export const metadata = createMetadata({
-  title: 'Franchise Potential Calculator',
+  title: 'Franchise Revenue Calculator',
   description:
-    'Use our free franchise calculator to estimate your potential royalty income at scale. Enter your revenue, margins, and location count to see illustrative projections for 10, 25, and 50 franchise units.',
+    'Free franchise calculator to estimate your potential royalty income at scale. Enter your revenue, margins, and location count to see projections for your brand.',
   path: '/calculator',
 })
 

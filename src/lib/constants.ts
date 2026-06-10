@@ -1,5 +1,5 @@
 export const SITE_NAME = 'Forge Franchising Group'
-export const SITE_URL = 'https://forgefranchising.com'
+export const SITE_URL = 'https://www.forgefranchising.com'
 export const SITE_DESCRIPTION =
   'Forge Franchising Group turns proven local businesses into national franchise brands. Operator built franchise development with real experience, modern software, and a documented process.'
 export const CONTACT_EMAIL = 'ceo@36west.org'
