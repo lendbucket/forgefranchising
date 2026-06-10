@@ -18,14 +18,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const city = getCityBySlug(slug)
   if (!city) return {}
 
-  const title = `Franchise Consultant in ${city.name}, ${city.stateAbbr} | ${SITE_NAME}`
-  const description = `Forge Franchising provides franchise consulting services in ${city.name}, ${city.stateAbbr}. Whether you want to franchise your business or invest in a franchise opportunity, our team guides you through every step.`
+  const title = `${city.name} Franchise Consultant`
+  const description = `Franchise consulting in the ${city.metroArea} metro. Forge Franchising helps ${city.name} business owners franchise their ${city.topIndustries[0]?.toLowerCase() || 'proven'} concepts and connects buyers with opportunities.`
 
   return {
     title,
     description,
     openGraph: {
-      title,
+      title: `${title} | Forge Franchising`,
       description,
       url: `${SITE_URL}/locations/${slug}`,
       siteName: SITE_NAME,
@@ -79,6 +79,19 @@ export default async function CityPage({ params }: Props) {
       { '@type': 'ListItem', position: 2, name: 'Locations', item: `${SITE_URL}/locations` },
       { '@type': 'ListItem', position: 3, name: `${city.name}, ${city.stateAbbr}`, item: `${SITE_URL}/locations/${city.slug}` },
     ],
+  }
+
+  const industryLinkMap: Record<string, string> = {
+    'Food & Beverage': '/industries/restaurants',
+    'Fitness & Wellness': '/industries/fitness',
+    'Home Services': '/industries/home-services',
+    'Beauty & Personal Care': '/industries/salons-beauty',
+    'Automotive Services': '/industries/automotive',
+    'Pet Services': '/industries/pet-care',
+    'Childcare': '/industries/childcare-education',
+    'Education & Tutoring': '/industries/childcare-education',
+    'Health & Wellness': '/industries/health-medical',
+    'Senior Care': '/industries/health-medical',
   }
 
   // Get related cities from the same state (excluding current city)
@@ -139,9 +152,10 @@ export default async function CityPage({ params }: Props) {
             Franchise Consultant in {city.name}, {city.stateAbbr}
           </h1>
           <p className="text-lg text-cream/60 leading-relaxed max-w-2xl">
-            Helping {city.name} business owners turn proven concepts into franchise brands
-            and connecting qualified buyers with the right franchise opportunities
-            in the {city.metroArea} metro area.
+            Franchise development and consulting across the {city.metroArea} metro,
+            from {city.topIndustries[0]?.toLowerCase() || 'local'} concepts to multi-unit
+            growth strategies. We help {city.name} owners build franchise systems
+            and connect qualified buyers with the right opportunities.
           </p>
         </div>
       </section>
@@ -169,34 +183,50 @@ export default async function CityPage({ params }: Props) {
                   Top Franchise Industries in {city.name}
                 </h3>
                 <div className="grid sm:grid-cols-2 gap-4">
-                  {city.topIndustries.map((industry) => (
-                    <div
-                      key={industry}
-                      className="card p-5 flex items-start gap-4"
-                    >
-                      <div className="w-10 h-10 rounded-lg bg-amber/10 flex items-center justify-center flex-shrink-0">
-                        <svg
-                          className="w-5 h-5 text-amber"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth={1.5}
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M13.5 21v-7.5a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349M3.75 21V9.349m0 0a3.001 3.001 0 0 0 3.75-.615A2.993 2.993 0 0 0 9.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 0 0 2.25 1.016c.896 0 1.7-.393 2.25-1.015a3.001 3.001 0 0 0 3.75.614m-16.5 0a3.004 3.004 0 0 1-.621-4.72l1.189-1.19A1.5 1.5 0 0 1 5.378 3h13.243a1.5 1.5 0 0 1 1.06.44l1.19 1.189a3 3 0 0 1-.621 4.72M6.75 18h3.75a.75.75 0 0 0 .75-.75V13.5a.75.75 0 0 0-.75-.75H6.75a.75.75 0 0 0-.75.75v3.75c0 .414.336.75.75.75Z"
-                          />
-                        </svg>
+                  {city.topIndustries.map((industry) => {
+                    const href = industryLinkMap[industry]
+                    const cardContent = (
+                      <>
+                        <div className="w-10 h-10 rounded-lg bg-amber/10 flex items-center justify-center flex-shrink-0">
+                          <svg
+                            className="w-5 h-5 text-amber"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth={1.5}
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M13.5 21v-7.5a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349M3.75 21V9.349m0 0a3.001 3.001 0 0 0 3.75-.615A2.993 2.993 0 0 0 9.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 0 0 2.25 1.016c.896 0 1.7-.393 2.25-1.015a3.001 3.001 0 0 0 3.75.614m-16.5 0a3.004 3.004 0 0 1-.621-4.72l1.189-1.19A1.5 1.5 0 0 1 5.378 3h13.243a1.5 1.5 0 0 1 1.06.44l1.19 1.189a3 3 0 0 1-.621 4.72M6.75 18h3.75a.75.75 0 0 0 .75-.75V13.5a.75.75 0 0 0-.75-.75H6.75a.75.75 0 0 0-.75.75v3.75c0 .414.336.75.75.75Z"
+                            />
+                          </svg>
+                        </div>
+                        <div>
+                          <h4 className="heading-4 text-espresso">{industry}</h4>
+                          <p className="text-sm text-muted-brown mt-1">
+                            High demand in the {city.metroArea} market
+                          </p>
+                        </div>
+                      </>
+                    )
+                    return href ? (
+                      <Link
+                        key={industry}
+                        href={href}
+                        className="card-interactive p-5 flex items-start gap-4 group"
+                      >
+                        {cardContent}
+                      </Link>
+                    ) : (
+                      <div
+                        key={industry}
+                        className="card p-5 flex items-start gap-4"
+                      >
+                        {cardContent}
                       </div>
-                      <div>
-                        <h4 className="heading-4 text-espresso">{industry}</h4>
-                        <p className="text-sm text-muted-brown mt-1">
-                          High demand in the {city.metroArea} market
-                        </p>
-                      </div>
-                    </div>
-                  ))}
+                    )
+                  })}
                 </div>
               </div>
 

@@ -1,65 +1,8 @@
 import { MetadataRoute } from 'next'
-import { SITE_URL } from '@/lib/constants'
+import { SITE_URL, INDUSTRIES } from '@/lib/constants'
 import { cities } from '@/data/cities'
-
-const INDUSTRY_SLUGS = [
-  'restaurants',
-  'salons-beauty',
-  'fitness',
-  'home-services',
-  'health-medical',
-  'retail',
-  'automotive',
-  'childcare-education',
-  'cleaning',
-  'pet-care',
-]
-
-const STATE_SLUGS = [
-  'alabama', 'alaska', 'arizona', 'arkansas', 'california',
-  'colorado', 'connecticut', 'delaware', 'florida', 'georgia',
-  'hawaii', 'idaho', 'illinois', 'indiana', 'iowa',
-  'kansas', 'kentucky', 'louisiana', 'maine', 'maryland',
-  'massachusetts', 'michigan', 'minnesota', 'mississippi', 'missouri',
-  'montana', 'nebraska', 'nevada', 'new-hampshire', 'new-jersey',
-  'new-mexico', 'new-york', 'north-carolina', 'north-dakota', 'ohio',
-  'oklahoma', 'oregon', 'pennsylvania', 'rhode-island', 'south-carolina',
-  'south-dakota', 'tennessee', 'texas', 'utah', 'vermont',
-  'virginia', 'washington', 'west-virginia', 'wisconsin', 'wyoming',
-]
-
-const BLOG_SLUGS = [
-  'what-is-franchising',
-  'how-to-franchise-your-business',
-  'franchise-disclosure-document-explained',
-  'franchise-fees-and-costs',
-  'how-long-does-it-take-to-franchise',
-  'franchise-vs-license',
-  'what-makes-a-business-franchisable',
-  'operations-manual-guide',
-  'franchise-marketing-plan',
-  'choosing-a-franchise-consultant',
-  'fdd-item-19-financial-performance',
-  'franchise-territory-mapping',
-  'franchise-agreement-key-terms',
-  'how-to-find-franchisees',
-  'franchise-training-programs',
-  'multi-unit-franchise-strategy',
-  'franchise-compliance-checklist',
-  'state-franchise-registration-guide',
-  'franchise-royalty-structures',
-  'building-a-franchise-brand',
-  'franchise-technology-systems',
-  'franchise-real-estate-strategy',
-  'international-franchising-basics',
-  'franchise-legal-requirements',
-  'franchise-growth-timeline',
-  'unit-economics-for-franchises',
-  'franchise-support-infrastructure',
-  'common-franchise-mistakes',
-  'franchise-exit-strategies',
-  'franchise-industry-trends-2026',
-]
+import { blogPosts } from '@/data/blog-posts'
+import { FRANCHISE_LAWS } from '@/data/franchise-laws'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date().toISOString()
@@ -200,26 +143,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  const industryPages: MetadataRoute.Sitemap = INDUSTRY_SLUGS.map((slug) => ({
-    url: `${SITE_URL}/industries/${slug}`,
+  // Derived from source data: no hardcoded slugs
+  const industryPages: MetadataRoute.Sitemap = INDUSTRIES.map((industry) => ({
+    url: `${SITE_URL}/industries/${industry.slug}`,
     lastModified: now,
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }))
 
-  const statePages: MetadataRoute.Sitemap = STATE_SLUGS.map((slug) => ({
-    url: `${SITE_URL}/franchise-laws/${slug}`,
+  const statePages: MetadataRoute.Sitemap = FRANCHISE_LAWS.map((state) => ({
+    url: `${SITE_URL}/franchise-laws/${state.slug}`,
     lastModified: now,
     changeFrequency: 'monthly' as const,
     priority: 0.6,
   }))
 
-  const blogPages: MetadataRoute.Sitemap = BLOG_SLUGS.map((slug) => ({
-    url: `${SITE_URL}/blog/${slug}`,
-    lastModified: now,
-    changeFrequency: 'monthly' as const,
-    priority: 0.6,
-  }))
+  const blogPages: MetadataRoute.Sitemap = blogPosts
+    .filter((post) => post.content.length > 0)
+    .map((post) => ({
+      url: `${SITE_URL}/blog/${post.slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    }))
 
   const cityPages: MetadataRoute.Sitemap = cities.map((city) => ({
     url: `${SITE_URL}/locations/${city.slug}`,

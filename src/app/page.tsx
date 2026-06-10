@@ -8,9 +8,9 @@ import { GuidedPath } from '@/components/GuidedPath'
 import { HomeClient } from '@/components/HomeClient'
 
 export const metadata = createMetadata({
-  title: 'Forge Franchising Group | Franchise Development for Proven Businesses',
+  title: 'Franchise Your Proven Business',
   description:
-    'Forge Franchising Group helps profitable business owners turn their proven concept into a scalable franchise brand. Feasibility, FDD, operations, and franchise sales under one roof.',
+    'Forge Franchising helps profitable business owners turn their proven concept into a scalable franchise brand. Feasibility, FDD, operations, and franchise sales under one roof.',
   path: '',
 })
 

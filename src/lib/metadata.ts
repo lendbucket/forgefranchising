@@ -10,17 +10,18 @@ type MetadataArgs = {
 
 export function createMetadata({ title, description, path = '', ogImage }: MetadataArgs): Metadata {
   const url = `${SITE_URL}${path}`
-  const fullTitle = path === '' ? title : `${title} | ${SITE_NAME}`
+
+  const ogTitle = `${title} | Forge Franchising`
 
   return {
-    title: fullTitle,
+    title,
     description,
     metadataBase: new URL(SITE_URL),
     alternates: {
       canonical: url,
     },
     openGraph: {
-      title: fullTitle,
+      title: ogTitle,
       description,
       url,
       siteName: SITE_NAME,
@@ -29,7 +30,7 @@ export function createMetadata({ title, description, path = '', ogImage }: Metad
     },
     twitter: {
       card: 'summary_large_image',
-      title: fullTitle,
+      title: ogTitle,
       description,
     },
   }

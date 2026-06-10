@@ -76,7 +76,7 @@ export const INDUSTRIES = [
     slug: 'home-services',
     name: 'Home Services',
     shortName: 'Home Services',
-    keyword: 'franchise your home services business',
+    keyword: 'franchise a home services company',
     description: 'Scale your home services business through franchising.',
   },
   {

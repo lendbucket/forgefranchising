@@ -168,7 +168,7 @@ export default function ApplyPage() {
       <main>
         <section className="bg-espresso py-20">
           <div className="container mx-auto px-6 text-center">
-            <h1 className="heading-1 text-cream mb-6">Application Received</h1>
+            <h2 className="heading-1 text-cream mb-6">Application Received</h2>
             <p className="body-large text-cream/80 max-w-2xl mx-auto">
               Thank you for your interest in Forge Franchising. Our franchise development team
               will review your application and reach out within 2 business days.

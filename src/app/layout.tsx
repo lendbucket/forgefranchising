@@ -25,8 +25,8 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} | Turn Your Business Into a Franchise`,
-    template: `%s | ${SITE_NAME}`,
+    default: 'Franchise Your Business | Forge Franchising',
+    template: '%s | Forge Franchising',
   },
   description: SITE_DESCRIPTION,
   openGraph: {

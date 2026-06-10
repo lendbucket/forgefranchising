@@ -22,8 +22,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: 'Post Not Found' }
   }
 
+  // Keep SEO title under 60 chars (template adds " | Forge Franchising" = 21 chars)
+  const maxTitleLen = 38
+  const seoTitle = post.title.length <= maxTitleLen
+    ? post.title
+    : post.title.replace(/:.+$/, '').replace(/\s+\(.+\)$/, '').slice(0, maxTitleLen).replace(/\s+\S*$/, '')
+
   return {
-    title: post.title,
+    title: seoTitle,
     description: post.description,
     openGraph: {
       title: post.title,

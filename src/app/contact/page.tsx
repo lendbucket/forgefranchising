@@ -236,7 +236,7 @@ export default function ContactPage() {
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
               </div>
-              <h1 className="heading-2 mb-4">Your Inquiry Has Been Received</h1>
+              <h2 className="heading-2 mb-4">Your Inquiry Has Been Received</h2>
               <p className="body-large mb-4">
                 We review every submission personally. If your business looks like a strong candidate
                 for franchising, we will reach out within one business day to schedule a feasibility call.

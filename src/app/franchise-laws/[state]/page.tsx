@@ -28,12 +28,7 @@ export async function generateMetadata({ params }: Props) {
   const stateData = getStateBySlug(slug)
   if (!stateData) return {}
 
-  const titleKeyword =
-    stateData.category === 'registration'
-      ? `${stateData.name} Franchise Registration Requirements`
-      : stateData.category === 'filing'
-        ? `${stateData.name} Franchise Filing Requirements`
-        : `${stateData.name} Franchise Laws and Requirements`
+  const titleKeyword = `${stateData.name} Franchise Laws`
 
   return createMetadata({
     title: titleKeyword,
