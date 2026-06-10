@@ -77,7 +77,7 @@ export default function HomePage() {
         {/* Background image: mobile subtle overlay */}
         <div className="absolute inset-0 lg:hidden">
           <Image
-            src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=85"
+            src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=75"
             alt="Forge Franchising franchise development consulting session"
             fill
             className="object-cover opacity-15"
@@ -86,9 +86,9 @@ export default function HomePage() {
           />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 pt-28 sm:pt-36 lg:pt-40 pb-20 sm:pb-28 lg:pb-32">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 pt-28 sm:pt-36 lg:pt-32 pb-20 sm:pb-28 lg:pb-16">
           {/* Centered animated logo */}
-          <div className="flex justify-center mb-10 sm:mb-12 lg:mb-14">
+          <div className="flex justify-center mb-10 sm:mb-12 lg:mb-10">
             <Image
               src="/forge-franchising-logo-white.png"
               alt="Forge Franchising Group, franchise development and consulting company"
