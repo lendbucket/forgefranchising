@@ -28,6 +28,7 @@ const megaMenu = {
   Resources: {
     links: [
       { label: 'Blog', href: '/blog', desc: 'Guides, case studies, and insights' },
+      { label: 'Franchise Branding', href: '/franchise-branding', desc: 'Why brand is the product when you franchise' },
       { label: 'Learn', href: '/learn', desc: 'Free franchise development resources' },
       { label: 'Franchise Glossary', href: '/glossary', desc: '100+ franchise terms explained' },
       { label: 'Franchise Laws by State', href: '/franchise-laws', desc: 'Registration and filing requirements' },

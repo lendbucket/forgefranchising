@@ -40,6 +40,7 @@ export const NAV_LINKS = [
     children: [
       { label: 'Learn & Resources', href: '/learn' },
       { label: 'Blog', href: '/blog' },
+      { label: 'Franchise Branding', href: '/franchise-branding' },
       { label: 'Franchise Glossary', href: '/glossary' },
       { label: 'Franchise Laws by State', href: '/franchise-laws' },
       { label: 'Franchise Calculator', href: '/calculator' },

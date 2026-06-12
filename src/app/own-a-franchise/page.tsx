@@ -14,7 +14,7 @@ const valueStackItems = [
   {
     title: 'The Forge Brand and Reputation',
     description:
-      'You launch under a recognized name in franchise development. Not a generic certificate. A brand that business owners already associate with serious franchise consulting.',
+      'You launch under a recognized name in franchise development. Not a generic certificate. A brand that business owners already associate with serious franchise consulting. Learn why brand is the product in franchising.',
   },
   {
     title: 'Proprietary CRM and Software Platform',

@@ -204,7 +204,9 @@ Track acknowledgments. When you push an update, require franchisees to confirm t
 
 Here is something most franchise consultants will not tell you. The quality of your operations manual is one of the first things a sophisticated multi-unit franchisee evaluates before buying into a system. Experienced operators know that a thin, vague manual signals a franchisor who has not done the work. A comprehensive, well-organized, regularly updated manual signals a franchisor who takes the business seriously.
 
-Your operations manual is a sales tool, a training tool, a legal document, and a brand protection mechanism all in one. Invest the time and money to build it right. It will pay for itself many times over.`,
+Your operations manual is a sales tool, a training tool, a legal document, and a brand protection mechanism all in one. Invest the time and money to build it right. It will pay for itself many times over.
+
+For a deeper look at how the operations manual connects to your overall franchise brand strategy, read our [franchise branding guide](/franchise-branding) and the specific section on [building a franchise brand](/franchise-branding/building-a-franchise-brand).`,
   },
   {
     slug: 'royalties-and-franchise-fees',
@@ -323,7 +325,7 @@ Set your fees with that principle in mind, and the revenue will follow.`,
 
 The first five franchisees you bring into your system will shape everything that follows. They will be your case studies, your references, your proof of concept. If they succeed, you have momentum. If they fail, you have a credibility problem that takes years to recover from.
 
-This is why recruiting and qualifying franchisees is not the same as selling a product. You are not trying to close anyone who has a checkbook. You are selecting business partners who will carry your brand into new markets. The quality of that selection process determines the trajectory of your entire franchise system.
+This is why recruiting and qualifying franchisees is not the same as selling a product. You are not trying to close anyone who has a checkbook. You are selecting business partners who will carry your [franchise brand](/franchise-branding) into new markets. The quality of that selection process determines the trajectory of your entire franchise system.
 
 ## Where Franchise Leads Come From
 
@@ -636,7 +638,9 @@ Before you sell your first franchise, answer these questions: What does this sys
 
 Every mistake on this list shares a root cause: prioritizing speed over quality. Speed of launch. Speed of sales. Speed of growth. The franchisors who succeed are the ones who do the hard, slow work of building systems, selecting the right partners, and supporting them relentlessly.
 
-Franchising is not a get-rich-quick strategy. It is a business model that rewards patience, discipline, and genuine commitment to the success of your franchisees. Build it right, and it compounds. Rush it, and it collapses.`,
+Franchising is not a get-rich-quick strategy. It is a business model that rewards patience, discipline, and genuine commitment to the success of your franchisees. Build it right, and it compounds. Rush it, and it collapses.
+
+One of the most common mistakes is underinvesting in the brand. Your [franchise brand](/franchise-branding) is the product your franchisees are buying. Without strong [brand standards](/franchise-branding/brand-standards-enforcement), consistency erodes and the system falls apart.`,
   },
   {
     slug: 'protect-brand-trademarks',
@@ -741,7 +745,9 @@ Full trademark protection for a franchise launch, including comprehensive search
 
 This is one of the smallest line items in a franchise development budget, and one of the most important. A single trademark dispute can cost $50,000 to $200,000 or more to resolve. A forced rebrand after launching a franchise system can effectively destroy it.
 
-Protect the brand before you sell the right to use it. Everything else in your franchise system depends on it.`,
+Protect the brand before you sell the right to use it. Everything else in your franchise system depends on it.
+
+For the complete framework on franchise brand strategy, from building to enforcing to protecting, read our [franchise branding guide](/franchise-branding) and the detailed section on [protecting your franchise brand](/franchise-branding/protecting-your-brand).`,
   },
   {
     slug: 'franchise-territory-design',

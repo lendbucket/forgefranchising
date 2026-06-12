@@ -43,7 +43,7 @@ const phases = [
       'Operations Manual: a comprehensive, training ready document that captures how your business actually runs',
       'Item 7 financial model: the initial investment table that every prospective franchisee evaluates first',
       'Item 19 financial performance representation (if eligible): the single most powerful franchise sales tool available',
-      'Trademark and intellectual property strategy: protecting the brand before it scales',
+      'Trademark and intellectual property strategy: protecting the brand before it scales (see our franchise branding guide for the full brand development framework)',
     ],
     outcome: 'You have a complete, legally reviewed franchise system ready for state registration.',
   },
@@ -208,8 +208,8 @@ export default function HowItWorksPage() {
       <ContinueLearning
         heading="Go Deeper"
         links={[
+          { label: 'Franchise Branding Guide', href: '/franchise-branding', description: 'Why brand is the product when you franchise, and how to build one worth buying.' },
           { label: 'What Each Service Includes', href: '/services', description: 'Seven services that build on each other in a specific sequence.' },
-          { label: 'Compare Our Packages', href: '/packages', description: 'Three engagement tiers. See exactly what is included at each level.' },
           { label: 'What Does It Cost?', href: '/blog/cost-to-franchise-a-business', description: 'Real cost ranges, what drives them, and what to watch for.' },
         ]}
       />

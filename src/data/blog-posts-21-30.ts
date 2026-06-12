@@ -11,7 +11,7 @@ export const blogPosts21to30 = [
 
 Home services is the single most franchise-friendly industry in America. Plumbing, HVAC, cleaning, pest control, roofing, landscaping, electrical. The demand is constant, the work is local, and the business model is repeatable. That combination is exactly what makes a concept scalable through franchising.
 
-Think about it from the franchisee's perspective. They get a known brand, a proven marketing playbook, and operational systems that help them compete against solo operators who are winging it. From your perspective as the franchisor, you get capital-light expansion with owner-operators who have skin in the game.
+Think about it from the franchisee's perspective. They get a known [franchise brand](/franchise-branding), a proven marketing playbook, and operational systems that help them compete against solo operators who are winging it. From your perspective as the franchisor, you get capital-light expansion with owner-operators who have skin in the game.
 
 Brands like ServiceMaster, Mosquito Joe, and Two Maids have all demonstrated that home services concepts can scale nationally through franchising. But the path from a single successful operation to a franchise system is not automatic. It requires deliberate preparation.
 

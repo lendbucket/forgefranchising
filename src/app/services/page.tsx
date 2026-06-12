@@ -55,7 +55,7 @@ const services = [
     deliver: [
       'Complete operations manual covering pre-opening through daily operations',
       'Standard operating procedures for every key business function',
-      'Brand standards guide (visual identity, customer experience, quality benchmarks)',
+      'Brand standards guide built from our franchise branding methodology (visual identity, customer experience, quality benchmarks)',
       'Vendor and supplier specifications',
       'Technology systems documentation',
       'Digital format optimized for training and ongoing reference',
