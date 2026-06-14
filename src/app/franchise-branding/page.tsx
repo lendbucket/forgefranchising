@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { createMetadata } from '@/lib/metadata'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
+import { ContinueLearning } from '@/components/ContinueLearning'
 import { KeyTakeaways } from '@/components/KeyTakeaways'
 import { StickyCTA } from '@/components/StickyCTA'
 import { ReadingProgress } from '@/components/ReadingProgress'
@@ -272,6 +273,15 @@ export default function FranchiseBrandingPage() {
           </div>
         </div>
       </section>
+
+      <ContinueLearning
+        heading="Related Guides"
+        links={[
+          { label: 'Franchise vs License', href: '/franchise-vs-license', description: 'Understand the difference between franchising your brand and licensing your system.' },
+          { label: 'Financing Your Development', href: '/financing', description: 'Common funding paths for franchise development and how to prepare.' },
+          { label: 'How the Process Works', href: '/how-it-works', description: 'The four phases from feasibility to scale, step by step.' },
+        ]}
+      />
 
       <SectionCTA
         heading="Find Out If Your Brand Is Ready to Franchise"

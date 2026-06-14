@@ -45,6 +45,7 @@ export const NAV_LINKS = [
       { label: 'Franchise Laws by State', href: '/franchise-laws' },
       { label: 'Franchise Calculator', href: '/calculator' },
       { label: 'Franchise Financing', href: '/financing' },
+      { label: 'Franchise vs License', href: '/franchise-vs-license' },
     ],
   },
   { label: 'FAQ', href: '/faq' },

@@ -179,8 +179,17 @@ export default function OwnAFranchisePage() {
             <p className="text-lg sm:text-xl text-cream/60 leading-relaxed mb-4 max-w-2xl">
               You are an ambitious professional who wants to own a business, not just work a job. Forge gives you the brand, the training, the technology, and the deal flow to build a consulting practice that helps business owners franchise and grow.
             </p>
-            <p className="text-lg sm:text-xl text-cream/60 leading-relaxed mb-10 max-w-2xl">
+            <p className="text-lg sm:text-xl text-cream/60 leading-relaxed mb-4 max-w-2xl">
               This is how you go from employee to business owner without starting from scratch.
+            </p>
+            <p className="text-sm text-cream/40 leading-relaxed mb-10 max-w-2xl">
+              Wondering how to fund the investment? See our{' '}
+              <Link href="/financing" className="text-amber/80 hover:text-amber underline">
+                financing options for franchise development
+              </Link>. Not sure if franchising or licensing fits your goals? Read our{' '}
+              <Link href="/franchise-vs-license" className="text-amber/80 hover:text-amber underline">
+                franchise vs license comparison
+              </Link>.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-4">
               <Link href="/own-a-franchise/apply" className="btn-primary text-center">

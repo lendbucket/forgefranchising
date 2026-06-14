@@ -305,8 +305,8 @@ export default function PackagesPage() {
                 a: 'We occasionally take on standalone projects for businesses that already have part of their franchise system built. If you have an FDD but need an operations manual, or you have a manual but need registration support, reach out. We will tell you honestly whether a standalone engagement makes sense or whether a package is the better value.',
               },
               {
-                q: 'Do you offer payment plans?',
-                a: 'Yes. We structure payments around project milestones so you are never paying for work that has not been delivered. The specific payment schedule depends on the package and scope, and we finalize it before any engagement begins.',
+                q: 'Do you offer payment plans or financing?',
+                a: 'Yes. We structure payments around project milestones so you are never paying for work that has not been delivered. Many clients also finance the engagement through SBA loans, business lines of credit, or cash flow. See our financing guide for common funding paths and how to prepare your application.',
               },
             ].map((item) => (
               <div key={item.q}>
@@ -350,8 +350,8 @@ export default function PackagesPage() {
         heading="Continue Your Research"
         links={[
           { label: 'How the Process Works', href: '/how-it-works', description: 'The four phases every franchise we build moves through, from feasibility to scale.' },
-          { label: 'What Does It Actually Cost?', href: '/blog/cost-to-franchise-a-business', description: 'Honest cost ranges, what drives them, and red flags to watch for.' },
-          { label: 'Model Your Franchise Economics', href: '/calculator', description: 'See what your franchise system could generate in fees and royalties.' },
+          { label: 'Financing Your Development', href: '/financing', description: 'Common funding paths, what lenders look for, and how to prepare your business case.' },
+          { label: 'Franchise vs License', href: '/franchise-vs-license', description: 'Compare both growth paths side by side before you choose a package.' },
         ]}
       />
 

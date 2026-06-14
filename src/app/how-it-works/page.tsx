@@ -208,9 +208,9 @@ export default function HowItWorksPage() {
       <ContinueLearning
         heading="Go Deeper"
         links={[
+          { label: 'Financing Your Development', href: '/financing', description: 'Common funding paths, what lenders look for, and how to prepare your business case.' },
+          { label: 'Franchise vs License', href: '/franchise-vs-license', description: 'Not sure which growth model fits? Compare both paths side by side.' },
           { label: 'Franchise Branding Guide', href: '/franchise-branding', description: 'Why brand is the product when you franchise, and how to build one worth buying.' },
-          { label: 'What Each Service Includes', href: '/services', description: 'Seven services that build on each other in a specific sequence.' },
-          { label: 'What Does It Cost?', href: '/blog/cost-to-franchise-a-business', description: 'Real cost ranges, what drives them, and what to watch for.' },
         ]}
       />
 

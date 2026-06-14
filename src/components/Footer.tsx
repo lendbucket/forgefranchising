@@ -19,6 +19,8 @@ const footerLinks = {
   Resources: [
     { label: 'Blog', href: '/blog' },
     { label: 'Franchise Branding', href: '/franchise-branding' },
+    { label: 'Franchise Financing', href: '/financing' },
+    { label: 'Franchise vs License', href: '/franchise-vs-license' },
     { label: 'Franchise Glossary', href: '/glossary' },
     { label: 'Franchise Laws by State', href: '/franchise-laws' },
     { label: 'Franchise Calculator', href: '/calculator' },
@@ -27,7 +29,6 @@ const footerLinks = {
   Company: [
     { label: 'About Us', href: '/about' },
     { label: 'Contact', href: '/contact' },
-    { label: 'Financing', href: '/financing' },
     { label: 'Privacy Policy', href: '/privacy' },
     { label: 'Terms of Service', href: '/terms' },
   ],

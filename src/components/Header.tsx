@@ -29,6 +29,8 @@ const megaMenu = {
     links: [
       { label: 'Blog', href: '/blog', desc: 'Guides, case studies, and insights' },
       { label: 'Franchise Branding', href: '/franchise-branding', desc: 'Why brand is the product when you franchise' },
+      { label: 'Franchise Financing', href: '/financing', desc: 'Funding paths for franchise development' },
+      { label: 'Franchise vs License', href: '/franchise-vs-license', desc: 'Compare both growth paths side by side' },
       { label: 'Learn', href: '/learn', desc: 'Free franchise development resources' },
       { label: 'Franchise Glossary', href: '/glossary', desc: '100+ franchise terms explained' },
       { label: 'Franchise Laws by State', href: '/franchise-laws', desc: 'Registration and filing requirements' },
