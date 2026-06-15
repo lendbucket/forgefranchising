@@ -14,6 +14,7 @@ export const NAV_LINKS = [
     children: [
       { label: 'Our Services', href: '/services' },
       { label: 'How It Works', href: '/how-it-works' },
+      { label: 'Readiness Method', href: '/readiness-method' },
       { label: 'Packages', href: '/packages' },
     ],
   },

@@ -163,11 +163,15 @@ export default function PackagesPage() {
               level. No hidden fees, no surprise add-ons, no line items that only make sense to an accountant.
             </p>
             <p className="body-large">
-              Not sure which tier fits? That is what the{' '}
+              Not sure which tier fits? Start with the{' '}
+              <Link href="/readiness-method" className="text-amber font-semibold hover:underline">
+                Forge Franchise Readiness Method
+              </Link>{' '}
+              to understand where your business stands across all four pillars, or book a{' '}
               <Link href="/contact" className="text-amber font-semibold hover:underline">
                 free feasibility call
               </Link>{' '}
-              is for. We will assess your business and recommend the right starting point.
+              and we will recommend the right starting point.
             </p>
           </div>
         </div>

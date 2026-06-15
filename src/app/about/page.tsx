@@ -84,7 +84,7 @@ export default function AboutPage() {
                   },
                   {
                     title: 'We follow a documented process',
-                    body: 'We do not improvise. Every franchise we develop moves through the same four phases: Feasibility, Structure, Launch, and Scale. This process is proven, repeatable, and transparent.',
+                    body: 'We do not improvise. Every engagement starts with the Forge Franchise Readiness Method, a four-pillar assessment that determines whether the fundamentals are in place. From there, our four-phase process (Feasibility, Structure, Launch, Scale) is proven, repeatable, and transparent.',
                   },
                   {
                     title: 'We are selective',

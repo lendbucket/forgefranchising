@@ -13,6 +13,7 @@ const megaMenu = {
       { label: 'Packages', href: '/packages', desc: 'Engagement tiers for every stage' },
       { label: 'Is My Business Franchisable?', href: '/is-my-business-franchisable', desc: 'Free readiness assessment' },
       { label: 'Franchise Calculator', href: '/calculator', desc: 'Model your franchise economics' },
+      { label: 'Readiness Method', href: '/readiness-method', desc: 'Our four-pillar franchise readiness assessment' },
       { label: 'Financing', href: '/financing', desc: 'Funding options for franchise development' },
       { label: 'Industries We Serve', href: '/industries', desc: 'Restaurants, salons, fitness, and more' },
     ],

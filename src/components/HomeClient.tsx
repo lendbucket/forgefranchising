@@ -126,6 +126,51 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
         </div>
       </section>
 
+      {/* READINESS METHOD: Four-pillar framework teaser */}
+      <section className="py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 bg-deep-cream">
+        <div className="max-w-7xl mx-auto">
+          <ScrollReveal>
+            <div className="max-w-2xl mb-16">
+              <p className="eyebrow mb-4">Our Methodology</p>
+              <h2 className="heading-2 mb-6">The Forge Franchise Readiness Method</h2>
+              <p className="body-large">
+                Before we build anything, we evaluate whether the foundation is solid. Our
+                proprietary readiness method assesses four pillars that determine whether a
+                business can franchise responsibly.
+              </p>
+            </div>
+          </ScrollReveal>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-espresso/8">
+            {[
+              { title: 'Profitability and Unit Economics', desc: 'Can the model support two layers of ownership and still deliver a strong operator return?' },
+              { title: 'Systems and Operations', desc: 'Are your processes documented well enough that a new operator can learn them without you?' },
+              { title: 'Brand Strength and Defensibility', desc: 'Does your brand carry enough recognition and legal protection to justify a franchise investment?' },
+              { title: 'Replicability and Market Demand', desc: 'Can the concept reproduce in a new market by a new operator, and does that market want it?' },
+            ].map((pillar, i) => (
+              <ScrollReveal key={pillar.title} delay={i as 1 | 2 | 3 | 4}>
+                <div className="bg-deep-cream p-8 lg:p-10 h-full">
+                  <span className="font-display font-bold text-amber text-2xl mb-4 block" style={{ letterSpacing: '-0.03em' }}>
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <h3 className="heading-4 mb-3">{pillar.title}</h3>
+                  <p className="text-muted-brown text-sm leading-relaxed">{pillar.desc}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+          <ScrollReveal>
+            <div className="mt-12 flex flex-col sm:flex-row gap-4 items-center sm:items-start">
+              <Link href="/readiness-method" className="btn-primary">
+                Explore the Full Method
+              </Link>
+              <Link href="/is-my-business-franchisable" className="btn-secondary">
+                Take the Quick Assessment
+              </Link>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* WHY FORGE: Differentiator section */}
       <WhyForge />
 

@@ -7,6 +7,7 @@ const footerLinks = {
     { label: 'How It Works', href: '/how-it-works' },
     { label: 'Our Services', href: '/services' },
     { label: 'Packages', href: '/packages' },
+    { label: 'Readiness Method', href: '/readiness-method' },
     { label: 'Is My Business Franchisable?', href: '/is-my-business-franchisable' },
     { label: 'All Industries', href: '/industries' },
   ],

@@ -168,16 +168,21 @@ export default function ServicesPage() {
               Everything You Need to Franchise Your Business. Nothing You Do Not.
             </h1>
             <p className="body-large mb-6">
-              Franchise development has seven core components. Skip one and you have gaps in your system.
-              Outsource them to seven different vendors and you spend more time managing contractors than
-              building your franchise. We handle all seven under one roof, with one team, and one process.
+              Most business owners who are ready to franchise find themselves in a gap: they know
+              their concept works, but they do not have the legal structure, operational documentation,
+              or sales infrastructure to actually sell a franchise. The Forge Franchise Readiness Method
+              identifies exactly where those gaps are. The seven services below close them.
             </p>
             <p className="body-large mb-8">
               Every service below is available as part of our{' '}
               <Link href="/packages" className="text-amber font-semibold hover:underline">
                 engagement packages
               </Link>
-              , or you can learn about{' '}
+              . Start with our{' '}
+              <Link href="/readiness-method" className="text-amber font-semibold hover:underline">
+                readiness method
+              </Link>{' '}
+              to see which services your business needs, or learn about{' '}
               <Link href="/how-it-works" className="text-amber font-semibold hover:underline">
                 how our process works
               </Link>{' '}

@@ -169,10 +169,17 @@ export default function FranchiseBrandingPage() {
               failed usually did not. They thought they were selling a business model. They
               were actually selling a brand, and they had not built one worth buying.
             </p>
-            <p className="body-large mb-8">
+            <p className="body-large mb-6">
               This guide covers the full arc of franchise branding: why it matters, how
               customers recognize it, how to build it, how to enforce it, and how to
               protect it legally. Each section links to a deeper guide on the topic.
+            </p>
+            <p className="body-large mb-8">
+              Brand strength is one of the four pillars in the{' '}
+              <Link href="/readiness-method" className="text-amber font-semibold hover:underline">
+                Forge Franchise Readiness Method
+              </Link>. If you have not assessed where your brand stands relative to the other
+              three pillars, start there.
             </p>
 
             <KeyTakeaways

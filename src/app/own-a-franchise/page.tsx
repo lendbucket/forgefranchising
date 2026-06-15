@@ -27,9 +27,9 @@ const valueStackItems = [
       'Full certification in both franchise consulting (helping owners franchise their business) and franchise brokerage (matching buyers with franchise brands). Two revenue streams from day one.',
   },
   {
-    title: 'FDD Preparation Methodology and Templates',
+    title: 'The Forge Franchise Readiness Method',
     description:
-      'Our proven system for building Franchise Disclosure Documents. Tested across dozens of brands and built to pass state examiner review the first time.',
+      'Our proprietary four-pillar assessment framework that evaluates profitability, systems, brand, and replicability before any franchise development begins. You deliver this methodology to your consulting clients.',
   },
   {
     title: 'Lead Generation Systems',

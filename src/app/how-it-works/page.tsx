@@ -6,6 +6,7 @@ import { OpenLoop } from '@/components/OpenLoop'
 import { KeyTakeaways } from '@/components/KeyTakeaways'
 import { StickyCTA } from '@/components/StickyCTA'
 import { ReadingProgress } from '@/components/ReadingProgress'
+import Link from 'next/link'
 import { SITE_URL } from '@/lib/constants'
 
 export const metadata = createMetadata({
@@ -111,13 +112,25 @@ export default function HowItWorksPage() {
               How to Franchise Your Business: The Four Phase Process
             </h1>
             <p className="body-large mb-6">
-              Franchising is not a single event. It is a structured process that moves through four
-              distinct phases, each building on the one before it. Skipping a phase or rushing through
-              it is how franchise systems fail. Doing it right is how they scale to 50 or 100 units.
+              Most business owners considering franchising are in the same place: they have a concept
+              that works, customers who keep coming back, and a gut feeling that it could work
+              somewhere else. What they do not have is a structured path from where they are to
+              where they want to be.
+            </p>
+            <p className="body-large mb-6">
+              The Forge Franchise Readiness Method starts by evaluating whether your business
+              meets the four foundational conditions for franchising. From there, our four-phase
+              process moves you from validated concept to operating franchise system. Each phase
+              builds on the one before it. Skipping a phase or rushing through it is how franchise
+              systems fail. Doing it right is how they scale to 50 or 100 units.
             </p>
             <p className="body-large mb-8">
               Here is exactly how we take a proven business and turn it into a franchise brand.
-              No mysteries, no hand waving, no surprises.
+              No mysteries, no hand waving, no surprises. Start with our{' '}
+              <Link href="/readiness-method" className="text-amber font-semibold hover:underline">
+                franchise readiness assessment
+              </Link>{' '}
+              to see where you stand today.
             </p>
             {/* Key takeaways: skimmers get value in 10 seconds */}
             <KeyTakeaways
