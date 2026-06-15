@@ -4,7 +4,8 @@ import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
 import { OpenLoop } from '@/components/OpenLoop'
 import { KeyTakeaways } from '@/components/KeyTakeaways'
-import { MISSION_STATEMENT } from '@/lib/constants'
+import { MISSION_STATEMENT, SITE_URL } from '@/lib/constants'
+import { webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 
 export const metadata = createMetadata({
   title: 'About Us',
@@ -16,6 +17,22 @@ export const metadata = createMetadata({
 export default function AboutPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: renderSchema([
+            webPageSchema({
+              url: `${SITE_URL}/about`,
+              name: 'About Us',
+              description: 'Forge Franchising Group is an operator built franchise development firm. We turn proven businesses into franchise brands with real experience and a clear path.',
+            }),
+            breadcrumbSchema(`${SITE_URL}/about`, [
+              { name: 'About Us' },
+            ]),
+          ]),
+        }}
+      />
+
       <section className="bg-cream">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'About Us' }]} />

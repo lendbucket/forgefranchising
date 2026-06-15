@@ -7,6 +7,7 @@ import { KeyTakeaways } from '@/components/KeyTakeaways'
 import { StickyCTA } from '@/components/StickyCTA'
 import { ReadingProgress } from '@/components/ReadingProgress'
 import { SITE_URL } from '@/lib/constants'
+import { faqSchema, webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 
 export const metadata = createMetadata({
   title: 'Franchise vs License Your Business',
@@ -87,33 +88,24 @@ export default function FranchiseVsLicensePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
-              { '@type': 'ListItem', position: 2, name: 'Resources', item: `${SITE_URL}/learn` },
-              { '@type': 'ListItem', position: 3, name: 'Franchise vs License', item: `${SITE_URL}/franchise-vs-license` },
-            ],
-          }),
-        }}
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: faqs.map((faq) => ({
-              '@type': 'Question',
-              name: faq.q,
-              acceptedAnswer: {
-                '@type': 'Answer',
-                text: faq.a,
-              },
-            })),
-          }),
+          __html: renderSchema([
+            webPageSchema({
+              url: `${SITE_URL}/franchise-vs-license`,
+              name: 'Franchise vs License Your Business',
+              description: 'Franchise vs license your business: understand the legal, operational, and financial differences, then choose the right growth path.',
+            }),
+            breadcrumbSchema(`${SITE_URL}/franchise-vs-license`, [
+              { name: 'Resources', url: `${SITE_URL}/learn` },
+              { name: 'Franchise vs License' },
+            ]),
+            faqSchema({
+              url: `${SITE_URL}/franchise-vs-license`,
+              questions: faqs.map((faq) => ({
+                question: faq.q,
+                answer: faq.a,
+              })),
+            }),
+          ]),
         }}
       />
 

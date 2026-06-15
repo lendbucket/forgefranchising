@@ -7,6 +7,7 @@ import { KeyTakeaways } from '@/components/KeyTakeaways'
 import { StickyCTA } from '@/components/StickyCTA'
 import { ReadingProgress } from '@/components/ReadingProgress'
 import { SITE_URL } from '@/lib/constants'
+import { articleSchema, faqSchema, webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 
 export const metadata = createMetadata({
   title: 'Franchise Branding Guide',
@@ -108,45 +109,28 @@ export default function FranchiseBrandingPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Article',
-            headline: 'Franchise Branding: Why Brand Is the Product',
-            description: 'A complete guide to building, enforcing, and protecting a franchise brand that compounds across every unit.',
-            author: {
-              '@type': 'Organization',
-              name: 'Forge Franchising Group',
-              url: SITE_URL,
-            },
-            publisher: {
-              '@type': 'Organization',
-              name: 'Forge Franchising Group',
-              url: SITE_URL,
-            },
-            mainEntityOfPage: {
-              '@type': 'WebPage',
-              '@id': `${SITE_URL}/franchise-branding`,
-            },
-            url: `${SITE_URL}/franchise-branding`,
-          }),
-        }}
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: faqs.map((faq) => ({
-              '@type': 'Question',
-              name: faq.q,
-              acceptedAnswer: {
-                '@type': 'Answer',
-                text: faq.a,
-              },
-            })),
-          }),
+          __html: renderSchema([
+            webPageSchema({
+              url: `${SITE_URL}/franchise-branding`,
+              name: 'Franchise Branding Guide',
+              description: 'Why brand is the product when you franchise. A complete guide to building, enforcing, and protecting a franchise brand that compounds across every unit.',
+            }),
+            breadcrumbSchema(`${SITE_URL}/franchise-branding`, [
+              { name: 'Franchise Branding' },
+            ]),
+            articleSchema({
+              url: `${SITE_URL}/franchise-branding`,
+              headline: 'Franchise Branding: Why Brand Is the Product',
+              description: 'A complete guide to building, enforcing, and protecting a franchise brand that compounds across every unit.',
+            }),
+            faqSchema({
+              url: `${SITE_URL}/franchise-branding`,
+              questions: faqs.map((faq) => ({
+                question: faq.q,
+                answer: faq.a,
+              })),
+            }),
+          ]),
         }}
       />
 

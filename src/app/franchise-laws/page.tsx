@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import { createMetadata } from '@/lib/metadata'
+import { SITE_URL } from '@/lib/constants'
+import { webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
@@ -24,6 +26,21 @@ export default function FranchiseLawsPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: renderSchema([
+            webPageSchema({
+              url: `${SITE_URL}/franchise-laws`,
+              name: 'Franchise Laws by State',
+              description: 'Franchise registration and filing requirements in all 50 states. Learn which states require FDD registration, which require filing, and which have no law.',
+            }),
+            breadcrumbSchema(`${SITE_URL}/franchise-laws`, [
+              { name: 'Franchise Laws by State' },
+            ]),
+          ]),
+        }}
+      />
       {/* Hero */}
       <section className="bg-cream">
         <div className="container-wide section-padding">

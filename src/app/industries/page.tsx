@@ -5,7 +5,8 @@ import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
 import { OpenLoop } from '@/components/OpenLoop'
 import { StickyCTA } from '@/components/StickyCTA'
-import { INDUSTRIES } from '@/lib/constants'
+import { INDUSTRIES, SITE_URL } from '@/lib/constants'
+import { webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 
 export const metadata = createMetadata({
   title: 'Industries We Franchise',
@@ -17,6 +18,22 @@ export const metadata = createMetadata({
 export default function IndustriesPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: renderSchema([
+            webPageSchema({
+              url: `${SITE_URL}/industries`,
+              name: 'Industries We Franchise',
+              description: 'Franchise development across 10 major industries. Learn which business types franchise best and what it takes to scale your concept nationally.',
+            }),
+            breadcrumbSchema(`${SITE_URL}/industries`, [
+              { name: 'Industries' },
+            ]),
+          ]),
+        }}
+      />
+
       <section className="bg-cream">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'Industries' }]} />

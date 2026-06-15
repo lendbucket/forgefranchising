@@ -3,6 +3,12 @@ import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
 import { cities, getCityBySlug } from '@/data/cities'
 import { SITE_URL, SITE_NAME } from '@/lib/constants'
+import {
+  localBusinessSchema as localBusinessSchemaHelper,
+  webPageSchema,
+  breadcrumbSchema as breadcrumbSchemaHelper,
+  renderSchema,
+} from '@/lib/schema'
 import { SectionCTA } from '@/components/SectionCTA'
 
 export function generateStaticParams() {
@@ -45,41 +51,32 @@ export default async function CityPage({ params }: Props) {
     notFound()
   }
 
-  const localBusinessSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: `${SITE_NAME} - ${city.name}, ${city.stateAbbr}`,
-    description: `Franchise consulting services in ${city.name}, ${city.stateAbbr}. We help business owners franchise their proven concepts and connect qualified buyers with franchise opportunities.`,
-    url: `${SITE_URL}/locations/${city.slug}`,
-    areaServed: {
-      '@type': 'City',
-      name: city.name,
-      containedInPlace: {
-        '@type': 'State',
-        name: city.state,
-      },
-    },
-    serviceType: [
-      'Franchise Consulting',
-      'Franchise Development',
-      'Franchise Brokerage',
-    ],
-    parentOrganization: {
-      '@type': 'Organization',
-      name: SITE_NAME,
-      url: SITE_URL,
-    },
-  }
+  const cityUrl = `${SITE_URL}/locations/${city.slug}`
 
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
-      { '@type': 'ListItem', position: 2, name: 'Locations', item: `${SITE_URL}/locations` },
-      { '@type': 'ListItem', position: 3, name: `${city.name}, ${city.stateAbbr}`, item: `${SITE_URL}/locations/${city.slug}` },
-    ],
-  }
+  const cityGraphJson = renderSchema([
+    webPageSchema({
+      url: cityUrl,
+      name: `${city.name} Franchise Consultant`,
+      description: `Franchise consulting in the ${city.metroArea} metro. Forge Franchising helps ${city.name} business owners franchise their proven concepts.`,
+    }),
+    breadcrumbSchemaHelper(cityUrl, [
+      { name: 'Locations', url: `${SITE_URL}/locations` },
+      { name: `${city.name}, ${city.stateAbbr}` },
+    ]),
+    localBusinessSchemaHelper({
+      url: cityUrl,
+      name: `${SITE_NAME} - ${city.name}, ${city.stateAbbr}`,
+      description: `Franchise consulting services in ${city.name}, ${city.stateAbbr}. We help business owners franchise their proven concepts and connect qualified buyers with franchise opportunities.`,
+      areaServed: {
+        '@type': 'City',
+        name: city.name,
+        containedInPlace: {
+          '@type': 'State',
+          name: city.state,
+        },
+      },
+    }),
+  ])
 
   const industryLinkMap: Record<string, string> = {
     'Food & Beverage': '/industries/restaurants',
@@ -114,11 +111,7 @@ export default async function CityPage({ params }: Props) {
       {/* JSON-LD Structured Data */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: cityGraphJson }}
       />
 
       {/* Hero */}

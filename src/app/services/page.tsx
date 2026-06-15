@@ -6,7 +6,8 @@ import { ContinueLearning } from '@/components/ContinueLearning'
 import { OpenLoop } from '@/components/OpenLoop'
 import { StickyCTA } from '@/components/StickyCTA'
 import { ReadingProgress } from '@/components/ReadingProgress'
-import { SITE_NAME, SITE_URL } from '@/lib/constants'
+import { SITE_URL } from '@/lib/constants'
+import { serviceSchema, webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 
 export const metadata = createMetadata({
   title: 'Franchise Development Services',
@@ -130,32 +131,29 @@ export default function ServicesPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Service',
-            name: 'Franchise Development Services',
-            provider: {
-              '@type': 'Organization',
-              name: SITE_NAME,
-              url: SITE_URL,
-            },
-            description:
-              'Full service franchise development including feasibility studies, FDD preparation, operations manuals, state registration, training programs, franchise sales systems, and technology platforms.',
-            url: `${SITE_URL}/services`,
-            hasOfferCatalog: {
-              '@type': 'OfferCatalog',
+          __html: renderSchema([
+            webPageSchema({
+              url: `${SITE_URL}/services`,
               name: 'Franchise Development Services',
-              itemListElement: services.map((service) => ({
-                '@type': 'Offer',
-                itemOffered: {
-                  '@type': 'Service',
+              description: 'Franchise development services including feasibility studies, FDD preparation, operations manuals, state registration, training programs, and sales systems.',
+            }),
+            breadcrumbSchema(`${SITE_URL}/services`, [
+              { name: 'Services' },
+            ]),
+            serviceSchema({
+              url: `${SITE_URL}/services`,
+              name: 'Franchise Development Services',
+              description: 'Full service franchise development including feasibility studies, FDD preparation, operations manuals, state registration, training programs, franchise sales systems, and technology platforms.',
+              catalog: {
+                name: 'Franchise Development Services',
+                items: services.map((service) => ({
                   name: service.title,
                   description: service.what,
                   url: `${SITE_URL}/services#${service.id}`,
-                },
-              })),
-            },
-          }),
+                })),
+              },
+            }),
+          ]),
         }}
       />
 

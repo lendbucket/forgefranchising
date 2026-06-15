@@ -8,6 +8,7 @@ import { KeyTakeaways } from '@/components/KeyTakeaways'
 import { StickyCTA } from '@/components/StickyCTA'
 import { ReadingProgress } from '@/components/ReadingProgress'
 import { SITE_URL } from '@/lib/constants'
+import { faqSchema, webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 
 export const metadata = createMetadata({
   title: 'How to Finance Franchise Development',
@@ -47,33 +48,24 @@ export default function FinancingPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
-              { '@type': 'ListItem', position: 2, name: 'Resources', item: `${SITE_URL}/learn` },
-              { '@type': 'ListItem', position: 3, name: 'Franchise Financing', item: `${SITE_URL}/financing` },
-            ],
-          }),
-        }}
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: faqs.map((faq) => ({
-              '@type': 'Question',
-              name: faq.q,
-              acceptedAnswer: {
-                '@type': 'Answer',
-                text: faq.a,
-              },
-            })),
-          }),
+          __html: renderSchema([
+            webPageSchema({
+              url: `${SITE_URL}/financing`,
+              name: 'How to Finance Franchise Development',
+              description: 'Most franchise development is funded through financing, not cash on hand. Learn the common paths, what lenders look for, and how to prepare your business case.',
+            }),
+            breadcrumbSchema(`${SITE_URL}/financing`, [
+              { name: 'Resources', url: `${SITE_URL}/learn` },
+              { name: 'Franchise Financing' },
+            ]),
+            faqSchema({
+              url: `${SITE_URL}/financing`,
+              questions: faqs.map((faq) => ({
+                question: faq.q,
+                answer: faq.a,
+              })),
+            }),
+          ]),
         }}
       />
 

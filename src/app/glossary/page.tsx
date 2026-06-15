@@ -5,6 +5,7 @@ import { ContinueLearning } from '@/components/ContinueLearning'
 import { StickyCTA } from '@/components/StickyCTA'
 import { GlossaryTerms } from './GlossaryTerms'
 import { SITE_URL } from '@/lib/constants'
+import { definedTermSetSchema, webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 
 export const metadata = createMetadata({
   title: 'Franchise Glossary: 40+ Terms',
@@ -369,27 +370,35 @@ export default function GlossaryPage() {
   const letters = Object.keys(grouped).sort()
   const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
 
-  const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'DefinedTermSet',
-    name: 'Franchise Glossary',
-    description:
-      'A comprehensive glossary of franchise terms for business owners considering franchising their business.',
-    url: `${SITE_URL}/glossary`,
-    hasDefinedTerm: glossaryTerms.map((term) => ({
-      '@type': 'DefinedTerm',
-      name: term.term,
-      description: term.definition,
-      url: `${SITE_URL}/glossary#${term.slug}`,
-      inDefinedTermSet: `${SITE_URL}/glossary`,
-    })),
-  }
+  const pageUrl = `${SITE_URL}/glossary`
+
+  const glossaryGraphJson = renderSchema([
+    webPageSchema({
+      url: pageUrl,
+      name: 'Franchise Glossary: 40+ Terms',
+      description: 'Franchise glossary with 40+ terms every business owner should know before franchising. Clear definitions, real context, and why each term matters to you.',
+    }),
+    breadcrumbSchema(pageUrl, [
+      { name: 'Learn', url: `${SITE_URL}/learn` },
+      { name: 'Franchise Glossary' },
+    ]),
+    definedTermSetSchema({
+      url: pageUrl,
+      name: 'Franchise Glossary',
+      description: 'A comprehensive glossary of franchise terms for business owners considering franchising their business.',
+      terms: glossaryTerms.map((term) => ({
+        name: term.term,
+        description: term.definition,
+        url: `${SITE_URL}/glossary#${term.slug}`,
+      })),
+    }),
+  ])
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        dangerouslySetInnerHTML={{ __html: glossaryGraphJson }}
       />
 
       {/* Hero */}

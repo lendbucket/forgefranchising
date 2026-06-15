@@ -5,7 +5,8 @@ import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
 import { OpenLoop } from '@/components/OpenLoop'
 import { StickyCTA } from '@/components/StickyCTA'
-import { SITE_NAME, SITE_URL } from '@/lib/constants'
+import { SITE_URL } from '@/lib/constants'
+import { serviceSchema, webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 
 export const metadata = createMetadata({
   title: 'Franchise Development Packages',
@@ -116,31 +117,29 @@ export default function PackagesPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Service',
-            name: 'Franchise Development Packages',
-            provider: {
-              '@type': 'Organization',
-              name: SITE_NAME,
-              url: SITE_URL,
-            },
-            description:
-              'Three engagement tiers for franchise development: Launch, Growth, and Empire. Each tailored to your business stage and growth goals.',
-            url: `${SITE_URL}/packages`,
-            hasOfferCatalog: {
-              '@type': 'OfferCatalog',
+          __html: renderSchema([
+            webPageSchema({
+              url: `${SITE_URL}/packages`,
               name: 'Franchise Development Packages',
-              itemListElement: tiers.map((tier) => ({
-                '@type': 'Offer',
-                itemOffered: {
-                  '@type': 'Service',
+              description: 'Franchise development packages in three tiers: Launch, Growth, and Empire. Each is tailored to your business stage and goals.',
+            }),
+            breadcrumbSchema(`${SITE_URL}/packages`, [
+              { name: 'Services', url: `${SITE_URL}/services` },
+              { name: 'Packages' },
+            ]),
+            serviceSchema({
+              url: `${SITE_URL}/packages`,
+              name: 'Franchise Development Packages',
+              description: 'Three engagement tiers for franchise development: Launch, Growth, and Empire. Each tailored to your business stage and growth goals.',
+              catalog: {
+                name: 'Franchise Development Packages',
+                items: tiers.map((tier) => ({
                   name: `${tier.name} Package`,
                   description: tier.description,
-                },
-              })),
-            },
-          }),
+                })),
+              },
+            }),
+          ]),
         }}
       />
 

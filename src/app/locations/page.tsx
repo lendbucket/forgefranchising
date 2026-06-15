@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import { createMetadata } from '@/lib/metadata'
 import { cities } from '@/data/cities'
-import { SITE_URL, SITE_NAME } from '@/lib/constants'
+import { SITE_URL } from '@/lib/constants'
+import { webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 
 export const metadata = createMetadata({
   title: 'Franchise Consulting by City',
@@ -19,6 +20,22 @@ export default function LocationsPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: renderSchema([
+            webPageSchema({
+              url: `${SITE_URL}/locations`,
+              name: 'Franchise Consulting by City',
+              description: 'Find a Forge Franchising franchise consultant near you. We serve business owners and franchise candidates in over 60 major US markets.',
+            }),
+            breadcrumbSchema(`${SITE_URL}/locations`, [
+              { name: 'Locations' },
+            ]),
+          ]),
+        }}
+      />
+
       <section className="bg-espresso">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <nav aria-label="Breadcrumb">

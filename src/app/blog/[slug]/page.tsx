@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { blogPosts } from '@/data/blog-posts'
 import { SITE_URL, SITE_NAME } from '@/lib/constants'
+import { articleSchema, webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 import BlogPostClient from './BlogPostClient'
 
 type Props = {
@@ -61,56 +62,27 @@ export default async function BlogPostPage({ params }: Props) {
 
   const articleUrl = `${SITE_URL}/blog/${post.slug}`
 
-  const blogPostingJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
-    headline: post.title,
-    description: post.description,
-    datePublished: post.datePublished,
-    dateModified: post.datePublished,
-    author: {
-      '@type': 'Organization',
-      name: SITE_NAME,
-      url: SITE_URL,
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: SITE_NAME,
-      url: SITE_URL,
-    },
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': articleUrl,
-    },
-    url: articleUrl,
-    articleSection: post.category,
-    wordCount: post.content.split(/\s+/).length,
-  }
-
-  const breadcrumbJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Home',
-        item: SITE_URL,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Blog',
-        item: `${SITE_URL}/blog`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: post.title,
-        item: articleUrl,
-      },
-    ],
-  }
+  const blogGraphJson = renderSchema([
+    webPageSchema({
+      url: articleUrl,
+      name: post.title,
+      description: post.description,
+    }),
+    breadcrumbSchema(articleUrl, [
+      { name: 'Blog', url: `${SITE_URL}/blog` },
+      { name: post.title },
+    ]),
+    articleSchema({
+      url: articleUrl,
+      headline: post.title,
+      description: post.description,
+      datePublished: post.datePublished,
+      dateModified: post.datePublished,
+      articleType: 'BlogPosting',
+      articleSection: post.category,
+      wordCount: post.content.split(/\s+/).length,
+    }),
+  ])
 
   const relatedPosts = blogPosts
     .filter(
@@ -125,15 +97,7 @@ export default async function BlogPostPage({ params }: Props) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(blogPostingJsonLd),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbJsonLd),
-        }}
+        dangerouslySetInnerHTML={{ __html: blogGraphJson }}
       />
       <BlogPostClient post={post} relatedPosts={relatedPosts} />
     </>

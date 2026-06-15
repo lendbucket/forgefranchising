@@ -8,6 +8,7 @@ import { StickyCTA } from '@/components/StickyCTA'
 import { ReadingProgress } from '@/components/ReadingProgress'
 import Link from 'next/link'
 import { SITE_URL } from '@/lib/constants'
+import { howToSchema, webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 
 export const metadata = createMetadata({
   title: 'How It Works: 4 Phase Process',
@@ -87,19 +88,26 @@ export default function HowItWorksPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'HowTo',
-            name: 'How to Franchise Your Business',
-            description: 'The four phase process for turning a proven business into a franchise brand.',
-            step: phases.map((phase, i) => ({
-              '@type': 'HowToStep',
-              position: i + 1,
-              name: phase.title,
-              text: phase.summary,
-              url: `${SITE_URL}/how-it-works#phase-${phase.number}`,
-            })),
-          }),
+          __html: renderSchema([
+            webPageSchema({
+              url: `${SITE_URL}/how-it-works`,
+              name: 'How It Works: 4 Phase Process',
+              description: 'Our four phase franchise development process covers Feasibility, Structure, Launch, and Scale.',
+            }),
+            breadcrumbSchema(`${SITE_URL}/how-it-works`, [
+              { name: 'How It Works' },
+            ]),
+            howToSchema({
+              url: `${SITE_URL}/how-it-works`,
+              name: 'How to Franchise Your Business',
+              description: 'The four phase process for turning a proven business into a franchise brand.',
+              steps: phases.map((phase) => ({
+                name: phase.title,
+                text: phase.summary,
+                url: `${SITE_URL}/how-it-works#phase-${phase.number}`,
+              })),
+            }),
+          ]),
         }}
       />
 

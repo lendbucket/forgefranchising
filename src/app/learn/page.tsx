@@ -4,6 +4,8 @@ import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
 import { GuidedPath } from '@/components/GuidedPath'
 import { StickyCTA } from '@/components/StickyCTA'
+import { SITE_URL } from '@/lib/constants'
+import { webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 
 export const metadata = createMetadata({
   title: 'Franchise Education Resources',
@@ -115,6 +117,22 @@ const industryResources = [
 export default function LearnPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: renderSchema([
+            webPageSchema({
+              url: `${SITE_URL}/learn`,
+              name: 'Franchise Education Resources',
+              description: 'Free franchise education for business owners. Guides, tools, glossary, state law breakdowns, and calculators to help you understand what franchising requires.',
+            }),
+            breadcrumbSchema(`${SITE_URL}/learn`, [
+              { name: 'Learn & Resources' },
+            ]),
+          ]),
+        }}
+      />
+
       {/* Hero */}
       <section className="bg-cream">
         <div className="container-wide section-padding">

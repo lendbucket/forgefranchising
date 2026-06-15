@@ -2,6 +2,8 @@ import type { Viewport } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { createMetadata } from '@/lib/metadata'
+import { SITE_URL } from '@/lib/constants'
+import { webPageSchema, renderSchema } from '@/lib/schema'
 import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
 import { GuidedPath } from '@/components/GuidedPath'
@@ -61,8 +63,23 @@ const industries = [
 ]
 
 export default function HomePage() {
+  const pageUrl = SITE_URL
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: renderSchema([
+            webPageSchema({
+              url: pageUrl,
+              name: 'Franchise Your Proven Business',
+              description: 'Forge Franchising helps profitable business owners turn their proven concept into a scalable franchise brand. Feasibility, FDD, operations, and franchise sales under one roof.',
+            }),
+          ]),
+        }}
+      />
+
       {/* HERO: Full-bleed with centered logo, transparent header overlays this */}
       <section
         className="relative bg-espresso overflow-hidden dark-depth"

@@ -6,7 +6,8 @@ import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
 import { OpenLoop } from '@/components/OpenLoop'
 import { StickyCTA } from '@/components/StickyCTA'
-import { INDUSTRIES } from '@/lib/constants'
+import { INDUSTRIES, SITE_URL } from '@/lib/constants'
+import { serviceSchema, webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 import { INDUSTRY_DATA } from '@/data/industries'
 
 type Props = {
@@ -40,8 +41,33 @@ export default async function IndustryPage({ params }: Props) {
     notFound()
   }
 
+  const pageUrl = `${SITE_URL}/industries/${slug}`
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: renderSchema([
+            webPageSchema({
+              url: pageUrl,
+              name: `How to ${industry.keyword.charAt(0).toUpperCase() + industry.keyword.slice(1)}`,
+              description: `${industry.description} Learn about investment ranges, success factors, challenges, and what it takes to franchise in the ${industry.name.toLowerCase()} industry.`,
+            }),
+            breadcrumbSchema(pageUrl, [
+              { name: 'Industries', url: `${SITE_URL}/industries` },
+              { name: industry.name },
+            ]),
+            serviceSchema({
+              url: pageUrl,
+              name: `${industry.name} Franchise Development`,
+              description: industry.description,
+              serviceType: `${industry.name} Franchise Consulting`,
+            }),
+          ]),
+        }}
+      />
+
       <section className="bg-cream">
         <div className="container-wide section-padding">
           <Breadcrumbs

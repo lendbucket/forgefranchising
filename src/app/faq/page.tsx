@@ -4,6 +4,8 @@ import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
 import { OpenLoop } from '@/components/OpenLoop'
 import { StickyCTA } from '@/components/StickyCTA'
+import { SITE_URL } from '@/lib/constants'
+import { faqSchema, webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 import { FAQAccordion } from './FAQAccordion'
 
 export const metadata = createMetadata({
@@ -141,28 +143,34 @@ const FAQ_CATEGORIES = [
   },
 ]
 
-// Build JSON-LD structured data
-const faqJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: FAQ_CATEGORIES.flatMap((cat) =>
-    cat.questions.map((q) => ({
-      '@type': 'Question',
-      name: q.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: q.answer,
-      },
-    }))
-  ),
-}
+const pageUrl = `${SITE_URL}/faq`
+
+const faqGraphJson = renderSchema([
+  webPageSchema({
+    url: pageUrl,
+    name: 'Franchise FAQ',
+    description: 'Answers to common questions about franchising your business: costs, timelines, legal requirements, revenue models, and what makes a business franchisable.',
+  }),
+  breadcrumbSchema(pageUrl, [
+    { name: 'FAQ' },
+  ]),
+  faqSchema({
+    url: pageUrl,
+    questions: FAQ_CATEGORIES.flatMap((cat) =>
+      cat.questions.map((q) => ({
+        question: q.question,
+        answer: q.answer,
+      }))
+    ),
+  }),
+])
 
 export default function FAQPage() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: faqGraphJson }}
       />
 
       <section className="bg-cream">

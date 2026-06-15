@@ -5,7 +5,8 @@ import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
 import { StickyCTA } from '@/components/StickyCTA'
 import { ReadingProgress } from '@/components/ReadingProgress'
-import { SITE_URL, SITE_NAME } from '@/lib/constants'
+import { SITE_URL } from '@/lib/constants'
+import { faqSchema, webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 
 export const metadata = createMetadata({
   title: 'The Forge Franchise Readiness Method',
@@ -76,75 +77,41 @@ export default function ReadinessMethodPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: [
-              {
-                '@type': 'Question',
-                name: 'What is the Forge Franchise Readiness Method?',
-                acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: 'The Forge Franchise Readiness Method is a structured assessment framework that evaluates four pillars determining whether a business can franchise successfully: Profitability and Unit Economics, Systems and Operations, Brand Strength and Defensibility, and Replicability and Market Demand.',
+          __html: renderSchema([
+            webPageSchema({
+              url: `${SITE_URL}/readiness-method`,
+              name: 'The Forge Franchise Readiness Method',
+              description: 'The Forge Franchise Readiness Method evaluates four pillars that determine whether your business can franchise: profitability, systems, brand, and replicability.',
+            }),
+            breadcrumbSchema(`${SITE_URL}/readiness-method`, [
+              { name: 'The Forge Franchise Readiness Method' },
+            ]),
+            faqSchema({
+              url: `${SITE_URL}/readiness-method`,
+              questions: [
+                {
+                  question: 'What is the Forge Franchise Readiness Method?',
+                  answer: 'The Forge Franchise Readiness Method is a structured assessment framework that evaluates four pillars determining whether a business can franchise successfully: Profitability and Unit Economics, Systems and Operations, Brand Strength and Defensibility, and Replicability and Market Demand.',
                 },
-              },
-              {
-                '@type': 'Question',
-                name: 'What does a franchise readiness assessment evaluate?',
-                acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: 'A franchise readiness assessment evaluates whether a business has the financial margins, operational systems, brand equity, and market demand required to support a franchise model. It identifies specific gaps and provides a path to address them before launching.',
+                {
+                  question: 'What does a franchise readiness assessment evaluate?',
+                  answer: 'A franchise readiness assessment evaluates whether a business has the financial margins, operational systems, brand equity, and market demand required to support a franchise model. It identifies specific gaps and provides a path to address them before launching.',
                 },
-              },
-              {
-                '@type': 'Question',
-                name: 'Does passing a readiness assessment guarantee franchise success?',
-                acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: 'No. A readiness assessment identifies whether the foundational conditions for franchising are present. It does not guarantee franchise success, regulatory approval, or specific financial outcomes. Franchise offerings are made only through a Franchise Disclosure Document.',
+                {
+                  question: 'Does passing a readiness assessment guarantee franchise success?',
+                  answer: 'No. A readiness assessment identifies whether the foundational conditions for franchising are present. It does not guarantee franchise success, regulatory approval, or specific financial outcomes. Franchise offerings are made only through a Franchise Disclosure Document.',
                 },
-              },
-              {
-                '@type': 'Question',
-                name: 'How long does the Forge Franchise Readiness Method take?',
-                acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: 'The initial readiness assessment typically takes two to four weeks depending on the complexity of the business. It includes data gathering, analysis across all four pillars, and a written report with specific findings and recommendations.',
+                {
+                  question: 'How long does the Forge Franchise Readiness Method take?',
+                  answer: 'The initial readiness assessment typically takes two to four weeks depending on the complexity of the business. It includes data gathering, analysis across all four pillars, and a written report with specific findings and recommendations.',
                 },
-              },
-              {
-                '@type': 'Question',
-                name: 'What happens after the readiness assessment?',
-                acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: 'After the assessment, you receive a detailed report identifying strengths, gaps, and a recommended path forward. If the business is ready, the next step is franchise structure development. If gaps exist, the report outlines what needs to change before proceeding.',
+                {
+                  question: 'What happens after the readiness assessment?',
+                  answer: 'After the assessment, you receive a detailed report identifying strengths, gaps, and a recommended path forward. If the business is ready, the next step is franchise structure development. If gaps exist, the report outlines what needs to change before proceeding.',
                 },
-              },
-            ],
-          }),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              {
-                '@type': 'ListItem',
-                position: 1,
-                name: 'Home',
-                item: SITE_URL,
-              },
-              {
-                '@type': 'ListItem',
-                position: 2,
-                name: 'The Forge Franchise Readiness Method',
-                item: `${SITE_URL}/readiness-method`,
-              },
-            ],
-          }),
+              ],
+            }),
+          ]),
         }}
       />
 

@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { createMetadata } from '@/lib/metadata'
+import { SITE_URL } from '@/lib/constants'
+import { webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
@@ -78,6 +80,23 @@ export default async function StateFranchiseLawPage({ params }: Props) {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: renderSchema([
+            webPageSchema({
+              url: `${SITE_URL}/franchise-laws/${slug}`,
+              name: `${stateData.name} Franchise Laws`,
+              description: `${stateData.overview} Learn about ${stateData.name} franchise ${stateData.category === 'registration' ? 'registration' : stateData.category === 'filing' ? 'filing' : 'compliance'} requirements, fees, and regulatory contacts.`,
+            }),
+            breadcrumbSchema(`${SITE_URL}/franchise-laws/${slug}`, [
+              { name: 'Resources', url: `${SITE_URL}/learn` },
+              { name: 'Franchise Laws', url: `${SITE_URL}/franchise-laws` },
+              { name: stateData.name },
+            ]),
+          ]),
+        }}
+      />
       {/* Hero */}
       <section className="bg-cream">
         <div className="container-wide section-padding">
