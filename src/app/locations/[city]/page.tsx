@@ -4,9 +4,9 @@ import { Metadata } from 'next'
 import { cities, getCityBySlug } from '@/data/cities'
 import { SITE_URL, SITE_NAME } from '@/lib/constants'
 import {
-  localBusinessSchema as localBusinessSchemaHelper,
   webPageSchema,
   breadcrumbSchema as breadcrumbSchemaHelper,
+  serviceSchema,
   renderSchema,
 } from '@/lib/schema'
 import { SectionCTA } from '@/components/SectionCTA'
@@ -64,18 +64,11 @@ export default async function CityPage({ params }: Props) {
       { name: 'Locations', url: `${SITE_URL}/locations` },
       { name: `${city.name}, ${city.stateAbbr}` },
     ]),
-    localBusinessSchemaHelper({
+    serviceSchema({
       url: cityUrl,
-      name: `${SITE_NAME} - ${city.name}, ${city.stateAbbr}`,
+      name: `Franchise Consulting in ${city.name}, ${city.stateAbbr}`,
       description: `Franchise consulting services in ${city.name}, ${city.stateAbbr}. We help business owners franchise their proven concepts and connect qualified buyers with franchise opportunities.`,
-      areaServed: {
-        '@type': 'City',
-        name: city.name,
-        containedInPlace: {
-          '@type': 'State',
-          name: city.state,
-        },
-      },
+      serviceType: 'Franchise Consulting',
     }),
   ])
 
