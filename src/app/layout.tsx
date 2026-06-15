@@ -63,11 +63,25 @@ export default function RootLayout({
               url: SITE_URL,
               logo: `${SITE_URL}/forge-franchising-logo.png`,
               description: SITE_DESCRIPTION,
-              contactPoint: {
-                '@type': 'ContactPoint',
-                email: 'ceo@36west.org',
-                contactType: 'sales',
-              },
+              contactPoint: [
+                {
+                  '@type': 'ContactPoint',
+                  email: 'inquiry@forgefranchising.com',
+                  contactType: 'sales',
+                },
+                {
+                  '@type': 'ContactPoint',
+                  email: 'info@forgefranchising.com',
+                  contactType: 'customer support',
+                },
+              ],
+              sameAs: [
+                'https://www.linkedin.com/company/forgefranchising',
+                'https://www.facebook.com/forgefranchising',
+                'https://www.instagram.com/forgefranchising',
+                'https://x.com/forgefranchising',
+                'https://www.youtube.com/@forgefranchising',
+              ],
               areaServed: {
                 '@type': 'Country',
                 name: 'United States',
@@ -88,14 +102,6 @@ export default function RootLayout({
               '@type': 'WebSite',
               name: SITE_NAME,
               url: SITE_URL,
-              potentialAction: {
-                '@type': 'SearchAction',
-                target: {
-                  '@type': 'EntryPoint',
-                  urlTemplate: `${SITE_URL}/blog?q={search_term_string}`,
-                },
-                'query-input': 'required name=search_term_string',
-              },
             }),
           }}
         />
