@@ -34,6 +34,7 @@ export default function FranchiseLawsPage() {
               url: `${SITE_URL}/franchise-laws`,
               name: 'Franchise Laws by State',
               description: 'Franchise registration and filing requirements in all 50 states. Learn which states require FDD registration, which require filing, and which have no law.',
+              hasBreadcrumb: true,
             }),
             breadcrumbSchema(`${SITE_URL}/franchise-laws`, [
               { name: 'Franchise Laws by State' },

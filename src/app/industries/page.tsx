@@ -26,6 +26,7 @@ export default function IndustriesPage() {
               url: `${SITE_URL}/industries`,
               name: 'Industries We Franchise',
               description: 'Franchise development across 10 major industries. Learn which business types franchise best and what it takes to scale your concept nationally.',
+              hasBreadcrumb: true,
             }),
             breadcrumbSchema(`${SITE_URL}/industries`, [
               { name: 'Industries' },

@@ -82,6 +82,7 @@ export default function ReadinessMethodPage() {
               url: `${SITE_URL}/readiness-method`,
               name: 'The Forge Franchise Readiness Method',
               description: 'The Forge Franchise Readiness Method evaluates four pillars that determine whether your business can franchise: profitability, systems, brand, and replicability.',
+              hasBreadcrumb: true,
             }),
             breadcrumbSchema(`${SITE_URL}/readiness-method`, [
               { name: 'The Forge Franchise Readiness Method' },

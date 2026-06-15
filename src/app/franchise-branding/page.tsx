@@ -114,6 +114,7 @@ export default function FranchiseBrandingPage() {
               url: `${SITE_URL}/franchise-branding`,
               name: 'Franchise Branding Guide',
               description: 'Why brand is the product when you franchise. A complete guide to building, enforcing, and protecting a franchise brand that compounds across every unit.',
+              hasBreadcrumb: true,
             }),
             breadcrumbSchema(`${SITE_URL}/franchise-branding`, [
               { name: 'Franchise Branding' },

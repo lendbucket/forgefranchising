@@ -22,6 +22,7 @@ export default function AssessmentPage() {
               url: `${SITE_URL}/is-my-business-franchisable`,
               name: 'Free Franchise Readiness Quiz',
               description: 'Take our free franchise readiness assessment to find out if your business can franchise. Answer eight questions and get an honest evaluation of your potential.',
+              hasBreadcrumb: true,
             }),
             breadcrumbSchema(`${SITE_URL}/is-my-business-franchisable`, [
               { name: 'Is My Business Franchisable' },

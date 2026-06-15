@@ -377,6 +377,7 @@ export default function GlossaryPage() {
       url: pageUrl,
       name: 'Franchise Glossary: 40+ Terms',
       description: 'Franchise glossary with 40+ terms every business owner should know before franchising. Clear definitions, real context, and why each term matters to you.',
+      hasBreadcrumb: true,
     }),
     breadcrumbSchema(pageUrl, [
       { name: 'Learn', url: `${SITE_URL}/learn` },

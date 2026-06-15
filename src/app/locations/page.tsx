@@ -28,6 +28,7 @@ export default function LocationsPage() {
               url: `${SITE_URL}/locations`,
               name: 'Franchise Consulting by City',
               description: 'Find a Forge Franchising franchise consultant near you. We serve business owners and franchise candidates in over 60 major US markets.',
+              hasBreadcrumb: true,
             }),
             breadcrumbSchema(`${SITE_URL}/locations`, [
               { name: 'Locations' },

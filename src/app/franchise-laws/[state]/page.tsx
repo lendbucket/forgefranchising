@@ -88,6 +88,7 @@ export default async function StateFranchiseLawPage({ params }: Props) {
               url: `${SITE_URL}/franchise-laws/${slug}`,
               name: `${stateData.name} Franchise Laws`,
               description: `${stateData.overview} Learn about ${stateData.name} franchise ${stateData.category === 'registration' ? 'registration' : stateData.category === 'filing' ? 'filing' : 'compliance'} requirements, fees, and regulatory contacts.`,
+              hasBreadcrumb: true,
             }),
             breadcrumbSchema(`${SITE_URL}/franchise-laws/${slug}`, [
               { name: 'Resources', url: `${SITE_URL}/learn` },

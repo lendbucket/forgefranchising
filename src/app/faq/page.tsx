@@ -150,6 +150,7 @@ const faqGraphJson = renderSchema([
     url: pageUrl,
     name: 'Franchise FAQ',
     description: 'Answers to common questions about franchising your business: costs, timelines, legal requirements, revenue models, and what makes a business franchisable.',
+    hasBreadcrumb: true,
   }),
   breadcrumbSchema(pageUrl, [
     { name: 'FAQ' },

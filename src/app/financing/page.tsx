@@ -53,6 +53,7 @@ export default function FinancingPage() {
               url: `${SITE_URL}/financing`,
               name: 'How to Finance Franchise Development',
               description: 'Most franchise development is funded through financing, not cash on hand. Learn the common paths, what lenders look for, and how to prepare your business case.',
+              hasBreadcrumb: true,
             }),
             breadcrumbSchema(`${SITE_URL}/financing`, [
               { name: 'Resources', url: `${SITE_URL}/learn` },

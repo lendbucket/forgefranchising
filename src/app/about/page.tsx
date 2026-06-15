@@ -25,6 +25,7 @@ export default function AboutPage() {
               url: `${SITE_URL}/about`,
               name: 'About Us',
               description: 'Forge Franchising Group is an operator built franchise development firm. We turn proven businesses into franchise brands with real experience and a clear path.',
+              hasBreadcrumb: true,
             }),
             breadcrumbSchema(`${SITE_URL}/about`, [
               { name: 'About Us' },

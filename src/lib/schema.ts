@@ -85,12 +85,14 @@ export function webPageSchema({
   url,
   name,
   description,
+  hasBreadcrumb = false,
 }: {
   url: string
   name: string
   description: string
+  hasBreadcrumb?: boolean
 }): SchemaNode {
-  return {
+  const node: SchemaNode = {
     '@type': 'WebPage',
     '@id': `${url}/#webpage`,
     url,
@@ -98,8 +100,11 @@ export function webPageSchema({
     description,
     isPartOf: { '@id': `${SITE_URL}/#website` },
     about: { '@id': `${SITE_URL}/#organization` },
-    breadcrumb: { '@id': `${url}/#breadcrumb` },
   }
+  if (hasBreadcrumb) {
+    node.breadcrumb = { '@id': `${url}/#breadcrumb` }
+  }
+  return node
 }
 
 // ==========================================================================

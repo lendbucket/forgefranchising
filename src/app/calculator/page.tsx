@@ -22,6 +22,7 @@ export default function CalculatorPage() {
               url: `${SITE_URL}/calculator`,
               name: 'Franchise Revenue Calculator',
               description: 'Free franchise calculator to estimate your potential royalty income at scale. Enter your revenue, margins, and location count to see projections for your brand.',
+              hasBreadcrumb: true,
             }),
             breadcrumbSchema(`${SITE_URL}/calculator`, [
               { name: 'Calculator' },

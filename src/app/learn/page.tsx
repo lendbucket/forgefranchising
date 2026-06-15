@@ -125,6 +125,7 @@ export default function LearnPage() {
               url: `${SITE_URL}/learn`,
               name: 'Franchise Education Resources',
               description: 'Free franchise education for business owners. Guides, tools, glossary, state law breakdowns, and calculators to help you understand what franchising requires.',
+              hasBreadcrumb: true,
             }),
             breadcrumbSchema(`${SITE_URL}/learn`, [
               { name: 'Learn & Resources' },

@@ -93,6 +93,7 @@ export default function FranchiseVsLicensePage() {
               url: `${SITE_URL}/franchise-vs-license`,
               name: 'Franchise vs License Your Business',
               description: 'Franchise vs license your business: understand the legal, operational, and financial differences, then choose the right growth path.',
+              hasBreadcrumb: true,
             }),
             breadcrumbSchema(`${SITE_URL}/franchise-vs-license`, [
               { name: 'Resources', url: `${SITE_URL}/learn` },

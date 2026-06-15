@@ -58,6 +58,7 @@ export default async function CityPage({ params }: Props) {
       url: cityUrl,
       name: `${city.name} Franchise Consultant`,
       description: `Franchise consulting in the ${city.metroArea} metro. Forge Franchising helps ${city.name} business owners franchise their proven concepts.`,
+      hasBreadcrumb: true,
     }),
     breadcrumbSchemaHelper(cityUrl, [
       { name: 'Locations', url: `${SITE_URL}/locations` },

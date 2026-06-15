@@ -122,6 +122,7 @@ export default function PackagesPage() {
               url: `${SITE_URL}/packages`,
               name: 'Franchise Development Packages',
               description: 'Franchise development packages in three tiers: Launch, Growth, and Empire. Each is tailored to your business stage and goals.',
+              hasBreadcrumb: true,
             }),
             breadcrumbSchema(`${SITE_URL}/packages`, [
               { name: 'Services', url: `${SITE_URL}/services` },

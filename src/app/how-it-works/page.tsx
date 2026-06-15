@@ -93,6 +93,7 @@ export default function HowItWorksPage() {
               url: `${SITE_URL}/how-it-works`,
               name: 'How It Works: 4 Phase Process',
               description: 'Our four phase franchise development process covers Feasibility, Structure, Launch, and Scale.',
+              hasBreadcrumb: true,
             }),
             breadcrumbSchema(`${SITE_URL}/how-it-works`, [
               { name: 'How It Works' },

@@ -53,6 +53,7 @@ export default async function IndustryPage({ params }: Props) {
               url: pageUrl,
               name: `How to ${industry.keyword.charAt(0).toUpperCase() + industry.keyword.slice(1)}`,
               description: `${industry.description} Learn about investment ranges, success factors, challenges, and what it takes to franchise in the ${industry.name.toLowerCase()} industry.`,
+              hasBreadcrumb: true,
             }),
             breadcrumbSchema(pageUrl, [
               { name: 'Industries', url: `${SITE_URL}/industries` },

@@ -136,6 +136,7 @@ export default function ServicesPage() {
               url: `${SITE_URL}/services`,
               name: 'Franchise Development Services',
               description: 'Franchise development services including feasibility studies, FDD preparation, operations manuals, state registration, training programs, and sales systems.',
+              hasBreadcrumb: true,
             }),
             breadcrumbSchema(`${SITE_URL}/services`, [
               { name: 'Services' },

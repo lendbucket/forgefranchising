@@ -67,6 +67,7 @@ export default async function BlogPostPage({ params }: Props) {
       url: articleUrl,
       name: post.title,
       description: post.description,
+      hasBreadcrumb: true,
     }),
     breadcrumbSchema(articleUrl, [
       { name: 'Blog', url: `${SITE_URL}/blog` },
