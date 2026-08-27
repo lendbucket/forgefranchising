@@ -2,8 +2,9 @@ export const blogPosts11to20 = [
   {
     slug: 'franchise-registration-states',
     title: 'Franchise Registration States: Where You Must Register Your FDD',
+    seoTitle: "Franchise Registration States",
     description:
-      'A breakdown of every franchise registration state, filing state, and what you need to know before selling a single franchise unit.',
+      "Which states require FDD registration, which only require a filing, and which require neither. Fees, review timelines, and what to prepare before you sell.",
     category: 'Legal',
     datePublished: '2026-05-10',
     readTime: '12 min read',
@@ -103,8 +104,9 @@ Budget for it. Plan for it. And work with a franchise attorney who has filed in 
     slug: 'franchise-operations-manual',
     title:
       'How to Build a Franchise Operations Manual That Protects Your Brand',
+    seoTitle: "The Franchise Operations Manual",
     description:
-      'Step-by-step guide to writing a franchise operations manual that trains franchisees, maintains brand consistency, and holds up in court.',
+      "How to build a franchise operations manual that trains franchisees, protects brand consistency, and holds up when you need to enforce your own standards.",
     category: 'Operations',
     datePublished: '2026-05-12',
     readTime: '13 min read',
@@ -212,8 +214,9 @@ For a deeper look at how the operations manual connects to your overall franchis
     slug: 'royalties-and-franchise-fees',
     title:
       'Royalties and Franchise Fees: How Franchisors Actually Make Money',
+    seoTitle: "Royalties and Franchise Fees",
     description:
-      'An honest breakdown of franchise fee structures, royalty models, ad fund contributions, and how franchisors build sustainable revenue.',
+      "How franchisors actually make money: initial franchise fees, ongoing royalties, brand fund contributions, and the math behind a sustainable fee structure.",
     category: 'Finance',
     datePublished: '2026-05-14',
     readTime: '14 min read',
@@ -316,8 +319,9 @@ Set your fees with that principle in mind, and the revenue will follow.`,
   {
     slug: 'recruit-qualify-first-franchisees',
     title: 'How to Recruit and Qualify Your First Franchisees',
+    seoTitle: "Recruiting Your First Franchisees",
     description:
-      'A practical guide to finding, vetting, and closing your first franchise owners, including where to find leads and what red flags to watch for.',
+      "How to find, vet, and close your first franchisees, including where qualified leads come from and the red flags that should end a conversation early on.",
     category: 'Sales',
     datePublished: '2026-05-16',
     readTime: '13 min read',
@@ -421,8 +425,9 @@ In return, they give you something no amount of money can buy: proof that your f
     slug: 'single-unit-vs-multi-unit',
     title:
       'Single Unit vs Multi Unit vs Area Development Franchising',
+    seoTitle: "Single Unit vs Multi Unit Franchising",
     description:
-      'Understand the differences between single unit, multi-unit, and area development franchise structures and which one is right for your growth plan.',
+      "Single unit, multi unit, and area development franchise structures compared. How each affects growth speed, franchisee capital, and your support burden.",
     category: 'Education',
     datePublished: '2026-05-18',
     readTime: '12 min read',
@@ -545,8 +550,9 @@ Your job as a franchisor is to match the right structure to the right candidate 
   {
     slug: 'franchising-mistakes',
     title: 'Franchising Mistakes That Cost Owners Everything',
+    seoTitle: "Franchising Mistakes That Cost Owners",
     description:
-      'The most expensive franchising mistakes new franchisors make, from undercapitalization to bad franchise agreements, and how to avoid them.',
+      "The franchising mistakes that sink new franchisors, from undercapitalization and weak agreements to selling territories before the system is documented.",
     category: 'Education',
     datePublished: '2026-05-20',
     readTime: '14 min read',
@@ -646,8 +652,9 @@ One of the most common mistakes is underinvesting in the brand. Your [franchise 
     slug: 'protect-brand-trademarks',
     title:
       'How to Protect Your Brand and Trademarks Before You Franchise',
+    seoTitle: "Protect Your Trademarks First",
     description:
-      'Everything you need to know about trademark registration, brand protection, and intellectual property before launching a franchise system.',
+      "How to protect your brand and trademarks before you franchise. Federal registration, clearance searches, and why Item 13 of the FDD depends on your mark.",
     category: 'Legal',
     datePublished: '2026-05-22',
     readTime: '12 min read',
@@ -753,8 +760,9 @@ For the complete framework on franchise brand strategy, from building to enforci
     slug: 'franchise-territory-design',
     title:
       'Franchise Territory Design: How to Map and Sell Territories',
+    seoTitle: "Franchise Territory Design",
     description:
-      'How to design franchise territories that protect franchisees, maximize market coverage, and drive growth without cannibalizing your own system.',
+      "How to design franchise territories that protect franchisees and still cover the market. Mapping methods, exclusivity options, and avoiding cannibalization.",
     category: 'Operations',
     datePublished: '2026-05-24',
     readTime: '13 min read',
@@ -867,8 +875,9 @@ A system of 50 profitable territories is worth far more than a system of 100 ter
   {
     slug: 'franchise-a-restaurant',
     title: 'How to Franchise a Restaurant: A Founder Roadmap',
+    seoTitle: "How to Franchise a Restaurant",
     description:
-      'A complete guide for restaurant owners considering franchising, covering unit economics, menu standardization, supply chain, and real-world challenges.',
+      "How to franchise a restaurant: unit economics, kitchen systems, food safety compliance, buildout costs, and the roadmap from one location to a franchise.",
     category: 'Industry',
     datePublished: '2026-05-26',
     readTime: '14 min read',
@@ -981,8 +990,9 @@ Restaurant franchising is harder than most categories. It requires more capital,
   {
     slug: 'franchise-a-salon',
     title: 'How to Franchise a Salon or Med Spa',
+    seoTitle: "How to Franchise a Salon or Med Spa",
     description:
-      'A practical guide for salon, barbershop, and med spa owners who want to franchise, covering licensing challenges, staffing models, and industry-specific strategies.',
+      "How to franchise a salon, barbershop, or med spa. Licensing rules, stylist retention, service menu control, and staffing models that survive real scale.",
     category: 'Industry',
     datePublished: '2026-05-28',
     readTime: '13 min read',

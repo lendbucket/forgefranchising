@@ -11,9 +11,9 @@ import { SITE_URL } from '@/lib/constants'
 import { howToSchema, webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 
 export const metadata = createMetadata({
-  title: 'How It Works: 4 Phase Process',
+  title: 'How to Franchise My Business',
   description:
-    'Our four phase franchise development process covers Feasibility, Structure, Launch, and Scale. See how we turn proven businesses into scalable franchise brands.',
+    'How to franchise my business, answered in four phases: Feasibility, Structure, Launch, and Scale. See the deliverables, timeline, and what you own at the end.',
   path: '/how-it-works',
 })
 
@@ -118,10 +118,10 @@ export default function HowItWorksPage() {
           <div className="max-w-3xl">
             <p className="eyebrow mb-4">Our Process</p>
             <h1 className="heading-1 mb-8">
-              How to Franchise Your Business: The Four Phase Process
+              How to Franchise My Business: The Four Phase Process
             </h1>
             <p className="body-large mb-6">
-              Most business owners considering franchising are in the same place: they have a concept
+              Most business owners asking how to franchise my business are in the same place: they have a concept
               that works, customers who keep coming back, and a gut feeling that it could work
               somewhere else. What they do not have is a structured path from where they are to
               where they want to be.

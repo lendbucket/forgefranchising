@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { createMetadata } from '@/lib/metadata'
+import { createMetadata, composeDescription } from '@/lib/metadata'
 import { SITE_URL } from '@/lib/constants'
 import { webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
@@ -30,11 +30,29 @@ export async function generateMetadata({ params }: Props) {
   const stateData = getStateBySlug(slug)
   if (!stateData) return {}
 
+  const action =
+    stateData.category === 'registration'
+      ? 'registration'
+      : stateData.category === 'filing'
+        ? 'filing'
+        : 'compliance'
+
   const titleKeyword = `${stateData.name} Franchise Laws`
 
   return createMetadata({
     title: titleKeyword,
-    description: `${stateData.overview} Learn about ${stateData.name} franchise ${stateData.category === 'registration' ? 'registration' : stateData.category === 'filing' ? 'filing' : 'compliance'} requirements, fees, and regulatory contacts.`,
+    description: composeDescription(
+      `${stateData.name} franchise ${action} requirements explained.`,
+      [
+        ` ${stateData.regulatoryBody} oversees filings.`,
+        ` What to file, what it costs, and how long review takes.`,
+        ` Fees, renewal rules, and regulatory contacts.`,
+        ` Plus what the FTC Franchise Rule requires nationwide.`,
+        ` Requirements at a glance.`,
+        ` See the current checklist.`,
+        ` Compare all 50 states.`,
+      ],
+    ),
     path: `/franchise-laws/${slug}`,
   })
 }

@@ -2,8 +2,9 @@ export const blogPosts31to42 = [
   {
     slug: 'why-brand-matters-more-than-product',
     title: 'Why Brand Matters More Than Your Product',
+    seoTitle: "Why Brand Matters More Than Product",
     description:
-      'Your product got you here. Your brand is what franchises. Learn why franchisors must shift from product thinking to brand thinking before selling the first unit.',
+      "Your product got you here, but your brand is what franchises. Why franchisors must shift from product thinking to brand thinking before selling a unit.",
     category: 'Education',
     datePublished: '2026-06-01',
     readTime: '10 min read',
@@ -82,8 +83,9 @@ Ready to evaluate whether your brand is ready for franchising? [Take the free re
   {
     slug: 'what-franchisee-is-buying',
     title: 'What a Franchisee Is Actually Buying',
+    seoTitle: "What a Franchisee Is Actually Buying",
     description:
-      'Franchisees are not buying a business. They are buying a brand, a system, and a support structure. Understanding this changes how you build and sell your franchise.',
+      "Franchisees are not buying a business. They are buying a brand, a system, and a support structure. What that means for how you build and sell a franchise.",
     category: 'Education',
     datePublished: '2026-06-02',
     readTime: '11 min read',
@@ -160,8 +162,9 @@ Curious whether your business is ready to offer this value proposition? [Take th
   {
     slug: 'item-19-what-you-can-and-cannot-say',
     title: 'Item 19: What You Can and Cannot Say',
+    seoTitle: "Item 19: What You Can and Cannot Say",
     description:
-      'Item 19 of the FDD lets you share financial performance data with prospective franchisees. Here is what the FTC allows, what it prohibits, and how to use it effectively.',
+      "Item 19 lets you share financial performance data with prospects. What the FTC allows, what it prohibits, and how to present numbers you can substantiate.",
     category: 'Legal',
     datePublished: '2026-06-03',
     readTime: '12 min read',
@@ -252,8 +255,9 @@ If you are preparing to franchise and want to understand how Item 19 fits into y
   {
     slug: 'real-cost-of-franchising',
     title: 'The Real Cost of Franchising a Business',
+    seoTitle: "The Real Cost of Franchising",
     description:
-      'What it actually costs to franchise your business, from FDD preparation and legal fees to operations manuals, state registrations, and the ongoing costs most founders miss.',
+      "The real cost of franchising a business, from FDD preparation and legal fees to operations manuals, registrations, and the ongoing costs founders often miss.",
     category: 'Finance',
     datePublished: '2026-06-04',
     readTime: '11 min read',
@@ -348,8 +352,9 @@ To see how these costs map to our development process, explore [how it works](/h
   {
     slug: 'royalty-structures-explained',
     title: 'Royalty Structures for New Franchisors',
+    seoTitle: "Royalty Structures for New Franchisors",
     description:
-      'Flat fees, percentage of revenue, hybrid models, and brand fund contributions. How to set a royalty structure that sustains the franchisor without crushing franchisee margins.',
+      "Flat fees, percentage of revenue, hybrid models, and brand fund contributions. How to set a royalty structure that funds support without crushing margins.",
     category: 'Finance',
     datePublished: '2026-06-05',
     readTime: '10 min read',
@@ -430,10 +435,11 @@ Do not set your royalty in isolation. Model it alongside every other financial e
 For a complete view of franchise economics, explore our [franchise calculator](/calculator) or learn how we approach [franchise development](/how-it-works).`,
   },
   {
-    slug: 'franchise-operations-manual',
+    slug: 'operations-manual-is-the-product',
     title: 'Your Operations Manual Is the Product',
+    seoTitle: "Your Operations Manual Is the Product",
     description:
-      'The operations manual is what makes your business repeatable. Learn what to include, how to structure it, and why it is the most important document in your franchise system.',
+      "Your operations manual is the product franchisees actually buy. What belongs in it, how to keep it current, and why thin documentation kills franchise systems.",
     category: 'Operations',
     datePublished: '2026-06-06',
     readTime: '11 min read',
@@ -524,8 +530,9 @@ To understand how the operations manual fits into the broader franchise developm
   {
     slug: 'brand-standards-franchisees-follow',
     title: 'Brand Standards Franchisees Will Follow',
+    seoTitle: "Brand Standards Franchisees Follow",
     description:
-      'How to write brand standards that franchisees actually comply with. Practical approaches to enforcement, training, and building a culture of brand pride across your franchise system.',
+      "How to write brand standards franchisees actually follow. Practical enforcement, training that sticks, and building genuine brand pride across your system.",
     category: 'Operations',
     datePublished: '2026-06-07',
     readTime: '10 min read',
@@ -606,8 +613,9 @@ Ready to build a franchise system with brand standards that work? [Take the read
   {
     slug: 'trademark-first-protect-brand',
     title: 'Trademark First: Protect Before You Sell',
+    seoTitle: "Trademark First, Then Franchise",
     description:
-      'Federal trademark registration is the first step in franchise development, not the last. Learn why protecting your brand before selling units prevents costly legal problems.',
+      "Federal trademark registration is the first step in franchise development, not the last. Why protecting your mark early prevents expensive legal problems.",
     category: 'Legal',
     datePublished: '2026-06-08',
     readTime: '10 min read',
@@ -688,8 +696,9 @@ Ready to take the first step toward franchising? [See how our process works](/ho
   {
     slug: 'first-franchise-expansion-market',
     title: 'Picking Your First Expansion Market',
+    seoTitle: "Picking Your First Expansion Market",
     description:
-      'How to choose where to sell your first franchise. Market selection criteria including demographics, competition, regulatory environment, and proximity to your home base.',
+      "How to choose where to sell your first franchise. Demographics, competition, regulatory environment, and why proximity to home matters more than you think.",
     category: 'Sales',
     datePublished: '2026-06-09',
     readTime: '10 min read',
@@ -772,8 +781,9 @@ Ready to start planning your franchise expansion? [Take the readiness assessment
   {
     slug: 'discovery-day-playbook',
     title: 'The Discovery Day Playbook',
+    seoTitle: "The Discovery Day Playbook",
     description:
-      'How to run a discovery day that qualifies franchise candidates, builds confidence, and closes deals. Structure, agenda, common mistakes, and what top franchisors do differently.',
+      "How to run a discovery day that qualifies candidates, builds confidence, and moves deals forward. Structure, agenda, and the mistakes that lose good buyers.",
     category: 'Sales',
     datePublished: '2026-06-10',
     readTime: '11 min read',
@@ -856,8 +866,9 @@ Ready to build a franchise system worth visiting? [Take the readiness assessment
   {
     slug: 'franchise-sales-compliance',
     title: 'Franchise Sales Compliance: What to Know',
+    seoTitle: "Franchise Sales Compliance Basics",
     description:
-      'What franchisors and franchise salespeople cannot say during the sales process. FTC rules, state regulations, earnings claims, and the compliance training your team needs.',
+      "What franchisors and franchise sellers cannot say during the sales process. FTC rules, state regulations, earnings claims, and the training your team needs.",
     category: 'Legal',
     datePublished: '2026-06-11',
     readTime: '11 min read',
@@ -946,8 +957,9 @@ To learn more about how we build compliant franchise sales processes, explore [o
   {
     slug: 'operator-to-franchisor-identity-shift',
     title: 'From Operator to Franchisor: The Shift',
+    seoTitle: "From Operator to Franchisor",
     description:
-      'Franchising your business changes your role from operator to franchisor. Learn why this identity shift is the hardest part of franchising and how to make it successfully.',
+      "Franchising changes your job from operator to franchisor. Why that identity shift is the hardest part of the transition and how to make it successfully.",
     category: 'Education',
     datePublished: '2026-06-12',
     readTime: '11 min read',

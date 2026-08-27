@@ -3,7 +3,8 @@ import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
   title: 'Important Disclosures',
-  description: 'Franchise offering disclosures, earnings disclaimers, and legal notices for Forge Franchising Group. Read before requesting franchise information.',
+  description:
+    'Franchise offering disclosures, earnings disclaimers, and legal notices for Forge Franchising Group. Read these before requesting any franchise information.',
   path: '/own-a-franchise/disclosures',
 })
 

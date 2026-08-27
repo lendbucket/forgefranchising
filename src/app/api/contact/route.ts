@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
+import { CONTACT_EMAIL } from '@/lib/constants'
 
 function getResend() {
   return new Resend(process.env.RESEND_API_KEY || '')
@@ -62,7 +63,7 @@ export async function POST(request: Request) {
     const targetTimeline = sanitize(body.targetTimeline)
     const biggestQuestion = sanitize(body.biggestQuestion)
 
-    const fromEmail = process.env.LEAD_FROM_EMAIL || 'onboarding@resend.dev'
+    const fromEmail = process.env.LEAD_FROM_EMAIL || 'Forge Franchising <leads@forgefranchising.com>'
 
     const htmlBody = `
       <h2>New Franchise Inquiry</h2>
@@ -84,7 +85,7 @@ export async function POST(request: Request) {
 
     const { error } = await getResend().emails.send({
       from: fromEmail,
-      to: 'ceo@36west.org',
+      to: CONTACT_EMAIL,
       subject: `Franchise Inquiry: ${businessName} (${industry})`,
       html: htmlBody,
       replyTo: email,
@@ -93,7 +94,7 @@ export async function POST(request: Request) {
     if (error) {
       console.error('Resend error:', error)
       return NextResponse.json(
-        { success: false, error: 'Failed to send your inquiry. Please try again or email us directly at ceo@36west.org.' },
+        { success: false, error: `Failed to send your inquiry. Please try again or email us directly at ${CONTACT_EMAIL}.` },
         { status: 500 }
       )
     }
@@ -102,7 +103,7 @@ export async function POST(request: Request) {
   } catch (err) {
     console.error('Contact form error:', err)
     return NextResponse.json(
-      { success: false, error: 'Something went wrong. Please try again or email us directly at ceo@36west.org.' },
+      { success: false, error: `Something went wrong. Please try again or email us directly at ${CONTACT_EMAIL}.` },
       { status: 500 }
     )
   }

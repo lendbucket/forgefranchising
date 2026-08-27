@@ -11,9 +11,9 @@ import { HomeClient } from '@/components/HomeClient'
 import { CredibilityBand } from '@/components/CredibilityBand'
 
 export const metadata = createMetadata({
-  title: 'Franchise Your Proven Business',
+  title: 'Franchise Development, Operator Built',
   description:
-    'Forge Franchising helps profitable business owners turn their proven concept into a scalable franchise brand. Feasibility, FDD, operations, and franchise sales under one roof.',
+    'Franchise development for profitable owners who want a real system, not a stack of paperwork. Feasibility, FDD, operations, and franchise sales in one place.',
   path: '',
 })
 
@@ -133,10 +133,10 @@ export default function HomePage() {
           {/* Hero copy: centered on mobile, left-aligned on desktop */}
           <div className="max-w-3xl lg:max-w-2xl text-center lg:text-left mx-auto lg:mx-0">
             <h1 className="heading-1 text-cream mb-6 text-balance hero-entrance hero-entrance-2">
-              You Built a Business Worth Replicating. Now Build the System That Does It.
+              Franchise Development for Owners Who Built Something Worth Replicating.
             </h1>
             <p className="text-lg sm:text-xl text-cream/60 leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0 hero-entrance hero-entrance-3">
-              Forge turns profitable, owner-operated businesses into franchise brands that grow on other people's capital, in other people's markets, under your name.
+              Forge is a franchise development firm that turns profitable, owner operated businesses into franchise brands that grow on other people's capital, in other people's markets, under your name.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start hero-entrance hero-entrance-4">
               <Link href="/is-my-business-franchisable" className="btn-primary text-lg py-5 px-10">

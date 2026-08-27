@@ -9,9 +9,9 @@ import { SITE_URL } from '@/lib/constants'
 import { serviceSchema, webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 
 export const metadata = createMetadata({
-  title: 'Franchise Development Packages',
+  title: 'Franchise Development Consultant Plans',
   description:
-    'Franchise development packages in three tiers: Launch, Growth, and Empire. Each is tailored to your business stage and goals. Contact us for a custom quote.',
+    'Franchise development consultant packages in three tiers: Launch, Growth, and Empire. Compare deliverables side by side and pick the level your business needs.',
   path: '/packages',
 })
 
@@ -155,10 +155,10 @@ export default function PackagesPage() {
           <div className="max-w-3xl">
             <p className="eyebrow mb-4">Packages</p>
             <h1 className="heading-1 mb-8">
-              Three Tiers. Zero Guesswork. Pick the Level That Matches Your Business.
+              Franchise Development Consultant Packages. Three Tiers. Zero Guesswork.
             </h1>
             <p className="body-large mb-6">
-              Every franchise development engagement is different, but the core components are not. We have
+              Every franchise development consultant engagement is different, but the core components are not. We have
               structured our services into three packages so you can see exactly what is included at each
               level. No hidden fees, no surprise add-ons, no line items that only make sense to an accountant.
             </p>

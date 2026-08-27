@@ -12,7 +12,7 @@ import { serviceSchema, webPageSchema, breadcrumbSchema, renderSchema } from '@/
 export const metadata = createMetadata({
   title: 'Franchise Development Services',
   description:
-    'Franchise development services including feasibility studies, FDD preparation, operations manuals, state registration, training programs, and sales systems.',
+    'Franchise development services cover feasibility, FDD preparation, operations manuals, state registration, training, and franchise sales. See what is included.',
   path: '/services',
 })
 
@@ -164,10 +164,11 @@ export default function ServicesPage() {
           <div className="max-w-3xl">
             <p className="eyebrow mb-4">Our Services</p>
             <h1 className="heading-1 mb-8">
-              Everything You Need to Franchise Your Business. Nothing You Do Not.
+              Franchise Development Services: Everything You Need. Nothing You Do Not.
             </h1>
             <p className="body-large mb-6">
-              Most business owners who are ready to franchise find themselves in a gap: they know
+              Our franchise development services exist to close one gap. Most business owners who are
+              ready to franchise know
               their concept works, but they do not have the legal structure, operational documentation,
               or sales infrastructure to actually sell a franchise. The Forge Franchise Readiness Method
               identifies exactly where those gaps are. The seven services below close them.

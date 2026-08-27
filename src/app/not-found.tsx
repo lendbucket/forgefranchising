@@ -1,4 +1,12 @@
 import Link from 'next/link'
+import { createMetadata } from '@/lib/metadata'
+
+export const metadata = createMetadata({
+  title: 'Page Not Found',
+  description:
+    'That franchise page has moved or no longer exists. Jump back to franchise development services, the readiness quiz, industry guides, or the blog from here.',
+  path: '/404',
+})
 
 export default function NotFound() {
   return (

@@ -1,10 +1,13 @@
 import { blogPosts11to20 } from './blog-posts-11-20'
 import { blogPosts21to30 } from './blog-posts-21-30'
 import { blogPosts31to42 } from './blog-posts-31-42'
+import { blogPosts43to52 } from './blog-posts-43-52'
 
 export type BlogPost = {
   slug: string
   title: string
+  /** Optional short title for the <title> tag. Falls back to a trimmed `title`. */
+  seoTitle?: string
   description: string
   category: string
   datePublished: string
@@ -16,7 +19,9 @@ const blogPosts1to10: BlogPost[] = [
   {
     slug: 'how-to-franchise-your-business',
     title: 'How to Franchise Your Business in 2026: The Complete Step by Step Guide',
-    description: 'A practical, step by step guide to turning your successful business into a franchise. Covers feasibility, legal documents, operations manuals, franchisee recruitment, and the real timeline and costs involved.',
+    seoTitle: "How to Franchise Your Business",
+    description:
+      "How to franchise your business, step by step: feasibility, FDD, operations manual, franchisee recruitment, and the real timeline and costs you should expect.",
     category: 'Guide',
     datePublished: '2026-05-01',
     readTime: '14 min read',
@@ -153,7 +158,9 @@ Ready to find out if your business qualifies? Start with a feasibility assessmen
   {
     slug: 'is-my-business-franchisable',
     title: 'Is My Business Franchisable? The 7 Signs You Are Ready',
-    description: 'Discover the 7 clear indicators that your business is ready to franchise. From profitability to systems documentation, learn what franchise development experts actually evaluate before greenlighting a concept.',
+    seoTitle: "Is My Business Franchisable? 7 Signs",
+    description:
+      "Seven signs your business is ready to franchise, from profitability and documented systems to brand strength and whether it runs without you in the room.",
     category: 'Education',
     datePublished: '2026-05-04',
     readTime: '12 min read',
@@ -271,7 +278,9 @@ Start with the gaps. Fill them. Then build something that scales.`,
   {
     slug: 'franchise-disclosure-document',
     title: 'What a Franchise Disclosure Document Is and Why It Matters',
-    description: 'Everything business owners need to know about the Franchise Disclosure Document (FDD), including its 23 required items, costs, timelines, and how it protects both franchisors and franchisees.',
+    seoTitle: "Franchise Disclosure Document Basics",
+    description:
+      "What a Franchise Disclosure Document is, why the FTC requires it, what its 23 items cover, and what FDD preparation costs before you sell your first unit.",
     category: 'Education',
     datePublished: '2026-05-07',
     readTime: '13 min read',
@@ -403,7 +412,9 @@ Invest in doing it right. Work with a qualified franchise attorney. Be thorough,
   {
     slug: 'cost-to-franchise-a-business',
     title: 'How Much It Costs to Franchise a Business: A Real Breakdown',
-    description: 'A transparent breakdown of franchise development costs including legal fees, operations manual creation, marketing, technology, and state registrations. No hidden fees, no surprises.',
+    seoTitle: "How Much It Costs to Franchise",
+    description:
+      "What it costs to franchise a business: legal fees, FDD preparation, operations manual, technology, and state registrations, with real dollar ranges for each.",
     category: 'Finance',
     datePublished: '2026-05-10',
     readTime: '12 min read',
@@ -567,7 +578,9 @@ Build your budget. Know your numbers. And invest in the foundation, because ever
   {
     slug: 'franchise-feasibility',
     title: 'Franchise Feasibility: How to Know If Franchising Will Actually Work',
-    description: 'Learn what a franchise feasibility study actually evaluates, why it matters before you invest in development, and the key benchmarks that separate concepts ready to franchise from those that need more work.',
+    seoTitle: "Franchise Feasibility Explained",
+    description:
+      "What a franchise feasibility study actually evaluates, the benchmarks that separate ready concepts from premature ones, and why it comes before legal work.",
     category: 'Education',
     datePublished: '2026-05-13',
     readTime: '11 min read',
@@ -721,7 +734,9 @@ If you are serious about franchising, start here. It is the smartest money you w
   {
     slug: 'mcdonalds-franchise-case-study',
     title: "How McDonald's Became a Franchise Empire and What Founders Can Learn",
-    description: "A deep analysis of how McDonald's built the world's most successful franchise system. Real lessons on operational systems, real estate strategy, and franchise economics that any business owner can apply.",
+    seoTitle: "The McDonald's Franchise Case Study",
+    description:
+      "How McDonald's built the world's largest franchise system, and the lessons on real estate, operational standards, and unit economics any founder can apply.",
     category: 'Case Study',
     datePublished: '2026-05-16',
     readTime: '14 min read',
@@ -840,7 +855,9 @@ If the answer is yes, you have something worth franchising. And the principles t
   {
     slug: 'franchising-vs-licensing',
     title: 'Franchising vs Licensing vs Dealerships: Which Model Fits Your Business',
-    description: 'A clear comparison of franchising, licensing, and dealership models. Understand the legal differences, control levels, costs, and which growth strategy is the best fit for your specific business type.',
+    seoTitle: "Franchising vs Licensing Explained",
+    description:
+      "Franchising, licensing, and dealership models compared: legal definitions, control, disclosure duties, and which growth path actually fits your business.",
     category: 'Education',
     datePublished: '2026-05-19',
     readTime: '13 min read',
@@ -994,7 +1011,9 @@ Talk to a franchise attorney before you commit. Understand the trade offs. Choos
   {
     slug: 'item-19-explained',
     title: 'Item 19 Explained: How Financial Performance Representations Win Franchisees',
-    description: 'A complete breakdown of Item 19 of the Franchise Disclosure Document, including what you can and cannot include, strategic approaches, and why a strong Item 19 is your most powerful franchise sales tool.',
+    seoTitle: "Item 19 Explained",
+    description:
+      "Item 19 of the FDD lets franchisors share financial performance representations. What you can include, what you cannot, and why it drives franchise sales.",
     category: 'Education',
     datePublished: '2026-05-22',
     readTime: '12 min read',
@@ -1121,7 +1140,9 @@ But it must be done right. Work with experienced franchise legal counsel, invest
   {
     slug: 'four-phases-franchise-development',
     title: 'The 4 Phases of Franchise Development Every Founder Should Know',
-    description: 'A clear breakdown of the four phases of franchise development: feasibility, foundation, launch, and growth. Understand what happens in each phase, the timeline, and what it costs.',
+    seoTitle: "The 4 Phases of Franchise Development",
+    description:
+      "The four phases of franchise development: feasibility, foundation, launch, and growth. What happens in each phase, how long it takes, and what it costs.",
     category: 'Guide',
     datePublished: '2026-05-25',
     readTime: '13 min read',
@@ -1364,7 +1385,9 @@ That patience is not easy. But it is the difference between building a franchise
   {
     slug: 'how-long-to-franchise',
     title: 'How Long It Takes to Franchise a Business',
-    description: 'A realistic timeline for franchising a business from feasibility through first franchisee opening. Covers every phase, what causes delays, and how to move efficiently without cutting corners.',
+    seoTitle: "How Long It Takes to Franchise",
+    description:
+      "How long it takes to franchise a business, phase by phase, plus what causes delays in legal drafting, state registration, and your first franchisee opening.",
     category: 'Education',
     datePublished: '2026-05-28',
     readTime: '11 min read',
@@ -1509,4 +1532,5 @@ export const blogPosts: BlogPost[] = [
   ...(blogPosts11to20 as BlogPost[]),
   ...(blogPosts21to30 as BlogPost[]),
   ...(blogPosts31to42 as BlogPost[]),
+  ...(blogPosts43to52 as BlogPost[]),
 ]

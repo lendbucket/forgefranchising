@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { MISSION_STATEMENT } from '@/lib/constants'
+import { MISSION_STATEMENT, CONTACT_EMAIL } from '@/lib/constants'
 
 const footerLinks = {
   'Franchise Your Business': [
@@ -54,6 +54,11 @@ export function Footer() {
             </Link>
             <p className="text-cream/50 text-sm leading-relaxed max-w-md">
               {MISSION_STATEMENT}
+            </p>
+            <p className="mt-6 text-sm text-cream/50">
+              <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-amber transition-colors">
+                {CONTACT_EMAIL}
+              </a>
             </p>
           </div>
 

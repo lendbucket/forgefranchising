@@ -4,6 +4,7 @@ import { useState, FormEvent } from 'react'
 import Link from 'next/link'
 import { StickyCTA } from '@/components/StickyCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
+import { CONTACT_EMAIL } from '@/lib/constants'
 
 /**
  * Multi-step contact form using foot-in-door effect:
@@ -245,6 +246,12 @@ export default function ContactPage() {
                 During that call, we will walk through your business model, your goals, and whether
                 franchising is the right growth path for you. There is no cost and no obligation.
               </p>
+              <p className="text-muted-brown mb-8 text-sm">
+                Need to add something? Email us at{' '}
+                <a href={`mailto:${CONTACT_EMAIL}`} className="text-amber hover:underline">
+                  {CONTACT_EMAIL}
+                </a>.
+              </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/" className="btn-primary">
                   Return Home
@@ -288,11 +295,12 @@ export default function ContactPage() {
               Start the Conversation
             </p>
             <h1 className="heading-1 mb-6">
-              Find Out If Your Business Is Ready to Franchise
+              Ready to Franchise My Business? Start Here
             </h1>
             <p className="body-large">
-              Three quick steps. We will use your answers to prepare a relevant, specific
-              conversation on your feasibility call. No generic pitches.
+              If you have been thinking "I want to franchise my business," this is where that starts.
+              Three quick steps. We will use your answers to prepare a specific conversation on your
+              feasibility call. No generic pitches.
             </p>
           </div>
         </div>
@@ -488,7 +496,12 @@ export default function ContactPage() {
 
                     {status === 'error' && (
                       <div className="p-4 bg-red-50 border border-red-200 mt-6" style={{ borderRadius: '3px' }}>
-                        <p className="text-red-800 text-sm">{errorMessage}</p>
+                        <p className="text-red-800 text-sm">
+                          {errorMessage}{' '}
+                          <a href={`mailto:${CONTACT_EMAIL}`} className="underline">
+                            {CONTACT_EMAIL}
+                          </a>
+                        </p>
                       </div>
                     )}
 

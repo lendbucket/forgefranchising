@@ -6,7 +6,7 @@ import { SITE_NAME, SITE_URL } from '@/lib/constants'
 export const metadata = createMetadata({
   title: 'Own a Forge Franchise',
   description:
-    'Build a franchise consulting and brokerage business with the Forge brand, proprietary technology, complete training, and ongoing support. Apply for a protected territory today.',
+    'Own a Forge franchise consulting and brokerage business. Protected territory, proprietary technology, complete training, and ongoing support from operators.',
   path: '/own-a-franchise',
 })
 

@@ -12,7 +12,7 @@ import { SITE_URL, SITE_NAME } from '@/lib/constants'
 export const metadata = createMetadata({
   title: 'Protect Your Franchise Brand',
   description:
-    'Why trademarks are the legal spine of franchising. Federal registration, Item 13 of the FDD, policing the mark, and protecting your franchise IP before selling units.',
+    'Trademarks are the legal spine of franchising. Federal registration, Item 13 of the FDD, policing your mark, and protecting franchise IP before you sell a unit.',
   path: '/franchise-branding/protecting-your-brand',
 })
 

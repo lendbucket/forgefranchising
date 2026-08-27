@@ -23,11 +23,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: 'Post Not Found' }
   }
 
-  // Keep SEO title under 60 chars (template adds " | Forge Franchising" = 21 chars)
+  // Keep the rendered <title> under 60 chars (template adds " | Forge Franchising" = 20).
+  // Posts carry an explicit seoTitle; the trim below is a safety net for any that do not.
   const maxTitleLen = 38
-  const seoTitle = post.title.length <= maxTitleLen
-    ? post.title
-    : post.title.replace(/:.+$/, '').replace(/\s+\(.+\)$/, '').slice(0, maxTitleLen).replace(/\s+\S*$/, '')
+  const seoTitle =
+    post.seoTitle ??
+    (post.title.length <= maxTitleLen
+      ? post.title
+      : post.title.replace(/:.+$/, '').replace(/\s+\(.+\)$/, '').slice(0, maxTitleLen).replace(/\s+\S*$/, ''))
 
   return {
     title: seoTitle,

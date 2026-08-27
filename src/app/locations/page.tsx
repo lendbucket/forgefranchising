@@ -5,8 +5,9 @@ import { SITE_URL } from '@/lib/constants'
 import { webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 
 export const metadata = createMetadata({
-  title: 'Franchise Consulting by City',
-  description: 'Find a Forge Franchising franchise consultant near you. We serve business owners and franchise candidates in over 60 major US markets.',
+  title: 'Franchise Consultant Near You',
+  description:
+    'Franchise consultant coverage across 62 US metros. Get local market data, the industries franchising fastest near you, and a team that has operated units.',
   path: '/locations',
 })
 
@@ -48,10 +49,10 @@ export default function LocationsPage() {
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-20">
           <p className="eyebrow mb-4">Service Areas</p>
-          <h1 className="heading-1 text-cream mb-6">Franchise Consulting and Brokerage Services Across the United States</h1>
+          <h1 className="heading-1 text-cream mb-6">Franchise Consultant Coverage Across the United States</h1>
           <p className="text-lg text-cream/60 leading-relaxed max-w-2xl">
             Forge Franchising helps business owners franchise their proven concepts and connects qualified buyers
-            with franchise opportunities. Find franchise consulting services in your city.
+            with franchise opportunities. Find a franchise consultant in your city.
           </p>
         </div>
       </section>

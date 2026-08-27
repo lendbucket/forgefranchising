@@ -10,9 +10,9 @@ import { SITE_URL } from '@/lib/constants'
 import { articleSchema, faqSchema, webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 
 export const metadata = createMetadata({
-  title: 'Franchise Branding Guide',
+  title: 'Franchise Brand Development Guide',
   description:
-    'Why brand is the product when you franchise. A complete guide to building, enforcing, and protecting a franchise brand that compounds across every unit.',
+    'Franchise brand development is what franchisees actually buy. Build the identity, standards, and trademark protection that make your system worth paying for.',
   path: '/franchise-branding',
 })
 
@@ -121,7 +121,7 @@ export default function FranchiseBrandingPage() {
             ]),
             articleSchema({
               url: `${SITE_URL}/franchise-branding`,
-              headline: 'Franchise Branding: Why Brand Is the Product',
+              headline: 'Franchise Brand Development: Why Brand Is the Product',
               description: 'A complete guide to building, enforcing, and protecting a franchise brand that compounds across every unit.',
             }),
             faqSchema({
@@ -141,11 +141,11 @@ export default function FranchiseBrandingPage() {
           <div className="max-w-3xl">
             <p className="eyebrow mb-4">Franchise Brand Strategy</p>
             <h1 className="heading-1 mb-8">
-              Franchise Branding: Why Brand Is the Product
+              Franchise Brand Development: Why Brand Is the Product
             </h1>
             <p className="body-large mb-6">
-              When you franchise your business, you stop selling your service and start
-              selling your brand and system. The franchisee is not buying your recipes, your
+              Franchise brand development starts with a hard truth. When you franchise your business,
+              you stop selling your service and start selling your brand and system. The franchisee is not buying your recipes, your
               equipment list, or your floor plan. They are buying the right to operate under
               a name that customers already trust. That name is the product.
             </p>

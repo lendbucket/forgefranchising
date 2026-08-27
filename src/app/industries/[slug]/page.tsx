@@ -26,8 +26,8 @@ export async function generateMetadata({ params }: Props) {
   if (!industry) return {}
 
   return createMetadata({
-    title: `How to ${industry.keyword.charAt(0).toUpperCase() + industry.keyword.slice(1)}`,
-    description: `${industry.description} Learn about investment ranges, success factors, challenges, and what it takes to franchise in the ${industry.name.toLowerCase()} industry.`,
+    title: industry.metaTitle,
+    description: industry.metaDescription,
     path: `/industries/${slug}`,
   })
 }
@@ -51,8 +51,8 @@ export default async function IndustryPage({ params }: Props) {
           __html: renderSchema([
             webPageSchema({
               url: pageUrl,
-              name: `How to ${industry.keyword.charAt(0).toUpperCase() + industry.keyword.slice(1)}`,
-              description: `${industry.description} Learn about investment ranges, success factors, challenges, and what it takes to franchise in the ${industry.name.toLowerCase()} industry.`,
+              name: industry.metaTitle,
+              description: industry.metaDescription,
               hasBreadcrumb: true,
             }),
             breadcrumbSchema(pageUrl, [
@@ -82,7 +82,7 @@ export default async function IndustryPage({ params }: Props) {
               {industry.name} Franchising
             </p>
             <h1 className="heading-1 mb-8">
-              How to {industry.keyword.charAt(0).toUpperCase() + industry.keyword.slice(1)}: What It Actually Takes
+              {industry.h1}
             </h1>
             <p className="body-large">
               {data.heroSubhead}

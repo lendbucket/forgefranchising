@@ -67,10 +67,15 @@ function extractTakeaways(content: string): string[] {
 /* ------------------------------------------------------------------ */
 
 function InlineRenderer({ text }: { text: string }) {
-  const parts = text.split(/(\*\*[^*]+\*\*)/g)
+  // Handles **bold** and [label](/path) links. Without the link branch the
+  // markdown source leaks into the page as literal text and the internal
+  // links pass no equity.
+  const parts = text.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g)
   return (
     <>
       {parts.map((part, i) => {
+        if (!part) return null
+
         if (part.startsWith('**') && part.endsWith('**')) {
           return (
             <strong key={i} className="text-espresso font-semibold">
@@ -78,6 +83,30 @@ function InlineRenderer({ text }: { text: string }) {
             </strong>
           )
         }
+
+        const link = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/)
+        if (link) {
+          const [, label, href] = link
+          if (href.startsWith('/')) {
+            return (
+              <Link key={i} href={href} className="text-amber font-medium hover:underline">
+                {label}
+              </Link>
+            )
+          }
+          return (
+            <a
+              key={i}
+              href={href}
+              className="text-amber font-medium hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {label}
+            </a>
+          )
+        }
+
         return <span key={i}>{part}</span>
       })}
     </>

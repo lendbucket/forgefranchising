@@ -1,11 +1,12 @@
 import Link from 'next/link'
 import { createMetadata } from '@/lib/metadata'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
+import { CONTACT_EMAIL } from '@/lib/constants'
 
 export const metadata = createMetadata({
   title: 'Privacy Policy',
   description:
-    'Forge Franchising Group privacy policy. Learn how we collect, use, and protect your information when you visit forgefranchising.com or use our franchise services.',
+    'How Forge Franchising Group collects, uses, and protects your information on forgefranchising.com. Your rights, our data practices, and how to contact us.',
   path: '/privacy',
 })
 
@@ -145,8 +146,8 @@ export default function PrivacyPage() {
             <p className="text-muted-brown leading-relaxed">
               If you have questions about this Privacy Policy or how we handle your information, contact
               us at{' '}
-              <a href="mailto:ceo@36west.org" className="text-amber hover:underline">
-                ceo@36west.org
+              <a href={`mailto:${CONTACT_EMAIL}`} className="text-amber hover:underline">
+                {CONTACT_EMAIL}
               </a>.
             </p>
           </div>

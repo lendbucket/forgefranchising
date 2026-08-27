@@ -2,8 +2,9 @@ export const blogPosts21to30 = [
   {
     slug: "franchise-a-home-services-business",
     title: "How to Franchise a Home Services Business",
+    seoTitle: "Franchise a Home Services Business",
     description:
-      "A practical guide to turning your home services company into a franchise, covering unit economics, territory planning, training systems, and what makes this sector so attractive for franchising.",
+      "How to turn a home services company into a franchise. Unit economics, territory planning, technician training, and why this sector franchises so well.",
     category: "Industry",
     datePublished: "2026-05-30",
     readTime: "10 min read",
@@ -88,8 +89,9 @@ The demand is not going away. Homes will always need maintenance, repair, and im
   {
     slug: "franchise-a-fitness-gym",
     title: "How to Franchise a Fitness or Gym Concept",
+    seoTitle: "How to Franchise a Fitness Gym",
     description:
-      "Everything you need to know about franchising a fitness or gym concept, from membership economics and real estate strategy to class programming and retention systems.",
+      "How to franchise a fitness or gym concept. Membership economics, real estate strategy, class programming, and the retention systems that keep units full.",
     category: "Industry",
     datePublished: "2026-06-01",
     readTime: "11 min read",
@@ -186,8 +188,9 @@ The fitness industry will continue to grow. People are spending more on health a
   {
     slug: "how-franchisees-get-funded",
     title: "How Your Franchisees Get Funded: The Financing Options Explained",
+    seoTitle: "How Franchisees Get Funded",
     description:
-      "A comprehensive breakdown of the financing options available to franchise buyers, from SBA loans and ROBS to portfolio lenders, and what franchisors should know to help their candidates succeed.",
+      "How franchise buyers get funded: SBA loans, ROBS, portfolio lenders, and home equity. What franchisors should know to help candidates reach the closing table.",
     category: "Finance",
     datePublished: "2026-06-02",
     readTime: "10 min read",
@@ -284,8 +287,9 @@ When you make it easy for qualified candidates to get funded, you remove the sin
   {
     slug: "robs-explained",
     title: "ROBS Explained: Using Retirement Funds to Buy a Franchise",
+    seoTitle: "ROBS Financing Explained",
     description:
-      "A deep dive into the ROBS (Rollover for Business Startups) strategy, covering how it works, who qualifies, the risks and benefits, compliance requirements, and whether it makes sense for franchise buyers.",
+      "ROBS lets a buyer fund a franchise with retirement savings without an early withdrawal penalty. How it works, who qualifies, and the compliance risks involved.",
     category: "Finance",
     datePublished: "2026-06-03",
     readTime: "10 min read",
@@ -382,8 +386,9 @@ Your retirement savings represent years of disciplined saving. Investing them in
   {
     slug: "sba-loans-for-franchises",
     title: "SBA Loans for Franchises: What Founders and Franchisees Should Know",
+    seoTitle: "SBA Loans for Franchises",
     description:
-      "A practical guide to SBA lending for franchise businesses, covering the SBA Franchise Directory, loan programs, qualification requirements, and how franchisors can make their brand more bankable.",
+      "How SBA lending works for franchises: the SBA Franchise Directory, loan programs, qualification requirements, and how franchisors make a brand more bankable.",
     category: "Finance",
     datePublished: "2026-06-04",
     readTime: "11 min read",
@@ -496,8 +501,9 @@ As a franchisor, your job is to build a system that is worthy of that lending su
   {
     slug: "franchise-sales-process",
     title: "The Franchise Sales Process: From Lead to Signed Agreement",
+    seoTitle: "The Franchise Sales Process",
     description:
-      "A step-by-step breakdown of the franchise sales process, covering lead generation, qualification, discovery days, FDD delivery, and how to close franchise deals without being pushy.",
+      "The franchise sales process step by step: lead generation, qualification, discovery day, FDD delivery, and closing without pressure tactics that create risk.",
     category: "Sales",
     datePublished: "2026-06-05",
     readTime: "11 min read",
@@ -610,8 +616,9 @@ The franchise sales process, done right, is about finding the right people and g
   {
     slug: "technology-changing-franchise-development",
     title: "How Technology Is Changing Franchise Development",
+    seoTitle: "Technology in Franchise Development",
     description:
-      "An exploration of how modern technology is transforming franchise development, from CRM and automation to AI-powered lead scoring, virtual discovery days, and centralized performance dashboards.",
+      "How technology is changing franchise development, from CRM and automation to lead scoring, virtual discovery days, and centralized performance dashboards.",
     category: "Technology",
     datePublished: "2026-06-06",
     readTime: "10 min read",
@@ -725,8 +732,9 @@ Technology will not replace the human relationships that drive franchise develop
   {
     slug: "what-franchisees-look-for",
     title: "What Franchisees Look For Before They Invest",
+    seoTitle: "What Franchisees Look For",
     description:
-      "An inside look at the factors that matter most to prospective franchisees when evaluating a franchise opportunity, and how franchisors can position their brand to attract the best candidates.",
+      "What prospective franchisees evaluate before they sign: unit economics, support quality, brand strength, and territory. How to position your system to win.",
     category: "Sales",
     datePublished: "2026-06-07",
     readTime: "10 min read",
@@ -829,8 +837,9 @@ Every element of your franchise system that touches a prospective buyer is eithe
   {
     slug: "scale-1-to-100-locations",
     title: "How to Scale From 1 Location to 100 Without Losing Quality",
+    seoTitle: "Scaling 1 to 100 Locations",
     description:
-      "A practical guide to scaling a franchise system from a handful of units to 100 locations while maintaining operational quality, brand consistency, and franchisee satisfaction.",
+      "How to scale a franchise system from a handful of units to 100 locations while holding operational quality, brand consistency, and franchisee satisfaction.",
     category: "Operations",
     datePublished: "2026-06-08",
     readTime: "11 min read",
@@ -933,8 +942,9 @@ Scaling to 100 locations is possible. Scaling to 100 locations without losing wh
   {
     slug: "economics-of-franchising",
     title: "The Economics of Franchising: Why It Beats Opening More Company Locations",
+    seoTitle: "The Economics of Franchising",
     description:
-      "A detailed financial comparison of franchise expansion versus company-owned growth, covering capital requirements, risk distribution, unit economics, and long-term enterprise value.",
+      "Franchise expansion versus company owned growth, compared on capital requirements, risk distribution, unit economics, and long term enterprise value at exit.",
     category: "Finance",
     datePublished: "2026-06-09",
     readTime: "11 min read",

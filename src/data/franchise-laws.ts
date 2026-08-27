@@ -14,7 +14,7 @@ export type FranchiseStateData = {
 }
 
 export const FRANCHISE_LAWS: FranchiseStateData[] = [
-  // ─── REGISTRATION STATES ───────────────────────────────────────────
+  // ===== REGISTRATION STATES =====
   {
     slug: 'california',
     name: 'California',
@@ -342,7 +342,7 @@ export const FRANCHISE_LAWS: FranchiseStateData[] = [
       'Wisconsin has the Fair Dealership Law (Wis. Stat. 135), which is separate from the franchise registration law and provides additional protections to dealers and franchisees. This law can apply broadly and franchisors should have counsel review compliance.',
   },
 
-  // ─── FILING STATES ─────────────────────────────────────────────────
+  // ===== FILING STATES =====
   {
     slug: 'connecticut',
     name: 'Connecticut',
@@ -519,7 +519,7 @@ export const FRANCHISE_LAWS: FranchiseStateData[] = [
       'Utah has a growing franchise market, particularly in the service and food sectors. The filing process is straightforward. Franchisors should also confirm whether the Business Opportunity Disclosure Act applies to their offering.',
   },
 
-  // ─── NO-FILING STATES ──────────────────────────────────────────────
+  // ===== NO-FILING STATES =====
   {
     slug: 'alabama',
     name: 'Alabama',

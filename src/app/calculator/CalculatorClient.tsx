@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { CONTACT_EMAIL } from '@/lib/constants'
 
 const INDUSTRIES = [
   'Restaurants & Food',
@@ -125,10 +126,10 @@ export function CalculatorClient() {
       if (res.ok) {
         setSubmitted(true)
       } else {
-        setError('Something went wrong. Please try again or email us directly at ceo@36west.org.')
+        setError(`Something went wrong. Please try again or email us directly at ${CONTACT_EMAIL}.`)
       }
     } catch {
-      setError('Something went wrong. Please try again or email us directly at ceo@36west.org.')
+      setError(`Something went wrong. Please try again or email us directly at ${CONTACT_EMAIL}.`)
     } finally {
       setSubmitting(false)
     }

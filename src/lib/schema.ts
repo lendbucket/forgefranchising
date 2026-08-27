@@ -1,4 +1,4 @@
-import { SITE_NAME, SITE_URL, SITE_DESCRIPTION, MISSION_STATEMENT } from './constants'
+import { SITE_NAME, SITE_URL, SITE_DESCRIPTION, MISSION_STATEMENT, CONTACT_EMAIL, SUPPORT_EMAIL } from './constants'
 
 // --------------------------------------------------------------------------
 // Centralized JSON-LD schema module
@@ -26,12 +26,12 @@ export function organizationSchema(): SchemaNode {
     contactPoint: [
       {
         '@type': 'ContactPoint',
-        email: 'inquiry@forgefranchising.com',
+        email: CONTACT_EMAIL,
         contactType: 'sales',
       },
       {
         '@type': 'ContactPoint',
-        email: 'info@forgefranchising.com',
+        email: SUPPORT_EMAIL,
         contactType: 'customer support',
       },
     ],

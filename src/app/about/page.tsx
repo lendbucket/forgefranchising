@@ -8,9 +8,9 @@ import { MISSION_STATEMENT, SITE_URL } from '@/lib/constants'
 import { webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 
 export const metadata = createMetadata({
-  title: 'About Us',
+  title: 'Franchise Business Consultant Team',
   description:
-    'Forge Franchising Group is an operator built franchise development firm. We turn proven businesses into franchise brands with real experience and a clear path.',
+    'Franchise business consultant team built by operators who have opened units, trained franchisees, and cleared state examiners. See exactly who you work with.',
   path: '/about',
 })
 
@@ -40,11 +40,11 @@ export default function AboutPage() {
           <div className="max-w-3xl">
             <p className="eyebrow mb-4">About Us</p>
             <h1 className="heading-1 mb-8">
-              Operator Built. Not Consultant Assembled.
+              Franchise Business Consultant Work, Operator Built.
             </h1>
             <p className="body-large mb-6">
-              Forge Franchising Group was founded on a simple observation: most franchise development firms
-              have never actually operated a franchise. They have never opened a second location, trained
+              Forge Franchising Group was founded on a simple observation: most firms selling franchise
+              business consultant services have never actually operated a franchise. They have never opened a second location, trained
               a franchisee, or dealt with a state examiner who rejected their FDD filing.
             </p>
             <p className="body-large mb-8">

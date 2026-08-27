@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
 import { cities, getCityBySlug } from '@/data/cities'
 import { SITE_URL, SITE_NAME } from '@/lib/constants'
+import { composeDescription } from '@/lib/metadata'
 import {
   webPageSchema,
   breadcrumbSchema as breadcrumbSchemaHelper,
@@ -25,7 +26,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!city) return {}
 
   const title = `${city.name} Franchise Consultant`
-  const description = `Franchise consulting in the ${city.metroArea} metro. Forge Franchising helps ${city.name} business owners franchise their ${city.topIndustries[0]?.toLowerCase() || 'proven'} concepts and connects buyers with opportunities.`
+  const description = composeDescription(
+    `Franchise consultant services in ${city.name}, ${city.stateAbbr}.`,
+    [
+      ` Local market data for the ${city.metroArea} metro.`,
+      ` See which industries are franchising fastest here.`,
+      ` We help owners turn proven concepts into franchise systems.`,
+      ` Book a free feasibility call.`,
+      ` No obligation.`,
+    ],
+  )
 
   return {
     title,

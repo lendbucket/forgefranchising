@@ -257,11 +257,11 @@ export function AssessmentClient() {
               Franchise Readiness Assessment
             </p>
             <h1 className="heading-1 mb-6">
-              Get Your Free Franchise Readiness Score
+              Turn My Business Into a Franchise: Get Your Score
             </h1>
             <p className="body-large">
-              Answer eight questions about your business and get an honest assessment
-              of your franchise readiness. Takes about two minutes.
+              Wondering how to turn my business into a franchise? Answer eight questions and get an
+              honest assessment of your franchise readiness. Takes about two minutes.
             </p>
           </div>
         </div>

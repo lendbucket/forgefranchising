@@ -11,7 +11,7 @@ import { faqSchema, webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/
 export const metadata = createMetadata({
   title: 'The Forge Franchise Readiness Method',
   description:
-    'The Forge Franchise Readiness Method evaluates four pillars that determine whether your business can franchise: profitability, systems, brand, and replicability.',
+    'The Forge Franchise Readiness Method scores four pillars that decide if you can franchise: profitability, systems, brand, and replicability. See the criteria.',
   path: '/readiness-method',
 })
 

@@ -206,7 +206,7 @@ export const INDUSTRY_DATA: Record<string, IndustryData> = {
   'home-services': {
     slug: 'home-services',
     heroSubhead:
-      'Home services is one of the fastest growing and most accessible franchise sectors. From plumbing and HVAC to painting, cleaning, and landscaping, home service businesses benefit from low overhead, high demand, and a franchise model that can launch without the massive buildout costs of brick and mortar concepts.',
+      'Owners asking how to franchise a service business start here. Home services is one of the fastest growing and most accessible franchise sectors. From plumbing and HVAC to painting, cleaning, and landscaping, home service businesses benefit from low overhead, high demand, and a franchise model that can launch without the massive buildout costs of brick and mortar concepts.',
     intro: [
       'The home services franchise model works because it solves problems that homeowners face repeatedly and cannot easily solve themselves. Plumbing breaks, HVAC systems fail, homes need painting, lawns need maintenance. These are not discretionary purchases. They are necessities that drive year-round demand.',
       'What makes home services particularly attractive for franchising is the business model itself. Most home service franchises are mobile or vehicle based, which means no retail lease, no buildout, and no tenant improvement costs. The franchisee operates from a home office or small warehouse, dispatches technicians in branded vehicles, and serves a defined territory. This dramatically lowers the initial investment and reduces the break even timeline.',
