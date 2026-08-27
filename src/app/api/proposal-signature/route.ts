@@ -2,9 +2,10 @@ import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { CONTACT_EMAIL } from '@/lib/constants'
 import {
-  escapeHtml,
   clientConfirmationHtml,
   clientConfirmationText,
+  internalNotificationHtml,
+  internalNotificationText,
   TIER_PRICING,
 } from '@/lib/proposal-email'
 
@@ -79,32 +80,15 @@ export async function POST(request: Request) {
     const submittedAt = new Date().toISOString()
     const clientIp = getClientIp(request)
 
-    const rows: [string, string][] = [
-      [FIELD_LABELS.tier, tier],
-      [FIELD_LABELS.fullName, fullName],
-      [FIELD_LABELS.email, email],
-      [FIELD_LABELS.date, date],
-      [FIELD_LABELS.signature, signature],
-      ['Server Timestamp (UTC)', submittedAt],
-      ['Request IP', clientIp],
-    ]
-
-    const htmlBody = `
-      <h2>Proposal Signed: Uncaged Fitness</h2>
-      <p style="color: #F87000; font-weight: bold;">A client has signed the proposal.</p>
-      <table style="border-collapse: collapse; width: 100%; max-width: 600px;">
-        ${rows
-          .map(
-            ([label, value], i) => `
-        <tr><td style="padding: 8px; font-weight: bold; ${
-          i < rows.length - 1 ? 'border-bottom: 1px solid #ddd;' : ''
-        }">${escapeHtml(label)}</td><td style="padding: 8px; ${
-          i < rows.length - 1 ? 'border-bottom: 1px solid #ddd;' : ''
-        }">${escapeHtml(value)}</td></tr>`
-          )
-          .join('')}
-      </table>
-    `
+    const notification = {
+      tier,
+      fullName,
+      email,
+      date,
+      signature,
+      submittedAt,
+      clientIp,
+    }
 
     const fromEmail = process.env.LEAD_FROM_EMAIL || 'Forge Franchising <leads@forgefranchising.com>'
 
@@ -112,7 +96,8 @@ export async function POST(request: Request) {
       from: fromEmail,
       to: CONTACT_EMAIL,
       subject: 'Proposal signed: Uncaged Fitness',
-      html: htmlBody,
+      html: internalNotificationHtml(notification),
+      text: internalNotificationText(notification),
       replyTo: email,
     })
 

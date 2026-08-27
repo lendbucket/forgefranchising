@@ -344,6 +344,19 @@ function ConfirmationPanel({
           textAlign: 'center',
         }}
       >
+        <div
+          className={reduceMotion ? undefined : 'proposal-logo'}
+          style={{ marginBottom: '36px' }}
+        >
+          <Image
+            src="/forge-franchising-logo-white.png"
+            alt="Forge Franchising Group"
+            width={1396}
+            height={711}
+            style={{ width: '130px', height: 'auto', margin: '0 auto', display: 'block' }}
+          />
+        </div>
+
         {/* Checkmark with the celebratory burst behind it */}
         <div
           style={{
@@ -378,7 +391,7 @@ function ConfirmationPanel({
                       height: p.size + 'px',
                       borderRadius: '50%',
                       background: p.color,
-                      animationDelay: p.delay + 'ms',
+                      animationDelay: 900 + p.delay + 'ms',
                       '--px': p.dx + 'px',
                       '--py': p.dy + 'px',
                     } as CSSProperties
@@ -479,7 +492,7 @@ function ConfirmationPanel({
               padding: '20px 0',
               borderTop: i === 0 ? '1px solid rgba(255,255,255,0.08)' : 'none',
               borderBottom: '1px solid rgba(255,255,255,0.08)',
-              animationDelay: reduceMotion ? undefined : 420 + i * 120 + 'ms',
+              animationDelay: reduceMotion ? undefined : 1340 + i * 120 + 'ms',
             }}
           >
             <span aria-hidden="true" style={{ paddingTop: '2px' }}>
@@ -701,14 +714,20 @@ export default function UncagedFitnessProposalPage() {
         }
 
         /* Confirmation state */
+        /* Sequence: panel rises, logo fades, ring draws, check draws, steps stagger. */
         .proposal-panel{animation:proposal-panel-in 520ms ease-out both}
-        .proposal-ring{stroke-dasharray:252;stroke-dashoffset:252;animation:proposal-ring 500ms ease-out forwards}
-        .proposal-check-path{stroke-dasharray:50;stroke-dashoffset:50;animation:proposal-check 400ms ease-out 500ms forwards}
+        .proposal-logo{animation:proposal-logo-in 420ms ease-out both}
+        .proposal-ring{stroke-dasharray:252;stroke-dashoffset:252;animation:proposal-ring 500ms ease-out 400ms forwards}
+        .proposal-check-path{stroke-dasharray:50;stroke-dashoffset:50;animation:proposal-check 400ms ease-out 900ms forwards}
         .proposal-step{animation:proposal-step-in 460ms ease-out both}
         .proposal-particle{animation:proposal-particle 1800ms ease-out both}
 
         @keyframes proposal-panel-in{
           from{opacity:0;transform:translateY(16px)}
+          to{opacity:1;transform:none}
+        }
+        @keyframes proposal-logo-in{
+          from{opacity:0;transform:translateY(6px)}
           to{opacity:1;transform:none}
         }
         @keyframes proposal-ring{to{stroke-dashoffset:0}}
@@ -728,6 +747,7 @@ export default function UncagedFitnessProposalPage() {
           .proposal-root [data-reveal]{opacity:1;transform:none;transition:none}
           /* Final state, immediately. No drawing, no stagger, no particles. */
           .proposal-panel,
+          .proposal-logo,
           .proposal-step{animation:none;opacity:1;transform:none}
           .proposal-ring,
           .proposal-check-path{animation:none;stroke-dashoffset:0}
@@ -737,6 +757,7 @@ export default function UncagedFitnessProposalPage() {
           *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
           .proposal-root [data-reveal]{opacity:1 !important;transform:none !important;transition:none !important}
           .proposal-panel,
+          .proposal-logo,
           .proposal-step{animation:none !important;opacity:1 !important;transform:none !important}
           .proposal-ring,
           .proposal-check-path{animation:none !important;stroke-dashoffset:0 !important}

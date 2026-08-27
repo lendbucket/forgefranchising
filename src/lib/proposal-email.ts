@@ -1,9 +1,15 @@
-import { CONTACT_EMAIL } from './constants'
+import { CONTACT_EMAIL, SITE_URL } from './constants'
 
 /**
  * Email bodies for the proposal signature flow.
  * Kept out of the route so the route stays thin and these stay testable.
+ *
+ * Both messages are table based with inline styles. The only head level CSS is
+ * a media query for mobile padding, which clients that ignore it simply fall
+ * back from to the inline values. No flexbox, no grid, no web fonts, no
+ * external stylesheets, no background images.
  */
+
 export function escapeHtml(value: string): string {
   return value
     .replace(/&/g, '&amp;')
@@ -46,14 +52,128 @@ const NEXT_STEPS: [string, string][] = [
 const DISCLAIMER =
   'This message confirms selection of a professional services engagement and is not a franchise offering. A franchise may be offered only through a Franchise Disclosure Document delivered in accordance with the FTC Franchise Rule and applicable state law. Nothing in this message is a representation or guarantee of financial performance or results. Forge Franchising Group is not a law firm. All legal documents are prepared by licensed counsel.'
 
+/* ---------------------------------------------------------------- */
+/*  Design tokens                                                    */
+/* ---------------------------------------------------------------- */
+
 const SERIF = "Georgia, 'Times New Roman', Times, serif"
 const SANS = 'Helvetica, Arial, sans-serif'
 
+const CREAM = '#FAF6EF'
+const WHITE = '#FFFFFF'
+const ESPRESSO = '#281010'
+const AMBER = '#F87000'
+const BODY_TEXT = '#55504C'
+const MUTED = '#8A8078'
+const HAIRLINE = '#E5DED2'
+
+/** Absolute, because email clients cannot resolve relative paths. */
+const FORGE_LOGO = `${SITE_URL}/forge-franchising-logo-white.png`
+
+/* ---------------------------------------------------------------- */
+/*  Shared blocks                                                    */
+/* ---------------------------------------------------------------- */
+
 /**
- * Table based confirmation email. Inline styles only, no flexbox, no grid, no
- * web fonts, so it holds up in Outlook, Gmail, and Apple Mail. The wordmark is
- * live text rather than an image so it still reads with images blocked.
+ * Espresso band carrying the logo image and, directly beneath it, the same
+ * wordmark as live text. The text is deliberate redundancy: with images
+ * blocked the header still identifies the sender. Do not remove it.
  */
+function headerBand(logoWidth: number): string {
+  return `
+        <tr>
+          <td bgcolor="${ESPRESSO}" align="center" style="background-color:${ESPRESSO};padding:28px 24px 22px 24px;">
+            <img src="${FORGE_LOGO}" alt="Forge Franchising Group" width="${logoWidth}" border="0" style="width:${logoWidth}px;height:auto;display:block;margin:0 auto;border:0;outline:none;text-decoration:none;" />
+            <div style="font-family:${SERIF};font-size:12px;font-weight:bold;color:${CREAM};letter-spacing:0.18em;padding-top:12px;">FORGE FRANCHISING GROUP</div>
+          </td>
+        </tr>
+        <tr>
+          <td height="3" bgcolor="${AMBER}" style="background-color:${AMBER};font-size:0;line-height:0;height:3px;">&nbsp;</td>
+        </tr>`
+}
+
+/** Receipt style key and value table. */
+function detailsTable(rows: [string, string][]): string {
+  return `
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${CREAM}" style="background-color:${CREAM};border:1px solid ${HAIRLINE};border-collapse:separate;">
+              ${rows
+                .map(
+                  ([label, value], i) => `
+              <tr>
+                <td width="150" valign="top" style="padding:14px 16px;font-family:${SANS};font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:${MUTED};${
+                  i < rows.length - 1 ? `border-bottom:1px solid ${HAIRLINE};` : ''
+                }">${escapeHtml(label)}</td>
+                <td valign="top" style="padding:14px 16px;font-family:${SANS};font-size:16px;font-weight:bold;color:${ESPRESSO};${
+                  i < rows.length - 1 ? `border-bottom:1px solid ${HAIRLINE};` : ''
+                }">${escapeHtml(value)}</td>
+              </tr>`
+                )
+                .join('')}
+            </table>`
+}
+
+/**
+ * Bulletproof button. The background lives on the table cell rather than on a
+ * styled anchor, which is what keeps it filled in Outlook.
+ */
+function button(href: string, label: string): string {
+  return `
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto;">
+              <tr>
+                <td align="center" bgcolor="${AMBER}" style="background-color:${AMBER};padding:16px 32px;">
+                  <a href="${href}" style="font-family:${SANS};font-size:14px;font-weight:bold;color:${ESPRESSO};text-decoration:none;text-transform:uppercase;letter-spacing:0.1em;display:inline-block;">${escapeHtml(label)}</a>
+                </td>
+              </tr>
+            </table>`
+}
+
+function footerBand(): string {
+  return `
+        <tr>
+          <td bgcolor="${CREAM}" style="background-color:${CREAM};padding:24px 32px;border-top:1px solid ${HAIRLINE};">
+            <div style="font-family:${SANS};font-size:11px;line-height:1.6;color:${MUTED};">
+              ${escapeHtml(DISCLAIMER)}
+            </div>
+            <div style="font-family:${SANS};font-size:11px;line-height:1.6;color:${MUTED};padding-top:12px;">
+              <a href="${SITE_URL}" style="color:${AMBER};text-decoration:none;">forgefranchising.com</a>
+            </div>
+          </td>
+        </tr>`
+}
+
+/** Shell shared by both messages. */
+function shell(title: string, inner: string): string {
+  return `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>${escapeHtml(title)}</title>
+<style type="text/css">
+  @media only screen and (max-width:600px) {
+    .card-pad { padding-left:24px !important; padding-right:24px !important; }
+    .card-pad-top { padding-top:24px !important; }
+  }
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:${CREAM};">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${CREAM}" style="background-color:${CREAM};margin:0;padding:0;">
+  <tr>
+    <td align="center" style="padding:24px 12px;">
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background-color:${WHITE};">
+${inner}
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>`
+}
+
+/* ---------------------------------------------------------------- */
+/*  Client confirmation                                              */
+/* ---------------------------------------------------------------- */
+
 export function clientConfirmationHtml({
   engagement,
   fullName,
@@ -63,85 +183,55 @@ export function clientConfirmationHtml({
   fullName: string
   date: string
 }): string {
-  const detailRows: [string, string][] = [
-    ['Engagement', engagement],
-    ['Signed by', fullName],
-    ['Date', date],
-  ]
-
-  return `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Engagement Confirmed</title>
-</head>
-<body style="margin:0;padding:0;background-color:#FAF6EF;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FAF6EF" style="background-color:#FAF6EF;margin:0;padding:0;">
-  <tr>
-    <td align="center" style="padding:24px 12px;">
-
-      <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background-color:#FFFFFF;">
+  const inner = `${headerBand(180)}
 
         <tr>
-          <td bgcolor="#281010" style="background-color:#281010;padding:26px 32px;">
-            <span style="font-family:${SERIF};font-size:19px;font-weight:bold;color:#FAF6EF;letter-spacing:0.06em;">FORGE FRANCHISING GROUP</span>
+          <td class="card-pad card-pad-top" style="padding:40px 40px 0 40px;">
+            <h1 style="margin:0 0 8px 0;font-family:${SERIF};font-size:28px;line-height:1.2;color:${ESPRESSO};font-weight:bold;">Engagement Confirmed</h1>
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="56"><tr><td height="3" bgcolor="${AMBER}" style="background-color:${AMBER};font-size:0;line-height:0;">&nbsp;</td></tr></table>
           </td>
         </tr>
 
         <tr>
-          <td style="padding:36px 32px 0 32px;">
-            <h1 style="margin:0 0 8px 0;font-family:${SERIF};font-size:28px;line-height:1.2;color:#281010;font-weight:bold;">Engagement Confirmed</h1>
-            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="56"><tr><td height="3" bgcolor="#F87000" style="background-color:#F87000;font-size:0;line-height:0;">&nbsp;</td></tr></table>
-          </td>
-        </tr>
-
-        <tr>
-          <td style="padding:24px 32px 0 32px;font-family:${SANS};font-size:15px;line-height:1.65;color:#55504C;">
+          <td class="card-pad" style="padding:24px 40px 0 40px;font-family:${SANS};font-size:15px;line-height:1.65;color:${BODY_TEXT};">
             Cody, thank you for selecting your engagement with Forge Franchising Group. Your selection has been recorded and our team has been notified. This message confirms what you selected and what happens next.
           </td>
         </tr>
 
         <tr>
-          <td style="padding:24px 32px 0 32px;">
-            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FAF6EF" style="background-color:#FAF6EF;">
-              ${detailRows
-                .map(
-                  ([label, value], i) => `
-              <tr>
-                <td width="140" style="padding:14px 16px;font-family:${SANS};font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#8A827C;${
-                  i < detailRows.length - 1 ? 'border-bottom:1px solid #E5DED2;' : ''
-                }" valign="top">${escapeHtml(label)}</td>
-                <td style="padding:14px 16px;font-family:${SANS};font-size:15px;color:#281010;font-weight:bold;${
-                  i < detailRows.length - 1 ? 'border-bottom:1px solid #E5DED2;' : ''
-                }" valign="top">${escapeHtml(value)}</td>
-              </tr>`
-                )
-                .join('')}
-            </table>
+          <td class="card-pad" style="padding:24px 40px 0 40px;">${detailsTable([
+            ['Engagement', engagement],
+            ['Signed by', fullName],
+            ['Date', date],
+          ])}
           </td>
         </tr>
 
         <tr>
-          <td style="padding:36px 32px 0 32px;">
-            <h2 style="margin:0 0 4px 0;font-family:${SERIF};font-size:19px;line-height:1.3;color:#281010;font-weight:bold;">What Happens Next</h2>
-            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="40"><tr><td height="2" bgcolor="#F87000" style="background-color:#F87000;font-size:0;line-height:0;">&nbsp;</td></tr></table>
+          <td class="card-pad" style="padding:36px 40px 0 40px;">
+            <h2 style="margin:0 0 4px 0;font-family:${SERIF};font-size:19px;line-height:1.3;color:${ESPRESSO};font-weight:bold;">What Happens Next</h2>
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="40"><tr><td height="2" bgcolor="${AMBER}" style="background-color:${AMBER};font-size:0;line-height:0;">&nbsp;</td></tr></table>
           </td>
         </tr>
 
         <tr>
-          <td style="padding:8px 32px 0 32px;">
+          <td class="card-pad" style="padding:12px 40px 0 40px;">
             <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
               ${NEXT_STEPS.map(
                 ([title, body], i) => `
               <tr>
-                <td width="30" valign="top" style="padding:16px 0 16px 0;font-family:${SERIF};font-size:17px;font-weight:bold;color:#F87000;${
-                  i < NEXT_STEPS.length - 1 ? 'border-bottom:1px solid #E5DED2;' : ''
-                }">${i + 1}.</td>
-                <td valign="top" style="padding:16px 0 16px 0;font-family:${SANS};font-size:15px;line-height:1.6;color:#55504C;${
-                  i < NEXT_STEPS.length - 1 ? 'border-bottom:1px solid #E5DED2;' : ''
+                <td width="36" valign="top" style="padding:18px 12px 18px 0;${
+                  i < NEXT_STEPS.length - 1 ? `border-bottom:1px solid ${HAIRLINE};` : ''
                 }">
-                  <span style="color:#281010;font-weight:bold;">${escapeHtml(title)}.</span> ${escapeHtml(body)}
+                  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="26"><tr>
+                    <td align="center" height="26" bgcolor="${AMBER}" style="background-color:${AMBER};width:26px;height:26px;border-radius:13px;font-family:${SANS};font-size:13px;font-weight:bold;color:${ESPRESSO};line-height:26px;">${i + 1}</td>
+                  </tr></table>
+                </td>
+                <td valign="top" style="padding:18px 0;${
+                  i < NEXT_STEPS.length - 1 ? `border-bottom:1px solid ${HAIRLINE};` : ''
+                }">
+                  <div style="font-family:${SANS};font-size:15px;font-weight:bold;color:${ESPRESSO};padding-bottom:4px;">${escapeHtml(title)}</div>
+                  <div style="font-family:${SANS};font-size:14px;line-height:1.6;color:${BODY_TEXT};">${escapeHtml(body)}</div>
                 </td>
               </tr>`
               ).join('')}
@@ -150,38 +240,30 @@ export function clientConfirmationHtml({
         </tr>
 
         <tr>
-          <td style="padding:28px 32px 0 32px;font-family:${SANS};font-size:15px;line-height:1.65;color:#55504C;">
-            If anything needs clarifying before the agreement arrives, reply to this message or write to <a href="mailto:${CONTACT_EMAIL}" style="color:#F87000;text-decoration:none;">${CONTACT_EMAIL}</a>.
+          <td class="card-pad" style="padding:32px 40px 0 40px;font-family:${SANS};font-size:15px;line-height:1.65;color:${BODY_TEXT};">
+            If anything needs clarifying before the agreement arrives, reply to this message or write to <a href="mailto:${CONTACT_EMAIL}" style="color:${AMBER};text-decoration:none;">${CONTACT_EMAIL}</a>.
           </td>
         </tr>
 
         <tr>
-          <td style="padding:24px 32px 36px 32px;font-family:${SANS};font-size:15px;line-height:1.7;color:#281010;">
+          <td class="card-pad" align="center" style="padding:28px 40px 0 40px;">${button(
+            `mailto:${CONTACT_EMAIL}`,
+            'Reply With Questions'
+          )}
+          </td>
+        </tr>
+
+        <tr>
+          <td class="card-pad" style="padding:32px 40px 40px 40px;font-family:${SANS};font-size:15px;line-height:1.7;color:${ESPRESSO};">
             Robert Reyna<br />
             Forge Franchising Group<br />
-            <a href="https://forgefranchising.com" style="color:#F87000;text-decoration:none;">forgefranchising.com</a>
+            <a href="${SITE_URL}" style="color:${AMBER};text-decoration:none;">forgefranchising.com</a>
           </td>
         </tr>
 
-        <tr>
-          <td style="padding:0 32px;">
-            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="1" bgcolor="#E5DED2" style="background-color:#E5DED2;font-size:0;line-height:0;">&nbsp;</td></tr></table>
-          </td>
-        </tr>
+${footerBand()}`
 
-        <tr>
-          <td style="padding:20px 32px 32px 32px;font-family:${SANS};font-size:11px;line-height:1.6;color:#8A827C;">
-            ${escapeHtml(DISCLAIMER)}
-          </td>
-        </tr>
-
-      </table>
-
-    </td>
-  </tr>
-</table>
-</body>
-</html>`
+  return shell('Engagement Confirmed', inner)
 }
 
 export function clientConfirmationText({
@@ -212,9 +294,91 @@ export function clientConfirmationText({
       CONTACT_EMAIL +
       '.',
     '',
+    'Reply with questions: mailto:' + CONTACT_EMAIL,
+    '',
     'Robert Reyna',
     'Forge Franchising Group',
     'forgefranchising.com',
+    '',
+    '---',
+    DISCLAIMER,
+  ].join('\n')
+}
+
+/* ---------------------------------------------------------------- */
+/*  Internal notification                                            */
+/* ---------------------------------------------------------------- */
+
+export type InternalNotification = {
+  tier: string
+  fullName: string
+  email: string
+  date: string
+  signature: string
+  submittedAt: string
+  clientIp: string
+}
+
+function internalRows(n: InternalNotification): [string, string][] {
+  return [
+    ['Selected Tier', n.tier],
+    ['Full Name', n.fullName],
+    ['Email', n.email],
+    ['Date', n.date],
+    ['Typed Signature', n.signature],
+    ['Server Timestamp (UTC)', n.submittedAt],
+    ['Request IP', n.clientIp],
+  ]
+}
+
+export function internalNotificationHtml(n: InternalNotification): string {
+  const inner = `${headerBand(150)}
+
+        <tr>
+          <td class="card-pad card-pad-top" style="padding:40px 40px 0 40px;">
+            <h1 style="margin:0 0 6px 0;font-family:${SERIF};font-size:24px;line-height:1.2;color:${ESPRESSO};font-weight:bold;">PROPOSAL SIGNED</h1>
+            <div style="font-family:${SANS};font-size:15px;line-height:1.5;color:${BODY_TEXT};padding-bottom:10px;">Uncaged Fitness selected ${escapeHtml(n.tier)}.</div>
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="56"><tr><td height="3" bgcolor="${AMBER}" style="background-color:${AMBER};font-size:0;line-height:0;">&nbsp;</td></tr></table>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="card-pad" style="padding:28px 40px 0 40px;">${detailsTable(internalRows(n))}
+          </td>
+        </tr>
+
+        <tr>
+          <td class="card-pad" align="center" style="padding:32px 40px 0 40px;">${button(
+            `mailto:${n.email}`,
+            'Reply To Client'
+          )}
+          </td>
+        </tr>
+
+        <tr>
+          <td class="card-pad" style="padding:24px 40px 40px 40px;font-family:${SANS};font-size:13px;line-height:1.6;color:${MUTED};">
+            Sent automatically from the confidential proposal page.
+          </td>
+        </tr>
+
+${footerBand()}`
+
+  return shell('Proposal Signed', inner)
+}
+
+export function internalNotificationText(n: InternalNotification): string {
+  return [
+    'FORGE FRANCHISING GROUP',
+    '',
+    'PROPOSAL SIGNED',
+    '',
+    'Uncaged Fitness selected ' + n.tier + '.',
+    '',
+    ...internalRows(n).map(([label, value]) => `${label}: ${value}`),
+    '',
+    'Reply to client: mailto:' + n.email,
+    '',
+    'Sent automatically from the confidential proposal page.',
     '',
     '---',
     DISCLAIMER,
