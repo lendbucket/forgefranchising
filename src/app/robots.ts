@@ -7,6 +7,9 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
+        // Confidential client proposal pages. Never indexed, never linked,
+        // and deliberately absent from the sitemap.
+        disallow: ['/proposal/'],
       },
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,

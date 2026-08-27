@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Inter, Fraunces } from 'next/font/google'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
+import { SiteChrome } from '@/components/SiteChrome'
 import { SITE_NAME, SITE_URL, SITE_DESCRIPTION } from '@/lib/constants'
 import { organizationSchema, websiteSchema, renderSchema } from '@/lib/schema'
 import './globals.css'
@@ -65,9 +66,9 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased overflow-x-hidden">
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <SiteChrome header={<Header />} footer={<Footer />}>
+          {children}
+        </SiteChrome>
       </body>
     </html>
   )
