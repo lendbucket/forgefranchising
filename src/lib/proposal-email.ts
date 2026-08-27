@@ -33,7 +33,7 @@ export const TIER_PRICING: Record<string, string> = {
 const NEXT_STEPS: [string, string][] = [
   [
     'Engagement agreement',
-    'You will receive the agreement for electronic signature within one business day. It sets out scope, deliverables, milestones, and the payment schedule.',
+    'You will receive the agreement for electronic signature within one business day. It sets out scope, deliverables, the payment schedule, and the deposit required to begin.',
   ],
   [
     'Kickoff session',

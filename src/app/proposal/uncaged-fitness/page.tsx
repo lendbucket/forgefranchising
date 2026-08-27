@@ -929,9 +929,11 @@ export default function UncagedFitnessProposalPage() {
                 </p>
               </div>
               <div>
-                <h3 style={cardH3Style}>Milestone payments</h3>
+                <h3 style={cardH3Style}>Payment terms</h3>
                 <p style={cardPStyle}>
-                  Payments are tied to phase completion. Nothing is paid before it is delivered.
+                  A deposit is required to begin, with the balance scheduled in advance of each
+                  phase. Work on a phase begins once that phase is funded. Government and state
+                  filing fees are billed at cost.
                 </p>
               </div>
             </div>
@@ -1821,8 +1823,7 @@ export default function UncagedFitnessProposalPage() {
               <div>
                 <h3 style={cardH3Style}>Built for operators</h3>
                 <p style={cardPStyle}>
-                  Milestone payments tied to delivered work, and advisory that continues past
-                  launch.
+                  Payment terms set out in advance, and advisory that continues past launch.
                 </p>
               </div>
             </div>
