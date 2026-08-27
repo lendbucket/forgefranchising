@@ -932,8 +932,7 @@ export default function UncagedFitnessProposalPage() {
                 <h3 style={cardH3Style}>Payment terms</h3>
                 <p style={cardPStyle}>
                   A deposit is required to begin, with the balance scheduled in advance of each
-                  phase. Work on a phase begins once that phase is funded. Government and state
-                  filing fees are billed at cost.
+                  phase. Work on a phase begins once that phase is funded.
                 </p>
               </div>
             </div>

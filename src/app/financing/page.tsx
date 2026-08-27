@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     q: 'Do I need to pay for everything upfront?',
-    a: 'Not necessarily. Forge offers milestone based payment structures on signed engagements. You pay a deposit to begin, and subsequent payments are tied to specific deliverables. The exact schedule depends on the package and scope, and it is outlined before any agreement is signed.',
+    a: 'Not necessarily. Forge engagements are staged around the phases of the work. You pay a deposit to begin, and the balance is scheduled in advance of each phase rather than as one payment up front. The exact schedule depends on the package and scope, and it is outlined before any agreement is signed.',
   },
   {
     q: 'What credit score do lenders look for on a business services loan?',
@@ -96,7 +96,7 @@ export default function FinancingPage() {
                 'SBA 7(a) loans, business lines of credit, and term loans are all viable funding paths',
                 'Lenders want clean books, a clear use of funds, and a credible revenue projection',
                 'Forge helps you prepare the business case, but is not a lender or financial advisor',
-                'Milestone payment structures are available on signed engagements',
+                'Payments are staged across the engagement, beginning with a deposit',
               ]}
               readTime="7 min read"
             />
@@ -122,8 +122,8 @@ export default function FinancingPage() {
             </p>
             <p className="text-muted-brown leading-relaxed mb-8">
               Most of our clients do not fund the engagement entirely from cash on hand. They use one
-              or more of the financing paths described below, and they structure the payments around
-              milestones so the capital deployment matches the work being delivered. For current scope
+              or more of the financing paths described below, and they stage the payments across the
+              phases of the engagement so the capital deployment matches the pace of the project. For current scope
               and deliverables at each level, see our{' '}
               <Link href="/packages" className="text-amber font-semibold hover:underline">
                 franchise development packages
@@ -176,7 +176,7 @@ export default function FinancingPage() {
                 <p className="text-muted-brown leading-relaxed mb-4">
                   A business line of credit gives you access to a pool of capital that you draw from as
                   needed. You only pay interest on what you use, which makes it flexible for a phased
-                  engagement where payments are tied to milestones.
+                  engagement where payments are scheduled in advance of each phase.
                 </p>
                 <p className="text-muted-brown leading-relaxed mb-4">
                   <strong className="text-espresso">What it is:</strong> A revolving credit facility,
@@ -228,7 +228,7 @@ export default function FinancingPage() {
                 </p>
                 <p className="text-muted-brown leading-relaxed mb-4">
                   <strong className="text-espresso">What it is:</strong> Using profits from your current
-                  business to fund franchise development over time, often paired with a milestone payment
+                  business to fund franchise development over time, often paired with a phased payment
                   schedule that matches the pace of cash generation.
                 </p>
                 <p className="text-muted-brown leading-relaxed mb-4">
@@ -296,26 +296,26 @@ export default function FinancingPage() {
         </div>
       </section>
 
-      {/* Milestone Payment Option */}
+      {/* Payment Structure */}
       <section className="section-padding bg-cream">
         <div className="container-wide">
           <div className="max-w-4xl">
-            <h2 className="heading-2 mb-6">Milestone Payment Structure</h2>
+            <h2 className="heading-2 mb-6">Payment Structure</h2>
             <p className="text-muted-brown leading-relaxed mb-6">
-              Forge engagements can be structured with a deposit and milestone payments tied to specific
-              deliverables. This means you are not paying the full investment before any work begins.
-              Payments align with the phases of the engagement, so each payment corresponds to completed
-              work product.
+              Forge engagements are staged rather than paid in a single lump sum. A deposit begins the
+              work, and the balance is scheduled in advance of each phase, with each phase starting once
+              it is funded. You are not writing one large check for the full investment before the
+              engagement begins.
             </p>
             <p className="text-muted-brown leading-relaxed mb-6">
-              The specific payment schedule depends on the package and scope, and it is outlined in the
-              signed agreement before any work begins. This structure works particularly well for owners
-              funding the engagement through cash flow or a line of credit, because the capital deployment
-              matches the pace of the project.
+              The practical benefit is predictability. You know the amount and the timing of every
+              payment before you sign, which means you can line the schedule up with a draw on a line of
+              credit, a loan disbursement, or the pace of your own cash flow. There is no hourly billing
+              running in the background and no surprise invoice mid project.
             </p>
             <p className="text-muted-brown leading-relaxed mb-8">
-              Milestone payment structures are available as an option, not a guarantee. The terms are
-              established during the proposal process and formalized in the engagement agreement. If you
+              The specific schedule depends on the package and scope, and it is set out in the engagement
+              agreement before any work begins. Terms are established during the proposal process. If you
               have questions about payment options for your specific situation,{' '}
               <Link href="/contact" className="text-amber font-semibold hover:underline">
                 start with a conversation

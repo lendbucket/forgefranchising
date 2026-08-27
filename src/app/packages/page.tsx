@@ -310,7 +310,7 @@ export default function PackagesPage() {
               },
               {
                 q: 'Do you offer payment plans or financing?',
-                a: 'Yes. We structure payments around project milestones so you are never paying for work that has not been delivered. Many clients also finance the engagement through SBA loans, business lines of credit, or cash flow. See our financing guide for common funding paths and how to prepare your application.',
+                a: 'Yes. We structure payments around the phases of the engagement. A deposit begins the work, and the balance is scheduled in advance of each phase. Many clients also finance the engagement through SBA loans, business lines of credit, or cash flow. See our financing guide for common funding paths and how to prepare your application.',
               },
             ].map((item) => (
               <div key={item.q}>
