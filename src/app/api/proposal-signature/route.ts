@@ -1,6 +1,12 @@
 import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { CONTACT_EMAIL } from '@/lib/constants'
+import {
+  escapeHtml,
+  clientConfirmationHtml,
+  clientConfirmationText,
+  TIER_PRICING,
+} from '@/lib/proposal-email'
 
 function getResend() {
   return new Resend(process.env.RESEND_API_KEY || '')
@@ -25,14 +31,6 @@ function sanitize(value: unknown): string {
   return value.trim().slice(0, 2000)
 }
 
-function escapeHtml(value: string): string {
-  return value
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;')
-}
 
 /** Best effort client IP. Absent in local dev, present behind the Vercel proxy. */
 function getClientIp(request: Request): string {
@@ -127,6 +125,33 @@ export async function POST(request: Request) {
         },
         { status: 500 }
       )
+    }
+
+    // Courtesy confirmation to the client. The signature is already recorded by
+    // this point, so a failure here is logged and swallowed. It must never turn
+    // a successful submission into an error for the person who signed.
+    try {
+      const price = TIER_PRICING[tier]
+      const engagement = price ? `${tier}, ${price}` : tier
+      const clientFrom =
+        process.env.CLIENT_FROM_EMAIL ||
+        process.env.LEAD_FROM_EMAIL ||
+        'Forge Franchising Group <inquiry@forgefranchising.com>'
+
+      const { error: clientError } = await getResend().emails.send({
+        from: clientFrom,
+        to: email,
+        subject: 'Engagement confirmed, Uncaged Fitness',
+        html: clientConfirmationHtml({ engagement, fullName, date }),
+        text: clientConfirmationText({ engagement, fullName, date }),
+        replyTo: CONTACT_EMAIL,
+      })
+
+      if (clientError) {
+        console.error('Client confirmation email failed:', clientError)
+      }
+    } catch (clientErr) {
+      console.error('Client confirmation email threw:', clientErr)
     }
 
     return NextResponse.json({ success: true })

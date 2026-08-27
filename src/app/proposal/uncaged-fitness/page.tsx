@@ -228,6 +228,54 @@ const TIER_NAMES: Record<string, string> = {
   empire: 'Engine Empire',
 }
 
+const TIER_PRICES: Record<string, string> = {
+  launch: '$24,500',
+  growth: '$49,500',
+  empire: 'from $89,500',
+}
+
+const NEXT_STEPS: { title: string; body: string; done: boolean }[] = [
+  {
+    title: 'Proposal selected',
+    body: 'Complete. Your engagement tier is recorded and timestamped.',
+    done: true,
+  },
+  {
+    title: 'Engagement agreement sent',
+    body: 'Within one business day, for electronic signature.',
+    done: false,
+  },
+  {
+    title: 'Kickoff scheduled',
+    body: 'A working session to align on scope, access, and the documents we need.',
+    done: false,
+  },
+  {
+    title: 'Phase one begins',
+    body: 'The business audit starts, ending with a written readiness verdict and real dates.',
+    done: false,
+  },
+]
+
+/**
+ * Celebration burst. Computed at module scope from the index rather than
+ * Math.random so the markup is deterministic and cannot desync on hydration.
+ * Palette is restricted to amber, white, and the warm gray already in use.
+ */
+const PARTICLE_COLORS = ['#F87000', '#FFFFFF', '#A0A0A8']
+
+const PARTICLES = Array.from({ length: 26 }, (_, i) => {
+  const angle = (i / 26) * Math.PI * 2 + (i % 3) * 0.14
+  const distance = 64 + (i % 5) * 20
+  return {
+    dx: Math.round(Math.cos(angle) * distance),
+    dy: Math.round(Math.sin(angle) * distance),
+    size: 3 + (i % 3),
+    color: PARTICLE_COLORS[i % PARTICLE_COLORS.length],
+    delay: (i % 6) * 40,
+  }
+})
+
 type MatrixRow = [string, boolean, boolean, boolean]
 
 const MATRIX: { group: string; rows: MatrixRow[] }[] = [
@@ -273,6 +321,229 @@ const MATRIX: { group: string; rows: MatrixRow[] }[] = [
 ]
 
 /* ------------------------------------------------------------------ */
+/*  Confirmation state                                                 */
+/* ------------------------------------------------------------------ */
+
+function ConfirmationPanel({
+  confirmed,
+  reduceMotion,
+}: {
+  confirmed: { name: string; price: string }
+  reduceMotion: boolean
+}) {
+  return (
+    <div role="status" aria-live="polite">
+      {/* Panel */}
+      <div
+        className={reduceMotion ? undefined : 'proposal-panel'}
+        style={{
+          background: '#141416',
+          border: '1px solid rgba(255,255,255,0.08)',
+          borderLeft: '3px solid #F87000',
+          padding: 'clamp(28px,5vw,44px)',
+          textAlign: 'center',
+        }}
+      >
+        {/* Checkmark with the celebratory burst behind it */}
+        <div
+          style={{
+            position: 'relative',
+            width: '88px',
+            height: '88px',
+            margin: '0 auto 28px',
+          }}
+        >
+          {!reduceMotion && (
+            <div
+              aria-hidden="true"
+              style={{
+                position: 'absolute',
+                left: '50%',
+                top: '50%',
+                width: 0,
+                height: 0,
+                pointerEvents: 'none',
+              }}
+            >
+              {PARTICLES.map((p, i) => (
+                <span
+                  key={i}
+                  className="proposal-particle"
+                  style={
+                    {
+                      position: 'absolute',
+                      left: 0,
+                      top: 0,
+                      width: p.size + 'px',
+                      height: p.size + 'px',
+                      borderRadius: '50%',
+                      background: p.color,
+                      animationDelay: p.delay + 'ms',
+                      '--px': p.dx + 'px',
+                      '--py': p.dy + 'px',
+                    } as CSSProperties
+                  }
+                />
+              ))}
+            </div>
+          )}
+
+          <svg
+            width="88"
+            height="88"
+            viewBox="0 0 88 88"
+            aria-hidden="true"
+            style={{ position: 'relative', display: 'block' }}
+          >
+            <circle
+              className={reduceMotion ? undefined : 'proposal-ring'}
+              cx="44"
+              cy="44"
+              r="40"
+              fill="none"
+              stroke="#F87000"
+              strokeWidth="3"
+            />
+            <path
+              className={reduceMotion ? undefined : 'proposal-check-path'}
+              d="M27 45.5 L39 57.5 L61 33"
+              fill="none"
+              stroke="#F87000"
+              strokeWidth="4"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
+
+        <h3
+          style={{
+            margin: '0 0 16px',
+            fontFamily: DISPLAY,
+            fontWeight: 700,
+            textTransform: 'uppercase',
+            fontSize: 'clamp(28px,4.5vw,40px)',
+            lineHeight: 1.05,
+            letterSpacing: '0.03em',
+          }}
+        >
+          Selection recorded
+        </h3>
+
+        <p
+          style={{
+            margin: '0 0 12px',
+            fontFamily: DISPLAY,
+            fontWeight: 600,
+            textTransform: 'uppercase',
+            fontSize: '22px',
+            letterSpacing: '0.03em',
+            color: '#F87000',
+          }}
+        >
+          {confirmed.name}, {confirmed.price}
+        </p>
+
+        <p
+          style={{
+            margin: '0 auto',
+            maxWidth: '460px',
+            color: '#A0A0A8',
+            fontSize: '16px',
+          }}
+        >
+          A confirmation has been sent to the email you provided, and the engagement agreement is
+          being prepared.
+        </p>
+      </div>
+
+      {/* Next steps */}
+      <ol
+        style={{
+          listStyle: 'none',
+          margin: '28px 0 0',
+          padding: 0,
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 0,
+        }}
+      >
+        {NEXT_STEPS.map((step, i) => (
+          <li
+            key={step.title}
+            className={reduceMotion ? undefined : 'proposal-step'}
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '28px 1fr',
+              gap: '16px',
+              padding: '20px 0',
+              borderTop: i === 0 ? '1px solid rgba(255,255,255,0.08)' : 'none',
+              borderBottom: '1px solid rgba(255,255,255,0.08)',
+              animationDelay: reduceMotion ? undefined : 420 + i * 120 + 'ms',
+            }}
+          >
+            <span aria-hidden="true" style={{ paddingTop: '2px' }}>
+              {step.done ? (
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="11" fill="#F87000" />
+                  <path
+                    d="M7 12.5 L10.5 16 L17 9"
+                    fill="none"
+                    stroke="#0A0A0A"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              ) : (
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10.5"
+                    fill="none"
+                    stroke="#F87000"
+                    strokeWidth="1.5"
+                    opacity="0.55"
+                  />
+                </svg>
+              )}
+            </span>
+            <div>
+              <strong
+                style={{
+                  display: 'block',
+                  marginBottom: '4px',
+                  color: step.done ? '#FFFFFF' : '#D6D6DC',
+                  fontSize: '16px',
+                }}
+              >
+                {step.title}
+              </strong>
+              <span style={{ color: step.done ? '#A0A0A8' : '#7A7A82', fontSize: '15px' }}>
+                {step.body}
+              </span>
+            </div>
+          </li>
+        ))}
+      </ol>
+
+      {/* What to expect */}
+      <div style={{ marginTop: '28px' }}>
+        <p style={{ margin: '0 0 12px', color: '#A0A0A8', fontSize: '15px' }}>
+          Questions before the agreement arrives can go to{' '}
+          <a href="mailto:inquiry@forgefranchising.com">inquiry@forgefranchising.com</a>.
+        </p>
+        <p style={{ margin: 0, fontSize: '13px', color: '#7A7A82', lineHeight: 1.6 }}>
+          Selection initiates the engagement agreement, which is executed separately and governs the
+          engagement. This page is a proposal and not a contract.
+        </p>
+      </div>
+    </div>
+  )
+}
+
+/* ------------------------------------------------------------------ */
 /*  Page                                                               */
 /* ------------------------------------------------------------------ */
 
@@ -283,10 +554,22 @@ export default function UncagedFitnessProposalPage() {
   const [date, setDate] = useState('')
   const [signature, setSignature] = useState('')
   const [statusMsg, setStatusMsg] = useState<string | null>(null)
-  const [statusColor, setStatusColor] = useState('#F87000')
   const [submitting, setSubmitting] = useState(false)
+  // Set once the API confirms. Replaces the whole form with the celebration panel.
+  const [confirmed, setConfirmed] = useState<{ name: string; price: string } | null>(null)
+  // Resolved on mount, so the confirmation can render its final state instantly
+  // for anyone who has asked the OS to reduce motion.
+  const [reduceMotion, setReduceMotion] = useState(false)
 
   const rootRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
+    setReduceMotion(mq.matches)
+    const onChange = (e: MediaQueryListEvent) => setReduceMotion(e.matches)
+    mq.addEventListener('change', onChange)
+    return () => mq.removeEventListener('change', onChange)
+  }, [])
 
   // Scroll reveal, ported from the export's componentDidMount.
   useEffect(() => {
@@ -335,7 +618,6 @@ export default function UncagedFitnessProposalPage() {
   }, [])
 
   const fail = useCallback((msg: string) => {
-    setStatusColor('#F87000')
     setStatusMsg(msg)
   }, [])
 
@@ -376,14 +658,8 @@ export default function UncagedFitnessProposalPage() {
         return
       }
 
-      setStatusColor('#8FCB8F')
-      setStatusMsg(
-        'Selection recorded: ' +
-          TIER_NAMES[tier] +
-          '. The engagement agreement will be sent to ' +
-          email.trim() +
-          ' for execution.'
-      )
+      setStatusMsg(null)
+      setConfirmed({ name: TIER_NAMES[tier], price: TIER_PRICES[tier] })
     } catch {
       fail(
         'We could not record your signature. Please email inquiry@forgefranchising.com directly.'
@@ -408,13 +684,63 @@ export default function UncagedFitnessProposalPage() {
         .proposal-btn-outline:hover{border-color:#F87000;color:#F87000}
         .proposal-btn-solid:hover{background:#FF8B2E;border-color:#FF8B2E}
         .proposal-btn-solid:disabled{cursor:not-allowed;opacity:0.7}
+
+        /* Chrome paints autofilled fields with its own light background, which
+           blows out the dark form. Repaint via inset shadow, the only property
+           the autofill style does not override. */
+        .proposal-root input:-webkit-autofill,
+        .proposal-root input:-webkit-autofill:hover,
+        .proposal-root input:-webkit-autofill:focus,
+        .proposal-root input:-webkit-autofill:active{
+          -webkit-text-fill-color:#FFFFFF;
+          -webkit-box-shadow:0 0 0 1000px #141416 inset;
+          box-shadow:0 0 0 1000px #141416 inset;
+          caret-color:#FFFFFF;
+          border:1px solid rgba(255,255,255,0.15);
+          transition:background-color 600000s 0s,color 600000s 0s;
+        }
+
+        /* Confirmation state */
+        .proposal-panel{animation:proposal-panel-in 520ms ease-out both}
+        .proposal-ring{stroke-dasharray:252;stroke-dashoffset:252;animation:proposal-ring 500ms ease-out forwards}
+        .proposal-check-path{stroke-dasharray:50;stroke-dashoffset:50;animation:proposal-check 400ms ease-out 500ms forwards}
+        .proposal-step{animation:proposal-step-in 460ms ease-out both}
+        .proposal-particle{animation:proposal-particle 1800ms ease-out both}
+
+        @keyframes proposal-panel-in{
+          from{opacity:0;transform:translateY(16px)}
+          to{opacity:1;transform:none}
+        }
+        @keyframes proposal-ring{to{stroke-dashoffset:0}}
+        @keyframes proposal-check{to{stroke-dashoffset:0}}
+        @keyframes proposal-step-in{
+          from{opacity:0;transform:translateY(10px)}
+          to{opacity:1;transform:none}
+        }
+        @keyframes proposal-particle{
+          0%{opacity:0;transform:translate(0,0) scale(0.6)}
+          14%{opacity:1}
+          100%{opacity:0;transform:translate(var(--px),var(--py)) scale(0.25)}
+        }
+
         @media (prefers-reduced-motion:reduce){
           html{scroll-behavior:auto}
           .proposal-root [data-reveal]{opacity:1;transform:none;transition:none}
+          /* Final state, immediately. No drawing, no stagger, no particles. */
+          .proposal-panel,
+          .proposal-step{animation:none;opacity:1;transform:none}
+          .proposal-ring,
+          .proposal-check-path{animation:none;stroke-dashoffset:0}
+          .proposal-particle{display:none}
         }
         @media print{
           *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
           .proposal-root [data-reveal]{opacity:1 !important;transform:none !important;transition:none !important}
+          .proposal-panel,
+          .proposal-step{animation:none !important;opacity:1 !important;transform:none !important}
+          .proposal-ring,
+          .proposal-check-path{animation:none !important;stroke-dashoffset:0 !important}
+          .proposal-particle{display:none !important}
         }
       `}</style>
 
@@ -1492,6 +1818,10 @@ export default function UncagedFitnessProposalPage() {
               <h2 style={h2Style}>Select your engagement</h2>
             </div>
             <div data-reveal style={{ maxWidth: '720px' }}>
+              {confirmed ? (
+                <ConfirmationPanel confirmed={confirmed} reduceMotion={reduceMotion} />
+              ) : (
+                <>
               <div
                 role="radiogroup"
                 aria-label="Engagement tier"
@@ -1644,7 +1974,7 @@ export default function UncagedFitnessProposalPage() {
               </button>
 
               {statusMsg && (
-                <p role="status" style={{ margin: '16px 0 0', fontSize: '15px', color: statusColor }}>
+                <p role="status" style={{ margin: '16px 0 0', fontSize: '15px', color: '#F87000' }}>
                   {statusMsg}
                 </p>
               )}
@@ -1660,6 +1990,8 @@ export default function UncagedFitnessProposalPage() {
                 Selection initiates the engagement agreement, which is executed separately and
                 governs the engagement. This page is a proposal and not a contract.
               </p>
+                </>
+              )}
             </div>
           </div>
         </section>
