@@ -305,7 +305,7 @@ export const cities: CityData[] = [
     population: "575,000",
     metroArea: "Baltimore-Columbia-Towson",
     topIndustries: ["Food & Beverage", "Home Services", "Health & Wellness", "Senior Care"],
-    localInsight: "Baltimore's economy is driven by the Johns Hopkins health system, the Port of Baltimore, and a growing biotech corridor, all of which provide a stable employment base. The suburban communities of Columbia, Towson, and Bel Air offer strong household incomes and family-oriented demographics ideal for service franchises. The city's proximity to Washington DC means franchise brands can leverage regional marketing across both metros.",
+    localInsight: "Baltimore's economy is driven by the Johns Hopkins health system, the Port of Baltimore, and a growing biotech corridor, all of which provide a stable employment base. The suburban communities of Columbia, Towson, and Bel Air offer strong household incomes and family-oriented demographics ideal for service franchises. The city's proximity to Washington DC means franchise brands can run regional marketing across both metros.",
     franchiseActivity: "Franchise development in Baltimore is concentrated in the suburban ring, particularly along the I-83 and I-95 corridors. Home services, senior care, and fast-casual dining are the most actively expanding franchise categories."
   },
   {
@@ -437,7 +437,7 @@ export const cities: CityData[] = [
     population: "430,000",
     metroArea: "Minneapolis-St. Paul-Bloomington",
     topIndustries: ["Food & Beverage", "Fitness & Wellness", "Home Services", "Business Services"],
-    localInsight: "The Twin Cities metro is home to 16 Fortune 500 companies, including Target, UnitedHealth Group, and 3M, creating one of the most economically robust markets in the Midwest. The region's extreme seasonal weather drives indoor fitness and home services demand, particularly for restoration, HVAC, and cleaning franchises. Suburbs like Eden Prairie, Maple Grove, and Woodbury offer high household incomes and strong commercial infrastructure.",
+    localInsight: "The Twin Cities metro is home to 16 Fortune 500 companies, including Target, UnitedHealth Group, and 3M, creating one of the strongest local economies in the Midwest. The region's extreme seasonal weather drives indoor fitness and home services demand, particularly for restoration, HVAC, and cleaning franchises. Suburbs like Eden Prairie, Maple Grove, and Woodbury offer high household incomes and strong commercial infrastructure.",
     franchiseActivity: "The Minneapolis-St. Paul metro supports a mature franchise market with strong performance across food, fitness, and home services categories. The Mall of America area and Uptown district are notable franchise destinations with heavy consumer traffic."
   },
   {

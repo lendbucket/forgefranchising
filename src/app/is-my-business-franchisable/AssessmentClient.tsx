@@ -376,14 +376,14 @@ export function AssessmentClient() {
                 </p>
               </div>
 
-              {/* Email gate: reciprocity (we gave score, now unlock the details) */}
+              {/* Email gate: reciprocity (score given, details follow) */}
               {!gateUnlocked ? (
                 <div className="card bg-espresso border-espresso text-center">
                   <h3 className="heading-4 text-cream mb-3">
                     Get Your Personalized Recommendations
                   </h3>
                   <p className="text-sm text-cream/70 mb-6 max-w-md mx-auto">
-                    Enter your name and email to unlock your detailed franchise readiness
+                    Enter your name and email to see your detailed franchise readiness
                     breakdown with specific next steps for your score.
                   </p>
                   <form onSubmit={unlockResults} className="max-w-sm mx-auto space-y-3">
@@ -411,14 +411,14 @@ export function AssessmentClient() {
                       disabled={gateSubmitting}
                       className="btn-primary w-full disabled:opacity-60"
                     >
-                      {gateSubmitting ? 'Unlocking...' : 'Unlock My Full Report'}
+                      {gateSubmitting ? 'Sending...' : 'Show My Full Report'}
                     </button>
                     <p className="text-xs text-cream/40">No spam. We will follow up with your personalized analysis.</p>
                   </form>
                 </div>
               ) : (
                 <>
-                  {/* Detailed Results: unlocked after email */}
+                  {/* Detailed Results: shown after email */}
                   <div className="card">
                     <p className="eyebrow mb-4">
                       What This Means For You

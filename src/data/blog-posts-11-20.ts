@@ -846,7 +846,7 @@ When you present a territory to a prospective franchisee, you are making a case 
 
 For multi-unit and area development agreements, territory design becomes even more critical. You are not just defining where a franchisee can operate. You are defining the sequence and timeline for development.
 
-A well-designed development schedule identifies which sub-territories within the larger area should be developed first (based on population density and site availability), sets realistic timelines for each opening, and includes performance benchmarks that must be met before the next territory unlocks.
+A well-designed development schedule identifies which sub-territories within the larger area should be developed first (based on population density and site availability), sets realistic timelines for each opening, and includes performance benchmarks that must be met before the next territory is released.
 
 The development schedule should also address what happens if the franchisee falls behind. Common provisions include cure periods (additional time to get back on schedule), territory reduction (shrinking the exclusive area if development benchmarks are missed), and ultimately, termination of the development agreement if the shortfall persists.
 

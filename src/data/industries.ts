@@ -424,7 +424,7 @@ export const INDUSTRY_DATA: Record<string, IndustryData> = {
       },
       {
         title: 'Parts Supply Chain',
-        body: 'Access to quality parts at competitive prices is a major margin driver. Your franchise system should leverage group purchasing, preferred supplier agreements, or a centralized parts distribution network to give franchisees a cost advantage over independents.',
+        body: 'Access to quality parts at competitive prices is a major margin driver. Your franchise system should use group purchasing, preferred supplier agreements, or a centralized parts distribution network to give franchisees a cost advantage over independents.',
       },
       {
         title: 'Digital Customer Experience',

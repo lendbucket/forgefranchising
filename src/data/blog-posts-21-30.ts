@@ -454,7 +454,7 @@ Getting an SBA loan approved is not just about having an SBA-listed franchise. T
 
 Lenders do not just evaluate the borrower. They evaluate the franchise concept itself. This is where franchisors have significant influence over their franchisees' ability to get funded.
 
-**Item 19 financial performance representations.** This is the single most impactful element of your FDD when it comes to lending. An Item 19 that shows strong unit-level revenue and profitability gives lenders confidence that the loan can be repaid. Without an Item 19, lenders are left guessing about the franchise's financial viability.
+**Item 19 financial performance representations.** This is the single most impactful element of your FDD for lending. An Item 19 that shows strong unit-level revenue and profitability gives lenders confidence that the loan can be repaid. Without an Item 19, lenders are left guessing about the franchise's financial viability.
 
 Some franchisors avoid Item 19 because they are worried about the legal liability of making financial claims. This is understandable, but it is also a significant competitive disadvantage. Work with your franchise attorney to develop an Item 19 that is both legally defensible and useful to lenders.
 
@@ -482,7 +482,7 @@ Understanding the timeline helps both franchisors and franchisees plan effective
 
 There are several concrete steps franchisors can take.
 
-**Include a robust Item 19.** This has been mentioned repeatedly because it is that important.
+**Include a substantive Item 19.** This has been mentioned repeatedly because it is that important.
 
 **Maintain your SBA Franchise Directory listing.** Update it whenever you file a new or amended FDD.
 
@@ -583,7 +583,7 @@ The franchise agreement signing should feel like a celebration, not a pressure c
 
 **Collect the franchise fee upon signing.** Most franchise systems collect the full initial franchise fee at the time the agreement is executed. Some offer payment plans or deferred payment options, particularly for multi-unit deals.
 
-After signing, transition the new franchisee to your onboarding team. The sales relationship evolves into an operational support relationship. Make this handoff seamless. The franchisee should never feel like they were sold and then abandoned.
+After signing, transition the new franchisee to your onboarding team. The sales relationship evolves into an operational support relationship. Make this handoff clean. The franchisee should never feel like they were sold and then abandoned.
 
 ## Metrics That Matter
 
@@ -1022,7 +1022,7 @@ A franchise company generating $5M in royalty revenue with 80% margins (which is
 
 ## The Hybrid Model
 
-It is worth noting that many successful franchise brands operate both company-owned and franchise locations. McDonald's owns roughly 5% of its locations. This hybrid approach offers several advantages.
+Many successful franchise brands operate both company-owned and franchise locations. McDonald's owns roughly 5% of its locations. This hybrid approach offers several advantages.
 
 Company-owned locations serve as test markets for new products, processes, and marketing campaigns. They provide direct operational learning that informs franchise support. And they demonstrate to franchisees that the franchisor "eats their own cooking."
 

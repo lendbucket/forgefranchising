@@ -377,11 +377,11 @@ export function CalculatorClient() {
                     </div>
                   </div>
 
-                  {/* Email gate: reciprocity (we showed the score, now unlock the full breakdown) */}
+                  {/* Email gate: reciprocity (score shown, full breakdown follows) */}
                   {!submitted ? (
                     <div className="card bg-espresso border-espresso text-center">
                       <h3 className="heading-4 text-cream mb-3">
-                        Unlock Your Full Franchise Economics Breakdown
+                        See Your Full Franchise Economics Breakdown
                       </h3>
                       <p className="text-sm text-cream/70 mb-6 max-w-md mx-auto">
                         Enter your name and email to see the detailed analysis of what these numbers
@@ -412,14 +412,14 @@ export function CalculatorClient() {
                           disabled={submitting}
                           className="btn-primary w-full disabled:opacity-60"
                         >
-                          {submitting ? 'Unlocking...' : 'Unlock Full Analysis'}
+                          {submitting ? 'Sending...' : 'Show Full Analysis'}
                         </button>
                         <p className="text-xs text-cream/40">No spam. We will follow up with your personalized analysis.</p>
                       </form>
                     </div>
                   ) : (
                     <>
-                      {/* Detailed breakdown: unlocked after email */}
+                      {/* Detailed breakdown: shown after email */}
                       <div className="card">
                         <p className="text-xs font-semibold text-amber uppercase tracking-widest mb-4">
                           What These Numbers Mean
@@ -450,7 +450,7 @@ export function CalculatorClient() {
                         </div>
                       </div>
 
-                      {/* CTA after unlock */}
+                      {/* CTA after the gate */}
                       <div className="card bg-espresso border-espresso">
                         <h3 className="heading-4 text-cream mb-3">
                           Want Real Numbers? Get a Feasibility Analysis.

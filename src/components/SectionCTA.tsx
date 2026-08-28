@@ -5,7 +5,7 @@ import Link from 'next/link'
  *
  * Psychology: Isolation effect (Von Restorff) ensures a single primary
  * action stands out. Placed after sections that deliver real value,
- * leveraging reciprocity. The visitor received something useful;
+ * built on reciprocity. The visitor received something useful;
  * the CTA offers the next logical step, not a cold ask.
  */
 

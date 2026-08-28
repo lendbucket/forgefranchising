@@ -982,7 +982,7 @@ Dealerships generate wholesale margins, which can be substantial if your product
 
 **Question 4: How much can you invest upfront?**
 
-If you have $75,000 to $150,000 to invest in a proper franchise launch, franchising gives you the most robust growth model.
+If you have $75,000 to $150,000 to invest in a proper franchise launch, franchising gives you the strongest growth model.
 
 If your budget is limited, a licensing or dealership model lets you start faster and at lower cost, with the option to evolve into franchising later.
 
@@ -1162,7 +1162,7 @@ This phase answers two questions: Can we franchise? And how should we franchise?
 
 **Business assessment.** A thorough evaluation of your business model, unit economics, operational systems, market opportunity, and competitive landscape. This is the feasibility study we covered in our dedicated article, and it is the single most important step in the entire process.
 
-**Financial modeling.** Building the financial model for both the franchisee (unit economics) and the franchisor (corporate economics). The franchisee model shows what a new operator can expect to earn. The franchisor model shows how quickly you can reach profitability as a franchise company.
+**Financial modeling.** Building the financial model for both the franchisee (unit economics) and the franchisor (corporate economics). The franchisee model lays out unit level economics for a new operator. The franchisor model shows how quickly you can reach profitability as a franchise company.
 
 Key inputs for the franchisor model: franchise fee revenue, royalty revenue (based on expected unit volumes and growth rate), franchisor overhead (staff, technology, marketing, legal compliance), and capital requirements. Most franchisors need $200,000 to $500,000 in available capital to fund operations until royalty revenue covers overhead, which typically happens at 15 to 25 open units.
 

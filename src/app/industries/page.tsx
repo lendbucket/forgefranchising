@@ -45,7 +45,7 @@ export default function IndustriesPage() {
             </h1>
             <p className="body-large mb-6">
               Franchising is not one size fits all. A restaurant franchise has almost nothing in common
-              with a home services franchise when it comes to buildout costs, training requirements,
+              with a home services franchise on buildout costs, training requirements,
               territory structure, or regulatory exposure. The fundamentals of the FDD are the same across
               every industry, but the strategy behind it changes completely.
             </p>
