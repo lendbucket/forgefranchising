@@ -270,8 +270,9 @@ export default function FranchiseVsLicensePage() {
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="heading-2 text-cream mb-6">Which Path Fits Your Business?</h2>
             <p className="text-lg text-cream/60 leading-relaxed">
-              The right choice depends on your goals, your brand strength, and how much control you want
-              over the partner experience. Choose the path that matches where you are headed.
+              The deciding factor is usually control. If the customer experience has to be yours,
+              you are franchising. If the partner can run it their way under their own name, a
+              license is cheaper, faster, and less regulated.
             </p>
           </div>
           <div className="grid lg:grid-cols-2 gap-8 max-w-4xl mx-auto">

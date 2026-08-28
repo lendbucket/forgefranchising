@@ -228,7 +228,7 @@ export default function PackagesPage() {
           <h2 className="heading-2 text-center mb-4">Which Package Is Right for You?</h2>
           <p className="body-large text-center max-w-3xl mx-auto mb-12">
             The right package depends on where your business is today and where you want it to be in
-            12 to 24 months. Here is a straightforward breakdown.
+            12 to 24 months. Here is who each tier is for, and who it is not.
           </p>
           <div className="grid lg:grid-cols-3 gap-8">
             {tiers.map((tier) => (
@@ -326,10 +326,10 @@ export default function PackagesPage() {
         <div className="container-wide text-center">
           <h2 className="heading-2 text-cream mb-6">The Math Is Simple</h2>
           <p className="text-xl text-cream/60 max-w-3xl mx-auto leading-relaxed mb-12">
-            A single franchise sale generates an initial franchise fee (typically between $25,000 and $50,000)
-            plus ongoing royalties for the life of the agreement. Five franchise sales in your first year can
-            generate more revenue than the entire cost of your franchise development. Ten sales changes the
-            trajectory of your business permanently.
+            A franchise sale produces an initial fee, typically between $25,000 and $50,000 across the
+            industry, plus a royalty for the life of the agreement. Development is a one time cost. The
+            royalty base is not. That is the whole case for building the system properly, and it is
+            also why we will tell you when the numbers do not support it yet.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="btn-primary">
@@ -344,7 +344,7 @@ export default function PackagesPage() {
 
       {/* Open loop: curiosity about what happens after choosing a package */}
       <OpenLoop
-        teaser="Choosing a package is step one. There is a specific sequence of events that happens after you commit, and knowing it in advance removes 90% of the uncertainty. We walk through the entire timeline."
+        teaser="Choosing a tier is the easy part. What follows is a fixed sequence with dates attached, and most owners want to see it before they commit rather than after."
         linkText="See the four-phase process"
         href="/how-it-works"
         variant="section"

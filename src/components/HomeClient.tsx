@@ -87,7 +87,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
               <p className="eyebrow mb-4">Our Process</p>
               <h2 className="heading-2 mb-6">Four Phases. One System. Zero Guesswork.</h2>
               <p className="body-large">
-                Every franchise we develop moves through the same proven sequence, from feasibility through scale.
+                Every engagement runs the same four phases in the same order, because each one produces the inputs the next one needs.
               </p>
             </div>
           </ScrollReveal>
@@ -134,9 +134,10 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
               <p className="eyebrow mb-4">Our Methodology</p>
               <h2 className="heading-2 mb-6">The Forge Franchise Readiness Method</h2>
               <p className="body-large">
-                Before we build anything, we evaluate whether the foundation is solid. Our
-                proprietary readiness method assesses four pillars that determine whether a
-                business can franchise responsibly.
+                Before we draft a document or file anything, we test the foundation. Four pillars
+                decide whether a business can carry a franchise system: profitability, systems,
+                brand, and replicability. Weakness in any one of them surfaces later as a failed
+                unit, not a failed document.
               </p>
             </div>
           </ScrollReveal>

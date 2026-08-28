@@ -14,7 +14,7 @@ const pillars = [
   },
   {
     lead: 'Software Backed',
-    body: 'A modern platform behind every engagement, so documents, training, and franchisee onboarding live in one place. Not binders. Not shared drives. A system built for how businesses work today.',
+    body: 'A platform behind every engagement, so documents, training, and franchisee onboarding live in one place. Not binders. Not shared drives. Your franchisees get the same system on day one that your fiftieth gets.',
   },
 ]
 

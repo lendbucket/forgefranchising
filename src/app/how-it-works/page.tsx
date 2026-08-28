@@ -28,10 +28,10 @@ const phases = [
       'Market demand assessment: is there real appetite for your concept in other geographies?',
       'Competitive franchise landscape review: who else operates in your space and what do they charge?',
       'Operational replicability audit: can someone who is not you run this business to your standard?',
-      'Financial modeling: what does the franchisee investment look like, and what returns can they expect?',
+      'Financial modeling: what the franchisee has to invest, and what the unit economics have to clear for that investment to make sense',
       'A written feasibility report with a clear recommendation: franchise, do not franchise, or franchise after fixing specific gaps',
     ],
-    outcome: 'You get a clear, data backed answer and a roadmap for the phases ahead.',
+    outcome: 'A written yes, no, or not yet, with the numbers behind it and the gaps to close if the answer is not yet.',
   },
   {
     number: '02',
@@ -130,12 +130,12 @@ export default function HowItWorksPage() {
               The Forge Franchise Readiness Method starts by evaluating whether your business
               meets the four foundational conditions for franchising. From there, our four-phase
               process moves you from validated concept to operating franchise system. Each phase
-              builds on the one before it. Skipping a phase or rushing through it is how franchise
-              systems fail. Doing it right is how they scale to 50 or 100 units.
+              produces the inputs the next one needs, which is why the order is not negotiable.
+              Skip feasibility and you draft an FDD around numbers that do not hold.
             </p>
             <p className="body-large mb-8">
-              Here is exactly how we take a proven business and turn it into a franchise brand.
-              No mysteries, no hand waving, no surprises. Start with our{' '}
+              Here is the whole sequence, with what each phase produces and how long it takes.
+              Start with our{' '}
               <Link href="/readiness-method" className="text-amber font-semibold hover:underline">
                 franchise readiness assessment
               </Link>{' '}
@@ -200,9 +200,9 @@ export default function HowItWorksPage() {
         <div className="container-wide text-center">
           <h2 className="heading-2 text-cream mb-6">Why This Process Works</h2>
           <p className="text-xl text-cream/60 max-w-3xl mx-auto leading-relaxed mb-12">
-            Every step in this process exists because skipping it has cost real business owners real money.
-            We have studied the franchise systems that scaled successfully and the ones that collapsed.
-            The difference is almost always in the foundation.
+            Every step here exists because skipping it has a predictable failure mode. Thin unit
+            economics surface at unit five, not unit one. An undocumented operation shows up as a
+            franchisee who cannot be trained. The order of the phases is the point.
           </p>
           <div className="grid sm:grid-cols-3 gap-8">
             {[
@@ -221,7 +221,7 @@ export default function HowItWorksPage() {
 
       {/* Open loop: curiosity gap points to packages page */}
       <OpenLoop
-        teaser="The investment for franchise development varies by complexity, but a single franchise sale can generate more than the entire development cost. See exactly what each engagement tier includes."
+        teaser="Development cost varies with complexity, and the scope of each tier varies with it. See exactly what is included at each level before you talk to anyone about price."
         linkText="Compare our three packages"
         href="/packages"
         variant="section"
