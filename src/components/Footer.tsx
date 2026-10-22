@@ -1,6 +1,12 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { MISSION_STATEMENT, CONTACT_EMAIL } from '@/lib/constants'
+import {
+  MISSION_STATEMENT,
+  CONTACT_EMAIL,
+  BROKER_LICENSE_DISCLOSURE,
+  TREC_IABS_URL,
+  TREC_CPN_URL,
+} from '@/lib/constants'
 
 const footerLinks = {
   'Franchise Your Business': [
@@ -94,6 +100,23 @@ export function Footer() {
             or sold there. We will not offer or sell a franchise in any jurisdiction unless we are first
             in compliance with applicable law.
           </p>
+          {BROKER_LICENSE_DISCLOSURE && (
+            <p className="mt-4 text-white/60 text-xs leading-relaxed max-w-4xl">{BROKER_LICENSE_DISCLOSURE}</p>
+          )}
+          {TREC_IABS_URL && TREC_CPN_URL && (
+            <ul className="mt-4 flex flex-col sm:flex-row gap-2 sm:gap-8 text-xs">
+              <li>
+                <a href={TREC_IABS_URL} target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white underline">
+                  Texas Real Estate Commission Information About Brokerage Services
+                </a>
+              </li>
+              <li>
+                <a href={TREC_CPN_URL} target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white underline">
+                  Texas Real Estate Commission Consumer Protection Notice
+                </a>
+              </li>
+            </ul>
+          )}
         </div>
 
         <div className="mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4" style={{ borderTop: '1px solid rgba(255, 255, 255, 0.08)' }}>

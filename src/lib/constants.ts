@@ -185,3 +185,27 @@ export const FRANCHISE_STATES = {
   ],
   noFiling: [] as string[], // Will be computed from the full list
 } as const
+
+// --------------------------------------------------------------------------
+// Brokerage licensing and Texas consumer notices.
+// Leave empty until confirmed. Each renders only when non empty.
+// --------------------------------------------------------------------------
+
+/** License type and number for business brokerage advertising. */
+export const BROKER_LICENSE_DISCLOSURE = ''
+
+/** TREC Information About Brokerage Services form (IABS) URL. */
+export const TREC_IABS_URL = ''
+
+/** TREC Consumer Protection Notice URL. */
+export const TREC_CPN_URL = ''
+
+export const INQUIRY_TYPES = {
+  seller: 'Sell a Business',
+  buyer: 'Buy a Business',
+  valuation: 'Business Valuation',
+  'franchise-buyer': 'Buy a Franchise',
+  'franchise-seller': 'Sell a Franchise',
+} as const
+
+export type InquiryType = keyof typeof INQUIRY_TYPES
