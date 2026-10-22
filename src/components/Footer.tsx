@@ -46,9 +46,9 @@ export function Footer() {
               <Image
                 src="/forge-franchising-logo-white.png"
                 alt="Forge Franchising Group franchise development company logo"
-                width={200}
-                height={54}
-                className="h-14 w-auto"
+                width={240}
+                height={112}
+                className="h-20 w-auto"
                 style={{ objectFit: 'contain' }}
               />
             </Link>

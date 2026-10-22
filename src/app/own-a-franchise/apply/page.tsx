@@ -93,10 +93,10 @@ const DISCLAIMER_TEXT =
   'This is not an offer to sell, or the solicitation of an offer to buy, a franchise. Forge Franchising offers franchises solely by means of its Franchise Disclosure Document. Certain jurisdictions require registration or other actions before franchises can be offered or sold there. We will not offer or sell a franchise in any jurisdiction unless we are first in compliance with applicable law.';
 
 const inputClasses =
-  'w-full px-5 py-4 border border-graphite/12 bg-white text-graphite min-h-[52px] rounded-[3px] focus:outline-none focus:ring-2 focus:ring-ember/40 transition-shadow';
+  'w-full px-5 py-4 border border-graphite/10 bg-white text-graphite min-h-[52px] rounded-[3px] focus:outline-none focus:ring-2 focus:ring-ember/40 transition-shadow';
 
 const selectClasses =
-  'w-full px-5 py-4 border border-graphite/12 bg-white text-graphite min-h-[52px] rounded-[3px] focus:outline-none focus:ring-2 focus:ring-ember/40 transition-shadow appearance-none';
+  'w-full px-5 py-4 border border-graphite/10 bg-white text-graphite min-h-[52px] rounded-[3px] focus:outline-none focus:ring-2 focus:ring-ember/40 transition-shadow appearance-none';
 
 export default function ApplyPage() {
   const [step, setStep] = useState(0);

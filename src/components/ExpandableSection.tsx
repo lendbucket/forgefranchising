@@ -30,7 +30,7 @@ export function ExpandableSection({
 
   return (
     <div
-      className="border border-graphite/8 bg-white overflow-hidden"
+      className="border border-graphite/10 bg-white overflow-hidden"
       style={{ borderRadius: '4px' }}
     >
       <button

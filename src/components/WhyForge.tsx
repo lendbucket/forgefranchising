@@ -37,7 +37,7 @@ export function WhyForge() {
               <div
                 className={`py-10 lg:py-0 lg:px-10 ${
                   i < pillars.length - 1
-                    ? 'border-b lg:border-b-0 lg:border-r border-graphite/8'
+                    ? 'border-b lg:border-b-0 lg:border-r border-graphite/10'
                     : ''
                 } ${i === 0 ? 'lg:pl-0' : ''} ${i === pillars.length - 1 ? 'lg:pr-0' : ''}`}
               >

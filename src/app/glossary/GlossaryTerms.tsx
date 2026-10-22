@@ -69,7 +69,7 @@ export function GlossaryTerms({
                 <article
                   key={term.slug}
                   id={term.slug}
-                  className="scroll-mt-24 border border-graphite/8 bg-white overflow-hidden"
+                  className="scroll-mt-24 border border-graphite/10 bg-white overflow-hidden"
                   style={{ borderRadius: '4px' }}
                 >
                   <button

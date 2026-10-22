@@ -96,7 +96,7 @@ function InputField({
       <input
         {...props}
         required={required}
-        className="w-full px-5 py-4 border border-graphite/12 bg-white text-graphite placeholder:text-steel focus:outline-none focus:ring-2 focus:ring-ember/40 focus:border-ember/60 transition-all duration-200 min-h-[52px] text-base"
+        className="w-full px-5 py-4 border border-graphite/10 bg-white text-graphite placeholder:text-steel focus:outline-none focus:ring-2 focus:ring-ember/40 focus:border-ember/60 transition-all duration-200 min-h-[52px] text-base"
         style={{ borderRadius: '3px' }}
       />
     </div>
@@ -123,7 +123,7 @@ function SelectField({
       <select
         {...props}
         required={required}
-        className="w-full px-5 py-4 border border-graphite/12 bg-white text-graphite focus:outline-none focus:ring-2 focus:ring-ember/40 focus:border-ember/60 transition-all duration-200 min-h-[52px] text-base"
+        className="w-full px-5 py-4 border border-graphite/10 bg-white text-graphite focus:outline-none focus:ring-2 focus:ring-ember/40 focus:border-ember/60 transition-all duration-200 min-h-[52px] text-base"
         style={{ borderRadius: '3px' }}
       >
         <option value="">{placeholder || 'Select...'}</option>
@@ -153,7 +153,7 @@ function TextAreaField({
       <textarea
         {...props}
         required={required}
-        className="w-full px-5 py-4 border border-graphite/12 bg-white text-graphite placeholder:text-steel focus:outline-none focus:ring-2 focus:ring-ember/40 focus:border-ember/60 transition-all duration-200 resize-y text-base leading-relaxed"
+        className="w-full px-5 py-4 border border-graphite/10 bg-white text-graphite placeholder:text-steel focus:outline-none focus:ring-2 focus:ring-ember/40 focus:border-ember/60 transition-all duration-200 resize-y text-base leading-relaxed"
         style={{ borderRadius: '3px' }}
       />
     </div>

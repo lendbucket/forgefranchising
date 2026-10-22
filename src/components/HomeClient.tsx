@@ -92,7 +92,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
             </div>
           </ScrollReveal>
           {/* Timeline layout on desktop, stacked on mobile */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-graphite/8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-graphite/5">
             {phases.map((phase, i) => (
               <ScrollReveal key={phase.number} delay={i as 1 | 2 | 3 | 4}>
                 <div className="bg-white p-8 lg:p-10 h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-lg phase-cell">
@@ -141,7 +141,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
               </p>
             </div>
           </ScrollReveal>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-graphite/8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-graphite/5">
             {[
               { title: 'Profitability and Unit Economics', desc: 'Can the model support two layers of ownership and still deliver a strong operator return?' },
               { title: 'Systems and Operations', desc: 'Are your processes documented well enough that a new operator can learn them without you?' },

@@ -98,7 +98,7 @@ export default function HomePage() {
             />
           </div>
           <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-r from-graphite via-graphite/70 to-transparent z-10" />
-          <div className="absolute inset-y-0 right-0 w-1/2 mix-blend-multiply bg-ember/20" />
+          <div className="absolute inset-y-0 right-0 w-1/2 mix-blend-multiply bg-steel/30" />
         </div>
 
         {/* Background image: mobile subtle overlay */}
@@ -122,8 +122,8 @@ export default function HomePage() {
             <Image
               src="/forge-franchising-logo-white.png"
               alt="Forge Franchising Group, franchise development and consulting company"
-              width={400}
-              height={108}
+              width={416}
+              height={193}
               className="h-24 sm:h-28 w-auto hero-logo-animate"
               style={{ objectFit: 'contain' }}
               priority
@@ -132,6 +132,9 @@ export default function HomePage() {
 
           {/* Hero copy: centered on mobile, left-aligned on desktop */}
           <div className="max-w-3xl lg:max-w-2xl text-center lg:text-left mx-auto lg:mx-0">
+            <p className="text-accent text-xs sm:text-sm font-semibold uppercase mb-5 hero-entrance hero-entrance-1" style={{ letterSpacing: '0.22em' }}>
+              Build Stronger Franchises.
+            </p>
             <h1 className="heading-1 text-white mb-6 text-balance hero-entrance hero-entrance-2">
               Franchise Development for Owners Who Built Something Worth Replicating.
             </h1>

@@ -103,7 +103,7 @@ export function Header() {
         className={`sticky top-0 z-50 transition-all duration-300 safe-top ${
           isTransparent
             ? 'bg-transparent'
-            : 'bg-white/97 backdrop-blur-md shadow-sm'
+            : 'bg-white/95 backdrop-blur-md shadow-sm'
         }`}
         style={isTransparent ? {} : { borderBottom: '1px solid rgba(28, 31, 35, 0.06)' }}
       >
@@ -123,10 +123,10 @@ export function Header() {
               <Image
                 src={isTransparent ? '/forge-franchising-logo-white.png' : '/forge-franchising-logo.png'}
                 alt="Forge Franchising Group logo"
-                width={220}
-                height={60}
+                width={232}
+                height={112}
                 className={`transition-all duration-300 ${
-                  scrolled ? 'h-12 w-auto' : 'h-14 w-auto'
+                  scrolled ? 'h-14 w-auto' : 'h-16 w-auto'
                 }`}
                 style={{ objectFit: 'contain' }}
                 priority
@@ -302,9 +302,9 @@ export function Header() {
               <Image
                 src="/forge-franchising-logo.png"
                 alt="Forge Franchising Group logo"
-                width={180}
-                height={48}
-                className="h-12 w-auto"
+                width={200}
+                height={96}
+                className="h-14 w-auto"
                 style={{ objectFit: 'contain' }}
                 priority
               />
