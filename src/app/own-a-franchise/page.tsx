@@ -7,7 +7,7 @@ import { MidCTA } from '@/components/MidCTA'
 export const metadata = createMetadata({
   title: 'Own a Forge Franchise',
   description:
-    'Own a Forge franchise consulting and brokerage business. Protected territory, proprietary technology, complete training, and ongoing support from operators.',
+    'Own a Forge franchise consulting and brokerage business. A defined territory, proprietary technology, complete training, and ongoing support from operators.',
   path: '/own-a-franchise',
 })
 
@@ -18,7 +18,7 @@ const valueStackItems = [
   {
     title: 'The Forge brand and reputation',
     description:
-      'You launch under a recognized name in franchise development. Not a generic certificate. Learn why brand is the product in franchising.',
+      'You launch under the Forge brand, not a generic certificate. Learn why brand is the product in franchising.',
   },
   {
     title: 'Proprietary CRM and software platform',
@@ -56,7 +56,7 @@ const valueStackItems = [
       'No lease, no buildout, no storefront. Run your business from a home office, a co-working space, or a beach house. The overhead stays low.',
   },
   {
-    title: 'Protected territory',
+    title: 'A defined territory',
     description:
       'Territories are defined in the Franchise Disclosure Document.',
   },
@@ -77,7 +77,7 @@ const faqItems = [
   },
   {
     q: 'What are the ongoing costs beyond the franchise fee?',
-    a: 'Your primary ongoing costs are the flat monthly royalty, a marketing fund contribution, and your own operating expenses (technology, travel, professional development). Because this is a virtual model with no inventory and no employees required to start, the overhead is dramatically lower than most franchise concepts.',
+    a: 'Your primary ongoing costs are the flat monthly royalty, a marketing fund contribution, and your own operating expenses (technology, travel, professional development). Because this is a virtual model with no inventory and no employees required to start, it carries lower overhead than a traditional office based firm.',
   },
   {
     q: 'Can I hire a team or bring on staff?',
@@ -166,10 +166,10 @@ export default function OwnAFranchisePage() {
         <div className="relative z-10 container-wide section-padding">
           <div className="max-w-[880px]">
             <h1 className="heading-1 text-white mb-6">
-              Build a Six-Figure Franchise Consulting Business. Work From Home. Help Business Owners Scale.
+              Own a franchise consulting and brokerage business
             </h1>
             <p className="body-large mb-4 max-w-2xl">
-              You are an ambitious professional who wants to own a business, not just work a job. Forge gives you the brand, the training, the technology, and the deal flow to build a consulting practice that helps business owners franchise and grow.
+              You are an ambitious professional who wants to own a business, not just work a job. Forge gives you the brand, the training, and the technology to build a consulting practice that helps business owners franchise and grow.
             </p>
             <p className="body-large mb-4 max-w-2xl">
               This is how you go from employee to business owner without starting from scratch.
@@ -223,7 +223,7 @@ export default function OwnAFranchisePage() {
               <a href={IFA_OUTLOOK_URL} target="_blank" rel="noopener noreferrer" className="text-link">
                 International Franchise Association
               </a>
-              . Business owners across every sector are looking to franchise their concepts, and buyers with capital are actively searching for the right franchise to invest in.
+              .
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-12 md:gap-0 md:divide-x md:divide-line max-w-4xl mx-auto">
@@ -256,7 +256,7 @@ export default function OwnAFranchisePage() {
               A complete business system, not just training
             </h2>
             <p className="body-large">
-              Most franchise consulting programs hand you a certificate and wish you luck. Forge gives you a brand, a technology platform, a documented methodology, lead generation infrastructure, and a team behind you. Here is exactly what is included.
+              Forge gives you a brand, a technology platform, a documented methodology, lead generation infrastructure, and a team behind you. Here is exactly what is included.
             </p>
           </div>
           <div className="tile-grid md:grid-cols-2 lg:grid-cols-3">
