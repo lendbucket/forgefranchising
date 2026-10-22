@@ -38,12 +38,8 @@ const tiers = [
     tagline: 'The engagement we recommend for most first time franchisors',
     popular: true,
     description:
-      'Growth includes everything in Launch, plus the systems that actually drive franchise sales and franchisee success. This is the package for owners who do not just want to be legally ready to franchise. They want to be operationally ready to scale. Most of our clients choose Growth because it covers the gap between "we have an FDD" and "we are actually selling and supporting franchises."',
-    // Shown on the page. `description` above still feeds the OfferCatalog
-    // schema unchanged until Robert approves updating structured data.
-    pageDescription:
       'Growth includes everything in Launch, plus the systems that actually drive franchise sales and franchisee success. This is the package for owners who do not just want to be legally ready to franchise. They want to be operationally ready to scale. Growth is the tier we recommend for most first time franchisors because it covers the gap between "we have an FDD" and "we are actually selling and supporting franchises."',
-    priceHint: 'The complete package most brands choose. Contact us for a tailored quote.',
+    priceHint: 'The engagement we recommend for most first time franchisors. Contact us for a tailored quote.',
     features: [
       'Everything in the Launch package',
       'Full operations manual: comprehensive, training ready, digitally delivered',
@@ -202,7 +198,7 @@ export default function PackagesPage() {
                   <h2 className="heading-2 mb-2">{tier.name}</h2>
                   <p className="text-accent font-semibold text-sm">{tier.tagline}</p>
                 </div>
-                <p className="text-steel text-[17px] leading-relaxed mb-6">{tier.pageDescription ?? tier.description}</p>
+                <p className="text-steel text-[17px] leading-relaxed mb-6">{tier.description}</p>
                 <div className="bg-stone p-4 mb-6">
                   <p className="text-graphite font-medium text-sm">{tier.priceHint}</p>
                 </div>
@@ -317,7 +313,7 @@ export default function PackagesPage() {
             {[
               {
                 q: 'Can I start with Launch and upgrade later?',
-                a: 'Yes. Every package builds on the one before it, so nothing is wasted if you start smaller and scale up. Many of our clients begin with Launch to validate the model, then move to Growth once they are ready to sell in multiple states. The work we do in Launch carries forward directly.',
+                a: 'Yes. Every package builds on the one before it, so nothing is wasted if you start smaller and scale up. Owners can begin with Launch to validate the model and move to Growth when they are ready to sell in multiple states. The work we do in Launch carries forward directly.',
               },
               {
                 q: 'Why are there no prices listed?',
@@ -333,7 +329,7 @@ export default function PackagesPage() {
               },
               {
                 q: 'Do you offer payment plans or financing?',
-                a: 'Yes. We structure payments around the phases of the engagement. A deposit begins the work, and the balance is scheduled in advance of each phase. Many clients also finance the engagement through SBA loans, business lines of credit, or cash flow. See our financing guide for common funding paths and how to prepare your application.',
+                a: 'Yes. We structure payments around the phases of the engagement. A deposit begins the work, and the balance is scheduled in advance of each phase. Some owners ask their lender whether SBA financing can cover the engagement. See our financing guide for common funding paths and how to prepare your application.',
               },
             ].map((item) => (
               <div key={item.q} className="py-8 border-b border-line">

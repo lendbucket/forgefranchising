@@ -119,7 +119,7 @@ export default function FinancingPage() {
               consultant who bills by the hour with no clear endpoint.
             </p>
             <p className="text-steel text-[17px] leading-relaxed mb-8">
-              Most of our clients do not fund the engagement entirely from cash on hand. They use one
+              Many owners do not fund an engagement like this entirely from cash on hand. They use one
               or more of the financing paths described below, and they stage the payments across the
               phases of the engagement so the capital deployment matches the pace of the project. For current scope
               and deliverables at each level, see our{' '}

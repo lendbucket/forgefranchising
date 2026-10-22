@@ -131,12 +131,12 @@ const FAQ_CATEGORIES = [
       {
         question: 'What makes Forge different from other franchise development firms?',
         answer:
-          'Three things. First, we come from the operating side. We have actually run businesses, managed multi-unit operations, and dealt with the reality of scaling. Most franchise consultants have never done that. Second, we use technology as a core part of how we build franchise systems. Operations manuals, training platforms, franchisee portals: we build these with modern tools, not Word documents. Third, we are selective. We do not take every client. We take businesses that are genuinely ready to franchise, and we tell the ones that are not ready what they need to do first. That selectivity protects our results and your investment.',
+          'Three things. First, we come from the operating side. We have actually run businesses, managed multi-unit operations, and dealt with the reality of scaling. Most franchise consultants have never done that. Second, we use technology as a core part of how we build franchise systems. Operations manuals, training platforms, franchisee portals: we build these with modern tools, not Word documents. Third, we are selective. We do not take every client. We take businesses that are genuinely ready to franchise, and we tell the ones that are not ready what they need to do first. That selectivity protects your investment.',
       },
       {
         question: 'What does your process look like from start to finish?',
         answer:
-          'Our process has four phases. Phase one is Feasibility, where we analyze your business model, financials, market potential, and operational readiness. Phase two is Structure, where we build your FDD, franchise agreement, operations manual, training program, and compliance framework. Phase three is Launch, where we handle state registrations, build your franchise sales process, and prepare you to start recruiting franchisees. Phase four is Scale, where we provide ongoing support as you sell and onboard your first franchisees. The timeline varies by project, but most clients move from feasibility to franchise ready in 4 to 8 months.',
+          'Our process has four phases. Phase one is Feasibility, where we analyze your business model, financials, market potential, and operational readiness. Phase two is Structure, where we build your FDD, franchise agreement, operations manual, training program, and compliance framework. Phase three is Launch, where we handle state registrations, build your franchise sales process, and prepare you to start recruiting franchisees. Phase four is Scale, where we provide ongoing support as you sell and onboard your first franchisees. The timeline varies by project, but moving from feasibility to franchise ready typically takes 4 to 8 months, depending on the business and state registration timelines.',
       },
     ],
   },

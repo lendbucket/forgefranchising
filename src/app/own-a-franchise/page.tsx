@@ -416,7 +416,7 @@ export default function OwnAFranchisePage() {
               The numbers tell the story. Franchising is one of the most proven business expansion models in the world, and the need for qualified consultants continues to outpace supply.
             </p>
           </div>
-          <div className="tile-grid md:grid-cols-2 lg:grid-cols-4 mb-12">
+          <div className="tile-grid md:grid-cols-2 lg:grid-cols-4">
             {[
               { stat: '800,000+', label: 'Franchise establishments in the U.S.' },
               { stat: '8.5M', label: 'Jobs created by franchise businesses' },
@@ -428,17 +428,6 @@ export default function OwnAFranchisePage() {
                 <p className="text-steel text-sm">{item.label}</p>
               </div>
             ))}
-          </div>
-          <div className="max-w-3xl mx-auto">
-            <div className="card">
-              <h3 className="heading-4 mb-4">Forge&apos;s track record</h3>
-              <p className="text-steel text-[17px] leading-relaxed mb-4">
-                Forge Franchising Group has helped businesses across dozens of industries develop their franchise systems. Our methodology has been tested in restaurants, home services, fitness, beauty, healthcare, education, and more. Every template, every process, every system in your franchise was built from real engagements with real businesses.
-              </p>
-              <p className="text-steel text-[17px] leading-relaxed">
-                When you join Forge, you are not getting a theoretical framework. You are getting a battle-tested playbook refined through years of franchise development work.
-              </p>
-            </div>
           </div>
         </div>
       </section>

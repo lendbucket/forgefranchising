@@ -248,7 +248,7 @@ export default async function IndustryPage({ params }: Props) {
 
       <SectionCTA
         heading={sentenceCase(`Ready to Franchise Your ${industry.shortName} Business?`)}
-        body={`We have helped ${industry.name.toLowerCase()} businesses evaluate their franchise potential and build the systems needed to scale. Book a free call and let us take a look at your concept.`}
+        body={`We work with ${industry.name.toLowerCase()} owners to evaluate their franchise potential and build the systems needed to scale. Book a free call and let us take a look at your concept.`}
         buttonText={sentenceCase(`See If Your ${industry.shortName} Business Qualifies`)}
         buttonHref="/is-my-business-franchisable"
         secondaryText="Or book a feasibility call directly"
