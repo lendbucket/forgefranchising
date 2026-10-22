@@ -83,8 +83,7 @@ export default function HomePage() {
 
       {/* HERO: Full-bleed with centered logo, transparent header overlays this */}
       <section
-        className="relative bg-graphite overflow-hidden dark-depth"
-        style={{ marginTop: 'calc(-5rem - env(safe-area-inset-top, 0px))' }}
+        className="relative bg-graphite overflow-hidden"
       >
         {/* Background image: desktop right split */}
         <div className="absolute inset-0 hidden lg:block">

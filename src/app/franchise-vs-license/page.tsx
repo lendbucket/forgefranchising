@@ -147,7 +147,7 @@ export default function FranchiseVsLicensePage() {
       </section>
 
       {/* The Core Difference */}
-      <section className="section-padding bg-ash-tint">
+      <section className="section-padding bg-stone">
         <div className="container-wide">
           <div className="max-w-4xl">
             <h2 className="heading-2 mb-6">The Core Difference, Explained Plainly</h2>
@@ -212,7 +212,7 @@ export default function FranchiseVsLicensePage() {
       </section>
 
       {/* What You Deliver in Each Path */}
-      <section className="section-padding bg-ash-tint">
+      <section className="section-padding bg-stone">
         <div className="container-wide">
           <div className="max-w-4xl">
             <h2 className="heading-2 text-center mb-4">What Your Partner Receives in Each Path</h2>
@@ -328,7 +328,7 @@ export default function FranchiseVsLicensePage() {
       </section>
 
       {/* FAQ */}
-      <section className="section-padding bg-ash-tint">
+      <section className="section-padding bg-stone">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto">
             <p className="eyebrow mb-4">Frequently Asked Questions</p>

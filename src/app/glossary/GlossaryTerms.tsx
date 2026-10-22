@@ -85,7 +85,7 @@ export function GlossaryTerms({
                     <div className="px-6 pb-6 pt-0">
                       <div className="border-t border-graphite/10 pt-4">
                         <p className="text-steel leading-relaxed mb-4">{term.definition}</p>
-                        <div className="bg-ash-tint p-5" style={{ borderRadius: '0px', borderLeft: '3px solid #4E5A62' }}>
+                        <div className="bg-stone p-5" style={{ borderRadius: '0px', borderLeft: '3px solid #4E5A62' }}>
                           <p className="text-sm font-semibold text-graphite mb-1">
                             Why this matters for your franchise:
                           </p>

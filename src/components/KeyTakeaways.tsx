@@ -16,7 +16,7 @@ type KeyTakeawaysProps = {
 export function KeyTakeaways({ items, readTime }: KeyTakeawaysProps) {
   return (
     <div
-      className="bg-ash-tint p-6 sm:p-8 mb-10"
+      className="bg-stone p-6 sm:p-8 mb-10"
       style={{ borderRadius: '0px', borderLeft: '3px solid #E4572E' }}
     >
       <div className="flex items-center justify-between mb-4">

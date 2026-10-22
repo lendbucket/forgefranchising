@@ -105,7 +105,7 @@ export default function FinancingPage() {
       </section>
 
       {/* The Honest Cost Conversation */}
-      <section className="section-padding bg-ash-tint">
+      <section className="section-padding bg-stone">
         <div className="container-wide">
           <div className="max-w-4xl">
             <h2 className="heading-2 mb-6">The Honest Cost Conversation</h2>
@@ -249,7 +249,7 @@ export default function FinancingPage() {
       </section>
 
       {/* How to Get Ready to Qualify */}
-      <section className="section-padding bg-ash-tint">
+      <section className="section-padding bg-stone">
         <div className="container-wide">
           <div className="max-w-4xl">
             <h2 className="heading-2 mb-6">How to Get Ready to Qualify</h2>
@@ -326,7 +326,7 @@ export default function FinancingPage() {
       </section>
 
       {/* What Your Investment Builds */}
-      <section className="section-padding bg-ash-tint">
+      <section className="section-padding bg-stone">
         <div className="container-wide">
           <div className="max-w-4xl">
             <h2 className="heading-2 mb-6">What Your Investment Builds</h2>
@@ -401,7 +401,7 @@ export default function FinancingPage() {
       </section>
 
       {/* Disclaimer */}
-      <section className="bg-ash-tint border-t border-graphite/10">
+      <section className="bg-stone border-t border-graphite/10">
         <div className="container-wide py-10">
           <div className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-widest text-steel mb-3">Important Notice</p>

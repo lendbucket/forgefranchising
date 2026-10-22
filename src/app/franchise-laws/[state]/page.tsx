@@ -342,7 +342,7 @@ export default async function StateFranchiseLawPage({ params }: Props) {
 
       {/* Related States */}
       {sameCategory.length > 0 && (
-        <section className="section-padding bg-ash-tint">
+        <section className="section-padding bg-stone">
           <div className="container-wide">
             <h2 className="heading-2 mb-4">
               Other{' '}

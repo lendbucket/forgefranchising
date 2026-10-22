@@ -250,7 +250,7 @@ export default function SellYourFranchisePage() {
                       body: 'The buyer, or a designated manager, completes the franchisor’s initial training program before or shortly after closing.',
                     },
                   ].map((c) => (
-                    <div key={c.title} className="bg-ash-tint p-6" style={{ borderRadius: '0px' }}>
+                    <div key={c.title} className="bg-stone p-6" style={{ borderRadius: '0px' }}>
                       <p className="text-xs font-semibold uppercase tracking-widest text-graphite mb-2">{c.title}</p>
                       <p className="text-steel text-sm leading-relaxed">{c.body}</p>
                     </div>

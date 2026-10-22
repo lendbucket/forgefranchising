@@ -1,101 +1,84 @@
 'use client'
 
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
-import { NAV_LINKS } from '@/lib/constants'
+import { NAV_LINKS, CONTACT_EMAIL } from '@/lib/constants'
+import { Arrow } from '@/components/Arrow'
 
-type Panel = { eyebrow: string; heading: string; body: string; cta: string; href: string }
+/** Words that keep their capitals when a nav label is shown in sentence case. */
+const KEEP_CASE = new Set(['FAQ', 'FDD', 'Forge', 'Texas'])
 
-const assessmentPanel: Panel = {
-  eyebrow: 'Get Started',
-  heading: 'See if your business qualifies',
-  body: 'Take our free assessment and get a clear, honest answer in under five minutes.',
-  cta: 'Take the Assessment',
-  href: '/is-my-business-franchisable',
+/** "How It Works" becomes "How it works"; proper nouns keep their case. */
+function sentenceCase(label: string) {
+  return label
+    .split(' ')
+    .map((word, i) => (i === 0 || KEEP_CASE.has(word) ? word : word.toLowerCase()))
+    .join(' ')
 }
 
-/** Feature panel shown beside each mega menu group. */
-const panels: Record<string, Panel> = {
-  'Franchise Your Business': assessmentPanel,
-  'Sell or Buy a Business': {
-    eyebrow: 'Selling a Business',
-    heading: 'Start with how buyers will read your numbers',
-    body: 'Request a broker opinion of value. It is not a certified appraisal, and it is the basis for pricing a sale.',
-    cta: 'Request an Opinion of Value',
-    href: '/business-valuation#inquiry',
-  },
-  'Buy a Franchise': {
-    eyebrow: 'Franchise Buyers',
-    heading: 'Evaluate a brand before you sign',
-    body: 'Read the FDD with a team that builds franchise systems, then validate with current and former franchisees.',
-    cta: 'Get Help Evaluating a Franchise',
-    href: '/buy-a-franchise#inquiry',
-  },
-  Resources: assessmentPanel,
-  Company: {
-    eyebrow: 'Franchise Opportunity',
-    heading: 'Build a franchise consulting business',
-    body: 'Work from home. Two income streams. $15,000 franchise fee. Limited territories.',
-    cta: 'Apply Now',
-    href: '/own-a-franchise/apply',
-  },
+function Chevron({ open, size = 10, strokeWidth = 3 }: { open: boolean; size?: number; strokeWidth?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={strokeWidth}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      className={`transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
+    >
+      <path d="M6 9l6 6 6-6" />
+    </svg>
+  )
 }
-
-const groupFor = (label: string) => NAV_LINKS.find((g) => g.label === label)
-
-const menuKeys = NAV_LINKS.map((g) => g.label)
 
 export function Header() {
   const pathname = usePathname()
-  const isHome = pathname === '/'
-
+  const [openGroup, setOpenGroup] = useState<string | null>(null)
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [openPanel, setOpenPanel] = useState<string | null>(null)
-  const [scrolled, setScrolled] = useState(false)
-  const [mobileAccordion, setMobileAccordion] = useState<string | null>(null)
-  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const [mobileGroup, setMobileGroup] = useState<string | null>(null)
   const headerRef = useRef<HTMLElement>(null)
+  // Set when a menu is opened from the keyboard, so focus moves into the panel.
+  const focusPanel = useRef(false)
 
+  // Close every menu on route change.
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
+    setOpenGroup(null)
+    setMobileOpen(false)
+  }, [pathname])
+
+  // Escape closes the open menu; a click outside the header closes the mega menu.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setOpenGroup(null)
+        setMobileOpen(false)
+      }
+    }
+    const onPointer = (e: MouseEvent) => {
+      if (headerRef.current && !headerRef.current.contains(e.target as Node)) setOpenGroup(null)
+    }
+    document.addEventListener('keydown', onKey)
+    document.addEventListener('mousedown', onPointer)
+    return () => {
+      document.removeEventListener('keydown', onKey)
+      document.removeEventListener('mousedown', onPointer)
+    }
   }, [])
 
   useEffect(() => {
-    if (mobileOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
+    document.body.style.overflow = mobileOpen ? 'hidden' : ''
+    return () => {
       document.body.style.overflow = ''
     }
-    return () => { document.body.style.overflow = '' }
   }, [mobileOpen])
 
-  const handleMouseEnter = useCallback((key: string) => {
-    if (closeTimer.current) clearTimeout(closeTimer.current)
-    setOpenPanel(key)
-  }, [])
-
-  const handleMouseLeave = useCallback(() => {
-    closeTimer.current = setTimeout(() => setOpenPanel(null), 150)
-  }, [])
-
-  const handleKeyDown = useCallback((e: React.KeyboardEvent, key: string) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault()
-      setOpenPanel(prev => prev === key ? null : key)
-    }
-    if (e.key === 'Escape') {
-      setOpenPanel(null)
-    }
-  }, [])
-
-  /* Homepage: transparent over the hero until scrolled. Everywhere else: solid graphite. */
-  const isTransparent = isHome && !scrolled && !openPanel
-
-  /* The nav group that owns the current page, for the active underline. */
+  /* The nav group that owns the current page. */
   const activeKey = (() => {
     if (!pathname || pathname === '/') return null
     let best: { key: string; len: number } | null = null
@@ -108,263 +91,191 @@ export function Header() {
     return best?.key ?? null
   })()
 
+  const current = NAV_LINKS.find((g) => g.label === openGroup)
+
+  useEffect(() => {
+    if (openGroup && focusPanel.current) {
+      document.querySelector<HTMLElement>('#mega-menu a')?.focus()
+    }
+    focusPanel.current = false
+  }, [openGroup])
+  // The open group carries the ember underline. With no menu open, the
+  // group that owns the current page carries it.
+  const underlined = openGroup ?? activeKey
+
   return (
     <>
-      <header
-        ref={headerRef}
-        className={`sticky top-0 z-50 transition-all duration-300 safe-top ${
-          isTransparent
-            ? 'bg-transparent'
-            : 'bg-graphite shadow-sm'
-        }`}
-        style={isTransparent ? {} : { borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={`flex items-center justify-between transition-all duration-300 ${
-            scrolled ? 'h-16' : 'h-20'
-          }`}>
-            {/* Corner logo: hidden on mobile homepage when transparent, always visible otherwise */}
-            <Link
-              href="/"
-              className={`flex items-center flex-shrink-0 py-1 transition-opacity duration-300 ${
-                isHome && !scrolled ? 'lg:opacity-100 opacity-0 pointer-events-none lg:pointer-events-auto' : 'opacity-100'
-              }`}
-              tabIndex={isHome && !scrolled ? -1 : 0}
-              aria-hidden={isHome && !scrolled ? true : undefined}
-            >
-              <Image
-                src="/forge-franchising-logo-white.png"
-                alt="Forge Franchising Group logo"
-                width={232}
-                height={112}
-                className={`transition-all duration-300 ${
-                  scrolled ? 'h-14 w-auto' : 'h-16 w-auto'
-                }`}
-                style={{ objectFit: 'contain' }}
-                priority
-              />
-            </Link>
+      <header ref={headerRef} className="sticky top-0 z-50 bg-graphite safe-top" style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
+        <div className="wrap flex items-center justify-between gap-6 h-[68px] min-[1141px]:h-[88px]">
+          <Link href="/" aria-label="Forge Franchising Group home" className="flex flex-shrink-0 items-center">
+            <Image
+              src="/forge-franchising-logo-white.png"
+              alt="Forge Franchising Group"
+              width={900}
+              height={405}
+              className="h-9 min-[1141px]:h-11 w-auto"
+              priority
+            />
+          </Link>
 
-            {/* Desktop nav */}
-            <nav className="hidden lg:flex items-center gap-1" role="navigation" aria-label="Main navigation">
-              {menuKeys.map((key) => (
-                <div
-                  key={key}
-                  className="relative"
-                  onMouseEnter={() => handleMouseEnter(key)}
-                  onMouseLeave={handleMouseLeave}
+          <nav aria-label="Primary" className="hidden min-[1141px]:flex items-stretch h-[88px]">
+            {NAV_LINKS.map((group) => {
+              const isOpen = openGroup === group.label
+              return (
+                <button
+                  key={group.label}
+                  type="button"
+                  aria-expanded={isOpen}
+                  aria-controls="mega-menu"
+                  onClick={() => setOpenGroup(isOpen ? null : group.label)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowDown') focusPanel.current = true
+                    if (e.key === 'ArrowDown') {
+                      e.preventDefault()
+                      setOpenGroup(group.label)
+                    }
+                  }}
+                  className="flex items-center gap-1.5 h-full px-4 text-[15px] font-medium text-white whitespace-nowrap transition-shadow duration-200"
+                  style={{ boxShadow: `inset 0 -3px 0 ${underlined === group.label ? '#E4572E' : 'transparent'}` }}
                 >
-                  <button
-                    type="button"
-                    className={`relative px-2.5 xl:px-4 py-2 text-sm font-medium whitespace-nowrap transition-colors ${
-                      openPanel === key || activeKey === key ? 'text-white' : 'text-white/75 hover:text-white'
-                    }`}
-                    aria-expanded={openPanel === key}
-                    aria-haspopup="true"
-                    onKeyDown={(e) => handleKeyDown(e, key)}
-                  >
-                    {activeKey === key && (
-                      <span className="absolute left-2.5 right-2.5 xl:left-4 xl:right-4 -bottom-0.5 h-0.5 bg-ember" aria-hidden="true" />
-                    )}
-                    {key}
-                    <svg
-                      className={`inline-block ml-1 w-3 h-3 transition-transform duration-200 ${
-                        openPanel === key ? 'rotate-180' : ''
-                      }`}
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
-                </div>
-              ))}
-            </nav>
+                  {group.label}
+                  <span className="opacity-70">
+                    <Chevron open={isOpen} />
+                  </span>
+                </button>
+              )
+            })}
+          </nav>
 
-            {/* Desktop CTA */}
-            <div className="hidden xl:flex items-center">
-              <Link href="/contact" className="btn-primary text-sm py-3 px-6">
-                Book a Free Call
-              </Link>
-            </div>
-
-            {/* Mobile hamburger */}
-            <button
-              onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden p-2 min-w-[44px] min-h-[44px] flex items-center justify-center active:scale-95 transition-transform text-white"
-              aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={mobileOpen}
+          <div className="flex items-center gap-2">
+            <Link
+              href="/contact"
+              className="hidden min-[721px]:inline-flex items-center justify-center min-h-[46px] px-[22px] text-sm font-semibold bg-white text-graphite hover:bg-[#ECEAE6] transition-colors"
             >
-              {mobileOpen ? (
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              ) : (
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              )}
+              Contact us
+            </Link>
+            <button
+              type="button"
+              onClick={() => setMobileOpen(true)}
+              className="min-[1141px]:hidden flex items-center justify-center w-11 h-11 text-white"
+              aria-label="Open menu"
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-menu"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" aria-hidden="true">
+                <path d="M4 7h16M4 12h16M4 17h16" />
+              </svg>
             </button>
           </div>
         </div>
 
-        {/* Desktop Mega Menu Panel */}
-        {openPanel && (
-          <div
-            className="hidden lg:block absolute left-0 right-0 top-full bg-white border-t border-ash-tint/30 shadow-lg z-50"
-            onMouseEnter={() => { if (closeTimer.current) clearTimeout(closeTimer.current) }}
-            onMouseLeave={handleMouseLeave}
-            role="menu"
-          >
-            <div className="max-w-7xl mx-auto px-8 py-10">
-              <div className="grid grid-cols-12 gap-8">
-                <div className="col-span-8">
-                  <p className="eyebrow mb-6">{openPanel}</p>
-                  <div className="grid grid-cols-2 gap-x-12 gap-y-1">
-                    {groupFor(openPanel)?.links.map((link) => (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        className="group block py-3 active:opacity-70"
-                        onClick={() => setOpenPanel(null)}
-                        role="menuitem"
-                      >
-                        <span className="text-sm font-semibold text-graphite group-hover:text-accent transition-colors">
-                          {link.label}
-                        </span>
-                        <span className="block text-xs text-steel mt-0.5">
-                          {link.desc}
-                        </span>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="col-span-4">
-                  {(() => {
-                    const panel = panels[openPanel] ?? assessmentPanel
-                    return (
-                      <div className="bg-graphite p-8 h-full flex flex-col justify-between">
-                        <div>
-                          <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">
-                            {panel.eyebrow}
-                          </p>
-                          <h3 className="font-display font-bold text-xl text-white mb-3" style={{ letterSpacing: '-0.02em' }}>
-                            {panel.heading}
-                          </h3>
-                          <p className="text-white/60 text-sm leading-relaxed mb-6">
-                            {panel.body}
-                          </p>
-                        </div>
-                        <Link
-                          href={panel.href}
-                          className="btn-primary text-sm py-3 text-center w-full"
-                          onClick={() => setOpenPanel(null)}
-                        >
-                          {panel.cta}
-                        </Link>
-                      </div>
-                    )
-                  })()}
-                </div>
+        {/* Mega menu */}
+        {current && (
+          <div id="mega-menu" className="hidden min-[1141px]:block absolute left-0 right-0 top-full bg-white" style={{ boxShadow: '0 40px 80px rgba(0, 0, 0, 0.25)' }}>
+            <div className="wrap grid grid-cols-12 gap-14 pt-14 pb-16">
+              <div className="col-span-4 bg-graphite text-white p-9">
+                <p className="font-display text-[30px] font-bold leading-[1.05] mb-3" style={{ letterSpacing: '-0.03em' }}>
+                  {current.label}
+                </p>
+                <p className="text-[15px] leading-relaxed text-mist mb-7">{current.intro}</p>
+                <Link href={current.href} className="btn-primary !min-h-[48px] !text-[15px]" onClick={() => setOpenGroup(null)}>
+                  Overview
+                  <Arrow />
+                </Link>
               </div>
+              <ul className="col-span-8 grid grid-cols-2 gap-x-10 content-start">
+                {current.links.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      onClick={() => setOpenGroup(null)}
+                      className="group block py-4 text-graphite"
+                      style={{ borderBottom: '1px solid #EDEBE7' }}
+                    >
+                      <span className="block text-base font-semibold mb-0.5 transition-colors group-hover:text-ember-text">{link.label}</span>
+                      <span className="block text-sm text-steel">{link.desc}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         )}
       </header>
 
-      {/* Desktop mega menu overlay */}
-      {openPanel && (
-        <div
-          className={`hidden lg:block fixed inset-0 bg-graphite/20 z-40 menu-overlay ${openPanel ? 'active' : ''}`}
-          style={{ top: scrolled ? '64px' : '80px' }}
-          onClick={() => setOpenPanel(null)}
-          aria-hidden="true"
-        />
-      )}
-
-      {/* Mobile fullscreen menu */}
+      {/* Mobile menu */}
       {mobileOpen && (
         <div
-          className="lg:hidden fixed inset-0 z-50 bg-white flex flex-col safe-top"
+          id="mobile-menu"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Site menu"
+          className="fixed inset-0 z-[60] bg-graphite text-white flex flex-col safe-top"
           style={{ height: '100dvh' }}
         >
-          <div className="flex items-center justify-between px-4 h-20 flex-shrink-0" style={{ borderBottom: '1px solid rgba(28, 31, 35, 0.06)' }}>
-            <Link href="/" className="flex items-center" onClick={() => setMobileOpen(false)}>
-              <Image
-                src="/forge-franchising-logo.png"
-                alt="Forge Franchising Group logo"
-                width={200}
-                height={96}
-                className="h-14 w-auto"
-                style={{ objectFit: 'contain' }}
-                priority
-              />
+          <div className="flex items-center justify-between h-[68px] px-5 flex-shrink-0" style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
+            <Link href="/" aria-label="Forge Franchising Group home" className="flex items-center" onClick={() => setMobileOpen(false)}>
+              <Image src="/forge-franchising-logo-white.png" alt="Forge Franchising Group" width={900} height={405} className="h-9 w-auto" />
             </Link>
             <button
+              type="button"
               onClick={() => setMobileOpen(false)}
-              className="p-2 text-graphite min-w-[44px] min-h-[44px] flex items-center justify-center active:scale-95 transition-transform"
+              className="flex items-center justify-center w-11 h-11"
               aria-label="Close menu"
+              autoFocus
             >
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" aria-hidden="true">
+                <path d="M6 6l12 12M18 6L6 18" />
               </svg>
             </button>
           </div>
 
-          <div className="flex-1 overflow-y-auto px-4 py-6 overscroll-contain">
-            {menuKeys.map((key) => (
-              <div key={key} style={{ borderBottom: '1px solid rgba(28, 31, 35, 0.06)' }}>
-                <button
-                  type="button"
-                  onClick={() => setMobileAccordion(mobileAccordion === key ? null : key)}
-                  className="w-full flex items-center justify-between py-4 text-left min-h-[52px] active:opacity-70 transition-opacity"
-                  aria-expanded={mobileAccordion === key}
-                >
-                  <span className="text-lg font-display font-semibold text-graphite">{key}</span>
-                  <svg
-                    className={`w-5 h-5 text-steel transition-transform duration-200 ${
-                      mobileAccordion === key ? 'rotate-180' : ''
-                    }`}
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
+          <nav aria-label="Primary" className="flex-1 overflow-y-auto px-5">
+            {NAV_LINKS.map((group) => {
+              const isOpen = mobileGroup === group.label
+              return (
+                <div key={group.label} style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.1)' }}>
+                  <button
+                    type="button"
+                    onClick={() => setMobileGroup(isOpen ? null : group.label)}
+                    aria-expanded={isOpen}
+                    className={`w-full flex items-center justify-between min-h-[68px] font-display text-2xl font-bold text-left transition-colors ${isOpen ? 'text-ember-hover' : 'text-white'}`}
+                    style={{ letterSpacing: '-0.02em' }}
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
+                    {sentenceCase(group.label)}
+                    <Chevron open={isOpen} size={16} strokeWidth={2.5} />
+                  </button>
+                  {isOpen && (
+                    <ul className="pb-4">
+                      {group.links.map((link) => (
+                        <li key={link.href}>
+                          <Link
+                            href={link.href}
+                            onClick={() => setMobileOpen(false)}
+                            className="flex items-center min-h-[44px] text-base text-mist hover:text-white"
+                          >
+                            {sentenceCase(link.label)}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              )
+            })}
+          </nav>
 
-                {mobileAccordion === key && (
-                  <div className="pb-4 pl-2">
-                    {groupFor(key)?.links.map((link) => (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        onClick={() => setMobileOpen(false)}
-                        className="block py-3 min-h-[44px] active:opacity-70 transition-opacity"
-                      >
-                        <span className="text-base font-medium text-graphite">{link.label}</span>
-                        <span className="block text-sm text-steel mt-0.5">{link.desc}</span>
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-
-          <div className="flex-shrink-0 px-4 pb-6 pt-4 safe-bottom" style={{ borderTop: '1px solid rgba(28, 31, 35, 0.06)' }}>
-            <Link
-              href="/contact"
-              onClick={() => setMobileOpen(false)}
-              className="btn-primary w-full text-center text-base py-4 block active:scale-[0.98] transition-transform"
-            >
-              Book a Free Call
+          <div className="px-5 pt-4 pb-6 flex-shrink-0 safe-bottom">
+            <Link href="/is-my-business-franchisable" onClick={() => setMobileOpen(false)} className="btn-primary w-full">
+              Get your free readiness score
             </Link>
+            <a href={`mailto:${CONTACT_EMAIL}`} className="flex items-center justify-center min-h-[44px] mt-2 text-sm text-mist hover:text-white">
+              {CONTACT_EMAIL}
+            </a>
           </div>
         </div>
       )}
     </>
   )
 }
+

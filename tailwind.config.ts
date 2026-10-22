@@ -10,42 +10,40 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        graphite: palette.graphite,
+        graphite: {
+          DEFAULT: palette.graphite,
+          // Footer surface.
+          deep: palette.graphiteDeep,
+          // Panels that sit on graphite, such as key takeaways in a hero.
+          raised: palette.graphiteRaised,
+        },
         steel: palette.steel,
         ember: {
+          // Brand flame. Decorative shapes, rules, and large numerals only.
           DEFAULT: palette.ember,
-          // Fill for buttons that carry graphite text. Lifted slightly from
-          // the brand ember so graphite text clears 4.5:1.
-          button: palette.emberButton,
+          // Primary button fill and full ember sections. Graphite text on it.
+          fill: palette.emberFill,
+          // Button hover, and ember text on graphite.
           hover: palette.emberHover,
-          // Ember for text on light surfaces. Passes 4.5:1 on white and ash tint.
-          dark: palette.emberDark,
-          // Ember for text on graphite. Passes 4.5:1 on graphite.
-          light: palette.emberHover,
+          // Small ember text on white and stone.
+          text: palette.emberText,
         },
-        ash: {
-          DEFAULT: palette.ash,
-          tint: palette.ashTint,
-        },
-        // Accent text that adapts to its surface: dark ember on light
-        // surfaces, light ember on graphite. See --accent in globals.css.
+        ash: palette.ash,
+        stone: palette.stone,
+        line: palette.line,
+        mist: palette.mist,
+        fog: palette.fog,
+        // Accent text that adapts to its surface: ember text on light
+        // surfaces, ember hover on graphite. See --accent in globals.css.
         accent: 'rgb(var(--accent) / <alpha-value>)',
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        display: ['var(--font-display)', 'Georgia', 'serif'],
-      },
-      fontSize: {
-        '5xl': ['3rem', { lineHeight: '1.1' }],
-        '6xl': ['3.75rem', { lineHeight: '1.05' }],
-        '7xl': ['4.5rem', { lineHeight: '1' }],
+        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-display)', 'var(--font-sans)', 'system-ui', 'sans-serif'],
       },
       maxWidth: {
-        '8xl': '88rem',
-      },
-      spacing: {
-        '18': '4.5rem',
-        '22': '5.5rem',
+        wrap: '1360px',
+        reading: '720px',
       },
     },
   },

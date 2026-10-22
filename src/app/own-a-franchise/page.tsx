@@ -243,7 +243,7 @@ export default function OwnAFranchisePage() {
       </section>
 
       {/* WHAT YOU GET (Value Stack) */}
-      <section className="section-padding bg-ash-tint">
+      <section className="section-padding bg-stone">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <p className="eyebrow mb-4">What You Get</p>
@@ -308,7 +308,7 @@ export default function OwnAFranchisePage() {
             </div>
           </div>
           <div className="max-w-3xl mx-auto">
-            <div className="card bg-ash-tint" style={{ borderRadius: '0px' }}>
+            <div className="card bg-stone" style={{ borderRadius: '0px' }}>
               <h3 className="heading-4 mb-4">The Lifestyle</h3>
               <ul className="space-y-3">
                 {[
@@ -414,7 +414,7 @@ export default function OwnAFranchisePage() {
       </section>
 
       {/* SOCIAL PROOF / AUTHORITY */}
-      <section className="section-padding bg-ash-tint">
+      <section className="section-padding bg-stone">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <p className="eyebrow mb-4">The Industry</p>

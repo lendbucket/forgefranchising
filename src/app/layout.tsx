@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter, Source_Serif_4 } from 'next/font/google'
+import { Inter, Inter_Tight } from 'next/font/google'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { SiteChrome } from '@/components/SiteChrome'
@@ -9,22 +9,22 @@ import './globals.css'
 
 const inter = Inter({
   subsets: ['latin'],
-  variable: '--font-inter',
+  weight: ['400', '500', '600'],
+  variable: '--font-sans',
   display: 'swap',
 })
 
-// Display serif. Swap the family here; every heading reads --font-display.
-// The opsz axis is loaded so headings can use the display optical size.
-const displaySerif = Source_Serif_4({
+// Display face for every heading and large numeral.
+const interTight = Inter_Tight({
   subsets: ['latin'],
-  axes: ['opsz'],
+  weight: ['600', '700'],
   variable: '--font-display',
   display: 'swap',
 })
 
 export const viewport: Viewport = {
   viewportFit: 'cover',
-  themeColor: '#FFFFFF',
+  themeColor: '#1C1F23',
 }
 
 export const metadata: Metadata = {
@@ -56,7 +56,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${displaySerif.variable}`}>
+    <html lang="en" className={`${inter.variable} ${interTight.variable}`}>
       <head>
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />

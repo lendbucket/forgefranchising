@@ -169,7 +169,7 @@ function MarkdownRenderer({ content }: { content: string }) {
                     {dataRows.map((row, ri) => {
                       const cells = row.split('|').map((c) => c.trim()).filter(Boolean)
                       return (
-                        <tr key={ri} className="border-b border-ash-tint">
+                        <tr key={ri} className="border-b border-stone">
                           {cells.map((cell, ci) => (
                             <td key={ci} className="py-3 px-4 text-steel">
                               <InlineRenderer text={cell} />
@@ -283,7 +283,7 @@ function TableOfContents({ headings }: { headings: Heading[] }) {
       <p className="text-xs font-semibold uppercase tracking-widest text-steel mb-4">
         On this page
       </p>
-      <ul className="space-y-2 border-l border-ash-tint pl-4">
+      <ul className="space-y-2 border-l border-stone pl-4">
         {headings.map((h) => (
           <li key={h.id}>
             <a
@@ -428,7 +428,7 @@ export default function BlogPostClient({
 
       {/* Continue Learning: 3 curated next steps (reduces paralysis, pulls deeper) */}
       {relatedPosts.length > 0 && (
-        <section className="bg-ash-tint">
+        <section className="bg-stone">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
             <p className="eyebrow mb-4">Continue Learning</p>
             <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-graphite mb-10" style={{ letterSpacing: '-0.02em' }}>

@@ -2,30 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * Direction C design system.
+ *
+ * Tokens live in src/lib/palette.json and reach Tailwind through
+ * tailwind.config.ts. Square corners, hairline grids, no gradients and no
+ * soft shadows. The only shadow on the site is the mega menu panel.
+ */
+
 @layer base {
   /*
-   * Accent text adapts to its surface. On light surfaces it is the dark
-   * ember shade (5.87:1 on white). Inside graphite surfaces it switches to
-   * the light ember shade (5.62:1 on graphite). Brand ember itself is kept
-   * for fills, rules, and borders, never body copy.
+   * Accent text adapts to its surface: ember text (#B9401C) on white and
+   * stone, ember hover (#F07A52) on graphite, graphite on ember fill.
    */
   :root {
-    --accent: 173 66 35;
+    --accent: 185 64 28;
   }
   .bg-graphite,
-  .bg-graphite\/95,
+  .bg-graphite-deep,
+  .bg-graphite-raised,
   .surface-dark {
-    --accent: 233 117 84;
+    --accent: 240 122 82;
   }
-  .bg-graphite .bg-white,
-  .bg-graphite .bg-ash-tint,
-  .bg-graphite .bg-ash,
-  .surface-dark .bg-white,
-  .surface-dark .bg-ash-tint,
-  .surface-dark .bg-ash,
-  .surface-dark .card,
-  .surface-dark .card-interactive {
-    --accent: 173 66 35;
+  .bg-ember-fill,
+  .surface-ember {
+    --accent: 28 31 35;
+  }
+  :is(.bg-graphite, .surface-dark, .bg-ember-fill, .surface-ember) :is(.bg-white, .bg-stone, .bg-ash, .card, .card-interactive) {
+    --accent: 185 64 28;
   }
 
   html {
@@ -34,180 +38,271 @@
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
     max-width: 100%;
+    /* Anchored sections clear the 88px sticky header. */
+    scroll-padding-top: 104px;
   }
 
   body {
     @apply bg-white text-graphite;
+    font-size: 16px;
+    line-height: 1.6;
     overflow-x: hidden;
     max-width: 100%;
     -webkit-overflow-scrolling: touch;
   }
 
   ::selection {
-    @apply bg-ember/20 text-graphite;
+    background: rgba(232, 102, 63, 0.25);
+    color: #1C1F23;
   }
 
-  /* Fluid type scale using clamp */
-  h1, .heading-1 {
-    font-size: clamp(2.5rem, 5.6vw + 0.5rem, 5.25rem);
+  /* Headings: Inter Tight 700, tight tracking. The proposal page sets its own. */
+  :is(h1, h2, h3, h4, h5, h6):not(.proposal-root *) {
+    font-family: var(--font-display), var(--font-sans), system-ui, sans-serif;
+    font-weight: 700;
   }
-  h2, .heading-2 {
-    font-size: clamp(2rem, 3.9vw + 0.5rem, 3.75rem);
+  h1:not(.proposal-root *) {
+    font-size: clamp(40px, 5.2vw, 76px);
+    line-height: 1;
+    letter-spacing: -0.04em;
   }
-  h3, .heading-3 {
-    font-size: clamp(1.5rem, 2.6vw + 0.25rem, 2.125rem);
+  h2:not(.proposal-root *) {
+    font-size: clamp(38px, 4.4vw, 68px);
+    line-height: 1;
+    letter-spacing: -0.04em;
   }
-  h4, .heading-4 {
-    font-size: clamp(1.25rem, 1.5vw + 0.25rem, 1.5rem);
+  h3:not(.proposal-root *) {
+    font-size: clamp(24px, 2.2vw, 34px);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+  }
+  h4:not(.proposal-root *) {
+    font-size: clamp(20px, 1.6vw, 24px);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
   }
 }
 
 @layer components {
-  /* Enterprise buttons: squared, confident, precise */
-  .btn-primary {
-    @apply inline-flex items-center justify-center px-9 py-4 bg-ember-button text-graphite font-semibold
-           hover:bg-ember-hover transition-all duration-200 text-base;
-    border-radius: 2px;
-    letter-spacing: 0.02em;
+  /* Layout */
+  .wrap,
+  .container-full {
+    width: 100%;
+    max-width: 1360px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 56px;
+    padding-right: 56px;
+  }
+  /* Content width inside a padded section. With the 56px gutter this
+     matches the 1360px wrap. */
+  .container-wide {
+    width: 100%;
+    max-width: 1248px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container-wide.section-padding {
+    max-width: 1360px;
+  }
+  .container-narrow {
+    width: 100%;
+    max-width: 880px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .gutter {
+    padding-left: 56px;
+    padding-right: 56px;
   }
 
+  .section-padding {
+    padding: 144px 56px;
+  }
+
+  /* Type */
+  .heading-display {
+    font-family: var(--font-display), var(--font-sans), sans-serif;
+    font-weight: 700;
+    font-size: clamp(46px, 6.6vw, 96px);
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+    max-width: 940px;
+  }
+  .heading-1 {
+    font-family: var(--font-display), var(--font-sans), sans-serif;
+    font-weight: 700;
+    font-size: clamp(40px, 5.2vw, 76px);
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+  .heading-2 {
+    font-family: var(--font-display), var(--font-sans), sans-serif;
+    font-weight: 700;
+    font-size: clamp(38px, 4.4vw, 68px);
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+  .heading-3 {
+    font-family: var(--font-display), var(--font-sans), sans-serif;
+    font-weight: 700;
+    font-size: clamp(24px, 2.2vw, 34px);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+  }
+  .heading-4 {
+    font-family: var(--font-display), var(--font-sans), sans-serif;
+    font-weight: 700;
+    font-size: clamp(20px, 1.6vw, 24px);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+  .body-large,
+  .lead {
+    font-size: 19px;
+    line-height: 1.6;
+    color: #4E5A62;
+  }
+
+  /* Large ember numerals for phases, pillars, and steps */
+  .numeral {
+    font-family: var(--font-display), var(--font-sans), sans-serif;
+    font-weight: 700;
+    line-height: 0.85;
+    letter-spacing: -0.06em;
+    color: #E4572E;
+  }
+  .stat-number {
+    font-family: var(--font-display), var(--font-sans), sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    letter-spacing: -0.05em;
+    line-height: 1;
+    color: #E4572E;
+    font-variant-numeric: tabular-nums;
+  }
+  .stat-label {
+    @apply text-sm mt-2 leading-snug text-steel;
+  }
+
+  /* Eyebrow labels are retired in Direction C. */
+  .eyebrow {
+    display: none;
+  }
+
+  /* Buttons: square, 58px tall, sentence case labels */
+  .btn-primary,
+  .btn-secondary,
+  .btn-dark,
+  .btn-white {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 58px;
+    padding: 0 30px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+    text-align: center;
+    border-radius: 0;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+  }
+  .btn-primary {
+    background-color: #E8663F;
+    color: #1C1F23;
+  }
+  .btn-primary:hover {
+    background-color: #F07A52;
+  }
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-9 py-4 text-graphite font-semibold
-           transition-all duration-200 text-base;
-    border-radius: 2px;
-    letter-spacing: 0.02em;
     border: 1.5px solid #1C1F23;
+    color: #1C1F23;
   }
   .btn-secondary:hover {
     background-color: #1C1F23;
     color: #FFFFFF;
   }
-
-  /* On graphite, the secondary button is a white outline */
-  .bg-graphite .btn-secondary,
-  .surface-dark .btn-secondary {
+  .btn-dark {
+    background-color: #1C1F23;
     color: #FFFFFF;
-    border-color: rgba(255, 255, 255, 0.6);
   }
-  .bg-graphite .btn-secondary:hover,
-  .surface-dark .btn-secondary:hover {
+  .btn-dark:hover {
+    background-color: #353B41;
+  }
+  .btn-white {
     background-color: #FFFFFF;
     color: #1C1F23;
-    border-color: #FFFFFF;
+  }
+  .btn-white:hover {
+    background-color: #ECEAE6;
   }
 
-  .section-padding {
-    @apply px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-40;
-  }
-
-  .container-narrow {
-    @apply max-w-4xl mx-auto;
-  }
-
-  .container-wide {
-    @apply max-w-7xl mx-auto;
-  }
-
-  .container-full {
-    @apply max-w-8xl mx-auto;
-  }
-
-  /* Serif display headings with tight tracking */
-  .heading-1 {
-    @apply font-display font-bold;
-    letter-spacing: -0.035em;
-    line-height: 1.02;
-  }
-
-  .heading-2 {
-    @apply font-display font-bold;
-    letter-spacing: -0.03em;
-    line-height: 1.06;
-  }
-
-  .heading-3 {
-    @apply font-display font-bold;
-    letter-spacing: -0.022em;
-    line-height: 1.12;
-  }
-
-  .heading-4 {
-    @apply font-display font-semibold;
-    letter-spacing: -0.015em;
-    line-height: 1.2;
-  }
-
-  .body-large {
-    @apply text-lg sm:text-xl leading-relaxed text-steel font-normal;
-  }
-
-  /* Cards: square corners, steel hairline, generous padding, no soft shadow */
+  /* Card: white, hairline border, square, no shadow */
   .card {
-    @apply bg-white p-8 sm:p-10;
-    border: 1px solid rgba(78, 90, 98, 0.22);
+    background-color: #FFFFFF;
+    border: 1px solid #E5E3DF;
     border-radius: 0;
+    padding: 32px;
   }
 
-  /* Eyebrow labels: ember on dark, dark ember on light (via --accent) */
-  .eyebrow {
-    @apply text-accent font-semibold text-xs uppercase;
-    letter-spacing: 0.2em;
+  /* Linked tile: inverts to graphite on hover */
+  .card-interactive {
+    display: block;
+    background-color: #FFFFFF;
+    border: 1px solid #E5E3DF;
+    border-radius: 0;
+    padding: 32px;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+  }
+  .card-interactive:hover {
+    background-color: #1C1F23;
+    border-color: #1C1F23;
+    color: #FFFFFF;
+    --accent: 240 122 82;
+  }
+
+  /* Tile grid: 1px gaps over the line color, no boxed cards */
+  .tile-grid {
+    display: grid;
+    gap: 1px;
+    background-color: #E5E3DF;
+    border: 1px solid #E5E3DF;
+  }
+  .tile-grid > * {
+    background-color: #FFFFFF;
+  }
+  .tile-grid > .card,
+  .tile-grid > .card-interactive {
+    border: 0;
   }
 
   /* Hairline dividers */
   .hairline {
-    @apply border-t;
-    border-color: rgba(28, 31, 35, 0.08);
+    border-top: 1px solid #E5E3DF;
   }
-
   .hairline-inverse {
-    @apply border-t;
-    border-color: rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
   }
 
-  /* Pull quote */
-  .pull-quote {
-    @apply font-display text-2xl sm:text-3xl font-bold leading-snug;
-    letter-spacing: -0.02em;
-    border-left: 3px solid #E4572E;
-    padding-left: 1.5rem;
+  /* Underlined text link */
+  .text-link {
+    color: rgb(var(--accent));
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  .text-link:hover {
+    text-decoration-thickness: 2px;
   }
 
-  /* Stat block */
-  .stat-number {
-    @apply font-display font-bold text-accent;
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    letter-spacing: -0.03em;
-    line-height: 1;
-    font-variant-numeric: tabular-nums;
-  }
-
-  .stat-label {
-    @apply text-sm mt-2 leading-snug text-steel;
-  }
-
-  /* Animated link underline */
   .link-underline {
-    @apply relative;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
   }
-  .link-underline::after {
-    content: '';
-    @apply absolute bottom-0 left-0 w-0 h-px bg-ember;
-    transition: width 0.3s ease;
-  }
-  .link-underline:hover::after {
-    @apply w-full;
-  }
-
-  /* Interactive card lift */
-  .card-interactive {
-    @apply bg-white p-8 sm:p-10 transition-all duration-300;
-    border: 1px solid rgba(78, 90, 98, 0.22);
-    border-radius: 0;
-  }
-  .card-interactive:hover {
-    transform: translateY(-2px);
-    border-color: rgba(28, 31, 35, 0.6);
+  .link-underline:hover {
+    text-decoration-thickness: 2px;
   }
 }
 
@@ -229,7 +324,41 @@
   }
 }
 
-/* Scroll-reveal animation */
+/* Arrows slide 5px on hover of their link */
+.arrow {
+  transition: transform 0.25s;
+}
+a:hover .arrow,
+button:hover .arrow,
+.group:hover .arrow {
+  transform: translateX(5px);
+}
+
+/* Responsive gutters and spacing */
+@media (max-width: 720px) {
+  .wrap,
+  .container-full,
+  .gutter {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .section-padding {
+    padding: 88px 20px;
+  }
+  .body-large,
+  .lead {
+    font-size: 17px;
+  }
+  .btn-primary,
+  .btn-secondary,
+  .btn-dark,
+  .btn-white {
+    width: 100%;
+    min-height: 56px;
+  }
+}
+
+/* Scroll reveal */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -240,107 +369,22 @@
   opacity: 1;
   transform: translateY(0);
 }
-
-/* Staggered reveals */
 .reveal-delay-1 { transition-delay: 0.1s; }
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
 
-/* Hero image parallax / scale */
-.hero-image {
-  transition: transform 0.3s ease-out;
-  will-change: transform;
-}
-
-/* Hero image breathing: extremely slow scale loop */
-@keyframes hero-breathe {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-}
-.hero-image-breathe {
-  animation: hero-breathe 30s ease-in-out infinite;
-  will-change: transform;
-}
-
-/* Hero image treatment: cool, slightly desaturated */
-.hero-image-warm {
-  filter: grayscale(0.7) contrast(1.15) brightness(0.72);
-}
-
-/* Every photograph gets the cool treatment. Low specificity so a page
+/* Photographs get a cool, desaturated treatment. Low specificity so a page
    specific filter can still override it. */
 :where(main) :where(img[src*="images.unsplash.com"], img[src*="images.pexels.com"]) {
   filter: grayscale(0.55) contrast(1.12) brightness(0.95);
 }
 
-/* Hero logo: gentle fade + scale-in + optional soft float */
-.hero-logo-animate {
-  opacity: 0;
-  transform: scale(0.92);
-  animation: hero-logo-in 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.05s forwards,
-             hero-logo-float 6s ease-in-out 1.3s infinite;
-}
-
-@keyframes hero-logo-in {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes hero-logo-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
-}
-
-/* Hero entrance animations: tasteful stagger */
-.hero-entrance {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: hero-fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-.hero-entrance-1 { animation-delay: 0.1s; }
-.hero-entrance-2 { animation-delay: 0.25s; }
-.hero-entrance-3 { animation-delay: 0.4s; }
-.hero-entrance-4 { animation-delay: 0.55s; }
-
-@keyframes hero-fade-in {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Mega menu overlay */
-.menu-overlay {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-.menu-overlay.active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* Mobile menu slide */
-.mobile-menu-enter {
-  opacity: 0;
-  transform: translateX(100%);
-}
-.mobile-menu-active {
-  opacity: 1;
-  transform: translateX(0);
-  transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.mobile-menu-exit {
-  opacity: 0;
-  transform: translateX(100%);
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
   .reveal {
     opacity: 1;
     transform: none;
@@ -352,47 +396,19 @@
   .reveal-delay-4 {
     transition-delay: 0s;
   }
-  .hero-image {
+  .arrow,
+  .card-interactive,
+  .btn-primary,
+  .btn-secondary,
+  .btn-dark,
+  .btn-white {
     transition: none;
   }
-  .mobile-menu-active,
-  .mobile-menu-exit {
-    transition: none;
-  }
-  .card-interactive:hover {
+  a:hover .arrow,
+  button:hover .arrow,
+  .group:hover .arrow {
     transform: none;
   }
-  .link-underline::after {
-    transition: none;
-  }
-  .hero-entrance {
-    opacity: 1;
-    transform: none;
-    animation: none;
-  }
-  .hero-logo-animate {
-    opacity: 1;
-    transform: none;
-    animation: none;
-  }
-  .hero-image-breathe {
-    animation: none;
-  }
-}
-
-/* Dark section depth: subtle radial vignette and gradient */
-.dark-depth {
-  position: relative;
-}
-.dark-depth::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse at center, transparent 50%, rgba(10, 12, 14, 0.4) 100%),
-    linear-gradient(180deg, rgba(28, 31, 35, 0) 0%, rgba(28, 31, 35, 0.15) 50%, rgba(28, 31, 35, 0) 100%);
-  pointer-events: none;
-  z-index: 1;
 }
 
 /* Wide content scroll container (tables, code blocks) */
@@ -408,81 +424,25 @@ img {
   height: auto;
 }
 
-/* Glossary / progressive disclosure letter grouping */
+/* Glossary letter grouping */
 .glossary-letter-badge {
-  @apply font-display font-bold text-accent;
+  font-family: var(--font-display), var(--font-sans), sans-serif;
+  font-weight: 700;
   font-size: 1.25rem;
   letter-spacing: -0.02em;
+  color: rgb(var(--accent));
 }
 
-/* Guided path step connector line */
-.path-connector {
-  @apply relative;
-}
-.path-connector::after {
-  content: '';
-  @apply absolute left-5 top-full w-px bg-white/15;
-  height: 1rem;
-}
-.path-connector:last-child::after {
-  display: none;
-}
-
-/* Micro-interaction: subtle pulse on amber badges for emphasis */
-@keyframes subtle-pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.85; }
-}
-.pulse-subtle {
-  animation: subtle-pulse 2s ease-in-out infinite;
-}
-
-/* Reduced motion: disable all added animations */
-@media (prefers-reduced-motion: reduce) {
-  .pulse-subtle {
-    animation: none;
-  }
-}
-
-/* Phase cell hover lift: disabled under reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .phase-cell {
-    transition: none !important;
-  }
-  .phase-cell:hover {
-    transform: none !important;
-    box-shadow: none !important;
-  }
-}
-
-/* Native mobile: tap feedback on interactive elements */
-.btn-primary:active,
-.btn-secondary:active {
-  transform: scale(0.98);
-}
-.card-interactive:active {
-  transform: translateY(0);
-  box-shadow: none;
-}
-
-/* Keyboard focus ring: visible amber ring on all interactive elements */
-.btn-primary:focus-visible,
-.btn-secondary:focus-visible {
-  outline: 2px solid #E4572E;
-  outline-offset: 2px;
-}
+/* Keyboard focus ring: 2px ember outline, 3px offset, on every control */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible,
+summary:focus-visible,
 [tabindex]:focus-visible {
   outline: 2px solid #E4572E;
-  outline-offset: 2px;
-}
-.card-interactive:focus-visible {
-  outline: 2px solid #E4572E;
-  outline-offset: 2px;
+  outline-offset: 3px;
 }
 
 /* Momentum scrolling for overflow containers */
@@ -503,16 +463,32 @@ p a, li a, span a, .text-sm a {
   min-width: auto;
 }
 
-/* Display serif: Source Serif 4 at its display optical size */
-.font-display,
-.heading-1,
-.heading-2,
-.heading-3,
-.heading-4,
-.pull-quote,
-.stat-number,
-.glossary-letter-badge {
-  font-variation-settings: 'opsz' 60;
+/* Form controls: square, 50px, steel grey border, graphite with an ember
+   ring on focus. */
+.field {
+  display: block;
+  width: 100%;
+  min-height: 50px;
+  padding: 12px 16px;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #1C1F23;
+  background-color: #FFFFFF;
+  border: 1px solid #8C959B;
+  border-radius: 0;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.field::placeholder {
+  color: #4E5A62;
+}
+.field:hover {
+  border-color: #4E5A62;
+}
+.field:focus,
+.field:focus-visible {
+  outline: none;
+  border-color: #1C1F23;
+  box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px #E4572E;
 }
 
 /* The client proposal keeps its own palette */
@@ -522,59 +498,113 @@ p a, li a, span a, .text-sm a {
 }
 
 /*
- * Dark page hero. Applied to the hero section of inner pages so the top of
- * every page sits on graphite under the graphite header. Text colors adapt;
- * light boxes nested inside (takeaways, disclosures) keep light colors.
+ * Dark surfaces. The inner page hero and any graphite band. Text colors
+ * adapt; light boxes nested inside keep light colors.
  */
 .surface-dark {
   background-color: #1C1F23;
   color: #FFFFFF;
 }
-.surface-dark .body-large,
-.surface-dark .text-steel {
-  color: rgba(255, 255, 255, 0.72);
+:is(.surface-dark, .bg-graphite) :is(.body-large, .lead, .text-steel) {
+  color: #C9CDD0;
 }
 .surface-dark .text-graphite {
   color: #FFFFFF;
 }
-.surface-dark nav[aria-label="Breadcrumb"] ol,
-.surface-dark nav[aria-label="Breadcrumb"] a {
-  color: rgba(255, 255, 255, 0.65);
-}
-.surface-dark nav[aria-label="Breadcrumb"] a:hover,
-.surface-dark nav[aria-label="Breadcrumb"] .text-graphite {
+:is(.surface-dark, .bg-graphite) .btn-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.4);
   color: #FFFFFF;
 }
-.surface-dark :is(.bg-white, .bg-ash-tint, .bg-ash, .card, .card-interactive) {
+:is(.surface-dark, .bg-graphite) .btn-secondary:hover {
+  border-color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #FFFFFF;
+}
+:is(.surface-dark, .bg-graphite) .card,
+:is(.surface-dark, .bg-graphite) .card-interactive {
   color: #1C1F23;
 }
-.surface-dark :is(.bg-white, .bg-ash-tint, .bg-ash, .card, .card-interactive) .text-steel {
+.surface-dark nav[aria-label="Breadcrumb"] ol,
+.surface-dark nav[aria-label="Breadcrumb"] a,
+.bg-graphite nav[aria-label="Breadcrumb"] ol,
+.bg-graphite nav[aria-label="Breadcrumb"] a {
+  color: #A6ADB2;
+}
+.surface-dark nav[aria-label="Breadcrumb"] a:hover,
+.surface-dark nav[aria-label="Breadcrumb"] .text-graphite,
+.bg-graphite nav[aria-label="Breadcrumb"] .text-graphite {
+  color: #FFFFFF;
+}
+:is(.surface-dark, .bg-graphite) :is(.bg-white, .bg-stone, .bg-ash, .card) {
+  color: #1C1F23;
+}
+:is(.surface-dark, .bg-graphite) :is(.bg-white, .bg-stone, .bg-ash, .card) :is(.text-steel, .body-large) {
   color: #4E5A62;
 }
-.surface-dark :is(.bg-white, .bg-ash-tint, .bg-ash, .card, .card-interactive) .text-graphite {
+:is(.surface-dark, .bg-graphite) :is(.bg-white, .bg-stone, .bg-ash, .card) .text-graphite {
+  color: #1C1F23;
+}
+:is(.surface-dark, .bg-graphite) :is(.bg-white, .bg-stone, .bg-ash, .card) .btn-secondary {
+  border: 1.5px solid #1C1F23;
   color: #1C1F23;
 }
 
-/* Inner page heroes sit directly under the header; trim their top padding. */
-section.surface-dark > .section-padding:first-child {
-  padding-top: 3rem;
+/* Linked tiles invert on hover */
+.card-interactive:hover :is(.text-graphite, .text-steel, h2, h3, h4, p, span) {
+  color: inherit;
 }
-@media (min-width: 1024px) {
-  section.surface-dark > .section-padding:first-child {
-    padding-top: 5rem;
+.card-interactive:hover :is(.text-steel, p) {
+  color: #C9CDD0;
+}
+.card-interactive:hover .text-accent {
+  color: #F07A52;
+}
+
+/* Full ember sections: graphite text and controls */
+.surface-ember {
+  background-color: #E8663F;
+  color: #1C1F23;
+}
+.surface-ember :is(.body-large, .lead, .text-steel) {
+  color: #1C1F23;
+}
+.surface-ember .btn-primary {
+  background-color: #1C1F23;
+  color: #FFFFFF;
+}
+.surface-ember .btn-primary:hover {
+  background-color: #353B41;
+}
+
+/* Inner page hero: sits directly under the header. */
+section.surface-dark > .section-padding:first-child,
+section.surface-dark.section-padding:first-child {
+  padding-top: 96px;
+  padding-bottom: 112px;
+}
+@media (max-width: 720px) {
+  section.surface-dark > .section-padding:first-child,
+  section.surface-dark.section-padding:first-child {
+    padding-top: 56px;
+    padding-bottom: 72px;
   }
 }
 
 /*
- * Section rhythm: light sections alternate white and ash tint. When two
+ * Section rhythm: light sections alternate white and stone. When two
  * sibling sections share the same light background, the second switches to
  * the other one so two pale sections never stack.
  */
-main > section.bg-ash-tint + section.bg-ash-tint {
+main > section.bg-stone + section.bg-stone {
   background-color: #FFFFFF;
 }
 main > section.bg-white + section.bg-white,
-main > section.bg-white + section:not([class*="bg-"]),
-main > section:not([class*="bg-"]) + section.bg-white {
-  background-color: #F0EEEC;
+main > section.bg-white + section:not([class*="bg-"]):not(.surface-dark):not(.surface-ember),
+main > section:not([class*="bg-"]):not(.surface-dark):not(.surface-ember) + section.bg-white {
+  background-color: #F4F3F0;
+}
+
+/* On ember sections the focus ring switches to graphite so it stays visible. */
+:is(.surface-ember, .bg-ember-fill) :is(a, button, input, textarea, select, summary):focus-visible {
+  outline-color: #1C1F23;
 }

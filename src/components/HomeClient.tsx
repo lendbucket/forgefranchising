@@ -263,7 +263,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
       </section>
 
       {/* EDUCATION: Blog teasers. Asymmetric featured + two-column. */}
-      <section className="py-24 sm:py-32 lg:py-44 px-4 sm:px-6 lg:px-8 bg-ash-tint">
+      <section className="py-24 sm:py-32 lg:py-44 px-4 sm:px-6 lg:px-8 bg-stone">
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <div className="max-w-2xl mb-12">

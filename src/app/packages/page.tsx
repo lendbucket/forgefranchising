@@ -183,7 +183,7 @@ export default function PackagesPage() {
       </section>
 
       {/* Package Cards */}
-      <section className="section-padding bg-ash-tint">
+      <section className="section-padding bg-stone">
         <div className="container-wide">
           <div className="grid lg:grid-cols-3 gap-8">
             {tiers.map((tier) => (
@@ -196,7 +196,7 @@ export default function PackagesPage() {
                 }`}
               >
                 {tier.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-ember-button text-graphite text-xs font-bold uppercase tracking-widest px-4 py-1.5" style={{ borderRadius: '2px', letterSpacing: '0.1em' }}>
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-ember-fill text-graphite text-xs font-bold uppercase tracking-widest px-4 py-1.5" style={{ borderRadius: '2px', letterSpacing: '0.1em' }}>
                     Most Popular
                   </div>
                 )}
@@ -205,7 +205,7 @@ export default function PackagesPage() {
                   <p className="text-accent font-semibold text-sm">{tier.tagline}</p>
                 </div>
                 <p className="text-steel leading-relaxed mb-6 text-sm">{tier.description}</p>
-                <div className="bg-ash-tint p-4 mb-6" style={{ borderRadius: '0px' }}>
+                <div className="bg-stone p-4 mb-6" style={{ borderRadius: '0px' }}>
                   <p className="text-graphite font-medium text-sm">{tier.priceHint}</p>
                 </div>
                 <ul className="space-y-3 mb-8 flex-1">
@@ -254,7 +254,7 @@ export default function PackagesPage() {
       </section>
 
       {/* Comparison Table */}
-      <section className="section-padding bg-ash-tint">
+      <section className="section-padding bg-stone">
         <div className="container-wide">
           <h2 className="heading-2 text-center mb-4">Side by Side Comparison</h2>
           <p className="body-large text-center max-w-3xl mx-auto mb-12">

@@ -92,7 +92,7 @@ export default async function IndustryPage({ params }: Props) {
       </section>
 
       {/* Industry Introduction */}
-      <section className="section-padding bg-ash-tint">
+      <section className="section-padding bg-stone">
         <div className="container-wide">
           <div className="max-w-4xl">
             {data.intro.map((paragraph, i) => (
@@ -144,7 +144,7 @@ export default async function IndustryPage({ params }: Props) {
       </section>
 
       {/* Success Factors */}
-      <section className="section-padding bg-ash-tint">
+      <section className="section-padding bg-stone">
         <div className="container-wide">
           <div className="max-w-4xl">
             <h2 className="heading-2 mb-8">Key Success Factors</h2>
@@ -186,7 +186,7 @@ export default async function IndustryPage({ params }: Props) {
       </section>
 
       {/* What It Takes */}
-      <section className="section-padding bg-ash-tint">
+      <section className="section-padding bg-stone">
         <div className="container-wide">
           <div className="max-w-4xl">
             <h2 className="heading-2 mb-8">What It Takes to Franchise Your {industry.shortName} Business</h2>

@@ -76,7 +76,7 @@ export default function BrandStandardsEnforcementPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-ash-tint">
+      <section className="section-padding bg-stone">
         <div className="container-wide">
           <div className="max-w-3xl">
             <Image

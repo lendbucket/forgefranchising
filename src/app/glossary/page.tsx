@@ -426,7 +426,7 @@ export default function GlossaryPage() {
       </section>
 
       {/* Jump-to-Letter Navigation */}
-      <section className="bg-ash-tint border-b border-graphite/10 sticky top-16 lg:top-20 z-40">
+      <section className="bg-stone border-b border-graphite/10 sticky top-16 lg:top-20 z-40">
         <div className="container-wide py-4">
           <nav aria-label="Alphabetical navigation" className="flex flex-wrap gap-1 sm:gap-2 justify-center">
             {alphabet.map((letter) => {
@@ -435,7 +435,7 @@ export default function GlossaryPage() {
                 <a
                   key={letter}
                   href={`#letter-${letter}`}
-                  className="w-9 h-9 flex items-center justify-center text-sm font-semibold text-graphite hover:bg-ember-button hover:text-graphite transition-colors"
+                  className="w-9 h-9 flex items-center justify-center text-sm font-semibold text-graphite hover:bg-ember-fill hover:text-graphite transition-colors"
                 >
                   {letter}
                 </a>

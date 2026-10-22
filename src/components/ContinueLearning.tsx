@@ -25,7 +25,7 @@ export function ContinueLearning({
   links,
 }: ContinueLearningProps) {
   return (
-    <section className="section-padding bg-ash-tint">
+    <section className="section-padding bg-stone">
       <div className="container-wide">
         <p className="eyebrow mb-4">Next Steps</p>
         <h2 className="heading-3 mb-10">{heading}</h2>

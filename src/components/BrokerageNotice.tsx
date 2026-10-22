@@ -10,7 +10,7 @@ export function BrokerageNotice({ className = '' }: { className?: string }) {
   return (
     <aside
       aria-label="Brokerage terms"
-      className={`bg-ash-tint p-6 sm:p-8 ${className}`}
+      className={`bg-stone p-6 sm:p-8 ${className}`}
       style={{ borderRadius: '0px', borderLeft: '3px solid #4E5A62' }}
     >
       <p className="text-xs font-semibold uppercase tracking-widest text-graphite mb-3">How We Work</p>

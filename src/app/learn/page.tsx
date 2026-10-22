@@ -174,7 +174,7 @@ export default function LearnPage() {
       />
 
       {/* Tools & Quick References */}
-      <section className="section-padding bg-ash-tint">
+      <section className="section-padding bg-stone">
         <div className="container-wide">
           <div className="text-center mb-12">
             <h2 className="heading-2 mb-4">Tools and Quick References</h2>
@@ -226,7 +226,7 @@ export default function LearnPage() {
       </section>
 
       {/* Featured Articles */}
-      <section className="section-padding bg-ash-tint">
+      <section className="section-padding bg-stone">
         <div className="container-wide">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-12 gap-4">
             <div>

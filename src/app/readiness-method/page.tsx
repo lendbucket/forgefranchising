@@ -138,7 +138,7 @@ export default function ReadinessMethodPage() {
       </section>
 
       {/* CREDIBILITY ROW */}
-      <section className="bg-ash-tint">
+      <section className="bg-stone">
         <div className="container-wide py-12 px-4 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
@@ -163,7 +163,7 @@ export default function ReadinessMethodPage() {
         <section
           key={pillar.number}
           id={`pillar-${pillar.number}`}
-          className={index % 2 === 0 ? 'section-padding bg-white' : 'section-padding bg-ash-tint'}
+          className={index % 2 === 0 ? 'section-padding bg-white' : 'section-padding bg-stone'}
         >
           <div className="container-wide">
             <div className="grid lg:grid-cols-12 gap-12">
@@ -307,7 +307,7 @@ export default function ReadinessMethodPage() {
       </section>
 
       {/* FAQ SECTION */}
-      <section className="section-padding bg-ash-tint">
+      <section className="section-padding bg-stone">
         <div className="container-wide max-w-3xl mx-auto">
           <div className="text-center mb-12">
             <p className="eyebrow mb-4">Common Questions</p>

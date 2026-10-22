@@ -89,7 +89,7 @@ export default function BlogIndexPage() {
                   className={`px-4 py-2 text-sm font-medium transition-colors duration-200 min-h-[44px] ${
                     activeCategory === category
                       ? 'bg-graphite text-white'
-                      : 'bg-ash-tint text-steel hover:bg-graphite/10'
+                      : 'bg-stone text-steel hover:bg-graphite/10'
                   }`}
                 >
                   {category}

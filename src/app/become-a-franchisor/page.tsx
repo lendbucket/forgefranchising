@@ -286,7 +286,7 @@ export default function BecomeAFranchisorPage() {
                     </p>
                   ))}
                   <div className="grid sm:grid-cols-2 gap-4 mt-8">
-                    <div className="bg-ash-tint p-6" style={{ borderRadius: '0px' }}>
+                    <div className="bg-stone p-6" style={{ borderRadius: '0px' }}>
                       <p className="text-xs font-semibold uppercase tracking-widest text-graphite mb-2">What it produces</p>
                       <p className="text-steel text-sm leading-relaxed">{step.produces}</p>
                     </div>

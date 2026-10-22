@@ -268,7 +268,7 @@ export function AssessmentClient() {
       </section>
 
       {/* Assessment */}
-      <section className="section-padding bg-ash-tint">
+      <section className="section-padding bg-stone">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Progress Bar: goal gradient pulls completion */}
           <div className="mb-8">
@@ -444,7 +444,7 @@ export function AssessmentClient() {
                       {QUESTIONS.map((q) => {
                         const selected = q.options.find((o) => o.value === answers[q.id])
                         return (
-                          <div key={q.id} className="flex items-start justify-between gap-4 py-2 border-b border-ash-tint last:border-0">
+                          <div key={q.id} className="flex items-start justify-between gap-4 py-2 border-b border-stone last:border-0">
                             <span className="text-sm text-steel">{q.question}</span>
                             <span className="text-sm font-semibold text-graphite text-right flex-shrink-0 max-w-[200px]">
                               {selected?.label}

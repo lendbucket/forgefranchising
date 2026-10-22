@@ -168,7 +168,7 @@ export function CalculatorClient() {
       </section>
 
       {/* Calculator */}
-      <section className="section-padding bg-ash-tint">
+      <section className="section-padding bg-stone">
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Input Form */}
@@ -277,7 +277,7 @@ export function CalculatorClient() {
               {!results ? (
                 <div className="card h-full flex items-center justify-center min-h-[400px]">
                   <div className="text-center">
-                    <div className="text-6xl font-display font-bold text-ash-tint mb-4">?</div>
+                    <div className="text-6xl font-display font-bold text-stone mb-4">?</div>
                     <p className="text-steel">
                       Fill in your business details and click calculate to see your illustrative estimates.
                     </p>
@@ -296,7 +296,7 @@ export function CalculatorClient() {
                     </p>
 
                     <div className="space-y-4">
-                      <div className="flex items-center justify-between p-4 bg-ash-tint">
+                      <div className="flex items-center justify-between p-4 bg-stone">
                         <div>
                           <div className="text-sm font-semibold text-graphite">Per Unit Royalty</div>
                           <div className="text-xs text-steel">Annual, illustrative</div>
@@ -306,7 +306,7 @@ export function CalculatorClient() {
                         </div>
                       </div>
 
-                      <div className="flex items-center justify-between p-4 bg-ash-tint">
+                      <div className="flex items-center justify-between p-4 bg-stone">
                         <div>
                           <div className="text-sm font-semibold text-graphite">At 10 Franchise Units</div>
                           <div className="text-xs text-steel">Annual royalty income estimate</div>
@@ -316,7 +316,7 @@ export function CalculatorClient() {
                         </div>
                       </div>
 
-                      <div className="flex items-center justify-between p-4 bg-ash-tint">
+                      <div className="flex items-center justify-between p-4 bg-stone">
                         <div>
                           <div className="text-sm font-semibold text-graphite">At 25 Franchise Units</div>
                           <div className="text-xs text-steel">Annual royalty income estimate</div>

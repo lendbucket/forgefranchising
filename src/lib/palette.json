@@ -1,11 +1,17 @@
 {
   "graphite": "#1C1F23",
+  "graphiteDeep": "#15171A",
+  "graphiteRaised": "#262A2F",
   "steel": "#4E5A62",
   "ember": "#E4572E",
-  "emberButton": "#E6613B",
-  "emberHover": "#E97554",
-  "emberDark": "#AD4223",
+  "emberFill": "#E8663F",
+  "emberHover": "#F07A52",
+  "emberText": "#B9401C",
   "ash": "#D9D5CF",
-  "ashTint": "#F0EEEC",
+  "stone": "#F4F3F0",
+  "line": "#E5E3DF",
+  "mist": "#C9CDD0",
+  "fog": "#A6ADB2",
+  "inputBorder": "#8C959B",
   "white": "#FFFFFF"
 }

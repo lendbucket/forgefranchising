@@ -303,7 +303,7 @@ export default function BuyAFranchisePage() {
                 </p>
                 <div className="space-y-4 mt-8">
                   {fddItems.map((item) => (
-                    <div key={item.items} className="bg-ash-tint p-6" style={{ borderRadius: '0px' }}>
+                    <div key={item.items} className="bg-stone p-6" style={{ borderRadius: '0px' }}>
                       <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-1">{item.items}</p>
                       <h3 className="heading-4 mb-2">{item.title}</h3>
                       <p className="text-steel text-sm sm:text-base leading-relaxed">{item.body}</p>

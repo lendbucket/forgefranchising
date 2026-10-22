@@ -237,7 +237,7 @@ export default function BusinessValuationPage() {
                 <h3 className="heading-4 mb-4 mt-8">Standard add backs</h3>
                 <div className="space-y-4 mb-8">
                   {addBacks.map((a) => (
-                    <div key={a.term} className="bg-ash-tint p-6" style={{ borderRadius: '0px' }}>
+                    <div key={a.term} className="bg-stone p-6" style={{ borderRadius: '0px' }}>
                       <p className="text-xs font-semibold uppercase tracking-widest text-graphite mb-2">{a.term}</p>
                       <p className="text-steel text-sm leading-relaxed">{a.text}</p>
                     </div>

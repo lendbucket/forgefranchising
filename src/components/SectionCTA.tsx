@@ -33,7 +33,7 @@ export function SectionCTA({
   // in the props for existing call sites and renders the same way.
   const isDark = variant === 'dark' || variant === 'light'
   return (
-    <section className={isDark ? 'bg-graphite text-white' : 'bg-ash-tint text-graphite'}>
+    <section className={isDark ? 'bg-graphite text-white' : 'bg-stone text-graphite'}>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 text-center">
         <h2 className={`heading-2 mb-6 ${isDark ? 'text-white' : 'text-graphite'}`}>
           {heading}

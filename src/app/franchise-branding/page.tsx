@@ -189,7 +189,7 @@ export default function FranchiseBrandingPage() {
       {spokes.map((spoke, index) => (
         <section
           key={spoke.number}
-          className={index % 2 === 0 ? 'section-padding bg-ash-tint' : 'section-padding bg-white'}
+          className={index % 2 === 0 ? 'section-padding bg-stone' : 'section-padding bg-white'}
         >
           <div className="container-wide">
             <div className="grid lg:grid-cols-12 gap-12">

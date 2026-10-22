@@ -18,11 +18,14 @@ export const MISSION_STATEMENT =
  * menu, and the footer columns all read from this list.
  */
 export type NavLink = { label: string; href: string; desc: string }
-export type NavGroup = { label: string; links: NavLink[] }
+/** href and intro feed the mega menu overview panel. */
+export type NavGroup = { label: string; href: string; intro: string; links: NavLink[] }
 
 export const NAV_LINKS: NavGroup[] = [
   {
     label: 'Franchise Your Business',
+    href: '/services',
+    intro: 'Feasibility, FDD, operations, and franchise sales under one roof.',
     links: [
       { label: 'Services', href: '/services', desc: 'Seven core services under one roof' },
       { label: 'How It Works', href: '/how-it-works', desc: 'Our four-phase franchise development process' },
@@ -36,6 +39,8 @@ export const NAV_LINKS: NavGroup[] = [
   },
   {
     label: 'Sell or Buy a Business',
+    href: '/sell-your-business',
+    intro: 'Confidential business sales in Texas, valuations, and buyer representation.',
     links: [
       { label: 'Sell Your Business', href: '/sell-your-business', desc: 'Confidential business sales in Texas' },
       { label: 'How to Sell a Business', href: '/sell-your-business/how-to-sell-a-business', desc: 'The full process, step by step' },
@@ -46,6 +51,8 @@ export const NAV_LINKS: NavGroup[] = [
   },
   {
     label: 'Buy a Franchise',
+    href: '/buy-a-franchise',
+    intro: 'Evaluate brands, read the FDD, and manage resale and transfer approval.',
     links: [
       { label: 'Buy a Franchise', href: '/buy-a-franchise', desc: 'Evaluate brands, read the FDD, validate with owners' },
       { label: 'Sell Your Franchise', href: '/sell-your-franchise', desc: 'Franchise resale and transfer approval' },
@@ -53,6 +60,8 @@ export const NAV_LINKS: NavGroup[] = [
   },
   {
     label: 'Resources',
+    href: '/learn',
+    intro: 'Free franchise development resources, guides, and tools.',
     links: [
       { label: 'Learn', href: '/learn', desc: 'Free franchise development resources' },
       { label: 'Blog', href: '/blog', desc: 'Guides and compliance breakdowns' },
@@ -64,6 +73,8 @@ export const NAV_LINKS: NavGroup[] = [
   },
   {
     label: 'Company',
+    href: '/about',
+    intro: 'Operator built, not consultant assembled.',
     links: [
       { label: 'About Us', href: '/about', desc: 'Operator built, not consultant assembled' },
       { label: 'Own a Forge Franchise', href: '/own-a-franchise', desc: 'Build a franchise consulting business' },

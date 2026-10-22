@@ -103,7 +103,7 @@ export default function FranchiseLawsPage() {
       </section>
 
       {/* Three Categories */}
-      <section className="section-padding bg-ash-tint">
+      <section className="section-padding bg-stone">
         <div className="container-wide">
           <h2 className="heading-2 mb-4 text-center">Three Categories of State Franchise Regulation</h2>
           <p className="body-large text-center max-w-2xl mx-auto mb-12">
@@ -213,7 +213,7 @@ export default function FranchiseLawsPage() {
       </section>
 
       {/* Registration States Detail */}
-      <section className="section-padding bg-ash-tint">
+      <section className="section-padding bg-stone">
         <div className="container-wide">
           <h2 className="heading-2 mb-8">Registration States</h2>
           <p className="body-large mb-8 max-w-3xl">
@@ -279,7 +279,7 @@ export default function FranchiseLawsPage() {
       </section>
 
       {/* Why This Matters */}
-      <section className="section-padding bg-ash-tint">
+      <section className="section-padding bg-stone">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto">
             <h2 className="heading-2 mb-6">Why Franchise State Laws Matter</h2>

@@ -200,7 +200,7 @@ export default function ServicesPage() {
               <a
                 key={service.id}
                 href={`#${service.id}`}
-                className="text-sm font-medium text-graphite bg-ash-tint px-4 py-2 hover:bg-ember-button hover:text-graphite transition-colors"
+                className="text-sm font-medium text-graphite bg-stone px-4 py-2 hover:bg-ember-fill hover:text-graphite transition-colors"
                 style={{ borderRadius: '2px' }}
               >
                 {service.title}
@@ -214,7 +214,7 @@ export default function ServicesPage() {
         <section
           key={service.id}
           id={service.id}
-          className={index % 2 === 0 ? 'section-padding bg-ash-tint' : 'section-padding bg-white'}
+          className={index % 2 === 0 ? 'section-padding bg-stone' : 'section-padding bg-white'}
         >
           <div className="container-wide">
             <div className="grid lg:grid-cols-12 gap-12">

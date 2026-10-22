@@ -330,7 +330,7 @@ export default async function CityPage({ params }: Props) {
             <div className="lg:col-span-1 space-y-6">
               <div className="sticky top-24 space-y-6">
                 {/* Assessment CTA Card */}
-                <div className="card p-6 bg-ash-tint">
+                <div className="card p-6 bg-stone">
                   <h3 className="heading-4 mb-3">Is Your Business Ready to Franchise?</h3>
                   <p className="text-sm text-steel mb-4">
                     Take our free assessment to find out if your {city.name} business

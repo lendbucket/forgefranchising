@@ -165,7 +165,7 @@ export default function HowItWorksPage() {
         <section
           key={phase.number}
           id={`phase-${phase.number}`}
-          className={index % 2 === 0 ? 'section-padding bg-ash-tint' : 'section-padding bg-white'}
+          className={index % 2 === 0 ? 'section-padding bg-stone' : 'section-padding bg-white'}
         >
           <div className="container-wide">
             <div className="grid lg:grid-cols-12 gap-12">
@@ -190,7 +190,7 @@ export default function HowItWorksPage() {
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-8 p-6 bg-ash-tint" style={{ borderRadius: '0px' }}>
+                  <div className="mt-8 p-6 bg-stone" style={{ borderRadius: '0px' }}>
                     <p className="font-semibold text-graphite mb-1">Phase Outcome:</p>
                     <p className="text-steel">{phase.outcome}</p>
                   </div>

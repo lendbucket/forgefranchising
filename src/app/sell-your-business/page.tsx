@@ -288,7 +288,7 @@ export default function SellYourBusinessPage() {
                   in specific ways, and you should know those limits before you sign an engagement agreement.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4 mt-8">
-                  <div className="bg-ash-tint p-6" style={{ borderRadius: '0px' }}>
+                  <div className="bg-stone p-6" style={{ borderRadius: '0px' }}>
                     <p className="text-xs font-semibold uppercase tracking-widest text-graphite mb-3">What a broker does</p>
                     <ul className="space-y-2 text-steel text-sm leading-relaxed list-disc pl-5">
                       <li>Reviews your financials and prepares a broker opinion of value with a recommended asking price.</li>
@@ -404,7 +404,7 @@ export default function SellYourBusinessPage() {
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4 mt-8">
                   {sellerDocuments.map((doc) => (
-                    <div key={doc.item} className="bg-ash-tint p-6" style={{ borderRadius: '0px' }}>
+                    <div key={doc.item} className="bg-stone p-6" style={{ borderRadius: '0px' }}>
                       <h3 className="font-semibold text-graphite mb-2">{doc.item}</h3>
                       <p className="text-steel text-sm leading-relaxed">{doc.why}</p>
                     </div>
@@ -480,7 +480,7 @@ export default function SellYourBusinessPage() {
         </div>
       </section>
 
-      <section id="inquiry" className="bg-ash-tint scroll-mt-28">
+      <section id="inquiry" className="bg-stone scroll-mt-28">
         <div className="container-wide section-padding">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
             <div className="lg:col-span-5">

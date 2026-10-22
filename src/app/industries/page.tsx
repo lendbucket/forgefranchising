@@ -60,7 +60,7 @@ export default function IndustriesPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-ash-tint">
+      <section className="section-padding bg-stone">
         <div className="container-wide">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {INDUSTRIES.map((industry) => (

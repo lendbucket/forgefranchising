@@ -41,22 +41,19 @@ export function StickyCTA({ text, href, showAfter = 600 }: StickyCTAProps) {
         visible ? 'translate-y-0' : 'translate-y-full'
       }`}
     >
-      <div className="bg-graphite/95 backdrop-blur-sm safe-bottom">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-4">
-          <p className="text-white/80 text-sm hidden sm:block flex-1">{text}</p>
-          <div className="flex items-center gap-3 w-full sm:w-auto">
-            <Link
-              href={href}
-              className="btn-primary text-sm py-2.5 px-6 flex-1 sm:flex-initial text-center"
-            >
+      <div className="bg-graphite safe-bottom" style={{ borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
+        <div className="wrap py-3 flex items-center justify-between gap-4">
+          <p className="text-mist text-sm hidden sm:block flex-1">{text}</p>
+          <div className="flex items-center gap-2 w-full sm:w-auto">
+            <Link href={href} className="btn-primary flex-1 sm:flex-initial !min-h-[52px] !w-auto">
               {text}
             </Link>
             <button
               onClick={() => setDismissed(true)}
-              className="text-white/60 hover:text-white/70 transition-colors p-1 min-w-[44px] min-h-[44px] flex items-center justify-center"
+              className="text-mist hover:text-white transition-colors flex items-center justify-center w-11 h-11 flex-shrink-0"
               aria-label="Dismiss"
             >
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>

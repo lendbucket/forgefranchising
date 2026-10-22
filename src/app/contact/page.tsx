@@ -306,7 +306,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-ash-tint">
+      <section className="section-padding bg-stone">
         <div className="container-wide">
           <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
             {/* Form Column */}
@@ -563,7 +563,7 @@ export default function ContactPage() {
                       },
                     ].map((item) => (
                       <li key={item.step} className="flex gap-4">
-                        <span className="flex-shrink-0 w-8 h-8 bg-ember-button text-graphite flex items-center justify-center text-sm font-bold" style={{ borderRadius: '2px' }}>
+                        <span className="flex-shrink-0 w-8 h-8 bg-ember-fill text-graphite flex items-center justify-center text-sm font-bold" style={{ borderRadius: '2px' }}>
                           {item.step}
                         </span>
                         <div>
