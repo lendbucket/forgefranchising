@@ -6,49 +6,32 @@ import {
   BROKER_LICENSE_DISCLOSURE,
   TREC_IABS_URL,
   TREC_CPN_URL,
+  NAV_LINKS,
 } from '@/lib/constants'
 
-const footerLinks = {
-  'Franchise Your Business': [
-    { label: 'How It Works', href: '/how-it-works' },
-    { label: 'Our Services', href: '/services' },
-    { label: 'Packages', href: '/packages' },
-    { label: 'Readiness Method', href: '/readiness-method' },
-    { label: 'Become a Franchisor', href: '/become-a-franchisor' },
-    { label: 'Is My Business Franchisable?', href: '/is-my-business-franchisable' },
-    { label: 'All Industries', href: '/industries' },
-  ],
-  'Own a Franchise': [
-    { label: 'The Opportunity', href: '/own-a-franchise' },
-    { label: 'Apply Now', href: '/own-a-franchise/apply' },
-    { label: 'Find Your Market', href: '/locations' },
-    { label: 'Disclosures', href: '/own-a-franchise/disclosures' },
-  ],
-  Resources: [
-    { label: 'Blog', href: '/blog' },
-    { label: 'Franchise Branding', href: '/franchise-branding' },
-    { label: 'Franchise Financing', href: '/financing' },
-    { label: 'Franchise vs License', href: '/franchise-vs-license' },
-    { label: 'Franchise Glossary', href: '/glossary' },
-    { label: 'Franchise Laws by State', href: '/franchise-laws' },
-    { label: 'Franchise Calculator', href: '/calculator' },
-    { label: 'FAQ', href: '/faq' },
-  ],
+/** Footer only links, added to the end of the matching nav group. */
+const footerExtras: Record<string, { label: string; href: string }[]> = {
+  'Franchise Your Business': [{ label: 'Is My Business Franchisable?', href: '/is-my-business-franchisable' }],
   Company: [
-    { label: 'About Us', href: '/about' },
-    { label: 'Contact', href: '/contact' },
-    { label: 'Privacy Policy', href: '/privacy' },
-    { label: 'Terms of Service', href: '/terms' },
+    { label: 'Apply to Own a Franchise', href: '/own-a-franchise/apply' },
+    { label: 'Find Your Market', href: '/locations' },
   ],
 }
+
+const footerLinks = Object.fromEntries(
+  NAV_LINKS.map((group) => [
+    group.label,
+    [...group.links.map(({ label, href }) => ({ label, href })), ...(footerExtras[group.label] ?? [])],
+  ]),
+)
 
 export function Footer() {
   return (
     <footer className="bg-graphite text-white/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24">
-        <div className="grid grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-10 lg:gap-8">
           {/* Brand column with white logo */}
-          <div className="col-span-2">
+          <div className="col-span-2 md:col-span-3 lg:col-span-2">
             <Link href="/" className="inline-block mb-8">
               <Image
                 src="/forge-franchising-logo-white.png"

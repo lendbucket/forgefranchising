@@ -13,52 +13,65 @@ export const SUPPORT_EMAIL = 'info@forgefranchising.com'
 export const MISSION_STATEMENT =
   'Forge Franchising Group exists to turn businesses that already work into franchise brands that scale. We believe an owner who built something successful deserves a real path to growth, not guesswork and not a stack of paperwork. We pair operator experience with technology and a proven process so founders expand with confidence and protect what they built. We only win when the businesses we franchise win.'
 
-export const NAV_LINKS = [
-  { label: 'About', href: '/about' },
+/**
+ * Primary navigation, grouped by audience. The header mega menu, the mobile
+ * menu, and the footer columns all read from this list.
+ */
+export type NavLink = { label: string; href: string; desc: string }
+export type NavGroup = { label: string; links: NavLink[] }
+
+export const NAV_LINKS: NavGroup[] = [
   {
-    label: 'Services',
-    href: '/services',
-    children: [
-      { label: 'Our Services', href: '/services' },
-      { label: 'How It Works', href: '/how-it-works' },
-      { label: 'Readiness Method', href: '/readiness-method' },
-      { label: 'Packages', href: '/packages' },
+    label: 'Franchise Your Business',
+    links: [
+      { label: 'Services', href: '/services', desc: 'Seven core services under one roof' },
+      { label: 'How It Works', href: '/how-it-works', desc: 'Our four-phase franchise development process' },
+      { label: 'Readiness Method', href: '/readiness-method', desc: 'Our four-pillar franchise readiness assessment' },
+      { label: 'Packages', href: '/packages', desc: 'Engagement tiers for every stage' },
+      { label: 'Financing', href: '/financing', desc: 'Funding options for franchise development' },
+      { label: 'Franchise vs License', href: '/franchise-vs-license', desc: 'Compare both growth paths side by side' },
+      { label: 'Become a Franchisor', href: '/become-a-franchisor', desc: 'Every step of building the franchisor company' },
+      { label: 'Industries We Serve', href: '/industries', desc: 'Restaurants, salons, fitness, and more' },
     ],
   },
   {
-    label: 'Industries',
-    href: '/industries',
-    children: [
-      { label: 'All Industries', href: '/industries' },
-      { label: 'Restaurants & Food', href: '/industries/restaurants' },
-      { label: 'Salons & Beauty', href: '/industries/salons-beauty' },
-      { label: 'Fitness & Gyms', href: '/industries/fitness' },
-      { label: 'Home Services', href: '/industries/home-services' },
-      { label: 'Health & Medical', href: '/industries/health-medical' },
-      { label: 'Retail', href: '/industries/retail' },
-      { label: 'Automotive', href: '/industries/automotive' },
-      { label: 'Childcare & Education', href: '/industries/childcare-education' },
-      { label: 'Cleaning', href: '/industries/cleaning' },
-      { label: 'Pet Care', href: '/industries/pet-care' },
+    label: 'Sell or Buy a Business',
+    links: [
+      { label: 'Sell Your Business', href: '/sell-your-business', desc: 'Confidential business sales in Texas' },
+      { label: 'How to Sell a Business', href: '/sell-your-business/how-to-sell-a-business', desc: 'The full process, step by step' },
+      { label: 'Business Valuation', href: '/business-valuation', desc: 'A broker opinion of value and how buyers price a business' },
+      { label: 'Texas Business Broker', href: '/texas-business-broker', desc: 'Statewide brokerage, market by market' },
+      { label: 'Buy a Business', href: '/buy-a-business', desc: 'Buying process, financing, and due diligence' },
+    ],
+  },
+  {
+    label: 'Buy a Franchise',
+    links: [
+      { label: 'Buy a Franchise', href: '/buy-a-franchise', desc: 'Evaluate brands, read the FDD, validate with owners' },
+      { label: 'Sell Your Franchise', href: '/sell-your-franchise', desc: 'Franchise resale and transfer approval' },
     ],
   },
   {
     label: 'Resources',
-    href: '/learn',
-    children: [
-      { label: 'Learn & Resources', href: '/learn' },
-      { label: 'Blog', href: '/blog' },
-      { label: 'Franchise Branding', href: '/franchise-branding' },
-      { label: 'Franchise Glossary', href: '/glossary' },
-      { label: 'Franchise Laws by State', href: '/franchise-laws' },
-      { label: 'Franchise Calculator', href: '/calculator' },
-      { label: 'Franchise Financing', href: '/financing' },
-      { label: 'Franchise vs License', href: '/franchise-vs-license' },
+    links: [
+      { label: 'Learn', href: '/learn', desc: 'Free franchise development resources' },
+      { label: 'Blog', href: '/blog', desc: 'Guides and compliance breakdowns' },
+      { label: 'Franchise Branding', href: '/franchise-branding', desc: 'Why brand is the product when you franchise' },
+      { label: 'Franchise Glossary', href: '/glossary', desc: '100+ franchise terms explained' },
+      { label: 'Franchise Laws by State', href: '/franchise-laws', desc: 'Registration and filing requirements' },
+      { label: 'Franchise Calculator', href: '/calculator', desc: 'Model your franchise economics' },
     ],
   },
-  { label: 'FAQ', href: '/faq' },
-  { label: 'Contact', href: '/contact' },
-] as const
+  {
+    label: 'Company',
+    links: [
+      { label: 'About Us', href: '/about', desc: 'Operator built, not consultant assembled' },
+      { label: 'Own a Forge Franchise', href: '/own-a-franchise', desc: 'Build a franchise consulting business' },
+      { label: 'FAQ', href: '/faq', desc: 'Common questions answered' },
+      { label: 'Contact', href: '/contact', desc: 'Book a free feasibility call' },
+    ],
+  },
+]
 
 export const INDUSTRIES = [
   {

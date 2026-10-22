@@ -4,50 +4,48 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
+import { NAV_LINKS } from '@/lib/constants'
 
-const megaMenu = {
-  'Franchise Your Business': {
-    links: [
-      { label: 'How It Works', href: '/how-it-works', desc: 'Our four-phase franchise development process' },
-      { label: 'Services', href: '/services', desc: 'Seven core services under one roof' },
-      { label: 'Packages', href: '/packages', desc: 'Engagement tiers for every stage' },
-      { label: 'Is My Business Franchisable?', href: '/is-my-business-franchisable', desc: 'Free readiness assessment' },
-      { label: 'Franchise Calculator', href: '/calculator', desc: 'Model your franchise economics' },
-      { label: 'Readiness Method', href: '/readiness-method', desc: 'Our four-pillar franchise readiness assessment' },
-      { label: 'Become a Franchisor', href: '/become-a-franchisor', desc: 'Every step of building the franchisor company' },
-      { label: 'Financing', href: '/financing', desc: 'Funding options for franchise development' },
-      { label: 'Industries We Serve', href: '/industries', desc: 'Restaurants, salons, fitness, and more' },
-    ],
+type Panel = { eyebrow: string; heading: string; body: string; cta: string; href: string }
+
+const assessmentPanel: Panel = {
+  eyebrow: 'Get Started',
+  heading: 'See if your business qualifies',
+  body: 'Take our free assessment and get a clear, honest answer in under five minutes.',
+  cta: 'Take the Assessment',
+  href: '/is-my-business-franchisable',
+}
+
+/** Feature panel shown beside each mega menu group. */
+const panels: Record<string, Panel> = {
+  'Franchise Your Business': assessmentPanel,
+  'Sell or Buy a Business': {
+    eyebrow: 'Selling a Business',
+    heading: 'Start with how buyers will read your numbers',
+    body: 'Request a broker opinion of value. It is not a certified appraisal, and it is the basis for pricing a sale.',
+    cta: 'Request an Opinion of Value',
+    href: '/business-valuation#inquiry',
   },
-  'Own a Franchise': {
-    links: [
-      { label: 'The Opportunity', href: '/own-a-franchise', desc: 'Build a franchise consulting business' },
-      { label: 'Apply Now', href: '/own-a-franchise/apply', desc: 'Submit your franchise application' },
-      { label: 'Find Your Market', href: '/locations', desc: 'Franchise consulting by city' },
-      { label: 'Important Disclosures', href: '/own-a-franchise/disclosures', desc: 'Legal notices and disclaimers' },
-    ],
+  'Buy a Franchise': {
+    eyebrow: 'Franchise Buyers',
+    heading: 'Evaluate a brand before you sign',
+    body: 'Read the FDD with a team that builds franchise systems, then validate with current and former franchisees.',
+    cta: 'Get Help Evaluating a Franchise',
+    href: '/buy-a-franchise#inquiry',
   },
-  Resources: {
-    links: [
-      { label: 'Blog', href: '/blog', desc: 'Guides, case studies, and insights' },
-      { label: 'Franchise Branding', href: '/franchise-branding', desc: 'Why brand is the product when you franchise' },
-      { label: 'Franchise Financing', href: '/financing', desc: 'Funding paths for franchise development' },
-      { label: 'Franchise vs License', href: '/franchise-vs-license', desc: 'Compare both growth paths side by side' },
-      { label: 'Learn', href: '/learn', desc: 'Free franchise development resources' },
-      { label: 'Franchise Glossary', href: '/glossary', desc: '100+ franchise terms explained' },
-      { label: 'Franchise Laws by State', href: '/franchise-laws', desc: 'Registration and filing requirements' },
-      { label: 'FAQ', href: '/faq', desc: 'Common questions answered' },
-    ],
-  },
+  Resources: assessmentPanel,
   Company: {
-    links: [
-      { label: 'About Us', href: '/about', desc: 'Operator built, not consultant assembled' },
-      { label: 'Contact', href: '/contact', desc: 'Book a free feasibility call' },
-    ],
+    eyebrow: 'Franchise Opportunity',
+    heading: 'Build a franchise consulting business',
+    body: 'Work from home. Two income streams. $15,000 franchise fee. Limited territories.',
+    cta: 'Apply Now',
+    href: '/own-a-franchise/apply',
   },
 }
 
-const menuKeys = Object.keys(megaMenu) as (keyof typeof megaMenu)[]
+const groupFor = (label: string) => NAV_LINKS.find((g) => g.label === label)
+
+const menuKeys = NAV_LINKS.map((g) => g.label)
 
 export function Header() {
   const pathname = usePathname()
@@ -145,7 +143,7 @@ export function Header() {
                 >
                   <button
                     type="button"
-                    className={`px-4 py-2 text-sm font-medium transition-colors ${
+                    className={`px-2.5 xl:px-4 py-2 text-sm font-medium whitespace-nowrap transition-colors ${
                       isTransparent
                         ? (openPanel === key ? 'text-white' : 'text-white/70 hover:text-white')
                         : (openPanel === key ? 'text-graphite' : 'text-graphite/70 hover:text-graphite')
@@ -171,7 +169,7 @@ export function Header() {
             </nav>
 
             {/* Desktop CTA */}
-            <div className="hidden lg:flex items-center">
+            <div className="hidden xl:flex items-center">
               <Link href="/contact" className="btn-primary text-sm py-3 px-6">
                 Book a Free Call
               </Link>
@@ -212,7 +210,7 @@ export function Header() {
                 <div className="col-span-8">
                   <p className="eyebrow mb-6">{openPanel}</p>
                   <div className="grid grid-cols-2 gap-x-12 gap-y-1">
-                    {megaMenu[openPanel as keyof typeof megaMenu].links.map((link) => (
+                    {groupFor(openPanel)?.links.map((link) => (
                       <Link
                         key={link.href}
                         href={link.href}
@@ -232,49 +230,31 @@ export function Header() {
                 </div>
 
                 <div className="col-span-4">
-                  {openPanel === 'Own a Franchise' ? (
-                    <div className="bg-graphite rounded p-8 h-full flex flex-col justify-between">
-                      <div>
-                        <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">
-                          Franchise Opportunity
-                        </p>
-                        <h3 className="font-display font-bold text-xl text-white mb-3" style={{ letterSpacing: '-0.02em' }}>
-                          Build a franchise consulting business
-                        </h3>
-                        <p className="text-white/60 text-sm leading-relaxed mb-6">
-                          Work from home. Two income streams. $15,000 franchise fee. Limited territories.
-                        </p>
+                  {(() => {
+                    const panel = panels[openPanel] ?? assessmentPanel
+                    return (
+                      <div className="bg-graphite rounded p-8 h-full flex flex-col justify-between">
+                        <div>
+                          <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">
+                            {panel.eyebrow}
+                          </p>
+                          <h3 className="font-display font-bold text-xl text-white mb-3" style={{ letterSpacing: '-0.02em' }}>
+                            {panel.heading}
+                          </h3>
+                          <p className="text-white/60 text-sm leading-relaxed mb-6">
+                            {panel.body}
+                          </p>
+                        </div>
+                        <Link
+                          href={panel.href}
+                          className="btn-primary text-sm py-3 text-center w-full"
+                          onClick={() => setOpenPanel(null)}
+                        >
+                          {panel.cta}
+                        </Link>
                       </div>
-                      <Link
-                        href="/own-a-franchise/apply"
-                        className="btn-primary text-sm py-3 text-center w-full"
-                        onClick={() => setOpenPanel(null)}
-                      >
-                        Apply Now
-                      </Link>
-                    </div>
-                  ) : (
-                    <div className="bg-graphite rounded p-8 h-full flex flex-col justify-between">
-                      <div>
-                        <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">
-                          Get Started
-                        </p>
-                        <h3 className="font-display font-bold text-xl text-white mb-3" style={{ letterSpacing: '-0.02em' }}>
-                          See if your business qualifies
-                        </h3>
-                        <p className="text-white/60 text-sm leading-relaxed mb-6">
-                          Take our free assessment and get a clear, honest answer in under five minutes.
-                        </p>
-                      </div>
-                      <Link
-                        href="/is-my-business-franchisable"
-                        className="btn-primary text-sm py-3 text-center w-full"
-                        onClick={() => setOpenPanel(null)}
-                      >
-                        Take the Assessment
-                      </Link>
-                    </div>
-                  )}
+                    )
+                  })()}
                 </div>
               </div>
             </div>
@@ -345,7 +325,7 @@ export function Header() {
 
                 {mobileAccordion === key && (
                   <div className="pb-4 pl-2">
-                    {megaMenu[key].links.map((link) => (
+                    {groupFor(key)?.links.map((link) => (
                       <Link
                         key={link.href}
                         href={link.href}
