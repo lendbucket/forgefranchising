@@ -10,6 +10,9 @@ export const metadata = createMetadata({
   path: '/own-a-franchise',
 })
 
+/** IFA 2026 Franchising Economic Outlook, released February 19, 2026. */
+const IFA_OUTLOOK_URL = 'https://www.franchise.org/franchising-economic-outlook/'
+
 const valueStackItems = [
   {
     title: 'The Forge brand and reputation',
@@ -212,29 +215,35 @@ export default function OwnAFranchisePage() {
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="heading-2 mb-6">
-              An $827 billion industry with a massive talent gap
+              A $921 billion industry
             </h2>
-            <p className="body-large mb-6">
-              The franchise industry generates over $827 billion in annual output in the United States alone. It is growing every year. Business owners across every sector are looking to franchise their concepts, and buyers with capital are actively searching for the right franchise to invest in.
-            </p>
             <p className="body-large">
-              The problem? Most franchise consultants are independent operators with no brand, no technology, and no structured methodology. The market is wide open for professionals who can deliver real expertise backed by a real system.
+              The franchise industry is projected to generate $921.4 billion in output in 2026, across about 845,000 franchise establishments, according to the{' '}
+              <a href={IFA_OUTLOOK_URL} target="_blank" rel="noopener noreferrer" className="text-link">
+                International Franchise Association
+              </a>
+              . Business owners across every sector are looking to franchise their concepts, and buyers with capital are actively searching for the right franchise to invest in.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-12 md:gap-0 md:divide-x md:divide-line max-w-4xl mx-auto">
             <div className="text-center">
-              <p className="stat-number text-accent">$827B</p>
-              <p className="text-steel text-sm mt-2">U.S. franchise industry annual output</p>
+              <p className="stat-number text-accent">$921.4B</p>
+              <p className="text-steel text-sm mt-2">2026 projected franchise output</p>
             </div>
             <div className="text-center">
-              <p className="stat-number text-accent">4,000+</p>
-              <p className="text-steel text-sm mt-2">Active franchise brands in the U.S.</p>
+              <p className="stat-number text-accent">845,000</p>
+              <p className="text-steel text-sm mt-2">Franchise establishments</p>
             </div>
             <div className="text-center">
-              <p className="stat-number text-accent">300+</p>
-              <p className="text-steel text-sm mt-2">New franchise brands launched each year</p>
+              <p className="stat-number text-accent">8.9M</p>
+              <p className="text-steel text-sm mt-2">Franchise jobs</p>
             </div>
           </div>
+          <p className="mt-10 text-center text-sm text-steel">
+            <a href={IFA_OUTLOOK_URL} target="_blank" rel="noopener noreferrer" className="underline underline-offset-[3px] hover:text-graphite">
+              Source: International Franchise Association, 2026 Franchising Economic Outlook
+            </a>
+          </p>
         </div>
       </section>
 

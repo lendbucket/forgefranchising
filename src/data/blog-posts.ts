@@ -43,7 +43,7 @@ const blogPosts1to10: BlogPost[] = [
 
 You have a business that makes money. Customers come back. You have considered opening a second location, maybe even a third. And at some point, someone said the magic words: "You should franchise this."
 
-That idea is worth taking seriously. Franchising created more than 800,000 establishments in the United States in 2023 alone, according to the International Franchise Association. The franchise sector contributed over $850 billion in economic output that same year. Those are not small numbers.
+That idea is worth taking seriously. Franchising is projected to reach about 845,000 establishments in the United States in 2026, according to the [International Franchise Association](https://www.franchise.org/franchising-economic-outlook/). The franchise sector is projected to generate $921.4 billion in economic output. Those are not small numbers.
 
 But here is the reality: most business owners who say "I want to franchise" have no idea what that actually involves. They think it means slapping their logo on someone else's building and collecting a check. It does not work that way. Franchising is a legal structure, a business model, and an operational discipline all rolled into one. Get it right, and you build generational wealth. Get it wrong, and you bleed cash while destroying your brand. Understanding [why brand is the product](/franchise-branding) in franchising is the first step toward getting it right.
 
