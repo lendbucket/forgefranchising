@@ -441,7 +441,7 @@ export default async function StateFranchiseLawPage({ params }: Props) {
       </section>
 
       {/* Disclaimer */}
-      <section className="bg-white border-t border-graphite/10">
+      <div className="bg-white border-t border-graphite/10">
         <div className="container-wide py-8">
           <p className="text-xs text-steel max-w-3xl mx-auto text-center">
             This content is general education and does not constitute legal advice. Franchise laws
@@ -449,7 +449,7 @@ export default async function StateFranchiseLawPage({ params }: Props) {
             state agency.
           </p>
         </div>
-      </section>
+      </div>
 
       <ContinueLearning
         heading="Continue Your Research"

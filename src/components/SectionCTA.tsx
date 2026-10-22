@@ -29,7 +29,9 @@ export function SectionCTA({
   secondaryText,
   secondaryHref,
 }: SectionCTAProps) {
-  const isDark = variant === 'dark'
+  // Closing calls to action always sit on graphite. The light variant is kept
+  // in the props for existing call sites and renders the same way.
+  const isDark = variant === 'dark' || variant === 'light'
   return (
     <section className={isDark ? 'bg-graphite text-white' : 'bg-ash-tint text-graphite'}>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 text-center">

@@ -204,11 +204,11 @@ export default function OwnAFranchisePage() {
       </section>
 
       {/* OFFERING DISCLAIMER (after hero) */}
-      <section className="bg-white">
+      <div className="bg-white">
         <div className="container-wide pt-12 pb-0 px-6 sm:px-10 lg:px-16">
           <OfferingDisclaimer variant="light" />
         </div>
-      </section>
+      </div>
 
       {/* THE PROBLEM / OPPORTUNITY */}
       <section className="section-padding bg-white">

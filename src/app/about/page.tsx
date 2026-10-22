@@ -160,7 +160,7 @@ export default function AboutPage() {
         variant="section"
       />
 
-      <BrokerageBand />
+      <BrokerageBand className="bg-graphite surface-dark" />
 
       <ContinueLearning
         heading="Understand Our Approach"

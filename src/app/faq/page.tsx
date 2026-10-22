@@ -193,7 +193,7 @@ export default function FAQPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-ash-tint">
+      <section className="section-padding bg-white">
         <div className="container-wide">
           <FAQAccordion categories={FAQ_CATEGORIES} />
         </div>

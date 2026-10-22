@@ -388,7 +388,7 @@ export default function FranchiseLawsPage() {
       </section>
 
       {/* Disclaimer */}
-      <section className="bg-white border-t border-graphite/10">
+      <div className="bg-white border-t border-graphite/10">
         <div className="container-wide py-8">
           <p className="text-xs text-steel max-w-3xl mx-auto text-center">
             This content is general education and does not constitute legal advice. Franchise laws
@@ -396,7 +396,7 @@ export default function FranchiseLawsPage() {
             state agency.
           </p>
         </div>
-      </section>
+      </div>
 
       <OpenLoop
         teaser="State registration is just one piece of the franchise compliance puzzle. The FDD itself has 23 required items, and a mistake in any of them can delay your entire launch. We break down the full document."
