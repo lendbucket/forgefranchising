@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useMemo } from 'react'
 import Link from 'next/link'
-import type { BlogPost } from '@/data/blog-posts'
+import type { BlogPost, BlogCTA } from '@/data/blog-posts'
 import { KeyTakeaways } from '@/components/KeyTakeaways'
 import { StickyCTA } from '@/components/StickyCTA'
 
@@ -28,6 +28,7 @@ const categoryColors: Record<string, string> = {
   Operations: 'bg-orange-50 text-orange-700',
   Sales: 'bg-indigo-50 text-indigo-700',
   Technology: 'bg-cyan-50 text-cyan-700',
+  Brokerage: 'bg-ash text-graphite',
 }
 
 type Heading = { id: string; text: string; level: number }
@@ -308,18 +309,17 @@ function TableOfContents({ headings }: { headings: Heading[] }) {
 /*  Inline CTA: value-driven, placed at a natural decision point      */
 /* ------------------------------------------------------------------ */
 
-function InlineCTA() {
+function InlineCTA({ cta }: { cta?: BlogCTA }) {
   return (
     <div className="my-12 bg-graphite p-8 sm:p-10 text-center" style={{ borderRadius: '4px' }}>
       <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-4">
-        Find Out If Your Business Is Ready to Franchise
+        {cta?.heading ?? 'Find Out If Your Business Is Ready to Franchise'}
       </h3>
       <p className="text-white/70 mb-6 max-w-lg mx-auto">
-        Take our two-minute assessment and get a franchise readiness score
-        with personalized recommendations. No cost, no obligation.
+        {cta?.body ?? 'Take our two-minute assessment and get a franchise readiness score with personalized recommendations. No cost, no obligation.'}
       </p>
-      <Link href="/is-my-business-franchisable" className="btn-primary">
-        Get Your Free Readiness Score
+      <Link href={cta?.href ?? '/is-my-business-franchisable'} className="btn-primary">
+        {cta?.buttonText ?? 'Get Your Free Readiness Score'}
       </Link>
     </div>
   )
@@ -339,7 +339,7 @@ export default function BlogPostClient({
   relatedPosts,
 }: BlogPostClientProps) {
   const headings = useMemo(() => extractHeadings(post.content), [post.content])
-  const takeaways = useMemo(() => extractTakeaways(post.content), [post.content])
+  const takeaways = useMemo(() => post.keyTakeaways ?? extractTakeaways(post.content), [post.keyTakeaways, post.content])
 
   const contentBlocks = post.content.split('\n\n')
   const midpoint = Math.floor(contentBlocks.length / 2)
@@ -394,7 +394,7 @@ export default function BlogPostClient({
               )}
 
               <MarkdownRenderer content={firstHalf} />
-              <InlineCTA />
+              <InlineCTA cta={post.cta} />
               <MarkdownRenderer content={secondHalf} />
             </article>
 
@@ -409,19 +409,18 @@ export default function BlogPostClient({
       <section className="bg-graphite text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 text-center">
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">
-            See Where Your Business Stands
+            {post.cta?.heading ?? 'See Where Your Business Stands'}
           </h2>
           <p className="text-lg sm:text-xl leading-relaxed text-white/70 mb-10 max-w-2xl mx-auto">
-            If this article raised questions about franchising your business, get
-            a concrete answer. Our free assessment scores your readiness and gives
-            you specific next steps.
+            {post.cta?.body ??
+              'If this article raised questions about franchising your business, get a concrete answer. Our free assessment scores your readiness and gives you specific next steps.'}
           </p>
-          <Link href="/is-my-business-franchisable" className="btn-primary">
-            Get Your Free Readiness Score
+          <Link href={post.cta?.href ?? '/is-my-business-franchisable'} className="btn-primary">
+            {post.cta?.buttonText ?? 'Get Your Free Readiness Score'}
           </Link>
           <div className="mt-4">
             <Link href="/contact" className="text-sm text-white/60 link-underline">
-              Or book a feasibility call directly
+              {post.cta ? 'Or contact us directly' : 'Or book a feasibility call directly'}
             </Link>
           </div>
         </div>
@@ -464,8 +463,8 @@ export default function BlogPostClient({
       )}
 
       <StickyCTA
-        text="Get Your Free Readiness Score"
-        href="/is-my-business-franchisable"
+        text={post.cta?.buttonText ?? 'Get Your Free Readiness Score'}
+        href={post.cta?.href ?? '/is-my-business-franchisable'}
       />
     </>
   )

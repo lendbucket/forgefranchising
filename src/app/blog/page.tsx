@@ -15,6 +15,7 @@ const categories = [
   'Operations',
   'Sales',
   'Technology',
+  'Brokerage',
 ]
 
 const categoryColors: Record<string, string> = {
@@ -27,6 +28,7 @@ const categoryColors: Record<string, string> = {
   Operations: 'bg-orange-50 text-orange-700',
   Sales: 'bg-indigo-50 text-indigo-700',
   Technology: 'bg-cyan-50 text-cyan-700',
+  Brokerage: 'bg-ash text-graphite',
 }
 
 function formatDate(dateString: string) {

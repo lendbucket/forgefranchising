@@ -2,6 +2,16 @@ import { blogPosts11to20 } from './blog-posts-11-20'
 import { blogPosts21to30 } from './blog-posts-21-30'
 import { blogPosts31to42 } from './blog-posts-31-42'
 import { blogPosts43to52 } from './blog-posts-43-52'
+import { blogPosts53to56 } from './blog-posts-53-56'
+import { blogPosts57to60 } from './blog-posts-57-60'
+import { blogPosts61to64 } from './blog-posts-61-64'
+
+export type BlogCTA = {
+  heading: string
+  body: string
+  buttonText: string
+  href: string
+}
 
 export type BlogPost = {
   slug: string
@@ -13,6 +23,10 @@ export type BlogPost = {
   datePublished: string
   readTime: string
   content: string
+  /** Optional explicit takeaways. Without them, the first five H2s are used. */
+  keyTakeaways?: string[]
+  /** Optional call to action. Without it, posts point to the readiness assessment. */
+  cta?: BlogCTA
 }
 
 const blogPosts1to10: BlogPost[] = [
@@ -1533,4 +1547,7 @@ export const blogPosts: BlogPost[] = [
   ...(blogPosts21to30 as BlogPost[]),
   ...(blogPosts31to42 as BlogPost[]),
   ...(blogPosts43to52 as BlogPost[]),
+  ...blogPosts53to56,
+  ...blogPosts57to60,
+  ...blogPosts61to64,
 ]

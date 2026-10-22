@@ -74,6 +74,7 @@ const steps: Step[] = [
     ],
     produces: 'A formed franchisor entity with its own bank account, its own books, and documented agreements with the operating company and any IP holding company.',
     skipped: 'Selling franchises out of the operating company mixes the liabilities of both businesses and puts every restaurant, shop, or crew under the same legal roof as your franchise obligations. It also makes the Item 21 audit harder and more expensive, because the auditor has to work through years of operating history that has nothing to do with franchising.',
+    link: { href: '/blog/franchisor-entity-structure', label: 'Why the franchisor is a separate company' },
   },
   {
     id: 'brand-system',
@@ -117,6 +118,7 @@ const steps: Step[] = [
     ],
     produces: 'An audited opening balance sheet or full audited statements for the franchisor entity, and a capitalization plan that holds up to state review.',
     skipped: 'Missing or late audits delay registration, which delays every sale in a registration state. Thin capitalization without a plan can mean collecting no franchise fees until each franchisee opens.',
+    link: { href: '/blog/audited-financial-statements-new-franchisors', label: 'Audited financial statements for new franchisors' },
   },
   {
     id: 'registration',
