@@ -14,7 +14,7 @@ const valueStackItems = [
   {
     title: 'The Forge brand and reputation',
     description:
-      'You launch under a recognized name in franchise development. Not a generic certificate. A brand that business owners already associate with serious franchise consulting. Learn why brand is the product in franchising.',
+      'You launch under a recognized name in franchise development. Not a generic certificate. Learn why brand is the product in franchising.',
   },
   {
     title: 'Proprietary CRM and software platform',
@@ -39,7 +39,7 @@ const valueStackItems = [
   {
     title: 'Ongoing coaching and support',
     description:
-      'Weekly group coaching, on-demand one-on-one sessions, and a private community of Forge franchise owners sharing deals, strategies, and referrals.',
+      'Weekly group coaching, on-demand one-on-one sessions, and a private network where Forge franchise owners can share deals, strategies, and referrals.',
   },
   {
     title: 'Low, flat monthly royalties',
@@ -69,7 +69,7 @@ const faqItems = [
   },
   {
     q: 'What does a typical day look like?',
-    a: 'You spend your time on three things: business development (meeting business owners and building referral relationships), client delivery (guiding owners through the franchise development process), and brokerage (matching qualified buyers with franchise brands). Most owners work from home and set their own schedule.',
+    a: 'You spend your time on three things: business development (meeting business owners and building referral relationships), client delivery (guiding owners through the franchise development process), and brokerage (matching qualified buyers with franchise brands). The business can be run from a home office, and owners set their own schedule.',
   },
   {
     q: 'What are the ongoing costs beyond the franchise fee?',
@@ -77,7 +77,7 @@ const faqItems = [
   },
   {
     q: 'Can I hire a team or bring on staff?',
-    a: 'Yes. Many Forge franchise owners start as solo operators and add team members as their revenue grows. The model supports both solo practice and small team configurations.',
+    a: 'Yes. An owner can start as a solo operator and add team members over time. The model supports both solo practice and small team configurations.',
   },
   {
     q: 'What territories are available?',
@@ -218,7 +218,7 @@ export default function OwnAFranchisePage() {
               The franchise industry generates over $827 billion in annual output in the United States alone. It is growing every year. Business owners across every sector are looking to franchise their concepts, and buyers with capital are actively searching for the right franchise to invest in.
             </p>
             <p className="body-large">
-              The problem? There are not enough qualified franchise consultants to serve this demand. Most franchise consultants are independent operators with no brand, no technology, and no structured methodology. The market is wide open for professionals who can deliver real expertise backed by a real system.
+              The problem? Most franchise consultants are independent operators with no brand, no technology, and no structured methodology. The market is wide open for professionals who can deliver real expertise backed by a real system.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-12 md:gap-0 md:divide-x md:divide-line max-w-4xl mx-auto">
@@ -246,7 +246,7 @@ export default function OwnAFranchisePage() {
               A complete business system, not just training
             </h2>
             <p className="body-large">
-              Most franchise consulting programs hand you a certificate and wish you luck. Forge gives you a brand, a technology platform, a proven methodology, lead generation infrastructure, and a team behind you. Here is exactly what is included.
+              Most franchise consulting programs hand you a certificate and wish you luck. Forge gives you a brand, a technology platform, a documented methodology, lead generation infrastructure, and a team behind you. Here is exactly what is included.
             </p>
           </div>
           <div className="tile-grid md:grid-cols-2 lg:grid-cols-3">
@@ -268,7 +268,7 @@ export default function OwnAFranchisePage() {
               Two revenue streams. One business. Zero storefronts.
             </h2>
             <p className="body-large">
-              Your Forge franchise generates income from two distinct service lines. You can focus on one or pursue both. Most owners do both because the same relationships feed both pipelines.
+              Your Forge franchise generates income from two distinct service lines. You can focus on one or pursue both. Owners can do both because the same relationships feed both pipelines.
             </p>
           </div>
           <div className="tile-grid md:grid-cols-2 mb-12">
@@ -293,11 +293,8 @@ export default function OwnAFranchisePage() {
                 </svg>
               </div>
               <h3 className="heading-3 mb-3">Franchise brokerage</h3>
-              <p className="text-steel text-[17px] leading-relaxed mb-4">
-                You match qualified buyers with franchise brands looking for new owners. When a buyer you represent signs a franchise agreement, the franchisor pays you a referral commission. You are the matchmaker between people who want to own a franchise and brands looking to grow.
-              </p>
               <p className="text-steel text-[17px] leading-relaxed">
-                Brokerage is commission-based and can produce significant recurring income as you build your referral network and pipeline of qualified buyers.
+                You match qualified buyers with franchise brands looking for new owners. When a buyer you represent signs a franchise agreement, the franchisor pays you a referral commission. You are the matchmaker between people who want to own a franchise and brands looking to grow.
               </p>
             </div>
           </div>
@@ -405,35 +402,8 @@ export default function OwnAFranchisePage() {
         </div>
       </section>
 
-      {/* SOCIAL PROOF / AUTHORITY */}
-      <section className="section-padding bg-stone">
-        <div className="container-wide">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="heading-2 mb-6">
-              Franchising is not slowing down. The demand for expertise is accelerating.
-            </h2>
-            <p className="body-large">
-              The numbers tell the story. Franchising is one of the most proven business expansion models in the world, and the need for qualified consultants continues to outpace supply.
-            </p>
-          </div>
-          <div className="tile-grid md:grid-cols-2 lg:grid-cols-4">
-            {[
-              { stat: '800,000+', label: 'Franchise establishments in the U.S.' },
-              { stat: '8.5M', label: 'Jobs created by franchise businesses' },
-              { stat: '3%+', label: 'Annual franchise industry growth rate' },
-              { stat: '$827B', label: 'Total franchise industry output' },
-            ].map((item) => (
-              <div key={item.label} className="card text-center">
-                <p className="stat-number text-accent mb-2">{item.stat}</p>
-                <p className="text-steel text-sm">{item.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* FAQ */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-stone">
         <div className="container-narrow">
           <div className="text-center mb-16">
             <h2 className="heading-2">Franchise opportunity FAQ</h2>
