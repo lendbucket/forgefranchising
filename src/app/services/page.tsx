@@ -217,7 +217,7 @@ export default function ServicesPage() {
           <div className="container-wide">
             <div className="grid lg:grid-cols-12 gap-12">
               <div className="lg:col-span-5">
-                <div className="sticky top-28">
+                <div className="sticky top-header-gap">
                   <h2 className="heading-2 mb-3">{sentenceCase(service.title)}</h2>
                   <p className="body-large italic text-steel">{service.tagline}</p>
                 </div>

@@ -168,7 +168,7 @@ export default function ReadinessMethodPage() {
           <div className="container-wide">
             <div className="grid lg:grid-cols-12 gap-12">
               <div className="lg:col-span-4">
-                <div className="sticky top-28">
+                <div className="sticky top-header-gap">
                   <p className="numeral text-[56px] mb-6">{pillar.number}</p>
                   <h2 className="heading-2 mb-3">{sentenceCase(pillar.title)}</h2>
                 </div>

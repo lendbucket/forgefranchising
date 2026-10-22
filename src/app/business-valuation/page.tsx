@@ -198,7 +198,7 @@ export default function BusinessValuationPage() {
             </aside>
 
             <div className="lg:col-span-9 min-w-0 space-y-24 max-[720px]:space-y-16">
-              <article id="what-it-is" className="scroll-mt-28">
+              <article id="what-it-is" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">What valuation means when you plan to sell</h2>
                 <p className={p}>
                   A valuation for a sale answers a narrow question: what price range a qualified buyer is likely to pay, on
@@ -219,7 +219,7 @@ export default function BusinessValuationPage() {
                 </p>
               </article>
 
-              <article id="sde" className="scroll-mt-28">
+              <article id="sde" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">Seller&apos;s discretionary earnings</h2>
                 <p className={p}>
                   Seller&apos;s discretionary earnings, or SDE, is the total financial benefit the business produces for one
@@ -258,7 +258,7 @@ export default function BusinessValuationPage() {
                 </p>
               </article>
 
-              <article id="ebitda" className="scroll-mt-28">
+              <article id="ebitda" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">EBITDA multiples</h2>
                 <p className={p}>
                   EBITDA is earnings before interest, taxes, depreciation, and amortization. For valuation it is normalized in
@@ -275,7 +275,7 @@ export default function BusinessValuationPage() {
                 </p>
               </article>
 
-              <article id="asset" className="scroll-mt-28">
+              <article id="asset" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">Asset based approaches</h2>
                 <p className={p}>
                   Asset based methods value the business by what it owns rather than what it earns. They matter most for
@@ -298,7 +298,7 @@ export default function BusinessValuationPage() {
                 </p>
               </article>
 
-              <article id="market" className="scroll-mt-28">
+              <article id="market" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">Market comparables</h2>
                 <p className={p}>
                   The market approach looks at what buyers have paid for similar businesses. For private companies the data
@@ -321,7 +321,7 @@ export default function BusinessValuationPage() {
                 </p>
               </article>
 
-              <article id="factors" className="scroll-mt-28">
+              <article id="factors" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">The factors that move value up or down</h2>
                 <p className={p}>
                   Two businesses with the same earnings can sell for very different prices. The difference comes from how
@@ -345,7 +345,7 @@ export default function BusinessValuationPage() {
                 </p>
               </article>
 
-              <article id="service" className="scroll-mt-28">
+              <article id="service" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">Our small business valuation services: The broker opinion of value</h2>
                 <p className={p}>
                   Forge provides small business valuation services in the form of a broker opinion of value. It is the
@@ -394,7 +394,7 @@ export default function BusinessValuationPage() {
                 </p>
               </article>
 
-              <article id="appraisal" className="scroll-mt-28">
+              <article id="appraisal" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">When you need a certified appraisal instead</h2>
                 <p className={p}>
                   A certified appraisal is a formal valuation prepared by a credentialed business appraiser under recognized
@@ -434,12 +434,12 @@ export default function BusinessValuationPage() {
 
               <BrokerageNotice />
 
-              <section id="faq" className="scroll-mt-28 pt-4">
+              <section id="faq" className="scroll-mt-header pt-4">
                 <h2 className="heading-2 mb-8">Questions about business valuation services</h2>
                 <FAQList faqs={faqs} />
               </section>
 
-              <section id="inquiry" className="scroll-mt-28 pt-4">
+              <section id="inquiry" className="scroll-mt-header pt-4">
                 <h2 className="heading-2 mb-6">Request a broker opinion of value</h2>
                 <p className={p}>
                   Tell us about the business and why you want a valuation. We will reply with the documents we need and how

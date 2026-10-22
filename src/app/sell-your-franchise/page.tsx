@@ -172,7 +172,7 @@ export default function SellYourFranchisePage() {
             </aside>
 
             <div className="lg:col-span-9 min-w-0 space-y-24 max-[720px]:space-y-16">
-              <article id="start-here" className="scroll-mt-28">
+              <article id="start-here" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">Start with your franchise agreement and Item 17</h2>
                 <p className={p}>
                   Your franchise agreement contains a section on assignment or transfer. It governs what happens when you
@@ -193,7 +193,7 @@ export default function SellYourFranchisePage() {
                 </p>
               </article>
 
-              <article id="steps" className="scroll-mt-28">
+              <article id="steps" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">How to sell a franchise business, step by step</h2>
                 <p className={p}>
                   The steps below describe how to sell a franchise business in the order most franchise resales follow.
@@ -214,7 +214,7 @@ export default function SellYourFranchisePage() {
                 </ol>
               </article>
 
-              <article id="approval" className="scroll-mt-28">
+              <article id="approval" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">Franchisor approval and common transfer conditions</h2>
                 <p className={p}>
                   Franchisors approve transfers because the buyer will operate under their brand for years. Some
@@ -262,7 +262,7 @@ export default function SellYourFranchisePage() {
                 </p>
               </article>
 
-              <article id="right-of-first-refusal" className="scroll-mt-28">
+              <article id="right-of-first-refusal" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">The right of first refusal</h2>
                 <p className={p}>
                   Many franchise agreements give the franchisor a right of first refusal. When you receive a bona fide offer
@@ -278,7 +278,7 @@ export default function SellYourFranchisePage() {
                 </p>
               </article>
 
-              <article id="fees" className="scroll-mt-28">
+              <article id="fees" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">Transfer fees</h2>
                 <p className={p}>
                   Franchisors charge a fee to process a transfer, covering their review of the buyer and the cost of
@@ -293,7 +293,7 @@ export default function SellYourFranchisePage() {
                 </p>
               </article>
 
-              <article id="new-owner" className="scroll-mt-28">
+              <article id="new-owner" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">What the franchisor requires of the new owner</h2>
                 <p className={p}>
                   The franchisor reviews the buyer much as it would review a new franchisee. Expect it to request a
@@ -315,7 +315,7 @@ export default function SellYourFranchisePage() {
                 </p>
               </article>
 
-              <article id="valuation" className="scroll-mt-28">
+              <article id="valuation" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">How a franchise unit is valued</h2>
                 <p className={p}>
                   A franchise unit is valued on the same foundation as any small business: the earnings it produces for an
@@ -353,7 +353,7 @@ export default function SellYourFranchisePage() {
                 </ul>
               </article>
 
-              <article id="timing" className="scroll-mt-28">
+              <article id="timing" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">Timing depends on the franchisor&apos;s process</h2>
                 <p className={p}>
                   A franchise resale has every step of an independent sale plus the franchisor&apos;s review. How long that
@@ -370,12 +370,12 @@ export default function SellYourFranchisePage() {
 
               <BrokerageNotice />
 
-              <section id="faq" className="scroll-mt-28 pt-4">
+              <section id="faq" className="scroll-mt-header pt-4">
                 <h2 className="heading-2 mb-8">Questions from franchise owners</h2>
                 <FAQList faqs={faqs} />
               </section>
 
-              <section id="inquiry" className="scroll-mt-28">
+              <section id="inquiry" className="scroll-mt-header">
                 <IntakeForm
                   inquiryType="franchise-seller"
                   heading="Talk to us about selling your franchise"

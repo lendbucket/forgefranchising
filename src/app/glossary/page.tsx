@@ -423,7 +423,7 @@ export default function GlossaryPage() {
       </section>
 
       {/* Jump-to-Letter Navigation */}
-      <section className="bg-stone border-b border-line sticky top-[68px] min-[1141px]:top-[88px] z-40">
+      <section className="bg-stone border-b border-line sticky top-header z-40">
         <div className="wrap py-4">
           <nav
             aria-label="Alphabetical navigation"

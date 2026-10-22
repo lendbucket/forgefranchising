@@ -275,7 +275,7 @@ export default function BecomeAFranchisorPage() {
 
             <div className="lg:col-span-9 space-y-16">
               {steps.map((step, i) => (
-                <article key={step.id} id={step.id} className="scroll-mt-28">
+                <article key={step.id} id={step.id} className="scroll-mt-header">
                   <p className="numeral text-[56px] mb-6">
                     {String(i + 1).padStart(2, '0')}
                   </p>
@@ -305,7 +305,7 @@ export default function BecomeAFranchisorPage() {
                 </article>
               ))}
 
-              <section id="faq" className="scroll-mt-28 pt-4">
+              <section id="faq" className="scroll-mt-header pt-4">
                 <h2 className="heading-3 mb-8">Questions about becoming a franchisor</h2>
                 <FAQList faqs={faqs} />
               </section>

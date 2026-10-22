@@ -241,7 +241,7 @@ export default function SellYourBusinessPage() {
             </aside>
 
             <div className="lg:col-span-9 min-w-0 space-y-24 max-[720px]:space-y-16">
-              <section id="process" className="scroll-mt-28">
+              <section id="process" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">How a business sale works, from first call to closing</h2>
                 <p className={bodyText}>
                   Every sale is different in its details, but the order of work is consistent. Each stage below has to be
@@ -274,7 +274,7 @@ export default function SellYourBusinessPage() {
                 </p>
               </section>
 
-              <section id="broker-role" className="scroll-mt-28">
+              <section id="broker-role" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">What a business broker does and does not do</h2>
                 <p className={bodyText}>
                   A business broker represents the seller in finding a buyer and getting a transaction to closing. The
@@ -316,7 +316,7 @@ export default function SellYourBusinessPage() {
                 </p>
               </section>
 
-              <section id="confidentiality" className="scroll-mt-28">
+              <section id="confidentiality" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">Keeping the sale private until it closes</h2>
                 <p className={bodyText}>
                   A rumor that the business is for sale can cost you employees, customers, and negotiating position before
@@ -353,7 +353,7 @@ export default function SellYourBusinessPage() {
                 </p>
               </section>
 
-              <section id="buyer-qualification" className="scroll-mt-28">
+              <section id="buyer-qualification" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">How buyers are qualified</h2>
                 <p className={bodyText}>
                   Many inquiries on a business for sale come from people who are not in a position to close. Qualification
@@ -383,7 +383,7 @@ export default function SellYourBusinessPage() {
                 </p>
               </section>
 
-              <section id="seller-preparation" className="scroll-mt-28">
+              <section id="seller-preparation" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">What the seller prepares</h2>
                 <p className={bodyText}>
                   Buyers pay for what they can verify. The documents below are what buyers, their advisors, and lenders
@@ -407,7 +407,7 @@ export default function SellYourBusinessPage() {
                 </p>
               </section>
 
-              <section id="value" className="scroll-mt-28">
+              <section id="value" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">Setting the asking price</h2>
                 <p className={bodyText}>
                   The asking price comes from evidence: the earnings the business produces for an owner, the risks a
@@ -426,7 +426,7 @@ export default function SellYourBusinessPage() {
                 </p>
               </section>
 
-              <section id="franchise-owners" className="scroll-mt-28">
+              <section id="franchise-owners" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">Selling a franchised location</h2>
                 <p className={bodyText}>
                   If your business operates under a franchise agreement, the franchisor is part of the sale. Most
@@ -445,7 +445,7 @@ export default function SellYourBusinessPage() {
                 </p>
               </section>
 
-              <section id="how-we-work" className="scroll-mt-28">
+              <section id="how-we-work" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">How Forge represents sellers</h2>
                 <p className={bodyText}>
                   Forge represents owners of Texas businesses under a written engagement agreement. Before you sign, we
@@ -455,7 +455,7 @@ export default function SellYourBusinessPage() {
                 <BrokerageNotice className="mt-8" />
               </section>
 
-              <section id="faq" className="scroll-mt-28 pt-4">
+              <section id="faq" className="scroll-mt-header pt-4">
                 <h2 className="heading-2 mb-8">Questions from owners preparing to sell</h2>
                 <FAQList faqs={faqs} />
               </section>
@@ -464,7 +464,7 @@ export default function SellYourBusinessPage() {
         </div>
       </section>
 
-      <section id="inquiry" className="bg-white scroll-mt-28">
+      <section id="inquiry" className="bg-white scroll-mt-header">
         <div className="container-wide section-padding">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
             <div className="lg:col-span-5">

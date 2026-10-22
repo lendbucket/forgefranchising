@@ -67,7 +67,7 @@ export function GlossaryTerms({
   return (
     <>
       {letters.map((letter) => (
-        <div key={letter} id={`letter-${letter}`} className="mb-16 last:mb-0 max-[720px]:mb-12 scroll-mt-[160px]">
+        <div key={letter} id={`letter-${letter}`} className="mb-16 last:mb-0 max-[720px]:mb-12 scroll-mt-header-bar">
           <span
             className="block font-display text-[44px] font-bold leading-none text-graphite mb-6"
             style={{ letterSpacing: '-0.05em' }}
@@ -81,7 +81,7 @@ export function GlossaryTerms({
                 <article
                   key={term.slug}
                   id={term.slug}
-                  className="scroll-mt-[160px] border-b border-line"
+                  className="scroll-mt-header-bar border-b border-line"
                 >
                   <button
                     type="button"

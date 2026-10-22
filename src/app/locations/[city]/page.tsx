@@ -325,7 +325,7 @@ export default async function CityPage({ params }: Props) {
 
             {/* Right Sidebar */}
             <div className="lg:col-span-1 min-w-0">
-              <div className="lg:sticky lg:top-24 space-y-6">
+              <div className="lg:sticky top-header-gap space-y-6">
                 {/* Assessment CTA Card */}
                 <div className="card bg-stone border-stone">
                   <h3 className="heading-4 mb-3">Is your business ready to franchise?</h3>

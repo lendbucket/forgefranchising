@@ -118,6 +118,7 @@ export default async function StateFranchiseLawPage({ params }: Props) {
       <section className="bg-graphite surface-dark">
         <div className="container-wide section-padding">
           <Breadcrumbs
+            withSchema={false}
             items={[
               { label: 'Franchise Laws', href: '/franchise-laws' },
               { label: stateData.name },
@@ -282,7 +283,7 @@ export default async function StateFranchiseLawPage({ params }: Props) {
 
             {/* Sidebar */}
             <div className="lg:col-span-1">
-              <div className="card lg:sticky lg:top-24">
+              <div className="card lg:sticky top-header-gap">
                 <h3 className="heading-4 mb-6">Regulatory information</h3>
                 <dl className="border-t border-graphite">
                   <div className="py-4 border-b border-line">

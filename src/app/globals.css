@@ -17,6 +17,19 @@
    */
   :root {
     --accent: 185 64 28;
+    /* Sticky header height: 76px on phones, 92px on tablets, 104px from 1140px.
+       Every sticky offset and anchor margin reads this value. */
+    --header-h: 76px;
+  }
+  @media (min-width: 720px) {
+    :root {
+      --header-h: 92px;
+    }
+  }
+  @media (min-width: 1140px) {
+    :root {
+      --header-h: 104px;
+    }
   }
   .bg-graphite,
   .bg-graphite-deep,
@@ -38,7 +51,11 @@
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
     max-width: 100%;
-    /* Anchored sections clear the 88px sticky header. */
+    /* Anchored sections clear the sticky header. */
+    scroll-padding-top: calc(var(--header-h) + 16px);
+  }
+  /* The proposal page has no site header and keeps its original offset. */
+  html:has(.proposal-root) {
     scroll-padding-top: 104px;
   }
 
@@ -609,4 +626,32 @@ nav[aria-label="Breadcrumb"] a {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
+}
+
+/* Offsets that follow the sticky header height (--header-h). */
+.top-header {
+  top: var(--header-h);
+}
+.top-header-gap {
+  top: calc(var(--header-h) + 24px);
+}
+/* html already pads anchors by the header height plus 16px (scroll-padding-top),
+   and scroll margins add to it, so these only add the extra room needed. */
+.scroll-mt-header {
+  scroll-margin-top: 72px;
+}
+/* From 1024px the table of contents is a sidebar, not a chip row under the header. */
+@media (min-width: 1024px) {
+  .scroll-mt-header {
+    scroll-margin-top: 8px;
+  }
+}
+/* Anchors that also sit under a sticky chip row (blog contents, glossary letters). */
+.scroll-mt-header-bar {
+  scroll-margin-top: 72px;
+}
+@media (min-width: 1280px) {
+  .scroll-mt-header-bar.xl-no-bar {
+    scroll-margin-top: 16px;
+  }
 }

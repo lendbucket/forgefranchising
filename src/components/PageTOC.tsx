@@ -15,7 +15,7 @@ export function PageTOC({ items, title = 'On this page' }: { items: TOCItem[]; t
     <>
       <nav
         aria-label={title}
-        className="lg:hidden sticky top-[68px] z-30 -mx-5 min-[721px]:-mx-14 mb-10 bg-white border-y border-line [contain:inline-size]"
+        className="lg:hidden sticky top-header z-30 -mx-5 min-[721px]:-mx-14 mb-10 bg-white border-y border-line [contain:inline-size]"
       >
         <ol className="flex gap-2 overflow-x-auto px-5 min-[721px]:px-14 py-2.5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {items.map((item) => (
@@ -30,7 +30,7 @@ export function PageTOC({ items, title = 'On this page' }: { items: TOCItem[]; t
           ))}
         </ol>
       </nav>
-      <nav aria-label={title} className="hidden lg:block sticky top-28 max-h-[calc(100vh-8rem)] overflow-y-auto">
+      <nav aria-label={title} className="hidden lg:block sticky top-header-gap max-h-[calc(100vh_-_var(--header-h)_-_48px)] overflow-y-auto">
         <p className="text-sm font-semibold text-graphite mb-3">{title}</p>
         <ol className="border-t border-line">
           {items.map((item, i) => (

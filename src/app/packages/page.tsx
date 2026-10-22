@@ -190,6 +190,11 @@ export default function PackagesPage() {
                 className="card flex flex-col"
               >
                 <div className="mb-6">
+                  {tier.popular && (
+                    <span className="inline-flex items-center min-h-[28px] px-3 mb-4 bg-ember-fill text-graphite text-sm font-semibold">
+                      Recommended
+                    </span>
+                  )}
                   <h2 className="heading-2 mb-2">{tier.name}</h2>
                   <p className="text-accent font-semibold text-sm">{tier.tagline}</p>
                 </div>

@@ -225,7 +225,7 @@ export default function BuyABusinessPage() {
             </aside>
 
             <div className="lg:col-span-9 min-w-0 space-y-24 max-[720px]:space-y-16">
-              <article id="overview" className="scroll-mt-28">
+              <article id="overview" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">How buying a business in Texas works</h2>
                 <p className={p}>
                   Buying an existing company means buying a record. Unlike a startup, the business has customers, staff,
@@ -248,7 +248,7 @@ export default function BuyABusinessPage() {
                 </p>
               </article>
 
-              <article id="process" className="scroll-mt-28">
+              <article id="process" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">The buying process, step by step</h2>
                 <p className={p}>
                   The order below is the order most acquisitions follow. Some steps overlap in practice, for example
@@ -269,7 +269,7 @@ export default function BuyABusinessPage() {
                 </ol>
               </article>
 
-              <article id="financing" className="scroll-mt-28">
+              <article id="financing" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">Financing the purchase</h2>
                 <p className={p}>
                   Most acquisitions are financed with a combination of sources, usually called the capital stack: senior
@@ -312,7 +312,7 @@ export default function BuyABusinessPage() {
                 </p>
               </article>
 
-              <article id="due-diligence" className="scroll-mt-28">
+              <article id="due-diligence" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">What due diligence should cover</h2>
                 <p className={p}>
                   Due diligence is the buyer&apos;s work, done with the buyer&apos;s own advisors. Your CPA tests the
@@ -335,7 +335,7 @@ export default function BuyABusinessPage() {
                 </p>
               </article>
 
-              <article id="texas" className="scroll-mt-28">
+              <article id="texas" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">Texas considerations for buyers</h2>
                 <p className={p}>
                   A few state specific items come up on most Texas acquisitions. Your attorney and CPA should confirm how
@@ -372,7 +372,7 @@ export default function BuyABusinessPage() {
                 </ul>
               </article>
 
-              <article id="opportunities" className="scroll-mt-28">
+              <article id="opportunities" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">How Forge shares current opportunities</h2>
                 <p className={p}>
                   Forge does not post businesses for sale on this site. The owners we work with need their sale kept
@@ -398,12 +398,12 @@ export default function BuyABusinessPage() {
 
               <BrokerageNotice />
 
-              <section id="faq" className="scroll-mt-28 pt-4">
+              <section id="faq" className="scroll-mt-header pt-4">
                 <h2 className="heading-2 mb-8">Questions from buyers</h2>
                 <FAQList faqs={faqs} />
               </section>
 
-              <section id="inquiry" className="scroll-mt-28">
+              <section id="inquiry" className="scroll-mt-header">
                 <IntakeForm
                   inquiryType="buyer"
                   heading="Buyer profile"

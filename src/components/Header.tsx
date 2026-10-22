@@ -106,19 +106,19 @@ export function Header() {
   return (
     <>
       <header ref={headerRef} className="sticky top-0 z-50 bg-graphite safe-top" style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
-        <div className="wrap flex items-center justify-between gap-6 h-[68px] min-[1141px]:h-[88px]">
+        <div className="wrap flex items-center justify-between gap-6 max-[1279px]:gap-4 h-[var(--header-h)]">
           <Link href="/" aria-label="Forge Franchising Group home" className="flex flex-shrink-0 items-center">
             <Image
               src="/forge-franchising-logo-white.png"
               alt="Forge Franchising Group"
               width={900}
               height={405}
-              className="h-9 min-[1141px]:h-11 w-auto"
+              className="h-12 min-[720px]:h-14 min-[1140px]:h-16 w-auto"
               priority
             />
           </Link>
 
-          <nav aria-label="Primary" className="hidden min-[1141px]:flex items-stretch h-[88px]">
+          <nav aria-label="Primary" className="hidden min-[1140px]:flex items-stretch h-[var(--header-h)]">
             {NAV_LINKS.map((group) => {
               const isOpen = openGroup === group.label
               return (
@@ -135,7 +135,7 @@ export function Header() {
                       setOpenGroup(group.label)
                     }
                   }}
-                  className="flex items-center gap-1.5 h-full px-4 text-[15px] font-medium text-white whitespace-nowrap transition-shadow duration-200"
+                  className="flex items-center gap-1.5 h-full px-4 max-[1279px]:px-2.5 text-[15px] max-[1279px]:text-[14px] font-medium text-white whitespace-nowrap transition-shadow duration-200"
                   style={{ boxShadow: `inset 0 -3px 0 ${underlined === group.label ? '#E4572E' : 'transparent'}` }}
                 >
                   {group.label}
@@ -150,14 +150,14 @@ export function Header() {
           <div className="flex items-center gap-2">
             <Link
               href="/contact"
-              className="hidden min-[721px]:inline-flex items-center justify-center min-h-[46px] px-[22px] text-sm font-semibold bg-white text-graphite hover:bg-[#ECEAE6] transition-colors"
+              className="hidden min-[720px]:inline-flex items-center justify-center min-h-[46px] px-[22px] text-sm font-semibold bg-white text-graphite hover:bg-[#ECEAE6] transition-colors"
             >
               Contact us
             </Link>
             <button
               type="button"
               onClick={() => setMobileOpen(true)}
-              className="min-[1141px]:hidden flex items-center justify-center w-11 h-11 text-white"
+              className="min-[1140px]:hidden flex items-center justify-center w-11 h-11 text-white"
               aria-label="Open menu"
               aria-expanded={mobileOpen}
               aria-controls="mobile-menu"
@@ -171,7 +171,7 @@ export function Header() {
 
         {/* Mega menu */}
         {current && (
-          <div id="mega-menu" className="hidden min-[1141px]:block absolute left-0 right-0 top-full bg-white" style={{ boxShadow: '0 40px 80px rgba(0, 0, 0, 0.25)' }}>
+          <div id="mega-menu" className="hidden min-[1140px]:block absolute left-0 right-0 top-full bg-white" style={{ boxShadow: '0 40px 80px rgba(0, 0, 0, 0.25)' }}>
             <div className="wrap grid grid-cols-12 gap-14 pt-14 pb-16">
               <div className="col-span-4 bg-graphite text-white p-9">
                 <p className="font-display text-[30px] font-bold leading-[1.05] mb-3" style={{ letterSpacing: '-0.03em' }}>
@@ -213,9 +213,9 @@ export function Header() {
           className="fixed inset-0 z-[60] bg-graphite text-white flex flex-col safe-top"
           style={{ height: '100dvh' }}
         >
-          <div className="flex items-center justify-between h-[68px] px-5 flex-shrink-0" style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
+          <div className="flex items-center justify-between h-[76px] px-5 flex-shrink-0" style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
             <Link href="/" aria-label="Forge Franchising Group home" className="flex items-center" onClick={() => setMobileOpen(false)}>
-              <Image src="/forge-franchising-logo-white.png" alt="Forge Franchising Group" width={900} height={405} className="h-9 w-auto" />
+              <Image src="/forge-franchising-logo-white.png" alt="Forge Franchising Group" width={900} height={405} className="h-12 w-auto" />
             </Link>
             <button
               type="button"

@@ -168,7 +168,7 @@ export default function HowItWorksPage() {
           <div className="container-wide">
             <div className="grid lg:grid-cols-12 gap-12">
               <div className="lg:col-span-4">
-                <div className="sticky top-28">
+                <div className="sticky top-header-gap">
                   <p className="numeral text-[56px] mb-6">{phase.number}</p>
                   <h2 className="heading-2 mb-3">{phase.title}</h2>
                   <p className="text-steel text-sm mb-4">Timeline: {phase.duration}</p>

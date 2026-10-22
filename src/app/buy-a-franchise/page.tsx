@@ -201,7 +201,7 @@ export default function BuyAFranchisePage() {
             </aside>
 
             <div className="lg:col-span-9 min-w-0 space-y-24 max-[720px]:space-y-16">
-              <article id="how-we-help" className="scroll-mt-28">
+              <article id="how-we-help" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">How Forge helps franchise buyers</h2>
                 <p className={p}>
                   Forge builds franchise systems for franchisors, which means we work with the documents, fee structures,
@@ -216,7 +216,7 @@ export default function BuyAFranchisePage() {
                 </p>
               </article>
 
-              <article id="fit" className="scroll-mt-28">
+              <article id="fit" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">Start with fit: Goals, capital, and role</h2>
                 <p className={p}>
                   Before comparing brands, settle three questions about yourself. The answers remove most of the market
@@ -244,7 +244,7 @@ export default function BuyAFranchisePage() {
                 </p>
               </article>
 
-              <article id="questions" className="scroll-mt-28">
+              <article id="questions" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">Industry and unit economics questions to ask</h2>
                 <p className={p}>
                   Once a brand fits your profile, look at the industry and at how a single unit makes money. Ask the
@@ -274,7 +274,7 @@ export default function BuyAFranchisePage() {
                 </p>
               </article>
 
-              <article id="fdd-rule" className="scroll-mt-28">
+              <article id="fdd-rule" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">The 14 day FDD rule</h2>
                 <p className={p}>
                   The FTC Franchise Rule requires a franchisor to give you its Franchise Disclosure Document at least 14
@@ -292,7 +292,7 @@ export default function BuyAFranchisePage() {
                 </p>
               </article>
 
-              <article id="reading-the-fdd" className="scroll-mt-28">
+              <article id="reading-the-fdd" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">Reading the FDD: The items that matter most to a buyer</h2>
                 <p className={p}>
                   The FDD has 23 items in a fixed order, followed by exhibits that include the franchise agreement and the
@@ -316,7 +316,7 @@ export default function BuyAFranchisePage() {
                 </p>
               </article>
 
-              <article id="validation" className="scroll-mt-28">
+              <article id="validation" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">Validate with current and former franchisees</h2>
                 <p className={p}>
                   Validation means talking to the people who already bought the franchise. Item 20 gives you the contact
@@ -352,7 +352,7 @@ export default function BuyAFranchisePage() {
                 </p>
               </article>
 
-              <article id="before-signing" className="scroll-mt-28">
+              <article id="before-signing" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">Before you sign: Attorney and CPA review</h2>
                 <p className={p}>
                   We recommend that every buyer have a franchise attorney review the FDD and the franchise agreement
@@ -369,7 +369,7 @@ export default function BuyAFranchisePage() {
                 </p>
               </article>
 
-              <article id="forge-franchise" className="scroll-mt-28">
+              <article id="forge-franchise" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">Interested in owning a Forge franchise?</h2>
                 <p className={p}>
                   This buyer service does not sell Forge franchises. It helps you evaluate brands offered by other
@@ -379,12 +379,12 @@ export default function BuyAFranchisePage() {
                 </p>
               </article>
 
-              <section id="faq" className="scroll-mt-28 pt-4">
+              <section id="faq" className="scroll-mt-header pt-4">
                 <h2 className="heading-2 mb-8">Questions from franchise buyers</h2>
                 <FAQList faqs={faqs} />
               </section>
 
-              <section id="inquiry" className="scroll-mt-28 space-y-8">
+              <section id="inquiry" className="scroll-mt-header space-y-8">
                 <CompensationDisclosure />
                 <BrokerageNotice />
                 <IntakeForm

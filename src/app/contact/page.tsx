@@ -533,7 +533,7 @@ export default function ContactPage() {
 
             {/* Info Column */}
             <div className="lg:col-span-2">
-              <div className="sticky top-24 space-y-8">
+              <div className="sticky top-header-gap space-y-8">
                 <div className="card">
                   <h3 className="heading-4 mb-4">What happens next</h3>
                   <ol className="space-y-4">

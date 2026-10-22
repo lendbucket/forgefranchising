@@ -32,7 +32,7 @@ const covers = [
 const linkClass = 'text-ember-text underline underline-offset-[3px] decoration-1 hover:decoration-2'
 
 /** Headings clear the sticky header and the mobile contents row. */
-const headingScroll = 'scroll-mt-[144px] min-[1141px]:scroll-mt-[168px] xl:scroll-mt-[120px]'
+const headingScroll = 'scroll-mt-header-bar xl-no-bar'
 
 type Heading = { id: string; text: string; level: number }
 
@@ -299,7 +299,7 @@ function TableOfContents({ headings, activeId }: { headings: Heading[]; activeId
   if (headings.length === 0) return null
 
   return (
-    <nav aria-label="On this page" className="sticky top-28 max-h-[calc(100vh-8rem)] overflow-y-auto">
+    <nav aria-label="On this page" className="sticky top-header-gap max-h-[calc(100vh_-_var(--header-h)_-_48px)] overflow-y-auto">
       <p className="text-sm font-semibold text-graphite mb-3">
         On this page
       </p>
@@ -334,7 +334,7 @@ function TableOfContentsChips({ headings, activeId }: { headings: Heading[]; act
   return (
     <nav
       aria-label="On this page"
-      className="xl:hidden sticky top-[68px] min-[1141px]:top-[88px] z-30 bg-white border-y border-line mb-10 [contain:inline-size]"
+      className="xl:hidden sticky top-header z-30 bg-white border-y border-line mb-10 [contain:inline-size]"
     >
       <ol className="flex gap-2 overflow-x-auto py-2.5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {sections.map((h) => (

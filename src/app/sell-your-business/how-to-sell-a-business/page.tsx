@@ -399,7 +399,7 @@ export default function HowToSellABusinessPage() {
             </aside>
 
             <div className="lg:col-span-9 min-w-0 space-y-24 max-[720px]:space-y-16">
-              <section id="overview" className="scroll-mt-28">
+              <section id="overview" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">How to sell my business: The short version</h2>
                 <p className={bodyText}>
                   Owners who ask how to sell my business are usually asking two questions at once: what the steps are,
@@ -424,7 +424,7 @@ export default function HowToSellABusinessPage() {
               </section>
 
               {steps.map((step, i) => (
-                <article key={step.id} id={step.id} className="scroll-mt-28">
+                <article key={step.id} id={step.id} className="scroll-mt-header">
                   <p className="numeral text-[56px] mb-6">{String(i + 1).padStart(2, '0')}</p>
                   <h2 className="heading-2 mb-6">{step.title}</h2>
                   {step.what.map((p) => (
@@ -468,7 +468,7 @@ export default function HowToSellABusinessPage() {
                 </article>
               ))}
 
-              <section id="advisors" className="scroll-mt-28">
+              <section id="advisors" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">Bring in an attorney and a CPA early</h2>
                 <p className={bodyText}>
                   This guide does not give tax or legal advice, and neither does a business broker. The structure of a
@@ -497,7 +497,7 @@ export default function HowToSellABusinessPage() {
                 <BrokerageNotice className="mt-8" />
               </section>
 
-              <section id="faq" className="scroll-mt-28 pt-4">
+              <section id="faq" className="scroll-mt-header pt-4">
                 <h2 className="heading-2 mb-8">Questions about deal terms and the sale process</h2>
                 <FAQList faqs={faqs} />
               </section>
@@ -506,7 +506,7 @@ export default function HowToSellABusinessPage() {
         </div>
       </section>
 
-      <section id="inquiry" className="bg-white scroll-mt-28">
+      <section id="inquiry" className="bg-white scroll-mt-header">
         <div className="container-wide section-padding">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
             <div className="lg:col-span-5">

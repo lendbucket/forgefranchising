@@ -176,7 +176,7 @@ export default function TexasBusinessBrokerPage() {
             </aside>
 
             <div className="lg:col-span-9 min-w-0 space-y-24 max-[720px]:space-y-16">
-              <article id="what-broker-does" className="scroll-mt-28">
+              <article id="what-broker-does" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">What a business sale broker does in Texas</h2>
                 <p className={p}>
                   Selling a business is a sequence of tasks that most owners do once. A broker has done them many times and
@@ -200,7 +200,7 @@ export default function TexasBusinessBrokerPage() {
                 </p>
               </article>
 
-              <article id="choose" className="scroll-mt-28">
+              <article id="choose" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">How to choose a broker to sell my business</h2>
                 <p className={p}>
                   Owners who start by searching for a broker to sell my business usually find several names quickly. The
@@ -223,7 +223,7 @@ export default function TexasBusinessBrokerPage() {
                 </p>
               </article>
 
-              <article id="fees" className="scroll-mt-28">
+              <article id="fees" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">How fees and listing agreements are commonly structured</h2>
                 <h3 className="heading-4 mb-4">Success fee</h3>
                 <p className={p}>
@@ -250,7 +250,7 @@ export default function TexasBusinessBrokerPage() {
                 </p>
               </article>
 
-              <article id="buyers" className="scroll-mt-28">
+              <article id="buyers" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">How brokers qualify buyers</h2>
                 <p className={p}>
                   Buyer screening protects the owner&apos;s time and confidentiality. A buyer who cannot finance the purchase,
@@ -273,7 +273,7 @@ export default function TexasBusinessBrokerPage() {
                 </p>
               </article>
 
-              <article id="confidentiality" className="scroll-mt-28">
+              <article id="confidentiality" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">How a broker protects confidentiality</h2>
                 <p className={p}>
                   If employees, customers, or competitors learn that a business is for sale before the owner is ready, the
@@ -291,7 +291,7 @@ export default function TexasBusinessBrokerPage() {
                 </p>
               </article>
 
-              <article id="real-property" className="scroll-mt-28">
+              <article id="real-property" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">When real property is part of the sale</h2>
                 <p className={p}>
                   Many business sales include no real estate at all; the buyer takes over a lease. Others include the
@@ -306,7 +306,7 @@ export default function TexasBusinessBrokerPage() {
                 </p>
               </article>
 
-              <section id="markets" className="scroll-mt-28">
+              <section id="markets" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">Texas markets: Local economies and active buyers</h2>
                 <p className={p}>
                   Texas is a single state with several distinct regional economies. The local economic base shapes which
@@ -315,7 +315,7 @@ export default function TexasBusinessBrokerPage() {
                 </p>
 
                 <div className="mt-10 border-t border-graphite">
-                  <article id="san-antonio" className="scroll-mt-28 py-10 border-b border-line">
+                  <article id="san-antonio" className="scroll-mt-header py-10 border-b border-line">
                     <h3 className="heading-3 mb-5">San Antonio</h3>
                     <p className={p}>
                       San Antonio has a large military presence through Joint Base San Antonio,
@@ -333,7 +333,7 @@ export default function TexasBusinessBrokerPage() {
                     </p>
                   </article>
 
-                  <article id="corpus-christi" className="scroll-mt-28 py-10 border-b border-line">
+                  <article id="corpus-christi" className="scroll-mt-header py-10 border-b border-line">
                     <h3 className="heading-3 mb-5">Corpus Christi</h3>
                     <p className={p}>
                       The Port of Corpus Christi is the center of the local economy and a major gateway for energy exports,
@@ -351,7 +351,7 @@ export default function TexasBusinessBrokerPage() {
                     </p>
                   </article>
 
-                  <article id="houston" className="scroll-mt-28 py-10 border-b border-line">
+                  <article id="houston" className="scroll-mt-header py-10 border-b border-line">
                     <h3 className="heading-3 mb-5">Houston</h3>
                     <p className={p}>
                       Houston is the center of the American energy industry, with headquarters and major offices of oil and
@@ -369,7 +369,7 @@ export default function TexasBusinessBrokerPage() {
                     </p>
                   </article>
 
-                  <article id="dallas-fort-worth" className="scroll-mt-28 py-10 border-b border-line">
+                  <article id="dallas-fort-worth" className="scroll-mt-header py-10 border-b border-line">
                     <h3 className="heading-3 mb-5">Dallas Fort Worth</h3>
                     <p className={p}>
                       Dallas Fort Worth is a large and diverse metro with a heavy concentration of corporate headquarters,
@@ -386,7 +386,7 @@ export default function TexasBusinessBrokerPage() {
                     </p>
                   </article>
 
-                  <article id="austin" className="scroll-mt-28 py-10 border-b border-line">
+                  <article id="austin" className="scroll-mt-header py-10 border-b border-line">
                     <h3 className="heading-3 mb-5">Austin</h3>
                     <p className={p}>
                       Austin is the state capital, and state government is a major employer. The University of Texas at
@@ -412,12 +412,12 @@ export default function TexasBusinessBrokerPage() {
 
               <BrokerageNotice />
 
-              <section id="faq" className="scroll-mt-28 pt-4">
+              <section id="faq" className="scroll-mt-header pt-4">
                 <h2 className="heading-2 mb-8">Questions about working with a business broker</h2>
                 <FAQList faqs={faqs} />
               </section>
 
-              <section id="inquiry" className="scroll-mt-28 pt-4">
+              <section id="inquiry" className="scroll-mt-header pt-4">
                 <h2 className="heading-2 mb-6">Talk to Forge about selling your business</h2>
                 <p className={p}>
                   Tell us about the business and your plans. Inquiries are confidential, and we will reply with the

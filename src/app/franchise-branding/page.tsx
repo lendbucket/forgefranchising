@@ -194,7 +194,7 @@ export default function FranchiseBrandingPage() {
           <div className="container-wide">
             <div className="grid lg:grid-cols-12 gap-12">
               <div className="lg:col-span-4">
-                <div className="sticky top-28">
+                <div className="sticky top-header-gap">
                   <div className="numeral text-[56px] mb-6">{spoke.number}</div>
                   <h2 className="heading-2 mb-3">{spoke.title}</h2>
                   <p className="body-large">{spoke.summary}</p>
