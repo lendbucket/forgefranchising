@@ -45,3 +45,5 @@ next-env.d.ts
 .claude/
 brand-assets/
 qa-screenshots/
+public/logo-white-clean.png
+public/logo-white-original.png

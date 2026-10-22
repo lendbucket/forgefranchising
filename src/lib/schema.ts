@@ -51,11 +51,17 @@ export function organizationSchema(): SchemaNode {
       'Royalty Structures',
       'Franchise Consulting',
       'Franchise Sales Systems',
+      'Business Brokerage',
+      'Business Valuation',
+      'Franchise Resale',
     ],
     serviceType: [
       'Franchise Development',
       'Franchise Consulting',
       'Franchise Brokerage',
+      'Business Brokerage',
+      'Business Valuation',
+      'Franchise Resale',
     ],
     brand: {
       '@type': 'Brand',
@@ -139,11 +145,13 @@ export function serviceSchema({
   description,
   serviceType,
   catalog,
+  areaServed = { '@type': 'Country', name: 'United States' },
 }: {
   url: string
   name: string
   description: string
   serviceType?: string
+  areaServed?: SchemaNode
   catalog?: { name: string; items: { name: string; description: string; url?: string }[] }
 }): SchemaNode {
   const node: SchemaNode = {
@@ -153,10 +161,7 @@ export function serviceSchema({
     description,
     url,
     provider: { '@id': `${SITE_URL}/#organization` },
-    areaServed: {
-      '@type': 'Country',
-      name: 'United States',
-    },
+    areaServed,
   }
   if (serviceType) {
     node.serviceType = serviceType
@@ -334,6 +339,13 @@ export function localBusinessSchema({
       'Franchise Brokerage',
     ],
   }
+}
+
+// Texas, for brokerage services offered statewide.
+export const TEXAS_AREA: SchemaNode = {
+  '@type': 'State',
+  name: 'Texas',
+  containedInPlace: { '@type': 'Country', name: 'United States' },
 }
 
 // ==========================================================================

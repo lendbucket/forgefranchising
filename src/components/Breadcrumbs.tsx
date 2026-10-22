@@ -6,26 +6,32 @@ type BreadcrumbItem = {
   href?: string
 }
 
-export function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
+/**
+ * withSchema emits a standalone BreadcrumbList. Pages that already include
+ * breadcrumbSchema() in their @graph pass withSchema={false} to avoid a duplicate.
+ */
+export function Breadcrumbs({ items, withSchema = true }: { items: BreadcrumbItem[]; withSchema?: boolean }) {
   const allItems = [{ label: 'Home', href: '/' }, ...items]
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: allItems.map((item, index) => ({
-              '@type': 'ListItem',
-              position: index + 1,
-              name: item.label,
-              ...(item.href && { item: `${SITE_URL}${item.href}` }),
-            })),
-          }),
-        }}
-      />
+      {withSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'BreadcrumbList',
+              itemListElement: allItems.map((item, index) => ({
+                '@type': 'ListItem',
+                position: index + 1,
+                name: item.label,
+                ...(item.href && { item: `${SITE_URL}${item.href}` }),
+              })),
+            }),
+          }}
+        />
+      )}
       <nav aria-label="Breadcrumb" className="py-4">
         <ol className="flex items-center gap-2 text-sm text-steel">
           {allItems.map((item, index) => (

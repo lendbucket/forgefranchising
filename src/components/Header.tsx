@@ -14,6 +14,7 @@ const megaMenu = {
       { label: 'Is My Business Franchisable?', href: '/is-my-business-franchisable', desc: 'Free readiness assessment' },
       { label: 'Franchise Calculator', href: '/calculator', desc: 'Model your franchise economics' },
       { label: 'Readiness Method', href: '/readiness-method', desc: 'Our four-pillar franchise readiness assessment' },
+      { label: 'Become a Franchisor', href: '/become-a-franchisor', desc: 'Every step of building the franchisor company' },
       { label: 'Financing', href: '/financing', desc: 'Funding options for franchise development' },
       { label: 'Industries We Serve', href: '/industries', desc: 'Restaurants, salons, fitness, and more' },
     ],

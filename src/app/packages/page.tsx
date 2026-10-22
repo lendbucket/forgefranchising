@@ -171,7 +171,12 @@ export default function PackagesPage() {
               <Link href="/contact" className="text-accent font-semibold hover:underline">
                 free feasibility call
               </Link>{' '}
-              and we will recommend the right starting point.
+              and we will recommend the right starting point. Every step a new franchisor company goes
+              through is covered in our guide on{' '}
+              <Link href="/become-a-franchisor" className="text-accent font-semibold hover:underline">
+                how to become a franchisor
+              </Link>
+              .
             </p>
           </div>
         </div>

@@ -131,7 +131,12 @@ export default function HowItWorksPage() {
               meets the four foundational conditions for franchising. From there, our four-phase
               process moves you from validated concept to operating franchise system. Each phase
               produces the inputs the next one needs, which is why the order is not negotiable.
-              Skip feasibility and you draft an FDD around numbers that do not hold.
+              Skip feasibility and you draft an FDD around numbers that do not hold. For the franchisor
+              company you build along the way, from the legal entity to the support team, see{' '}
+              <Link href="/become-a-franchisor" className="text-accent font-semibold hover:underline">
+                how to become a franchisor
+              </Link>
+              .
             </p>
             <p className="body-large mb-8">
               Here is the whole sequence, with what each phase produces and how long it takes.

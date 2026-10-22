@@ -186,7 +186,11 @@ export default function ServicesPage() {
               <Link href="/how-it-works" className="text-accent font-semibold hover:underline">
                 how our process works
               </Link>{' '}
-              from start to finish.
+              from start to finish. For the franchisor company you build alongside the system, see{' '}
+              <Link href="/become-a-franchisor" className="text-accent font-semibold hover:underline">
+                how to become a franchisor
+              </Link>
+              .
             </p>
           </div>
 

@@ -164,7 +164,12 @@ export default function FranchiseBrandingPage() {
               <Link href="/readiness-method" className="text-accent font-semibold hover:underline">
                 Forge Franchise Readiness Method
               </Link>. If you have not assessed where your brand stands relative to the other
-              three pillars, start there.
+              three pillars, start there. To see where the brand system sits among the other steps of
+              building a franchisor company, read{' '}
+              <Link href="/become-a-franchisor" className="text-accent font-semibold hover:underline">
+                how to become a franchisor
+              </Link>
+              .
             </p>
 
             <KeyTakeaways
