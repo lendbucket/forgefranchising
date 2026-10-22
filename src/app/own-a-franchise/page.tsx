@@ -16,7 +16,7 @@ const IFA_OUTLOOK_URL = 'https://www.franchise.org/franchising-economic-outlook/
 
 const valueStackItems = [
   {
-    title: 'The Forge brand and reputation',
+    title: 'The Forge brand',
     description:
       'You launch under the Forge brand, not a generic certificate. Learn why brand is the product in franchising.',
   },
