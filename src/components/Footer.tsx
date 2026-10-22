@@ -45,8 +45,7 @@ export function Footer() {
             <p className="text-[15px] leading-[1.75] mb-5">{MISSION_STATEMENT}</p>
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="inline-block font-semibold text-white pb-0.5 hover:text-ember-hover transition-colors"
-              style={{ borderBottom: '2px solid #E4572E' }}
+              className="inline-flex items-center font-semibold text-white underline decoration-ember decoration-2 underline-offset-[6px] hover:text-ember-hover transition-colors"
             >
               {CONTACT_EMAIL}
             </a>

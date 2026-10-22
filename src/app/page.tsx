@@ -1,15 +1,8 @@
 import type { Viewport } from 'next'
-import Link from 'next/link'
-import Image from 'next/image'
 import { createMetadata } from '@/lib/metadata'
 import { SITE_URL } from '@/lib/constants'
 import { webPageSchema, renderSchema } from '@/lib/schema'
-import { SectionCTA } from '@/components/SectionCTA'
-import { ContinueLearning } from '@/components/ContinueLearning'
-import { GuidedPath } from '@/components/GuidedPath'
 import { HomeClient } from '@/components/HomeClient'
-import { CredibilityBand } from '@/components/CredibilityBand'
-import { BrokerageBand } from '@/components/BrokerageBand'
 
 export const metadata = createMetadata({
   title: 'Franchise Development, Operator Built',
@@ -50,17 +43,18 @@ const phases = [
   },
 ]
 
+// Line icons from design-reference/homepage-desktop.html.
 const industries = [
-  { name: 'Restaurants & Food', href: '/industries/restaurants' },
-  { name: 'Salons & Beauty', href: '/industries/salons-beauty' },
-  { name: 'Fitness & Gyms', href: '/industries/fitness' },
-  { name: 'Home Services', href: '/industries/home-services' },
-  { name: 'Health & Medical', href: '/industries/health-medical' },
-  { name: 'Retail', href: '/industries/retail' },
-  { name: 'Automotive', href: '/industries/automotive' },
-  { name: 'Childcare & Education', href: '/industries/childcare-education' },
-  { name: 'Cleaning', href: '/industries/cleaning' },
-  { name: 'Pet Care', href: '/industries/pet-care' },
+  { name: 'Restaurants & Food', href: '/industries/restaurants', icon: 'M7 3v8M5 3v4a2 2 0 004 0V3M7 11v10M17 21V3c-2 0-3 2-3 6v3h3' },
+  { name: 'Salons & Beauty', href: '/industries/salons-beauty', icon: 'M6 9a3 3 0 100-6 3 3 0 000 6zM6 21a3 3 0 100-6 3 3 0 000 6zM8.1 7.9L20 20M8.1 16.1L20 4' },
+  { name: 'Fitness & Gyms', href: '/industries/fitness', icon: 'M6 7v10M3 9.5v5M18 7v10M21 9.5v5M6 12h12' },
+  { name: 'Home Services', href: '/industries/home-services', icon: 'M3 11l9-7 9 7M5 9.5V20h14V9.5M10 20v-6h4v6' },
+  { name: 'Health & Medical', href: '/industries/health-medical', icon: 'M9 3h6v6h6v6h-6v6H9v-6H3V9h6z' },
+  { name: 'Retail', href: '/industries/retail', icon: 'M5 8h14l-1 13H6zM9 8V6a3 3 0 016 0v2' },
+  { name: 'Automotive', href: '/industries/automotive', icon: 'M3 16v-4l2.5-5h13l2.5 5v4zM3 16v3h3v-3M18 16v3h3v-3M7 12.5h1M16 12.5h1' },
+  { name: 'Childcare & Education', href: '/industries/childcare-education', icon: 'M4 4h7v7H4zM13 13h7v7h-7zM4 13h7v7H4zM13 4h7v7h-7z' },
+  { name: 'Cleaning', href: '/industries/cleaning', icon: 'M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8zM18.5 15l.9 2.1 2.1.9-2.1.9-.9 2.1-.9-2.1-2.1-.9 2.1-.9z' },
+  { name: 'Pet Care', href: '/industries/pet-care', icon: 'M8 9.5a2 2 0 100-4 2 2 0 000 4zM16 9.5a2 2 0 100-4 2 2 0 000 4zM4.5 14a2 2 0 100-4 2 2 0 000 4zM19.5 14a2 2 0 100-4 2 2 0 000 4zM12 21c-3 0-5-1.5-5-4s2.5-4 5-4 5 1.5 5 4-2 4-5 4z' },
 ]
 
 export default function HomePage() {
@@ -81,126 +75,7 @@ export default function HomePage() {
         }}
       />
 
-      {/* HERO: Full-bleed with centered logo, transparent header overlays this */}
-      <section
-        className="relative bg-graphite overflow-hidden"
-      >
-        {/* Background image: desktop right split */}
-        <div className="absolute inset-0 hidden lg:block">
-          <div className="absolute inset-y-0 right-0 w-1/2 hero-image-warm">
-            <Image
-              src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=85"
-              alt="Forge Franchising team planning a franchise development strategy in a modern office"
-              fill
-              className="object-cover hero-image-breathe"
-              priority
-              sizes="50vw"
-            />
-          </div>
-          <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-r from-graphite via-graphite/70 to-transparent z-10" />
-          <div className="absolute inset-y-0 right-0 w-1/2 mix-blend-multiply bg-steel/30" />
-        </div>
-
-        {/* Background image: mobile subtle overlay */}
-        <div className="absolute inset-0 lg:hidden">
-          <Image
-            src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=75"
-            alt="Forge Franchising franchise development consulting session"
-            fill
-            className="object-cover opacity-15 hero-image-breathe"
-            priority
-            sizes="100vw"
-          />
-        </div>
-
-        {/* Safe area spacer so content clears the status bar */}
-        <div className="relative z-10 safe-top" aria-hidden="true" />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 pt-24 sm:pt-28 lg:pt-32 pb-20 sm:pb-28 lg:pb-16">
-          {/* Centered animated logo: mobile and tablet only */}
-          <div className="flex justify-center mb-8 sm:mb-10 lg:hidden">
-            <Image
-              src="/forge-franchising-logo-white.png"
-              alt="Forge Franchising Group, franchise development and consulting company"
-              width={416}
-              height={193}
-              className="h-24 sm:h-28 w-auto hero-logo-animate"
-              style={{ objectFit: 'contain' }}
-              priority
-            />
-          </div>
-
-          {/* Hero copy: centered on mobile, left-aligned on desktop */}
-          <div className="max-w-3xl lg:max-w-2xl text-center lg:text-left mx-auto lg:mx-0">
-            <p className="text-accent text-xs sm:text-sm font-semibold uppercase mb-5 hero-entrance hero-entrance-1" style={{ letterSpacing: '0.22em' }}>
-              Build Stronger Franchises.
-            </p>
-            <h1 className="heading-1 text-white mb-6 text-balance hero-entrance hero-entrance-2">
-              Franchise Development for Owners Who Built Something Worth Replicating.
-            </h1>
-            <p className="text-lg sm:text-xl text-white/60 leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0 hero-entrance hero-entrance-3">
-              Forge is a franchise development firm that turns profitable, owner operated businesses into franchise brands that grow on other people's capital, in other people's markets, under your name.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start hero-entrance hero-entrance-4">
-              <Link href="/is-my-business-franchisable" className="btn-primary text-lg py-5 px-10">
-                Get Your Free Readiness Score
-              </Link>
-              <Link
-                href="/how-it-works"
-                className="inline-flex items-center justify-center px-10 py-5 border-[1.5px] border-white/60 text-white font-semibold hover:bg-white hover:text-graphite hover:border-white transition-all duration-200 text-lg active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-ember focus-visible:outline-offset-2"
-                style={{ borderRadius: '2px' }}
-              >
-                See the Process
-              </Link>
-            </div>
-            <p className="text-white/60 text-sm mt-4 hero-entrance hero-entrance-4 text-center lg:text-left">
-              Two minutes. Eight questions. No sales pitch.
-            </p>
-          </div>
-        </div>
-
-        {/* Credibility stat band */}
-        <CredibilityBand />
-      </section>
-
-      {/* Client-side interactive sections */}
       <HomeClient phases={phases} industries={industries} />
-
-      {/* Guided learning path */}
-      <GuidedPath
-        heading="New to Franchising? Start Here."
-        subheading="Five steps, each one building on the last. By the end you will know whether franchising fits your business and exactly what the path forward looks like."
-        steps={[
-          { step: 1, title: 'Find out if your business qualifies', description: 'Eight questions, two minutes, and you will know where you stand.', href: '/is-my-business-franchisable', time: '2 min' },
-          { step: 2, title: 'Understand the four phases', description: 'See how a proven business becomes a franchise brand, step by step.', href: '/how-it-works', time: '5 min read' },
-          { step: 3, title: 'Model your franchise economics', description: 'Plug in your numbers and see projected royalty income at 10, 25, or 50 units.', href: '/calculator', time: '3 min' },
-          { step: 4, title: 'Read the complete franchise guide', description: 'Feasibility through FDD filing and first franchise sale, all in one guide.', href: '/blog/how-to-franchise-your-business', time: '14 min read' },
-          { step: 5, title: 'Book your free feasibility call', description: 'Talk to our team. We will tell you honestly whether franchising is the right move.', href: '/contact', time: '30 min call' },
-        ]}
-      />
-
-      {/* Continue Learning */}
-      <ContinueLearning
-        heading="Explore by Topic"
-        links={[
-          { label: 'What Does It Actually Cost?', href: '/blog/cost-to-franchise-a-business', description: 'Real numbers on franchise development investment and what drives the price.' },
-          { label: 'Franchise Laws by State', href: '/franchise-laws', description: 'Registration states, filing states, and what each one requires before you sell.' },
-          { label: 'Browse All Industries', href: '/industries', description: 'How franchising works in restaurants, salons, fitness, home services, and more.' },
-        ]}
-      />
-
-      {/* Brokerage and buyer services */}
-      <BrokerageBand />
-
-      {/* Final CTA */}
-      <SectionCTA
-        heading="See What Your Business Looks Like as a Franchise"
-        body="Take our two-minute assessment and get a franchise readiness score with specific recommendations for your business. No cost, no obligation."
-        buttonText="Get Your Free Readiness Score"
-        buttonHref="/is-my-business-franchisable"
-        secondaryText="Or model your franchise economics with our calculator"
-        secondaryHref="/calculator"
-      />
     </>
   )
 }
