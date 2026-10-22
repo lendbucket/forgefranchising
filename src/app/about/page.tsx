@@ -2,6 +2,7 @@ import { createMetadata } from '@/lib/metadata'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
+import { BrokerageBand } from '@/components/BrokerageBand'
 import { OpenLoop } from '@/components/OpenLoop'
 import { KeyTakeaways } from '@/components/KeyTakeaways'
 import { MISSION_STATEMENT, SITE_URL } from '@/lib/constants'
@@ -158,6 +159,8 @@ export default function AboutPage() {
         href="/services"
         variant="section"
       />
+
+      <BrokerageBand />
 
       <ContinueLearning
         heading="Understand Our Approach"

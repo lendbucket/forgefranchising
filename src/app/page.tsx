@@ -9,6 +9,7 @@ import { ContinueLearning } from '@/components/ContinueLearning'
 import { GuidedPath } from '@/components/GuidedPath'
 import { HomeClient } from '@/components/HomeClient'
 import { CredibilityBand } from '@/components/CredibilityBand'
+import { BrokerageBand } from '@/components/BrokerageBand'
 
 export const metadata = createMetadata({
   title: 'Franchise Development, Operator Built',
@@ -188,6 +189,9 @@ export default function HomePage() {
           { label: 'Browse All Industries', href: '/industries', description: 'How franchising works in restaurants, salons, fitness, home services, and more.' },
         ]}
       />
+
+      {/* Brokerage and buyer services */}
+      <BrokerageBand />
 
       {/* Final CTA */}
       <SectionCTA
