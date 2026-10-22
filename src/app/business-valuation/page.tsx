@@ -24,7 +24,7 @@ export const metadata = createMetadata({
   path: PATH,
 })
 
-const p = 'text-steel leading-relaxed text-base sm:text-lg mb-5'
+const p = 'text-steel text-[17px] leading-relaxed mb-5'
 const link = 'text-accent font-semibold hover:underline'
 
 const addBacks = [
@@ -119,16 +119,16 @@ const faqs = [
 ]
 
 const toc = [
-  { id: 'what-it-is', label: 'What Valuation Means for a Sale' },
-  { id: 'sde', label: 'Seller\'s Discretionary Earnings' },
-  { id: 'ebitda', label: 'EBITDA Multiples' },
-  { id: 'asset', label: 'Asset Based Approaches' },
-  { id: 'market', label: 'Market Comparables' },
-  { id: 'factors', label: 'What Moves Value' },
-  { id: 'service', label: 'Our Small Business Valuation Services' },
-  { id: 'appraisal', label: 'When You Need a Certified Appraisal' },
+  { id: 'what-it-is', label: 'What valuation means for a sale' },
+  { id: 'sde', label: 'Seller\'s discretionary earnings' },
+  { id: 'ebitda', label: 'EBITDA multiples' },
+  { id: 'asset', label: 'Asset based approaches' },
+  { id: 'market', label: 'Market comparables' },
+  { id: 'factors', label: 'What moves value' },
+  { id: 'service', label: 'Our small business valuation services' },
+  { id: 'appraisal', label: 'When you need a certified appraisal' },
   { id: 'faq', label: 'Questions' },
-  { id: 'inquiry', label: 'Request an Opinion of Value' },
+  { id: 'inquiry', label: 'Request an opinion of value' },
 ]
 
 export default function BusinessValuationPage() {
@@ -159,13 +159,12 @@ export default function BusinessValuationPage() {
       />
 
       <section className="bg-graphite surface-dark">
-        <div className="container-wide section-padding !pb-12">
+        <div className="container-wide section-padding">
           <Breadcrumbs
             withSchema={false}
             items={[{ label: 'Sell Your Business', href: '/sell-your-business' }, { label: 'Business Valuation' }]}
           />
-          <div className="max-w-3xl">
-            <p className="eyebrow mb-4">Business Valuation</p>
+          <div className="max-w-[880px]">
             <h1 className="heading-1 mb-8">Business Valuation Services: How Buyers and Lenders Value a Small Business</h1>
             <p className="body-large mb-6">
               Our business valuation services start from the way buyers and lenders actually look at a small business. They
@@ -192,15 +191,15 @@ export default function BusinessValuationPage() {
       </section>
 
       <section className="bg-white">
-        <div className="container-wide px-4 sm:px-6 lg:px-8 pb-20 sm:pb-24">
+        <div className="container-wide section-padding">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
             <aside className="lg:col-span-3">
               <PageTOC items={toc} />
             </aside>
 
-            <div className="lg:col-span-9 space-y-16">
+            <div className="lg:col-span-9 min-w-0 space-y-24 max-[720px]:space-y-16">
               <article id="what-it-is" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">What Valuation Means When You Plan to Sell</h2>
+                <h2 className="heading-2 mb-6">What valuation means when you plan to sell</h2>
                 <p className={p}>
                   A valuation for a sale answers a narrow question: what price range a qualified buyer is likely to pay, on
                   terms a lender is likely to finance. That is different from what the business means to the owner, what it
@@ -221,7 +220,7 @@ export default function BusinessValuationPage() {
               </article>
 
               <article id="sde" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">Seller&apos;s Discretionary Earnings</h2>
+                <h2 className="heading-2 mb-6">Seller&apos;s discretionary earnings</h2>
                 <p className={p}>
                   Seller&apos;s discretionary earnings, or SDE, is the total financial benefit the business produces for one
                   full time owner operator. It starts with pretax net income from the tax return or financial statements and
@@ -235,11 +234,11 @@ export default function BusinessValuationPage() {
                   risk of the business, and that multiple comes from the market for comparable businesses, not from a formula.
                 </p>
                 <h3 className="heading-4 mb-4 mt-8">Standard add backs</h3>
-                <div className="space-y-4 mb-8">
+                <div className="border-t border-graphite mb-10">
                   {addBacks.map((a) => (
-                    <div key={a.term} className="bg-stone p-6" style={{ borderRadius: '0px' }}>
-                      <p className="text-xs font-semibold uppercase tracking-widest text-graphite mb-2">{a.term}</p>
-                      <p className="text-steel text-sm leading-relaxed">{a.text}</p>
+                    <div key={a.term} className="grid md:grid-cols-[240px_1fr] gap-2 md:gap-8 py-6 border-b border-line">
+                      <p className="heading-4">{a.term}</p>
+                      <p className="text-steel text-[15px] leading-relaxed">{a.text}</p>
                     </div>
                   ))}
                 </div>
@@ -260,7 +259,7 @@ export default function BusinessValuationPage() {
               </article>
 
               <article id="ebitda" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">EBITDA Multiples</h2>
+                <h2 className="heading-2 mb-6">EBITDA multiples</h2>
                 <p className={p}>
                   EBITDA is earnings before interest, taxes, depreciation, and amortization. For valuation it is normalized in
                   the same way as SDE, with nonrecurring and personal items removed, but with one important difference: the
@@ -277,7 +276,7 @@ export default function BusinessValuationPage() {
               </article>
 
               <article id="asset" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">Asset Based Approaches</h2>
+                <h2 className="heading-2 mb-6">Asset based approaches</h2>
                 <p className={p}>
                   Asset based methods value the business by what it owns rather than what it earns. They matter most for
                   businesses whose earnings are thin compared with their assets, and as a floor for any business with
@@ -300,7 +299,7 @@ export default function BusinessValuationPage() {
               </article>
 
               <article id="market" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">Market Comparables</h2>
+                <h2 className="heading-2 mb-6">Market comparables</h2>
                 <p className={p}>
                   The market approach looks at what buyers have paid for similar businesses. For private companies the data
                   comes from subscription transaction databases that collect reported sales of privately held businesses,
@@ -323,17 +322,17 @@ export default function BusinessValuationPage() {
               </article>
 
               <article id="factors" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">The Factors That Move Value Up or Down</h2>
+                <h2 className="heading-2 mb-6">The factors that move value up or down</h2>
                 <p className={p}>
                   Two businesses with the same earnings can sell for very different prices. The difference comes from how
                   confident a buyer and a lender are that the earnings will continue under a new owner. These are the factors
                   we review in every opinion.
                 </p>
-                <div className="grid sm:grid-cols-2 gap-4">
+                <div className="tile-grid md:grid-cols-2 mt-8">
                   {factors.map((f) => (
-                    <div key={f.term} className="bg-white p-6" style={{ borderRadius: '0px', border: '1px solid rgba(78, 90, 98, 0.18)', borderTop: '2px solid #1C1F23' }}>
-                      <p className="text-xs font-semibold uppercase tracking-widest text-graphite mb-2">{f.term}</p>
-                      <p className="text-steel text-sm leading-relaxed">{f.text}</p>
+                    <div key={f.term} className="card">
+                      <p className="heading-4 mb-3">{f.term}</p>
+                      <p className="text-steel text-[15px] leading-relaxed">{f.text}</p>
                     </div>
                   ))}
                 </div>
@@ -347,14 +346,14 @@ export default function BusinessValuationPage() {
               </article>
 
               <article id="service" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">Our Small Business Valuation Services: The Broker Opinion of Value</h2>
+                <h2 className="heading-2 mb-6">Our small business valuation services: The broker opinion of value</h2>
                 <p className={p}>
                   Forge provides small business valuation services in the form of a broker opinion of value. It is the
                   estimate a business broker prepares to show where a business is likely to price in the current market, based
                   on its financial records and on the factors buyers and lenders weigh.
                 </p>
-                <div className="bg-white p-6 sm:p-8 mb-8" style={{ borderRadius: '0px', border: '1px solid rgba(78, 90, 98, 0.18)', borderLeft: '3px solid #E4572E' }}>
-                  <p className="text-xs font-semibold uppercase tracking-widest text-graphite mb-3">Read this first</p>
+                <div className="card border-t-2 border-t-graphite max-[720px]:p-6 mb-8">
+                  <p className="text-sm font-semibold text-graphite mb-3">Read this first</p>
                   <p className="text-graphite font-semibold leading-relaxed mb-2">
                     A broker opinion of value is not a certified appraisal.
                   </p>
@@ -396,7 +395,7 @@ export default function BusinessValuationPage() {
               </article>
 
               <article id="appraisal" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">When You Need a Certified Appraisal Instead</h2>
+                <h2 className="heading-2 mb-6">When you need a certified appraisal instead</h2>
                 <p className={p}>
                   A certified appraisal is a formal valuation prepared by a credentialed business appraiser under recognized
                   professional standards. Credentials in the field include the Accredited Senior Appraiser designation from
@@ -436,14 +435,12 @@ export default function BusinessValuationPage() {
               <BrokerageNotice />
 
               <section id="faq" className="scroll-mt-28 pt-4">
-                <p className="eyebrow mb-4">Questions</p>
-                <h2 className="heading-3 mb-8">Questions About Business Valuation Services</h2>
+                <h2 className="heading-2 mb-8">Questions about business valuation services</h2>
                 <FAQList faqs={faqs} />
               </section>
 
               <section id="inquiry" className="scroll-mt-28 pt-4">
-                <p className="eyebrow mb-4">Confidential Inquiry</p>
-                <h2 className="heading-3 mb-6">Request a Broker Opinion of Value</h2>
+                <h2 className="heading-2 mb-6">Request a broker opinion of value</h2>
                 <p className={p}>
                   Tell us about the business and why you want a valuation. We will reply with the documents we need and how
                   the review works. Your inquiry is confidential.
@@ -456,18 +453,18 @@ export default function BusinessValuationPage() {
       </section>
 
       <ContinueLearning
-        heading="Where to Go From Here"
+        heading="Where to go from here"
         links={[
-          { label: 'Sell Your Business', href: '/sell-your-business', description: 'How Forge represents Texas owners through a confidential sale.' },
-          { label: 'How to Sell a Business', href: '/sell-your-business/how-to-sell-a-business', description: 'The steps from preparation to closing, and what each one requires.' },
-          { label: 'Texas Business Broker', href: '/texas-business-broker', description: 'What a broker does and how to choose one, with notes on major Texas markets.' },
+          { label: 'Sell your business', href: '/sell-your-business', description: 'How Forge represents Texas owners through a confidential sale.' },
+          { label: 'How to sell a business', href: '/sell-your-business/how-to-sell-a-business', description: 'The steps from preparation to closing, and what each one requires.' },
+          { label: 'Texas business broker', href: '/texas-business-broker', description: 'What a broker does and how to choose one, with notes on major Texas markets.' },
         ]}
       />
 
       <SectionCTA
-        heading="Know Where Your Business Stands Before You Sell"
+        heading="Know where your business stands before you sell"
         body="A broker opinion of value shows how buyers and lenders are likely to read your financials, and what to improve before going to market."
-        buttonText="Request an Opinion of Value"
+        buttonText="Request an opinion of value"
         buttonHref="#inquiry"
         secondaryText="Or read about selling your business"
         secondaryHref="/sell-your-business"

@@ -1,9 +1,8 @@
 /**
- * PageTOC: sticky table of contents for long service and pillar pages.
+ * PageTOC: table of contents for long service and pillar pages.
  *
- * Renders as a sticky sidebar on large screens and as a collapsible
- * disclosure above the content on small screens. Plain anchors, so it
- * works without JavaScript.
+ * Desktop: sticky sidebar list. Mobile: a horizontal, scrollable chip row
+ * pinned under the header. Plain anchors, so it works without JavaScript.
  */
 
 type TOCItem = {
@@ -11,36 +10,41 @@ type TOCItem = {
   label: string
 }
 
-export function PageTOC({ items, title = 'On This Page' }: { items: TOCItem[]; title?: string }) {
-  const list = (
-    <ol className="space-y-1">
-      {items.map((item, i) => (
-        <li key={item.id}>
-          <a
-            href={`#${item.id}`}
-            className="flex gap-3 py-1.5 text-sm text-steel hover:text-accent transition-colors leading-snug"
-          >
-            <span className="text-accent font-semibold tabular-nums flex-shrink-0 w-5">{i + 1}</span>
-            <span>{item.label}</span>
-          </a>
-        </li>
-      ))}
-    </ol>
-  )
-
+export function PageTOC({ items, title = 'On this page' }: { items: TOCItem[]; title?: string }) {
   return (
     <>
-      <details className="lg:hidden mb-10 bg-stone p-5" style={{ borderRadius: '0px' }}>
-        <summary className="cursor-pointer font-semibold text-graphite text-sm uppercase tracking-widest min-h-[44px] flex items-center">
-          {title}
-        </summary>
-        <nav aria-label={title} className="mt-3">
-          {list}
-        </nav>
-      </details>
-      <nav aria-label={title} className="hidden lg:block sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto">
-        <p className="eyebrow mb-4">{title}</p>
-        {list}
+      <nav
+        aria-label={title}
+        className="lg:hidden sticky top-[68px] z-30 -mx-5 min-[721px]:-mx-14 mb-10 bg-white border-y border-line [contain:inline-size]"
+      >
+        <ol className="flex gap-2 overflow-x-auto px-5 min-[721px]:px-14 py-2.5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {items.map((item) => (
+            <li key={item.id} className="flex-shrink-0">
+              <a
+                href={`#${item.id}`}
+                className="flex items-center min-h-[44px] px-4 border border-line text-sm font-medium text-graphite whitespace-nowrap hover:border-graphite transition-colors"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+      <nav aria-label={title} className="hidden lg:block sticky top-28 max-h-[calc(100vh-8rem)] overflow-y-auto">
+        <p className="text-sm font-semibold text-graphite mb-3">{title}</p>
+        <ol className="border-t border-line">
+          {items.map((item, i) => (
+            <li key={item.id} className="border-b border-line">
+              <a
+                href={`#${item.id}`}
+                className="group flex gap-3 py-3 min-h-[44px] text-sm text-steel hover:text-graphite transition-colors leading-snug"
+              >
+                <span className="font-display font-bold text-accent tabular-nums flex-shrink-0 w-6">{String(i + 1).padStart(2, '0')}</span>
+                <span>{item.label}</span>
+              </a>
+            </li>
+          ))}
+        </ol>
       </nav>
     </>
   )

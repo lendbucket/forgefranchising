@@ -43,8 +43,7 @@ export default function BuildingAFranchiseBrandPage() {
             { label: 'Franchise Branding', href: '/franchise-branding' },
             { label: 'Building a Franchise Brand' },
           ]} />
-          <div className="max-w-3xl">
-            <p className="eyebrow mb-4">Brand Development</p>
+          <div className="max-w-[880px]">
             <h1 className="heading-1 mb-8">
               Building a Franchise Brand From an Owner Operated Business
             </h1>
@@ -74,7 +73,7 @@ export default function BuildingAFranchiseBrandPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-stone">
+      <section className="section-padding bg-white">
         <div className="container-wide">
           <div className="max-w-3xl">
             <Image
@@ -83,29 +82,28 @@ export default function BuildingAFranchiseBrandPage() {
               width={1200}
               height={600}
               className="w-full h-auto mb-10"
-              style={{ borderRadius: '0px' }}
             />
 
-            <h2 className="heading-2 mb-6">The Founder Dependency Problem</h2>
-            <p className="text-steel leading-relaxed mb-6">
+            <h2 className="heading-2 mb-6">The founder dependency problem</h2>
+            <p className="text-steel text-[17px] leading-relaxed mb-6">
               In an owner operated business, the founder is the brand. They make the
               decisions about quality, customer experience, visual presentation, and
               communication tone. Every judgment call runs through one person, and that
               works fine at one or two locations. It does not work at 20.
             </p>
-            <p className="text-steel leading-relaxed mb-6">
+            <p className="text-steel text-[17px] leading-relaxed mb-6">
               Franchising forces you to answer a question most founders have never
               considered: "If I am not there, how does someone else know what the brand
               looks like, sounds like, and feels like?" The answer to that question is
               your brand system. And building it is one of the most important steps in
               the{' '}
-              <Link href="/how-it-works" className="text-accent font-semibold link-underline">
+              <Link href="/how-it-works" className="text-accent font-semibold hover:underline">
                 franchise development process
               </Link>.
             </p>
 
-            <h2 className="heading-2 mb-6 mt-12">Step One: Extract the Brand Identity</h2>
-            <p className="text-steel leading-relaxed mb-6">
+            <h2 className="heading-2 mb-6 mt-12">Step one: Extract the brand identity</h2>
+            <p className="text-steel text-[17px] leading-relaxed mb-6">
               Before you can codify the brand, you need to articulate what it actually is.
               Most founders know their brand intuitively but have never written it down.
               This step involves a structured brand audit that captures:
@@ -123,72 +121,72 @@ export default function BuildingAFranchiseBrandPage() {
                   <svg className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-steel leading-relaxed">{item}</span>
+                  <span className="text-steel text-[17px] leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>
-            <p className="text-steel leading-relaxed mb-6">
+            <p className="text-steel text-[17px] leading-relaxed mb-6">
               This audit becomes the raw material for every brand asset you build. Skip it
               and your brand book will be a collection of logo guidelines with no soul.
               Do it right and every franchisee will understand not just what the brand looks
               like but what it stands for.
             </p>
 
-            <h2 className="heading-2 mb-6 mt-12">Step Two: Build the Brand Book</h2>
-            <p className="text-steel leading-relaxed mb-6">
+            <h2 className="heading-2 mb-6 mt-12">Step two: Build the brand book</h2>
+            <p className="text-steel text-[17px] leading-relaxed mb-6">
               The brand book is the document that translates your brand identity into
               executable standards. It is not a marketing brochure. It is an operating
               manual for your brand. A strong franchise brand book contains:
             </p>
-            <p className="text-steel leading-relaxed mb-6">
+            <p className="text-steel text-[17px] leading-relaxed mb-6">
               <strong>Visual identity system.</strong> Logo usage rules (minimum size, clear
               space, approved backgrounds, prohibited modifications), primary and secondary
               color palettes with exact specifications (Pantone, CMYK, RGB, hex),
               typography hierarchy with approved typefaces and usage rules, photography
               and illustration style guidelines, and iconography standards.
             </p>
-            <p className="text-steel leading-relaxed mb-6">
+            <p className="text-steel text-[17px] leading-relaxed mb-6">
               <strong>Brand voice and messaging.</strong> Brand personality attributes with
               examples, tone guidelines for different contexts (customer facing, internal,
               social media, complaints), approved messaging frameworks for common scenarios,
               words and phrases to use and avoid, and sample copy for signage, menus,
               email templates, and social posts.
             </p>
-            <p className="text-steel leading-relaxed mb-6">
+            <p className="text-steel text-[17px] leading-relaxed mb-6">
               <strong>Environmental standards.</strong> Store or office layout requirements,
               signage specifications (exterior and interior), decor and fixture guidelines,
               uniform or dress code specifications, and sensory elements (music, scent,
               lighting levels) where applicable.
             </p>
-            <p className="text-steel leading-relaxed mb-6">
+            <p className="text-steel text-[17px] leading-relaxed mb-6">
               <strong>Digital brand standards.</strong> Website and app design requirements,
               social media profile setup and content guidelines, online listing management
               (Google Business Profile, Yelp, industry directories), and digital advertising
               creative guidelines.
             </p>
 
-            <h2 className="heading-2 mb-6 mt-12">Step Three: Define the Brand Voice</h2>
-            <p className="text-steel leading-relaxed mb-6">
+            <h2 className="heading-2 mb-6 mt-12">Step three: Define the brand voice</h2>
+            <p className="text-steel text-[17px] leading-relaxed mb-6">
               Voice deserves its own focused effort because it is the element most likely
               to drift across franchisees. Visual identity can be controlled through
               templates and approved assets. Voice requires internalization, and that is
               harder.
             </p>
-            <p className="text-steel leading-relaxed mb-6">
+            <p className="text-steel text-[17px] leading-relaxed mb-6">
               Define your brand voice using a framework of attributes with behavioral
               anchors. For example: "Our voice is confident but never arrogant. We state
               facts and share expertise without belittling the customer. We say 'here is
               what we recommend' not 'you should do this.'" This level of specificity
               gives franchisees guardrails without a script.
             </p>
-            <p className="text-steel leading-relaxed mb-6">
+            <p className="text-steel text-[17px] leading-relaxed mb-6">
               Include example responses to common customer scenarios: a complaint, a
               compliment, a price objection, a referral request, a social media mention.
               Real examples teach voice faster than abstract descriptions ever will.
             </p>
 
-            <h2 className="heading-2 mb-6 mt-12">Step Four: Build Operational Standards That Deliver the Brand</h2>
-            <p className="text-steel leading-relaxed mb-6">
+            <h2 className="heading-2 mb-6 mt-12">Step four: Build operational standards that deliver the brand</h2>
+            <p className="text-steel text-[17px] leading-relaxed mb-6">
               Here is where brand building meets franchise operations. Your brand promise
               means nothing if the operational systems do not deliver it. A brand that
               promises "fast, friendly service" needs operational standards that define
@@ -196,9 +194,9 @@ export default function BuildingAFranchiseBrandPage() {
               within X minutes) and what friendly looks like (specific greeting scripts,
               follow up protocols, complaint resolution procedures).
             </p>
-            <p className="text-steel leading-relaxed mb-6">
+            <p className="text-steel text-[17px] leading-relaxed mb-6">
               These operational standards belong in your{' '}
-              <Link href="/blog/franchise-operations-manual" className="text-accent font-semibold link-underline">
+              <Link href="/blog/franchise-operations-manual" className="text-accent font-semibold hover:underline">
                 operations manual
               </Link>{' '}
               and form the bridge between brand strategy and daily execution. They are what
@@ -207,50 +205,50 @@ export default function BuildingAFranchiseBrandPage() {
               into action.
             </p>
 
-            <h2 className="heading-2 mb-6 mt-12">Step Five: Test Before You Scale</h2>
-            <p className="text-steel leading-relaxed mb-6">
+            <h2 className="heading-2 mb-6 mt-12">Step five: Test before you scale</h2>
+            <p className="text-steel text-[17px] leading-relaxed mb-6">
               Before you sell your first franchise, validate that your brand system works
               when you are not the one executing it. This usually means running a corporate
               location or pilot unit where managers follow the brand book and operations
               manual without the founder overriding decisions.
             </p>
-            <p className="text-steel leading-relaxed mb-6">
+            <p className="text-steel text-[17px] leading-relaxed mb-6">
               The test reveals gaps. Maybe your brand book does not address a common
               scenario. Maybe your voice guidelines are too vague for social media.
               Maybe your environmental standards work for a 2,000 square foot location
               but not a 1,200 square foot one. Finding these gaps before franchisees
               do is significantly cheaper than fixing them after.
             </p>
-            <p className="text-steel leading-relaxed mb-6">
+            <p className="text-steel text-[17px] leading-relaxed mb-6">
               Once the brand system survives contact with reality, you are ready for{' '}
-              <Link href="/franchise-branding/brand-standards-enforcement" className="text-accent font-semibold link-underline">
+              <Link href="/franchise-branding/brand-standards-enforcement" className="text-accent font-semibold hover:underline">
                 brand standards enforcement
               </Link>{' '}
               at scale. The system is documented, tested, and ready to be taught to
               franchisees who will carry it into new markets.
             </p>
 
-            <h2 className="heading-2 mb-6 mt-12">Common Mistakes in Franchise Brand Building</h2>
-            <p className="text-steel leading-relaxed mb-6">
+            <h2 className="heading-2 mb-6 mt-12">Common mistakes in franchise brand building</h2>
+            <p className="text-steel text-[17px] leading-relaxed mb-6">
               <strong>Confusing brand with logo.</strong> A new logo is not a brand. It is
               one element of a brand system. Founders who spend $50,000 on a rebrand
               and nothing on voice guidelines, operational standards, or training are
               building a facade, not a franchise brand.
             </p>
-            <p className="text-steel leading-relaxed mb-6">
+            <p className="text-steel text-[17px] leading-relaxed mb-6">
               <strong>Building brand assets after selling franchises.</strong> Franchisees
               who join a system without a brand book will create their own standards. Those
               standards will not match yours or each other. Retroactively imposing brand
               standards on operating franchisees is exponentially harder than starting
               with them.
             </p>
-            <p className="text-steel leading-relaxed mb-6">
+            <p className="text-steel text-[17px] leading-relaxed mb-6">
               <strong>Making the brand book too rigid.</strong> A brand book that specifies
               every detail but allows no local adaptation will frustrate franchisees. The
               best franchise brand systems define the non-negotiable elements clearly
               and identify the areas where franchisees have flexibility. This balance is
               covered in depth in our guide to{' '}
-              <Link href="/franchise-branding/brand-standards-enforcement" className="text-accent font-semibold link-underline">
+              <Link href="/franchise-branding/brand-standards-enforcement" className="text-accent font-semibold hover:underline">
                 brand standards enforcement
               </Link>.
             </p>
@@ -259,18 +257,18 @@ export default function BuildingAFranchiseBrandPage() {
       </section>
 
       <ContinueLearning
-        heading="Go Deeper on Franchise Branding"
+        heading="Go deeper on franchise branding"
         links={[
-          { label: 'Brand Standards Enforcement', href: '/franchise-branding/brand-standards-enforcement', description: 'How to protect brand consistency across every franchisee.' },
-          { label: 'Protecting Your Brand', href: '/franchise-branding/protecting-your-brand', description: 'Trademarks, IP, and the legal spine of franchise branding.' },
-          { label: 'How It Works', href: '/how-it-works', description: 'The four phase franchise development process.' },
+          { label: 'Brand standards enforcement', href: '/franchise-branding/brand-standards-enforcement', description: 'How to protect brand consistency across every franchisee.' },
+          { label: 'Protecting your brand', href: '/franchise-branding/protecting-your-brand', description: 'Trademarks, IP, and the legal spine of franchise branding.' },
+          { label: 'How it works', href: '/how-it-works', description: 'The four phase franchise development process.' },
         ]}
       />
 
       <SectionCTA
-        heading="Ready to Build Your Franchise Brand?"
+        heading="Ready to build your franchise brand?"
         body="Take our two minute franchise readiness assessment. You will get a clear picture of how prepared your brand and business are for franchising."
-        buttonText="Get Your Free Readiness Score"
+        buttonText="Get your free readiness score"
         buttonHref="/is-my-business-franchisable"
         secondaryText="Or explore our franchise development services"
         secondaryHref="/services"
@@ -278,7 +276,7 @@ export default function BuildingAFranchiseBrandPage() {
       />
 
       <StickyCTA
-        text="Get Your Free Readiness Score"
+        text="Get your free readiness score"
         href="/is-my-business-franchisable"
       />
     </>

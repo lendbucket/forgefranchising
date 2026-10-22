@@ -75,9 +75,9 @@ const initialFormData: FormData = {
 }
 
 const STEPS = [
-  { label: 'About You', fields: ['fullName', 'email', 'phone', 'businessName'] },
-  { label: 'Your Business', fields: ['industry', 'yearsInBusiness', 'currentLocations', 'annualRevenueRange', 'currentlyProfitable', 'targetTimeline'] },
-  { label: 'Your Goals', fields: ['reasonForFranchising', 'biggestQuestion'] },
+  { label: 'About you', fields: ['fullName', 'email', 'phone', 'businessName'] },
+  { label: 'Your business', fields: ['industry', 'yearsInBusiness', 'currentLocations', 'annualRevenueRange', 'currentlyProfitable', 'targetTimeline'] },
+  { label: 'Your goals', fields: ['reasonForFranchising', 'biggestQuestion'] },
 ] as const
 
 function InputField({
@@ -90,14 +90,13 @@ function InputField({
 } & React.InputHTMLAttributes<HTMLInputElement>) {
   return (
     <div>
-      <label className="block text-sm font-medium text-graphite mb-2">
+      <label className="block text-sm font-semibold text-graphite mb-2">
         {label} {required && <span className="text-accent">*</span>}
       </label>
       <input
         {...props}
         required={required}
-        className="w-full px-5 py-4 border border-steel/70 bg-white text-graphite placeholder:text-steel focus:outline-none focus:ring-2 focus:ring-ember/40 focus:border-ember/60 transition-all duration-200 min-h-[52px] text-base"
-        style={{ borderRadius: '2px' }}
+        className="field"
       />
     </div>
   )
@@ -117,14 +116,13 @@ function SelectField({
 } & React.SelectHTMLAttributes<HTMLSelectElement>) {
   return (
     <div>
-      <label className="block text-sm font-medium text-graphite mb-2">
+      <label className="block text-sm font-semibold text-graphite mb-2">
         {label} {required && <span className="text-accent">*</span>}
       </label>
       <select
         {...props}
         required={required}
-        className="w-full px-5 py-4 border border-steel/70 bg-white text-graphite focus:outline-none focus:ring-2 focus:ring-ember/40 focus:border-ember/60 transition-all duration-200 min-h-[52px] text-base"
-        style={{ borderRadius: '2px' }}
+        className="field"
       >
         <option value="">{placeholder || 'Select...'}</option>
         {options.map((opt) => (
@@ -147,14 +145,13 @@ function TextAreaField({
 } & React.TextareaHTMLAttributes<HTMLTextAreaElement>) {
   return (
     <div>
-      <label className="block text-sm font-medium text-graphite mb-2">
+      <label className="block text-sm font-semibold text-graphite mb-2">
         {label} {required && <span className="text-accent">*</span>}
       </label>
       <textarea
         {...props}
         required={required}
-        className="w-full px-5 py-4 border border-steel/70 bg-white text-graphite placeholder:text-steel focus:outline-none focus:ring-2 focus:ring-ember/40 focus:border-ember/60 transition-all duration-200 resize-y text-base leading-relaxed"
-        style={{ borderRadius: '2px' }}
+        className="field resize-y leading-relaxed"
       />
     </div>
   )
@@ -232,43 +229,41 @@ export default function ContactPage() {
               </ol>
             </nav>
             <div className="max-w-2xl mx-auto text-center py-16 sm:py-24">
-              <div className="w-16 h-16 bg-ember/20 flex items-center justify-center mx-auto mb-6" style={{ borderRadius: '0px' }}>
-                <svg className="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-              </div>
-              <h2 className="heading-2 mb-4">Your Inquiry Has Been Received</h2>
+              <svg className="w-12 h-12 text-accent mx-auto mb-6" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+              </svg>
+              <h2 className="heading-2 mb-4">Your inquiry has been received</h2>
               <p className="body-large mb-4">
                 We review every submission personally. If your business looks like a strong candidate
                 for franchising, we will reach out within one business day to schedule a feasibility call.
               </p>
-              <p className="text-steel mb-8">
+              <p className="text-steel text-[17px] leading-relaxed mb-8">
                 During that call, we will walk through your business model, your goals, and whether
                 franchising is the right growth path for you. There is no cost and no obligation.
               </p>
               <p className="text-steel mb-8 text-sm">
                 Need to add something? Email us at{' '}
-                <a href={`mailto:${CONTACT_EMAIL}`} className="text-accent hover:underline">
+                <a href={`mailto:${CONTACT_EMAIL}`} className="text-link">
                   {CONTACT_EMAIL}
                 </a>.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/" className="btn-primary">
-                  Return Home
+                  Return home
                 </Link>
                 <Link href="/how-it-works" className="btn-secondary">
-                  Learn Our Process
+                  Learn our process
                 </Link>
               </div>
             </div>
           </div>
         </section>
         <ContinueLearning
-          heading="While You Wait, Explore These"
+          heading="While you wait, explore these"
           links={[
-            { label: 'How Our Process Works', href: '/how-it-works', description: 'The four phases every franchise we develop moves through.' },
-            { label: 'Franchise Calculator', href: '/calculator', description: 'Model your franchise economics before your call.' },
-            { label: 'The Complete Franchise Guide', href: '/blog/how-to-franchise-your-business', description: 'Everything you need to know in one guide.' },
+            { label: 'How our process works', href: '/how-it-works', description: 'The four phases every franchise we develop moves through.' },
+            { label: 'Franchise calculator', href: '/calculator', description: 'Model your franchise economics before your call.' },
+            { label: 'The complete franchise guide', href: '/blog/how-to-franchise-your-business', description: 'Everything you need to know in one guide.' },
           ]}
         />
       </>
@@ -277,7 +272,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="bg-white">
+      <section className="bg-graphite surface-dark">
         <div className="container-wide section-padding">
           <nav aria-label="Breadcrumb" className="py-4">
             <ol className="flex items-center gap-2 text-sm text-steel">
@@ -290,10 +285,7 @@ export default function ContactPage() {
               </li>
             </ol>
           </nav>
-          <div className="max-w-3xl">
-            <p className="eyebrow mb-4">
-              Start the Conversation
-            </p>
+          <div className="max-w-[880px]">
             <h1 className="heading-1 mb-6">
               Ready to Franchise My Business? Start Here
             </h1>
@@ -319,7 +311,7 @@ export default function ContactPage() {
                       key={s.label}
                       type="button"
                       onClick={() => { if (i < step) setStep(i) }}
-                      className={`text-xs font-semibold uppercase tracking-wider transition-colors ${
+                      className={`text-sm font-semibold min-h-[44px] transition-colors ${
                         i === step ? 'text-accent' : i < step ? 'text-graphite cursor-pointer' : 'text-steel'
                       }`}
                       disabled={i > step}
@@ -328,7 +320,7 @@ export default function ContactPage() {
                     </button>
                   ))}
                 </div>
-                <div className="w-full h-1.5 bg-white overflow-hidden" style={{ borderRadius: '2px' }}>
+                <div className="w-full h-1.5 bg-white overflow-hidden">
                   <div
                     className="h-full bg-ember transition-all duration-500 ease-out"
                     style={{ width: `${progress}%` }}
@@ -387,7 +379,7 @@ export default function ContactPage() {
                         onClick={nextStep}
                         className="btn-primary w-full sm:w-auto"
                       >
-                        Continue to Business Details
+                        Continue to business details
                       </button>
                       <p className="text-xs text-steel mt-3">Takes about 90 seconds total. We never share your information.</p>
                     </div>
@@ -463,7 +455,7 @@ export default function ContactPage() {
                         onClick={nextStep}
                         className="btn-primary"
                       >
-                        Continue to Goals
+                        Continue to goals
                       </button>
                     </div>
                   </div>
@@ -495,8 +487,8 @@ export default function ContactPage() {
                     </div>
 
                     {status === 'error' && (
-                      <div className="p-4 bg-red-50 border border-red-200 mt-6" style={{ borderRadius: '2px' }}>
-                        <p className="text-red-800 text-sm">
+                      <div className="p-4 bg-white border border-ember mt-6">
+                        <p className="text-graphite text-sm">
                           {errorMessage}{' '}
                           <a href={`mailto:${CONTACT_EMAIL}`} className="underline">
                             {CONTACT_EMAIL}
@@ -527,7 +519,7 @@ export default function ContactPage() {
                             Submitting...
                           </>
                         ) : (
-                          'Submit and Schedule Your Free Call'
+                          'Submit and schedule your free call'
                         )}
                       </button>
                     </div>
@@ -543,7 +535,7 @@ export default function ContactPage() {
             <div className="lg:col-span-2">
               <div className="sticky top-24 space-y-8">
                 <div className="card">
-                  <h3 className="heading-4 mb-4">What Happens Next</h3>
+                  <h3 className="heading-4 mb-4">What happens next</h3>
                   <ol className="space-y-4">
                     {[
                       {
@@ -563,7 +555,7 @@ export default function ContactPage() {
                       },
                     ].map((item) => (
                       <li key={item.step} className="flex gap-4">
-                        <span className="flex-shrink-0 w-8 h-8 bg-ember-fill text-graphite flex items-center justify-center text-sm font-bold" style={{ borderRadius: '2px' }}>
+                        <span className="flex-shrink-0 w-8 h-8 bg-ember-fill text-graphite flex items-center justify-center text-sm font-bold">
                           {item.step}
                         </span>
                         <div>
@@ -580,7 +572,7 @@ export default function ContactPage() {
                   <p className="text-white/70 text-sm leading-relaxed mb-4">
                     Take our two-minute franchise readiness assessment first and see where you stand.
                   </p>
-                  <Link href="/is-my-business-franchisable" className="text-accent text-sm font-semibold link-underline">
+                  <Link href="/is-my-business-franchisable" className="text-link text-sm font-semibold">
                     Get your free readiness score
                   </Link>
                 </div>
@@ -591,7 +583,7 @@ export default function ContactPage() {
       </section>
 
       <StickyCTA
-        text="Get Your Free Franchise Evaluation"
+        text="Get your free franchise evaluation"
         href="/contact"
         showAfter={800}
       />

@@ -150,17 +150,17 @@ const faqs = [
 ]
 
 const toc = [
-  { id: 'overview', label: 'How Buying Works' },
-  { id: 'process', label: 'The Buying Process' },
-  { id: 'financing', label: 'Financing the Purchase' },
-  { id: 'due-diligence', label: 'Due Diligence' },
-  { id: 'texas', label: 'Texas Considerations' },
-  { id: 'opportunities', label: 'Current Opportunities' },
+  { id: 'overview', label: 'How buying works' },
+  { id: 'process', label: 'The buying process' },
+  { id: 'financing', label: 'Financing the purchase' },
+  { id: 'due-diligence', label: 'Due diligence' },
+  { id: 'texas', label: 'Texas considerations' },
+  { id: 'opportunities', label: 'Current opportunities' },
   { id: 'faq', label: 'Questions' },
-  { id: 'inquiry', label: 'Buyer Profile' },
+  { id: 'inquiry', label: 'Buyer profile' },
 ]
 
-const p = 'text-steel leading-relaxed text-base sm:text-lg mb-5'
+const p = 'text-steel text-[17px] leading-relaxed mb-5'
 
 export default function BuyABusinessPage() {
   const url = `${SITE_URL}${PATH}`
@@ -187,10 +187,9 @@ export default function BuyABusinessPage() {
       />
 
       <section className="bg-graphite surface-dark">
-        <div className="container-wide section-padding !pb-12">
+        <div className="container-wide section-padding">
           <Breadcrumbs withSchema={false} items={[{ label: 'Buy a Business' }]} />
-          <div className="max-w-3xl">
-            <p className="eyebrow mb-4">Buying a Business</p>
+          <div className="max-w-[880px]">
             <h1 className="heading-1 mb-8">Business for Sale in Texas: How Buyers Find, Finance, and Close</h1>
             <p className="body-large mb-6">
               Finding the right business for sale in Texas starts before you see a single opportunity. Buyers who close
@@ -219,15 +218,15 @@ export default function BuyABusinessPage() {
       </section>
 
       <section className="bg-white">
-        <div className="container-wide px-4 sm:px-6 lg:px-8 pb-20 sm:pb-24">
+        <div className="container-wide section-padding">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
             <aside className="lg:col-span-3">
               <PageTOC items={toc} />
             </aside>
 
-            <div className="lg:col-span-9 space-y-16">
+            <div className="lg:col-span-9 min-w-0 space-y-24 max-[720px]:space-y-16">
               <article id="overview" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">How Buying a Business in Texas Works</h2>
+                <h2 className="heading-2 mb-6">How buying a business in Texas works</h2>
                 <p className={p}>
                   Buying an existing company means buying a record. Unlike a startup, the business has customers, staff,
                   equipment, and several years of financial statements you can examine. The purchase price is based on
@@ -250,20 +249,20 @@ export default function BuyABusinessPage() {
               </article>
 
               <article id="process" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">The Buying Process, Step by Step</h2>
+                <h2 className="heading-2 mb-6">The buying process, step by step</h2>
                 <p className={p}>
                   The order below is the order most acquisitions follow. Some steps overlap in practice, for example
                   financing work often begins while due diligence is underway.
                 </p>
-                <ol className="space-y-8 mt-8">
+                <ol className="mt-10 border-t border-graphite">
                   {processSteps.map((step, i) => (
-                    <li key={step.title} className="flex gap-5">
-                      <span className="text-accent font-display font-bold text-2xl flex-shrink-0 w-10" style={{ letterSpacing: '-0.02em' }}>
+                    <li key={step.title} className="flex gap-6 max-[720px]:gap-4 py-8 border-b border-line">
+                      <span className="numeral text-[40px] flex-shrink-0 w-14 tabular-nums">
                         {String(i + 1).padStart(2, '0')}
                       </span>
-                      <div>
+                      <div className="min-w-0">
                         <h3 className="heading-4 mb-2">{step.title}</h3>
-                        <p className="text-steel leading-relaxed">{step.body}</p>
+                        <p className="text-steel text-[17px] leading-relaxed">{step.body}</p>
                       </div>
                     </li>
                   ))}
@@ -271,7 +270,7 @@ export default function BuyABusinessPage() {
               </article>
 
               <article id="financing" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">Financing the Purchase</h2>
+                <h2 className="heading-2 mb-6">Financing the purchase</h2>
                 <p className={p}>
                   Most acquisitions are financed with a combination of sources, usually called the capital stack: senior
                   debt from a bank, the buyer&apos;s own equity, and often a note from the seller. The mix depends on the
@@ -314,18 +313,18 @@ export default function BuyABusinessPage() {
               </article>
 
               <article id="due-diligence" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">What Due Diligence Should Cover</h2>
+                <h2 className="heading-2 mb-6">What due diligence should cover</h2>
                 <p className={p}>
                   Due diligence is the buyer&apos;s work, done with the buyer&apos;s own advisors. Your CPA tests the
                   financial and tax records. Your attorney reviews contracts, liabilities, and the purchase agreement.
                   Industry specialists, such as an equipment appraiser or an environmental consultant, are added when
                   the business calls for them. The areas below are the core of most reviews.
                 </p>
-                <div className="grid sm:grid-cols-2 gap-4 mt-8">
+                <div className="tile-grid md:grid-cols-2 mt-8">
                   {diligenceAreas.map((area) => (
-                    <div key={area.title} className="bg-stone p-6" style={{ borderRadius: '0px' }}>
-                      <p className="text-xs font-semibold uppercase tracking-widest text-graphite mb-2">{area.title}</p>
-                      <p className="text-steel text-sm leading-relaxed">{area.body}</p>
+                    <div key={area.title} className="card md:odd:last:col-span-2">
+                      <p className="heading-4 mb-3">{area.title}</p>
+                      <p className="text-steel text-[15px] leading-relaxed">{area.body}</p>
                     </div>
                   ))}
                 </div>
@@ -337,35 +336,35 @@ export default function BuyABusinessPage() {
               </article>
 
               <article id="texas" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">Texas Considerations for Buyers</h2>
+                <h2 className="heading-2 mb-6">Texas considerations for buyers</h2>
                 <p className={p}>
                   A few state specific items come up on most Texas acquisitions. Your attorney and CPA should confirm how
                   each applies to your deal.
                 </p>
-                <ul className="space-y-4 mt-6">
-                  <li className="text-steel leading-relaxed">
+                <ul className="mt-8 border-t border-graphite">
+                  <li className="text-steel text-[17px] leading-relaxed py-5 border-b border-line">
                     <span className="font-semibold text-graphite">State tax liability.</span> Texas law can make a
                     purchaser liable for a seller&apos;s unpaid state taxes, including sales tax, unless the buyer withholds
                     enough of the purchase price or the seller obtains a certificate from the Texas Comptroller showing
                     the taxes are paid. Ask for it early in the process.
                   </li>
-                  <li className="text-steel leading-relaxed">
+                  <li className="text-steel text-[17px] leading-relaxed py-5 border-b border-line">
                     <span className="font-semibold text-graphite">Sales tax permit.</span> A new owner usually needs its
                     own sales and use tax permit from the Comptroller. Permits do not transfer with the business.
                   </li>
-                  <li className="text-steel leading-relaxed">
+                  <li className="text-steel text-[17px] leading-relaxed py-5 border-b border-line">
                     <span className="font-semibold text-graphite">Occupational and trade licenses.</span> Several trades
                     in Texas are licensed by the Texas Department of Licensing and Regulation, and some licenses are held
                     by an individual. If the license holder is the seller, plan for how the business will be licensed
                     after closing.
                   </li>
-                  <li className="text-steel leading-relaxed">
+                  <li className="text-steel text-[17px] leading-relaxed py-5 border-b border-line">
                     <span className="font-semibold text-graphite">Alcohol and health permits.</span> Restaurants and bars
                     that sell alcohol need permits from the Texas Alcoholic Beverage Commission, and food businesses need
                     local health permits. These generally must be applied for by the new owner, and timing affects the
                     closing date.
                   </li>
-                  <li className="text-steel leading-relaxed">
+                  <li className="text-steel text-[17px] leading-relaxed py-5 border-b border-line">
                     <span className="font-semibold text-graphite">Entity filings.</span> A buying entity is formed with
                     the Texas Secretary of State, and assumed name filings may be needed to keep operating under the
                     existing trade name.
@@ -374,7 +373,7 @@ export default function BuyABusinessPage() {
               </article>
 
               <article id="opportunities" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">How Forge Shares Current Opportunities</h2>
+                <h2 className="heading-2 mb-6">How Forge shares current opportunities</h2>
                 <p className={p}>
                   Forge does not post businesses for sale on this site. The owners we work with need their sale kept
                   quiet until a qualified buyer is in the room, because word of a sale can unsettle employees and invite
@@ -400,17 +399,16 @@ export default function BuyABusinessPage() {
               <BrokerageNotice />
 
               <section id="faq" className="scroll-mt-28 pt-4">
-                <p className="eyebrow mb-4">Questions</p>
-                <h2 className="heading-3 mb-8">Questions From Buyers</h2>
+                <h2 className="heading-2 mb-8">Questions from buyers</h2>
                 <FAQList faqs={faqs} />
               </section>
 
               <section id="inquiry" className="scroll-mt-28">
                 <IntakeForm
                   inquiryType="buyer"
-                  heading="Buyer Profile"
+                  heading="Buyer profile"
                   intro="Tell us what you want to buy and how you plan to finance it. We share current opportunities with qualified buyers after a signed nondisclosure agreement."
-                  submitLabel="Submit Buyer Profile"
+                  submitLabel="Submit buyer profile"
                 />
               </section>
             </div>
@@ -419,18 +417,18 @@ export default function BuyABusinessPage() {
       </section>
 
       <ContinueLearning
-        heading="Where to Go From Here"
+        heading="Where to go from here"
         links={[
-          { label: 'Business Valuation', href: '/business-valuation', description: 'How earnings, risk, and market evidence shape the price of a business.' },
-          { label: 'Texas Business Brokerage', href: '/texas-business-broker', description: 'How Forge represents owners and works with buyers across Texas.' },
-          { label: 'Buying a Franchise', href: '/buy-a-franchise', description: 'How buyers assess franchise brands and read a Franchise Disclosure Document.' },
+          { label: 'Business valuation', href: '/business-valuation', description: 'How earnings, risk, and market evidence shape the price of a business.' },
+          { label: 'Texas business brokerage', href: '/texas-business-broker', description: 'How Forge represents owners and works with buyers across Texas.' },
+          { label: 'Buying a franchise', href: '/buy-a-franchise', description: 'How buyers assess franchise brands and read a Franchise Disclosure Document.' },
         ]}
       />
 
       <SectionCTA
-        heading="Tell Us What You Want to Buy"
+        heading="Tell us what you want to buy"
         body="Submit a buyer profile. We review it, talk through your criteria, and share opportunities that fit after a signed NDA."
-        buttonText="Submit a Buyer Profile"
+        buttonText="Submit a buyer profile"
         buttonHref="#inquiry"
       />
     </>

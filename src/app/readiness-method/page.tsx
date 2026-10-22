@@ -6,6 +6,7 @@ import { ContinueLearning } from '@/components/ContinueLearning'
 import { StickyCTA } from '@/components/StickyCTA'
 import { ReadingProgress } from '@/components/ReadingProgress'
 import { SITE_URL } from '@/lib/constants'
+import { sentenceCase } from '@/lib/text'
 import { faqSchema, webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 
 export const metadata = createMetadata({
@@ -120,8 +121,7 @@ export default function ReadinessMethodPage() {
       <section className="bg-graphite surface-dark">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'Readiness Method' }]} />
-          <div className="max-w-3xl">
-            <p className="eyebrow mb-4">Our Methodology</p>
+          <div className="max-w-[880px]">
             <h1 className="heading-1 mb-8">
               The Forge Franchise Readiness Method
             </h1>
@@ -138,17 +138,17 @@ export default function ReadinessMethodPage() {
       </section>
 
       {/* CREDIBILITY ROW */}
-      <section className="bg-stone">
-        <div className="container-wide py-12 px-4 sm:px-6 lg:px-8">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <section className="section-padding bg-stone">
+        <div className="container-wide">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 border-t border-graphite lg:divide-x lg:divide-line">
             {[
               { label: 'Four pillars evaluated', detail: 'Each one required for franchise viability' },
               { label: 'Documented process', detail: 'Written methodology with defined criteria' },
               { label: 'Operator built', detail: 'Designed by people who have run multi-unit businesses' },
               { label: 'Modern software', detail: 'Data analysis and reporting, not spreadsheets and guesswork' },
             ].map((item) => (
-              <div key={item.label} className="text-center">
-                <p className="font-display font-bold text-graphite text-lg mb-1" style={{ letterSpacing: '-0.02em' }}>
+              <div key={item.label} className="py-8 lg:px-8 lg:first:pl-0 border-b border-line lg:border-b-0">
+                <p className="heading-4 text-graphite mb-2">
                   {item.label}
                 </p>
                 <p className="text-steel text-sm">{item.detail}</p>
@@ -169,17 +169,17 @@ export default function ReadinessMethodPage() {
             <div className="grid lg:grid-cols-12 gap-12">
               <div className="lg:col-span-4">
                 <div className="sticky top-28">
-                  <div className="text-accent font-display text-6xl font-bold mb-4">{pillar.number}</div>
-                  <h2 className="heading-2 mb-3">{pillar.title}</h2>
+                  <p className="numeral text-[56px] mb-6">{pillar.number}</p>
+                  <h2 className="heading-2 mb-3">{sentenceCase(pillar.title)}</h2>
                 </div>
               </div>
               <div className="lg:col-span-8">
                 <div className="card">
                   <h3 className="heading-4 mb-4">What this pillar measures</h3>
-                  <p className="text-steel leading-relaxed mb-8">{pillar.what}</p>
+                  <p className="text-steel text-[17px] leading-relaxed mb-8">{pillar.what}</p>
 
                   <h3 className="heading-4 mb-4">Why it determines franchisability</h3>
-                  <p className="text-steel leading-relaxed mb-8">{pillar.why}</p>
+                  <p className="text-steel text-[17px] leading-relaxed mb-8">{pillar.why}</p>
 
                   <h3 className="heading-4 mb-4">Questions we ask</h3>
                   <ul className="space-y-3">
@@ -188,7 +188,7 @@ export default function ReadinessMethodPage() {
                         <svg className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd" />
                         </svg>
-                        <span className="text-steel leading-relaxed">{q}</span>
+                        <span className="text-steel text-[17px] leading-relaxed">{q}</span>
                       </li>
                     ))}
                   </ul>
@@ -200,19 +200,18 @@ export default function ReadinessMethodPage() {
       ))}
 
       {/* WHAT THE ASSESSMENT REVEALS */}
-      <section className="section-padding bg-graphite text-white">
+      <section className="section-padding bg-graphite surface-dark">
         <div className="container-wide">
-          <div className="max-w-3xl mx-auto">
-            <p className="eyebrow text-accent mb-4">Diagnosis, Then Path</p>
-            <h2 className="heading-2 text-white mb-8">What the Assessment Reveals</h2>
-            <p className="text-lg text-white/60 leading-relaxed mb-8">
+          <div className="max-w-[880px]">
+            <h2 className="heading-2 text-white mb-8">What the assessment reveals</h2>
+            <p className="body-large mb-8">
               The Forge Franchise Readiness Method does not produce a pass or fail verdict. It
               produces a detailed picture of where your business stands across each pillar and
               what gaps exist between where you are today and where you need to be to franchise
               responsibly.
             </p>
-            <div className="grid sm:grid-cols-2 gap-8 mb-10">
-              <div>
+            <div className="grid sm:grid-cols-2 gap-8 sm:gap-0 sm:divide-x sm:divide-white/15 mb-10">
+              <div className="sm:pr-8">
                 <h3 className="heading-4 text-white mb-4">Gaps it surfaces</h3>
                 <ul className="space-y-3">
                   {[
@@ -229,7 +228,7 @@ export default function ReadinessMethodPage() {
                   ))}
                 </ul>
               </div>
-              <div>
+              <div className="sm:pl-8">
                 <h3 className="heading-4 text-white mb-4">What readiness looks like</h3>
                 <ul className="space-y-3">
                   {[
@@ -249,7 +248,7 @@ export default function ReadinessMethodPage() {
                 </ul>
               </div>
             </div>
-            <div className="bg-white/5 border border-white/10 px-6 py-5" style={{ borderRadius: '0px' }}>
+            <div className="border border-white/15 px-6 py-5">
               <p className="text-white/60 text-sm leading-relaxed">
                 A readiness assessment does not guarantee franchise success, regulatory approval, or specific
                 financial outcomes. It identifies whether foundational conditions are present. Franchise
@@ -261,11 +260,10 @@ export default function ReadinessMethodPage() {
       </section>
 
       {/* FROM ASSESSMENT TO LAUNCH */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-stone">
         <div className="container-wide">
-          <div className="max-w-3xl mx-auto text-center">
-            <p className="eyebrow mb-4">From Assessment to Launch</p>
-            <h2 className="heading-2 mb-6">The Method Connects to the Process</h2>
+          <div className="max-w-[880px]">
+            <h2 className="heading-2 mb-6">The method connects to the process</h2>
             <p className="body-large mb-10">
               The Forge Franchise Readiness Method is the first stage of our{' '}
               <Link href="/how-it-works" className="text-accent font-semibold hover:underline">
@@ -274,7 +272,7 @@ export default function ReadinessMethodPage() {
               Launch, and Scale with a clear foundation. If gaps exist, we identify exactly
               what to fix before you invest in FDD preparation or state registration.
             </p>
-            <div className="grid sm:grid-cols-2 gap-6 text-left mb-10">
+            <div className="tile-grid sm:grid-cols-2 mb-10">
               <div className="card">
                 <h3 className="heading-4 mb-3">Ready now</h3>
                 <p className="text-steel text-sm leading-relaxed">
@@ -307,13 +305,12 @@ export default function ReadinessMethodPage() {
       </section>
 
       {/* FAQ SECTION */}
-      <section className="section-padding bg-stone">
-        <div className="container-wide max-w-3xl mx-auto">
-          <div className="text-center mb-12">
-            <p className="eyebrow mb-4">Common Questions</p>
-            <h2 className="heading-2">Readiness Method FAQ</h2>
+      <section className="section-padding bg-white">
+        <div className="container-wide">
+          <div className="mb-12">
+            <h2 className="heading-2">Readiness method FAQ</h2>
           </div>
-          <div className="space-y-6">
+          <div className="max-w-[880px] border-t border-graphite">
             {[
               {
                 q: 'What is the Forge Franchise Readiness Method?',
@@ -336,9 +333,9 @@ export default function ReadinessMethodPage() {
                 a: 'You receive a detailed report. If the business is ready, the next step is franchise structure development (FDD, franchise agreement, operations manual). If gaps exist, the report outlines what needs to change before proceeding and approximately how long each gap takes to close.',
               },
             ].map((item) => (
-              <div key={item.q} className="card" style={{ borderRadius: '0px' }}>
+              <div key={item.q} className="py-8 border-b border-line">
                 <h3 className="heading-4 mb-3">{item.q}</h3>
-                <p className="text-steel leading-relaxed">{item.a}</p>
+                <p className="text-steel text-[17px] leading-relaxed">{item.a}</p>
               </div>
             ))}
           </div>
@@ -346,26 +343,26 @@ export default function ReadinessMethodPage() {
       </section>
 
       <ContinueLearning
-        heading="Related Resources"
+        heading="Related resources"
         links={[
-          { label: 'How the Full Process Works', href: '/how-it-works', description: 'See the four phases that follow the readiness assessment.' },
-          { label: 'Our Services', href: '/services', description: 'Seven core franchise development services under one roof.' },
-          { label: 'Is My Business Franchisable?', href: '/is-my-business-franchisable', description: 'Take the quick online assessment for an initial readiness signal.' },
+          { label: 'How the full process works', href: '/how-it-works', description: 'See the four phases that follow the readiness assessment.' },
+          { label: 'Our services', href: '/services', description: 'Seven core franchise development services under one roof.' },
+          { label: 'Is my business franchisable?', href: '/is-my-business-franchisable', description: 'Take the quick online assessment for an initial readiness signal.' },
         ]}
       />
 
       {/* DUAL CTA */}
       <SectionCTA
-        heading="Find Out Where Your Business Stands"
+        heading="Find out where your business stands"
         body="Start with the Forge Franchise Readiness Method. We will evaluate your business across all four pillars and give you a clear, honest picture of what is required to franchise."
-        buttonText="Start Your Readiness Assessment"
+        buttonText="Start your readiness assessment"
         buttonHref="/is-my-business-franchisable"
         secondaryText="Or book a call to discuss your situation directly"
         secondaryHref="/contact"
       />
 
       <StickyCTA
-        text="Start the Readiness Assessment"
+        text="Start the readiness assessment"
         href="/is-my-business-franchisable"
       />
     </>

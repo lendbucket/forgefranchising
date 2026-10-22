@@ -57,26 +57,26 @@
   }
 
   /* Headings: Inter Tight 700, tight tracking. The proposal page sets its own. */
-  :is(h1, h2, h3, h4, h5, h6):not(.proposal-root *) {
+  :where(h1, h2, h3, h4, h5, h6):where(:not(.proposal-root *)) {
     font-family: var(--font-display), var(--font-sans), system-ui, sans-serif;
     font-weight: 700;
   }
-  h1:not(.proposal-root *) {
+  :where(h1:not(.proposal-root *)) {
     font-size: clamp(40px, 5.2vw, 76px);
     line-height: 1;
     letter-spacing: -0.04em;
   }
-  h2:not(.proposal-root *) {
+  :where(h2:not(.proposal-root *)) {
     font-size: clamp(38px, 4.4vw, 68px);
     line-height: 1;
     letter-spacing: -0.04em;
   }
-  h3:not(.proposal-root *) {
+  :where(h3:not(.proposal-root *)) {
     font-size: clamp(24px, 2.2vw, 34px);
     line-height: 1.1;
     letter-spacing: -0.03em;
   }
-  h4:not(.proposal-root *) {
+  :where(h4:not(.proposal-root *)) {
     font-size: clamp(20px, 1.6vw, 24px);
     line-height: 1.2;
     letter-spacing: -0.02em;
@@ -607,4 +607,42 @@ main > section:not([class*="bg-"]):not(.surface-dark):not(.surface-ember) + sect
 /* On ember sections the focus ring switches to graphite so it stays visible. */
 :is(.surface-ember, .bg-ember-fill) :is(a, button, input, textarea, select, summary):focus-visible {
   outline-color: #1C1F23;
+}
+
+/* Key takeaways: stone on light sections, raised graphite on a dark hero */
+.takeaways {
+  background-color: #F4F3F0;
+  color: #1C1F23;
+}
+.takeaways-item {
+  border-top: 1px solid #E5E3DF;
+}
+.takeaways-meta {
+  color: #4E5A62;
+}
+:is(.surface-dark, .bg-graphite) .takeaways {
+  background-color: #262A2F;
+  color: #FFFFFF;
+}
+:is(.surface-dark, .bg-graphite) .takeaways-item {
+  border-top-color: rgba(255, 255, 255, 0.12);
+}
+:is(.surface-dark, .bg-graphite) .takeaways-meta {
+  color: #C9CDD0;
+}
+
+/* Stone panels inside a stone section switch to white so they stay visible. */
+section.bg-stone :is(.bg-stone, .takeaways) {
+  background-color: #FFFFFF;
+}
+
+/* Selects: square, with a drawn chevron instead of the browser control. */
+select.field {
+  -webkit-appearance: none;
+  appearance: none;
+  padding-right: 44px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%231C1F23' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 14px;
 }

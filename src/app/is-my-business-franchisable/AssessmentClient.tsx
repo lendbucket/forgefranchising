@@ -1,8 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, type ReactNode } from 'react'
 import Link from 'next/link'
 import { ContinueLearning } from '@/components/ContinueLearning'
+import { sentenceCase } from '@/lib/text'
 
 /**
  * Assessment with email-gated results.
@@ -166,7 +167,7 @@ function getOutcome(score: number, pct: number, answers: Record<string, string>)
   }
 }
 
-export function AssessmentClient() {
+export function AssessmentClient({ breadcrumbs }: { breadcrumbs?: ReactNode }) {
   const [currentStep, setCurrentStep] = useState(0)
   const [answers, setAnswers] = useState<Record<string, string>>({})
   const [scores, setScores] = useState<Record<string, number>>({})
@@ -250,12 +251,10 @@ export function AssessmentClient() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-white">
+      <section className="bg-graphite surface-dark">
         <div className="container-wide section-padding">
-          <div className="max-w-3xl">
-            <p className="eyebrow mb-4">
-              Franchise Readiness Assessment
-            </p>
+          {breadcrumbs}
+          <div className="max-w-[880px]">
             <h1 className="heading-1 mb-6">
               Turn My Business Into a Franchise: Get Your Score
             </h1>
@@ -268,8 +267,8 @@ export function AssessmentClient() {
       </section>
 
       {/* Assessment */}
-      <section className="section-padding bg-stone">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="section-padding bg-white">
+        <div className="container-narrow">
           {/* Progress Bar: goal gradient pulls completion */}
           <div className="mb-8">
             <div className="flex items-center justify-between text-sm text-steel mb-2">
@@ -280,10 +279,10 @@ export function AssessmentClient() {
               </span>
               <span>{progress}%</span>
             </div>
-            <div className="w-full h-2 bg-white overflow-hidden" style={{ borderRadius: '2px' }}>
+            <div className="w-full h-2 bg-stone overflow-hidden">
               <div
                 className="h-full bg-ember transition-all duration-500 ease-out"
-                style={{ width: `${progress}%`, borderRadius: '2px' }}
+                style={{ width: `${progress}%` }}
               />
             </div>
           </div>
@@ -301,10 +300,10 @@ export function AssessmentClient() {
                       onClick={() =>
                         selectAnswer(currentQuestion.id, option.value, option.points)
                       }
-                      className={`w-full text-left p-4 border-2 transition-all duration-200 min-h-[52px] ${
+                      className={`w-full text-left px-5 py-4 border transition-colors duration-200 min-h-[56px] ${
                         isSelected
-                          ? 'border-ember bg-ember/5 text-graphite'
-                          : 'border-steel/40 hover:border-graphite bg-white text-graphite'
+                          ? 'border-graphite bg-graphite text-white'
+                          : 'border-line hover:border-graphite bg-white text-graphite'
                       }`}
                     >
                       <span className="font-medium">{option.label}</span>
@@ -316,7 +315,7 @@ export function AssessmentClient() {
               {currentStep > 0 && (
                 <button
                   onClick={goBack}
-                  className="mt-6 text-sm text-steel hover:text-graphite transition-colors"
+                  className="mt-6 text-sm text-steel hover:text-graphite transition-colors min-h-[44px]"
                 >
                   &larr; Previous question
                 </button>
@@ -327,9 +326,6 @@ export function AssessmentClient() {
             <div className="space-y-6">
               {/* Score Card: shown immediately (variable reward) */}
               <div className="card text-center">
-                <p className="eyebrow mb-6">
-                  Your Franchise Readiness Score
-                </p>
                 <div className="relative w-32 h-32 mx-auto mb-6">
                   <svg className="w-32 h-32 -rotate-90" viewBox="0 0 36 36">
                     <path
@@ -368,9 +364,9 @@ export function AssessmentClient() {
                       : 'text-steel'
                   }`}
                 >
-                  {outcome.title}
+                  {sentenceCase(outcome.title)}
                 </h2>
-                <p className="text-sm text-steel mb-4">{outcome.summary}</p>
+                <p className="text-steel text-[17px] leading-relaxed mb-4">{outcome.summary}</p>
                 <p className="text-xs text-steel">
                   Illustrative assessment based on self-reported answers.
                 </p>
@@ -378,9 +374,9 @@ export function AssessmentClient() {
 
               {/* Email gate: reciprocity (score given, details follow) */}
               {!gateUnlocked ? (
-                <div className="card bg-graphite border-graphite text-center">
+                <div className="card bg-graphite border-graphite text-white text-center">
                   <h3 className="heading-4 text-white mb-3">
-                    Get Your Personalized Recommendations
+                    Get your personalized recommendations
                   </h3>
                   <p className="text-sm text-white/70 mb-6 max-w-md mx-auto">
                     Enter your name and email to see your detailed franchise readiness
@@ -393,8 +389,7 @@ export function AssessmentClient() {
                       onChange={(e) => setGateName(e.target.value)}
                       placeholder="Your name"
                       required
-                      className="w-full px-4 py-3 border border-white/20 bg-white/10 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-ember/50 min-h-[48px]"
-                      style={{ borderRadius: '2px' }}
+                      className="field"
                     />
                     <input
                       type="email"
@@ -402,16 +397,15 @@ export function AssessmentClient() {
                       onChange={(e) => setGateEmail(e.target.value)}
                       placeholder="you@company.com"
                       required
-                      className="w-full px-4 py-3 border border-white/20 bg-white/10 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-ember/50 min-h-[48px]"
-                      style={{ borderRadius: '2px' }}
+                      className="field"
                     />
-                    {gateError && <p className="text-red-400 text-sm">{gateError}</p>}
+                    {gateError && <p className="text-accent text-sm">{gateError}</p>}
                     <button
                       type="submit"
                       disabled={gateSubmitting}
                       className="btn-primary w-full disabled:opacity-60"
                     >
-                      {gateSubmitting ? 'Sending...' : 'Show My Full Report'}
+                      {gateSubmitting ? 'Sending...' : 'Show my full report'}
                     </button>
                     <p className="text-xs text-white/60">No spam. We will follow up with your personalized analysis.</p>
                   </form>
@@ -420,16 +414,14 @@ export function AssessmentClient() {
                 <>
                   {/* Detailed Results: shown after email */}
                   <div className="card">
-                    <p className="eyebrow mb-4">
-                      What This Means For You
-                    </p>
+                    <h3 className="heading-4 mb-4">What this means for you</h3>
                     <div className="space-y-4">
                       {outcome.details.map((detail, i) => (
                         <div key={i} className="flex items-start gap-3">
-                          <span className="flex-shrink-0 w-6 h-6 bg-ember/10 flex items-center justify-center mt-0.5" style={{ borderRadius: '2px' }}>
-                            <span className="text-accent text-xs font-bold">{i + 1}</span>
+                          <span className="flex-shrink-0 w-6 flex items-center justify-center mt-0.5">
+                            <span className="text-accent text-sm font-bold">{i + 1}</span>
                           </span>
-                          <p className="text-sm text-steel leading-relaxed">{detail}</p>
+                          <p className="text-steel text-[17px] leading-relaxed">{detail}</p>
                         </div>
                       ))}
                     </div>
@@ -437,14 +429,12 @@ export function AssessmentClient() {
 
                   {/* Answer Summary */}
                   <div className="card">
-                    <p className="eyebrow mb-4">
-                      Your Responses
-                    </p>
-                    <div className="space-y-3">
+                    <h3 className="heading-4 mb-4">Your responses</h3>
+                    <div className="border-t border-graphite">
                       {QUESTIONS.map((q) => {
                         const selected = q.options.find((o) => o.value === answers[q.id])
                         return (
-                          <div key={q.id} className="flex items-start justify-between gap-4 py-2 border-b border-stone last:border-0">
+                          <div key={q.id} className="flex items-start justify-between gap-4 py-4 border-b border-line last:border-0">
                             <span className="text-sm text-steel">{q.question}</span>
                             <span className="text-sm font-semibold text-graphite text-right flex-shrink-0 max-w-[200px]">
                               {selected?.label}
@@ -456,7 +446,7 @@ export function AssessmentClient() {
                   </div>
 
                   {/* CTA */}
-                  <div className="card bg-graphite border-graphite">
+                  <div className="card bg-graphite border-graphite text-white">
                     <h3 className="heading-4 text-white mb-3">
                       {outcome.tier === 'strong'
                         ? 'Your business looks ready. Let us confirm it.'
@@ -473,13 +463,13 @@ export function AssessmentClient() {
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4">
                       <Link href="/contact" className="btn-primary flex-1 text-center">
-                        Book a Free Feasibility Call
+                        Book a free feasibility call
                       </Link>
                       <Link
                         href="/calculator"
-                        className="btn-secondary border-white/30 text-white hover:bg-white hover:text-graphite flex-1 text-center"
+                        className="btn-secondary flex-1 text-center"
                       >
-                        Model Your Franchise Economics
+                        Model your franchise economics
                       </Link>
                     </div>
                   </div>
@@ -490,7 +480,7 @@ export function AssessmentClient() {
               <div className="text-center">
                 <button
                   onClick={restart}
-                  className="text-sm text-steel hover:text-graphite transition-colors underline"
+                  className="text-sm text-steel hover:text-graphite transition-colors underline min-h-[44px]"
                 >
                   Retake the assessment
                 </button>
@@ -507,17 +497,17 @@ export function AssessmentClient() {
 
       {/* Open loop teaser below assessment */}
       {!showResults && (
-        <section className="bg-graphite text-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 text-center">
+        <section className="section-padding bg-graphite surface-dark">
+          <div className="container-narrow text-center">
             <h2 className="heading-2 text-white mb-6">
-              Prefer to Talk to a Human?
+              Prefer to talk to a human?
             </h2>
-            <p className="body-large !text-white/60 mb-10 max-w-2xl mx-auto">
+            <p className="body-large mb-10 max-w-2xl mx-auto">
               If you already know you want to explore franchising, skip the self-assessment and book
               a feasibility call directly. Our team will evaluate your business and give you a straight answer.
             </p>
             <Link href="/contact" className="btn-primary">
-              Get Your Free Franchise Evaluation
+              Get your free franchise evaluation
             </Link>
           </div>
         </section>
@@ -526,11 +516,11 @@ export function AssessmentClient() {
       {/* Continue learning after results */}
       {showResults && gateUnlocked && (
         <ContinueLearning
-          heading="Explore What Comes Next"
+          heading="Explore what comes next"
           links={[
-            { label: 'How the Franchise Process Works', href: '/how-it-works', description: 'See the four phases every franchise we build moves through, from feasibility to scale.' },
-            { label: 'Model Your Franchise Economics', href: '/calculator', description: 'Plug in your numbers and see what your franchise system could generate in royalty income.' },
-            { label: 'The Complete Franchise Guide', href: '/blog/how-to-franchise-your-business', description: 'Everything a business owner needs to know about franchising, in one guide.' },
+            { label: 'How the franchise process works', href: '/how-it-works', description: 'See the four phases every franchise we build moves through, from feasibility to scale.' },
+            { label: 'Model your franchise economics', href: '/calculator', description: 'Plug in your numbers and see what your franchise system could generate in royalty income.' },
+            { label: 'The complete franchise guide', href: '/blog/how-to-franchise-your-business', description: 'Everything a business owner needs to know about franchising, in one guide.' },
           ]}
         />
       )}

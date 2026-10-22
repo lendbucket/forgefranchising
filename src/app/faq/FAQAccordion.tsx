@@ -12,16 +12,19 @@ type FAQCategory = {
   questions: FAQItem[]
 }
 
-function ChevronIcon({ open }: { open: boolean }) {
+/** Plus that turns into a cross when its row is open. */
+function PlusIcon({ open }: { open: boolean }) {
   return (
     <svg
-      className={`w-5 h-5 text-accent flex-shrink-0 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
-      fill="none"
+      className={`w-6 h-6 flex-shrink-0 text-accent transition-transform duration-200 ${open ? 'rotate-45' : ''}`}
       viewBox="0 0 24 24"
+      fill="none"
       stroke="currentColor"
       strokeWidth={2}
+      strokeLinecap="round"
+      aria-hidden="true"
     >
-      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+      <path d="M12 5v14M5 12h14" />
     </svg>
   )
 }
@@ -42,31 +45,31 @@ export function FAQAccordion({ categories }: { categories: FAQCategory[] }) {
   }
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-20">
       {categories.map((category) => (
         <div key={category.name}>
-          <h2 className="heading-3 mb-6">{category.name}</h2>
-          <div className="space-y-3">
+          <h2 className="heading-3 mb-8">{category.name}</h2>
+          <div className="border-t border-graphite">
             {category.questions.map((item, qi) => {
               const key = `${category.name}-${qi}`
               const isOpen = openItems.has(key)
 
               return (
-                <div key={key} className="card !p-0 overflow-hidden">
+                <div key={key} className="border-b border-line">
                   <button
                     type="button"
                     onClick={() => toggle(key)}
-                    className="flex items-center justify-between gap-4 w-full text-left px-6 py-5 hover:bg-white/50 transition-colors min-h-[52px]"
+                    className="flex items-center justify-between gap-6 w-full text-left py-6 min-h-[64px]"
                     aria-expanded={isOpen}
                   >
-                    <span className="font-semibold text-graphite pr-4">{item.question}</span>
-                    <ChevronIcon open={isOpen} />
+                    <span className="font-display text-xl max-[720px]:text-lg font-bold text-graphite" style={{ letterSpacing: '-0.015em' }}>
+                      {item.question}
+                    </span>
+                    <PlusIcon open={isOpen} />
                   </button>
                   {isOpen && (
-                    <div className="px-6 pb-6 pt-0">
-                      <div className="border-t border-graphite/10 pt-4">
-                        <p className="text-steel leading-relaxed">{item.answer}</p>
-                      </div>
+                    <div className="pb-7 pr-12 max-[720px]:pr-0">
+                      <p className="text-steel text-[17px] leading-relaxed">{item.answer}</p>
                     </div>
                   )}
                 </div>

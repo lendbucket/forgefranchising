@@ -24,7 +24,7 @@ export const metadata = createMetadata({
 })
 
 const linkClass = 'text-accent font-semibold hover:underline'
-const p = 'text-steel leading-relaxed text-base sm:text-lg mb-5'
+const p = 'text-steel text-[17px] leading-relaxed mb-5'
 
 const steps: { title: string; body: string }[] = [
   {
@@ -91,16 +91,16 @@ const faqs = [
 ]
 
 const toc = [
-  { id: 'start-here', label: 'Start With Your Agreement' },
-  { id: 'steps', label: 'How to Sell a Franchise Business' },
-  { id: 'approval', label: 'Franchisor Approval' },
-  { id: 'right-of-first-refusal', label: 'Right of First Refusal' },
-  { id: 'fees', label: 'Transfer Fees' },
-  { id: 'new-owner', label: 'The New Owner' },
-  { id: 'valuation', label: 'Valuing a Franchise Unit' },
+  { id: 'start-here', label: 'Start with your agreement' },
+  { id: 'steps', label: 'How to sell a franchise business' },
+  { id: 'approval', label: 'Franchisor approval' },
+  { id: 'right-of-first-refusal', label: 'Right of first refusal' },
+  { id: 'fees', label: 'Transfer fees' },
+  { id: 'new-owner', label: 'The new owner' },
+  { id: 'valuation', label: 'Valuing a franchise unit' },
   { id: 'timing', label: 'Timing' },
   { id: 'faq', label: 'Questions' },
-  { id: 'inquiry', label: 'Confidential Inquiry' },
+  { id: 'inquiry', label: 'Confidential inquiry' },
 ]
 
 export default function SellYourFranchisePage() {
@@ -131,13 +131,12 @@ export default function SellYourFranchisePage() {
       />
 
       <section className="bg-graphite surface-dark">
-        <div className="container-wide section-padding !pb-12">
+        <div className="container-wide section-padding">
           <Breadcrumbs
             withSchema={false}
             items={[{ label: 'Sell Your Business', href: '/sell-your-business' }, { label: 'Sell Your Franchise' }]}
           />
-          <div className="max-w-3xl">
-            <p className="eyebrow mb-4">Franchise Resale</p>
+          <div className="max-w-[880px]">
             <h1 className="heading-1 mb-8">Sell Your Franchise Business: Transfer Terms, Approval, and Value</h1>
             <p className="body-large mb-6">
               For owners asking &ldquo;how do I sell my franchise business?&rdquo;, the answer starts with someone other
@@ -166,15 +165,15 @@ export default function SellYourFranchisePage() {
       </section>
 
       <section className="bg-white">
-        <div className="container-wide px-4 sm:px-6 lg:px-8 pb-20 sm:pb-24">
+        <div className="container-wide section-padding">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
             <aside className="lg:col-span-3">
               <PageTOC items={toc} />
             </aside>
 
-            <div className="lg:col-span-9 space-y-16">
+            <div className="lg:col-span-9 min-w-0 space-y-24 max-[720px]:space-y-16">
               <article id="start-here" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">Start With Your Franchise Agreement and Item 17</h2>
+                <h2 className="heading-2 mb-6">Start with your franchise agreement and Item 17</h2>
                 <p className={p}>
                   Your franchise agreement contains a section on assignment or transfer. It governs what happens when you
                   sell the franchise, sell the business assets, or sell a controlling interest in the entity that holds the
@@ -195,20 +194,20 @@ export default function SellYourFranchisePage() {
               </article>
 
               <article id="steps" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">How to Sell a Franchise Business, Step by Step</h2>
+                <h2 className="heading-2 mb-6">How to sell a franchise business, step by step</h2>
                 <p className={p}>
                   The steps below describe how to sell a franchise business in the order most franchise resales follow.
                   Your agreement and your franchisor&apos;s transfer process may add steps or change the order.
                 </p>
-                <ol className="space-y-8 mt-8">
+                <ol className="mt-10 border-t border-graphite">
                   {steps.map((step, i) => (
-                    <li key={step.title} className="flex gap-5">
-                      <span className="text-accent font-display font-bold text-2xl flex-shrink-0 w-10" style={{ letterSpacing: '-0.02em' }}>
+                    <li key={step.title} className="flex gap-6 max-[720px]:gap-4 py-8 border-b border-line">
+                      <span className="numeral text-[40px] flex-shrink-0 w-14 tabular-nums">
                         {String(i + 1).padStart(2, '0')}
                       </span>
-                      <div>
+                      <div className="min-w-0">
                         <h3 className="heading-4 mb-2">{step.title}</h3>
-                        <p className="text-steel leading-relaxed">{step.body}</p>
+                        <p className="text-steel text-[17px] leading-relaxed">{step.body}</p>
                       </div>
                     </li>
                   ))}
@@ -216,14 +215,14 @@ export default function SellYourFranchisePage() {
               </article>
 
               <article id="approval" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">Franchisor Approval and Common Transfer Conditions</h2>
+                <h2 className="heading-2 mb-6">Franchisor approval and common transfer conditions</h2>
                 <p className={p}>
                   Franchisors approve transfers because the buyer will operate under their brand for years. Some
                   agreements say consent will not be unreasonably withheld if stated conditions are met, and others give
                   the franchisor more discretion. The conditions below appear in many franchise agreements. Yours may include some, all,
                   or others.
                 </p>
-                <div className="grid sm:grid-cols-2 gap-4 mt-8">
+                <div className="tile-grid md:grid-cols-2 mt-8">
                   {[
                     {
                       title: 'Buyer meets current criteria',
@@ -250,9 +249,9 @@ export default function SellYourFranchisePage() {
                       body: 'The buyer, or a designated manager, completes the franchisor’s initial training program before or shortly after closing.',
                     },
                   ].map((c) => (
-                    <div key={c.title} className="bg-stone p-6" style={{ borderRadius: '0px' }}>
-                      <p className="text-xs font-semibold uppercase tracking-widest text-graphite mb-2">{c.title}</p>
-                      <p className="text-steel text-sm leading-relaxed">{c.body}</p>
+                    <div key={c.title} className="card">
+                      <p className="heading-4 mb-3">{c.title}</p>
+                      <p className="text-steel text-[15px] leading-relaxed">{c.body}</p>
                     </div>
                   ))}
                 </div>
@@ -264,7 +263,7 @@ export default function SellYourFranchisePage() {
               </article>
 
               <article id="right-of-first-refusal" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">The Right of First Refusal</h2>
+                <h2 className="heading-2 mb-6">The right of first refusal</h2>
                 <p className={p}>
                   Many franchise agreements give the franchisor a right of first refusal. When you receive a bona fide offer
                   you intend to accept, you must give the franchisor notice and a copy of the offer, and the franchisor has
@@ -280,7 +279,7 @@ export default function SellYourFranchisePage() {
               </article>
 
               <article id="fees" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">Transfer Fees</h2>
+                <h2 className="heading-2 mb-6">Transfer fees</h2>
                 <p className={p}>
                   Franchisors charge a fee to process a transfer, covering their review of the buyer and the cost of
                   training the new owner. The amount varies widely by system. Some charge a flat fee, some charge a
@@ -295,7 +294,7 @@ export default function SellYourFranchisePage() {
               </article>
 
               <article id="new-owner" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">What the Franchisor Requires of the New Owner</h2>
+                <h2 className="heading-2 mb-6">What the franchisor requires of the new owner</h2>
                 <p className={p}>
                   The franchisor reviews the buyer much as it would review a new franchisee. Expect it to request a
                   personal financial statement, proof of liquid capital, credit and background checks, a resume, and often
@@ -317,7 +316,7 @@ export default function SellYourFranchisePage() {
               </article>
 
               <article id="valuation" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">How a Franchise Unit Is Valued</h2>
+                <h2 className="heading-2 mb-6">How a franchise unit is valued</h2>
                 <p className={p}>
                   A franchise unit is valued on the same foundation as any small business: the earnings it produces for an
                   owner, usually measured after adding back owner compensation and one time expenses, and the risk that
@@ -327,27 +326,27 @@ export default function SellYourFranchisePage() {
                   may order its own.
                 </p>
                 <p className={p}>Franchise terms change the picture in ways an independent business does not face:</p>
-                <ul className="space-y-4 mb-5">
-                  <li className="text-steel leading-relaxed">
+                <ul className="mt-6 mb-5 border-t border-graphite">
+                  <li className="text-steel text-[17px] leading-relaxed py-5 border-b border-line">
                     <span className="font-semibold text-graphite">Remaining term.</span> A buyer is buying the years left on
                     the franchise. A unit near the end of its term carries more uncertainty unless the buyer signs a new
                     agreement at transfer.
                   </li>
-                  <li className="text-steel leading-relaxed">
+                  <li className="text-steel text-[17px] leading-relaxed py-5 border-b border-line">
                     <span className="font-semibold text-graphite">Renewal rights.</span> The conditions for renewal, the
                     renewal fee, and any requirement to sign the then current agreement affect how a buyer views the long
                     term.
                   </li>
-                  <li className="text-steel leading-relaxed">
+                  <li className="text-steel text-[17px] leading-relaxed py-5 border-b border-line">
                     <span className="font-semibold text-graphite">Territory.</span> A protected territory with room to grow
                     is worth more to a buyer than an unprotected one where the franchisor can place another unit nearby.
                   </li>
-                  <li className="text-steel leading-relaxed">
+                  <li className="text-steel text-[17px] leading-relaxed py-5 border-b border-line">
                     <span className="font-semibold text-graphite">Royalty and fee load.</span> Royalties, brand fund
                     contributions, and technology fees come out of every sale. If the buyer must sign a then current
                     agreement with higher fees, the buyer will value the unit on those fees, not yours.
                   </li>
-                  <li className="text-steel leading-relaxed">
+                  <li className="text-steel text-[17px] leading-relaxed py-5 border-b border-line">
                     <span className="font-semibold text-graphite">Required capital at transfer.</span> A remodel or upgrade
                     the buyer must fund reduces what the buyer can pay you.
                   </li>
@@ -355,7 +354,7 @@ export default function SellYourFranchisePage() {
               </article>
 
               <article id="timing" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">Timing Depends on the Franchisor&apos;s Process</h2>
+                <h2 className="heading-2 mb-6">Timing depends on the franchisor&apos;s process</h2>
                 <p className={p}>
                   A franchise resale has every step of an independent sale plus the franchisor&apos;s review. How long that
                   review takes depends on the franchisor: how quickly it processes applications, whether it exercises or
@@ -372,15 +371,14 @@ export default function SellYourFranchisePage() {
               <BrokerageNotice />
 
               <section id="faq" className="scroll-mt-28 pt-4">
-                <p className="eyebrow mb-4">Questions</p>
-                <h2 className="heading-3 mb-8">Questions From Franchise Owners</h2>
+                <h2 className="heading-2 mb-8">Questions from franchise owners</h2>
                 <FAQList faqs={faqs} />
               </section>
 
               <section id="inquiry" className="scroll-mt-28">
                 <IntakeForm
                   inquiryType="franchise-seller"
-                  heading="Talk to Us About Selling Your Franchise"
+                  heading="Talk to us about selling your franchise"
                   intro="Tell us about your unit and your franchisor. We will review your transfer terms with you before any buyer is contacted."
                 />
               </section>
@@ -390,18 +388,18 @@ export default function SellYourFranchisePage() {
       </section>
 
       <ContinueLearning
-        heading="Where to Go From Here"
+        heading="Where to go from here"
         links={[
-          { label: 'Selling a Business in Texas', href: '/sell-your-business', description: 'How Forge represents Texas owners through a confidential sale.' },
-          { label: 'Business Valuation', href: '/business-valuation', description: 'How earnings, risk, and market evidence shape the price of a business.' },
-          { label: 'Buying a Franchise', href: '/buy-a-franchise', description: 'How buyers evaluate brands and read the Franchise Disclosure Document.' },
+          { label: 'Selling a business in Texas', href: '/sell-your-business', description: 'How Forge represents Texas owners through a confidential sale.' },
+          { label: 'Business valuation', href: '/business-valuation', description: 'How earnings, risk, and market evidence shape the price of a business.' },
+          { label: 'Buying a franchise', href: '/buy-a-franchise', description: 'How buyers evaluate brands and read the Franchise Disclosure Document.' },
         ]}
       />
 
       <SectionCTA
-        heading="Review Your Transfer Terms Before You Sell"
+        heading="Review your transfer terms before you sell"
         body="Send a confidential inquiry. We start with your franchise agreement and your franchisor's transfer process."
-        buttonText="Send a Confidential Inquiry"
+        buttonText="Send a confidential inquiry"
         buttonHref="#inquiry"
       />
     </>

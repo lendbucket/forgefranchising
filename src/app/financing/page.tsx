@@ -3,7 +3,6 @@ import { createMetadata } from '@/lib/metadata'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
-import { OpenLoop } from '@/components/OpenLoop'
 import { KeyTakeaways } from '@/components/KeyTakeaways'
 import { StickyCTA } from '@/components/StickyCTA'
 import { ReadingProgress } from '@/components/ReadingProgress'
@@ -74,8 +73,7 @@ export default function FinancingPage() {
       <section className="bg-graphite surface-dark">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'Resources', href: '/learn' }, { label: 'Franchise Financing' }]} />
-          <div className="max-w-3xl">
-            <p className="eyebrow mb-4">Finance Franchise Development</p>
+          <div className="max-w-[880px]">
             <h1 className="heading-1 mb-8">
               How to Finance Your Franchise Development
             </h1>
@@ -108,19 +106,19 @@ export default function FinancingPage() {
       <section className="section-padding bg-stone">
         <div className="container-wide">
           <div className="max-w-4xl">
-            <h2 className="heading-2 mb-6">The Honest Cost Conversation</h2>
-            <p className="text-steel leading-relaxed mb-6">
+            <h2 className="heading-2 mb-6">The honest cost conversation</h2>
+            <p className="text-steel text-[17px] leading-relaxed mb-6">
               Franchise development has a real cost. You are paying for feasibility analysis, legal
               document preparation, operations manual development, state registration, and launch support.
               These are professional services with measurable deliverables, and they produce a franchise
               system that generates recurring revenue through franchise fees and royalties.
             </p>
-            <p className="text-steel leading-relaxed mb-6">
+            <p className="text-steel text-[17px] leading-relaxed mb-6">
               The investment is not trivial, but it is defined. You know what you are paying for before
               you start, and you know what you receive at each stage. That is different from hiring a
               consultant who bills by the hour with no clear endpoint.
             </p>
-            <p className="text-steel leading-relaxed mb-8">
+            <p className="text-steel text-[17px] leading-relaxed mb-8">
               Most of our clients do not fund the engagement entirely from cash on hand. They use one
               or more of the financing paths described below, and they stage the payments across the
               phases of the engagement so the capital deployment matches the pace of the project. For current scope
@@ -137,8 +135,8 @@ export default function FinancingPage() {
       <section className="section-padding bg-white">
         <div className="container-wide">
           <div className="max-w-4xl">
-            <h2 className="heading-2 mb-6">Common Funding Paths for Franchise Development</h2>
-            <p className="text-steel leading-relaxed mb-8">
+            <h2 className="heading-2 mb-6">Common funding paths for franchise development</h2>
+            <p className="text-steel text-[17px] leading-relaxed mb-8">
               There is no single right way to finance franchise development. The best path depends on
               your business financials, credit profile, available cash, and how quickly you want to move.
               Here are the options most owners consider.
@@ -146,24 +144,24 @@ export default function FinancingPage() {
 
             <div className="space-y-8">
               <div className="card">
-                <h3 className="heading-3 mb-3">SBA 7(a) Loans for Business Services</h3>
-                <p className="text-steel leading-relaxed mb-4">
+                <h3 className="heading-3 mb-3">SBA 7(a) loans for business services</h3>
+                <p className="text-steel text-[17px] leading-relaxed mb-4">
                   SBA 7(a) loans can be used to fund business services, including franchise development.
                   The SBA does not lend directly. It guarantees a portion of the loan made by an approved
                   lender, which reduces the lender's risk and opens up access for small business borrowers.
                 </p>
-                <p className="text-steel leading-relaxed mb-4">
+                <p className="text-steel text-[17px] leading-relaxed mb-4">
                   <strong className="text-graphite">What it is:</strong> A government backed small business
                   loan with favorable terms, typically 7 to 10 year repayment on working capital and
                   business services.
                 </p>
-                <p className="text-steel leading-relaxed mb-4">
+                <p className="text-steel text-[17px] leading-relaxed mb-4">
                   <strong className="text-graphite">Who it tends to fit:</strong> Established businesses
                   with at least two years of operating history, clean tax returns, and a personal credit
                   score of 680 or higher. Lenders want to see that your existing business can service the
                   debt while the franchise system ramps up.
                 </p>
-                <p className="text-steel leading-relaxed">
+                <p className="text-steel text-[17px] leading-relaxed">
                   <strong className="text-graphite">What lenders generally look for:</strong> Two years of
                   business tax returns, personal financial statement, a clear use of funds document, a basic
                   projection showing how franchise fees and royalties will service the loan, and a personal
@@ -172,23 +170,23 @@ export default function FinancingPage() {
               </div>
 
               <div className="card">
-                <h3 className="heading-3 mb-3">Business Lines of Credit</h3>
-                <p className="text-steel leading-relaxed mb-4">
+                <h3 className="heading-3 mb-3">Business lines of credit</h3>
+                <p className="text-steel text-[17px] leading-relaxed mb-4">
                   A business line of credit gives you access to a pool of capital that you draw from as
                   needed. You only pay interest on what you use, which makes it flexible for a phased
                   engagement where payments are scheduled in advance of each phase.
                 </p>
-                <p className="text-steel leading-relaxed mb-4">
+                <p className="text-steel text-[17px] leading-relaxed mb-4">
                   <strong className="text-graphite">What it is:</strong> A revolving credit facility,
                   typically ranging from $25,000 to $250,000, secured or unsecured depending on the
                   lender and your credit profile.
                 </p>
-                <p className="text-steel leading-relaxed mb-4">
+                <p className="text-steel text-[17px] leading-relaxed mb-4">
                   <strong className="text-graphite">Who it tends to fit:</strong> Business owners who want
                   flexibility and already have a relationship with a lender. Lines of credit work well when
                   you want to fund the engagement in stages rather than taking a lump sum.
                 </p>
-                <p className="text-steel leading-relaxed">
+                <p className="text-steel text-[17px] leading-relaxed">
                   <strong className="text-graphite">What lenders generally look for:</strong> Business
                   credit history, annual revenue, time in business, and personal credit. Unsecured lines
                   typically require stronger credit profiles. Secured lines may use business assets or
@@ -197,22 +195,22 @@ export default function FinancingPage() {
               </div>
 
               <div className="card">
-                <h3 className="heading-3 mb-3">Unsecured Term Loans</h3>
-                <p className="text-steel leading-relaxed mb-4">
+                <h3 className="heading-3 mb-3">Unsecured term loans</h3>
+                <p className="text-steel text-[17px] leading-relaxed mb-4">
                   An unsecured term loan is a fixed amount borrowed and repaid over a set period, without
                   requiring specific collateral. These are faster to close than SBA loans and work well for
                   business owners with strong credit who need capital on a shorter timeline.
                 </p>
-                <p className="text-steel leading-relaxed mb-4">
+                <p className="text-steel text-[17px] leading-relaxed mb-4">
                   <strong className="text-graphite">What it is:</strong> A fixed loan amount, typically
                   $25,000 to $500,000, repaid over 1 to 5 years with a fixed or variable rate.
                 </p>
-                <p className="text-steel leading-relaxed mb-4">
+                <p className="text-steel text-[17px] leading-relaxed mb-4">
                   <strong className="text-graphite">Who it tends to fit:</strong> Business owners who want
                   a straightforward loan without SBA paperwork and who have the credit profile to qualify
                   without collateral. The trade off is a higher interest rate compared to SBA products.
                 </p>
-                <p className="text-steel leading-relaxed">
+                <p className="text-steel text-[17px] leading-relaxed">
                   <strong className="text-graphite">What lenders generally look for:</strong> Strong
                   personal and business credit, documented revenue, and a clear repayment plan. Some
                   lenders also look at industry risk and the borrower's net worth.
@@ -220,24 +218,24 @@ export default function FinancingPage() {
               </div>
 
               <div className="card">
-                <h3 className="heading-3 mb-3">Reinvested Cash Flow</h3>
-                <p className="text-steel leading-relaxed mb-4">
+                <h3 className="heading-3 mb-3">Reinvested cash flow</h3>
+                <p className="text-steel text-[17px] leading-relaxed mb-4">
                   Some business owners fund franchise development directly from their existing business
                   cash flow. This avoids debt entirely and keeps the franchise system fully owner financed
                   from the start.
                 </p>
-                <p className="text-steel leading-relaxed mb-4">
+                <p className="text-steel text-[17px] leading-relaxed mb-4">
                   <strong className="text-graphite">What it is:</strong> Using profits from your current
                   business to fund franchise development over time, often paired with a phased payment
                   schedule that matches the pace of cash generation.
                 </p>
-                <p className="text-steel leading-relaxed mb-4">
+                <p className="text-steel text-[17px] leading-relaxed mb-4">
                   <strong className="text-graphite">Who it tends to fit:</strong> Profitable businesses with
                   consistent cash flow and owners who prefer to avoid taking on debt. This works especially
                   well when the business has strong margins and the owner can fund the engagement without
                   cutting into operating capital.
                 </p>
-                <p className="text-steel leading-relaxed">
+                <p className="text-steel text-[17px] leading-relaxed">
                   <strong className="text-graphite">What to consider:</strong> Make sure the cash allocation
                   does not starve your existing operations. Franchise development takes months, and your core
                   business needs to keep running at full capacity while the franchise system is being built.
@@ -252,37 +250,37 @@ export default function FinancingPage() {
       <section className="section-padding bg-stone">
         <div className="container-wide">
           <div className="max-w-4xl">
-            <h2 className="heading-2 mb-6">How to Get Ready to Qualify</h2>
-            <p className="text-steel leading-relaxed mb-8">
+            <h2 className="heading-2 mb-6">How to get ready to qualify</h2>
+            <p className="text-steel text-[17px] leading-relaxed mb-8">
               If you plan to finance your franchise development, preparation matters. Lenders approve
               borrowers who show up organized, with a clear plan and clean documentation. Here is what
               to focus on before you apply.
             </p>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="tile-grid md:grid-cols-2">
               {[
                 {
-                  title: 'Clean Books and Tax Returns',
+                  title: 'Clean books and tax returns',
                   body: 'Lenders want to see at least two years of business tax returns that match your bank statements. If your books are messy or your P&L does not reflect reality, clean that up first. A CPA review before you apply saves time and prevents declines.',
                 },
                 {
-                  title: 'A Clear Use of Funds',
+                  title: 'A clear use of funds',
                   body: 'Lenders do not fund vague plans. They want to see exactly what the money will be used for: feasibility, FDD preparation, operations manual, state registration, and launch support. Forge provides a detailed scope of work that serves as your use of funds document.',
                 },
                 {
-                  title: 'A Simple Revenue Projection',
+                  title: 'A simple revenue projection',
                   body: 'You do not need a 50 page business plan. You need a credible one page projection showing how franchise fees and royalties will generate revenue over the first 12 to 24 months. Forge helps you build this as part of the feasibility process.',
                 },
                 {
-                  title: 'Time in Business',
+                  title: 'Time in business',
                   body: 'Most lenders want at least two years of operating history for the business you are franchising. If your business is newer, you may need to rely more on personal credit, collateral, or alternative lending products.',
                 },
                 {
-                  title: 'Personal and Business Credit',
+                  title: 'Personal and business credit',
                   body: 'Check both before you apply. Personal credit scores below 650 limit your options significantly. Business credit is separate and matters for larger loan amounts and unsecured products. If either needs work, address it before starting the financing process.',
                 },
                 {
-                  title: 'Forge Helps You Prepare the Case',
+                  title: 'Forge helps you prepare the case',
                   body: 'We are not lenders, and we do not make financing decisions. What we do is help you organize the business case that lenders need. A well structured scope of work, a clear deliverable schedule, and a credible projection make the difference between approval and decline.',
                 },
               ].map((item) => (
@@ -300,20 +298,20 @@ export default function FinancingPage() {
       <section className="section-padding bg-white">
         <div className="container-wide">
           <div className="max-w-4xl">
-            <h2 className="heading-2 mb-6">Payment Structure</h2>
-            <p className="text-steel leading-relaxed mb-6">
+            <h2 className="heading-2 mb-6">Payment structure</h2>
+            <p className="text-steel text-[17px] leading-relaxed mb-6">
               Forge engagements are staged rather than paid in a single lump sum. A deposit begins the
               work, and the balance is scheduled in advance of each phase, with each phase starting once
               it is funded. You are not writing one large check for the full investment before the
               engagement begins.
             </p>
-            <p className="text-steel leading-relaxed mb-6">
+            <p className="text-steel text-[17px] leading-relaxed mb-6">
               The practical benefit is predictability. You know the amount and the timing of every
               payment before you sign, which means you can line the schedule up with a draw on a line of
               credit, a loan disbursement, or the pace of your own cash flow. There is no hourly billing
               running in the background and no surprise invoice mid project.
             </p>
-            <p className="text-steel leading-relaxed mb-8">
+            <p className="text-steel text-[17px] leading-relaxed mb-8">
               The specific schedule depends on the package and scope, and it is set out in the engagement
               agreement before any work begins. Terms are established during the proposal process. If you
               have questions about payment options for your specific situation,{' '}
@@ -329,8 +327,8 @@ export default function FinancingPage() {
       <section className="section-padding bg-stone">
         <div className="container-wide">
           <div className="max-w-4xl">
-            <h2 className="heading-2 mb-6">What Your Investment Builds</h2>
-            <p className="text-steel leading-relaxed mb-8">
+            <h2 className="heading-2 mb-6">What your investment builds</h2>
+            <p className="text-steel text-[17px] leading-relaxed mb-8">
               Franchise development is not a consulting fee that disappears after a conversation. It
               produces tangible deliverables that form the legal, operational, and commercial foundation
               of your franchise system.
@@ -350,13 +348,13 @@ export default function FinancingPage() {
                     <svg className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-steel leading-relaxed">{item}</span>
+                    <span className="text-steel text-[17px] leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <p className="text-steel leading-relaxed mb-4">
+            <p className="text-steel text-[17px] leading-relaxed mb-4">
               These deliverables are not theoretical. They are the documents and systems that every
               functioning franchise operates on. For a detailed walkthrough of what each phase produces,
               see{' '}
@@ -375,36 +373,22 @@ export default function FinancingPage() {
         </div>
       </section>
 
-      <OpenLoop
-        teaser="The franchise development process has four distinct phases, each building on the one before it. Understanding the sequence removes the uncertainty and lets you plan your capital deployment with precision."
-        linkText="See the four phase process from feasibility to scale"
-        href="/how-it-works"
-        variant="section"
-      />
-
       {/* FAQ */}
       <section className="section-padding bg-white">
         <div className="container-wide">
-          <div className="max-w-3xl mx-auto">
-            <p className="eyebrow mb-4">Frequently Asked Questions</p>
-            <h2 className="heading-2 mb-10">Franchise Development Financing FAQ</h2>
-            <div className="space-y-6">
+          <div className="max-w-[880px]">
+            <h2 className="heading-2 mb-10">Franchise development financing FAQ</h2>
+            <div className="border-t border-graphite">
               {faqs.map((faq, i) => (
-                <div key={i} className="card">
+                <div key={i} className="py-8 border-b border-line">
                   <h3 className="heading-4 mb-3">{faq.q}</h3>
-                  <p className="text-steel leading-relaxed">{faq.a}</p>
+                  <p className="text-steel text-[17px] leading-relaxed">{faq.a}</p>
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Disclaimer */}
-      <section className="bg-stone border-t border-graphite/10">
-        <div className="container-wide py-10">
-          <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-widest text-steel mb-3">Important Notice</p>
+            {/* Disclaimer */}
+            <div className="mt-12">
             <p className="text-steel text-sm leading-relaxed mb-4">
               Forge Franchising is not a lender, bank, or financial advisor and does not provide loans,
               credit, or financial, tax, or legal advice. Financing options, terms, and approval depend
@@ -419,23 +403,24 @@ export default function FinancingPage() {
             <p className="text-steel text-sm leading-relaxed">
               Franchise offerings are made only through a Franchise Disclosure Document where applicable.
             </p>
+            </div>
           </div>
         </div>
       </section>
 
       <ContinueLearning
-        heading="Continue Your Research"
+        heading="Continue your research"
         links={[
-          { label: 'Franchise Development Packages', href: '/packages', description: 'See the scope, deliverables, and structure at each engagement level.' },
-          { label: 'How the Process Works', href: '/how-it-works', description: 'The four phases from feasibility to scale, step by step.' },
-          { label: 'Is My Business Franchisable?', href: '/is-my-business-franchisable', description: 'Take the free readiness assessment and get a clear answer in five minutes.' },
+          { label: 'Franchise development packages', href: '/packages', description: 'See the scope, deliverables, and structure at each engagement level.' },
+          { label: 'How the process works', href: '/how-it-works', description: 'The four phases from feasibility to scale, step by step.' },
+          { label: 'Is my business franchisable?', href: '/is-my-business-franchisable', description: 'Take the free readiness assessment and get a clear answer in five minutes.' },
         ]}
       />
 
       <SectionCTA
-        heading="Start With a Readiness Conversation"
+        heading="Start with a readiness conversation"
         body="Before you think about financing, find out if your business is ready to franchise. Take the free assessment or book a call to discuss your specific situation and timeline."
-        buttonText="Take the Free Assessment"
+        buttonText="Take the free assessment"
         buttonHref="/is-my-business-franchisable"
         secondaryText="Or book a call to discuss your situation"
         secondaryHref="/contact"
@@ -443,7 +428,7 @@ export default function FinancingPage() {
       />
 
       <StickyCTA
-        text="Get Your Free Franchise Evaluation"
+        text="Get your free franchise evaluation"
         href="/contact"
       />
     </>

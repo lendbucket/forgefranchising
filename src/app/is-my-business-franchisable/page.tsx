@@ -30,17 +30,16 @@ export default function AssessmentPage() {
           ]),
         }}
       />
-      <div className="bg-white">
-        <div className="container-wide px-4 sm:px-6 lg:px-8">
+      <AssessmentClient
+        breadcrumbs={
           <Breadcrumbs
             items={[
               { label: 'Resources', href: '/learn' },
               { label: 'Is My Business Franchisable?' },
             ]}
           />
-        </div>
-      </div>
-      <AssessmentClient />
+        }
+      />
     </>
   )
 }

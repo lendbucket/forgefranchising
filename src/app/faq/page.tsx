@@ -2,7 +2,6 @@ import { createMetadata } from '@/lib/metadata'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
-import { OpenLoop } from '@/components/OpenLoop'
 import { StickyCTA } from '@/components/StickyCTA'
 import { SITE_URL } from '@/lib/constants'
 import { faqSchema, webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
@@ -17,7 +16,7 @@ export const metadata = createMetadata({
 
 const FAQ_CATEGORIES = [
   {
-    name: 'Getting Started',
+    name: 'Getting started',
     questions: [
       {
         question: 'What does it actually mean to franchise a business?',
@@ -37,7 +36,7 @@ const FAQ_CATEGORIES = [
     ],
   },
   {
-    name: 'Cost & Timeline',
+    name: 'Cost & timeline',
     questions: [
       {
         question: 'How much does it cost to franchise a business?',
@@ -57,7 +56,7 @@ const FAQ_CATEGORIES = [
     ],
   },
   {
-    name: 'Legal & Compliance',
+    name: 'Legal & compliance',
     questions: [
       {
         question: 'What is a Franchise Disclosure Document (FDD)?',
@@ -82,7 +81,7 @@ const FAQ_CATEGORIES = [
     ],
   },
   {
-    name: 'Revenue & Fees',
+    name: 'Revenue & fees',
     questions: [
       {
         question: 'How do franchise royalties work?',
@@ -177,10 +176,7 @@ export default function FAQPage() {
       <section className="bg-graphite surface-dark">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'FAQ' }]} />
-          <div className="max-w-3xl">
-            <p className="eyebrow mb-4">
-              Frequently Asked Questions
-            </p>
+          <div className="max-w-[880px]">
             <h1 className="heading-1 mb-6">
               Straight Answers to the Questions Every Business Owner Asks
             </h1>
@@ -199,34 +195,26 @@ export default function FAQPage() {
         </div>
       </section>
 
-      {/* Open loop: Zeigarnik effect creates curiosity about cost */}
-      <OpenLoop
-        teaser="The most common question we get is about cost. The answer depends on six factors that most franchise consultants never explain. We break them all down with real numbers."
-        linkText="See the real cost breakdown"
-        href="/blog/cost-to-franchise-a-business"
-        variant="section"
-      />
-
       <ContinueLearning
-        heading="Keep Exploring"
+        heading="Keep exploring"
         links={[
-          { label: 'How Our Process Works', href: '/how-it-works', description: 'See the four-phase process that takes a business from concept to franchise brand.' },
-          { label: 'What Does It Cost?', href: '/blog/cost-to-franchise-a-business', description: 'Real numbers on franchise development investment and what drives the cost.' },
-          { label: 'Franchise Glossary', href: '/glossary', description: 'Over 40 franchise terms defined in plain language with context.' },
+          { label: 'How our process works', href: '/how-it-works', description: 'See the four-phase process that takes a business from concept to franchise brand.' },
+          { label: 'What does it cost?', href: '/blog/cost-to-franchise-a-business', description: 'Real numbers on franchise development investment and what drives the cost.' },
+          { label: 'Franchise glossary', href: '/glossary', description: 'Over 40 franchise terms defined in plain language with context.' },
         ]}
       />
 
       <SectionCTA
-        heading="Still Have Questions? Get a Specific Answer."
+        heading="Still have questions? Get a specific answer."
         body="Take our two-minute assessment for a personalized readiness score, or book a call to discuss your specific situation."
-        buttonText="Get Your Free Readiness Score"
+        buttonText="Get your free readiness score"
         buttonHref="/is-my-business-franchisable"
         secondaryText="Or book a feasibility call directly"
         secondaryHref="/contact"
       />
 
       <StickyCTA
-        text="Get Your Free Readiness Score"
+        text="Get your free readiness score"
         href="/is-my-business-franchisable"
       />
     </>

@@ -24,17 +24,16 @@ export const metadata = createMetadata({
 })
 
 const linkClass = 'text-accent font-semibold hover:underline'
-const p = 'text-steel leading-relaxed text-base sm:text-lg mb-5'
+const p = 'text-steel text-[17px] leading-relaxed mb-5'
 
 function CompensationDisclosure({ className = '' }: { className?: string }) {
   return (
     <aside
       aria-label="Consultant compensation disclosure"
-      className={`bg-white p-6 sm:p-8 ${className}`}
-      style={{ borderRadius: '0px', border: '1px solid rgba(78, 90, 98, 0.18)', borderLeft: '3px solid #E4572E' }}
+      className={`card border-t-2 border-t-graphite max-[720px]:p-6 ${className}`}
     >
-      <p className="text-xs font-semibold uppercase tracking-widest text-graphite mb-3">Disclosure</p>
-      <ul className="space-y-2 text-sm text-steel leading-relaxed">
+      <p className="heading-4 mb-3">Disclosure</p>
+      <ul className="space-y-2 text-[15px] text-steel leading-relaxed">
         <li>
           Franchise consultants are commonly compensated by the franchisors whose brands they present. Ask any consultant,
           including Forge, how they are paid before you rely on their recommendations.
@@ -129,16 +128,16 @@ const faqs = [
 ]
 
 const toc = [
-  { id: 'how-we-help', label: 'How Forge Helps' },
-  { id: 'fit', label: 'Fit With Your Goals' },
-  { id: 'questions', label: 'Questions to Ask' },
-  { id: 'fdd-rule', label: 'The 14 Day Rule' },
+  { id: 'how-we-help', label: 'How Forge helps' },
+  { id: 'fit', label: 'Fit with your goals' },
+  { id: 'questions', label: 'Questions to ask' },
+  { id: 'fdd-rule', label: 'The 14 day rule' },
   { id: 'reading-the-fdd', label: 'Reading the FDD' },
-  { id: 'validation', label: 'Validation Calls' },
-  { id: 'before-signing', label: 'Before You Sign' },
-  { id: 'forge-franchise', label: 'Owning a Forge Franchise' },
+  { id: 'validation', label: 'Validation calls' },
+  { id: 'before-signing', label: 'Before you sign' },
+  { id: 'forge-franchise', label: 'Owning a Forge franchise' },
   { id: 'faq', label: 'Questions' },
-  { id: 'inquiry', label: 'Franchise Buyer Profile' },
+  { id: 'inquiry', label: 'Franchise buyer profile' },
 ]
 
 export default function BuyAFranchisePage() {
@@ -165,10 +164,9 @@ export default function BuyAFranchisePage() {
       />
 
       <section className="bg-graphite surface-dark">
-        <div className="container-wide section-padding !pb-12">
+        <div className="container-wide section-padding">
           <Breadcrumbs withSchema={false} items={[{ label: 'Buy a Franchise' }]} />
-          <div className="max-w-3xl">
-            <p className="eyebrow mb-4">Franchise Buyers</p>
+          <div className="max-w-[880px]">
             <h1 className="heading-1 mb-8">Buy a Franchise With a Clear Read of the Brand and the FDD</h1>
             <p className="body-large mb-6">
               When you buy a franchise, you are buying the right to run another company&apos;s system under a long term
@@ -196,15 +194,15 @@ export default function BuyAFranchisePage() {
       </section>
 
       <section className="bg-white">
-        <div className="container-wide px-4 sm:px-6 lg:px-8 pb-20 sm:pb-24">
+        <div className="container-wide section-padding">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
             <aside className="lg:col-span-3">
               <PageTOC items={toc} />
             </aside>
 
-            <div className="lg:col-span-9 space-y-16">
+            <div className="lg:col-span-9 min-w-0 space-y-24 max-[720px]:space-y-16">
               <article id="how-we-help" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">How Forge Helps Franchise Buyers</h2>
+                <h2 className="heading-2 mb-6">How Forge helps franchise buyers</h2>
                 <p className={p}>
                   Forge builds franchise systems for franchisors, which means we work with the documents, fee structures,
                   and support programs that buyers are asked to evaluate. We use that experience on the buyer side to help
@@ -219,7 +217,7 @@ export default function BuyAFranchisePage() {
               </article>
 
               <article id="fit" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">Start With Fit: Goals, Capital, and Role</h2>
+                <h2 className="heading-2 mb-6">Start with fit: Goals, capital, and role</h2>
                 <p className={p}>
                   Before comparing brands, settle three questions about yourself. The answers remove most of the market
                   from consideration, which is the point.
@@ -247,7 +245,7 @@ export default function BuyAFranchisePage() {
               </article>
 
               <article id="questions" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">Industry and Unit Economics Questions to Ask</h2>
+                <h2 className="heading-2 mb-6">Industry and unit economics questions to ask</h2>
                 <p className={p}>
                   Once a brand fits your profile, look at the industry and at how a single unit makes money. Ask the
                   franchisor these questions, and ask franchisees the same ones.
@@ -277,7 +275,7 @@ export default function BuyAFranchisePage() {
               </article>
 
               <article id="fdd-rule" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">The 14 Day FDD Rule</h2>
+                <h2 className="heading-2 mb-6">The 14 day FDD rule</h2>
                 <p className={p}>
                   The FTC Franchise Rule requires a franchisor to give you its Franchise Disclosure Document at least 14
                   calendar days before you sign a binding agreement or pay any money to the franchisor or an affiliate. If
@@ -295,18 +293,20 @@ export default function BuyAFranchisePage() {
               </article>
 
               <article id="reading-the-fdd" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">Reading the FDD: The Items That Matter Most to a Buyer</h2>
+                <h2 className="heading-2 mb-6">Reading the FDD: The items that matter most to a buyer</h2>
                 <p className={p}>
                   The FDD has 23 items in a fixed order, followed by exhibits that include the franchise agreement and the
                   financial statements. Every item matters, but the ones below are where buyers find the information that
                   most often changes a decision.
                 </p>
-                <div className="space-y-4 mt-8">
+                <div className="mt-10 border-t border-graphite">
                   {fddItems.map((item) => (
-                    <div key={item.items} className="bg-stone p-6" style={{ borderRadius: '0px' }}>
-                      <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-1">{item.items}</p>
-                      <h3 className="heading-4 mb-2">{item.title}</h3>
-                      <p className="text-steel text-sm sm:text-base leading-relaxed">{item.body}</p>
+                    <div key={item.items} className="grid md:grid-cols-[200px_1fr] gap-3 md:gap-8 py-8 border-b border-line">
+                      <p className="heading-4 text-accent">{item.items}</p>
+                      <div className="min-w-0">
+                        <h3 className="heading-4 mb-2">{item.title}</h3>
+                        <p className="text-steel text-[17px] leading-relaxed">{item.body}</p>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -317,7 +317,7 @@ export default function BuyAFranchisePage() {
               </article>
 
               <article id="validation" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">Validate With Current and Former Franchisees</h2>
+                <h2 className="heading-2 mb-6">Validate with current and former franchisees</h2>
                 <p className={p}>
                   Validation means talking to the people who already bought the franchise. Item 20 gives you the contact
                   information for current franchisees and for those who left the system in the last fiscal year. Use both
@@ -353,7 +353,7 @@ export default function BuyAFranchisePage() {
               </article>
 
               <article id="before-signing" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">Before You Sign: Attorney and CPA Review</h2>
+                <h2 className="heading-2 mb-6">Before you sign: Attorney and CPA review</h2>
                 <p className={p}>
                   We recommend that every buyer have a franchise attorney review the FDD and the franchise agreement
                   before signing. The agreement is usually long, it runs for years, and the franchisor drafted it. An
@@ -370,7 +370,7 @@ export default function BuyAFranchisePage() {
               </article>
 
               <article id="forge-franchise" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">Interested in Owning a Forge Franchise?</h2>
+                <h2 className="heading-2 mb-6">Interested in owning a Forge franchise?</h2>
                 <p className={p}>
                   This buyer service does not sell Forge franchises. It helps you evaluate brands offered by other
                   franchisors. If you want to own a Forge franchise, that is a separate path with its own disclosure
@@ -380,8 +380,7 @@ export default function BuyAFranchisePage() {
               </article>
 
               <section id="faq" className="scroll-mt-28 pt-4">
-                <p className="eyebrow mb-4">Questions</p>
-                <h2 className="heading-3 mb-8">Questions From Franchise Buyers</h2>
+                <h2 className="heading-2 mb-8">Questions from franchise buyers</h2>
                 <FAQList faqs={faqs} />
               </section>
 
@@ -390,9 +389,9 @@ export default function BuyAFranchisePage() {
                 <BrokerageNotice />
                 <IntakeForm
                   inquiryType="franchise-buyer"
-                  heading="Franchise Buyer Profile"
+                  heading="Franchise buyer profile"
                   intro="Tell us what you are considering, where you would operate, and the capital you have available. We will follow up to talk through brands and the FDD review."
-                  submitLabel="Send Franchise Buyer Profile"
+                  submitLabel="Send franchise buyer profile"
                 />
               </section>
             </div>
@@ -401,18 +400,18 @@ export default function BuyAFranchisePage() {
       </section>
 
       <ContinueLearning
-        heading="Where to Go From Here"
+        heading="Where to go from here"
         links={[
           { label: 'The Franchise Disclosure Document', href: '/blog/franchise-disclosure-document', description: 'All 23 items of the FDD and what each one discloses.' },
-          { label: 'Buying an Independent Business', href: '/buy-a-business', description: 'The buying process, financing, and due diligence for an existing business.' },
-          { label: 'Selling a Franchise Unit', href: '/sell-your-franchise', description: 'How franchise transfers work, from Item 17 to the franchisor sign off.' },
+          { label: 'Buying an independent business', href: '/buy-a-business', description: 'The buying process, financing, and due diligence for an existing business.' },
+          { label: 'Selling a franchise unit', href: '/sell-your-franchise', description: 'How franchise transfers work, from Item 17 to the franchisor sign off.' },
         ]}
       />
 
       <SectionCTA
-        heading="Review Franchise Brands Before You Sign"
+        heading="Review franchise brands before you sign"
         body="Send a franchise buyer profile. We will talk through your goals and capital, and how to read the FDD for the brands you are considering."
-        buttonText="Send a Buyer Profile"
+        buttonText="Send a buyer profile"
         buttonHref="#inquiry"
       />
     </>

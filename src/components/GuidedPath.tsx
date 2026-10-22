@@ -1,14 +1,9 @@
 import Link from 'next/link'
 
 /**
- * GuidedPath: A step-by-step learning journey through the site.
- *
- * Psychology: The goal gradient effect means people accelerate toward
- * a goal as they get closer. By framing content as a numbered path
- * (Step 1 of 5), visitors feel they are making progress and are more
- * likely to complete the sequence. Combined with commitment/consistency,
- * once someone starts step 1, they feel compelled to continue.
- * This routes them naturally toward the assessment and contact.
+ * GuidedPath: a numbered set of starting steps, laid out like the homepage
+ * "where to begin" section. Each step is a white card with a heavy top rule;
+ * the first rule is ember.
  */
 
 type PathStep = {
@@ -16,7 +11,7 @@ type PathStep = {
   title: string
   description: string
   href: string
-  /** Time estimate shown as badge */
+  /** Time estimate shown beside the step number */
   time?: string
 }
 
@@ -26,66 +21,35 @@ type GuidedPathProps = {
   steps: PathStep[]
 }
 
-export function GuidedPath({
-  heading = 'Start Here: Your Franchise Education Path',
-  subheading,
-  steps,
-}: GuidedPathProps) {
+export function GuidedPath({ heading = 'Where to begin', subheading, steps }: GuidedPathProps) {
   return (
-    <section className="section-padding bg-graphite text-white">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <p className="eyebrow mb-4">Guided Learning Path</p>
-          <h2 className="heading-2 text-white mb-4">{heading}</h2>
-          {subheading && (
-            <p className="text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
-              {subheading}
-            </p>
-          )}
+    <section className="section-padding bg-stone">
+      <div className="container-wide">
+        <div className="grid min-[961px]:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-6 min-[961px]:gap-20 items-end mb-16 max-[720px]:mb-8">
+          <h2 className="heading-2">{heading}</h2>
+          {subheading && <p className="lead !text-[17px] max-w-[560px]">{subheading}</p>}
         </div>
-
-        <div className="space-y-4">
-          {steps.map((item, index) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="group block bg-white/5 hover:bg-white/10 border border-white/10 hover:border-ember/30 transition-all duration-200 p-6 sm:p-8"
-              style={{ borderRadius: '0px' }}
-            >
-              <div className="flex items-start gap-6">
-                {/* Step number with connecting line */}
-                <div className="flex-shrink-0 flex flex-col items-center">
-                  <div className="w-10 h-10 border border-ember flex items-center justify-center text-accent font-display font-bold text-base" style={{ borderRadius: '0px' }}>
+        <ol className={`grid gap-6 max-[720px]:gap-4 min-[721px]:grid-cols-3 ${steps.length === 5 ? 'min-[1141px]:grid-cols-5' : 'min-[1141px]:grid-cols-4'}`}>
+          {steps.map((item, i) => (
+            <li key={item.href}>
+              <Link
+                href={item.href}
+                className={`group block h-full bg-white p-7 border-t-4 ${i === 0 ? 'border-ember' : 'border-graphite'} text-graphite`}
+              >
+                <span className="flex justify-between items-baseline mb-10 max-[720px]:mb-6">
+                  <span className="font-display text-[44px] font-bold leading-[0.9]" style={{ letterSpacing: '-0.05em' }}>
                     {item.step}
-                  </div>
-                  {index < steps.length - 1 && (
-                    <div className="w-px h-4 bg-white/15 mt-2 hidden sm:block" />
-                  )}
-                </div>
-
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-3 mb-2">
-                    <h3 className="font-display font-bold text-lg text-white group-hover:text-accent transition-colors" style={{ letterSpacing: '-0.015em' }}>
-                      {item.title}
-                    </h3>
-                    {item.time && (
-                      <span className="text-xs text-white/60 bg-white/10 px-2 py-0.5 flex-shrink-0" style={{ borderRadius: '2px' }}>
-                        {item.time}
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-sm text-white/60 leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-
-                <svg className="w-5 h-5 text-white/60 group-hover:text-accent group-hover:translate-x-1 transition-all flex-shrink-0 mt-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                </svg>
-              </div>
-            </Link>
+                  </span>
+                  {item.time && <span className="text-[13px] text-steel">{item.time}</span>}
+                </span>
+                <h3 className="font-display !text-xl font-bold !leading-[1.2] mb-2.5 decoration-2 decoration-ember underline-offset-[6px] group-hover:underline" style={{ letterSpacing: '-0.015em' }}>
+                  {item.title}
+                </h3>
+                <span className="block text-[15px] leading-[1.55] text-steel">{item.description}</span>
+              </Link>
+            </li>
           ))}
-        </div>
+        </ol>
       </div>
     </section>
   )

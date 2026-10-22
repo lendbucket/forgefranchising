@@ -2,7 +2,6 @@ import { createMetadata } from '@/lib/metadata'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
-import { OpenLoop } from '@/components/OpenLoop'
 import { KeyTakeaways } from '@/components/KeyTakeaways'
 import { StickyCTA } from '@/components/StickyCTA'
 import { ReadingProgress } from '@/components/ReadingProgress'
@@ -115,8 +114,7 @@ export default function HowItWorksPage() {
       <section className="bg-graphite surface-dark">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'How It Works' }]} />
-          <div className="max-w-3xl">
-            <p className="eyebrow mb-4">Our Process</p>
+          <div className="max-w-[880px]">
             <h1 className="heading-1 mb-8">
               How to Franchise My Business: The Four Phase Process
             </h1>
@@ -165,13 +163,13 @@ export default function HowItWorksPage() {
         <section
           key={phase.number}
           id={`phase-${phase.number}`}
-          className={index % 2 === 0 ? 'section-padding bg-stone' : 'section-padding bg-white'}
+          className={index % 2 === 0 ? 'section-padding bg-white' : 'section-padding bg-stone'}
         >
           <div className="container-wide">
             <div className="grid lg:grid-cols-12 gap-12">
               <div className="lg:col-span-4">
                 <div className="sticky top-28">
-                  <div className="text-accent font-display text-6xl font-bold mb-4">{phase.number}</div>
+                  <p className="numeral text-[56px] mb-6">{phase.number}</p>
                   <h2 className="heading-2 mb-3">{phase.title}</h2>
                   <p className="text-steel text-sm mb-4">Timeline: {phase.duration}</p>
                   <p className="body-large">{phase.summary}</p>
@@ -186,11 +184,11 @@ export default function HowItWorksPage() {
                         <svg className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
-                        <span className="text-steel leading-relaxed">{detail}</span>
+                        <span className="text-steel text-[17px] leading-relaxed">{detail}</span>
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-8 p-6 bg-stone" style={{ borderRadius: '0px' }}>
+                  <div className="mt-8 pt-6 border-t-2 border-graphite">
                     <p className="font-semibold text-graphite mb-1">Phase Outcome:</p>
                     <p className="text-steel">{phase.outcome}</p>
                   </div>
@@ -201,50 +199,42 @@ export default function HowItWorksPage() {
         </section>
       ))}
 
-      <section className="section-padding bg-graphite text-white">
-        <div className="container-wide text-center">
-          <h2 className="heading-2 text-white mb-6">Why This Process Works</h2>
-          <p className="text-xl text-white/60 max-w-3xl mx-auto leading-relaxed mb-12">
+      <section className="section-padding bg-white">
+        <div className="container-wide">
+          <h2 className="heading-2 mb-6">Why this process works</h2>
+          <p className="body-large max-w-[880px] mb-12">
             Every step here exists because skipping it has a predictable failure mode. Thin unit
             economics surface at unit five, not unit one. An undocumented operation shows up as a
             franchisee who cannot be trained. The order of the phases is the point.
           </p>
-          <div className="grid sm:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-3 border-t border-graphite sm:divide-x sm:divide-line">
             {[
               { stat: '23', label: 'Items in every FDD, each one required by federal law' },
               { stat: '14', label: 'Registration states with their own filing requirements' },
               { stat: '4', label: 'Phases that separate franchise brands from franchise failures' },
             ].map((item) => (
-              <div key={item.stat}>
-                <div className="text-4xl font-display font-bold text-accent mb-2">{item.stat}</div>
-                <p className="text-white/60 text-sm">{item.label}</p>
+              <div key={item.stat} className="py-8 sm:px-8 sm:first:pl-0 border-b border-line sm:border-b-0">
+                <div className="stat-number">{item.stat}</div>
+                <p className="stat-label">{item.label}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Open loop: curiosity gap points to packages page */}
-      <OpenLoop
-        teaser="Development cost varies with complexity, and the scope of each tier varies with it. See exactly what is included at each level before you talk to anyone about price."
-        linkText="Compare our three packages"
-        href="/packages"
-        variant="section"
-      />
-
       <ContinueLearning
-        heading="Go Deeper"
+        heading="Go deeper"
         links={[
-          { label: 'Financing Your Development', href: '/financing', description: 'Common funding paths, what lenders look for, and how to prepare your business case.' },
-          { label: 'Franchise vs License', href: '/franchise-vs-license', description: 'Not sure which growth model fits? Compare both paths side by side.' },
-          { label: 'Franchise Branding Guide', href: '/franchise-branding', description: 'Why brand is the product when you franchise, and how to build one worth buying.' },
+          { label: 'Financing your development', href: '/financing', description: 'Common funding paths, what lenders look for, and how to prepare your business case.' },
+          { label: 'Franchise vs license', href: '/franchise-vs-license', description: 'Not sure which growth model fits? Compare both paths side by side.' },
+          { label: 'Franchise branding guide', href: '/franchise-branding', description: 'Why brand is the product when you franchise, and how to build one worth buying.' },
         ]}
       />
 
       <SectionCTA
-        heading="Find Out Where Your Business Stands"
+        heading="Find out where your business stands"
         body="Take our two-minute franchise readiness assessment. You will get a score, personalized recommendations, and a clear picture of which phase you are ready for."
-        buttonText="Get Your Free Readiness Score"
+        buttonText="Get your free readiness score"
         buttonHref="/is-my-business-franchisable"
         secondaryText="Or book a feasibility call to discuss your specific situation"
         secondaryHref="/contact"
@@ -252,7 +242,7 @@ export default function HowItWorksPage() {
       />
 
       <StickyCTA
-        text="See Which Phase You Are Ready For"
+        text="See which phase you are ready for"
         href="/is-my-business-franchisable"
       />
     </>

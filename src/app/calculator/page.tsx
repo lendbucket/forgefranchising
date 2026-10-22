@@ -30,17 +30,16 @@ export default function CalculatorPage() {
           ]),
         }}
       />
-      <div className="bg-white">
-        <div className="container-wide px-4 sm:px-6 lg:px-8">
+      <CalculatorClient
+        breadcrumbs={
           <Breadcrumbs
             items={[
               { label: 'Resources', href: '/learn' },
               { label: 'Franchise Calculator' },
             ]}
           />
-        </div>
-      </div>
-      <CalculatorClient />
+        }
+      />
     </>
   )
 }

@@ -12,17 +12,17 @@ export const metadata = createMetadata({
 
 const valueStackItems = [
   {
-    title: 'The Forge Brand and Reputation',
+    title: 'The Forge brand and reputation',
     description:
       'You launch under a recognized name in franchise development. Not a generic certificate. A brand that business owners already associate with serious franchise consulting. Learn why brand is the product in franchising.',
   },
   {
-    title: 'Proprietary CRM and Software Platform',
+    title: 'Proprietary CRM and software platform',
     description:
       'Our custom-built technology handles lead management, client onboarding, project tracking, document generation, and pipeline reporting. You do not need to stitch together five different tools.',
   },
   {
-    title: 'Complete Dual Training Program',
+    title: 'Complete dual training program',
     description:
       'Full certification in both franchise consulting (helping owners franchise their business) and franchise brokerage (matching buyers with franchise brands). Two revenue streams from day one.',
   },
@@ -32,27 +32,27 @@ const valueStackItems = [
       'Our proprietary four-pillar assessment framework that evaluates profitability, systems, brand, and replicability before any franchise development begins. You deliver this methodology to your consulting clients.',
   },
   {
-    title: 'Lead Generation Systems',
+    title: 'Lead generation systems',
     description:
       'Inbound marketing infrastructure, SEO assets, and referral frameworks that drive qualified prospects to your pipeline. You are not starting from zero.',
   },
   {
-    title: 'Ongoing Coaching and Support',
+    title: 'Ongoing coaching and support',
     description:
       'Weekly group coaching, on-demand one-on-one sessions, and a private community of Forge franchise owners sharing deals, strategies, and referrals.',
   },
   {
-    title: 'Low, Flat Monthly Royalties',
+    title: 'Low, flat monthly royalties',
     description:
       'A predictable flat monthly royalty. Not a percentage of your revenue. As your income grows, your royalty stays the same. The math gets better every month.',
   },
   {
-    title: 'Virtual, Work From Home Model',
+    title: 'Virtual, work from home model',
     description:
       'No lease, no buildout, no storefront. Run your business from a home office, a co-working space, or a beach house. The overhead stays low.',
   },
   {
-    title: 'Protected Territory',
+    title: 'Protected territory',
     description:
       'Your territory is yours. No other Forge franchisee operates in your market. You own the relationships in your geography.',
   },
@@ -113,8 +113,7 @@ function OfferingDisclaimer({ variant }: { variant: 'light' | 'dark' }) {
   const isDark = variant === 'dark'
   return (
     <div
-      className={`${isDark ? 'bg-white/5 border-white/10' : 'bg-graphite/5 border-graphite/10'} border px-6 py-5`}
-      style={{ borderRadius: '0px' }}
+      className={`${isDark ? 'border-white/15' : 'border-line'} border px-6 py-5`}
     >
       <p className={`text-sm leading-relaxed ${isDark ? 'text-white/60' : 'text-steel'}`}>
         This is not an offer to sell, or the solicitation of an offer to buy, a franchise. Forge Franchising offers franchises solely by means of its Franchise Disclosure Document. Certain jurisdictions require registration or other actions before franchises can be offered or sold there. We will not offer or sell a franchise in any jurisdiction unless we are first in compliance with applicable law.
@@ -127,8 +126,7 @@ function EarningsDisclaimer({ variant }: { variant: 'light' | 'dark' }) {
   const isDark = variant === 'dark'
   return (
     <div
-      className={`${isDark ? 'bg-white/5 border-white/10' : 'bg-graphite/5 border-graphite/10'} border px-6 py-5`}
-      style={{ borderRadius: '0px' }}
+      className={`${isDark ? 'border-white/15' : 'border-line'} border px-6 py-5`}
     >
       <p className={`text-sm leading-relaxed ${isDark ? 'text-white/60' : 'text-steel'}`}>
         Any financial figures referenced on this page are illustrative and for educational purposes only. They are not a guarantee or projection of earnings. Individual results vary based on market, effort, and other factors. No financial performance representation is made by Forge Franchising except as set out in Item 19 of its Franchise Disclosure Document.
@@ -160,7 +158,37 @@ export default function OwnAFranchisePage() {
       />
 
       {/* HERO */}
-      <section className="relative bg-graphite overflow-hidden">
+      <section className="relative bg-graphite surface-dark overflow-hidden">
+        <div className="relative z-10 container-wide section-padding">
+          <div className="max-w-[880px]">
+            <h1 className="heading-1 text-white mb-6">
+              Build a Six-Figure Franchise Consulting Business. Work From Home. Help Business Owners Scale.
+            </h1>
+            <p className="body-large mb-4 max-w-2xl">
+              You are an ambitious professional who wants to own a business, not just work a job. Forge gives you the brand, the training, the technology, and the deal flow to build a consulting practice that helps business owners franchise and grow.
+            </p>
+            <p className="body-large mb-4 max-w-2xl">
+              This is how you go from employee to business owner without starting from scratch.
+            </p>
+            <p className="text-sm text-white/60 leading-relaxed mb-10 max-w-2xl">
+              Wondering how to fund the investment? See our{' '}
+              <Link href="/financing" className="text-link">
+                financing options for franchise development
+              </Link>. Not sure if franchising or licensing fits your goals? Read our{' '}
+              <Link href="/franchise-vs-license" className="text-link">
+                franchise vs license comparison
+              </Link>.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 mb-4">
+              <Link href="/own-a-franchise/apply" className="btn-primary text-center">
+                Apply to own a Forge franchise
+              </Link>
+            </div>
+            <p className="text-white/60 text-sm">
+              Limited territories available. No franchise experience required.
+            </p>
+          </div>
+        </div>
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80"
@@ -170,42 +198,11 @@ export default function OwnAFranchisePage() {
             priority
           />
         </div>
-        <div className="relative container-wide section-padding py-24 sm:py-32 lg:py-40">
-          <div className="max-w-3xl">
-            <p className="eyebrow text-accent mb-4">Franchise Opportunity</p>
-            <h1 className="heading-1 text-white mb-6">
-              Build a Six-Figure Franchise Consulting Business. Work From Home. Help Business Owners Scale.
-            </h1>
-            <p className="text-lg sm:text-xl text-white/60 leading-relaxed mb-4 max-w-2xl">
-              You are an ambitious professional who wants to own a business, not just work a job. Forge gives you the brand, the training, the technology, and the deal flow to build a consulting practice that helps business owners franchise and grow.
-            </p>
-            <p className="text-lg sm:text-xl text-white/60 leading-relaxed mb-4 max-w-2xl">
-              This is how you go from employee to business owner without starting from scratch.
-            </p>
-            <p className="text-sm text-white/60 leading-relaxed mb-10 max-w-2xl">
-              Wondering how to fund the investment? See our{' '}
-              <Link href="/financing" className="text-accent/80 hover:text-accent underline">
-                financing options for franchise development
-              </Link>. Not sure if franchising or licensing fits your goals? Read our{' '}
-              <Link href="/franchise-vs-license" className="text-accent/80 hover:text-accent underline">
-                franchise vs license comparison
-              </Link>.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 mb-4">
-              <Link href="/own-a-franchise/apply" className="btn-primary text-center">
-                Apply to Own a Forge Franchise
-              </Link>
-            </div>
-            <p className="text-white/60 text-sm">
-              Limited territories available. No franchise experience required.
-            </p>
-          </div>
-        </div>
       </section>
 
       {/* OFFERING DISCLAIMER (after hero) */}
-      <div className="bg-white">
-        <div className="container-wide pt-12 pb-0 px-6 sm:px-10 lg:px-16">
+      <div className="bg-white gutter pt-12">
+        <div className="container-wide">
           <OfferingDisclaimer variant="light" />
         </div>
       </div>
@@ -214,9 +211,8 @@ export default function OwnAFranchisePage() {
       <section className="section-padding bg-white">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <p className="eyebrow mb-4">The Opportunity</p>
             <h2 className="heading-2 mb-6">
-              An $827 Billion Industry With a Massive Talent Gap
+              An $827 billion industry with a massive talent gap
             </h2>
             <p className="body-large mb-6">
               The franchise industry generates over $827 billion in annual output in the United States alone. It is growing every year. Business owners across every sector are looking to franchise their concepts, and buyers with capital are actively searching for the right franchise to invest in.
@@ -225,7 +221,7 @@ export default function OwnAFranchisePage() {
               The problem? There are not enough qualified franchise consultants to serve this demand. Most franchise consultants are independent operators with no brand, no technology, and no structured methodology. The market is wide open for professionals who can deliver real expertise backed by a real system.
             </p>
           </div>
-          <div className="grid sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-12 md:gap-0 md:divide-x md:divide-line max-w-4xl mx-auto">
             <div className="text-center">
               <p className="stat-number text-accent">$827B</p>
               <p className="text-steel text-sm mt-2">U.S. franchise industry annual output</p>
@@ -246,19 +242,18 @@ export default function OwnAFranchisePage() {
       <section className="section-padding bg-stone">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <p className="eyebrow mb-4">What You Get</p>
             <h2 className="heading-2 mb-6">
-              A Complete Business System, Not Just Training
+              A complete business system, not just training
             </h2>
             <p className="body-large">
               Most franchise consulting programs hand you a certificate and wish you luck. Forge gives you a brand, a technology platform, a proven methodology, lead generation infrastructure, and a team behind you. Here is exactly what is included.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="tile-grid md:grid-cols-2 lg:grid-cols-3">
             {valueStackItems.map((item) => (
-              <div key={item.title} className="card" style={{ borderRadius: '0px' }}>
+              <div key={item.title} className="card">
                 <h3 className="heading-4 mb-3">{item.title}</h3>
-                <p className="text-steel text-sm leading-relaxed">{item.description}</p>
+                <p className="text-steel text-[17px] leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>
@@ -269,47 +264,46 @@ export default function OwnAFranchisePage() {
       <section className="section-padding bg-white">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <p className="eyebrow mb-4">How It Works</p>
             <h2 className="heading-2 mb-6">
-              Two Revenue Streams. One Business. Zero Storefronts.
+              Two revenue streams. One business. Zero storefronts.
             </h2>
             <p className="body-large">
               Your Forge franchise generates income from two distinct service lines. You can focus on one or pursue both. Most owners do both because the same relationships feed both pipelines.
             </p>
           </div>
-          <div className="grid lg:grid-cols-2 gap-8 mb-12">
-            <div className="card" style={{ borderRadius: '0px' }}>
-              <div className="bg-ember/10 w-12 h-12 flex items-center justify-center mb-4" style={{ borderRadius: '0px' }}>
-                <svg className="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <div className="tile-grid md:grid-cols-2 mb-12">
+            <div className="card">
+              <div className="mb-6">
+                <svg className="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
               </div>
-              <h3 className="heading-3 mb-3">Franchise Consulting</h3>
-              <p className="text-steel leading-relaxed mb-4">
+              <h3 className="heading-3 mb-3">Franchise consulting</h3>
+              <p className="text-steel text-[17px] leading-relaxed mb-4">
                 You help business owners turn their proven concept into a franchise brand. This includes feasibility analysis, FDD preparation, operations manual development, state registration, and launch strategy. You are the expert guiding them from "I think I should franchise" to "I am legally selling franchises."
               </p>
-              <p className="text-steel leading-relaxed">
+              <p className="text-steel text-[17px] leading-relaxed">
                 Consulting engagements are project-based, typically ranging from several months to a year. You set the scope with the client and deliver using Forge methodology and templates.
               </p>
             </div>
-            <div className="card" style={{ borderRadius: '0px' }}>
-              <div className="bg-ember/10 w-12 h-12 flex items-center justify-center mb-4" style={{ borderRadius: '0px' }}>
-                <svg className="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <div className="card">
+              <div className="mb-6">
+                <svg className="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
-              <h3 className="heading-3 mb-3">Franchise Brokerage</h3>
-              <p className="text-steel leading-relaxed mb-4">
+              <h3 className="heading-3 mb-3">Franchise brokerage</h3>
+              <p className="text-steel text-[17px] leading-relaxed mb-4">
                 You match qualified buyers with franchise brands looking for new owners. When a buyer you represent signs a franchise agreement, the franchisor pays you a referral commission. You are the matchmaker between people who want to own a franchise and brands looking to grow.
               </p>
-              <p className="text-steel leading-relaxed">
+              <p className="text-steel text-[17px] leading-relaxed">
                 Brokerage is commission-based and can produce significant recurring income as you build your referral network and pipeline of qualified buyers.
               </p>
             </div>
           </div>
           <div className="max-w-3xl mx-auto">
-            <div className="card bg-stone" style={{ borderRadius: '0px' }}>
-              <h3 className="heading-4 mb-4">The Lifestyle</h3>
+            <div className="card bg-stone border-stone">
+              <h3 className="heading-4 mb-4">The lifestyle</h3>
               <ul className="space-y-3">
                 {[
                   'Work from home or anywhere with an internet connection',
@@ -320,7 +314,7 @@ export default function OwnAFranchisePage() {
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <CheckIcon />
-                    <span className="text-steel text-sm leading-relaxed">{item}</span>
+                    <span className="text-steel text-[17px] leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -333,19 +327,18 @@ export default function OwnAFranchisePage() {
       </section>
 
       {/* THE FEE */}
-      <section className="section-padding bg-graphite text-white">
+      <section className="section-padding bg-graphite surface-dark">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center">
-            <p className="eyebrow text-accent mb-4">The Investment</p>
             <h2 className="heading-2 text-white mb-8">
-              Everything You Need to Launch for $15,000
+              Everything you need to launch for $15,000
             </h2>
             <p className="stat-number text-accent mb-8">$15,000</p>
-            <p className="text-lg text-white/60 leading-relaxed mb-8">
+            <p className="body-large mb-8">
               You are getting a complete business system, brand, technology, training, and ongoing support for $15,000. That is the total franchise fee. Not a down payment. Not the first installment. The entire fee.
             </p>
-            <div className="card bg-white/5 border border-white/10 text-left mb-8" style={{ borderRadius: '0px' }}>
-              <h3 className="heading-4 text-white mb-4">Compare That to the Alternative</h3>
+            <div className="border border-white/15 p-8 max-[720px]:p-6 text-left mb-8">
+              <h3 className="heading-4 text-white mb-4">Compare that to the alternative</h3>
               <p className="text-white/60 leading-relaxed mb-4">
                 Most franchise consultant training programs charge $10,000 to $20,000 for training alone. No brand. No technology platform. No CRM. No lead generation systems. No templates. No ongoing support. No protected territory. Just a course and a certificate.
               </p>
@@ -365,17 +358,16 @@ export default function OwnAFranchisePage() {
       <section className="section-padding bg-white">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <p className="eyebrow mb-4">Is This You?</p>
             <h2 className="heading-2 mb-6">
-              This Opportunity Is Specific. It Is Not for Everyone.
+              This opportunity is specific. It is not for everyone.
             </h2>
             <p className="body-large">
               We are selective about who we award territories to. Not because we want to be exclusive for the sake of it, but because your success determines our reputation. Here is who thrives in this model and who does not.
             </p>
           </div>
-          <div className="grid lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="card" style={{ borderRadius: '0px' }}>
-              <h3 className="heading-3 text-accent mb-6">Strong Fit</h3>
+          <div className="tile-grid md:grid-cols-2 max-w-4xl mx-auto">
+            <div className="card">
+              <h3 className="heading-3 text-accent mb-6">Strong fit</h3>
               <ul className="space-y-4">
                 {[
                   'Driven professionals who want to own a business, not buy a job',
@@ -387,13 +379,13 @@ export default function OwnAFranchisePage() {
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <CheckIcon />
-                    <span className="text-steel text-sm leading-relaxed">{item}</span>
+                    <span className="text-steel text-[17px] leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="card" style={{ borderRadius: '0px' }}>
-              <h3 className="heading-3 text-steel mb-6">Not a Fit</h3>
+            <div className="card">
+              <h3 className="heading-3 text-steel mb-6">Not a fit</h3>
               <ul className="space-y-4">
                 {[
                   'People looking for passive income or a hands-off investment',
@@ -404,7 +396,7 @@ export default function OwnAFranchisePage() {
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <XIcon />
-                    <span className="text-steel text-sm leading-relaxed">{item}</span>
+                    <span className="text-steel text-[17px] leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -417,34 +409,33 @@ export default function OwnAFranchisePage() {
       <section className="section-padding bg-stone">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <p className="eyebrow mb-4">The Industry</p>
             <h2 className="heading-2 mb-6">
-              Franchising Is Not Slowing Down. The Demand for Expertise Is Accelerating.
+              Franchising is not slowing down. The demand for expertise is accelerating.
             </h2>
             <p className="body-large">
               The numbers tell the story. Franchising is one of the most proven business expansion models in the world, and the need for qualified consultants continues to outpace supply.
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="tile-grid md:grid-cols-2 lg:grid-cols-4 mb-12">
             {[
               { stat: '800,000+', label: 'Franchise establishments in the U.S.' },
               { stat: '8.5M', label: 'Jobs created by franchise businesses' },
               { stat: '3%+', label: 'Annual franchise industry growth rate' },
               { stat: '$827B', label: 'Total franchise industry output' },
             ].map((item) => (
-              <div key={item.label} className="card text-center" style={{ borderRadius: '0px' }}>
+              <div key={item.label} className="card text-center">
                 <p className="stat-number text-accent mb-2">{item.stat}</p>
                 <p className="text-steel text-sm">{item.label}</p>
               </div>
             ))}
           </div>
           <div className="max-w-3xl mx-auto">
-            <div className="card" style={{ borderRadius: '0px' }}>
-              <h3 className="heading-4 mb-4">Forge&apos;s Track Record</h3>
-              <p className="text-steel leading-relaxed mb-4">
+            <div className="card">
+              <h3 className="heading-4 mb-4">Forge&apos;s track record</h3>
+              <p className="text-steel text-[17px] leading-relaxed mb-4">
                 Forge Franchising Group has helped businesses across dozens of industries develop their franchise systems. Our methodology has been tested in restaurants, home services, fitness, beauty, healthcare, education, and more. Every template, every process, every system in your franchise was built from real engagements with real businesses.
               </p>
-              <p className="text-steel leading-relaxed">
+              <p className="text-steel text-[17px] leading-relaxed">
                 When you join Forge, you are not getting a theoretical framework. You are getting a battle-tested playbook refined through years of franchise development work.
               </p>
             </div>
@@ -454,16 +445,15 @@ export default function OwnAFranchisePage() {
 
       {/* FAQ */}
       <section className="section-padding bg-white">
-        <div className="container-wide max-w-3xl mx-auto">
+        <div className="container-narrow">
           <div className="text-center mb-16">
-            <p className="eyebrow mb-4">Common Questions</p>
-            <h2 className="heading-2">Franchise Opportunity FAQ</h2>
+            <h2 className="heading-2">Franchise opportunity FAQ</h2>
           </div>
-          <div className="space-y-6">
+          <div className="border-t border-graphite">
             {faqItems.map((item) => (
-              <div key={item.q} className="card" style={{ borderRadius: '0px' }}>
+              <div key={item.q} className="border-b border-line py-8">
                 <h3 className="heading-4 mb-3">{item.q}</h3>
-                <p className="text-steel leading-relaxed">{item.a}</p>
+                <p className="text-steel text-[17px] leading-relaxed">{item.a}</p>
               </div>
             ))}
           </div>
@@ -471,26 +461,26 @@ export default function OwnAFranchisePage() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="section-padding bg-graphite text-white">
+      <section className="section-padding bg-ember-fill surface-ember">
         <div className="container-wide text-center">
-          <h2 className="heading-2 text-white mb-6">
-            Your Territory Is Not Going to Wait for You
+          <h2 className="heading-2 mb-6">
+            Your territory is not going to wait for you
           </h2>
-          <p className="text-lg text-white/60 max-w-2xl mx-auto leading-relaxed mb-4">
+          <p className="body-large max-w-2xl mx-auto mb-4">
             Every week we receive applications from professionals who want to build a franchise consulting business under the Forge brand. Territories are awarded on a first-qualified, first-committed basis. If you are serious about owning a business that helps other business owners grow, now is the time to apply.
           </p>
-          <p className="text-white/60 text-sm max-w-2xl mx-auto mb-10">
+          <p className="text-sm max-w-2xl mx-auto mb-10">
             The application takes less than five minutes. There is no commitment and no fee to apply. We will review your background and schedule a discovery call to answer every question you have.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
             <Link href="/own-a-franchise/apply" className="btn-primary text-center">
-              Apply to Own a Forge Franchise
+              Apply to own a Forge franchise
             </Link>
             <Link href="/contact" className="btn-secondary text-center">
-              Ask a Question First
+              Ask a question first
             </Link>
           </div>
-          <OfferingDisclaimer variant="dark" />
+          <OfferingDisclaimer variant="light" />
         </div>
       </section>
     </>

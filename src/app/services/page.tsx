@@ -3,10 +3,10 @@ import { createMetadata } from '@/lib/metadata'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
-import { OpenLoop } from '@/components/OpenLoop'
 import { StickyCTA } from '@/components/StickyCTA'
 import { ReadingProgress } from '@/components/ReadingProgress'
 import { SITE_URL } from '@/lib/constants'
+import { sentenceCase } from '@/lib/text'
 import { serviceSchema, webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 
 export const metadata = createMetadata({
@@ -161,8 +161,7 @@ export default function ServicesPage() {
       <section className="bg-graphite surface-dark">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'Services' }]} />
-          <div className="max-w-3xl">
-            <p className="eyebrow mb-4">Our Services</p>
+          <div className="max-w-[880px]">
             <h1 className="heading-1 mb-8">
               Franchise Development Services: Everything You Need. Nothing You Do Not.
             </h1>
@@ -200,10 +199,9 @@ export default function ServicesPage() {
               <a
                 key={service.id}
                 href={`#${service.id}`}
-                className="text-sm font-medium text-graphite bg-stone px-4 py-2 hover:bg-ember-fill hover:text-graphite transition-colors"
-                style={{ borderRadius: '2px' }}
+                className="inline-flex items-center min-h-[44px] px-4 border border-white/25 text-sm text-white hover:border-white transition-colors"
               >
-                {service.title}
+                {sentenceCase(service.title)}
               </a>
             ))}
           </div>
@@ -220,20 +218,17 @@ export default function ServicesPage() {
             <div className="grid lg:grid-cols-12 gap-12">
               <div className="lg:col-span-5">
                 <div className="sticky top-28">
-                  <p className="eyebrow mb-3">
-                    {String(index + 1).padStart(2, '0')} / {String(services.length).padStart(2, '0')}
-                  </p>
-                  <h2 className="heading-2 mb-3">{service.title}</h2>
+                  <h2 className="heading-2 mb-3">{sentenceCase(service.title)}</h2>
                   <p className="body-large italic text-steel">{service.tagline}</p>
                 </div>
               </div>
               <div className="lg:col-span-7">
                 <div className="card">
                   <h3 className="heading-4 mb-4">What it is</h3>
-                  <p className="text-steel leading-relaxed mb-8">{service.what}</p>
+                  <p className="text-steel text-[17px] leading-relaxed mb-8">{service.what}</p>
 
                   <h3 className="heading-4 mb-4">Why it matters</h3>
-                  <p className="text-steel leading-relaxed mb-8">{service.why}</p>
+                  <p className="text-steel text-[17px] leading-relaxed mb-8">{service.why}</p>
 
                   <h3 className="heading-4 mb-4">What we deliver</h3>
                   <ul className="space-y-3">
@@ -242,7 +237,7 @@ export default function ServicesPage() {
                         <svg className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
-                        <span className="text-steel leading-relaxed">{item}</span>
+                        <span className="text-steel text-[17px] leading-relaxed">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -253,59 +248,51 @@ export default function ServicesPage() {
         </section>
       ))}
 
-      <section className="section-padding bg-graphite text-white">
-        <div className="container-wide text-center">
-          <h2 className="heading-2 text-white mb-6">How These Services Fit Together</h2>
-          <p className="text-xl text-white/60 max-w-3xl mx-auto leading-relaxed mb-12">
+      <section className="section-padding bg-white">
+        <div className="container-wide">
+          <h2 className="heading-2 mb-6">How these services fit together</h2>
+          <p className="body-large max-w-[880px] mb-12">
             These seven services are not a menu you pick from at random. They build on each other in a
             specific sequence. Feasibility informs your FDD. Your FDD drives your registration strategy.
             Your operations manual feeds your training program. Your sales system fills your pipeline.
             Your technology platform holds it all together.
           </p>
-          <div className="grid sm:grid-cols-3 gap-8 mb-12">
+          <div className="grid sm:grid-cols-3 border-t border-graphite sm:divide-x sm:divide-line mb-12">
             {[
               { stat: '7', label: 'Core services, all under one roof' },
               { stat: '23', label: 'FDD items prepared from your actual business data' },
               { stat: '14', label: 'Registration states we file and manage for you' },
             ].map((item) => (
-              <div key={item.stat}>
-                <div className="text-4xl font-display font-bold text-accent mb-2">{item.stat}</div>
-                <p className="text-white/60 text-sm">{item.label}</p>
+              <div key={item.stat} className="py-8 sm:px-8 sm:first:pl-0 border-b border-line sm:border-b-0">
+                <div className="stat-number">{item.stat}</div>
+                <p className="stat-label">{item.label}</p>
               </div>
             ))}
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4">
             <Link href="/packages" className="btn-primary">
-              View Our Packages
+              View our packages
             </Link>
             <Link href="/how-it-works" className="btn-secondary">
-              See How the Process Works
+              See how the process works
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Open loop: curiosity gap about cost */}
-      <OpenLoop
-        teaser="Your franchise fee structure determines both franchisee profitability and your own revenue model. Most new franchisors set their fees wrong. We explain the math and the common mistakes."
-        linkText="Read about franchise royalty structures"
-        href="/blog/franchise-royalty-structures"
-        variant="section"
-      />
-
       <ContinueLearning
-        heading="Explore Further"
+        heading="Explore further"
         links={[
-          { label: 'See How the Process Works', href: '/how-it-works', description: 'Four phases, one system. Understand the sequence before you start.' },
-          { label: 'Compare Our Packages', href: '/packages', description: 'Three tiers with clear scoping so you know exactly what you are getting.' },
-          { label: 'Get Your Readiness Score', href: '/is-my-business-franchisable', description: 'A two-minute assessment to see where your business stands today.' },
+          { label: 'See how the process works', href: '/how-it-works', description: 'Four phases, one system. Understand the sequence before you start.' },
+          { label: 'Compare our packages', href: '/packages', description: 'Three tiers with clear scoping so you know exactly what you are getting.' },
+          { label: 'Get your readiness score', href: '/is-my-business-franchisable', description: 'A two-minute assessment to see where your business stands today.' },
         ]}
       />
 
       <SectionCTA
-        heading="Not Sure Which Services You Need?"
+        heading="Not sure which services you need?"
         body="Take our free franchise readiness assessment. Your score will tell you exactly which phase and services apply to your situation."
-        buttonText="Get Your Free Readiness Score"
+        buttonText="Get your free readiness score"
         buttonHref="/is-my-business-franchisable"
         secondaryText="Or book a call and we will walk through it together"
         secondaryHref="/contact"
@@ -313,7 +300,7 @@ export default function ServicesPage() {
       />
 
       <StickyCTA
-        text="Get a Tailored Service Recommendation"
+        text="Get a tailored service recommendation"
         href="/is-my-business-franchisable"
       />
     </>

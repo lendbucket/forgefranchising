@@ -4,6 +4,7 @@ import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
 import { KeyTakeaways } from '@/components/KeyTakeaways'
+import { FAQList } from '@/components/FAQList'
 import { StickyCTA } from '@/components/StickyCTA'
 import { ReadingProgress } from '@/components/ReadingProgress'
 import { SITE_URL } from '@/lib/constants'
@@ -19,7 +20,7 @@ export const metadata = createMetadata({
 const spokes = [
   {
     number: '01',
-    title: 'Why Brand Matters in Franchising',
+    title: 'Why brand matters in franchising',
     href: '/franchise-branding/why-brand-matters',
     summary: 'Customers buy brands, not products. Franchisees buy the right to use your brand. The brand is the economic engine of the entire system.',
     points: [
@@ -30,7 +31,7 @@ const spokes = [
   },
   {
     number: '02',
-    title: 'How Customers Recognize a Brand',
+    title: 'How customers recognize a brand',
     href: '/franchise-branding/how-customers-know-a-brand',
     summary: 'Brand recognition is built through name, mark, color, voice, and consistency. A customer in a second city must get an identical experience for the brand to compound.',
     points: [
@@ -41,7 +42,7 @@ const spokes = [
   },
   {
     number: '03',
-    title: 'Building a Franchise Brand',
+    title: 'Building a franchise brand',
     href: '/franchise-branding/building-a-franchise-brand',
     summary: 'Taking an owner operated identity and hardening it into a franchisable brand requires an identity system, brand book, defined voice, and operational standards.',
     points: [
@@ -52,7 +53,7 @@ const spokes = [
   },
   {
     number: '04',
-    title: 'Brand Standards Enforcement',
+    title: 'Brand standards enforcement',
     href: '/franchise-branding/brand-standards-enforcement',
     summary: 'The franchise agreement and operations manual define brand standards. Field audits protect the customer experience without crushing franchisee autonomy.',
     points: [
@@ -63,7 +64,7 @@ const spokes = [
   },
   {
     number: '05',
-    title: 'Protecting Your Franchise Brand',
+    title: 'Protecting your franchise brand',
     href: '/franchise-branding/protecting-your-brand',
     summary: 'Trademarks are the legal spine of franchising. Federal registration before selling units, Item 13 of the FDD, and policing the mark protect the entire system.',
     points: [
@@ -138,8 +139,7 @@ export default function FranchiseBrandingPage() {
       <section className="bg-graphite surface-dark">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'Franchise Branding' }]} />
-          <div className="max-w-3xl">
-            <p className="eyebrow mb-4">Franchise Brand Strategy</p>
+          <div className="max-w-[880px]">
             <h1 className="heading-1 mb-8">
               Franchise Brand Development: Why Brand Is the Product
             </h1>
@@ -195,7 +195,7 @@ export default function FranchiseBrandingPage() {
             <div className="grid lg:grid-cols-12 gap-12">
               <div className="lg:col-span-4">
                 <div className="sticky top-28">
-                  <div className="text-accent font-display text-6xl font-bold mb-4">{spoke.number}</div>
+                  <div className="numeral text-[56px] mb-6">{spoke.number}</div>
                   <h2 className="heading-2 mb-3">{spoke.title}</h2>
                   <p className="body-large">{spoke.summary}</p>
                 </div>
@@ -209,14 +209,14 @@ export default function FranchiseBrandingPage() {
                         <svg className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
-                        <span className="text-steel leading-relaxed">{point}</span>
+                        <span className="text-steel text-[17px] leading-relaxed">{point}</span>
                       </li>
                     ))}
                   </ul>
                   <div className="mt-8">
                     <Link
                       href={spoke.href}
-                      className="btn-primary text-sm"
+                      className="btn-primary"
                     >
                       Read the full guide
                     </Link>
@@ -228,22 +228,22 @@ export default function FranchiseBrandingPage() {
         </section>
       ))}
 
-      <section className="section-padding bg-graphite text-white">
+      <section className="section-padding bg-graphite surface-dark">
         <div className="container-wide text-center">
-          <h2 className="heading-2 text-white mb-6">The Brand Advantage</h2>
-          <p className="text-xl text-white/60 max-w-3xl mx-auto leading-relaxed mb-12">
+          <h2 className="heading-2 text-white mb-6">The brand advantage</h2>
+          <p className="text-xl text-white/60 max-w-[880px] mx-auto leading-relaxed mb-12">
             Franchise systems with strong brands sell more units, command higher franchise fees,
             and retain franchisees longer. The brand is not a marketing exercise. It is the
             economic foundation of the entire system.
           </p>
-          <div className="grid sm:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 border-t border-white/15 md:divide-x md:divide-white/15">
             {[
               { stat: '63%', label: 'of consumers choose franchises based on brand recognition alone' },
               { stat: '2.3x', label: 'higher unit level revenue for top quartile franchise brands' },
               { stat: '47%', label: 'lower franchisee turnover in systems with strong brand standards' },
             ].map((item) => (
-              <div key={item.stat}>
-                <div className="text-4xl font-display font-bold text-accent mb-2">{item.stat}</div>
+              <div key={item.stat} className="py-8 md:px-8">
+                <div className="numeral text-[56px] mb-4">{item.stat}</div>
                 <p className="text-white/60 text-sm">{item.label}</p>
               </div>
             ))}
@@ -253,37 +253,26 @@ export default function FranchiseBrandingPage() {
 
       <section className="section-padding bg-white">
         <div className="container-wide">
-          <div className="max-w-3xl mx-auto">
-            <p className="eyebrow mb-4">Frequently Asked Questions</p>
-            <h2 className="heading-2 mb-10">Franchise Branding FAQ</h2>
-            <div className="space-y-6">
-              {faqs.map((faq, i) => (
-                <div
-                  key={i}
-                  className="card"
-                >
-                  <h3 className="heading-4 mb-3">{faq.q}</h3>
-                  <p className="text-steel leading-relaxed">{faq.a}</p>
-                </div>
-              ))}
-            </div>
+          <div className="max-w-[880px] mx-auto">
+            <h2 className="heading-2 mb-10">Franchise branding FAQ</h2>
+            <FAQList faqs={faqs.map((faq) => ({ question: faq.q, answer: faq.a }))} />
           </div>
         </div>
       </section>
 
       <ContinueLearning
-        heading="Related Guides"
+        heading="Related guides"
         links={[
-          { label: 'Franchise vs License', href: '/franchise-vs-license', description: 'Understand the difference between franchising your brand and licensing your system.' },
-          { label: 'Financing Your Development', href: '/financing', description: 'Common funding paths for franchise development and how to prepare.' },
-          { label: 'How the Process Works', href: '/how-it-works', description: 'The four phases from feasibility to scale, step by step.' },
+          { label: 'Franchise vs license', href: '/franchise-vs-license', description: 'Understand the difference between franchising your brand and licensing your system.' },
+          { label: 'Financing your development', href: '/financing', description: 'Common funding paths for franchise development and how to prepare.' },
+          { label: 'How the process works', href: '/how-it-works', description: 'The four phases from feasibility to scale, step by step.' },
         ]}
       />
 
       <SectionCTA
-        heading="Find Out If Your Brand Is Ready to Franchise"
+        heading="Find out if your brand is ready to franchise"
         body="Take our two minute franchise readiness assessment. You will get a score, personalized recommendations, and a clear picture of whether your brand is ready to scale."
-        buttonText="Get Your Free Readiness Score"
+        buttonText="Get your free readiness score"
         buttonHref="/is-my-business-franchisable"
         secondaryText="Or learn how our process builds franchise brands"
         secondaryHref="/how-it-works"
@@ -291,7 +280,7 @@ export default function FranchiseBrandingPage() {
       />
 
       <StickyCTA
-        text="See If Your Brand Is Franchise Ready"
+        text="See if your brand is franchise ready"
         href="/is-my-business-franchisable"
       />
     </>

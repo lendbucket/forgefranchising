@@ -24,7 +24,7 @@ export const metadata = createMetadata({
 })
 
 const inlineLink = 'text-accent font-semibold hover:underline'
-const bodyText = 'text-steel leading-relaxed text-base sm:text-lg mb-5'
+const bodyText = 'text-steel text-[17px] leading-relaxed mb-5'
 
 type Stage = {
   title: string
@@ -163,16 +163,16 @@ const faqs = [
 ]
 
 const tocItems = [
-  { id: 'process', label: 'The Process' },
-  { id: 'broker-role', label: 'What a Broker Does' },
+  { id: 'process', label: 'The process' },
+  { id: 'broker-role', label: 'What a broker does' },
   { id: 'confidentiality', label: 'Confidentiality' },
-  { id: 'buyer-qualification', label: 'Qualifying Buyers' },
-  { id: 'seller-preparation', label: 'What You Prepare' },
-  { id: 'value', label: 'Setting the Price' },
-  { id: 'franchise-owners', label: 'Franchise Owners' },
-  { id: 'how-we-work', label: 'How We Work' },
+  { id: 'buyer-qualification', label: 'Qualifying buyers' },
+  { id: 'seller-preparation', label: 'What you prepare' },
+  { id: 'value', label: 'Setting the price' },
+  { id: 'franchise-owners', label: 'Franchise owners' },
+  { id: 'how-we-work', label: 'How we work' },
   { id: 'faq', label: 'Questions' },
-  { id: 'inquiry', label: 'Start a Conversation' },
+  { id: 'inquiry', label: 'Start a conversation' },
 ]
 
 export default function SellYourBusinessPage() {
@@ -199,10 +199,9 @@ export default function SellYourBusinessPage() {
       />
 
       <section className="bg-graphite surface-dark">
-        <div className="container-wide section-padding !pb-12">
+        <div className="container-wide section-padding">
           <Breadcrumbs withSchema={false} items={[{ label: 'Sell Your Business' }]} />
-          <div className="max-w-3xl">
-            <p className="eyebrow mb-4">Business Brokerage in Texas</p>
+          <div className="max-w-[880px]">
             <h1 className="heading-1 mb-8">Sell Your Business in Texas: From First Call to Closing</h1>
             <p className="body-large mb-6">
               Once an owner reaches the point of saying &ldquo;it is time to sell my business,&rdquo; the decision is the
@@ -234,35 +233,31 @@ export default function SellYourBusinessPage() {
         </div>
       </section>
 
-      <section className="bg-white">
-        <div className="container-wide px-4 sm:px-6 lg:px-8 pb-20 sm:pb-24">
+      <section className="bg-stone">
+        <div className="container-wide section-padding">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
             <aside className="lg:col-span-3">
               <PageTOC items={tocItems} />
             </aside>
 
-            <div className="lg:col-span-9 space-y-16">
+            <div className="lg:col-span-9 min-w-0 space-y-24 max-[720px]:space-y-16">
               <section id="process" className="scroll-mt-28">
-                <p className="eyebrow mb-4">The Process</p>
-                <h2 className="heading-2 mb-6">How a Business Sale Works, From First Call to Closing</h2>
+                <h2 className="heading-2 mb-6">How a business sale works, from first call to closing</h2>
                 <p className={bodyText}>
                   Every sale is different in its details, but the order of work is consistent. Each stage below has to be
                   finished before the next one can start well. Skipping ahead, for example sending financials to a buyer
                   who has not signed an NDA or accepting an offer before the buyer has shown proof of funds, is how
                   confidential sales leak and accepted offers fall apart.
                 </p>
-                <ol className="mt-8 space-y-6">
+                <ol className="mt-10 border-t border-graphite">
                   {stages.map((stage, i) => (
-                    <li key={stage.title} className="flex gap-5">
-                      <span
-                        className="text-accent font-display font-bold text-2xl flex-shrink-0 w-10 tabular-nums"
-                        style={{ letterSpacing: '-0.02em' }}
-                      >
+                    <li key={stage.title} className="flex gap-6 max-[720px]:gap-4 py-8 border-b border-line">
+                      <span className="numeral text-[40px] flex-shrink-0 w-14 tabular-nums">
                         {String(i + 1).padStart(2, '0')}
                       </span>
-                      <div>
+                      <div className="min-w-0">
                         <h3 className="heading-4 mb-2">{stage.title}</h3>
-                        <p className="text-steel leading-relaxed">{stage.body}</p>
+                        <p className="text-steel text-[17px] leading-relaxed">{stage.body}</p>
                       </div>
                     </li>
                   ))}
@@ -280,17 +275,16 @@ export default function SellYourBusinessPage() {
               </section>
 
               <section id="broker-role" className="scroll-mt-28">
-                <p className="eyebrow mb-4">The Broker&apos;s Role</p>
-                <h2 className="heading-2 mb-6">What a Business Broker Does and Does Not Do</h2>
+                <h2 className="heading-2 mb-6">What a business broker does and does not do</h2>
                 <p className={bodyText}>
                   A business broker represents the seller in finding a buyer and getting a transaction to closing. The
                   work combines pricing, marketing, buyer screening, and project management. It is also limited
                   in specific ways, and you should know those limits before you sign an engagement agreement.
                 </p>
-                <div className="grid sm:grid-cols-2 gap-4 mt-8">
-                  <div className="bg-stone p-6" style={{ borderRadius: '0px' }}>
-                    <p className="text-xs font-semibold uppercase tracking-widest text-graphite mb-3">What a broker does</p>
-                    <ul className="space-y-2 text-steel text-sm leading-relaxed list-disc pl-5">
+                <div className="tile-grid md:grid-cols-2 mt-8">
+                  <div className="card">
+                    <p className="heading-4 mb-4">What a broker does</p>
+                    <ul className="space-y-2 text-steel text-[15px] leading-relaxed list-disc pl-5">
                       <li>Reviews your financials and prepares a broker opinion of value with a recommended asking price.</li>
                       <li>Writes the blind teaser and the confidential information memorandum.</li>
                       <li>Markets the business to buyers without revealing its identity.</li>
@@ -300,12 +294,9 @@ export default function SellYourBusinessPage() {
                       <li>Coordinates due diligence requests, lender questions, and the closing timeline with your attorney and CPA.</li>
                     </ul>
                   </div>
-                  <div
-                    className="bg-white p-6"
-                    style={{ borderRadius: '0px', border: '1px solid rgba(78, 90, 98, 0.18)', borderTop: '2px solid #1C1F23' }}
-                  >
-                    <p className="text-xs font-semibold uppercase tracking-widest text-graphite mb-3">What a broker does not do</p>
-                    <ul className="space-y-2 text-steel text-sm leading-relaxed list-disc pl-5">
+                  <div className="card">
+                    <p className="heading-4 mb-4">What a broker does not do</p>
+                    <ul className="space-y-2 text-steel text-[15px] leading-relaxed list-disc pl-5">
                       <li>Give legal advice or draft the purchase agreement. Your attorney does that.</li>
                       <li>Give tax advice or decide how the sale should be structured for tax purposes. Your CPA does that.</li>
                       <li>Issue a certified appraisal. A broker opinion of value is not one.</li>
@@ -326,8 +317,7 @@ export default function SellYourBusinessPage() {
               </section>
 
               <section id="confidentiality" className="scroll-mt-28">
-                <p className="eyebrow mb-4">Confidentiality</p>
-                <h2 className="heading-2 mb-6">Keeping the Sale Private Until It Closes</h2>
+                <h2 className="heading-2 mb-6">Keeping the sale private until it closes</h2>
                 <p className={bodyText}>
                   A rumor that the business is for sale can cost you employees, customers, and negotiating position before
                   a buyer ever makes an offer. Competitors can use it in sales conversations. Key staff may start
@@ -364,8 +354,7 @@ export default function SellYourBusinessPage() {
               </section>
 
               <section id="buyer-qualification" className="scroll-mt-28">
-                <p className="eyebrow mb-4">Buyer Qualification</p>
-                <h2 className="heading-2 mb-6">How Buyers Are Qualified</h2>
+                <h2 className="heading-2 mb-6">How buyers are qualified</h2>
                 <p className={bodyText}>
                   Many inquiries on a business for sale come from people who are not in a position to close. Qualification
                   separates them from real buyers before your information leaves the building. Forge asks every buyer for the following before
@@ -380,7 +369,7 @@ export default function SellYourBusinessPage() {
                     ['Relevant experience', 'Management, industry, or ownership background that makes the buyer credible to you and to a lender.'],
                   ].map(([label, detail]) => (
                     <li key={label} className="flex gap-3">
-                      <span className="w-1.5 h-1.5 bg-ember flex-shrink-0 mt-2.5" style={{ borderRadius: '1px' }} aria-hidden="true" />
+                      <span className="w-1.5 h-1.5 bg-ember flex-shrink-0 mt-2.5" aria-hidden="true" />
                       <p className="text-steel leading-relaxed">
                         <span className="font-semibold text-graphite">{label}.</span> {detail}
                       </p>
@@ -395,18 +384,17 @@ export default function SellYourBusinessPage() {
               </section>
 
               <section id="seller-preparation" className="scroll-mt-28">
-                <p className="eyebrow mb-4">Your Preparation</p>
-                <h2 className="heading-2 mb-6">What the Seller Prepares</h2>
+                <h2 className="heading-2 mb-6">What the seller prepares</h2>
                 <p className={bodyText}>
                   Buyers pay for what they can verify. The documents below are what buyers, their advisors, and lenders
                   ask for, and having them ready before marketing begins shortens due diligence and supports the asking
                   price.
                 </p>
-                <div className="grid sm:grid-cols-2 gap-4 mt-8">
+                <div className="tile-grid md:grid-cols-2 mt-8">
                   {sellerDocuments.map((doc) => (
-                    <div key={doc.item} className="bg-stone p-6" style={{ borderRadius: '0px' }}>
-                      <h3 className="font-semibold text-graphite mb-2">{doc.item}</h3>
-                      <p className="text-steel text-sm leading-relaxed">{doc.why}</p>
+                    <div key={doc.item} className="card md:odd:last:col-span-2">
+                      <h3 className="heading-4 mb-3">{doc.item}</h3>
+                      <p className="text-steel text-[15px] leading-relaxed">{doc.why}</p>
                     </div>
                   ))}
                 </div>
@@ -420,8 +408,7 @@ export default function SellYourBusinessPage() {
               </section>
 
               <section id="value" className="scroll-mt-28">
-                <p className="eyebrow mb-4">Pricing</p>
-                <h2 className="heading-2 mb-6">Setting the Asking Price</h2>
+                <h2 className="heading-2 mb-6">Setting the asking price</h2>
                 <p className={bodyText}>
                   The asking price comes from evidence: the earnings the business produces for an owner, the risks a
                   buyer would take on, the condition of its assets, and what comparable businesses have sold for. Forge
@@ -440,8 +427,7 @@ export default function SellYourBusinessPage() {
               </section>
 
               <section id="franchise-owners" className="scroll-mt-28">
-                <p className="eyebrow mb-4">Franchise Owners</p>
-                <h2 className="heading-2 mb-6">Selling a Franchised Location</h2>
+                <h2 className="heading-2 mb-6">Selling a franchised location</h2>
                 <p className={bodyText}>
                   If your business operates under a franchise agreement, the franchisor is part of the sale. Most
                   agreements require the franchisor to approve the buyer, and many require a transfer fee, completion of
@@ -460,8 +446,7 @@ export default function SellYourBusinessPage() {
               </section>
 
               <section id="how-we-work" className="scroll-mt-28">
-                <p className="eyebrow mb-4">Standing Terms</p>
-                <h2 className="heading-2 mb-6">How Forge Represents Sellers</h2>
+                <h2 className="heading-2 mb-6">How Forge represents sellers</h2>
                 <p className={bodyText}>
                   Forge represents owners of Texas businesses under a written engagement agreement. Before you sign, we
                   explain the scope of work, how we are paid, and how long the agreement runs. We work alongside your
@@ -471,8 +456,7 @@ export default function SellYourBusinessPage() {
               </section>
 
               <section id="faq" className="scroll-mt-28 pt-4">
-                <p className="eyebrow mb-4">Questions</p>
-                <h2 className="heading-3 mb-8">Questions From Owners Preparing to Sell</h2>
+                <h2 className="heading-2 mb-8">Questions from owners preparing to sell</h2>
                 <FAQList faqs={faqs} />
               </section>
             </div>
@@ -480,17 +464,16 @@ export default function SellYourBusinessPage() {
         </div>
       </section>
 
-      <section id="inquiry" className="bg-stone scroll-mt-28">
+      <section id="inquiry" className="bg-white scroll-mt-28">
         <div className="container-wide section-padding">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
             <div className="lg:col-span-5">
-              <p className="eyebrow mb-4">Confidential Inquiry</p>
-              <h2 className="heading-2 mb-6">Talk to Forge About Selling Your Business</h2>
-              <p className="text-steel leading-relaxed text-base sm:text-lg mb-5">
+              <h2 className="heading-2 mb-6">Talk to Forge about selling your business</h2>
+              <p className="text-steel text-[17px] leading-relaxed mb-5">
                 Tell us about the business and your timing. We reply within one business day, and nothing you send is
                 shared with anyone outside Forge.
               </p>
-              <p className="text-steel leading-relaxed text-base sm:text-lg">
+              <p className="text-steel text-[17px] leading-relaxed">
                 If you are not ready to talk yet, start with the{' '}
                 <Link href="/sell-your-business/how-to-sell-a-business" className={inlineLink}>
                   step by step selling guide
@@ -505,7 +488,7 @@ export default function SellYourBusinessPage() {
             <div className="lg:col-span-7">
               <IntakeForm
                 inquiryType="seller"
-                heading="Start a Confidential Conversation"
+                heading="Start a confidential conversation"
                 intro="A few details help us prepare for the first call. Financial documents come later, after a confidentiality agreement is in place."
               />
             </div>
@@ -514,20 +497,20 @@ export default function SellYourBusinessPage() {
       </section>
 
       <ContinueLearning
-        heading="Where to Go From Here"
+        heading="Where to go from here"
         links={[
           {
-            label: 'How to Sell a Business',
+            label: 'How to sell a business',
             href: '/sell-your-business/how-to-sell-a-business',
             description: 'The full step by step guide, with the documents each step needs and the common mistakes.',
           },
           {
-            label: 'Business Valuation',
+            label: 'Business valuation',
             href: '/business-valuation',
             description: 'How a broker opinion of value is prepared and how it differs from a certified appraisal.',
           },
           {
-            label: 'Texas Business Broker',
+            label: 'Texas business broker',
             href: '/texas-business-broker',
             description: 'How Forge represents Texas sellers and what a brokerage engagement includes.',
           },
@@ -535,9 +518,9 @@ export default function SellYourBusinessPage() {
       />
 
       <SectionCTA
-        heading="Start With a Confidential Conversation"
+        heading="Start with a confidential conversation"
         body="The first call commits you to nothing. We review your situation, explain the process, and tell you what we would need to see before taking the business to market."
-        buttonText="Send a Confidential Inquiry"
+        buttonText="Send a confidential inquiry"
         buttonHref="#inquiry"
         secondaryText="Or contact us directly"
         secondaryHref="/contact"

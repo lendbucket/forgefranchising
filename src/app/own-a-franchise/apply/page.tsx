@@ -87,16 +87,14 @@ const INITIAL_FORM_DATA: FormData = {
   heardAboutUs: '',
 };
 
-const STEPS = ['About You', 'Location & Capital', 'Your Goals'];
+const STEPS = ['About you', 'Location & capital', 'Your goals'];
 
 const DISCLAIMER_TEXT =
   'This is not an offer to sell, or the solicitation of an offer to buy, a franchise. Forge Franchising offers franchises solely by means of its Franchise Disclosure Document. Certain jurisdictions require registration or other actions before franchises can be offered or sold there. We will not offer or sell a franchise in any jurisdiction unless we are first in compliance with applicable law.';
 
-const inputClasses =
-  'w-full px-5 py-4 border border-steel/70 bg-white text-graphite min-h-[52px] rounded-[3px] focus:outline-none focus:ring-2 focus:ring-ember/40 transition-shadow';
+const inputClasses = 'field';
 
-const selectClasses =
-  'w-full px-5 py-4 border border-steel/70 bg-white text-graphite min-h-[52px] rounded-[3px] focus:outline-none focus:ring-2 focus:ring-ember/40 transition-shadow appearance-none';
+const selectClasses = 'field';
 
 export default function ApplyPage() {
   const [step, setStep] = useState(0);
@@ -166,25 +164,25 @@ export default function ApplyPage() {
   if (isSuccess) {
     return (
       <main>
-        <section className="bg-graphite py-20">
-          <div className="container mx-auto px-6 text-center">
-            <h2 className="heading-1 text-white mb-6">Application Received</h2>
-            <p className="body-large text-white/80 max-w-2xl mx-auto">
+        <section className="bg-graphite surface-dark">
+          <div className="container-wide section-padding text-center">
+            <h2 className="heading-1 text-white mb-6">Application received</h2>
+            <p className="body-large max-w-2xl mx-auto">
               Thank you for your interest in Forge Franchising. Our franchise development team
               will review your application and reach out within 2 business days.
             </p>
           </div>
         </section>
-        <section className="bg-white py-16">
-          <div className="container mx-auto px-6 text-center">
-            <div className="card max-w-xl mx-auto p-10">
-              <h2 className="heading-3 text-graphite mb-4">What to Expect Next</h2>
+        <section className="section-padding bg-white">
+          <div className="container-wide text-center">
+            <div className="card max-w-xl mx-auto">
+              <h2 className="heading-3 text-graphite mb-4">What to expect next</h2>
               <p className="body-large text-steel mb-8">
                 A member of our team will contact you to schedule an introductory call.
                 In the meantime, feel free to explore more about the Forge opportunity.
               </p>
               <Link href="/own-a-franchise" className="btn-primary inline-block">
-                Back to Own a Franchise
+                Back to own a franchise
               </Link>
             </div>
           </div>
@@ -196,8 +194,8 @@ export default function ApplyPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-graphite py-20">
-        <div className="container mx-auto px-6">
+      <section className="bg-graphite surface-dark">
+        <div className="container-wide section-padding">
           {/* Breadcrumbs */}
           <nav className="mb-8" aria-label="Breadcrumb">
             <ol className="flex items-center gap-2 text-white/60 text-sm">
@@ -217,10 +215,9 @@ export default function ApplyPage() {
             </ol>
           </nav>
 
-          <div className="max-w-3xl">
-            <span className="eyebrow text-accent mb-4 block">Franchise Application</span>
+          <div className="max-w-[880px]">
             <h1 className="heading-1 text-white mb-6">Apply to Own a Forge Franchise</h1>
-            <p className="body-large text-white/80">
+            <p className="body-large">
               Complete the three steps below to submit your franchise application. The process
               takes about 5 minutes, and all information is kept strictly confidential.
             </p>
@@ -229,14 +226,14 @@ export default function ApplyPage() {
       </section>
 
       {/* Form Section */}
-      <section className="bg-white py-16">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+      <section className="section-padding bg-white">
+        <div className="container-wide">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
             {/* Main Form Column */}
             <div className="lg:col-span-3">
               {/* Progress Bar */}
               <div className="mb-10">
-                <div className="flex justify-between mb-3">
+                <div className="flex justify-between gap-4 mb-3">
                   {STEPS.map((label, i) => (
                     <button
                       key={label}
@@ -244,7 +241,7 @@ export default function ApplyPage() {
                       onClick={() => {
                         if (i < step) setStep(i);
                       }}
-                      className={`text-sm font-medium transition-colors ${
+                      className={`text-sm font-semibold text-left min-h-[44px] transition-colors ${
                         i === step
                           ? 'text-graphite'
                           : i < step
@@ -256,9 +253,9 @@ export default function ApplyPage() {
                     </button>
                   ))}
                 </div>
-                <div className="w-full h-2 bg-graphite/10 rounded-full overflow-hidden">
+                <div className="w-full h-2 bg-stone overflow-hidden">
                   <div
-                    className="h-full bg-ember rounded-full transition-all duration-500"
+                    className="h-full bg-ember transition-all duration-500"
                     style={{ width: `${((step + 1) / STEPS.length) * 100}%` }}
                   />
                 </div>
@@ -268,13 +265,13 @@ export default function ApplyPage() {
                 {/* Step 1: About You */}
                 {step === 0 && (
                   <div className="space-y-6">
-                    <h2 className="heading-3 text-graphite mb-2">About You</h2>
+                    <h2 className="heading-3 text-graphite mb-2">About you</h2>
                     <p className="body-large text-steel mb-6">
                       Tell us a bit about yourself so we can get to know you.
                     </p>
 
                     <div>
-                      <label htmlFor="fullName" className="block text-sm font-medium text-graphite mb-2">
+                      <label htmlFor="fullName" className="block text-sm font-semibold text-graphite mb-2">
                         Full Name <span className="text-accent">*</span>
                       </label>
                       <input
@@ -289,7 +286,7 @@ export default function ApplyPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-graphite mb-2">
+                      <label htmlFor="email" className="block text-sm font-semibold text-graphite mb-2">
                         Email Address <span className="text-accent">*</span>
                       </label>
                       <input
@@ -304,7 +301,7 @@ export default function ApplyPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-graphite mb-2">
+                      <label htmlFor="phone" className="block text-sm font-semibold text-graphite mb-2">
                         Phone Number <span className="text-accent">*</span>
                       </label>
                       <input
@@ -323,13 +320,13 @@ export default function ApplyPage() {
                 {/* Step 2: Location & Capital */}
                 {step === 1 && (
                   <div className="space-y-6">
-                    <h2 className="heading-3 text-graphite mb-2">Location & Capital</h2>
+                    <h2 className="heading-3 text-graphite mb-2">Location & capital</h2>
                     <p className="body-large text-steel mb-6">
                       Help us understand where you want to operate and your financial readiness.
                     </p>
 
                     <div>
-                      <label htmlFor="city" className="block text-sm font-medium text-graphite mb-2">
+                      <label htmlFor="city" className="block text-sm font-semibold text-graphite mb-2">
                         City <span className="text-accent">*</span>
                       </label>
                       <input
@@ -344,7 +341,7 @@ export default function ApplyPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="state" className="block text-sm font-medium text-graphite mb-2">
+                      <label htmlFor="state" className="block text-sm font-semibold text-graphite mb-2">
                         State <span className="text-accent">*</span>
                       </label>
                       <select
@@ -364,7 +361,7 @@ export default function ApplyPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="liquidCapital" className="block text-sm font-medium text-graphite mb-2">
+                      <label htmlFor="liquidCapital" className="block text-sm font-semibold text-graphite mb-2">
                         Available Liquid Capital <span className="text-accent">*</span>
                       </label>
                       <select
@@ -384,7 +381,7 @@ export default function ApplyPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="netWorth" className="block text-sm font-medium text-graphite mb-2">
+                      <label htmlFor="netWorth" className="block text-sm font-semibold text-graphite mb-2">
                         Net Worth
                       </label>
                       <select
@@ -403,7 +400,7 @@ export default function ApplyPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="currentProfession" className="block text-sm font-medium text-graphite mb-2">
+                      <label htmlFor="currentProfession" className="block text-sm font-semibold text-graphite mb-2">
                         Current Profession
                       </label>
                       <input
@@ -421,13 +418,13 @@ export default function ApplyPage() {
                 {/* Step 3: Your Goals */}
                 {step === 2 && (
                   <div className="space-y-6">
-                    <h2 className="heading-3 text-graphite mb-2">Your Goals</h2>
+                    <h2 className="heading-3 text-graphite mb-2">Your goals</h2>
                     <p className="body-large text-steel mb-6">
                       Tell us what draws you to Forge and what you hope to achieve.
                     </p>
 
                     <div>
-                      <label htmlFor="whyForge" className="block text-sm font-medium text-graphite mb-2">
+                      <label htmlFor="whyForge" className="block text-sm font-semibold text-graphite mb-2">
                         Why Forge? <span className="text-accent">*</span>
                       </label>
                       <textarea
@@ -442,7 +439,7 @@ export default function ApplyPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="timeline" className="block text-sm font-medium text-graphite mb-2">
+                      <label htmlFor="timeline" className="block text-sm font-semibold text-graphite mb-2">
                         Desired Timeline
                       </label>
                       <select
@@ -461,7 +458,7 @@ export default function ApplyPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="franchiseExperience" className="block text-sm font-medium text-graphite mb-2">
+                      <label htmlFor="franchiseExperience" className="block text-sm font-semibold text-graphite mb-2">
                         Franchise Experience
                       </label>
                       <select
@@ -480,7 +477,7 @@ export default function ApplyPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="salesExperience" className="block text-sm font-medium text-graphite mb-2">
+                      <label htmlFor="salesExperience" className="block text-sm font-semibold text-graphite mb-2">
                         Sales Experience
                       </label>
                       <select
@@ -499,7 +496,7 @@ export default function ApplyPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="heardAboutUs" className="block text-sm font-medium text-graphite mb-2">
+                      <label htmlFor="heardAboutUs" className="block text-sm font-semibold text-graphite mb-2">
                         How Did You Hear About Us?
                       </label>
                       <select
@@ -521,19 +518,19 @@ export default function ApplyPage() {
 
                 {/* Error Message */}
                 {error && (
-                  <div className="mt-6 p-4 bg-red-50 border border-red-200 rounded-[3px] text-red-700 text-sm">
+                  <div className="mt-6 p-4 bg-white border border-ember text-graphite text-sm">
                     {error}
                   </div>
                 )}
 
                 {/* Navigation Buttons */}
-                <div className="mt-10 flex items-center justify-between">
+                <div className="mt-10 flex items-center justify-between gap-4">
                   <div>
                     {step > 0 && (
                       <button
                         type="button"
                         onClick={handleBack}
-                        className="text-graphite font-medium hover:text-accent transition-colors"
+                        className="text-graphite font-semibold hover:text-accent transition-colors min-h-[44px]"
                       >
                         Back
                       </button>
@@ -556,7 +553,7 @@ export default function ApplyPage() {
                         disabled={isSubmitting || !canAdvanceStep()}
                         className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
                       >
-                        {isSubmitting ? 'Submitting...' : 'Submit Application'}
+                        {isSubmitting ? 'Submitting...' : 'Submit application'}
                       </button>
                     )}
                   </div>
@@ -570,11 +567,11 @@ export default function ApplyPage() {
 
             {/* Right Sidebar */}
             <div className="lg:col-span-2">
-              <div className="card p-8 mb-8">
-                <h3 className="heading-4 text-graphite mb-6">What Happens After You Apply</h3>
+              <div className="card mb-8">
+                <h3 className="heading-4 text-graphite mb-6">What happens after you apply</h3>
                 <ol className="space-y-5">
                   <li className="flex gap-4">
-                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-ember/20 text-accent flex items-center justify-center text-sm font-bold">
+                    <span className="flex-shrink-0 w-8 h-8 bg-ember-fill text-graphite flex items-center justify-center text-sm font-bold">
                       1
                     </span>
                     <div>
@@ -585,7 +582,7 @@ export default function ApplyPage() {
                     </div>
                   </li>
                   <li className="flex gap-4">
-                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-ember/20 text-accent flex items-center justify-center text-sm font-bold">
+                    <span className="flex-shrink-0 w-8 h-8 bg-ember-fill text-graphite flex items-center justify-center text-sm font-bold">
                       2
                     </span>
                     <div>
@@ -596,7 +593,7 @@ export default function ApplyPage() {
                     </div>
                   </li>
                   <li className="flex gap-4">
-                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-ember/20 text-accent flex items-center justify-center text-sm font-bold">
+                    <span className="flex-shrink-0 w-8 h-8 bg-ember-fill text-graphite flex items-center justify-center text-sm font-bold">
                       3
                     </span>
                     <div>
@@ -607,7 +604,7 @@ export default function ApplyPage() {
                     </div>
                   </li>
                   <li className="flex gap-4">
-                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-ember/20 text-accent flex items-center justify-center text-sm font-bold">
+                    <span className="flex-shrink-0 w-8 h-8 bg-ember-fill text-graphite flex items-center justify-center text-sm font-bold">
                       4
                     </span>
                     <div>
@@ -620,7 +617,7 @@ export default function ApplyPage() {
                 </ol>
               </div>
 
-              <div className="p-6 bg-graphite/5 rounded-[3px]">
+              <div className="p-6 border border-line">
                 <p className="text-xs text-steel leading-relaxed">
                   {DISCLAIMER_TEXT}
                 </p>

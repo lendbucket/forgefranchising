@@ -24,7 +24,7 @@ export const metadata = createMetadata({
   path: PATH,
 })
 
-const p = 'text-steel leading-relaxed text-base sm:text-lg mb-5'
+const p = 'text-steel text-[17px] leading-relaxed mb-5'
 const link = 'text-accent font-semibold hover:underline'
 
 const duties = [
@@ -98,15 +98,15 @@ const faqs = [
 ]
 
 const toc = [
-  { id: 'what-broker-does', label: 'What a Broker Does' },
-  { id: 'choose', label: 'How to Choose a Broker' },
-  { id: 'fees', label: 'Fees and Listing Terms' },
-  { id: 'buyers', label: 'Qualifying Buyers' },
+  { id: 'what-broker-does', label: 'What a broker does' },
+  { id: 'choose', label: 'How to choose a broker' },
+  { id: 'fees', label: 'Fees and listing terms' },
+  { id: 'buyers', label: 'Qualifying buyers' },
   { id: 'confidentiality', label: 'Confidentiality' },
-  { id: 'real-property', label: 'When Real Property Is Involved' },
-  { id: 'markets', label: 'Texas Markets' },
+  { id: 'real-property', label: 'When real property is involved' },
+  { id: 'markets', label: 'Texas markets' },
   { id: 'faq', label: 'Questions' },
-  { id: 'inquiry', label: 'Start a Confidential Inquiry' },
+  { id: 'inquiry', label: 'Start a confidential inquiry' },
 ]
 
 export default function TexasBusinessBrokerPage() {
@@ -137,13 +137,12 @@ export default function TexasBusinessBrokerPage() {
       />
 
       <section className="bg-graphite surface-dark">
-        <div className="container-wide section-padding !pb-12">
+        <div className="container-wide section-padding">
           <Breadcrumbs
             withSchema={false}
             items={[{ label: 'Sell Your Business', href: '/sell-your-business' }, { label: 'Texas Business Broker' }]}
           />
-          <div className="max-w-3xl">
-            <p className="eyebrow mb-4">Texas Business Brokerage</p>
+          <div className="max-w-[880px]">
             <h1 className="heading-1 mb-8">Business Sale Broker in Texas: What a Broker Does and How to Choose One</h1>
             <p className="body-large mb-6">
               A business sale broker represents an owner who wants to sell a privately held company. The broker prices the
@@ -170,26 +169,26 @@ export default function TexasBusinessBrokerPage() {
       </section>
 
       <section className="bg-white">
-        <div className="container-wide px-4 sm:px-6 lg:px-8 pb-20 sm:pb-24">
+        <div className="container-wide section-padding">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
             <aside className="lg:col-span-3">
               <PageTOC items={toc} />
             </aside>
 
-            <div className="lg:col-span-9 space-y-16">
+            <div className="lg:col-span-9 min-w-0 space-y-24 max-[720px]:space-y-16">
               <article id="what-broker-does" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">What a Business Sale Broker Does in Texas</h2>
+                <h2 className="heading-2 mb-6">What a business sale broker does in Texas</h2>
                 <p className={p}>
                   Selling a business is a sequence of tasks that most owners do once. A broker has done them many times and
                   runs them in parallel while the owner keeps operating. The core of the work is the same anywhere, and in
                   Texas it often includes coordinating with buyers who are relocating from other states and with lenders who
                   finance acquisitions through SBA programs.
                 </p>
-                <div className="grid sm:grid-cols-2 gap-4 mb-8">
+                <div className="tile-grid md:grid-cols-2 mt-8 mb-8">
                   {duties.map((d) => (
-                    <div key={d.term} className="bg-stone p-6" style={{ borderRadius: '0px' }}>
-                      <p className="text-xs font-semibold uppercase tracking-widest text-graphite mb-2">{d.term}</p>
-                      <p className="text-steel text-sm leading-relaxed">{d.text}</p>
+                    <div key={d.term} className="card">
+                      <p className="heading-4 mb-3">{d.term}</p>
+                      <p className="text-steel text-[15px] leading-relaxed">{d.text}</p>
                     </div>
                   ))}
                 </div>
@@ -202,7 +201,7 @@ export default function TexasBusinessBrokerPage() {
               </article>
 
               <article id="choose" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">How to Choose a Broker to Sell My Business</h2>
+                <h2 className="heading-2 mb-6">How to choose a broker to sell my business</h2>
                 <p className={p}>
                   Owners who start by searching for a broker to sell my business usually find several names quickly. The
                   harder part is telling them apart. The most useful comparison is how each broker would run your sale:
@@ -225,7 +224,7 @@ export default function TexasBusinessBrokerPage() {
               </article>
 
               <article id="fees" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">How Fees and Listing Agreements Are Commonly Structured</h2>
+                <h2 className="heading-2 mb-6">How fees and listing agreements are commonly structured</h2>
                 <h3 className="heading-4 mb-4">Success fee</h3>
                 <p className={p}>
                   The main fee in many business brokerage engagements is a success fee, paid at closing out of the sale
@@ -252,7 +251,7 @@ export default function TexasBusinessBrokerPage() {
               </article>
 
               <article id="buyers" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">How Brokers Qualify Buyers</h2>
+                <h2 className="heading-2 mb-6">How brokers qualify buyers</h2>
                 <p className={p}>
                   Buyer screening protects the owner&apos;s time and confidentiality. A buyer who cannot finance the purchase,
                   or who is gathering information on a competitor, should not see the owner&apos;s financial statements. A
@@ -275,7 +274,7 @@ export default function TexasBusinessBrokerPage() {
               </article>
 
               <article id="confidentiality" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">How a Broker Protects Confidentiality</h2>
+                <h2 className="heading-2 mb-6">How a broker protects confidentiality</h2>
                 <p className={p}>
                   If employees, customers, or competitors learn that a business is for sale before the owner is ready, the
                   business can lose staff and accounts during the very period when buyers are evaluating it. Confidentiality
@@ -293,7 +292,7 @@ export default function TexasBusinessBrokerPage() {
               </article>
 
               <article id="real-property" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">When Real Property Is Part of the Sale</h2>
+                <h2 className="heading-2 mb-6">When real property is part of the sale</h2>
                 <p className={p}>
                   Many business sales include no real estate at all; the buyer takes over a lease. Others include the
                   building or land the business operates on. If real property is part of the sale, Texas real estate licensing
@@ -308,16 +307,16 @@ export default function TexasBusinessBrokerPage() {
               </article>
 
               <section id="markets" className="scroll-mt-28">
-                <h2 className="heading-3 mb-6">Texas Markets: Local Economies and Active Buyers</h2>
+                <h2 className="heading-2 mb-6">Texas markets: Local economies and active buyers</h2>
                 <p className={p}>
                   Texas is a single state with several distinct regional economies. The local economic base shapes which
                   businesses are common, which buyers are looking, and what those buyers will ask about. The notes below
                   describe each market in general terms. They are not listings and they do not describe any specific sale.
                 </p>
 
-                <div className="space-y-12 mt-10">
-                  <article id="san-antonio" className="scroll-mt-28">
-                    <h3 className="heading-4 mb-4">San Antonio</h3>
+                <div className="mt-10 border-t border-graphite">
+                  <article id="san-antonio" className="scroll-mt-28 py-10 border-b border-line">
+                    <h3 className="heading-3 mb-5">San Antonio</h3>
                     <p className={p}>
                       San Antonio has a large military presence through Joint Base San Antonio,
                       which brings together Fort Sam Houston, Lackland Air Force Base, and Randolph Air Force Base. The South
@@ -334,8 +333,8 @@ export default function TexasBusinessBrokerPage() {
                     </p>
                   </article>
 
-                  <article id="corpus-christi" className="scroll-mt-28">
-                    <h3 className="heading-4 mb-4">Corpus Christi</h3>
+                  <article id="corpus-christi" className="scroll-mt-28 py-10 border-b border-line">
+                    <h3 className="heading-3 mb-5">Corpus Christi</h3>
                     <p className={p}>
                       The Port of Corpus Christi is the center of the local economy and a major gateway for energy exports,
                       including crude oil exports that grew after the federal export ban was lifted in 2015. Refineries and
@@ -352,8 +351,8 @@ export default function TexasBusinessBrokerPage() {
                     </p>
                   </article>
 
-                  <article id="houston" className="scroll-mt-28">
-                    <h3 className="heading-4 mb-4">Houston</h3>
+                  <article id="houston" className="scroll-mt-28 py-10 border-b border-line">
+                    <h3 className="heading-3 mb-5">Houston</h3>
                     <p className={p}>
                       Houston is the center of the American energy industry, with headquarters and major offices of oil and
                       gas producers, oilfield service companies, and engineering firms. The Texas Medical Center brings together a
@@ -370,8 +369,8 @@ export default function TexasBusinessBrokerPage() {
                     </p>
                   </article>
 
-                  <article id="dallas-fort-worth" className="scroll-mt-28">
-                    <h3 className="heading-4 mb-4">Dallas Fort Worth</h3>
+                  <article id="dallas-fort-worth" className="scroll-mt-28 py-10 border-b border-line">
+                    <h3 className="heading-3 mb-5">Dallas Fort Worth</h3>
                     <p className={p}>
                       Dallas Fort Worth is a large and diverse metro with a heavy concentration of corporate headquarters,
                       including AT&amp;T, Texas Instruments, and Southwest Airlines in Dallas, American Airlines and BNSF
@@ -387,8 +386,8 @@ export default function TexasBusinessBrokerPage() {
                     </p>
                   </article>
 
-                  <article id="austin" className="scroll-mt-28">
-                    <h3 className="heading-4 mb-4">Austin</h3>
+                  <article id="austin" className="scroll-mt-28 py-10 border-b border-line">
+                    <h3 className="heading-3 mb-5">Austin</h3>
                     <p className={p}>
                       Austin is the state capital, and state government is a major employer. The University of Texas at
                       Austin anchors a large student and research population. Technology employers have a large presence in
@@ -414,14 +413,12 @@ export default function TexasBusinessBrokerPage() {
               <BrokerageNotice />
 
               <section id="faq" className="scroll-mt-28 pt-4">
-                <p className="eyebrow mb-4">Questions</p>
-                <h2 className="heading-3 mb-8">Questions About Working With a Business Broker</h2>
+                <h2 className="heading-2 mb-8">Questions about working with a business broker</h2>
                 <FAQList faqs={faqs} />
               </section>
 
               <section id="inquiry" className="scroll-mt-28 pt-4">
-                <p className="eyebrow mb-4">Confidential Inquiry</p>
-                <h2 className="heading-3 mb-6">Talk to Forge About Selling Your Business</h2>
+                <h2 className="heading-2 mb-6">Talk to Forge about selling your business</h2>
                 <p className={p}>
                   Tell us about the business and your plans. Inquiries are confidential, and we will reply with the
                   information we need for a first conversation.
@@ -434,18 +431,18 @@ export default function TexasBusinessBrokerPage() {
       </section>
 
       <ContinueLearning
-        heading="Where to Go From Here"
+        heading="Where to go from here"
         links={[
-          { label: 'Sell Your Business', href: '/sell-your-business', description: 'How Forge represents Texas owners through a confidential sale.' },
-          { label: 'Business Valuation', href: '/business-valuation', description: 'How buyers and lenders value a small business, and what a broker opinion of value covers.' },
-          { label: 'Buy a Business', href: '/buy-a-business', description: 'How buyers find, evaluate, and finance an established Texas business.' },
+          { label: 'Sell your business', href: '/sell-your-business', description: 'How Forge represents Texas owners through a confidential sale.' },
+          { label: 'Business valuation', href: '/business-valuation', description: 'How buyers and lenders value a small business, and what a broker opinion of value covers.' },
+          { label: 'Buy a business', href: '/buy-a-business', description: 'How buyers find, evaluate, and finance an established Texas business.' },
         ]}
       />
 
       <SectionCTA
-        heading="Start With a Confidential Conversation"
+        heading="Start with a confidential conversation"
         body="Tell us about your business and timing. We will explain how we would price it and how we would keep the sale confidential."
-        buttonText="Start a Confidential Inquiry"
+        buttonText="Start a confidential inquiry"
         buttonHref="#inquiry"
         secondaryText="Or read about selling your business"
         secondaryHref="/sell-your-business"

@@ -1,12 +1,11 @@
-import Link from 'next/link'
+import { ContactRows } from '@/components/ContactRows'
+import { CONTACT_EMAIL } from '@/lib/constants'
 
 /**
- * SectionCTA: Conversion section placed at natural decision points.
- *
- * Psychology: Isolation effect (Von Restorff) ensures a single primary
- * action stands out. Placed after sections that deliver real value,
- * built on reciprocity. The visitor received something useful;
- * the CTA offers the next logical step, not a cold ask.
+ * SectionCTA: the ember contact section that closes every service and hub
+ * page. It carries the page's own call to action copy, laid out like the
+ * homepage contact section: heading and lead on the left, linked rows on
+ * the right, with the inquiry email as the last row.
  */
 
 type SectionCTAProps = {
@@ -14,8 +13,9 @@ type SectionCTAProps = {
   body: string
   buttonText?: string
   buttonHref?: string
+  /** Kept for existing call sites. Every variant renders as the ember section. */
   variant?: 'dark' | 'light'
-  /** Optional secondary link for micro-commitment path */
+  /** Optional second row */
   secondaryText?: string
   secondaryHref?: string
 }
@@ -23,40 +23,15 @@ type SectionCTAProps = {
 export function SectionCTA({
   heading,
   body,
-  buttonText = 'Get Your Free Franchise Readiness Score',
+  buttonText = 'Get your free franchise readiness score',
   buttonHref = '/is-my-business-franchisable',
-  variant = 'dark',
   secondaryText,
   secondaryHref,
 }: SectionCTAProps) {
-  // Closing calls to action always sit on graphite. The light variant is kept
-  // in the props for existing call sites and renders the same way.
-  const isDark = variant === 'dark' || variant === 'light'
-  return (
-    <section className={isDark ? 'bg-graphite text-white' : 'bg-stone text-graphite'}>
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 text-center">
-        <h2 className={`heading-2 mb-6 ${isDark ? 'text-white' : 'text-graphite'}`}>
-          {heading}
-        </h2>
-        <p className={`body-large mb-10 max-w-2xl mx-auto ${isDark ? '!text-white/60' : '!text-steel'}`}>
-          {body}
-        </p>
-        {/* Isolation effect: single primary CTA, visually dominant */}
-        <Link href={buttonHref} className="btn-primary">
-          {buttonText}
-        </Link>
-        {/* Optional soft micro-commitment path (foot-in-door) */}
-        {secondaryText && secondaryHref && (
-          <div className="mt-4">
-            <Link
-              href={secondaryHref}
-              className={`text-sm font-medium link-underline ${isDark ? 'text-white/60' : 'text-steel'}`}
-            >
-              {secondaryText}
-            </Link>
-          </div>
-        )}
-      </div>
-    </section>
-  )
+  const rows = [
+    { title: buttonText, href: buttonHref },
+    ...(secondaryText && secondaryHref ? [{ title: secondaryText, href: secondaryHref }] : []),
+    { title: CONTACT_EMAIL, desc: 'Write to us directly.', href: `mailto:${CONTACT_EMAIL}` },
+  ]
+  return <ContactRows heading={heading} body={body} rows={rows} id="get-started" />
 }

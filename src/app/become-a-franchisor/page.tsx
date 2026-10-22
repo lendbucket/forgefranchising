@@ -9,6 +9,7 @@ import { SectionCTA } from '@/components/SectionCTA'
 import { StickyCTA } from '@/components/StickyCTA'
 import { ReadingProgress } from '@/components/ReadingProgress'
 import { SITE_URL } from '@/lib/constants'
+import { sentenceCase } from '@/lib/text'
 import { webPageSchema, breadcrumbSchema, articleSchema, faqSchema, renderSchema } from '@/lib/schema'
 
 const PATH = '/become-a-franchisor'
@@ -233,8 +234,7 @@ export default function BecomeAFranchisorPage() {
             withSchema={false}
             items={[{ label: 'Services', href: '/services' }, { label: 'Become a Franchisor' }]}
           />
-          <div className="max-w-3xl">
-            <p className="eyebrow mb-4">The Franchisor Company</p>
+          <div className="max-w-[880px]">
             <h1 className="heading-1 mb-8">How to Become a Franchisor: Building the Company Behind the Brand</h1>
             <p className="body-large mb-6">
               Learning how to become a franchisor means learning to run a second company. Your current business makes and
@@ -261,13 +261,13 @@ export default function BecomeAFranchisorPage() {
         </div>
       </section>
 
-      <section className="bg-white">
-        <div className="container-wide px-4 sm:px-6 lg:px-8 pb-20 sm:pb-24">
+      <section className="section-padding bg-white">
+        <div className="container-wide">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
             <aside className="lg:col-span-3">
               <PageTOC
                 items={[
-                  ...steps.map((s) => ({ id: s.id, label: s.title })),
+                  ...steps.map((s) => ({ id: s.id, label: sentenceCase(s.title) })),
                   { id: 'faq', label: 'Questions' },
                 ]}
               />
@@ -276,22 +276,22 @@ export default function BecomeAFranchisorPage() {
             <div className="lg:col-span-9 space-y-16">
               {steps.map((step, i) => (
                 <article key={step.id} id={step.id} className="scroll-mt-28">
-                  <p className="text-accent font-display font-bold text-4xl mb-3" style={{ letterSpacing: '-0.02em' }}>
+                  <p className="numeral text-[56px] mb-6">
                     {String(i + 1).padStart(2, '0')}
                   </p>
-                  <h2 className="heading-3 mb-6">{step.title}</h2>
+                  <h2 className="heading-3 mb-6">{sentenceCase(step.title)}</h2>
                   {step.what.map((p) => (
-                    <p key={p.slice(0, 32)} className="text-steel leading-relaxed text-base sm:text-lg mb-5">
+                    <p key={p.slice(0, 32)} className="text-steel text-[17px] leading-relaxed mb-5">
                       {p}
                     </p>
                   ))}
-                  <div className="grid sm:grid-cols-2 gap-4 mt-8">
-                    <div className="bg-stone p-6" style={{ borderRadius: '0px' }}>
-                      <p className="text-xs font-semibold uppercase tracking-widest text-graphite mb-2">What it produces</p>
+                  <div className="tile-grid sm:grid-cols-2 mt-8">
+                    <div className="bg-stone p-6">
+                      <p className="text-sm font-semibold text-graphite mb-2">What it produces</p>
                       <p className="text-steel text-sm leading-relaxed">{step.produces}</p>
                     </div>
-                    <div className="bg-white p-6" style={{ borderRadius: '0px', border: '1px solid rgba(78, 90, 98, 0.18)', borderTop: '2px solid #1C1F23' }}>
-                      <p className="text-xs font-semibold uppercase tracking-widest text-graphite mb-2">When it is skipped</p>
+                    <div className="bg-white p-6">
+                      <p className="text-sm font-semibold text-graphite mb-2">When it is skipped</p>
                       <p className="text-steel text-sm leading-relaxed">{step.skipped}</p>
                     </div>
                   </div>
@@ -306,8 +306,7 @@ export default function BecomeAFranchisorPage() {
               ))}
 
               <section id="faq" className="scroll-mt-28 pt-4">
-                <p className="eyebrow mb-4">Questions</p>
-                <h2 className="heading-3 mb-8">Questions About Becoming a Franchisor</h2>
+                <h2 className="heading-3 mb-8">Questions about becoming a franchisor</h2>
                 <FAQList faqs={faqs} />
               </section>
             </div>
@@ -316,18 +315,18 @@ export default function BecomeAFranchisorPage() {
       </section>
 
       <ContinueLearning
-        heading="Where to Go From Here"
+        heading="Where to go from here"
         links={[
-          { label: 'Our Development Process', href: '/how-it-works', description: 'The four phases of a Forge engagement and what each one delivers.' },
-          { label: 'Engagement Packages', href: '/packages', description: 'What each level of franchise development includes.' },
-          { label: 'Franchise Branding', href: '/franchise-branding', description: 'Why the brand is the product a franchisee buys, and how to build one.' },
+          { label: 'Our development process', href: '/how-it-works', description: 'The four phases of a Forge engagement and what each one delivers.' },
+          { label: 'Engagement packages', href: '/packages', description: 'What each level of franchise development includes.' },
+          { label: 'Franchise branding', href: '/franchise-branding', description: 'Why the brand is the product a franchisee buys, and how to build one.' },
         ]}
       />
 
       <SectionCTA
-        heading="Find Out If Your Business Is Ready to Become a Franchisor"
+        heading="Find out if your business is ready to become a franchisor"
         body="Step one is readiness. Take the two minute assessment and see how your business scores on profitability, systems, brand, and replicability."
-        buttonText="Take the Readiness Assessment"
+        buttonText="Take the readiness assessment"
         buttonHref="/is-my-business-franchisable"
         secondaryText="Or book a feasibility call"
         secondaryHref="/contact"

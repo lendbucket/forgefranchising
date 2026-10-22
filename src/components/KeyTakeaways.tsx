@@ -1,11 +1,7 @@
 /**
- * KeyTakeaways: Summary box shown at the top of long content.
- *
- * Psychology: Chunking (Miller's law) breaks complex content into
- * scannable pieces. A skimmer gets value in 10 seconds, which builds
- * enough interest to keep reading (the curiosity gap between the
- * summary and the full explanation). Also reduces cognitive load
- * by setting expectations for what the page covers.
+ * KeyTakeaways: summary panel at the top of long content. On a graphite
+ * hero it renders as a raised graphite panel (see .takeaways in
+ * globals.css); on light sections it sits on stone.
  */
 
 type KeyTakeawaysProps = {
@@ -15,23 +11,18 @@ type KeyTakeawaysProps = {
 
 export function KeyTakeaways({ items, readTime }: KeyTakeawaysProps) {
   return (
-    <div
-      className="bg-stone p-6 sm:p-8 mb-10"
-      style={{ borderRadius: '0px', borderLeft: '3px solid #E4572E' }}
-    >
-      <div className="flex items-center justify-between mb-4">
-        <p className="eyebrow">Key Takeaways</p>
-        {readTime && (
-          <span className="text-xs text-steel">{readTime}</span>
-        )}
+    <div className="takeaways mt-12 mb-2 p-8 max-[720px]:p-6" style={{ borderTop: '3px solid #E4572E' }}>
+      <div className="flex items-baseline justify-between gap-4 mb-4">
+        <p className="font-display text-xl font-bold" style={{ letterSpacing: '-0.02em' }}>
+          Key takeaways
+        </p>
+        {readTime && <span className="takeaways-meta text-sm">{readTime}</span>}
       </div>
-      <ul className="space-y-2.5">
+      <ul>
         {items.map((item, i) => (
-          <li key={i} className="flex items-start gap-2.5">
-            <svg className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-            </svg>
-            <span className="text-sm text-graphite leading-relaxed">{item}</span>
+          <li key={i} className="takeaways-item grid grid-cols-[32px_minmax(0,1fr)] py-3 text-[15px] leading-relaxed">
+            <span className="font-display font-bold text-accent">{String(i + 1).padStart(2, '0')}</span>
+            <span>{item}</span>
           </li>
         ))}
       </ul>

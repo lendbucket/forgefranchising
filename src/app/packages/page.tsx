@@ -3,7 +3,6 @@ import { createMetadata } from '@/lib/metadata'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
-import { OpenLoop } from '@/components/OpenLoop'
 import { StickyCTA } from '@/components/StickyCTA'
 import { SITE_URL } from '@/lib/constants'
 import { serviceSchema, webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
@@ -152,8 +151,7 @@ export default function PackagesPage() {
               { label: 'Packages' },
             ]}
           />
-          <div className="max-w-3xl">
-            <p className="eyebrow mb-4">Packages</p>
+          <div className="max-w-[880px]">
             <h1 className="heading-1 mb-8">
               Franchise Development Consultant Packages. Three Tiers. Zero Guesswork.
             </h1>
@@ -185,27 +183,18 @@ export default function PackagesPage() {
       {/* Package Cards */}
       <section className="section-padding bg-stone">
         <div className="container-wide">
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="tile-grid lg:grid-cols-3">
             {tiers.map((tier) => (
               <div
                 key={tier.name}
-                className={`card relative flex flex-col ${
-                  tier.popular
-                    ? 'ring-2 ring-ember lg:scale-105 lg:z-10'
-                    : ''
-                }`}
+                className="card flex flex-col"
               >
-                {tier.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-ember-fill text-graphite text-xs font-bold uppercase tracking-widest px-4 py-1.5" style={{ borderRadius: '2px', letterSpacing: '0.1em' }}>
-                    Most Popular
-                  </div>
-                )}
                 <div className="mb-6">
                   <h2 className="heading-2 mb-2">{tier.name}</h2>
                   <p className="text-accent font-semibold text-sm">{tier.tagline}</p>
                 </div>
-                <p className="text-steel leading-relaxed mb-6 text-sm">{tier.description}</p>
-                <div className="bg-stone p-4 mb-6" style={{ borderRadius: '0px' }}>
+                <p className="text-steel text-[17px] leading-relaxed mb-6">{tier.description}</p>
+                <div className="bg-stone p-4 mb-6">
                   <p className="text-graphite font-medium text-sm">{tier.priceHint}</p>
                 </div>
                 <ul className="space-y-3 mb-8 flex-1">
@@ -219,7 +208,7 @@ export default function PackagesPage() {
                   ))}
                 </ul>
                 <Link href="/contact" className="btn-primary text-center w-full">
-                  Get a Tailored Quote
+                  Get a tailored quote
                 </Link>
               </div>
             ))}
@@ -230,12 +219,12 @@ export default function PackagesPage() {
       {/* Who each tier is for */}
       <section className="section-padding bg-white">
         <div className="container-wide">
-          <h2 className="heading-2 text-center mb-4">Which Package Is Right for You?</h2>
-          <p className="body-large text-center max-w-3xl mx-auto mb-12">
+          <h2 className="heading-2 mb-4">Which package is right for you?</h2>
+          <p className="body-large max-w-[880px] mb-12">
             The right package depends on where your business is today and where you want it to be in
             12 to 24 months. Here is who each tier is for, and who it is not.
           </p>
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="tile-grid lg:grid-cols-3">
             {tiers.map((tier) => (
               <div key={tier.name} className="card">
                 <h3 className="heading-3 mb-4">{tier.name}</h3>
@@ -256,31 +245,31 @@ export default function PackagesPage() {
       {/* Comparison Table */}
       <section className="section-padding bg-stone">
         <div className="container-wide">
-          <h2 className="heading-2 text-center mb-4">Side by Side Comparison</h2>
-          <p className="body-large text-center max-w-3xl mx-auto mb-12">
+          <h2 className="heading-2 mb-4">Side by side comparison</h2>
+          <p className="body-large max-w-[880px] mb-12">
             Every feature in every package, laid out so you can compare at a glance.
           </p>
           <div className="overflow-scroll-x">
             <table className="w-full min-w-[600px]">
               <thead>
-                <tr className="border-b-2 border-graphite/10">
-                  <th className="text-left py-4 pr-4 text-sm font-semibold text-graphite">Feature</th>
-                  <th className="text-center py-4 px-4 text-sm font-semibold text-graphite">Launch</th>
-                  <th className="text-center py-4 px-4 text-sm font-semibold text-accent">Growth</th>
-                  <th className="text-center py-4 px-4 text-sm font-semibold text-graphite">Empire</th>
+                <tr className="border-b-2 border-graphite">
+                  <th className="text-left py-4 pr-6 text-sm font-semibold text-graphite">Feature</th>
+                  <th className="text-center py-4 pr-6 text-sm font-semibold text-graphite">Launch</th>
+                  <th className="text-center py-4 pr-6 text-sm font-semibold text-accent">Growth</th>
+                  <th className="text-center py-4 pr-6 text-sm font-semibold text-graphite">Empire</th>
                 </tr>
               </thead>
               <tbody>
                 {comparisonFeatures.map((row, i) => (
-                  <tr key={i} className="border-b border-graphite/5">
-                    <td className="py-3 pr-4 text-sm text-steel">{row.feature}</td>
-                    <td className="py-3 px-4 text-center">
+                  <tr key={i} className="border-b border-line">
+                    <td className="py-4 pr-6 text-sm text-steel">{row.feature}</td>
+                    <td className="py-4 pr-6 text-center">
                       <div className="flex justify-center">{row.launch ? <CheckIcon /> : <DashIcon />}</div>
                     </td>
-                    <td className="py-3 px-4 text-center bg-ember/5">
+                    <td className="py-4 pr-6 text-center">
                       <div className="flex justify-center">{row.growth ? <CheckIcon /> : <DashIcon />}</div>
                     </td>
-                    <td className="py-3 px-4 text-center">
+                    <td className="py-4 pr-6 text-center">
                       <div className="flex justify-center">{row.empire ? <CheckIcon /> : <DashIcon />}</div>
                     </td>
                   </tr>
@@ -291,11 +280,31 @@ export default function PackagesPage() {
         </div>
       </section>
 
+      <section className="section-padding bg-graphite surface-dark">
+        <div className="container-wide">
+          <h2 className="heading-2 text-white mb-6">The math is simple</h2>
+          <p className="body-large max-w-[880px] mb-12">
+            A franchise sale produces an initial fee, typically between $25,000 and $50,000 across the
+            industry, plus a royalty for the life of the agreement. Development is a one time cost. The
+            royalty base is not. That is the whole case for building the system properly, and it is
+            also why we will tell you when the numbers do not support it yet.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link href="/contact" className="btn-primary">
+              Get your tailored quote
+            </Link>
+            <Link href="/services" className="btn-secondary">
+              Explore our services
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ-style section */}
       <section className="section-padding bg-white">
         <div className="container-narrow">
-          <h2 className="heading-2 text-center mb-12">Common Questions About Our Packages</h2>
-          <div className="space-y-8">
+          <h2 className="heading-2 mb-12">Common questions about our packages</h2>
+          <div className="border-t border-graphite">
             {[
               {
                 q: 'Can I start with Launch and upgrade later?',
@@ -318,56 +327,28 @@ export default function PackagesPage() {
                 a: 'Yes. We structure payments around the phases of the engagement. A deposit begins the work, and the balance is scheduled in advance of each phase. Many clients also finance the engagement through SBA loans, business lines of credit, or cash flow. See our financing guide for common funding paths and how to prepare your application.',
               },
             ].map((item) => (
-              <div key={item.q}>
+              <div key={item.q} className="py-8 border-b border-line">
                 <h3 className="heading-4 mb-3">{item.q}</h3>
-                <p className="text-steel leading-relaxed">{item.a}</p>
+                <p className="text-steel text-[17px] leading-relaxed">{item.a}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section-padding bg-graphite text-white">
-        <div className="container-wide text-center">
-          <h2 className="heading-2 text-white mb-6">The Math Is Simple</h2>
-          <p className="text-xl text-white/60 max-w-3xl mx-auto leading-relaxed mb-12">
-            A franchise sale produces an initial fee, typically between $25,000 and $50,000 across the
-            industry, plus a royalty for the life of the agreement. Development is a one time cost. The
-            royalty base is not. That is the whole case for building the system properly, and it is
-            also why we will tell you when the numbers do not support it yet.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="btn-primary">
-              Get Your Tailored Quote
-            </Link>
-            <Link href="/services" className="btn-secondary">
-              Explore Our Services
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Open loop: curiosity about what happens after choosing a package */}
-      <OpenLoop
-        teaser="Choosing a tier is the easy part. What follows is a fixed sequence with dates attached, and most owners want to see it before they commit rather than after."
-        linkText="See the four-phase process"
-        href="/how-it-works"
-        variant="section"
-      />
-
       <ContinueLearning
-        heading="Continue Your Research"
+        heading="Continue your research"
         links={[
-          { label: 'How the Process Works', href: '/how-it-works', description: 'The four phases every franchise we build moves through, from feasibility to scale.' },
-          { label: 'Financing Your Development', href: '/financing', description: 'Common funding paths, what lenders look for, and how to prepare your business case.' },
-          { label: 'Franchise vs License', href: '/franchise-vs-license', description: 'Compare both growth paths side by side before you choose a package.' },
+          { label: 'How the process works', href: '/how-it-works', description: 'The four phases every franchise we build moves through, from feasibility to scale.' },
+          { label: 'Financing your development', href: '/financing', description: 'Common funding paths, what lenders look for, and how to prepare your business case.' },
+          { label: 'Franchise vs license', href: '/franchise-vs-license', description: 'Compare both growth paths side by side before you choose a package.' },
         ]}
       />
 
       <SectionCTA
-        heading="Not Sure Which Package Fits?"
+        heading="Not sure which package fits?"
         body="Take our free assessment first. Your franchise readiness score will tell you which tier matches your business today and what the roadmap looks like."
-        buttonText="Get Your Free Readiness Score"
+        buttonText="Get your free readiness score"
         buttonHref="/is-my-business-franchisable"
         secondaryText="Or book a call for a tailored quote"
         secondaryHref="/contact"
@@ -375,7 +356,7 @@ export default function PackagesPage() {
       />
 
       <StickyCTA
-        text="Get Your Tailored Quote"
+        text="Get your tailored quote"
         href="/contact"
       />
     </>

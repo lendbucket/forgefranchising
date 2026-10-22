@@ -3,7 +3,6 @@ import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
 import { BrokerageBand } from '@/components/BrokerageBand'
-import { OpenLoop } from '@/components/OpenLoop'
 import { KeyTakeaways } from '@/components/KeyTakeaways'
 import { MISSION_STATEMENT, SITE_URL } from '@/lib/constants'
 import { webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
@@ -38,8 +37,7 @@ export default function AboutPage() {
       <section className="bg-graphite surface-dark">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'About Us' }]} />
-          <div className="max-w-3xl">
-            <p className="eyebrow mb-4">About Us</p>
+          <div className="max-w-[880px]">
             <h1 className="heading-1 mb-8">
               Franchise Business Consultant Work, Operator Built.
             </h1>
@@ -70,7 +68,7 @@ export default function AboutPage() {
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
-              <h2 className="heading-2 mb-6">Our Mission</h2>
+              <h2 className="heading-2 mb-6">Our mission</h2>
               <p className="body-large mb-8">{MISSION_STATEMENT}</p>
               <h3 className="heading-4 mb-4">What that means in practice:</h3>
               <ul className="space-y-4">
@@ -84,13 +82,13 @@ export default function AboutPage() {
                     <svg className="w-5 h-5 text-accent flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-steel">{item}</span>
+                    <span className="text-steel text-[17px] leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
             <div>
-              <h2 className="heading-2 mb-6">Why We Are Different</h2>
+              <h2 className="heading-2 mb-6">Why we are different</h2>
               <div className="space-y-8">
                 {[
                   {
@@ -112,7 +110,7 @@ export default function AboutPage() {
                 ].map((item) => (
                   <div key={item.title}>
                     <h3 className="heading-4 mb-2">{item.title}</h3>
-                    <p className="text-steel leading-relaxed">{item.body}</p>
+                    <p className="text-steel text-[17px] leading-relaxed">{item.body}</p>
                   </div>
                 ))}
               </div>
@@ -123,58 +121,50 @@ export default function AboutPage() {
 
       <section className="section-padding bg-white">
         <div className="container-wide text-center">
-          <h2 className="heading-2 mb-6">Our Approach to Franchise Development</h2>
-          <p className="body-large max-w-3xl mx-auto mb-12">
+          <h2 className="heading-2 mb-6">Our approach to franchise development</h2>
+          <p className="body-large max-w-[880px] mx-auto mb-12">
             We believe franchise development should be honest, thorough, and results driven. Here is how
             we approach every engagement.
           </p>
-          <div className="grid sm:grid-cols-3 gap-8">
+          <div className="tile-grid md:grid-cols-3">
             {[
               {
-                title: 'Transparency First',
+                title: 'Transparency first',
                 body: 'We publish our process, our methodology, and our educational content for free. We believe the best clients come from owners who already understand what franchising requires. If you can do it yourself after reading our guides, more power to you.',
               },
               {
-                title: 'Education Over Sales',
+                title: 'Education over sales',
                 body: 'We teach before we sell. Every piece of content we create, from blog posts to tools to state law guides, is designed to give you real knowledge. By the time you contact us, you should already feel confident about what you are getting into.',
               },
               {
-                title: 'Built to Last',
+                title: 'Built to last',
                 body: 'We do not cut corners on compliance, documentation, or systems. A franchise built on shortcuts will collapse under the weight of its first ten franchisees. We build franchise systems that hold up at scale.',
               },
             ].map((item) => (
               <div key={item.title} className="card text-left">
                 <h3 className="heading-4 mb-3">{item.title}</h3>
-                <p className="text-steel text-sm leading-relaxed">{item.body}</p>
+                <p className="text-steel text-[17px] leading-relaxed">{item.body}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Open loop: Zeigarnik effect creates curiosity gap */}
-      <OpenLoop
-        teaser="Most franchise development firms charge for the same seven services. The difference is in how they are built and whether the person building them has ever actually run a franchise. We break down the difference here."
-        linkText="See what our services include"
-        href="/services"
-        variant="section"
-      />
-
       <BrokerageBand className="bg-graphite surface-dark" />
 
       <ContinueLearning
-        heading="Understand Our Approach"
+        heading="Understand our approach"
         links={[
-          { label: 'How Our Process Works', href: '/how-it-works', description: 'See the four phases that take a business from proven concept to franchise brand.' },
-          { label: 'Our Services', href: '/services', description: 'Seven core services, all under one roof, built in a specific sequence.' },
-          { label: 'Get Your Readiness Score', href: '/is-my-business-franchisable', description: 'Answer eight questions and find out where your business stands.' },
+          { label: 'How our process works', href: '/how-it-works', description: 'See the four phases that take a business from proven concept to franchise brand.' },
+          { label: 'Our services', href: '/services', description: 'Seven core services, all under one roof, built in a specific sequence.' },
+          { label: 'Get your readiness score', href: '/is-my-business-franchisable', description: 'Answer eight questions and find out where your business stands.' },
         ]}
       />
 
       <SectionCTA
-        heading="See If Your Business Has What It Takes"
+        heading="See if your business has what it takes"
         body="Take our two-minute franchise readiness assessment. You will get a score, specific recommendations, and a clear picture of what comes next."
-        buttonText="Get Your Free Readiness Score"
+        buttonText="Get your free readiness score"
         buttonHref="/is-my-business-franchisable"
         secondaryText="Or book a feasibility call directly"
         secondaryHref="/contact"

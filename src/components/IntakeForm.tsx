@@ -11,8 +11,8 @@ import { INTAKE_FIELDS, type IntakeField } from '@/lib/intake'
  * src/lib/intake.ts, the same list the API route accepts.
  */
 
-const inputClass =
-  'w-full px-4 py-3 border border-steel/70 bg-white text-graphite placeholder:text-steel focus:outline-none focus:ring-2 focus:ring-ember/40 focus:border-ember/60 transition-all duration-200 min-h-[48px] text-base'
+/** Square 50px control; see .field in globals.css. */
+const inputClass = 'field'
 
 function Field({ field, value, onChange }: { field: IntakeField; value: string; onChange: (v: string) => void }) {
   const id = `intake-${field.name}`
@@ -27,7 +27,7 @@ function Field({ field, value, onChange }: { field: IntakeField; value: string; 
     return (
       <div>
         {label}
-        <select id={id} name={field.name} required={field.required} value={value} onChange={(e) => onChange(e.target.value)} className={inputClass} style={{ borderRadius: '2px' }}>
+        <select id={id} name={field.name} required={field.required} value={value} onChange={(e) => onChange(e.target.value)} className={inputClass}>
           <option value="">Select one</option>
           {field.options?.map((o) => (
             <option key={o} value={o}>{o}</option>
@@ -41,7 +41,7 @@ function Field({ field, value, onChange }: { field: IntakeField; value: string; 
     return (
       <div className="sm:col-span-2">
         {label}
-        <textarea id={id} name={field.name} rows={4} required={field.required} value={value} onChange={(e) => onChange(e.target.value)} className={`${inputClass} resize-y leading-relaxed`} style={{ borderRadius: '2px' }} />
+        <textarea id={id} name={field.name} rows={4} required={field.required} value={value} onChange={(e) => onChange(e.target.value)} className={`${inputClass} resize-y leading-relaxed`} />
       </div>
     )
   }
@@ -49,7 +49,7 @@ function Field({ field, value, onChange }: { field: IntakeField; value: string; 
   return (
     <div>
       {label}
-      <input id={id} name={field.name} type="text" required={field.required} placeholder={field.placeholder} value={value} onChange={(e) => onChange(e.target.value)} className={inputClass} style={{ borderRadius: '2px' }} />
+      <input id={id} name={field.name} type="text" required={field.required} placeholder={field.placeholder} value={value} onChange={(e) => onChange(e.target.value)} className={inputClass} />
     </div>
   )
 }
@@ -61,7 +61,7 @@ type IntakeFormProps = {
   submitLabel?: string
 }
 
-export function IntakeForm({ inquiryType, heading, intro, submitLabel = 'Send Confidential Inquiry' }: IntakeFormProps) {
+export function IntakeForm({ inquiryType, heading, intro, submitLabel = 'Send confidential inquiry' }: IntakeFormProps) {
   const [values, setValues] = useState<Record<string, string>>({})
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
@@ -95,13 +95,13 @@ export function IntakeForm({ inquiryType, heading, intro, submitLabel = 'Send Co
 
   if (status === 'success') {
     return (
-      <div className="bg-white p-8 sm:p-10 text-center" style={{ borderRadius: '0px', border: '1px solid rgba(78, 90, 98, 0.15)' }} role="status" aria-live="polite">
-        <div className="w-14 h-14 bg-ember/15 flex items-center justify-center mx-auto mb-5" style={{ borderRadius: '0px' }}>
+      <div className="bg-white border border-line p-10 max-[720px]:p-6 text-center" role="status" aria-live="polite">
+        <div className="w-14 h-14 bg-stone flex items-center justify-center mx-auto mb-5">
           <svg className="w-7 h-7 text-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
           </svg>
         </div>
-        <h3 className="heading-4 mb-3">Your Inquiry Has Been Received</h3>
+        <h3 className="heading-4 mb-3">Your inquiry has been received</h3>
         <p className="text-steel leading-relaxed max-w-md mx-auto">
           We reply within one business day. What you sent stays between you and Forge.
         </p>
@@ -110,8 +110,7 @@ export function IntakeForm({ inquiryType, heading, intro, submitLabel = 'Send Co
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white p-6 sm:p-10" style={{ borderRadius: '0px', border: '1px solid rgba(78, 90, 98, 0.15)' }}>
-      <p className="eyebrow mb-3">{INQUIRY_TYPES[inquiryType]}</p>
+    <form onSubmit={handleSubmit} className="bg-white border border-line p-10 max-[720px]:p-6" aria-label={INQUIRY_TYPES[inquiryType]}>
       {heading && <h3 className="heading-3 mb-3">{heading}</h3>}
       {intro && <p className="text-steel leading-relaxed mb-8">{intro}</p>}
 
@@ -121,13 +120,13 @@ export function IntakeForm({ inquiryType, heading, intro, submitLabel = 'Send Co
           <label htmlFor="intake-email" className="block text-sm font-semibold text-graphite mb-2">
             Email<span className="text-accent"> *</span>
           </label>
-          <input id="intake-email" name="email" type="email" required autoComplete="email" value={values.email ?? ''} onChange={(e) => set('email')(e.target.value)} className={inputClass} style={{ borderRadius: '2px' }} />
+          <input id="intake-email" name="email" type="email" required autoComplete="email" value={values.email ?? ''} onChange={(e) => set('email')(e.target.value)} className={inputClass} />
         </div>
         <div>
           <label htmlFor="intake-phone" className="block text-sm font-semibold text-graphite mb-2">
             Phone<span className="text-accent"> *</span>
           </label>
-          <input id="intake-phone" name="phone" type="tel" required autoComplete="tel" value={values.phone ?? ''} onChange={(e) => set('phone')(e.target.value)} className={inputClass} style={{ borderRadius: '2px' }} />
+          <input id="intake-phone" name="phone" type="tel" required autoComplete="tel" value={values.phone ?? ''} onChange={(e) => set('phone')(e.target.value)} className={inputClass} />
         </div>
         {fields.map((field) => (
           <Field key={field.name} field={field} value={values[field.name] ?? ''} onChange={set(field.name)} />
@@ -140,7 +139,7 @@ export function IntakeForm({ inquiryType, heading, intro, submitLabel = 'Send Co
       </div>
 
       {status === 'error' && (
-        <div className="p-4 bg-red-50 border border-red-200 mt-6" style={{ borderRadius: '2px' }} role="alert">
+        <div className="p-4 bg-red-50 border border-red-200 mt-6" role="alert">
           <p className="text-red-800 text-sm">
             {errorMessage}{' '}
             <a href={`mailto:${CONTACT_EMAIL}`} className="underline">{CONTACT_EMAIL}</a>
@@ -149,7 +148,7 @@ export function IntakeForm({ inquiryType, heading, intro, submitLabel = 'Send Co
       )}
 
       <div className="mt-8">
-        <button type="submit" disabled={status === 'loading'} className="btn-primary w-full sm:w-auto disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2">
+        <button type="submit" disabled={status === 'loading'} className="btn-primary disabled:opacity-60 disabled:cursor-not-allowed">
           {status === 'loading' ? (
             <>
               <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -162,7 +161,7 @@ export function IntakeForm({ inquiryType, heading, intro, submitLabel = 'Send Co
             submitLabel
           )}
         </button>
-        <p className="text-xs text-steel mt-3">
+        <p className="text-sm text-steel mt-3">
           We reply within one business day. Your inquiry is kept confidential.
         </p>
       </div>

@@ -26,7 +26,7 @@ export const metadata = createMetadata({
 })
 
 const inlineLink = 'text-accent font-semibold hover:underline'
-const bodyText = 'text-steel leading-relaxed text-base sm:text-lg mb-5'
+const bodyText = 'text-steel text-[17px] leading-relaxed mb-5'
 
 type Step = {
   id: string
@@ -41,7 +41,7 @@ type Step = {
 const steps: Step[] = [
   {
     id: 'exit-options',
-    title: 'Decide to Sell and Choose Your Exit',
+    title: 'Decide to sell and choose your exit',
     what: [
       'Start by writing down why you are selling and what you need from the sale: a clean break, a gradual step back, income after closing, or a future for the employees and the name. Those answers decide which exit fits, and they are worth settling before you talk to any buyer.',
     ],
@@ -73,7 +73,7 @@ const steps: Step[] = [
   },
   {
     id: 'preparation',
-    title: 'Prepare the Business 12 to 24 Months Ahead',
+    title: 'Prepare the business 12 to 24 months ahead',
     what: [
       'Buyers pay for earnings they can verify and risks they can measure. The year or two before a sale is when you make both visible. Preparation does not mean dressing the business up. It means removing the issues that cause buyers to discount the price or walk away in due diligence.',
     ],
@@ -111,7 +111,7 @@ const steps: Step[] = [
   },
   {
     id: 'value',
-    title: 'Understand How Value Is Set',
+    title: 'Understand how value is set',
     what: [
       'Value is not a number you choose. Buyers and lenders arrive at it from the earnings the business produces for an owner, the risks they see, the condition of the assets, and what similar businesses have sold for. Owner dependence, customer concentration, a short lease, and unverifiable earnings all push value down.',
       'A broker opinion of value gives you an evidence based asking price for marketing. It is not a certified appraisal and is not a substitute for one. If you need a formal appraisal for a partner buyout, estate planning, or a lender, that is a separate engagement with a credentialed appraiser. Get a value estimate early, before you decide on timing, so the decision to sell is made with realistic expectations.',
@@ -128,7 +128,7 @@ const steps: Step[] = [
   },
   {
     id: 'broker-or-owner',
-    title: 'Choose Between Selling by Owner and Hiring a Broker',
+    title: 'Choose between selling by owner and hiring a broker',
     what: [
       'Both paths can work. Selling by owner avoids a broker fee and can make sense when you already have a buyer, such as a partner, a manager, or a competitor who approached you, and when you have the time and experienced advisors to run the process. The cost is your time, the difficulty of staying confidential while marketing your own business, and the lack of a buffer between you and the buyer in negotiation.',
       'A broker adds pricing support, confidential marketing, buyer screening, and management of the process through closing. The cost is the fee set out in the engagement agreement, and the arrangement only works if the broker is responsive and knows your type of business. Whichever path you choose, you still need your own attorney and CPA.',
@@ -143,7 +143,7 @@ const steps: Step[] = [
   },
   {
     id: 'confidentiality',
-    title: 'Set Up Confidentiality Before Anyone Is Told',
+    title: 'Set up confidentiality before anyone is told',
     what: [
       'Decide in advance who will know about the sale and when. In most sales that means only you, any co owners, your advisors, and possibly one trusted manager until the deal is close to closing. Buyers learn the name of the business only after signing an NDA and showing they can complete the purchase.',
       'Plan the practical details too. Choose where buyer meetings will happen, how documents will be shared, and what you will say if an employee asks why strangers are touring the shop. A data room with access controls is far safer than emailing attachments.',
@@ -158,7 +158,7 @@ const steps: Step[] = [
   },
   {
     id: 'marketing',
-    title: 'Market the Business and Screen Buyers',
+    title: 'Market the business and screen buyers',
     what: [
       'Marketing a business for sale has two documents. The blind teaser circulates widely and draws inquiries. The confidential information memorandum describes the business in full, with history, operations, staff structure, customers in summary, financials, and the reason for sale, and is released only to qualified buyers.',
       'Screen every buyer before the memorandum goes out. Ask for a signed NDA, proof of funds, a personal financial statement, a summary of relevant experience, and lender prequalification if they will borrow. Then hold meetings with the most credible buyers, off site or after hours, to test fit on both sides.',
@@ -173,7 +173,7 @@ const steps: Step[] = [
   },
   {
     id: 'loi',
-    title: 'Negotiate the Letter of Intent',
+    title: 'Negotiate the letter of intent',
     what: [
       'The letter of intent sets the business terms before attorneys draft the purchase agreement. Most of it is nonbinding, though confidentiality and exclusivity clauses usually are binding. Negotiate it carefully; terms you concede here are hard to win back later.',
     ],
@@ -217,7 +217,7 @@ const steps: Step[] = [
   },
   {
     id: 'due-diligence',
-    title: 'Get Through Due Diligence',
+    title: 'Get through due diligence',
     what: [
       'Due diligence is the buyer verifying everything you have said. Expect detailed requests covering financial records, bank statements, tax filings, contracts, the lease, employee matters, licenses, equipment, insurance, litigation, and environmental issues where relevant. The buyer’s CPA may perform a quality of earnings review.',
       'Organize the documents in the data room before the LOI is signed, answer requests quickly, and disclose problems yourself rather than letting the buyer find them. A known issue can be priced or structured around. A hidden one found late usually reopens negotiation or ends the deal.',
@@ -235,7 +235,7 @@ const steps: Step[] = [
   },
   {
     id: 'financing',
-    title: 'Support the Buyer’s Financing',
+    title: 'Support the buyer’s financing',
     what: [
       'Many buyers of small and midsize businesses finance the purchase. A common source is the SBA 7(a) loan program, under which banks and other approved lenders make loans partially guaranteed by the U.S. Small Business Administration. The maximum 7(a) loan amount is $5 million. Lenders require the buyer to make an equity injection, and the SBA sets minimum requirements that have changed over time, so the buyer’s lender will explain the current rules.',
       'The lender underwrites both the buyer and the business. It reviews your tax returns, may order an independent business valuation, and may set conditions on any seller note, such as requiring payments to be deferred for a period. SBA rules also limit how long a seller may stay on after a change of ownership financed with a 7(a) loan. Learn those conditions early, because they shape the deal terms you can agree to.',
@@ -252,7 +252,7 @@ const steps: Step[] = [
   },
   {
     id: 'closing',
-    title: 'Sign the Purchase Agreement and Close',
+    title: 'Sign the purchase agreement and close',
     what: [
       'The purchase agreement replaces the LOI with binding terms. It includes the price and payment terms, a list of what is being sold, your representations and warranties about the business, indemnification if those statements prove untrue, closing conditions, and the noncompete and transition terms. Your attorney negotiates it; your CPA confirms the allocation of the purchase price and the tax treatment.',
       'Closing is usually handled by a title company or the attorneys. The buyer’s funds and the lender’s funds are delivered, existing liens are paid off, ownership documents are signed, and the lease assignment, bill of sale, and any notes or security agreements take effect.',
@@ -269,7 +269,7 @@ const steps: Step[] = [
   },
   {
     id: 'transition',
-    title: 'Hand Over the Business',
+    title: 'Hand over the business',
     what: [
       'The transition period is when you introduce the buyer to employees, customers, vendors, and the landlord, and teach them how the business runs. The length and terms are set in the purchase agreement. A buyer who succeeds after closing is also the best protection for any seller note or earnout you are owed.',
       'Plan the announcement to employees with the buyer. Most owners tell key staff first, then the full team, then customers and vendors. Keep your commitments in the transition agreement, and then step back as agreed.',
@@ -348,13 +348,12 @@ export default function HowToSellABusinessPage() {
       />
 
       <section className="bg-graphite surface-dark">
-        <div className="container-wide section-padding !pb-12">
+        <div className="container-wide section-padding">
           <Breadcrumbs
             withSchema={false}
             items={[{ label: 'Sell Your Business', href: '/sell-your-business' }, { label: 'How to Sell a Business' }]}
           />
-          <div className="max-w-3xl">
-            <p className="eyebrow mb-4">The Seller&apos;s Guide</p>
+          <div className="max-w-[880px]">
             <h1 className="heading-1 mb-8">{HEADLINE}</h1>
             <p className="body-large mb-6">
               Knowing how to sell a business comes down to doing the right work in the right order. Much of that work
@@ -384,32 +383,31 @@ export default function HowToSellABusinessPage() {
         </div>
       </section>
 
-      <section className="bg-white">
-        <div className="container-wide px-4 sm:px-6 lg:px-8 pb-20 sm:pb-24">
+      <section className="bg-stone">
+        <div className="container-wide section-padding">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
             <aside className="lg:col-span-3">
               <PageTOC
                 items={[
-                  { id: 'overview', label: 'The Short Version' },
+                  { id: 'overview', label: 'The short version' },
                   ...steps.map((s) => ({ id: s.id, label: s.title })),
-                  { id: 'advisors', label: 'Your Advisors' },
+                  { id: 'advisors', label: 'Your advisors' },
                   { id: 'faq', label: 'Questions' },
                   { id: 'inquiry', label: 'Talk to Forge' },
                 ]}
               />
             </aside>
 
-            <div className="lg:col-span-9 space-y-16">
+            <div className="lg:col-span-9 min-w-0 space-y-24 max-[720px]:space-y-16">
               <section id="overview" className="scroll-mt-28">
-                <p className="eyebrow mb-4">Overview</p>
-                <h2 className="heading-2 mb-6">How to Sell My Business: The Short Version</h2>
+                <h2 className="heading-2 mb-6">How to sell my business: The short version</h2>
                 <p className={bodyText}>
                   Owners who ask how to sell my business are usually asking two questions at once: what the steps are,
                   and how long each one takes. The steps are listed below. The time each takes is a typical range that
                   depends on the business, the state of its records, and how the buyer will pay, so this guide describes
                   the work rather than promising a schedule.
                 </p>
-                <ol className="space-y-2 text-steel leading-relaxed text-base sm:text-lg list-decimal pl-6 mb-5">
+                <ol className="space-y-2 text-steel text-[17px] leading-relaxed list-decimal pl-6 mb-5">
                   {steps.map((s) => (
                     <li key={s.id}>
                       <a href={`#${s.id}`} className="hover:text-accent transition-colors">
@@ -427,10 +425,8 @@ export default function HowToSellABusinessPage() {
 
               {steps.map((step, i) => (
                 <article key={step.id} id={step.id} className="scroll-mt-28">
-                  <p className="text-accent font-display font-bold text-4xl mb-3" style={{ letterSpacing: '-0.02em' }}>
-                    {String(i + 1).padStart(2, '0')}
-                  </p>
-                  <h2 className="heading-3 mb-6">{step.title}</h2>
+                  <p className="numeral text-[56px] mb-6">{String(i + 1).padStart(2, '0')}</p>
+                  <h2 className="heading-2 mb-6">{step.title}</h2>
                   {step.what.map((p) => (
                     <p key={p.slice(0, 32)} className={bodyText}>
                       {p}
@@ -440,29 +436,26 @@ export default function HowToSellABusinessPage() {
                     <ul className="space-y-4 mt-6 mb-6">
                       {step.bullets.map((b) => (
                         <li key={b.label} className="flex gap-3">
-                          <span className="w-1.5 h-1.5 bg-ember flex-shrink-0 mt-2.5" style={{ borderRadius: '1px' }} aria-hidden="true" />
-                          <p className="text-steel leading-relaxed">
+                          <span className="w-1.5 h-1.5 bg-ember flex-shrink-0 mt-2.5" aria-hidden="true" />
+                          <p className="text-steel text-[17px] leading-relaxed">
                             <span className="font-semibold text-graphite">{b.label}.</span> {b.text}
                           </p>
                         </li>
                       ))}
                     </ul>
                   )}
-                  <div className="grid sm:grid-cols-2 gap-4 mt-8">
-                    <div className="bg-stone p-6" style={{ borderRadius: '0px' }}>
-                      <p className="text-xs font-semibold uppercase tracking-widest text-graphite mb-2">Documents you need</p>
-                      <ul className="space-y-1.5 text-steel text-sm leading-relaxed list-disc pl-5">
+                  <div className="tile-grid md:grid-cols-2 mt-8">
+                    <div className="card">
+                      <p className="heading-4 mb-4">Documents you need</p>
+                      <ul className="space-y-1.5 text-steel text-[15px] leading-relaxed list-disc pl-5">
                         {step.documents.map((d) => (
                           <li key={d}>{d}</li>
                         ))}
                       </ul>
                     </div>
-                    <div
-                      className="bg-white p-6"
-                      style={{ borderRadius: '0px', border: '1px solid rgba(78, 90, 98, 0.18)', borderTop: '2px solid #1C1F23' }}
-                    >
-                      <p className="text-xs font-semibold uppercase tracking-widest text-graphite mb-2">Common mistakes</p>
-                      <p className="text-steel text-sm leading-relaxed">{step.mistakes}</p>
+                    <div className="card">
+                      <p className="heading-4 mb-4">Common mistakes</p>
+                      <p className="text-steel text-[15px] leading-relaxed">{step.mistakes}</p>
                     </div>
                   </div>
                   {step.link && (
@@ -476,8 +469,7 @@ export default function HowToSellABusinessPage() {
               ))}
 
               <section id="advisors" className="scroll-mt-28">
-                <p className="eyebrow mb-4">Your Advisors</p>
-                <h2 className="heading-2 mb-6">Bring In an Attorney and a CPA Early</h2>
+                <h2 className="heading-2 mb-6">Bring in an attorney and a CPA early</h2>
                 <p className={bodyText}>
                   This guide does not give tax or legal advice, and neither does a business broker. The structure of a
                   sale, the allocation of the purchase price, the treatment of a seller note or earnout, and the terms of
@@ -506,8 +498,7 @@ export default function HowToSellABusinessPage() {
               </section>
 
               <section id="faq" className="scroll-mt-28 pt-4">
-                <p className="eyebrow mb-4">Questions</p>
-                <h2 className="heading-3 mb-8">Questions About Deal Terms and the Sale Process</h2>
+                <h2 className="heading-2 mb-8">Questions about deal terms and the sale process</h2>
                 <FAQList faqs={faqs} />
               </section>
             </div>
@@ -515,17 +506,16 @@ export default function HowToSellABusinessPage() {
         </div>
       </section>
 
-      <section id="inquiry" className="bg-stone scroll-mt-28">
+      <section id="inquiry" className="bg-white scroll-mt-28">
         <div className="container-wide section-padding">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
             <div className="lg:col-span-5">
-              <p className="eyebrow mb-4">Confidential Inquiry</p>
-              <h2 className="heading-2 mb-6">Plan Your Sale With Forge</h2>
-              <p className="text-steel leading-relaxed text-base sm:text-lg mb-5">
+              <h2 className="heading-2 mb-6">Plan your sale with Forge</h2>
+              <p className="text-steel text-[17px] leading-relaxed mb-5">
                 If you are working through these steps and want a second view of where your business stands, tell us
                 about it. We reply within one business day, and what you send stays between you and Forge.
               </p>
-              <p className="text-steel leading-relaxed text-base sm:text-lg">
+              <p className="text-steel text-[17px] leading-relaxed">
                 To understand pricing first, read how a{' '}
                 <Link href="/business-valuation" className={inlineLink}>
                   broker opinion of value
@@ -536,7 +526,7 @@ export default function HowToSellABusinessPage() {
             <div className="lg:col-span-7">
               <IntakeForm
                 inquiryType="seller"
-                heading="Start a Confidential Conversation"
+                heading="Start a confidential conversation"
                 intro="A few details help us prepare for the first call. Financial documents come later, after a confidentiality agreement is in place."
               />
             </div>
@@ -545,20 +535,20 @@ export default function HowToSellABusinessPage() {
       </section>
 
       <ContinueLearning
-        heading="Where to Go From Here"
+        heading="Where to go from here"
         links={[
           {
-            label: 'Sell Your Business',
+            label: 'Sell your business',
             href: '/sell-your-business',
             description: 'How Forge runs a confidential sale for Texas owners, from first call to closing.',
           },
           {
-            label: 'Business Valuation',
+            label: 'Business valuation',
             href: '/business-valuation',
             description: 'How a broker opinion of value is prepared and when you need a certified appraisal instead.',
           },
           {
-            label: 'Texas Business Broker',
+            label: 'Texas business broker',
             href: '/texas-business-broker',
             description: 'What a brokerage engagement covers and how a broker works with your attorney and CPA.',
           },
@@ -566,9 +556,9 @@ export default function HowToSellABusinessPage() {
       />
 
       <SectionCTA
-        heading="Talk Through Your Exit Before You Start"
+        heading="Talk through your exit before you start"
         body="A first conversation can tell you which steps in this guide your business has already covered and which still need work."
-        buttonText="Send a Confidential Inquiry"
+        buttonText="Send a confidential inquiry"
         buttonHref="#inquiry"
         secondaryText="Or contact us directly"
         secondaryHref="/contact"
