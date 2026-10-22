@@ -572,7 +572,7 @@ export default function ContactPage() {
                   <p className="text-white/70 text-sm leading-relaxed mb-4">
                     Take our two-minute franchise readiness assessment first and see where you stand.
                   </p>
-                  <Link href="/is-my-business-franchisable" className="text-link text-sm font-semibold">
+                  <Link href="/is-my-business-franchisable" className="text-link inline-flex items-center min-h-[44px] text-sm font-semibold">
                     Get your free readiness score
                   </Link>
                 </div>

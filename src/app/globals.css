@@ -603,3 +603,10 @@ select.field {
   background-position: right 16px center;
   background-size: 14px;
 }
+
+/* Breadcrumb links keep a 44px tap target on every page. */
+nav[aria-label="Breadcrumb"] a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}

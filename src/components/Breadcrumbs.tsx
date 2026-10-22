@@ -32,13 +32,13 @@ export function Breadcrumbs({ items, withSchema = true }: { items: BreadcrumbIte
           }}
         />
       )}
-      <nav aria-label="Breadcrumb" className="py-4">
-        <ol className="flex items-center gap-2 text-sm text-steel">
+      <nav aria-label="Breadcrumb" className="py-1">
+        <ol className="flex flex-wrap items-center gap-x-2 text-sm text-steel">
           {allItems.map((item, index) => (
             <li key={index} className="flex items-center gap-2">
               {index > 0 && <span className="text-steel">/</span>}
               {item.href && index < allItems.length - 1 ? (
-                <Link href={item.href} className="hover:text-graphite transition-colors">
+                <Link href={item.href} className="inline-flex items-center min-h-[44px] hover:text-graphite transition-colors">
                   {item.label}
                 </Link>
               ) : (

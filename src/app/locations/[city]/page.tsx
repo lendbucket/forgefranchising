@@ -123,16 +123,16 @@ export default async function CityPage({ params }: Props) {
       {/* Hero */}
       <section className="bg-graphite surface-dark">
         <div className="container-wide section-padding">
-          <nav aria-label="Breadcrumb" className="py-4">
-            <ol className="flex flex-wrap items-center gap-2 text-sm">
+          <nav aria-label="Breadcrumb" className="py-1">
+            <ol className="flex flex-wrap items-center gap-x-2 text-sm">
               <li>
-                <Link href="/" className="transition-colors">
+                <Link href="/" className="inline-flex items-center min-h-[44px] transition-colors">
                   Home
                 </Link>
               </li>
               <li className="flex items-center gap-2">
                 <span>/</span>
-                <Link href="/locations" className="transition-colors">
+                <Link href="/locations" className="inline-flex items-center min-h-[44px] transition-colors">
                   Locations
                 </Link>
               </li>
