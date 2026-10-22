@@ -4,8 +4,9 @@ import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
 import { KeyTakeaways } from '@/components/KeyTakeaways'
-import { StickyCTA } from '@/components/StickyCTA'
 import { ReadingProgress } from '@/components/ReadingProgress'
+import { HeroActions } from '@/components/HeroActions'
+import { MidCTA } from '@/components/MidCTA'
 import { SITE_URL } from '@/lib/constants'
 import { faqSchema, webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 
@@ -131,6 +132,7 @@ export default function FranchiseVsLicensePage() {
               legal structure works. No theory. Just the information you need to choose the right path
               for your business.
             </p>
+            <HeroActions route="/franchise-vs-license" />
             <KeyTakeaways
               items={[
                 'A franchise grants your brand plus your full system with ongoing support and control',
@@ -319,9 +321,7 @@ export default function FranchiseVsLicensePage() {
                 guide to financing franchise development
               </Link>.
             </p>
-            <Link href="/is-my-business-franchisable" className="btn-primary">
-              Take the free readiness assessment
-            </Link>
+            <MidCTA route="/franchise-vs-license" />
           </div>
         </div>
       </section>
@@ -383,10 +383,6 @@ export default function FranchiseVsLicensePage() {
         variant="light"
       />
 
-      <StickyCTA
-        text="See if your business is ready to scale"
-        href="/is-my-business-franchisable"
-      />
     </>
   )
 }

@@ -6,10 +6,11 @@ import { PageTOC } from '@/components/PageTOC'
 import { FAQList } from '@/components/FAQList'
 import { ContinueLearning } from '@/components/ContinueLearning'
 import { SectionCTA } from '@/components/SectionCTA'
-import { StickyCTA } from '@/components/StickyCTA'
 import { ReadingProgress } from '@/components/ReadingProgress'
 import { BrokerageNotice } from '@/components/BrokerageNotice'
 import { IntakeForm } from '@/components/IntakeForm'
+import { HeroActions } from '@/components/HeroActions'
+import { MidCTA } from '@/components/MidCTA'
 import { SITE_URL } from '@/lib/constants'
 import { webPageSchema, breadcrumbSchema, serviceSchema, faqSchema, renderSchema, TEXAS_AREA } from '@/lib/schema'
 
@@ -177,6 +178,7 @@ export default function BusinessValuationPage() {
               opinion ends and a certified appraisal is required. If you are preparing for a sale, start with{' '}
               <Link href="/sell-your-business" className={link}>selling your business</Link>.
             </p>
+            <HeroActions route="/business-valuation" />
             <KeyTakeaways
               readTime="12 min read"
               items={[
@@ -319,6 +321,7 @@ export default function BusinessValuationPage() {
                   day. A small private business carries more risk on each of those points, and its ownership cannot be sold
                   quickly. Buyers price that difference, which is why private transaction data is the relevant reference.
                 </p>
+                <MidCTA route="/business-valuation" />
               </article>
 
               <article id="factors" className="scroll-mt-header">
@@ -470,7 +473,6 @@ export default function BusinessValuationPage() {
         secondaryHref="/sell-your-business"
       />
 
-      <StickyCTA text="Request a broker opinion of value" href="#inquiry" />
     </>
   )
 }

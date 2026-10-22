@@ -655,3 +655,8 @@ nav[aria-label="Breadcrumb"] a {
     scroll-margin-top: 16px;
   }
 }
+
+/* A mid page panel inside a graphite section uses the raised shade so it stands apart. */
+:is(.bg-graphite, .surface-dark) [data-cta="mid"] {
+  background-color: #262A2F;
+}

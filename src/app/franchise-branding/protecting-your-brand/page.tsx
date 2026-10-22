@@ -5,8 +5,9 @@ import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
 import { KeyTakeaways } from '@/components/KeyTakeaways'
-import { StickyCTA } from '@/components/StickyCTA'
 import { ReadingProgress } from '@/components/ReadingProgress'
+import { HeroActions } from '@/components/HeroActions'
+import { MidCTA } from '@/components/MidCTA'
 import { SITE_URL, SITE_NAME } from '@/lib/constants'
 
 export const metadata = createMetadata({
@@ -61,6 +62,7 @@ export default function ProtectingYourBrandPage() {
               legal advice. Work with a qualified franchise attorney on your specific
               trademark strategy.
             </p>
+            <HeroActions route="/franchise-branding/protecting-your-brand" className="mb-10" />
 
             <KeyTakeaways
               items={[
@@ -172,6 +174,7 @@ export default function ProtectingYourBrandPage() {
                 Franchise Disclosure Document
               </Link>.
             </p>
+            <MidCTA route="/franchise-branding/protecting-your-brand" className="mt-12 mb-4" />
 
             <h2 className="heading-2 mb-6 mt-12">Policing the mark: An ongoing obligation</h2>
             <p className="text-steel text-[17px] leading-relaxed mb-6">
@@ -269,10 +272,6 @@ export default function ProtectingYourBrandPage() {
         variant="dark"
       />
 
-      <StickyCTA
-        text="Get your free readiness score"
-        href="/is-my-business-franchisable"
-      />
     </>
   )
 }

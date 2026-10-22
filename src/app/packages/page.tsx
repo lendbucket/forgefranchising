@@ -3,7 +3,8 @@ import { createMetadata } from '@/lib/metadata'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
-import { StickyCTA } from '@/components/StickyCTA'
+import { HeroActions } from '@/components/HeroActions'
+import { MidCTA } from '@/components/MidCTA'
 import { SITE_URL } from '@/lib/constants'
 import { serviceSchema, webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 
@@ -176,6 +177,7 @@ export default function PackagesPage() {
               </Link>
               .
             </p>
+            <HeroActions route="/packages" />
           </div>
         </div>
       </section>
@@ -294,14 +296,7 @@ export default function PackagesPage() {
             royalty base is not. That is the whole case for building the system properly, and it is
             also why we will tell you when the numbers do not support it yet.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="/contact" className="btn-primary">
-              Get your tailored quote
-            </Link>
-            <Link href="/services" className="btn-secondary">
-              Explore our services
-            </Link>
-          </div>
+          <MidCTA route="/packages" />
         </div>
       </section>
 
@@ -360,10 +355,6 @@ export default function PackagesPage() {
         variant="light"
       />
 
-      <StickyCTA
-        text="Get your tailored quote"
-        href="/contact"
-      />
     </>
   )
 }

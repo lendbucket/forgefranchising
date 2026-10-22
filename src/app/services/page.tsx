@@ -3,8 +3,9 @@ import { createMetadata } from '@/lib/metadata'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
-import { StickyCTA } from '@/components/StickyCTA'
 import { ReadingProgress } from '@/components/ReadingProgress'
+import { HeroActions } from '@/components/HeroActions'
+import { MidCTA } from '@/components/MidCTA'
 import { SITE_URL } from '@/lib/constants'
 import { sentenceCase } from '@/lib/text'
 import { serviceSchema, webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
@@ -191,6 +192,7 @@ export default function ServicesPage() {
               </Link>
               .
             </p>
+            <HeroActions route="/services" />
           </div>
 
           {/* Quick nav */}
@@ -244,6 +246,7 @@ export default function ServicesPage() {
                 </div>
               </div>
             </div>
+            {index === 3 && <MidCTA route="/services" />}
           </div>
         </section>
       ))}
@@ -299,10 +302,6 @@ export default function ServicesPage() {
         variant="light"
       />
 
-      <StickyCTA
-        text="Get a tailored service recommendation"
-        href="/is-my-business-franchisable"
-      />
     </>
   )
 }

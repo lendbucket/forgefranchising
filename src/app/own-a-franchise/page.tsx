@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { createMetadata } from '@/lib/metadata'
 import { SITE_NAME, SITE_URL } from '@/lib/constants'
+import { MidCTA } from '@/components/MidCTA'
 
 export const metadata = createMetadata({
   title: 'Own a Forge Franchise',
@@ -329,6 +330,7 @@ export default function OwnAFranchisePage() {
           <div className="mt-8 max-w-3xl mx-auto">
             <EarningsDisclaimer variant="light" />
           </div>
+          <MidCTA route="/own-a-franchise" />
         </div>
       </section>
 

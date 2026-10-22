@@ -5,8 +5,9 @@ import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
 import { KeyTakeaways } from '@/components/KeyTakeaways'
 import { FAQList } from '@/components/FAQList'
-import { StickyCTA } from '@/components/StickyCTA'
 import { ReadingProgress } from '@/components/ReadingProgress'
+import { HeroActions } from '@/components/HeroActions'
+import { MidCTA } from '@/components/MidCTA'
 import { SITE_URL } from '@/lib/constants'
 import { articleSchema, faqSchema, webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 
@@ -171,6 +172,7 @@ export default function FranchiseBrandingPage() {
               </Link>
               .
             </p>
+            <HeroActions route="/franchise-branding" className="mb-10" />
 
             <KeyTakeaways
               items={[
@@ -256,6 +258,7 @@ export default function FranchiseBrandingPage() {
           <div className="max-w-[880px] mx-auto">
             <h2 className="heading-2 mb-10">Franchise branding FAQ</h2>
             <FAQList faqs={faqs.map((faq) => ({ question: faq.q, answer: faq.a }))} />
+            <MidCTA route="/franchise-branding" />
           </div>
         </div>
       </section>
@@ -279,10 +282,6 @@ export default function FranchiseBrandingPage() {
         variant="light"
       />
 
-      <StickyCTA
-        text="See if your brand is franchise ready"
-        href="/is-my-business-franchisable"
-      />
     </>
   )
 }

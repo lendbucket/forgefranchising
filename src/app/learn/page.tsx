@@ -3,8 +3,9 @@ import { createMetadata } from '@/lib/metadata'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
 import { GuidedPath } from '@/components/GuidedPath'
-import { StickyCTA } from '@/components/StickyCTA'
 import { Arrow } from '@/components/Arrow'
+import { HeroActions } from '@/components/HeroActions'
+import { MidCTA } from '@/components/MidCTA'
 import { SITE_URL } from '@/lib/constants'
 import { webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 
@@ -154,6 +155,7 @@ export default function LearnPage() {
               breakdowns before you plan your rollout. By the time you talk to anyone about franchise
               development, you should already know the landscape.
             </p>
+            <HeroActions route="/learn" />
           </div>
         </div>
       </section>
@@ -194,6 +196,7 @@ export default function LearnPage() {
               </div>
             ))}
           </div>
+          <MidCTA route="/learn" />
         </div>
       </section>
 
@@ -289,10 +292,6 @@ export default function LearnPage() {
         buttonHref="/contact"
       />
 
-      <StickyCTA
-        text="Get your free readiness score"
-        href="/is-my-business-franchisable"
-      />
     </>
   )
 }

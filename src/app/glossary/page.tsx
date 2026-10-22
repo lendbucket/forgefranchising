@@ -2,8 +2,9 @@ import { createMetadata } from '@/lib/metadata'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
-import { StickyCTA } from '@/components/StickyCTA'
 import { GlossaryTerms } from './GlossaryTerms'
+import { HeroActions } from '@/components/HeroActions'
+import { MidCTA } from '@/components/MidCTA'
 import { SITE_URL } from '@/lib/constants'
 import { definedTermSetSchema, webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 
@@ -418,6 +419,7 @@ export default function GlossaryPage() {
               process. Each definition explains what the term means, and more importantly, why it
               matters for someone in your position.
             </p>
+            <HeroActions route="/glossary" />
           </div>
         </div>
       </section>
@@ -455,7 +457,9 @@ export default function GlossaryPage() {
       {/* Glossary Terms: progressive disclosure via expandable sections */}
       <section className="section-padding bg-white">
         <div className="container-narrow">
-          <GlossaryTerms grouped={grouped} letters={letters} />
+          <GlossaryTerms grouped={grouped} letters={letters.slice(0, Math.ceil(letters.length / 2))} />
+          <MidCTA route="/glossary" className="mb-16 max-[720px]:mb-12" />
+          <GlossaryTerms grouped={grouped} letters={letters.slice(Math.ceil(letters.length / 2))} />
         </div>
       </section>
 
@@ -475,10 +479,6 @@ export default function GlossaryPage() {
         buttonHref="/contact"
       />
 
-      <StickyCTA
-        text="Get your free readiness score"
-        href="/is-my-business-franchisable"
-      />
     </>
   )
 }

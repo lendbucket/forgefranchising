@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { blogPosts } from '@/data/blog-posts'
 import { PostCard } from '@/components/PostCard'
 import { SectionCTA } from '@/components/SectionCTA'
+import { HeroActions } from '@/components/HeroActions'
+import { MidCTA } from '@/components/MidCTA'
 import { sentenceCase } from '@/lib/text'
 
 const categories = [
@@ -36,6 +38,9 @@ export default function BlogIndexPage() {
       : blogPosts.filter((post) => post.category === activeCategory)
 
   const publishedPosts = filteredPosts.filter((post) => post.content.length > 0)
+  // The mid page panel sits after the first half of the grid, on a full row of three.
+  const splitAt = Math.max(3, Math.round(publishedPosts.length / 6) * 3)
+  const postGroups = [publishedPosts.slice(0, splitAt), publishedPosts.slice(splitAt)]
 
   return (
     <>
@@ -50,6 +55,7 @@ export default function BlogIndexPage() {
               business owners who want to franchise the right way. No fluff. No
               gated content. Just the information you need.
             </p>
+            <HeroActions route="/blog" />
           </div>
         </div>
       </section>
@@ -88,20 +94,34 @@ export default function BlogIndexPage() {
 
           {/* Posts grid */}
           {publishedPosts.length > 0 ? (
-            <div className="grid min-[961px]:grid-cols-3 min-[721px]:grid-cols-2 gap-x-8 gap-y-16 max-[720px]:gap-y-12">
-              {publishedPosts.map((post, i) => (
-                <PostCard
-                  key={post.slug}
-                  category={sentenceCase(post.category)}
-                  mark={post.category}
-                  meta={post.readTime}
-                  title={post.title}
-                  href={`/blog/${post.slug}`}
-                  teaser={post.description}
-                  {...covers[i % covers.length]}
-                />
-              ))}
-            </div>
+            <>
+              {postGroups.map((group, g) =>
+                group.length > 0 ? (
+                  <div key={g}>
+                    <div className="grid min-[961px]:grid-cols-3 min-[721px]:grid-cols-2 gap-x-8 gap-y-16 max-[720px]:gap-y-12">
+                      {group.map((post, i) => (
+                        <PostCard
+                          key={post.slug}
+                          category={sentenceCase(post.category)}
+                          mark={post.category}
+                          meta={post.readTime}
+                          title={post.title}
+                          href={`/blog/${post.slug}`}
+                          teaser={post.description}
+                          {...covers[(i + g * splitAt) % covers.length]}
+                        />
+                      ))}
+                    </div>
+                    {g === 0 && (
+                      <MidCTA
+                        route="/blog"
+                        className={postGroups[1].length > 0 ? 'my-16 max-[720px]:my-12' : 'mt-16 max-[720px]:mt-12'}
+                      />
+                    )}
+                  </div>
+                ) : null
+              )}
+            </>
           ) : (
             <div className="border-t border-graphite py-16">
               <p className="text-steel text-[17px] leading-relaxed">

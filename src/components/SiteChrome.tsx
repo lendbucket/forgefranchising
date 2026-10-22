@@ -1,6 +1,7 @@
 'use client'
 
 import { usePathname } from 'next/navigation'
+import { SiteStickyCTA } from '@/components/StickyCTA'
 
 /**
  * Renders the site header and footer around page content.
@@ -29,6 +30,7 @@ export function SiteChrome({
       {header}
       <main>{children}</main>
       {footer}
+      <SiteStickyCTA />
     </>
   )
 }

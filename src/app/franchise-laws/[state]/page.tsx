@@ -6,7 +6,8 @@ import { webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
-import { StickyCTA } from '@/components/StickyCTA'
+import { HeroActions } from '@/components/HeroActions'
+import { MidCTA } from '@/components/MidCTA'
 import {
   FRANCHISE_LAWS,
   getStateBySlug,
@@ -138,6 +139,7 @@ export default async function StateFranchiseLawPage({ params }: Props) {
                 in {stateData.name}.
               </p>
             )}
+            <HeroActions route={`/franchise-laws/${slug}`} />
           </div>
         </div>
       </section>
@@ -379,6 +381,7 @@ export default async function StateFranchiseLawPage({ params }: Props) {
                 View all states
               </Link>
             </div>
+            <MidCTA route={`/franchise-laws/${slug}`} />
           </div>
         </section>
       )}
@@ -459,10 +462,6 @@ export default async function StateFranchiseLawPage({ params }: Props) {
         body={`We handle state franchise registrations, filings, and annual renewals so you can focus on growing your brand. Let us manage the ${stateData.name} process for you.`}
       />
 
-      <StickyCTA
-        text="Get your free readiness score"
-        href="/is-my-business-franchisable"
-      />
     </>
   )
 }

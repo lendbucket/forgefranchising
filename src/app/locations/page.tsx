@@ -3,6 +3,8 @@ import { createMetadata } from '@/lib/metadata'
 import { cities } from '@/data/cities'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { Arrow } from '@/components/Arrow'
+import { SectionCTA } from '@/components/SectionCTA'
+import { HeroActions } from '@/components/HeroActions'
 import { SITE_URL } from '@/lib/constants'
 import { webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 
@@ -49,6 +51,7 @@ export default function LocationsPage() {
               Forge Franchising helps business owners franchise their proven concepts and connects qualified buyers
               with franchise opportunities. Find a franchise consultant in your city.
             </p>
+            <HeroActions route="/locations" />
           </div>
         </div>
       </section>
@@ -108,6 +111,15 @@ export default function LocationsPage() {
             ],
           }),
         }}
+      />
+
+      <SectionCTA
+        heading="Talk to Forge about your business"
+        body="Get a franchise readiness score with specific recommendations for your business. Eight questions across the four pillars of the Forge Franchise Readiness Method. About two minutes. No cost, no obligation."
+        buttonText="Get your free readiness score"
+        buttonHref="/is-my-business-franchisable"
+        secondaryText="Book a free feasibility call"
+        secondaryHref="/contact"
       />
     </>
   )

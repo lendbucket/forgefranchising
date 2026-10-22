@@ -8,6 +8,8 @@ import { ContinueLearning } from '@/components/ContinueLearning'
 import { SectionCTA } from '@/components/SectionCTA'
 import { BrokerageNotice } from '@/components/BrokerageNotice'
 import { IntakeForm } from '@/components/IntakeForm'
+import { HeroActions } from '@/components/HeroActions'
+import { MidCTA } from '@/components/MidCTA'
 import { ReadingProgress } from '@/components/ReadingProgress'
 import { SITE_URL } from '@/lib/constants'
 import { webPageSchema, breadcrumbSchema, serviceSchema, faqSchema, renderSchema, TEXAS_AREA } from '@/lib/schema'
@@ -150,6 +152,7 @@ export default function SellYourFranchisePage() {
               independent company, see our{' '}
               <Link href="/sell-your-business" className={linkClass}>guide for business owners planning a sale</Link>.
             </p>
+            <HeroActions route="/sell-your-franchise" />
             <KeyTakeaways
               readTime="11 min read"
               items={[
@@ -276,6 +279,7 @@ export default function SellYourFranchisePage() {
                   agreement exactly, and build the response period into your expected timeline. Item 17 tells you whether
                   your franchisor holds this right.
                 </p>
+                <MidCTA route="/sell-your-franchise" />
               </article>
 
               <article id="fees" className="scroll-mt-header">

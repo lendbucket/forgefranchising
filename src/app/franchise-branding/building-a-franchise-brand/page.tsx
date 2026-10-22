@@ -5,8 +5,9 @@ import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
 import { KeyTakeaways } from '@/components/KeyTakeaways'
-import { StickyCTA } from '@/components/StickyCTA'
 import { ReadingProgress } from '@/components/ReadingProgress'
+import { HeroActions } from '@/components/HeroActions'
+import { MidCTA } from '@/components/MidCTA'
 import { SITE_URL, SITE_NAME } from '@/lib/constants'
 
 export const metadata = createMetadata({
@@ -58,6 +59,7 @@ export default function BuildingAFranchiseBrandPage() {
               That is not a design project. It is an operational transformation. And it
               starts long before you sell your first franchise.
             </p>
+            <HeroActions route="/franchise-branding/building-a-franchise-brand" className="mb-10" />
 
             <KeyTakeaways
               items={[
@@ -164,6 +166,7 @@ export default function BuildingAFranchiseBrandPage() {
               (Google Business Profile, Yelp, industry directories), and digital advertising
               creative guidelines.
             </p>
+            <MidCTA route="/franchise-branding/building-a-franchise-brand" className="mt-12 mb-4" />
 
             <h2 className="heading-2 mb-6 mt-12">Step three: Define the brand voice</h2>
             <p className="text-steel text-[17px] leading-relaxed mb-6">
@@ -275,10 +278,6 @@ export default function BuildingAFranchiseBrandPage() {
         variant="dark"
       />
 
-      <StickyCTA
-        text="Get your free readiness score"
-        href="/is-my-business-franchisable"
-      />
     </>
   )
 }

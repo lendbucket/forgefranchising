@@ -8,7 +8,8 @@ import { ContinueLearning } from '@/components/ContinueLearning'
 import { SectionCTA } from '@/components/SectionCTA'
 import { BrokerageNotice } from '@/components/BrokerageNotice'
 import { IntakeForm } from '@/components/IntakeForm'
-import { StickyCTA } from '@/components/StickyCTA'
+import { HeroActions } from '@/components/HeroActions'
+import { MidCTA } from '@/components/MidCTA'
 import { SITE_URL } from '@/lib/constants'
 import { webPageSchema, breadcrumbSchema, serviceSchema, faqSchema, renderSchema, TEXAS_AREA } from '@/lib/schema'
 
@@ -219,6 +220,7 @@ export default function SellYourBusinessPage() {
               </Link>
               .
             </p>
+            <HeroActions route="/sell-your-business" />
             <KeyTakeaways
               readTime="12 min read"
               items={[
@@ -351,6 +353,7 @@ export default function SellYourBusinessPage() {
                   data is shared late and in summary form. Most owners tell key employees near closing, often together
                   with the buyer, once the transaction is secure.
                 </p>
+                <MidCTA route="/sell-your-business" />
               </section>
 
               <section id="buyer-qualification" className="scroll-mt-header">
@@ -526,7 +529,6 @@ export default function SellYourBusinessPage() {
         secondaryHref="/contact"
       />
 
-      <StickyCTA text="Talk to Forge about selling your business" href="#inquiry" />
     </>
   )
 }

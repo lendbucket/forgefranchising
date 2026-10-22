@@ -8,6 +8,8 @@ import { ContinueLearning } from '@/components/ContinueLearning'
 import { SectionCTA } from '@/components/SectionCTA'
 import { BrokerageNotice } from '@/components/BrokerageNotice'
 import { IntakeForm } from '@/components/IntakeForm'
+import { HeroActions } from '@/components/HeroActions'
+import { MidCTA } from '@/components/MidCTA'
 import { ReadingProgress } from '@/components/ReadingProgress'
 import { SITE_URL } from '@/lib/constants'
 import { webPageSchema, breadcrumbSchema, serviceSchema, faqSchema, renderSchema, TEXAS_AREA } from '@/lib/schema'
@@ -203,6 +205,7 @@ export default function BuyABusinessPage() {
               own a franchise and plan to exit, see{' '}
               <Link href="/sell-your-franchise" className={linkClass}>franchise resale</Link>.
             </p>
+            <HeroActions route="/buy-a-business" />
             <KeyTakeaways
               readTime="12 min read"
               items={[
@@ -310,6 +313,7 @@ export default function BuyABusinessPage() {
                   depends on how the business performs after closing. Earnouts can bridge a gap on price, but the
                   measurement terms need careful drafting by your attorney.
                 </p>
+                <MidCTA route="/buy-a-business" />
               </article>
 
               <article id="due-diligence" className="scroll-mt-header">

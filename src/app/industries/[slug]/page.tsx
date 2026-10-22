@@ -4,7 +4,8 @@ import { createMetadata } from '@/lib/metadata'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
-import { StickyCTA } from '@/components/StickyCTA'
+import { HeroActions } from '@/components/HeroActions'
+import { MidCTA } from '@/components/MidCTA'
 import { INDUSTRIES, SITE_URL } from '@/lib/constants'
 import { serviceSchema, webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 import { INDUSTRY_DATA } from '@/data/industries'
@@ -84,6 +85,7 @@ export default async function IndustryPage({ params }: Props) {
             <p className="body-large">
               {data.heroSubhead}
             </p>
+            <HeroActions route={`/industries/${slug}`} />
           </div>
         </div>
       </section>
@@ -157,6 +159,7 @@ export default async function IndustryPage({ params }: Props) {
                 </div>
               ))}
             </div>
+            <MidCTA route={`/industries/${slug}`} />
           </div>
         </div>
       </section>
@@ -255,10 +258,6 @@ export default async function IndustryPage({ params }: Props) {
         secondaryHref="/contact"
       />
 
-      <StickyCTA
-        text={sentenceCase(`See If Your ${industry.shortName} Business Qualifies`)}
-        href="/is-my-business-franchisable"
-      />
     </>
   )
 }

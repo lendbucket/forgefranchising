@@ -4,7 +4,8 @@ import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
 import { KeyTakeaways } from '@/components/KeyTakeaways'
-import { StickyCTA } from '@/components/StickyCTA'
+import { HeroActions } from '@/components/HeroActions'
+import { MidCTA } from '@/components/MidCTA'
 import { ReadingProgress } from '@/components/ReadingProgress'
 import { SITE_URL } from '@/lib/constants'
 import { faqSchema, webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
@@ -88,6 +89,7 @@ export default function FinancingPage() {
               page walks through the common financing paths, what lenders look for, and how Forge helps you
               prepare a business case that gets approved.
             </p>
+            <HeroActions route="/financing" />
             <KeyTakeaways
               items={[
                 'Franchise development is a defined business investment, not an open ended expense',
@@ -290,6 +292,7 @@ export default function FinancingPage() {
                 </div>
               ))}
             </div>
+            <MidCTA route="/financing" />
           </div>
         </div>
       </section>
@@ -427,10 +430,6 @@ export default function FinancingPage() {
         variant="light"
       />
 
-      <StickyCTA
-        text="Get your free franchise evaluation"
-        href="/contact"
-      />
     </>
   )
 }

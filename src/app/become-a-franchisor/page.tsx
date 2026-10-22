@@ -1,4 +1,7 @@
+import { Fragment } from 'react'
 import Link from 'next/link'
+import { HeroActions } from '@/components/HeroActions'
+import { MidCTA } from '@/components/MidCTA'
 import { createMetadata } from '@/lib/metadata'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { KeyTakeaways } from '@/components/KeyTakeaways'
@@ -6,7 +9,6 @@ import { PageTOC } from '@/components/PageTOC'
 import { FAQList } from '@/components/FAQList'
 import { ContinueLearning } from '@/components/ContinueLearning'
 import { SectionCTA } from '@/components/SectionCTA'
-import { StickyCTA } from '@/components/StickyCTA'
 import { ReadingProgress } from '@/components/ReadingProgress'
 import { SITE_URL } from '@/lib/constants'
 import { sentenceCase } from '@/lib/text'
@@ -247,6 +249,7 @@ export default function BecomeAFranchisorPage() {
               brand system built in from the start. For the engagement itself, phase by phase, see{' '}
               <Link href="/how-it-works" className="text-accent font-semibold hover:underline">how our franchise development process works</Link>.
             </p>
+            <HeroActions route="/become-a-franchisor" />
             <KeyTakeaways
               readTime="15 min read"
               items={[
@@ -275,7 +278,8 @@ export default function BecomeAFranchisorPage() {
 
             <div className="lg:col-span-9 space-y-16">
               {steps.map((step, i) => (
-                <article key={step.id} id={step.id} className="scroll-mt-header">
+                <Fragment key={step.id}>
+                <article id={step.id} className="scroll-mt-header">
                   <p className="numeral text-[56px] mb-6">
                     {String(i + 1).padStart(2, '0')}
                   </p>
@@ -303,6 +307,8 @@ export default function BecomeAFranchisorPage() {
                     </p>
                   )}
                 </article>
+                {i === 5 && <MidCTA route="/become-a-franchisor" className="" />}
+                </Fragment>
               ))}
 
               <section id="faq" className="scroll-mt-header pt-4">
@@ -332,7 +338,6 @@ export default function BecomeAFranchisorPage() {
         secondaryHref="/contact"
       />
 
-      <StickyCTA text="See if your business is ready to franchise" href="/is-my-business-franchisable" />
     </>
   )
 }

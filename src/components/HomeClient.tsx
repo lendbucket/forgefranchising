@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { Arrow } from '@/components/Arrow'
-import { StickyCTA } from '@/components/StickyCTA'
 import { CONTACT_EMAIL } from '@/lib/constants'
 import { PostCard } from '@/components/PostCard'
 import { ContactRows } from '@/components/ContactRows'
@@ -468,7 +467,6 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
         rows={contact}
       />
 
-      <StickyCTA text="Get your free readiness score" href="/is-my-business-franchisable" />
     </>
   )
 }

@@ -3,8 +3,9 @@ import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
 import { KeyTakeaways } from '@/components/KeyTakeaways'
-import { StickyCTA } from '@/components/StickyCTA'
 import { ReadingProgress } from '@/components/ReadingProgress'
+import { HeroActions } from '@/components/HeroActions'
+import { MidCTA } from '@/components/MidCTA'
 import Link from 'next/link'
 import { SITE_URL } from '@/lib/constants'
 import { howToSchema, webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
@@ -144,6 +145,7 @@ export default function HowItWorksPage() {
               </Link>{' '}
               to see where you stand today.
             </p>
+            <HeroActions route="/how-it-works" />
             {/* Key takeaways: skimmers get value in 10 seconds */}
             <KeyTakeaways
               items={[
@@ -195,6 +197,7 @@ export default function HowItWorksPage() {
                 </div>
               </div>
             </div>
+            {index === 2 && <MidCTA route="/how-it-works" />}
           </div>
         </section>
       ))}
@@ -241,10 +244,6 @@ export default function HowItWorksPage() {
         variant="light"
       />
 
-      <StickyCTA
-        text="See which phase you are ready for"
-        href="/is-my-business-franchisable"
-      />
     </>
   )
 }

@@ -3,8 +3,9 @@ import { createMetadata } from '@/lib/metadata'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
-import { StickyCTA } from '@/components/StickyCTA'
 import { ReadingProgress } from '@/components/ReadingProgress'
+import { HeroActions } from '@/components/HeroActions'
+import { MidCTA } from '@/components/MidCTA'
 import { SITE_URL } from '@/lib/constants'
 import { sentenceCase } from '@/lib/text'
 import { faqSchema, webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
@@ -133,6 +134,7 @@ export default function ReadinessMethodPage() {
               in place. This method identifies exactly where you stand across each pillar and
               what, specifically, needs to be true before you move forward.
             </p>
+            <HeroActions route="/readiness-method" />
           </div>
         </div>
       </section>
@@ -195,6 +197,7 @@ export default function ReadinessMethodPage() {
                 </div>
               </div>
             </div>
+            {index === 2 && <MidCTA route="/readiness-method" />}
           </div>
         </section>
       ))}
@@ -361,10 +364,6 @@ export default function ReadinessMethodPage() {
         secondaryHref="/contact"
       />
 
-      <StickyCTA
-        text="Start the readiness assessment"
-        href="/is-my-business-franchisable"
-      />
     </>
   )
 }

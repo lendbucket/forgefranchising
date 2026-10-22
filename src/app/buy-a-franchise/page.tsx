@@ -8,6 +8,8 @@ import { ContinueLearning } from '@/components/ContinueLearning'
 import { SectionCTA } from '@/components/SectionCTA'
 import { BrokerageNotice } from '@/components/BrokerageNotice'
 import { IntakeForm } from '@/components/IntakeForm'
+import { HeroActions } from '@/components/HeroActions'
+import { MidCTA } from '@/components/MidCTA'
 import { ReadingProgress } from '@/components/ReadingProgress'
 import { SITE_URL } from '@/lib/constants'
 import { webPageSchema, breadcrumbSchema, serviceSchema, faqSchema, renderSchema } from '@/lib/schema'
@@ -179,6 +181,7 @@ export default function BuyAFranchisePage() {
               <Link href="/buy-a-business" className={linkClass}>guide for business buyers</Link>.
             </p>
             <CompensationDisclosure className="mb-10" />
+            <HeroActions route="/buy-a-franchise" />
             <KeyTakeaways
               readTime="12 min read"
               items={[
@@ -290,6 +293,7 @@ export default function BuyAFranchisePage() {
                   is telling you something about how it sells. For a full overview of the document, read{' '}
                   <Link href="/blog/franchise-disclosure-document" className={linkClass}>the Franchise Disclosure Document explained</Link>.
                 </p>
+                <MidCTA route="/buy-a-franchise" />
               </article>
 
               <article id="reading-the-fdd" className="scroll-mt-header">

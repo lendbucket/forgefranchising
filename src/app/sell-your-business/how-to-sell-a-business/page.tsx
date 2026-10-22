@@ -8,7 +8,8 @@ import { ContinueLearning } from '@/components/ContinueLearning'
 import { SectionCTA } from '@/components/SectionCTA'
 import { BrokerageNotice } from '@/components/BrokerageNotice'
 import { IntakeForm } from '@/components/IntakeForm'
-import { StickyCTA } from '@/components/StickyCTA'
+import { HeroActions } from '@/components/HeroActions'
+import { MidCTA } from '@/components/MidCTA'
 import { ReadingProgress } from '@/components/ReadingProgress'
 import { SITE_URL } from '@/lib/constants'
 import { webPageSchema, breadcrumbSchema, articleSchema, faqSchema, renderSchema } from '@/lib/schema'
@@ -369,6 +370,7 @@ export default function HowToSellABusinessPage() {
               </Link>
               .
             </p>
+            <HeroActions route="/sell-your-business/how-to-sell-a-business" />
             <KeyTakeaways
               readTime="16 min read"
               items={[
@@ -465,6 +467,7 @@ export default function HowToSellABusinessPage() {
                       </Link>
                     </p>
                   )}
+                  {step.id === 'confidentiality' && <MidCTA route="/sell-your-business/how-to-sell-a-business" />}
                 </article>
               ))}
 
@@ -564,7 +567,6 @@ export default function HowToSellABusinessPage() {
         secondaryHref="/contact"
       />
 
-      <StickyCTA text="Plan your sale with Forge" href="#inquiry" />
     </>
   )
 }

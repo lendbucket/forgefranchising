@@ -3,7 +3,8 @@ import { createMetadata } from '@/lib/metadata'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
-import { StickyCTA } from '@/components/StickyCTA'
+import { HeroActions } from '@/components/HeroActions'
+import { MidCTA } from '@/components/MidCTA'
 import { INDUSTRIES, SITE_URL } from '@/lib/constants'
 import { webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 import { sentenceCase } from '@/lib/text'
@@ -55,6 +56,7 @@ export default function IndustriesPage() {
               before they reach ten units. Pick your industry and learn what it actually takes to franchise
               in your space.
             </p>
+            <HeroActions route="/industries" />
           </div>
         </div>
       </section>
@@ -83,6 +85,7 @@ export default function IndustriesPage() {
               </Link>
             ))}
           </div>
+          <MidCTA route="/industries" />
         </div>
       </section>
 
@@ -135,10 +138,6 @@ export default function IndustriesPage() {
         secondaryHref="/contact"
       />
 
-      <StickyCTA
-        text="See if your business qualifies"
-        href="/is-my-business-franchisable"
-      />
     </>
   )
 }

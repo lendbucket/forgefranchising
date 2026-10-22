@@ -3,7 +3,6 @@
 import { useEffect, useState, FormEvent } from 'react'
 import { TIERS, isTierKey, type TierKey } from '@/lib/assessment'
 import Link from 'next/link'
-import { StickyCTA } from '@/components/StickyCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
 import { CONTACT_EMAIL } from '@/lib/constants'
 
@@ -605,11 +604,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <StickyCTA
-        text="Get your free franchise evaluation"
-        href="/contact"
-        showAfter={800}
-      />
     </>
   )
 }

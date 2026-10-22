@@ -5,8 +5,9 @@ import { webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
-import { StickyCTA } from '@/components/StickyCTA'
 import { Arrow } from '@/components/Arrow'
+import { HeroActions } from '@/components/HeroActions'
+import { MidCTA } from '@/components/MidCTA'
 import {
   FRANCHISE_LAWS,
   getStatesByCategory,
@@ -73,6 +74,7 @@ export default function FranchiseLawsPage() {
               registration can result in rescission rights for the franchisee, fines, and other
               serious legal consequences.
             </p>
+            <HeroActions route="/franchise-laws" />
           </div>
         </div>
       </section>
@@ -251,6 +253,7 @@ export default function FranchiseLawsPage() {
                 </Link>
               ))}
           </div>
+          <MidCTA route="/franchise-laws" />
         </div>
       </section>
 
@@ -425,10 +428,6 @@ export default function FranchiseLawsPage() {
         body="State compliance is complex, but you do not have to figure it out alone. We manage the entire registration and filing process so you can focus on building your franchise brand."
       />
 
-      <StickyCTA
-        text="Get your free readiness score"
-        href="/is-my-business-franchisable"
-      />
     </>
   )
 }

@@ -5,8 +5,9 @@ import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
 import { KeyTakeaways } from '@/components/KeyTakeaways'
-import { StickyCTA } from '@/components/StickyCTA'
 import { ReadingProgress } from '@/components/ReadingProgress'
+import { HeroActions } from '@/components/HeroActions'
+import { MidCTA } from '@/components/MidCTA'
 import { SITE_URL, SITE_NAME } from '@/lib/constants'
 
 export const metadata = createMetadata({
@@ -59,6 +60,7 @@ export default function HowCustomersKnowABrandPage() {
               customers in a second city trust you before the franchisee hands them a menu.
               Get them wrong and every new location starts from scratch.
             </p>
+            <HeroActions route="/franchise-branding/how-customers-know-a-brand" className="mb-10" />
 
             <KeyTakeaways
               items={[
@@ -145,6 +147,7 @@ export default function HowCustomersKnowABrandPage() {
               a flyer with a slightly different shade of your primary color, customers
               notice at a subconscious level even if they cannot articulate what feels off.
             </p>
+            <MidCTA route="/franchise-branding/how-customers-know-a-brand" className="mt-12 mb-4" />
 
             <h2 className="heading-2 mb-6 mt-12">Voice: How the brand speaks</h2>
             <p className="text-steel text-[17px] leading-relaxed mb-6">
@@ -233,10 +236,6 @@ export default function HowCustomersKnowABrandPage() {
         variant="light"
       />
 
-      <StickyCTA
-        text="Get your free readiness score"
-        href="/is-my-business-franchisable"
-      />
     </>
   )
 }

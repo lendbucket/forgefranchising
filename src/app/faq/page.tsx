@@ -2,7 +2,8 @@ import { createMetadata } from '@/lib/metadata'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
-import { StickyCTA } from '@/components/StickyCTA'
+import { HeroActions } from '@/components/HeroActions'
+import { MidCTA } from '@/components/MidCTA'
 import { SITE_URL } from '@/lib/constants'
 import { faqSchema, webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 import { FAQAccordion } from './FAQAccordion'
@@ -185,13 +186,16 @@ export default function FAQPage() {
               deserve real answers, not marketing fluff. We wrote these responses the way we would
               answer them on a call: directly, thoroughly, and without sugarcoating.
             </p>
+            <HeroActions route="/faq" />
           </div>
         </div>
       </section>
 
       <section className="section-padding bg-white">
         <div className="container-wide">
-          <FAQAccordion categories={FAQ_CATEGORIES} />
+          <FAQAccordion categories={FAQ_CATEGORIES.slice(0, 3)} />
+          <MidCTA route="/faq" className="my-20 max-[720px]:my-12" />
+          <FAQAccordion categories={FAQ_CATEGORIES.slice(3)} />
         </div>
       </section>
 
@@ -213,10 +217,6 @@ export default function FAQPage() {
         secondaryHref="/contact"
       />
 
-      <StickyCTA
-        text="Get your free readiness score"
-        href="/is-my-business-franchisable"
-      />
     </>
   )
 }

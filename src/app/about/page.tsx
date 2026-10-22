@@ -4,6 +4,8 @@ import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
 import { BrokerageBand } from '@/components/BrokerageBand'
 import { KeyTakeaways } from '@/components/KeyTakeaways'
+import { HeroActions } from '@/components/HeroActions'
+import { MidCTA } from '@/components/MidCTA'
 import { MISSION_STATEMENT, SITE_URL } from '@/lib/constants'
 import { webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 
@@ -51,6 +53,7 @@ export default function AboutPage() {
               and learned what actually matters when you are trying to replicate something that works.
               That experience shapes everything we do.
             </p>
+            <HeroActions route="/about" />
             {/* Key takeaways: skimmers get value in 10 seconds (Miller's law) */}
             <KeyTakeaways
               items={[
@@ -116,6 +119,7 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
+          <MidCTA route="/about" />
         </div>
       </section>
 

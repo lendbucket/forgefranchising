@@ -8,6 +8,7 @@ import { StickyCTA } from '@/components/StickyCTA'
 import { PostCard } from '@/components/PostCard'
 import { SectionCTA } from '@/components/SectionCTA'
 import { sentenceCase } from '@/lib/text'
+import { toIntake } from '@/lib/cta'
 
 /* ------------------------------------------------------------------ */
 /*  Helpers                                                            */
@@ -361,19 +362,19 @@ function TableOfContentsChips({ headings, activeId }: { headings: Heading[]; act
 /*  Inline CTA: value-driven, placed at a natural decision point      */
 /* ------------------------------------------------------------------ */
 
-function InlineCTA({ cta }: { cta?: BlogCTA }) {
+function InlineCTA({ cta, href }: { cta?: BlogCTA; href: string }) {
   return (
-    <div className="my-16 max-[720px]:my-12 bg-graphite surface-dark p-10 max-[720px]:p-6">
-      <h3 className="heading-3 text-white mb-4">
+    <aside data-cta="mid" aria-label="Next step" className="my-12 bg-graphite surface-dark p-8 max-[720px]:p-6">
+      <p className="font-display text-2xl font-bold leading-tight text-white mb-3" style={{ letterSpacing: '-0.02em' }}>
         {cta?.heading ? sentenceCase(cta.heading) : 'Find out if your business is ready to franchise'}
-      </h3>
-      <p className="text-[17px] leading-relaxed text-fog mb-8 max-w-[560px]">
+      </p>
+      <p className="text-[16px] leading-relaxed text-mist mb-6 max-w-[560px]">
         {cta?.body ?? 'Eight questions across the four pillars of the Forge Franchise Readiness Method. About two minutes. You get a readiness score with recommendations for each pillar. No cost, no obligation.'}
       </p>
-      <Link href={cta?.href ?? '/is-my-business-franchisable'} className="btn-primary">
+      <Link href={href} className="btn-primary">
         {cta?.buttonText ? sentenceCase(cta.buttonText) : 'Get your free readiness score'}
       </Link>
-    </div>
+    </aside>
   )
 }
 
@@ -395,7 +396,14 @@ export default function BlogPostClient({
   const activeId = useActiveHeading(headings)
 
   const contentBlocks = post.content.split('\n\n')
-  const midpoint = Math.floor(contentBlocks.length / 2)
+  // The inline panel goes after the second H2 section, just before the third
+  // H2. Posts with fewer H2s fall back to the middle of the article.
+  const h2Starts = contentBlocks.map((b, i) => (b.trim().startsWith('## ') ? i : -1)).filter((i) => i >= 0)
+  const midpoint = h2Starts.length >= 3 ? h2Starts[2] : Math.floor(contentBlocks.length / 2)
+  // Topic matched action: posts with their own call to action (brokerage,
+  // buyer, and resale topics) go to that page's intake form; every other
+  // post goes to the readiness assessment.
+  const ctaHref = post.cta?.href ? toIntake(post.cta.href) : '/is-my-business-franchisable'
   const firstHalf = contentBlocks.slice(0, midpoint).join('\n\n')
   const secondHalf = contentBlocks.slice(midpoint).join('\n\n')
 
@@ -449,7 +457,7 @@ export default function BlogPostClient({
               )}
 
               <MarkdownRenderer content={firstHalf} />
-              <InlineCTA cta={post.cta} />
+              <InlineCTA cta={post.cta} href={ctaHref} />
               <MarkdownRenderer content={secondHalf} />
             </article>
 
@@ -493,14 +501,14 @@ export default function BlogPostClient({
           'If this article raised questions about franchising your business, get a concrete answer. Our free assessment scores your readiness and gives you specific next steps.'
         }
         buttonText={post.cta?.buttonText ? sentenceCase(post.cta.buttonText) : 'Get your free readiness score'}
-        buttonHref={post.cta?.href ?? '/is-my-business-franchisable'}
+        buttonHref={ctaHref}
         secondaryText={post.cta ? 'Or contact us directly' : 'Or book a feasibility call directly'}
         secondaryHref="/contact"
       />
 
       <StickyCTA
         text={post.cta?.buttonText ? sentenceCase(post.cta.buttonText) : 'Get your free readiness score'}
-        href={post.cta?.href ?? '/is-my-business-franchisable'}
+        href={ctaHref}
       />
     </>
   )

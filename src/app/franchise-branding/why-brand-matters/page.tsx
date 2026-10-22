@@ -5,8 +5,9 @@ import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
 import { KeyTakeaways } from '@/components/KeyTakeaways'
-import { StickyCTA } from '@/components/StickyCTA'
 import { ReadingProgress } from '@/components/ReadingProgress'
+import { HeroActions } from '@/components/HeroActions'
+import { MidCTA } from '@/components/MidCTA'
 import { SITE_URL, SITE_NAME } from '@/lib/constants'
 
 export const metadata = createMetadata({
@@ -58,6 +59,7 @@ export default function WhyBrandMattersPage() {
               franchisees are making a bet that your brand will drive customers through their
               door in a market where nobody knows who they are. The brand is the product.
             </p>
+            <HeroActions route="/franchise-branding/why-brand-matters" className="mb-10" />
 
             <KeyTakeaways
               items={[
@@ -154,6 +156,7 @@ export default function WhyBrandMattersPage() {
               brand standards, rigorous training, and continuous enforcement. The same
               principle applies to every franchise system, regardless of industry.
             </p>
+            <MidCTA route="/franchise-branding/why-brand-matters" className="mt-12 mb-4" />
 
             <h2 className="heading-2 mb-6 mt-12">Pricing power comes from brand, not product</h2>
             <p className="text-steel text-[17px] leading-relaxed mb-6">
@@ -253,10 +256,6 @@ export default function WhyBrandMattersPage() {
         variant="dark"
       />
 
-      <StickyCTA
-        text="Get your free readiness score"
-        href="/is-my-business-franchisable"
-      />
     </>
   )
 }

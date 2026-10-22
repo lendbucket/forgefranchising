@@ -12,6 +12,8 @@ import {
   renderSchema,
 } from '@/lib/schema'
 import { SectionCTA } from '@/components/SectionCTA'
+import { HeroActions } from '@/components/HeroActions'
+import { MidCTA } from '@/components/MidCTA'
 
 export function generateStaticParams() {
   return cities.map((c) => ({ city: c.slug }))
@@ -154,6 +156,7 @@ export default async function CityPage({ params }: Props) {
               growth strategies. We help {city.name} owners build franchise systems
               and connect qualified buyers with the right opportunities.
             </p>
+            <HeroActions route={`/locations/${city.slug}`} />
           </div>
         </div>
       </section>
@@ -226,6 +229,8 @@ export default async function CityPage({ params }: Props) {
                   })}
                 </div>
               </div>
+
+              <MidCTA route={`/locations/${city.slug}`} className="" />
 
               {/* Two-Way Help Section */}
               <div>
@@ -326,21 +331,6 @@ export default async function CityPage({ params }: Props) {
             {/* Right Sidebar */}
             <div className="lg:col-span-1 min-w-0">
               <div className="lg:sticky top-header-gap space-y-6">
-                {/* Assessment CTA Card */}
-                <div className="card bg-stone border-stone">
-                  <h3 className="heading-4 mb-3">Is your business ready to franchise?</h3>
-                  <p className="text-sm text-steel leading-relaxed mb-6">
-                    Take our free assessment to find out if your {city.name} business
-                    is a strong franchise candidate. No commitment required.
-                  </p>
-                  <Link
-                    href="/is-my-business-franchisable"
-                    className="btn-primary w-full"
-                  >
-                    Get your free readiness score
-                  </Link>
-                </div>
-
                 {/* Franchise Opportunity CTA Card */}
                 <div className="card">
                   <h3 className="heading-4 mb-3">Own a franchise in {city.name}</h3>

@@ -5,8 +5,9 @@ import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
 import { KeyTakeaways } from '@/components/KeyTakeaways'
-import { StickyCTA } from '@/components/StickyCTA'
 import { ReadingProgress } from '@/components/ReadingProgress'
+import { HeroActions } from '@/components/HeroActions'
+import { MidCTA } from '@/components/MidCTA'
 import { SITE_URL, SITE_NAME } from '@/lib/constants'
 
 export const metadata = createMetadata({
@@ -60,6 +61,7 @@ export default function BrandStandardsEnforcementPage() {
               catches drift before customers do, and how to balance brand control
               with franchisee autonomy.
             </p>
+            <HeroActions route="/franchise-branding/brand-standards-enforcement" className="mb-10" />
 
             <KeyTakeaways
               items={[
@@ -169,6 +171,7 @@ export default function BrandStandardsEnforcementPage() {
               for each score. This removes subjectivity from the process and gives both
               the franchisor and the franchisee a shared understanding of expectations.
             </p>
+            <MidCTA route="/franchise-branding/brand-standards-enforcement" className="mt-12 mb-4" />
 
             <h2 className="heading-2 mb-6 mt-12">Handling non-compliance without crushing franchisees</h2>
             <p className="text-steel text-[17px] leading-relaxed mb-6">
@@ -279,10 +282,6 @@ export default function BrandStandardsEnforcementPage() {
         variant="light"
       />
 
-      <StickyCTA
-        text="Get your free readiness score"
-        href="/is-my-business-franchisable"
-      />
     </>
   )
 }

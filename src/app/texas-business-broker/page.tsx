@@ -6,10 +6,11 @@ import { PageTOC } from '@/components/PageTOC'
 import { FAQList } from '@/components/FAQList'
 import { ContinueLearning } from '@/components/ContinueLearning'
 import { SectionCTA } from '@/components/SectionCTA'
-import { StickyCTA } from '@/components/StickyCTA'
 import { ReadingProgress } from '@/components/ReadingProgress'
 import { BrokerageNotice } from '@/components/BrokerageNotice'
 import { IntakeForm } from '@/components/IntakeForm'
+import { HeroActions } from '@/components/HeroActions'
+import { MidCTA } from '@/components/MidCTA'
 import { SITE_URL } from '@/lib/constants'
 import { webPageSchema, breadcrumbSchema, serviceSchema, faqSchema, renderSchema, TEXAS_AREA } from '@/lib/schema'
 
@@ -155,6 +156,7 @@ export default function TexasBusinessBrokerPage() {
               Texas metros differ. For the full sell side process, start with{' '}
               <Link href="/sell-your-business" className={link}>selling your business</Link>.
             </p>
+            <HeroActions route="/texas-business-broker" />
             <KeyTakeaways
               readTime="13 min read"
               items={[
@@ -289,6 +291,7 @@ export default function TexasBusinessBrokerPage() {
                   buyer competes with the business, some of that information may be released only in summary form or through
                   the buyer&apos;s advisors.
                 </p>
+                <MidCTA route="/texas-business-broker" />
               </article>
 
               <article id="real-property" className="scroll-mt-header">
@@ -448,7 +451,6 @@ export default function TexasBusinessBrokerPage() {
         secondaryHref="/sell-your-business"
       />
 
-      <StickyCTA text="Talk to a Texas business broker" href="#inquiry" />
     </>
   )
 }
