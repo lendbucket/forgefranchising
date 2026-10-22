@@ -371,7 +371,7 @@ function InlineCTA({ cta, href }: { cta?: BlogCTA; href: string }) {
       <p className="text-[16px] leading-relaxed text-mist mb-6 max-w-[560px]">
         {cta?.body ?? 'Eight questions across the four pillars of the Forge Franchise Readiness Method. About two minutes. You get a readiness score with recommendations for each pillar. No cost, no obligation.'}
       </p>
-      <Link href={href} className="btn-primary">
+      <Link href={href} className="btn-primary" data-cta-location="mid">
         {cta?.buttonText ? sentenceCase(cta.buttonText) : 'Get your free readiness score'}
       </Link>
     </aside>

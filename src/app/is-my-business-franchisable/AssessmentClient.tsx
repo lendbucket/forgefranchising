@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, type FormEvent, type KeyboardEvent, type R
 import Link from 'next/link'
 import { ContinueLearning } from '@/components/ContinueLearning'
 import { CONTACT_EMAIL } from '@/lib/constants'
+import { trackEvent } from '@/lib/analytics'
 import {
   DISCLAIMER,
   PILLAR_MAX,
@@ -133,6 +134,12 @@ export function AssessmentClient({ breadcrumbs }: { breadcrumbs?: ReactNode }) {
   }, [])
 
   const result = isComplete(answers) ? scoreAssessment(answers) : null
+  const shownScore = stage === 'score' && result ? result.overall : null
+  const shownTier = stage === 'score' && result ? result.tier : null
+
+  useEffect(() => {
+    if (shownScore !== null && shownTier) trackEvent('assessment_score_shown', { score: shownScore, tier: shownTier })
+  }, [shownScore, shownTier])
   const question = QUESTIONS[step]
 
   function go(next: () => void) {
@@ -141,6 +148,7 @@ export function AssessmentClient({ breadcrumbs }: { breadcrumbs?: ReactNode }) {
   }
 
   function start() {
+    trackEvent('assessment_started')
     go(() => {
       setStage('questions')
       setStep(0)
@@ -148,6 +156,12 @@ export function AssessmentClient({ breadcrumbs }: { breadcrumbs?: ReactNode }) {
   }
 
   function choose(id: QuestionId, value: string) {
+    trackEvent('assessment_question_answered', {
+      question_id: id,
+      question_number: step + 1,
+      pillar: question.pillar,
+      answer: value,
+    })
     setAnswers((prev) => ({ ...prev, [id]: value }))
     if (advanceTimer.current) clearTimeout(advanceTimer.current)
     advanceTimer.current = setTimeout(() => {
@@ -237,6 +251,12 @@ export function AssessmentClient({ breadcrumbs }: { breadcrumbs?: ReactNode }) {
         return
       }
       setReport({ result: data.result ?? result, answers, emailed: data.reportEmailed !== false })
+      trackEvent('assessment_report_submitted', {
+        score: result.overall,
+        tier: result.tier,
+        wants_call: contact.wantsCall,
+        report_emailed: data.reportEmailed !== false,
+      })
       writeStored(null)
       go(() => setStage('report'))
     } catch {
@@ -486,10 +506,11 @@ export function AssessmentClient({ breadcrumbs }: { breadcrumbs?: ReactNode }) {
                   <Link
                     href={`/contact?source=assessment&score=${report.result.overall}&tier=${report.result.tier}`}
                     className="btn-primary"
+                    data-cta-location="assessment_report"
                   >
                     {TIERS[report.result.tier].cta}
                   </Link>
-                  <Link href="/calculator" className="btn-secondary">
+                  <Link href="/calculator" className="btn-secondary" data-cta-location="assessment_report">
                     Model your franchise economics
                   </Link>
                 </div>
@@ -518,7 +539,7 @@ export function AssessmentClient({ breadcrumbs }: { breadcrumbs?: ReactNode }) {
               If you already know you want to explore franchising, skip the self-assessment and book a feasibility call
               directly. Our team will evaluate your business and give you a straight answer.
             </p>
-            <Link href="/contact" className="btn-primary">
+            <Link href="/contact" className="btn-primary" data-cta-location="assessment_page">
               Book a free feasibility call
             </Link>
           </div>

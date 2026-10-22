@@ -35,11 +35,11 @@ export function ContactRows({
             )
             const cls = 'flex items-center justify-between gap-6 max-[720px]:gap-4 min-h-[96px] max-[720px]:min-h-[84px] max-[720px]:py-4 border-b border-graphite/30 text-graphite transition-colors hover:bg-white/10'
             return c.href.startsWith('mailto:') ? (
-              <a key={c.href} href={c.href} className={cls}>
+              <a key={c.href} href={c.href} className={cls} data-cta-location="closing" data-cta-label={c.href.startsWith('mailto:') ? 'Email' : c.title}>
                 {content}
               </a>
             ) : (
-              <Link key={c.href} href={c.href} className={cls}>
+              <Link key={c.href} href={c.href} className={cls} data-cta-location="closing" data-cta-label={c.title}>
                 {content}
               </Link>
             )

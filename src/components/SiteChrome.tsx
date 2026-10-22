@@ -2,6 +2,7 @@
 
 import { usePathname } from 'next/navigation'
 import { SiteStickyCTA } from '@/components/StickyCTA'
+import { CtaTracker } from '@/components/CtaTracker'
 
 /**
  * Renders the site header and footer around page content.
@@ -31,6 +32,7 @@ export function SiteChrome({
       <main>{children}</main>
       {footer}
       <SiteStickyCTA />
+      <CtaTracker />
     </>
   )
 }

@@ -150,6 +150,7 @@ export function Header() {
           <div className="flex items-center gap-2">
             <Link
               href="/contact"
+              data-cta-location="header"
               className="hidden min-[720px]:inline-flex items-center justify-center min-h-[46px] px-[22px] text-sm font-semibold bg-white text-graphite hover:bg-[#ECEAE6] transition-colors"
             >
               Contact us
@@ -266,7 +267,7 @@ export function Header() {
           </nav>
 
           <div className="px-5 pt-4 pb-6 flex-shrink-0 safe-bottom">
-            <Link href="/is-my-business-franchisable" onClick={() => setMobileOpen(false)} className="btn-primary w-full">
+            <Link href="/is-my-business-franchisable" onClick={() => setMobileOpen(false)} className="btn-primary w-full" data-cta-location="mobile_menu">
               Get your free readiness score
             </Link>
             <a href={`mailto:${CONTACT_EMAIL}`} className="flex items-center justify-center min-h-[44px] mt-2 text-sm text-mist hover:text-white">

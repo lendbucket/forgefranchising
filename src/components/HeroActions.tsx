@@ -11,12 +11,12 @@ export function HeroActions({ route, className = 'mt-10' }: { route: string; cla
   if (!cta) return null
   return (
     <div className={`flex flex-wrap gap-3.5 max-[720px]:flex-col max-[720px]:gap-3 ${className}`}>
-      <Link href={cta.primary.href} className="btn-primary">
+      <Link href={cta.primary.href} className="btn-primary" data-cta-location="hero">
         {cta.primary.label}
         <Arrow />
       </Link>
       {cta.secondary && (
-        <Link href={cta.secondary.href} className="btn-secondary">
+        <Link href={cta.secondary.href} className="btn-secondary" data-cta-location="hero">
           {cta.secondary.label}
         </Link>
       )}

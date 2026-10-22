@@ -2,6 +2,7 @@
 
 import { useEffect, useState, FormEvent } from 'react'
 import { TIERS, isTierKey, type TierKey } from '@/lib/assessment'
+import { trackEvent } from '@/lib/analytics'
 import Link from 'next/link'
 import { ContinueLearning } from '@/components/ContinueLearning'
 import { CONTACT_EMAIL } from '@/lib/constants'
@@ -163,12 +164,14 @@ export default function ContactPage() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
   const [assessment, setAssessment] = useState<{ score: number; tier: TierKey } | null>(null)
+  const [assessmentSource, setAssessmentSource] = useState('direct')
 
   // Handoff from the readiness assessment (?source=assessment&score=..&tier=..).
   // Both values are validated; anything else is ignored.
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
     const source = params.get('source')
+    if (source === 'assessment' || source === 'assessment-email') setAssessmentSource(source)
     const scoreParam = params.get('score') ?? ''
     const tier = params.get('tier')
     const score = /^\d{1,3}$/.test(scoreParam) ? Number(scoreParam) : NaN
@@ -221,6 +224,10 @@ export default function ContactPage() {
       }
 
       setStatus('success')
+      trackEvent('contact_form_submitted', {
+        source: assessmentSource,
+        ...(assessment ? { score: assessment.score, tier: assessment.tier } : {}),
+      })
       setForm(initialFormData)
     } catch {
       setStatus('error')

@@ -69,7 +69,7 @@ const faqItems = [
   },
   {
     q: 'How long does it take to start generating revenue?',
-    a: 'Most franchise owners begin prospecting during training and have their first consulting engagement within 60 to 90 days of completing certification. Brokerage commissions typically follow within 3 to 6 months, depending on your pipeline activity and territory.',
+    a: 'There is no set timeline, and revenue is not guaranteed. When revenue starts depends on your market, your pipeline, and your own activity. After certification, Forge supports you with weekly group coaching and on-demand one-on-one sessions, the Forge CRM and software platform, the lead generation systems, the Forge Franchise Readiness Method and templates for client work, and a private network where Forge franchise owners can share deals, strategies, and referrals.',
   },
   {
     q: 'What does a typical day look like?',

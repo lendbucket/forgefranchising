@@ -143,11 +143,11 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
             Forge is a franchise development firm that turns profitable, owner operated businesses into franchise brands that grow on other people&apos;s capital, in other people&apos;s markets, under your name.
           </p>
           <div className="flex flex-wrap gap-3.5 max-[720px]:flex-col max-[720px]:gap-3">
-            <Link href="/is-my-business-franchisable" className="btn-primary">
+            <Link href="/is-my-business-franchisable" data-cta-location="hero" className="btn-primary">
               Get your free readiness score
               <Arrow />
             </Link>
-            <Link href="/how-it-works" className="btn-secondary">
+            <Link href="/how-it-works" data-cta-location="hero" className="btn-secondary">
               See our process
             </Link>
           </div>
@@ -296,7 +296,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
               Eight questions across the four pillars of the Forge Franchise Readiness Method. About two minutes. You get a score out of 100, a breakdown across the four pillars, and specific recommendations.
             </p>
             <div className="max-[960px]:hidden">
-              <Link href="/is-my-business-franchisable" className="btn-primary">
+              <Link href="/is-my-business-franchisable" data-cta-location="assessment_section" className="btn-primary">
                 Take the free assessment
                 <Arrow />
               </Link>
@@ -317,7 +317,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
             </ol>
           </div>
           <div className="min-[961px]:hidden">
-            <Link href="/is-my-business-franchisable" className="btn-primary">
+            <Link href="/is-my-business-franchisable" data-cta-location="assessment_section" className="btn-primary">
               Take the free assessment
               <Arrow />
             </Link>
@@ -377,7 +377,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
               Forge also represents owners selling established Texas businesses, works with buyers on the purchase side, and helps franchise owners through a resale. Every engagement starts with a confidential conversation.
             </p>
             <div className="max-[960px]:hidden">
-              <Link href="/sell-your-business#inquiry" className="btn-primary">
+              <Link href="/sell-your-business#inquiry" data-cta-location="brokerage_section" className="btn-primary">
                 Start a confidential conversation
               </Link>
             </div>
@@ -400,7 +400,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
             ))}
           </div>
           <div className="min-[961px]:hidden">
-            <Link href="/sell-your-business#inquiry" className="btn-primary">
+            <Link href="/sell-your-business#inquiry" data-cta-location="brokerage_section" className="btn-primary">
               Start a confidential conversation
             </Link>
           </div>

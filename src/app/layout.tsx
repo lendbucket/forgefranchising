@@ -3,6 +3,7 @@ import { Inter, Inter_Tight } from 'next/font/google'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { SiteChrome } from '@/components/SiteChrome'
+import { Analytics } from '@vercel/analytics/next'
 import { SITE_NAME, SITE_URL, SITE_DESCRIPTION, DEFAULT_OG_IMAGE } from '@/lib/constants'
 import { organizationSchema, websiteSchema, renderSchema } from '@/lib/schema'
 import './globals.css'
@@ -74,6 +75,7 @@ export default function RootLayout({
         <SiteChrome header={<Header />} footer={<Footer />}>
           {children}
         </SiteChrome>
+        <Analytics />
       </body>
     </html>
   )

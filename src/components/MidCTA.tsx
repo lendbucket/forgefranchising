@@ -23,12 +23,12 @@ export function MidCTA({ route, className = 'mt-16 max-[720px]:mt-12' }: { route
         <p className="text-[16px] leading-relaxed text-mist max-w-[620px]">{cta.mid.body}</p>
       </div>
       <div className="flex flex-col gap-2 min-[961px]:items-end">
-        <Link href={cta.primary.href} className="btn-primary">
+        <Link href={cta.primary.href} className="btn-primary" data-cta-location="mid">
           {cta.primary.label}
           <Arrow />
         </Link>
         {cta.secondary && (
-          <Link href={cta.secondary.href} className="inline-flex items-center min-h-[44px] text-sm font-semibold text-white underline underline-offset-4 hover:text-ember-hover">
+          <Link href={cta.secondary.href} data-cta-location="mid" className="inline-flex items-center min-h-[44px] text-sm font-semibold text-white underline underline-offset-4 hover:text-ember-hover">
             {cta.secondary.label}
           </Link>
         )}

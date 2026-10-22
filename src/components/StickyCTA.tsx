@@ -66,7 +66,7 @@ export function StickyCTA({ text, href }: { text: string; href: string }) {
     >
       <div className="bg-graphite safe-bottom" style={{ borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
         <div className="wrap py-3 flex items-center gap-2">
-          <Link href={href} tabIndex={visible ? 0 : -1} className="btn-primary flex-1 !min-h-[52px] !w-auto">
+          <Link href={href} tabIndex={visible ? 0 : -1} data-cta-location="sticky" className="btn-primary flex-1 !min-h-[52px] !w-auto">
             {text}
           </Link>
           <button
