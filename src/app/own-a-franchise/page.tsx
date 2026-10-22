@@ -28,7 +28,7 @@ const valueStackItems = [
   {
     title: 'Complete dual training program',
     description:
-      'Full certification in both franchise consulting (helping owners franchise their business) and franchise brokerage (matching buyers with franchise brands). Two revenue streams from day one.',
+      'Full certification in both franchise consulting (helping owners franchise their business) and franchise brokerage (matching buyers with franchise brands).',
   },
   {
     title: 'The Forge Franchise Readiness Method',
@@ -38,7 +38,7 @@ const valueStackItems = [
   {
     title: 'Lead generation systems',
     description:
-      'Inbound marketing infrastructure, SEO assets, and referral frameworks that drive qualified prospects to your pipeline. You are not starting from zero.',
+      'Inbound marketing infrastructure, SEO assets, and referral frameworks.',
   },
   {
     title: 'Ongoing coaching and support',
@@ -48,7 +48,7 @@ const valueStackItems = [
   {
     title: 'Low, flat monthly royalties',
     description:
-      'A predictable flat monthly royalty. Not a percentage of your revenue. As your income grows, your royalty stays the same. The math gets better every month.',
+      'A predictable flat monthly royalty. Not a percentage of your revenue.',
   },
   {
     title: 'Virtual, work from home model',
@@ -58,7 +58,7 @@ const valueStackItems = [
   {
     title: 'Protected territory',
     description:
-      'Your territory is yours. No other Forge franchisee operates in your market. You own the relationships in your geography.',
+      'Territories are defined in the Franchise Disclosure Document.',
   },
 ]
 
@@ -85,7 +85,7 @@ const faqItems = [
   },
   {
     q: 'What territories are available?',
-    a: 'Territory availability changes as we award new franchises. We define territories by market size and population density. The best way to find out what is available in your area is to apply and schedule a discovery call.',
+    a: 'Territories are defined in the Franchise Disclosure Document. You can ask about a specific area during a discovery call.',
   },
   {
     q: 'Is there a minimum net worth or liquid capital requirement?',
@@ -189,7 +189,7 @@ export default function OwnAFranchisePage() {
               </Link>
             </div>
             <p className="text-white/60 text-sm">
-              Limited territories available. No franchise experience required.
+              Territories are defined in the Franchise Disclosure Document. No franchise experience required.
             </p>
           </div>
         </div>
@@ -275,10 +275,10 @@ export default function OwnAFranchisePage() {
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="heading-2 mb-6">
-              Two revenue streams. One business. Zero storefronts.
+              Two service lines: franchise development consulting and franchise brokerage
             </h2>
             <p className="body-large">
-              Your Forge franchise generates income from two distinct service lines. You can focus on one or pursue both. Owners can do both because the same relationships feed both pipelines.
+              A Forge franchise has two distinct service lines. You can focus on one or pursue both. Owners can do both because the same relationships feed both pipelines.
             </p>
           </div>
           <div className="tile-grid md:grid-cols-2 mb-12">
@@ -315,9 +315,8 @@ export default function OwnAFranchisePage() {
                 {[
                   'Work from home or anywhere with an internet connection',
                   'No commercial lease, no inventory, no warehousing',
-                  'No employees required to start. Add team members as you grow.',
+                  'No employees required to start. Add team members over time.',
                   'Set your own schedule and take on as many clients as you want',
-                  'Your income is a direct function of your effort and pipeline',
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <CheckIcon />
@@ -345,15 +344,6 @@ export default function OwnAFranchisePage() {
             <p className="body-large mb-8">
               You are getting a complete business system, brand, technology, training, and ongoing support for $15,000. That is the total franchise fee. Not a down payment. Not the first installment. The entire fee.
             </p>
-            <div className="border border-white/15 p-8 max-[720px]:p-6 text-left mb-8">
-              <h3 className="heading-4 text-white mb-4">Compare that to the alternative</h3>
-              <p className="text-white/60 leading-relaxed mb-4">
-                Most franchise consultant training programs charge $10,000 to $20,000 for training alone. No brand. No technology platform. No CRM. No lead generation systems. No templates. No ongoing support. No protected territory. Just a course and a certificate.
-              </p>
-              <p className="text-white/60 leading-relaxed">
-                With Forge, you get the training plus the brand, the tech stack, the methodology, the deal flow infrastructure, and a team that has a financial stake in your success. The $15,000 is not a course fee. It is a business acquisition.
-              </p>
-            </div>
             <EarningsDisclaimer variant="dark" />
             <div className="mt-8">
               <OfferingDisclaimer variant="dark" />
@@ -370,7 +360,7 @@ export default function OwnAFranchisePage() {
               This opportunity is specific. It is not for everyone.
             </h2>
             <p className="body-large">
-              We are selective about who we award territories to. Not because we want to be exclusive for the sake of it, but because your success determines our reputation. Here is who thrives in this model and who does not.
+              Territories are defined in the Franchise Disclosure Document. Here is who this model suits and who it does not.
             </p>
           </div>
           <div className="tile-grid md:grid-cols-2 max-w-4xl mx-auto">
@@ -383,7 +373,6 @@ export default function OwnAFranchisePage() {
                   'People with a sales, business development, or relationship management background',
                   'Professionals who want to help business owners grow and scale',
                   'Self-starters who are comfortable working independently',
-                  'People willing to invest 12 to 18 months building a pipeline before expecting consistent high income',
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <CheckIcon />
@@ -396,11 +385,10 @@ export default function OwnAFranchisePage() {
               <h3 className="heading-3 text-steel mb-6">Not a fit</h3>
               <ul className="space-y-4">
                 {[
-                  'People looking for passive income or a hands-off investment',
-                  'Anyone expecting guaranteed income from day one',
+                  'People looking for a hands-off investment',
                   'People who are not willing to prospect, network, and build relationships',
                   'Candidates who want a fully built business with no ramp-up period',
-                  'Anyone uncomfortable with a commission and project-based income model',
+                  'Anyone uncomfortable with a commission and project-based business model',
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <XIcon />
@@ -434,10 +422,10 @@ export default function OwnAFranchisePage() {
       <section className="section-padding bg-ember-fill surface-ember">
         <div className="container-wide text-center">
           <h2 className="heading-2 mb-6">
-            Your territory is not going to wait for you
+            Apply to own a Forge franchise
           </h2>
           <p className="body-large max-w-2xl mx-auto mb-4">
-            Every week we receive applications from professionals who want to build a franchise consulting business under the Forge brand. Territories are awarded on a first-qualified, first-committed basis. If you are serious about owning a business that helps other business owners grow, now is the time to apply.
+            Territories are defined in the Franchise Disclosure Document.
           </p>
           <p className="text-sm max-w-2xl mx-auto mb-10">
             The application takes less than five minutes. There is no commitment and no fee to apply. We will review your background and schedule a discovery call to answer every question you have.
