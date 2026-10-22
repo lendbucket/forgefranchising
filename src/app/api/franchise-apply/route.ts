@@ -67,22 +67,22 @@ export async function POST(request: Request) {
     const fromEmail = process.env.LEAD_FROM_EMAIL || 'Forge Franchising <leads@forgefranchising.com>'
 
     const htmlBody = `
-      <h2>New Forge Franchise Application</h2>
-      <p style="color: #F87000; font-weight: bold;">Franchise Opportunity Candidate</p>
-      <table style="border-collapse: collapse; width: 100%; max-width: 600px;">
-        <tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #ddd;">Name</td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${fullName}</td></tr>
-        <tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #ddd;">Email</td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${email}</td></tr>
-        <tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #ddd;">Phone</td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${phone}</td></tr>
-        <tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #ddd;">City</td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${city}</td></tr>
-        <tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #ddd;">State</td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${state}</td></tr>
-        <tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #ddd;">Liquid Capital</td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${liquidCapital}</td></tr>
-        <tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #ddd;">Net Worth Range</td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${netWorth || 'Not provided'}</td></tr>
-        <tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #ddd;">Current Profession</td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${currentProfession || 'Not provided'}</td></tr>
-        <tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #ddd;">Why Forge</td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${whyForge}</td></tr>
-        <tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #ddd;">Timeline</td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${timeline || 'Not provided'}</td></tr>
-        <tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #ddd;">Franchise Experience</td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${franchiseExperience || 'Not provided'}</td></tr>
-        <tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #ddd;">Sales Experience</td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${salesExperience || 'Not provided'}</td></tr>
-        <tr><td style="padding: 8px; font-weight: bold;">How They Heard About Us</td><td style="padding: 8px;">${heardAboutUs || 'Not provided'}</td></tr>
+      <table role="presentation" style="border-collapse: collapse; width: 100%; max-width: 600px;"><tr><td style="background: #1C1F23; padding: 20px 24px;"><h2 style="margin: 0; color: #FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 20px;">New Forge Franchise Application</h2></td></tr></table>
+      <p style="color: #AD4223; font-weight: bold;">Franchise Opportunity Candidate</p>
+      <table style="border-collapse: collapse; width: 100%; max-width: 600px; background: #FFFFFF; border: 1px solid #D9D5CF;">
+        <tr><td style="padding: 8px; font-weight: bold; color: #1C1F23; border-bottom: 1px solid #D9D5CF;">Name</td><td style="padding: 8px; color: #4E5A62; border-bottom: 1px solid #D9D5CF;">${fullName}</td></tr>
+        <tr><td style="padding: 8px; font-weight: bold; color: #1C1F23; border-bottom: 1px solid #D9D5CF;">Email</td><td style="padding: 8px; color: #4E5A62; border-bottom: 1px solid #D9D5CF;">${email}</td></tr>
+        <tr><td style="padding: 8px; font-weight: bold; color: #1C1F23; border-bottom: 1px solid #D9D5CF;">Phone</td><td style="padding: 8px; color: #4E5A62; border-bottom: 1px solid #D9D5CF;">${phone}</td></tr>
+        <tr><td style="padding: 8px; font-weight: bold; color: #1C1F23; border-bottom: 1px solid #D9D5CF;">City</td><td style="padding: 8px; color: #4E5A62; border-bottom: 1px solid #D9D5CF;">${city}</td></tr>
+        <tr><td style="padding: 8px; font-weight: bold; color: #1C1F23; border-bottom: 1px solid #D9D5CF;">State</td><td style="padding: 8px; color: #4E5A62; border-bottom: 1px solid #D9D5CF;">${state}</td></tr>
+        <tr><td style="padding: 8px; font-weight: bold; color: #1C1F23; border-bottom: 1px solid #D9D5CF;">Liquid Capital</td><td style="padding: 8px; color: #4E5A62; border-bottom: 1px solid #D9D5CF;">${liquidCapital}</td></tr>
+        <tr><td style="padding: 8px; font-weight: bold; color: #1C1F23; border-bottom: 1px solid #D9D5CF;">Net Worth Range</td><td style="padding: 8px; color: #4E5A62; border-bottom: 1px solid #D9D5CF;">${netWorth || 'Not provided'}</td></tr>
+        <tr><td style="padding: 8px; font-weight: bold; color: #1C1F23; border-bottom: 1px solid #D9D5CF;">Current Profession</td><td style="padding: 8px; color: #4E5A62; border-bottom: 1px solid #D9D5CF;">${currentProfession || 'Not provided'}</td></tr>
+        <tr><td style="padding: 8px; font-weight: bold; color: #1C1F23; border-bottom: 1px solid #D9D5CF;">Why Forge</td><td style="padding: 8px; color: #4E5A62; border-bottom: 1px solid #D9D5CF;">${whyForge}</td></tr>
+        <tr><td style="padding: 8px; font-weight: bold; color: #1C1F23; border-bottom: 1px solid #D9D5CF;">Timeline</td><td style="padding: 8px; color: #4E5A62; border-bottom: 1px solid #D9D5CF;">${timeline || 'Not provided'}</td></tr>
+        <tr><td style="padding: 8px; font-weight: bold; color: #1C1F23; border-bottom: 1px solid #D9D5CF;">Franchise Experience</td><td style="padding: 8px; color: #4E5A62; border-bottom: 1px solid #D9D5CF;">${franchiseExperience || 'Not provided'}</td></tr>
+        <tr><td style="padding: 8px; font-weight: bold; color: #1C1F23; border-bottom: 1px solid #D9D5CF;">Sales Experience</td><td style="padding: 8px; color: #4E5A62; border-bottom: 1px solid #D9D5CF;">${salesExperience || 'Not provided'}</td></tr>
+        <tr><td style="padding: 8px; font-weight: bold; color: #1C1F23;">How They Heard About Us</td><td style="padding: 8px; color: #4E5A62;">${heardAboutUs || 'Not provided'}</td></tr>
       </table>
     `
 

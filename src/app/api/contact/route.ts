@@ -66,20 +66,20 @@ export async function POST(request: Request) {
     const fromEmail = process.env.LEAD_FROM_EMAIL || 'Forge Franchising <leads@forgefranchising.com>'
 
     const htmlBody = `
-      <h2>New Franchise Inquiry</h2>
-      <table style="border-collapse: collapse; width: 100%; max-width: 600px;">
-        <tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #ddd;">Name</td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${fullName}</td></tr>
-        <tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #ddd;">Business</td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${businessName}</td></tr>
-        <tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #ddd;">Email</td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${email}</td></tr>
-        <tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #ddd;">Phone</td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${phone}</td></tr>
-        <tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #ddd;">Industry</td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${industry}</td></tr>
-        <tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #ddd;">Years in Business</td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${yearsInBusiness || 'Not provided'}</td></tr>
-        <tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #ddd;">Current Locations</td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${currentLocations || 'Not provided'}</td></tr>
-        <tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #ddd;">Annual Revenue Range</td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${annualRevenueRange || 'Not provided'}</td></tr>
-        <tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #ddd;">Currently Profitable</td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${currentlyProfitable || 'Not provided'}</td></tr>
-        <tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #ddd;">Reason for Franchising</td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${reasonForFranchising}</td></tr>
-        <tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #ddd;">Target Timeline</td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${targetTimeline || 'Not provided'}</td></tr>
-        <tr><td style="padding: 8px; font-weight: bold;">Biggest Question</td><td style="padding: 8px;">${biggestQuestion || 'Not provided'}</td></tr>
+      <table role="presentation" style="border-collapse: collapse; width: 100%; max-width: 600px;"><tr><td style="background: #1C1F23; padding: 20px 24px;"><h2 style="margin: 0; color: #FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 20px;">New Franchise Inquiry</h2></td></tr></table>
+      <table style="border-collapse: collapse; width: 100%; max-width: 600px; background: #FFFFFF; border: 1px solid #D9D5CF;">
+        <tr><td style="padding: 8px; font-weight: bold; color: #1C1F23; border-bottom: 1px solid #D9D5CF;">Name</td><td style="padding: 8px; color: #4E5A62; border-bottom: 1px solid #D9D5CF;">${fullName}</td></tr>
+        <tr><td style="padding: 8px; font-weight: bold; color: #1C1F23; border-bottom: 1px solid #D9D5CF;">Business</td><td style="padding: 8px; color: #4E5A62; border-bottom: 1px solid #D9D5CF;">${businessName}</td></tr>
+        <tr><td style="padding: 8px; font-weight: bold; color: #1C1F23; border-bottom: 1px solid #D9D5CF;">Email</td><td style="padding: 8px; color: #4E5A62; border-bottom: 1px solid #D9D5CF;">${email}</td></tr>
+        <tr><td style="padding: 8px; font-weight: bold; color: #1C1F23; border-bottom: 1px solid #D9D5CF;">Phone</td><td style="padding: 8px; color: #4E5A62; border-bottom: 1px solid #D9D5CF;">${phone}</td></tr>
+        <tr><td style="padding: 8px; font-weight: bold; color: #1C1F23; border-bottom: 1px solid #D9D5CF;">Industry</td><td style="padding: 8px; color: #4E5A62; border-bottom: 1px solid #D9D5CF;">${industry}</td></tr>
+        <tr><td style="padding: 8px; font-weight: bold; color: #1C1F23; border-bottom: 1px solid #D9D5CF;">Years in Business</td><td style="padding: 8px; color: #4E5A62; border-bottom: 1px solid #D9D5CF;">${yearsInBusiness || 'Not provided'}</td></tr>
+        <tr><td style="padding: 8px; font-weight: bold; color: #1C1F23; border-bottom: 1px solid #D9D5CF;">Current Locations</td><td style="padding: 8px; color: #4E5A62; border-bottom: 1px solid #D9D5CF;">${currentLocations || 'Not provided'}</td></tr>
+        <tr><td style="padding: 8px; font-weight: bold; color: #1C1F23; border-bottom: 1px solid #D9D5CF;">Annual Revenue Range</td><td style="padding: 8px; color: #4E5A62; border-bottom: 1px solid #D9D5CF;">${annualRevenueRange || 'Not provided'}</td></tr>
+        <tr><td style="padding: 8px; font-weight: bold; color: #1C1F23; border-bottom: 1px solid #D9D5CF;">Currently Profitable</td><td style="padding: 8px; color: #4E5A62; border-bottom: 1px solid #D9D5CF;">${currentlyProfitable || 'Not provided'}</td></tr>
+        <tr><td style="padding: 8px; font-weight: bold; color: #1C1F23; border-bottom: 1px solid #D9D5CF;">Reason for Franchising</td><td style="padding: 8px; color: #4E5A62; border-bottom: 1px solid #D9D5CF;">${reasonForFranchising}</td></tr>
+        <tr><td style="padding: 8px; font-weight: bold; color: #1C1F23; border-bottom: 1px solid #D9D5CF;">Target Timeline</td><td style="padding: 8px; color: #4E5A62; border-bottom: 1px solid #D9D5CF;">${targetTimeline || 'Not provided'}</td></tr>
+        <tr><td style="padding: 8px; font-weight: bold; color: #1C1F23;">Biggest Question</td><td style="padding: 8px; color: #4E5A62;">${biggestQuestion || 'Not provided'}</td></tr>
       </table>
     `
 

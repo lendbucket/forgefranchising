@@ -59,13 +59,18 @@ const DISCLAIMER =
 const SERIF = "Georgia, 'Times New Roman', Times, serif"
 const SANS = 'Helvetica, Arial, sans-serif'
 
-const CREAM = '#FAF6EF'
+// Brand palette. Contrast (WCAG AA): steel on white 7.09:1, steel on ash tint
+// 6.12:1, ember dark on white 5.87:1, graphite on the ember button fill
+// 4.83:1, ash on graphite 11.3:1. Brand ember itself is used only for rules
+// and bars, never for text.
+const ASH_TINT = '#F0EEEC'
+const ASH = '#D9D5CF'
 const WHITE = '#FFFFFF'
-const ESPRESSO = '#281010'
-const AMBER = '#F87000'
-const BODY_TEXT = '#55504C'
-const MUTED = '#8A8078'
-const HAIRLINE = '#E5DED2'
+const GRAPHITE = '#1C1F23'
+const EMBER = '#E4572E'
+const EMBER_BUTTON = '#E6613B'
+const EMBER_DARK = '#AD4223'
+const STEEL = '#4E5A62'
 
 /** Absolute, because email clients cannot resolve relative paths. */
 const FORGE_LOGO = `${SITE_URL}/forge-franchising-logo-white.png`
@@ -75,36 +80,36 @@ const FORGE_LOGO = `${SITE_URL}/forge-franchising-logo-white.png`
 /* ---------------------------------------------------------------- */
 
 /**
- * Espresso band carrying the logo image and, directly beneath it, the same
+ * Graphite band carrying the logo image and, directly beneath it, the same
  * wordmark as live text. The text is deliberate redundancy: with images
  * blocked the header still identifies the sender. Do not remove it.
  */
 function headerBand(logoWidth: number): string {
   return `
         <tr>
-          <td bgcolor="${ESPRESSO}" align="center" style="background-color:${ESPRESSO};padding:28px 24px 22px 24px;">
+          <td bgcolor="${GRAPHITE}" align="center" style="background-color:${GRAPHITE};padding:28px 24px 22px 24px;">
             <img src="${FORGE_LOGO}" alt="Forge Franchising Group" width="${logoWidth}" border="0" style="width:${logoWidth}px;height:auto;display:block;margin:0 auto;border:0;outline:none;text-decoration:none;" />
-            <div style="font-family:${SERIF};font-size:12px;font-weight:bold;color:${CREAM};letter-spacing:0.18em;padding-top:12px;">FORGE FRANCHISING GROUP</div>
+            <div style="font-family:${SERIF};font-size:12px;font-weight:bold;color:${ASH};letter-spacing:0.18em;padding-top:12px;">FORGE FRANCHISING GROUP</div>
           </td>
         </tr>
         <tr>
-          <td height="3" bgcolor="${AMBER}" style="background-color:${AMBER};font-size:0;line-height:0;height:3px;">&nbsp;</td>
+          <td height="3" bgcolor="${EMBER}" style="background-color:${EMBER};font-size:0;line-height:0;height:3px;">&nbsp;</td>
         </tr>`
 }
 
 /** Receipt style key and value table. */
 function detailsTable(rows: [string, string][]): string {
   return `
-            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${CREAM}" style="background-color:${CREAM};border:1px solid ${HAIRLINE};border-collapse:separate;">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${ASH_TINT}" style="background-color:${ASH_TINT};border:1px solid ${ASH};border-collapse:separate;">
               ${rows
                 .map(
                   ([label, value], i) => `
               <tr>
-                <td width="150" valign="top" style="padding:14px 16px;font-family:${SANS};font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:${MUTED};${
-                  i < rows.length - 1 ? `border-bottom:1px solid ${HAIRLINE};` : ''
+                <td width="150" valign="top" style="padding:14px 16px;font-family:${SANS};font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:${STEEL};${
+                  i < rows.length - 1 ? `border-bottom:1px solid ${ASH};` : ''
                 }">${escapeHtml(label)}</td>
-                <td valign="top" style="padding:14px 16px;font-family:${SANS};font-size:16px;font-weight:bold;color:${ESPRESSO};${
-                  i < rows.length - 1 ? `border-bottom:1px solid ${HAIRLINE};` : ''
+                <td valign="top" style="padding:14px 16px;font-family:${SANS};font-size:16px;font-weight:bold;color:${GRAPHITE};${
+                  i < rows.length - 1 ? `border-bottom:1px solid ${ASH};` : ''
                 }">${escapeHtml(value)}</td>
               </tr>`
                 )
@@ -120,8 +125,8 @@ function button(href: string, label: string): string {
   return `
             <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto;">
               <tr>
-                <td align="center" bgcolor="${AMBER}" style="background-color:${AMBER};padding:16px 32px;">
-                  <a href="${href}" style="font-family:${SANS};font-size:14px;font-weight:bold;color:${ESPRESSO};text-decoration:none;text-transform:uppercase;letter-spacing:0.1em;display:inline-block;">${escapeHtml(label)}</a>
+                <td align="center" bgcolor="${EMBER_BUTTON}" style="background-color:${EMBER_BUTTON};padding:16px 32px;">
+                  <a href="${href}" style="font-family:${SANS};font-size:14px;font-weight:bold;color:${GRAPHITE};text-decoration:none;text-transform:uppercase;letter-spacing:0.1em;display:inline-block;">${escapeHtml(label)}</a>
                 </td>
               </tr>
             </table>`
@@ -130,12 +135,12 @@ function button(href: string, label: string): string {
 function footerBand(): string {
   return `
         <tr>
-          <td bgcolor="${CREAM}" style="background-color:${CREAM};padding:24px 32px;border-top:1px solid ${HAIRLINE};">
-            <div style="font-family:${SANS};font-size:11px;line-height:1.6;color:${MUTED};">
+          <td bgcolor="${ASH_TINT}" style="background-color:${ASH_TINT};padding:24px 32px;border-top:1px solid ${ASH};">
+            <div style="font-family:${SANS};font-size:11px;line-height:1.6;color:${STEEL};">
               ${escapeHtml(DISCLAIMER)}
             </div>
-            <div style="font-family:${SANS};font-size:11px;line-height:1.6;color:${MUTED};padding-top:12px;">
-              <a href="${SITE_URL}" style="color:${AMBER};text-decoration:none;">forgefranchising.com</a>
+            <div style="font-family:${SANS};font-size:11px;line-height:1.6;color:${STEEL};padding-top:12px;">
+              <a href="${SITE_URL}" style="color:${EMBER_DARK};text-decoration:none;">forgefranchising.com</a>
             </div>
           </td>
         </tr>`
@@ -156,8 +161,8 @@ function shell(title: string, inner: string): string {
   }
 </style>
 </head>
-<body style="margin:0;padding:0;background-color:${CREAM};">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${CREAM}" style="background-color:${CREAM};margin:0;padding:0;">
+<body style="margin:0;padding:0;background-color:${ASH_TINT};">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${ASH_TINT}" style="background-color:${ASH_TINT};margin:0;padding:0;">
   <tr>
     <td align="center" style="padding:24px 12px;">
       <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background-color:${WHITE};">
@@ -187,13 +192,13 @@ export function clientConfirmationHtml({
 
         <tr>
           <td class="card-pad card-pad-top" style="padding:40px 40px 0 40px;">
-            <h1 style="margin:0 0 8px 0;font-family:${SERIF};font-size:28px;line-height:1.2;color:${ESPRESSO};font-weight:bold;">Engagement Confirmed</h1>
-            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="56"><tr><td height="3" bgcolor="${AMBER}" style="background-color:${AMBER};font-size:0;line-height:0;">&nbsp;</td></tr></table>
+            <h1 style="margin:0 0 8px 0;font-family:${SERIF};font-size:28px;line-height:1.2;color:${GRAPHITE};font-weight:bold;">Engagement Confirmed</h1>
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="56"><tr><td height="3" bgcolor="${EMBER}" style="background-color:${EMBER};font-size:0;line-height:0;">&nbsp;</td></tr></table>
           </td>
         </tr>
 
         <tr>
-          <td class="card-pad" style="padding:24px 40px 0 40px;font-family:${SANS};font-size:15px;line-height:1.65;color:${BODY_TEXT};">
+          <td class="card-pad" style="padding:24px 40px 0 40px;font-family:${SANS};font-size:15px;line-height:1.65;color:${STEEL};">
             Cody, thank you for selecting your engagement with Forge Franchising Group. Your selection has been recorded and our team has been notified. This message confirms what you selected and what happens next.
           </td>
         </tr>
@@ -209,8 +214,8 @@ export function clientConfirmationHtml({
 
         <tr>
           <td class="card-pad" style="padding:36px 40px 0 40px;">
-            <h2 style="margin:0 0 4px 0;font-family:${SERIF};font-size:19px;line-height:1.3;color:${ESPRESSO};font-weight:bold;">What Happens Next</h2>
-            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="40"><tr><td height="2" bgcolor="${AMBER}" style="background-color:${AMBER};font-size:0;line-height:0;">&nbsp;</td></tr></table>
+            <h2 style="margin:0 0 4px 0;font-family:${SERIF};font-size:19px;line-height:1.3;color:${GRAPHITE};font-weight:bold;">What Happens Next</h2>
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="40"><tr><td height="2" bgcolor="${EMBER}" style="background-color:${EMBER};font-size:0;line-height:0;">&nbsp;</td></tr></table>
           </td>
         </tr>
 
@@ -221,17 +226,17 @@ export function clientConfirmationHtml({
                 ([title, body], i) => `
               <tr>
                 <td width="36" valign="top" style="padding:18px 12px 18px 0;${
-                  i < NEXT_STEPS.length - 1 ? `border-bottom:1px solid ${HAIRLINE};` : ''
+                  i < NEXT_STEPS.length - 1 ? `border-bottom:1px solid ${ASH};` : ''
                 }">
                   <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="26"><tr>
-                    <td align="center" height="26" bgcolor="${AMBER}" style="background-color:${AMBER};width:26px;height:26px;border-radius:13px;font-family:${SANS};font-size:13px;font-weight:bold;color:${ESPRESSO};line-height:26px;">${i + 1}</td>
+                    <td align="center" height="26" bgcolor="${EMBER_BUTTON}" style="background-color:${EMBER_BUTTON};width:26px;height:26px;border-radius:13px;font-family:${SANS};font-size:13px;font-weight:bold;color:${GRAPHITE};line-height:26px;">${i + 1}</td>
                   </tr></table>
                 </td>
                 <td valign="top" style="padding:18px 0;${
-                  i < NEXT_STEPS.length - 1 ? `border-bottom:1px solid ${HAIRLINE};` : ''
+                  i < NEXT_STEPS.length - 1 ? `border-bottom:1px solid ${ASH};` : ''
                 }">
-                  <div style="font-family:${SANS};font-size:15px;font-weight:bold;color:${ESPRESSO};padding-bottom:4px;">${escapeHtml(title)}</div>
-                  <div style="font-family:${SANS};font-size:14px;line-height:1.6;color:${BODY_TEXT};">${escapeHtml(body)}</div>
+                  <div style="font-family:${SANS};font-size:15px;font-weight:bold;color:${GRAPHITE};padding-bottom:4px;">${escapeHtml(title)}</div>
+                  <div style="font-family:${SANS};font-size:14px;line-height:1.6;color:${STEEL};">${escapeHtml(body)}</div>
                 </td>
               </tr>`
               ).join('')}
@@ -240,8 +245,8 @@ export function clientConfirmationHtml({
         </tr>
 
         <tr>
-          <td class="card-pad" style="padding:32px 40px 0 40px;font-family:${SANS};font-size:15px;line-height:1.65;color:${BODY_TEXT};">
-            If anything needs clarifying before the agreement arrives, reply to this message or write to <a href="mailto:${CONTACT_EMAIL}" style="color:${AMBER};text-decoration:none;">${CONTACT_EMAIL}</a>.
+          <td class="card-pad" style="padding:32px 40px 0 40px;font-family:${SANS};font-size:15px;line-height:1.65;color:${STEEL};">
+            If anything needs clarifying before the agreement arrives, reply to this message or write to <a href="mailto:${CONTACT_EMAIL}" style="color:${EMBER_DARK};text-decoration:none;">${CONTACT_EMAIL}</a>.
           </td>
         </tr>
 
@@ -254,10 +259,10 @@ export function clientConfirmationHtml({
         </tr>
 
         <tr>
-          <td class="card-pad" style="padding:32px 40px 40px 40px;font-family:${SANS};font-size:15px;line-height:1.7;color:${ESPRESSO};">
+          <td class="card-pad" style="padding:32px 40px 40px 40px;font-family:${SANS};font-size:15px;line-height:1.7;color:${GRAPHITE};">
             Robert Reyna<br />
             Forge Franchising Group<br />
-            <a href="${SITE_URL}" style="color:${AMBER};text-decoration:none;">forgefranchising.com</a>
+            <a href="${SITE_URL}" style="color:${EMBER_DARK};text-decoration:none;">forgefranchising.com</a>
           </td>
         </tr>
 
@@ -336,9 +341,9 @@ export function internalNotificationHtml(n: InternalNotification): string {
 
         <tr>
           <td class="card-pad card-pad-top" style="padding:40px 40px 0 40px;">
-            <h1 style="margin:0 0 6px 0;font-family:${SERIF};font-size:24px;line-height:1.2;color:${ESPRESSO};font-weight:bold;">PROPOSAL SIGNED</h1>
-            <div style="font-family:${SANS};font-size:15px;line-height:1.5;color:${BODY_TEXT};padding-bottom:10px;">Uncaged Fitness selected ${escapeHtml(n.tier)}.</div>
-            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="56"><tr><td height="3" bgcolor="${AMBER}" style="background-color:${AMBER};font-size:0;line-height:0;">&nbsp;</td></tr></table>
+            <h1 style="margin:0 0 6px 0;font-family:${SERIF};font-size:24px;line-height:1.2;color:${GRAPHITE};font-weight:bold;">PROPOSAL SIGNED</h1>
+            <div style="font-family:${SANS};font-size:15px;line-height:1.5;color:${STEEL};padding-bottom:10px;">Uncaged Fitness selected ${escapeHtml(n.tier)}.</div>
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="56"><tr><td height="3" bgcolor="${EMBER}" style="background-color:${EMBER};font-size:0;line-height:0;">&nbsp;</td></tr></table>
           </td>
         </tr>
 
@@ -356,7 +361,7 @@ export function internalNotificationHtml(n: InternalNotification): string {
         </tr>
 
         <tr>
-          <td class="card-pad" style="padding:24px 40px 40px 40px;font-family:${SANS};font-size:13px;line-height:1.6;color:${MUTED};">
+          <td class="card-pad" style="padding:24px 40px 40px 40px;font-family:${SANS};font-size:13px;line-height:1.6;color:${STEEL};">
             Sent automatically from the confidential proposal page.
           </td>
         </tr>
