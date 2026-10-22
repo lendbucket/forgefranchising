@@ -174,7 +174,7 @@ export default function FAQPage() {
         dangerouslySetInnerHTML={{ __html: faqGraphJson }}
       />
 
-      <section className="bg-cream">
+      <section className="bg-white">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'FAQ' }]} />
           <div className="max-w-3xl">
@@ -193,7 +193,7 @@ export default function FAQPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-deep-cream">
+      <section className="section-padding bg-ash-tint">
         <div className="container-wide">
           <FAQAccordion categories={FAQ_CATEGORIES} />
         </div>

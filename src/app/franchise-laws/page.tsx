@@ -43,7 +43,7 @@ export default function FranchiseLawsPage() {
         }}
       />
       {/* Hero */}
-      <section className="bg-cream">
+      <section className="bg-white">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'Franchise Laws by State' }]} />
           <div className="max-w-3xl">
@@ -80,20 +80,20 @@ export default function FranchiseLawsPage() {
               deliver a Franchise Disclosure Document (FDD) to prospective franchisees at least 14
               days before the prospect signs any binding agreement or pays any money.
             </p>
-            <p className="text-muted-brown mb-6">
+            <p className="text-steel mb-6">
               The FDD contains 23 required disclosure items covering the franchisor's background,
               litigation history, fees, obligations, financial performance representations (if any),
               and audited financial statements. The FTC Rule applies in every state, regardless of
               whether that state has its own franchise law.
             </p>
-            <p className="text-muted-brown mb-8">
+            <p className="text-steel mb-8">
               Violations of the FTC Franchise Rule can lead to enforcement actions, civil penalties,
               and private lawsuits. The FTC does not register or review FDDs. That is purely a
               state-level function in the states that require it.
             </p>
-            <div className="card p-6 border border-amber/20 bg-amber/5">
-              <p className="text-sm text-muted-brown">
-                <span className="font-semibold text-espresso">Key point:</span> Even if your state
+            <div className="card p-6 border border-ember/20 bg-ember/5">
+              <p className="text-sm text-steel">
+                <span className="font-semibold text-graphite">Key point:</span> Even if your state
                 has no franchise filing law, you still need a fully compliant FDD under the FTC Rule
                 before you can legally offer a franchise to anyone, anywhere in the country.
               </p>
@@ -103,7 +103,7 @@ export default function FranchiseLawsPage() {
       </section>
 
       {/* Three Categories */}
-      <section className="section-padding bg-deep-cream">
+      <section className="section-padding bg-ash-tint">
         <div className="container-wide">
           <h2 className="heading-2 mb-4 text-center">Three Categories of State Franchise Regulation</h2>
           <p className="body-large text-center max-w-2xl mx-auto mb-12">
@@ -115,13 +115,13 @@ export default function FranchiseLawsPage() {
                 Registration States
               </div>
               <h3 className="heading-4 mb-3">{registrationStates.length} States</h3>
-              <p className="text-muted-brown mb-4">
+              <p className="text-steel mb-4">
                 These states require franchisors to file and register their FDD with a state agency
                 before making any franchise offer or sale. A state examiner reviews the FDD and may
                 request changes before granting registration. This process can take weeks to months
                 depending on the state.
               </p>
-              <p className="text-sm text-muted-brown">
+              <p className="text-sm text-steel">
                 Includes California, New York, Illinois, and other major markets.
               </p>
             </div>
@@ -130,13 +130,13 @@ export default function FranchiseLawsPage() {
                 Filing States
               </div>
               <h3 className="heading-4 mb-3">{filingStates.length} States</h3>
-              <p className="text-muted-brown mb-4">
+              <p className="text-steel mb-4">
                 These states require franchisors to file a notice or a copy of their FDD with a
                 state agency, but they do not conduct a substantive review before allowing sales.
                 Filing is a notice requirement, not a gatekeeping function. It is faster than
                 registration but still mandatory.
               </p>
-              <p className="text-sm text-muted-brown">
+              <p className="text-sm text-steel">
                 Includes Florida, Texas, and other key markets.
               </p>
             </div>
@@ -145,14 +145,14 @@ export default function FranchiseLawsPage() {
                 No Filing Required
               </div>
               <h3 className="heading-4 mb-3">{noFilingStates.length} States + D.C.</h3>
-              <p className="text-muted-brown mb-4">
+              <p className="text-steel mb-4">
                 These states have no state-level franchise registration or filing requirement.
                 Franchisors selling in these states must still comply with the federal FTC Franchise
                 Rule, but there is no additional state filing needed. Some of these states do have
                 franchise relationship laws that govern the ongoing franchisor-franchisee
                 relationship.
               </p>
-              <p className="text-sm text-muted-brown">
+              <p className="text-sm text-steel">
                 Includes Georgia, Ohio, Pennsylvania, and many others.
               </p>
             </div>
@@ -173,15 +173,15 @@ export default function FranchiseLawsPage() {
           <div className="flex flex-wrap justify-center gap-4 mb-10">
             <div className="flex items-center gap-2">
               <span className="w-3 h-3 rounded-full bg-red-400" />
-              <span className="text-sm text-muted-brown">Registration Required</span>
+              <span className="text-sm text-steel">Registration Required</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="w-3 h-3 rounded-full bg-amber-400" />
-              <span className="text-sm text-muted-brown">Filing Required</span>
+              <span className="text-sm text-steel">Filing Required</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="w-3 h-3 rounded-full bg-green-400" />
-              <span className="text-sm text-muted-brown">No Filing Required</span>
+              <span className="text-sm text-steel">No Filing Required</span>
             </div>
           </div>
 
@@ -202,7 +202,7 @@ export default function FranchiseLawsPage() {
                   className="card p-4 flex items-center gap-3 hover:shadow-md transition-shadow group"
                 >
                   <span className={`w-2.5 h-2.5 rounded-full flex-shrink-0 ${dotColor}`} />
-                  <span className="text-espresso group-hover:text-amber transition-colors font-medium text-sm">
+                  <span className="text-graphite group-hover:text-accent transition-colors font-medium text-sm">
                     {state.name}
                   </span>
                 </Link>
@@ -213,7 +213,7 @@ export default function FranchiseLawsPage() {
       </section>
 
       {/* Registration States Detail */}
-      <section className="section-padding bg-deep-cream">
+      <section className="section-padding bg-ash-tint">
         <div className="container-wide">
           <h2 className="heading-2 mb-8">Registration States</h2>
           <p className="body-large mb-8 max-w-3xl">
@@ -231,14 +231,14 @@ export default function FranchiseLawsPage() {
                   className="card p-6 hover:shadow-md transition-shadow group"
                 >
                   <div className="flex items-start justify-between mb-2">
-                    <h3 className="heading-4 group-hover:text-amber transition-colors">
+                    <h3 className="heading-4 group-hover:text-accent transition-colors">
                       {state.name}
                     </h3>
                     <span className="px-2 py-0.5 rounded-full text-xs font-semibold bg-red-100 text-red-800 border border-red-200">
                       Registration
                     </span>
                   </div>
-                  <p className="text-sm text-muted-brown line-clamp-3">{state.overview}</p>
+                  <p className="text-sm text-steel line-clamp-3">{state.overview}</p>
                 </Link>
               ))}
           </div>
@@ -264,14 +264,14 @@ export default function FranchiseLawsPage() {
                   className="card p-6 hover:shadow-md transition-shadow group"
                 >
                   <div className="flex items-start justify-between mb-2">
-                    <h3 className="heading-4 group-hover:text-amber transition-colors">
+                    <h3 className="heading-4 group-hover:text-accent transition-colors">
                       {state.name}
                     </h3>
                     <span className="px-2 py-0.5 rounded-full text-xs font-semibold bg-amber-100 text-amber-800 border border-amber-200">
                       Filing
                     </span>
                   </div>
-                  <p className="text-sm text-muted-brown line-clamp-3">{state.overview}</p>
+                  <p className="text-sm text-steel line-clamp-3">{state.overview}</p>
                 </Link>
               ))}
           </div>
@@ -279,11 +279,11 @@ export default function FranchiseLawsPage() {
       </section>
 
       {/* Why This Matters */}
-      <section className="section-padding bg-deep-cream">
+      <section className="section-padding bg-ash-tint">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto">
             <h2 className="heading-2 mb-6">Why Franchise State Laws Matter</h2>
-            <div className="space-y-6 text-muted-brown">
+            <div className="space-y-6 text-steel">
               <p>
                 Many first-time franchisors assume that once they have an FDD, they can sell
                 franchises anywhere. That is incorrect. Selling a franchise in a registration state
@@ -332,7 +332,7 @@ export default function FranchiseLawsPage() {
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                   </svg>
-                  <span className="text-muted-brown">{item}</span>
+                  <span className="text-steel">{item}</span>
                 </li>
               ))}
             </ul>
@@ -351,34 +351,34 @@ export default function FranchiseLawsPage() {
             </p>
             <div className="grid sm:grid-cols-2 gap-4">
               <Link href="/services" className="card p-6 hover:shadow-md transition-shadow group text-left">
-                <h3 className="heading-4 mb-2 group-hover:text-amber transition-colors">
+                <h3 className="heading-4 mb-2 group-hover:text-accent transition-colors">
                   Our Services
                 </h3>
-                <p className="text-sm text-muted-brown">
+                <p className="text-sm text-steel">
                   Full-service franchise development including FDD preparation and state registration management.
                 </p>
               </Link>
               <Link href="/how-it-works" className="card p-6 hover:shadow-md transition-shadow group text-left">
-                <h3 className="heading-4 mb-2 group-hover:text-amber transition-colors">
+                <h3 className="heading-4 mb-2 group-hover:text-accent transition-colors">
                   How It Works
                 </h3>
-                <p className="text-sm text-muted-brown">
+                <p className="text-sm text-steel">
                   Our four-phase franchise development process from feasibility through launch.
                 </p>
               </Link>
               <Link href="/glossary" className="card p-6 hover:shadow-md transition-shadow group text-left">
-                <h3 className="heading-4 mb-2 group-hover:text-amber transition-colors">
+                <h3 className="heading-4 mb-2 group-hover:text-accent transition-colors">
                   Franchise Glossary
                 </h3>
-                <p className="text-sm text-muted-brown">
+                <p className="text-sm text-steel">
                   Definitions of key franchise terms including FDD, Item 19, franchise agreement, and more.
                 </p>
               </Link>
               <Link href="/contact" className="card p-6 hover:shadow-md transition-shadow group text-left">
-                <h3 className="heading-4 mb-2 group-hover:text-amber transition-colors">
+                <h3 className="heading-4 mb-2 group-hover:text-accent transition-colors">
                   Contact Us
                 </h3>
-                <p className="text-sm text-muted-brown">
+                <p className="text-sm text-steel">
                   Have questions about franchise compliance? Schedule a call with our team.
                 </p>
               </Link>
@@ -388,9 +388,9 @@ export default function FranchiseLawsPage() {
       </section>
 
       {/* Disclaimer */}
-      <section className="bg-cream border-t border-espresso/10">
+      <section className="bg-white border-t border-graphite/10">
         <div className="container-wide py-8">
-          <p className="text-xs text-muted-brown/70 max-w-3xl mx-auto text-center">
+          <p className="text-xs text-steel max-w-3xl mx-auto text-center">
             This content is general education and does not constitute legal advice. Franchise laws
             change. Consult a franchise attorney and verify current requirements with the relevant
             state agency.

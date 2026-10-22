@@ -74,7 +74,7 @@ const faqs = [
 
 function CheckIcon() {
   return (
-    <svg className="w-5 h-5 text-amber flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+    <svg className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
     </svg>
   )
@@ -111,7 +111,7 @@ export default function FranchiseVsLicensePage() {
       />
 
       {/* Hero */}
-      <section className="bg-cream">
+      <section className="bg-white">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'Resources', href: '/learn' }, { label: 'Franchise vs License' }]} />
           <div className="max-w-3xl">
@@ -147,27 +147,27 @@ export default function FranchiseVsLicensePage() {
       </section>
 
       {/* The Core Difference */}
-      <section className="section-padding bg-deep-cream">
+      <section className="section-padding bg-ash-tint">
         <div className="container-wide">
           <div className="max-w-4xl">
             <h2 className="heading-2 mb-6">The Core Difference, Explained Plainly</h2>
-            <p className="text-muted-brown leading-relaxed mb-6">
-              A <strong className="text-espresso">franchise</strong> grants your brand, your complete
+            <p className="text-steel leading-relaxed mb-6">
+              A <strong className="text-graphite">franchise</strong> grants your brand, your complete
               operating system, and ongoing support and oversight. The franchisee operates locations that
               look, feel, and perform like yours. Customers see one brand. You maintain standards across
               every unit, and you earn recurring royalties for as long as the franchisee operates.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
-              A <strong className="text-espresso">license</strong> grants your system, your methods,
+            <p className="text-steel leading-relaxed mb-6">
+              A <strong className="text-graphite">license</strong> grants your system, your methods,
               your technology, or your intellectual property. The licensee uses what you have built, but
               they operate under their own brand and make their own decisions about how to run the day to
               day business. You earn license fees, but you have less control over the partner's operations
               and customer experience.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-8">
+            <p className="text-steel leading-relaxed mb-8">
               Here is the part most people miss: whether something is legally a franchise is not determined
               by what you call it in the contract. It is determined by the{' '}
-              <strong className="text-espresso">FTC Franchise Rule</strong>, which defines a franchise based
+              <strong className="text-graphite">FTC Franchise Rule</strong>, which defines a franchise based
               on three elements: a trademark license, significant operational control or assistance, and a
               required payment. If your arrangement meets all three elements, it is a franchise under federal
               law, even if the agreement says "license" at the top. Forge works with qualified franchise
@@ -179,7 +179,7 @@ export default function FranchiseVsLicensePage() {
       </section>
 
       {/* Side by Side Comparison */}
-      <section className="section-padding bg-cream">
+      <section className="section-padding bg-white">
         <div className="container-wide">
           <div className="max-w-5xl">
             <h2 className="heading-2 text-center mb-4">Side by Side Comparison</h2>
@@ -190,18 +190,18 @@ export default function FranchiseVsLicensePage() {
             <div className="overflow-scroll-x">
               <table className="w-full min-w-[700px]">
                 <thead>
-                  <tr className="border-b-2 border-espresso/10">
-                    <th className="text-left py-4 pr-4 text-sm font-semibold text-espresso w-1/5"></th>
-                    <th className="text-left py-4 px-4 text-sm font-semibold text-amber w-2/5">Franchise</th>
-                    <th className="text-left py-4 px-4 text-sm font-semibold text-espresso w-2/5">License</th>
+                  <tr className="border-b-2 border-graphite/10">
+                    <th className="text-left py-4 pr-4 text-sm font-semibold text-graphite w-1/5"></th>
+                    <th className="text-left py-4 px-4 text-sm font-semibold text-accent w-2/5">Franchise</th>
+                    <th className="text-left py-4 px-4 text-sm font-semibold text-graphite w-2/5">License</th>
                   </tr>
                 </thead>
                 <tbody>
                   {comparisonRows.map((row, i) => (
-                    <tr key={i} className="border-b border-espresso/5">
-                      <td className="py-4 pr-4 text-sm font-semibold text-espresso align-top">{row.label}</td>
-                      <td className="py-4 px-4 text-sm text-muted-brown leading-relaxed align-top bg-amber/5">{row.franchise}</td>
-                      <td className="py-4 px-4 text-sm text-muted-brown leading-relaxed align-top">{row.license}</td>
+                    <tr key={i} className="border-b border-graphite/5">
+                      <td className="py-4 pr-4 text-sm font-semibold text-graphite align-top">{row.label}</td>
+                      <td className="py-4 px-4 text-sm text-steel leading-relaxed align-top bg-ember/5">{row.franchise}</td>
+                      <td className="py-4 px-4 text-sm text-steel leading-relaxed align-top">{row.license}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -212,7 +212,7 @@ export default function FranchiseVsLicensePage() {
       </section>
 
       {/* What You Deliver in Each Path */}
-      <section className="section-padding bg-deep-cream">
+      <section className="section-padding bg-ash-tint">
         <div className="container-wide">
           <div className="max-w-4xl">
             <h2 className="heading-2 text-center mb-4">What Your Partner Receives in Each Path</h2>
@@ -221,8 +221,8 @@ export default function FranchiseVsLicensePage() {
             </p>
             <div className="grid lg:grid-cols-2 gap-8">
               <div className="card">
-                <h3 className="heading-3 mb-2 text-amber">Franchise Path</h3>
-                <p className="text-muted-brown text-sm mb-6">The partner operates under your brand with full system access and support.</p>
+                <h3 className="heading-3 mb-2 text-accent">Franchise Path</h3>
+                <p className="text-steel text-sm mb-6">The partner operates under your brand with full system access and support.</p>
                 <ul className="space-y-3">
                   {[
                     'Brand and trademark license with protected territory',
@@ -235,14 +235,14 @@ export default function FranchiseVsLicensePage() {
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <CheckIcon />
-                      <span className="text-muted-brown text-sm leading-relaxed">{item}</span>
+                      <span className="text-steel text-sm leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
               <div className="card">
                 <h3 className="heading-3 mb-2">License Path</h3>
-                <p className="text-muted-brown text-sm mb-6">The partner operates under their own brand with your system and methods.</p>
+                <p className="text-steel text-sm mb-6">The partner operates under their own brand with your system and methods.</p>
                 <ul className="space-y-3">
                   {[
                     'System and methods documentation',
@@ -254,7 +254,7 @@ export default function FranchiseVsLicensePage() {
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <CheckIcon />
-                      <span className="text-muted-brown text-sm leading-relaxed">{item}</span>
+                      <span className="text-steel text-sm leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -265,20 +265,20 @@ export default function FranchiseVsLicensePage() {
       </section>
 
       {/* Two CTAs for Self Selection */}
-      <section className="section-padding bg-espresso text-cream">
+      <section className="section-padding bg-graphite text-white">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="heading-2 text-cream mb-6">Which Path Fits Your Business?</h2>
-            <p className="text-lg text-cream/60 leading-relaxed">
+            <h2 className="heading-2 text-white mb-6">Which Path Fits Your Business?</h2>
+            <p className="text-lg text-white/60 leading-relaxed">
               The deciding factor is usually control. If the customer experience has to be yours,
               you are franchising. If the partner can run it their way under their own name, a
               license is cheaper, faster, and less regulated.
             </p>
           </div>
           <div className="grid lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="card bg-cream/5 border border-cream/10 text-center p-8">
-              <h3 className="heading-3 text-cream mb-4">I Want to Franchise My Business</h3>
-              <p className="text-cream/60 text-sm leading-relaxed mb-6">
+            <div className="card bg-white/5 border border-white/10 text-center p-8">
+              <h3 className="heading-3 text-white mb-4">I Want to Franchise My Business</h3>
+              <p className="text-white/60 text-sm leading-relaxed mb-6">
                 Build a branded network of partners operating under your name, your system, and your
                 standards. Full control, full support, recurring royalty revenue.
               </p>
@@ -286,9 +286,9 @@ export default function FranchiseVsLicensePage() {
                 See the Franchise Development Process
               </Link>
             </div>
-            <div className="card bg-cream/5 border border-cream/10 text-center p-8">
-              <h3 className="heading-3 text-cream mb-4">I Want to License or White Label</h3>
-              <p className="text-cream/60 text-sm leading-relaxed mb-6">
+            <div className="card bg-white/5 border border-white/10 text-center p-8">
+              <h3 className="heading-3 text-white mb-4">I Want to License or White Label</h3>
+              <p className="text-white/60 text-sm leading-relaxed mb-6">
                 Distribute your system and methods to partners who run their own brand. Lower regulatory
                 overhead, less control, and a different buyer profile.
               </p>
@@ -301,7 +301,7 @@ export default function FranchiseVsLicensePage() {
       </section>
 
       {/* Forge Helps You Choose */}
-      <section className="section-padding bg-cream">
+      <section className="section-padding bg-white">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="heading-2 mb-6">Not Sure Yet? That Is Normal.</h2>
@@ -316,7 +316,7 @@ export default function FranchiseVsLicensePage() {
               Sometimes it is both. We will give you an honest recommendation based on where your
               business is today and where you want it to go. If funding is part of the equation,
               see our{' '}
-              <Link href="/financing" className="text-amber font-semibold hover:underline">
+              <Link href="/financing" className="text-accent font-semibold hover:underline">
                 guide to financing franchise development
               </Link>.
             </p>
@@ -328,7 +328,7 @@ export default function FranchiseVsLicensePage() {
       </section>
 
       {/* FAQ */}
-      <section className="section-padding bg-deep-cream">
+      <section className="section-padding bg-ash-tint">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto">
             <p className="eyebrow mb-4">Frequently Asked Questions</p>
@@ -337,7 +337,7 @@ export default function FranchiseVsLicensePage() {
               {faqs.map((faq, i) => (
                 <div key={i} className="card">
                   <h3 className="heading-4 mb-3">{faq.q}</h3>
-                  <p className="text-muted-brown leading-relaxed">{faq.a}</p>
+                  <p className="text-steel leading-relaxed">{faq.a}</p>
                 </div>
               ))}
             </div>
@@ -346,20 +346,20 @@ export default function FranchiseVsLicensePage() {
       </section>
 
       {/* Disclaimer */}
-      <section className="bg-cream border-t border-espresso/10">
+      <section className="bg-white border-t border-graphite/10">
         <div className="container-wide py-10">
           <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-widest text-muted-brown/60 mb-3">Important Notice</p>
-            <p className="text-muted-brown/70 text-sm leading-relaxed mb-4">
+            <p className="text-xs font-semibold uppercase tracking-widest text-steel mb-3">Important Notice</p>
+            <p className="text-steel text-sm leading-relaxed mb-4">
               Nothing on this page is legal advice. The determination of whether an offering is a franchise
               is governed by the FTC Franchise Rule and applicable state law. Forge Franchising works with
               qualified franchise counsel to structure each engagement correctly.
             </p>
-            <p className="text-muted-brown/70 text-sm leading-relaxed mb-4">
+            <p className="text-steel text-sm leading-relaxed mb-4">
               No statement on this page is a guarantee of income, profit, approval, or results. Franchise
               offerings are made only through a Franchise Disclosure Document where applicable.
             </p>
-            <p className="text-muted-brown/70 text-sm leading-relaxed">
+            <p className="text-steel text-sm leading-relaxed">
               Consult a qualified franchise attorney before making decisions about franchising or licensing
               your business.
             </p>

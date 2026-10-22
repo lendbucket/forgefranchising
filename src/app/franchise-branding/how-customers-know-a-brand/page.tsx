@@ -37,7 +37,7 @@ export default function HowCustomersKnowABrandPage() {
         }}
       />
 
-      <section className="bg-cream">
+      <section className="bg-white">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[
             { label: 'Franchise Branding', href: '/franchise-branding' },
@@ -75,7 +75,7 @@ export default function HowCustomersKnowABrandPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-deep-cream">
+      <section className="section-padding bg-ash-tint">
         <div className="container-wide">
           <div className="max-w-3xl">
             <Image
@@ -88,22 +88,22 @@ export default function HowCustomersKnowABrandPage() {
             />
 
             <h2 className="heading-2 mb-6">The Name: Your First and Fastest Signal</h2>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               The brand name is the first thing a customer encounters and the last thing
               they forget. In franchising, the name carries an outsized burden because it
               must work across geographies, demographics, and contexts. It needs to be
               memorable, pronounceable, and legally protectable.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               Consider how quickly you process these names: McDonald's. Orangetheory. The
               UPS Store. Great Clips. Each one triggers an instant mental image of the
               business, the experience, and the approximate price point. That is not
               marketing. That is brand recognition built through years of consistent
               execution across thousands of units.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               For an emerging franchisor, the name is a strategic asset that must be{' '}
-              <Link href="/franchise-branding/protecting-your-brand" className="text-amber font-semibold link-underline">
+              <Link href="/franchise-branding/protecting-your-brand" className="text-accent font-semibold link-underline">
                 legally protected through trademark registration
               </Link>{' '}
               before the first franchise unit opens. A name that cannot be registered is
@@ -111,26 +111,26 @@ export default function HowCustomersKnowABrandPage() {
             </p>
 
             <h2 className="heading-2 mb-6 mt-12">The Mark: Visual Identity That Scales</h2>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               Your logo, wordmark, and visual identity system are the visual shorthand for
               everything your brand represents. Research from the Journal of Consumer
               Research has shown that consumers form opinions about visual brand elements
               in under 400 milliseconds. That speed means your mark needs to communicate
               instantly and unmistakably.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               In franchising, the mark must work at every scale and in every context: on
               a 200 square foot storefront sign, on a one inch app icon, on an invoice, on
               a uniform, and on a vehicle wrap. Many owner operated businesses have logos
               that look fine on a business card but fall apart at building scale. Part of{' '}
-              <Link href="/franchise-branding/building-a-franchise-brand" className="text-amber font-semibold link-underline">
+              <Link href="/franchise-branding/building-a-franchise-brand" className="text-accent font-semibold link-underline">
                 building a franchise brand
               </Link>{' '}
               is ensuring the visual identity system works across every application.
             </p>
 
             <h2 className="heading-2 mb-6 mt-12">Color: The Subconscious Identifier</h2>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               Color drives brand recognition at a level below conscious thought. The
               University of Loyola Maryland published research indicating that color
               increases brand recognition by up to 80 percent. That is why franchise
@@ -139,7 +139,7 @@ export default function HowCustomersKnowABrandPage() {
               of a Home Depot apron. These are not aesthetic choices. They are brand
               architecture.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               For your franchise system, color specifications should be documented with
               exact values: Pantone for print, hex codes for digital, CMYK for packaging.
               Your brand book should specify acceptable color usage, minimum contrast
@@ -149,21 +149,21 @@ export default function HowCustomersKnowABrandPage() {
             </p>
 
             <h2 className="heading-2 mb-6 mt-12">Voice: How the Brand Speaks</h2>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               Brand voice is the personality that comes through in every piece of
               communication: website copy, social media posts, in store signage, customer
               service scripts, and email campaigns. It is arguably the hardest element
               of brand identity to scale because it requires every person representing
               the brand to internalize a communication style.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               Wendy's Twitter account became a case study in brand voice because the
               personality was so distinct and so consistently executed that it became a
               competitive advantage. That consistency did not happen by accident. It
               happened because the brand defined its voice in explicit terms and trained
               every person who touched external communication.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               Your franchise brand voice should be defined in your brand book with
               specific attributes (for example: direct, knowledgeable, approachable,
               never condescending), example copy for common scenarios, and words or
@@ -172,41 +172,41 @@ export default function HowCustomersKnowABrandPage() {
             </p>
 
             <h2 className="heading-2 mb-6 mt-12">The Identical Experience Principle</h2>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               Every element discussed above is important individually. But the real power
               of franchise brand recognition is what happens when they all work together
               consistently across every unit. This is the identical experience principle:
               a customer in a second city must get an experience that matches the brand
               promise they formed from the first.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               This principle is why franchising works. It is the reason a traveler chooses
               Hampton Inn over an unknown local hotel. It is the reason a parent in a new
               city takes their kids to a Kumon center they have never visited. The brand
               promise says: "You already know what you will get here." That certainty
               is the product.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               Maintaining identical experiences across independently owned and operated
               units requires{' '}
-              <Link href="/franchise-branding/brand-standards-enforcement" className="text-amber font-semibold link-underline">
+              <Link href="/franchise-branding/brand-standards-enforcement" className="text-accent font-semibold link-underline">
                 rigorous brand standards enforcement
               </Link>. The brand book defines the standard. The operations manual operationalizes it. The franchise agreement makes it contractually binding. And the field support team verifies compliance. Each layer reinforces the others.
             </p>
 
             <h2 className="heading-2 mb-6 mt-12">When Consistency Breaks Down</h2>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               The damage from inconsistent brand execution is not always obvious immediately.
               It shows up in small, compounding ways: a customer in one city has a great
               experience and recommends the brand to a friend in another city. The friend
               visits a different unit and gets a noticeably different experience. The
               recommendation stops. The brand compound effect reverses.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               Online review platforms accelerate this effect dramatically. A single
               franchisee with poor brand execution can generate negative reviews that appear
               in search results for the entire brand. That is why{' '}
-              <Link href="/franchise-branding/why-brand-matters" className="text-amber font-semibold link-underline">
+              <Link href="/franchise-branding/why-brand-matters" className="text-accent font-semibold link-underline">
                 brand matters
               </Link>{' '}
               so much in franchising. You are not just managing your own reputation. You

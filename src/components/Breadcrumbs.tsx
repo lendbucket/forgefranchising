@@ -27,16 +27,16 @@ export function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
         }}
       />
       <nav aria-label="Breadcrumb" className="py-4">
-        <ol className="flex items-center gap-2 text-sm text-muted-brown">
+        <ol className="flex items-center gap-2 text-sm text-steel">
           {allItems.map((item, index) => (
             <li key={index} className="flex items-center gap-2">
-              {index > 0 && <span className="text-muted-brown/40">/</span>}
+              {index > 0 && <span className="text-steel">/</span>}
               {item.href && index < allItems.length - 1 ? (
-                <Link href={item.href} className="hover:text-espresso transition-colors">
+                <Link href={item.href} className="hover:text-graphite transition-colors">
                   {item.label}
                 </Link>
               ) : (
-                <span className="text-espresso font-medium">{item.label}</span>
+                <span className="text-graphite font-medium">{item.label}</span>
               )}
             </li>
           ))}

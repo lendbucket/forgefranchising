@@ -112,7 +112,7 @@ export default function HowItWorksPage() {
         }}
       />
 
-      <section className="bg-cream">
+      <section className="bg-white">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'How It Works' }]} />
           <div className="max-w-3xl">
@@ -136,7 +136,7 @@ export default function HowItWorksPage() {
             <p className="body-large mb-8">
               Here is the whole sequence, with what each phase produces and how long it takes.
               Start with our{' '}
-              <Link href="/readiness-method" className="text-amber font-semibold hover:underline">
+              <Link href="/readiness-method" className="text-accent font-semibold hover:underline">
                 franchise readiness assessment
               </Link>{' '}
               to see where you stand today.
@@ -160,15 +160,15 @@ export default function HowItWorksPage() {
         <section
           key={phase.number}
           id={`phase-${phase.number}`}
-          className={index % 2 === 0 ? 'section-padding bg-deep-cream' : 'section-padding bg-cream'}
+          className={index % 2 === 0 ? 'section-padding bg-ash-tint' : 'section-padding bg-white'}
         >
           <div className="container-wide">
             <div className="grid lg:grid-cols-12 gap-12">
               <div className="lg:col-span-4">
                 <div className="sticky top-28">
-                  <div className="text-amber font-display text-6xl font-bold mb-4">{phase.number}</div>
+                  <div className="text-accent font-display text-6xl font-bold mb-4">{phase.number}</div>
                   <h2 className="heading-2 mb-3">{phase.title}</h2>
-                  <p className="text-muted-brown text-sm mb-4">Timeline: {phase.duration}</p>
+                  <p className="text-steel text-sm mb-4">Timeline: {phase.duration}</p>
                   <p className="body-large">{phase.summary}</p>
                 </div>
               </div>
@@ -178,16 +178,16 @@ export default function HowItWorksPage() {
                   <ul className="space-y-4">
                     {phase.details.map((detail, i) => (
                       <li key={i} className="flex items-start gap-3">
-                        <svg className="w-5 h-5 text-amber flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
-                        <span className="text-muted-brown leading-relaxed">{detail}</span>
+                        <span className="text-steel leading-relaxed">{detail}</span>
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-8 p-6 bg-deep-cream" style={{ borderRadius: '4px' }}>
-                    <p className="font-semibold text-espresso mb-1">Phase Outcome:</p>
-                    <p className="text-muted-brown">{phase.outcome}</p>
+                  <div className="mt-8 p-6 bg-ash-tint" style={{ borderRadius: '4px' }}>
+                    <p className="font-semibold text-graphite mb-1">Phase Outcome:</p>
+                    <p className="text-steel">{phase.outcome}</p>
                   </div>
                 </div>
               </div>
@@ -196,10 +196,10 @@ export default function HowItWorksPage() {
         </section>
       ))}
 
-      <section className="section-padding bg-espresso text-cream">
+      <section className="section-padding bg-graphite text-white">
         <div className="container-wide text-center">
-          <h2 className="heading-2 text-cream mb-6">Why This Process Works</h2>
-          <p className="text-xl text-cream/60 max-w-3xl mx-auto leading-relaxed mb-12">
+          <h2 className="heading-2 text-white mb-6">Why This Process Works</h2>
+          <p className="text-xl text-white/60 max-w-3xl mx-auto leading-relaxed mb-12">
             Every step here exists because skipping it has a predictable failure mode. Thin unit
             economics surface at unit five, not unit one. An undocumented operation shows up as a
             franchisee who cannot be trained. The order of the phases is the point.
@@ -211,8 +211,8 @@ export default function HowItWorksPage() {
               { stat: '4', label: 'Phases that separate franchise brands from franchise failures' },
             ].map((item) => (
               <div key={item.stat}>
-                <div className="text-4xl font-display font-bold text-amber mb-2">{item.stat}</div>
-                <p className="text-cream/50 text-sm">{item.label}</p>
+                <div className="text-4xl font-display font-bold text-accent mb-2">{item.stat}</div>
+                <p className="text-white/60 text-sm">{item.label}</p>
               </div>
             ))}
           </div>

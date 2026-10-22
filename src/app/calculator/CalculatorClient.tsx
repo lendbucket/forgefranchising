@@ -143,13 +143,13 @@ export function CalculatorClient() {
   }
 
   const inputClasses =
-    'w-full px-4 py-3 border border-deep-cream bg-white text-espresso placeholder-muted-brown/50 focus:outline-none focus:ring-2 focus:ring-amber/50 focus:border-amber transition-colors min-h-[48px]'
-  const labelClasses = 'block text-sm font-semibold text-espresso mb-2'
+    'w-full px-4 py-3 border border-ash-tint bg-white text-graphite placeholder-steel focus:outline-none focus:ring-2 focus:ring-ember/50 focus:border-ember transition-colors min-h-[48px]'
+  const labelClasses = 'block text-sm font-semibold text-graphite mb-2'
 
   return (
     <>
       {/* Hero */}
-      <section className="bg-cream">
+      <section className="bg-white">
         <div className="container-wide section-padding">
           <div className="max-w-3xl">
             <p className="eyebrow mb-4">
@@ -168,7 +168,7 @@ export function CalculatorClient() {
       </section>
 
       {/* Calculator */}
-      <section className="section-padding bg-deep-cream">
+      <section className="section-padding bg-ash-tint">
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Input Form */}
@@ -261,7 +261,7 @@ export function CalculatorClient() {
                     onChange={(e) => setStartupCost(e.target.value)}
                     className={inputClasses}
                   />
-                  <p className="text-xs text-muted-brown/60 mt-1">
+                  <p className="text-xs text-steel mt-1">
                     Optional. Used for context only.
                   </p>
                 </div>
@@ -277,8 +277,8 @@ export function CalculatorClient() {
               {!results ? (
                 <div className="card h-full flex items-center justify-center min-h-[400px]">
                   <div className="text-center">
-                    <div className="text-6xl font-display font-bold text-deep-cream mb-4">?</div>
-                    <p className="text-muted-brown">
+                    <div className="text-6xl font-display font-bold text-ash-tint mb-4">?</div>
+                    <p className="text-steel">
                       Fill in your business details and click calculate to see your illustrative estimates.
                     </p>
                   </div>
@@ -286,52 +286,52 @@ export function CalculatorClient() {
               ) : (
                 <div className="space-y-6">
                   <div className="card">
-                    <p className="text-xs font-semibold text-amber uppercase tracking-widest mb-4">
+                    <p className="text-xs font-semibold text-accent uppercase tracking-widest mb-4">
                       Illustrative Royalty Income Estimates
                     </p>
-                    <p className="text-sm text-muted-brown mb-6">
+                    <p className="text-sm text-steel mb-6">
                       Based on a {(ROYALTY_RATE * 100).toFixed(0)}% royalty rate applied to your reported
                       per-unit revenue of {formatCurrency(parseFloat(revenue))}. These figures are
                       illustrative projections, not guarantees of future income.
                     </p>
 
                     <div className="space-y-4">
-                      <div className="flex items-center justify-between p-4 bg-deep-cream">
+                      <div className="flex items-center justify-between p-4 bg-ash-tint">
                         <div>
-                          <div className="text-sm font-semibold text-espresso">Per Unit Royalty</div>
-                          <div className="text-xs text-muted-brown">Annual, illustrative</div>
+                          <div className="text-sm font-semibold text-graphite">Per Unit Royalty</div>
+                          <div className="text-xs text-steel">Annual, illustrative</div>
                         </div>
-                        <div className="text-2xl font-display font-bold text-espresso">
+                        <div className="text-2xl font-display font-bold text-graphite">
                           {formatCurrency(results.perUnitRoyalty)}
                         </div>
                       </div>
 
-                      <div className="flex items-center justify-between p-4 bg-deep-cream">
+                      <div className="flex items-center justify-between p-4 bg-ash-tint">
                         <div>
-                          <div className="text-sm font-semibold text-espresso">At 10 Franchise Units</div>
-                          <div className="text-xs text-muted-brown">Annual royalty income estimate</div>
+                          <div className="text-sm font-semibold text-graphite">At 10 Franchise Units</div>
+                          <div className="text-xs text-steel">Annual royalty income estimate</div>
                         </div>
-                        <div className="text-2xl font-display font-bold text-amber">
+                        <div className="text-2xl font-display font-bold text-accent">
                           {formatCurrency(results.at10)}
                         </div>
                       </div>
 
-                      <div className="flex items-center justify-between p-4 bg-deep-cream">
+                      <div className="flex items-center justify-between p-4 bg-ash-tint">
                         <div>
-                          <div className="text-sm font-semibold text-espresso">At 25 Franchise Units</div>
-                          <div className="text-xs text-muted-brown">Annual royalty income estimate</div>
+                          <div className="text-sm font-semibold text-graphite">At 25 Franchise Units</div>
+                          <div className="text-xs text-steel">Annual royalty income estimate</div>
                         </div>
-                        <div className="text-2xl font-display font-bold text-amber">
+                        <div className="text-2xl font-display font-bold text-accent">
                           {formatCurrency(results.at25)}
                         </div>
                       </div>
 
-                      <div className="flex items-center justify-between p-4 bg-espresso">
+                      <div className="flex items-center justify-between p-4 bg-graphite">
                         <div>
-                          <div className="text-sm font-semibold text-cream">At 50 Franchise Units</div>
-                          <div className="text-xs text-cream/60">Annual royalty income estimate</div>
+                          <div className="text-sm font-semibold text-white">At 50 Franchise Units</div>
+                          <div className="text-xs text-white/60">Annual royalty income estimate</div>
                         </div>
-                        <div className="text-2xl font-display font-bold text-amber">
+                        <div className="text-2xl font-display font-bold text-accent">
                           {formatCurrency(results.at50)}
                         </div>
                       </div>
@@ -340,7 +340,7 @@ export function CalculatorClient() {
 
                   {/* Readiness Score */}
                   <div className="card">
-                    <p className="text-xs font-semibold text-amber uppercase tracking-widest mb-4">
+                    <p className="text-xs font-semibold text-accent uppercase tracking-widest mb-4">
                       Franchise Readiness Score
                     </p>
                     <div className="flex items-center gap-6 mb-4">
@@ -349,27 +349,27 @@ export function CalculatorClient() {
                           <path
                             d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
                             fill="none"
-                            stroke="#E8E0D4"
+                            stroke="#D9D5CF"
                             strokeWidth="3"
                           />
                           <path
                             d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
                             fill="none"
-                            stroke="#F87000"
+                            stroke="#E4572E"
                             strokeWidth="3"
                             strokeDasharray={`${results.readinessScore}, 100`}
                             strokeLinecap="round"
                           />
                         </svg>
                         <div className="absolute inset-0 flex items-center justify-center">
-                          <span className="text-xl font-display font-bold text-espresso">
+                          <span className="text-xl font-display font-bold text-graphite">
                             {results.readinessScore}
                           </span>
                         </div>
                       </div>
                       <div>
                         <div className="heading-4">{results.readinessLabel}</div>
-                        <p className="text-sm text-muted-brown mt-1">
+                        <p className="text-sm text-steel mt-1">
                           Score based on revenue, location count, and margin inputs. This is an illustrative
                           indicator, not a definitive assessment.
                         </p>
@@ -379,11 +379,11 @@ export function CalculatorClient() {
 
                   {/* Email gate: reciprocity (score shown, full breakdown follows) */}
                   {!submitted ? (
-                    <div className="card bg-espresso border-espresso text-center">
-                      <h3 className="heading-4 text-cream mb-3">
+                    <div className="card bg-graphite border-graphite text-center">
+                      <h3 className="heading-4 text-white mb-3">
                         See Your Full Franchise Economics Breakdown
                       </h3>
-                      <p className="text-sm text-cream/70 mb-6 max-w-md mx-auto">
+                      <p className="text-sm text-white/70 mb-6 max-w-md mx-auto">
                         Enter your name and email to see the detailed analysis of what these numbers
                         mean for your business, plus get a personalized follow-up from our team.
                       </p>
@@ -394,7 +394,7 @@ export function CalculatorClient() {
                           onChange={(e) => setName(e.target.value)}
                           placeholder="Your name"
                           required
-                          className="w-full px-4 py-3 border border-cream/20 bg-white/10 text-cream placeholder:text-cream/40 focus:outline-none focus:ring-2 focus:ring-amber/50 min-h-[48px]"
+                          className="w-full px-4 py-3 border border-white/20 bg-white/10 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-ember/50 min-h-[48px]"
                           style={{ borderRadius: '3px' }}
                         />
                         <input
@@ -403,7 +403,7 @@ export function CalculatorClient() {
                           onChange={(e) => setEmail(e.target.value)}
                           placeholder="you@company.com"
                           required
-                          className="w-full px-4 py-3 border border-cream/20 bg-white/10 text-cream placeholder:text-cream/40 focus:outline-none focus:ring-2 focus:ring-amber/50 min-h-[48px]"
+                          className="w-full px-4 py-3 border border-white/20 bg-white/10 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-ember/50 min-h-[48px]"
                           style={{ borderRadius: '3px' }}
                         />
                         {error && <p className="text-red-400 text-sm">{error}</p>}
@@ -414,17 +414,17 @@ export function CalculatorClient() {
                         >
                           {submitting ? 'Sending...' : 'Show Full Analysis'}
                         </button>
-                        <p className="text-xs text-cream/40">No spam. We will follow up with your personalized analysis.</p>
+                        <p className="text-xs text-white/60">No spam. We will follow up with your personalized analysis.</p>
                       </form>
                     </div>
                   ) : (
                     <>
                       {/* Detailed breakdown: shown after email */}
                       <div className="card">
-                        <p className="text-xs font-semibold text-amber uppercase tracking-widest mb-4">
+                        <p className="text-xs font-semibold text-accent uppercase tracking-widest mb-4">
                           What These Numbers Mean
                         </p>
-                        <div className="space-y-3 text-sm text-muted-brown leading-relaxed">
+                        <div className="space-y-3 text-sm text-steel leading-relaxed">
                           <p>
                             The royalty income figures above represent the ongoing revenue you could collect as a
                             franchisor, assuming each franchise unit generates the same annual revenue you reported
@@ -443,7 +443,7 @@ export function CalculatorClient() {
                             considers dozens of additional variables including market demand, competitive landscape,
                             operational documentation, brand strength, and regulatory requirements.
                           </p>
-                          <p className="font-semibold text-espresso">
+                          <p className="font-semibold text-graphite">
                             All figures shown are illustrative estimates for educational purposes only. They are not
                             projections, promises, or guarantees of any kind.
                           </p>
@@ -451,17 +451,17 @@ export function CalculatorClient() {
                       </div>
 
                       {/* CTA after the gate */}
-                      <div className="card bg-espresso border-espresso">
-                        <h3 className="heading-4 text-cream mb-3">
+                      <div className="card bg-graphite border-graphite">
+                        <h3 className="heading-4 text-white mb-3">
                           Want Real Numbers? Get a Feasibility Analysis.
                         </h3>
-                        <p className="text-sm text-cream/70 mb-6">
+                        <p className="text-sm text-white/70 mb-6">
                           These illustrative estimates are a starting point. A real feasibility analysis from our
                           team evaluates your specific business model, market conditions, competitive landscape, and
                           unit economics to determine whether franchising is the right growth path.
                         </p>
-                        <div className="bg-amber/10 border border-amber/30 p-4 mb-4" style={{ borderRadius: '3px' }}>
-                          <p className="text-cream font-semibold text-sm">
+                        <div className="bg-ember/10 border border-ember/30 p-4 mb-4" style={{ borderRadius: '3px' }}>
+                          <p className="text-white font-semibold text-sm">
                             We received your information and will be in touch within one business day.
                           </p>
                         </div>
@@ -469,7 +469,7 @@ export function CalculatorClient() {
                           <Link href="/contact" className="btn-primary flex-1 text-center">
                             Book a Free Feasibility Call
                           </Link>
-                          <Link href="/is-my-business-franchisable" className="btn-secondary border-cream/30 text-cream hover:bg-cream hover:text-espresso flex-1 text-center">
+                          <Link href="/is-my-business-franchisable" className="btn-secondary border-white/30 text-white hover:bg-white hover:text-graphite flex-1 text-center">
                             Take the Full Assessment
                           </Link>
                         </div>
@@ -484,12 +484,12 @@ export function CalculatorClient() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="bg-espresso text-cream">
+      <section className="bg-graphite text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 text-center">
-          <h2 className="heading-2 text-cream mb-6">
+          <h2 className="heading-2 text-white mb-6">
             Not Sure About Your Numbers? Talk to Us.
           </h2>
-          <p className="body-large text-cream/70 mb-10 max-w-2xl mx-auto">
+          <p className="body-large text-white/70 mb-10 max-w-2xl mx-auto">
             The calculator gives you a rough sense of the opportunity. A feasibility call gives you a
             real answer. Book a free call and we will walk through your specific business model together.
           </p>
@@ -497,7 +497,7 @@ export function CalculatorClient() {
             <Link href="/contact" className="btn-primary">
               Book a Free Feasibility Call
             </Link>
-            <Link href="/is-my-business-franchisable" className="btn-secondary border-cream/30 text-cream hover:bg-cream hover:text-espresso">
+            <Link href="/is-my-business-franchisable" className="btn-secondary border-white/30 text-white hover:bg-white hover:text-graphite">
               Take the Readiness Assessment
             </Link>
           </div>

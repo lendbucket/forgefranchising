@@ -34,7 +34,7 @@ export default function AboutPage() {
         }}
       />
 
-      <section className="bg-cream">
+      <section className="bg-white">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'About Us' }]} />
           <div className="max-w-3xl">
@@ -65,7 +65,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-deep-cream">
+      <section className="section-padding bg-ash-tint">
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
@@ -80,10 +80,10 @@ export default function AboutPage() {
                   'We charge for outcomes, not hours. Our engagement tiers are designed around what needs to get built, not how long we sit in a room.',
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-amber flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="w-5 h-5 text-accent flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-muted-brown">{item}</span>
+                    <span className="text-steel">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -111,7 +111,7 @@ export default function AboutPage() {
                 ].map((item) => (
                   <div key={item.title}>
                     <h3 className="heading-4 mb-2">{item.title}</h3>
-                    <p className="text-muted-brown leading-relaxed">{item.body}</p>
+                    <p className="text-steel leading-relaxed">{item.body}</p>
                   </div>
                 ))}
               </div>
@@ -120,7 +120,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-cream">
+      <section className="section-padding bg-white">
         <div className="container-wide text-center">
           <h2 className="heading-2 mb-6">Our Approach to Franchise Development</h2>
           <p className="body-large max-w-3xl mx-auto mb-12">
@@ -144,7 +144,7 @@ export default function AboutPage() {
             ].map((item) => (
               <div key={item.title} className="card text-left">
                 <h3 className="heading-4 mb-3">{item.title}</h3>
-                <p className="text-muted-brown text-sm leading-relaxed">{item.body}</p>
+                <p className="text-steel text-sm leading-relaxed">{item.body}</p>
               </div>
             ))}
           </div>

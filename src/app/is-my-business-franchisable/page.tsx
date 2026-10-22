@@ -30,7 +30,7 @@ export default function AssessmentPage() {
           ]),
         }}
       />
-      <div className="bg-cream">
+      <div className="bg-white">
         <div className="container-wide px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={[

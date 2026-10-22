@@ -38,26 +38,26 @@ export default function LocationsPage() {
         }}
       />
 
-      <section className="bg-espresso">
+      <section className="bg-graphite">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <nav aria-label="Breadcrumb">
-            <ol className="flex items-center gap-2 text-sm text-cream/50">
-              <li><Link href="/" className="hover:text-cream transition-colors">Home</Link></li>
-              <li className="flex items-center gap-2"><span className="text-cream/30">/</span><span className="text-cream font-medium">Locations</span></li>
+            <ol className="flex items-center gap-2 text-sm text-white/60">
+              <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
+              <li className="flex items-center gap-2"><span className="text-white/60">/</span><span className="text-white font-medium">Locations</span></li>
             </ol>
           </nav>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-20">
           <p className="eyebrow mb-4">Service Areas</p>
-          <h1 className="heading-1 text-cream mb-6">Franchise Consultant Coverage Across the United States</h1>
-          <p className="text-lg text-cream/60 leading-relaxed max-w-2xl">
+          <h1 className="heading-1 text-white mb-6">Franchise Consultant Coverage Across the United States</h1>
+          <p className="text-lg text-white/60 leading-relaxed max-w-2xl">
             Forge Franchising helps business owners franchise their proven concepts and connects qualified buyers
             with franchise opportunities. Find a franchise consultant in your city.
           </p>
         </div>
       </section>
 
-      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-cream">
+      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
             {sortedStates.map((state) => (
@@ -68,7 +68,7 @@ export default function LocationsPage() {
                     <li key={city.slug}>
                       <Link
                         href={"/locations/" + city.slug}
-                        className="text-sm text-muted-brown hover:text-amber transition-colors"
+                        className="text-sm text-steel hover:text-accent transition-colors"
                       >
                         {city.name} Franchise Consulting
                       </Link>

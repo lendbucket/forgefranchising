@@ -10,12 +10,12 @@ export const metadata = createMetadata({
 
 export default function NotFound() {
   return (
-    <section className="bg-cream min-h-[70vh] flex items-center">
+    <section className="bg-white min-h-[70vh] flex items-center">
       <div className="container-wide section-padding text-center">
         <p className="eyebrow mb-4">
           Page Not Found
         </p>
-        <h1 className="font-display text-7xl sm:text-8xl font-bold text-espresso mb-6">404</h1>
+        <h1 className="font-display text-7xl sm:text-8xl font-bold text-graphite mb-6">404</h1>
         <p className="body-large max-w-lg mx-auto mb-10">
           The page you are looking for does not exist or has been moved. Use the links below to
           find what you need.
@@ -35,7 +35,7 @@ export default function NotFound() {
           </Link>
         </div>
         <div className="max-w-2xl mx-auto">
-          <p className="text-muted-brown text-sm uppercase tracking-wider font-semibold mb-6">
+          <p className="text-steel text-sm uppercase tracking-wider font-semibold mb-6">
             Helpful Pages
           </p>
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
@@ -48,9 +48,9 @@ export default function NotFound() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="card text-center py-4 px-3 hover:border-amber/40 transition-colors"
+                className="card text-center py-4 px-3 hover:border-ember/40 transition-colors"
               >
-                <span className="text-sm font-medium text-espresso">{link.label}</span>
+                <span className="text-sm font-medium text-graphite">{link.label}</span>
               </Link>
             ))}
           </div>

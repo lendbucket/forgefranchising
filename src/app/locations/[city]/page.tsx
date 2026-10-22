@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
 import { cities, getCityBySlug } from '@/data/cities'
-import { SITE_URL, SITE_NAME } from '@/lib/constants'
+import { SITE_URL, SITE_NAME, DEFAULT_OG_IMAGE } from '@/lib/constants'
 import { composeDescription } from '@/lib/metadata'
 import {
   webPageSchema,
@@ -46,6 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `${SITE_URL}/locations/${slug}`,
       siteName: SITE_NAME,
       type: 'website',
+      images: [DEFAULT_OG_IMAGE],
     },
     alternates: {
       canonical: `${SITE_URL}/locations/${slug}`,
@@ -119,24 +120,24 @@ export default async function CityPage({ params }: Props) {
       />
 
       {/* Hero */}
-      <section className="bg-espresso">
+      <section className="bg-graphite">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <nav aria-label="Breadcrumb">
-            <ol className="flex items-center gap-2 text-sm text-cream/50">
+            <ol className="flex items-center gap-2 text-sm text-white/60">
               <li>
-                <Link href="/" className="hover:text-cream transition-colors">
+                <Link href="/" className="hover:text-white transition-colors">
                   Home
                 </Link>
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-cream/30">/</span>
-                <Link href="/locations" className="hover:text-cream transition-colors">
+                <span className="text-white/60">/</span>
+                <Link href="/locations" className="hover:text-white transition-colors">
                   Locations
                 </Link>
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-cream/30">/</span>
-                <span className="text-cream font-medium">
+                <span className="text-white/60">/</span>
+                <span className="text-white font-medium">
                   {city.name}, {city.stateAbbr}
                 </span>
               </li>
@@ -145,10 +146,10 @@ export default async function CityPage({ params }: Props) {
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-20">
           <p className="eyebrow mb-4">Franchise Consulting Services</p>
-          <h1 className="heading-1 text-cream mb-6">
+          <h1 className="heading-1 text-white mb-6">
             Franchise Consultant in {city.name}, {city.stateAbbr}
           </h1>
-          <p className="text-lg text-cream/60 leading-relaxed max-w-2xl">
+          <p className="text-lg text-white/60 leading-relaxed max-w-2xl">
             Franchise development and consulting across the {city.metroArea} metro,
             from {city.topIndustries[0]?.toLowerCase() || 'local'} concepts to multi-unit
             growth strategies. We help {city.name} owners build franchise systems
@@ -158,7 +159,7 @@ export default async function CityPage({ params }: Props) {
       </section>
 
       {/* Main Content */}
-      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-cream">
+      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Left Content - 2 columns */}
@@ -168,7 +169,7 @@ export default async function CityPage({ params }: Props) {
                 <h2 className="heading-2 mb-6">
                   Franchising in {city.name}, {city.stateAbbr}
                 </h2>
-                <div className="space-y-6 text-muted-brown">
+                <div className="space-y-6 text-steel">
                   <p className="body-large">{city.localInsight}</p>
                   <p>{city.franchiseActivity}</p>
                 </div>
@@ -184,9 +185,9 @@ export default async function CityPage({ params }: Props) {
                     const href = industryLinkMap[industry]
                     const cardContent = (
                       <>
-                        <div className="w-10 h-10 rounded-lg bg-amber/10 flex items-center justify-center flex-shrink-0">
+                        <div className="w-10 h-10 rounded-lg bg-ember/10 flex items-center justify-center flex-shrink-0">
                           <svg
-                            className="w-5 h-5 text-amber"
+                            className="w-5 h-5 text-accent"
                             fill="none"
                             viewBox="0 0 24 24"
                             strokeWidth={1.5}
@@ -200,8 +201,8 @@ export default async function CityPage({ params }: Props) {
                           </svg>
                         </div>
                         <div>
-                          <h4 className="heading-4 text-espresso">{industry}</h4>
-                          <p className="text-sm text-muted-brown mt-1">
+                          <h4 className="heading-4 text-graphite">{industry}</h4>
+                          <p className="text-sm text-steel mt-1">
                             High demand in the {city.metroArea} market
                           </p>
                         </div>
@@ -235,9 +236,9 @@ export default async function CityPage({ params }: Props) {
                 <div className="grid sm:grid-cols-2 gap-6">
                   {/* Franchise Your Business Card */}
                   <div className="card-interactive p-6 group">
-                    <div className="w-12 h-12 rounded-lg bg-espresso/10 flex items-center justify-center mb-4">
+                    <div className="w-12 h-12 rounded-lg bg-graphite/10 flex items-center justify-center mb-4">
                       <svg
-                        className="w-6 h-6 text-espresso"
+                        className="w-6 h-6 text-graphite"
                         fill="none"
                         viewBox="0 0 24 24"
                         strokeWidth={1.5}
@@ -251,13 +252,13 @@ export default async function CityPage({ params }: Props) {
                       </svg>
                     </div>
                     <h4 className="heading-4 mb-2">Franchise Your Business</h4>
-                    <p className="text-sm text-muted-brown mb-4">
+                    <p className="text-sm text-steel mb-4">
                       Own a successful business in {city.name}? We help you build a franchise system
                       from the ground up, including your FDD, operations manual, and growth strategy.
                     </p>
                     <Link
                       href="/services"
-                      className="text-amber text-sm font-semibold group-hover:underline"
+                      className="text-accent text-sm font-semibold group-hover:underline"
                     >
                       Learn about our services
                     </Link>
@@ -265,9 +266,9 @@ export default async function CityPage({ params }: Props) {
 
                   {/* Own a Forge Franchise Card */}
                   <div className="card-interactive p-6 group">
-                    <div className="w-12 h-12 rounded-lg bg-amber/10 flex items-center justify-center mb-4">
+                    <div className="w-12 h-12 rounded-lg bg-ember/10 flex items-center justify-center mb-4">
                       <svg
-                        className="w-6 h-6 text-amber"
+                        className="w-6 h-6 text-accent"
                         fill="none"
                         viewBox="0 0 24 24"
                         strokeWidth={1.5}
@@ -281,13 +282,13 @@ export default async function CityPage({ params }: Props) {
                       </svg>
                     </div>
                     <h4 className="heading-4 mb-2">Own a Forge Franchise</h4>
-                    <p className="text-sm text-muted-brown mb-4">
+                    <p className="text-sm text-steel mb-4">
                       Interested in owning a franchise consulting business in the {city.metroArea} area?
                       Forge Franchising is expanding and looking for qualified operators.
                     </p>
                     <Link
                       href="/own-a-franchise"
-                      className="text-amber text-sm font-semibold group-hover:underline"
+                      className="text-accent text-sm font-semibold group-hover:underline"
                     >
                       Explore the opportunity
                     </Link>
@@ -300,24 +301,24 @@ export default async function CityPage({ params }: Props) {
                 <h3 className="heading-3 mb-6">{city.name} Market Snapshot</h3>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                   <div className="card p-5 text-center">
-                    <p className="text-2xl font-bold text-espresso">{city.population}</p>
-                    <p className="text-xs text-muted-brown mt-1 uppercase tracking-wider">
+                    <p className="text-2xl font-bold text-graphite">{city.population}</p>
+                    <p className="text-xs text-steel mt-1 uppercase tracking-wider">
                       Population
                     </p>
                   </div>
                   <div className="card p-5 text-center">
-                    <p className="text-2xl font-bold text-espresso">
+                    <p className="text-2xl font-bold text-graphite">
                       {city.topIndustries.length}
                     </p>
-                    <p className="text-xs text-muted-brown mt-1 uppercase tracking-wider">
+                    <p className="text-xs text-steel mt-1 uppercase tracking-wider">
                       Top Industries
                     </p>
                   </div>
                   <div className="card p-5 text-center col-span-2 sm:col-span-1">
-                    <p className="text-lg font-bold text-espresso leading-tight">
+                    <p className="text-lg font-bold text-graphite leading-tight">
                       {city.metroArea}
                     </p>
-                    <p className="text-xs text-muted-brown mt-1 uppercase tracking-wider">
+                    <p className="text-xs text-steel mt-1 uppercase tracking-wider">
                       Metro Area
                     </p>
                   </div>
@@ -329,9 +330,9 @@ export default async function CityPage({ params }: Props) {
             <div className="lg:col-span-1 space-y-6">
               <div className="sticky top-24 space-y-6">
                 {/* Assessment CTA Card */}
-                <div className="card p-6 bg-deep-cream">
+                <div className="card p-6 bg-ash-tint">
                   <h3 className="heading-4 mb-3">Is Your Business Ready to Franchise?</h3>
-                  <p className="text-sm text-muted-brown mb-4">
+                  <p className="text-sm text-steel mb-4">
                     Take our free assessment to find out if your {city.name} business
                     is a strong franchise candidate. No commitment required.
                   </p>
@@ -346,7 +347,7 @@ export default async function CityPage({ params }: Props) {
                 {/* Franchise Opportunity CTA Card */}
                 <div className="card p-6">
                   <h3 className="heading-4 mb-3">Own a Franchise in {city.name}</h3>
-                  <p className="text-sm text-muted-brown mb-4">
+                  <p className="text-sm text-steel mb-4">
                     Qualified candidates can apply to own a Forge Franchising
                     territory in the {city.metroArea} market.
                   </p>
@@ -360,14 +361,14 @@ export default async function CityPage({ params }: Props) {
 
                 {/* Related Resource Links */}
                 <div className="card p-6">
-                  <h4 className="text-sm font-semibold text-espresso mb-4 uppercase tracking-wider">
+                  <h4 className="text-sm font-semibold text-graphite mb-4 uppercase tracking-wider">
                     Related Resources
                   </h4>
                   <ul className="space-y-3">
                     <li>
                       <Link
                         href="/services"
-                        className="text-sm text-muted-brown hover:text-amber transition-colors"
+                        className="text-sm text-steel hover:text-accent transition-colors"
                       >
                         Our Franchise Development Services
                       </Link>
@@ -375,7 +376,7 @@ export default async function CityPage({ params }: Props) {
                     <li>
                       <Link
                         href="/how-it-works"
-                        className="text-sm text-muted-brown hover:text-amber transition-colors"
+                        className="text-sm text-steel hover:text-accent transition-colors"
                       >
                         How the Process Works
                       </Link>
@@ -383,7 +384,7 @@ export default async function CityPage({ params }: Props) {
                     <li>
                       <Link
                         href="/franchise-laws"
-                        className="text-sm text-muted-brown hover:text-amber transition-colors"
+                        className="text-sm text-steel hover:text-accent transition-colors"
                       >
                         Franchise Laws by State
                       </Link>
@@ -391,7 +392,7 @@ export default async function CityPage({ params }: Props) {
                     <li>
                       <Link
                         href="/calculator"
-                        className="text-sm text-muted-brown hover:text-amber transition-colors"
+                        className="text-sm text-steel hover:text-accent transition-colors"
                       >
                         Franchise Cost Calculator
                       </Link>
@@ -399,7 +400,7 @@ export default async function CityPage({ params }: Props) {
                     <li>
                       <Link
                         href="/blog"
-                        className="text-sm text-muted-brown hover:text-amber transition-colors"
+                        className="text-sm text-steel hover:text-accent transition-colors"
                       >
                         Franchise Blog
                       </Link>
@@ -410,7 +411,7 @@ export default async function CityPage({ params }: Props) {
                 {/* Nearby Cities */}
                 {nearbyLinks.length > 0 && (
                   <div className="card p-6">
-                    <h4 className="text-sm font-semibold text-espresso mb-4 uppercase tracking-wider">
+                    <h4 className="text-sm font-semibold text-graphite mb-4 uppercase tracking-wider">
                       Nearby Markets
                     </h4>
                     <ul className="space-y-3">
@@ -418,17 +419,17 @@ export default async function CityPage({ params }: Props) {
                         <li key={c.slug}>
                           <Link
                             href={`/locations/${c.slug}`}
-                            className="text-sm text-muted-brown hover:text-amber transition-colors"
+                            className="text-sm text-steel hover:text-accent transition-colors"
                           >
                             {c.name}, {c.stateAbbr}
                           </Link>
                         </li>
                       ))}
                     </ul>
-                    <div className="mt-4 pt-4 border-t border-espresso/10">
+                    <div className="mt-4 pt-4 border-t border-graphite/10">
                       <Link
                         href="/locations"
-                        className="text-sm text-amber font-semibold hover:underline"
+                        className="text-sm text-accent font-semibold hover:underline"
                       >
                         View All Locations
                       </Link>

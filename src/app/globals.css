@@ -3,6 +3,26 @@
 @tailwind utilities;
 
 @layer base {
+  /*
+   * Accent text adapts to its surface. On light surfaces it is the dark
+   * ember shade (5.87:1 on white). Inside graphite surfaces it switches to
+   * the light ember shade (5.62:1 on graphite). Brand ember itself is kept
+   * for fills, rules, and borders, never body copy.
+   */
+  :root {
+    --accent: 173 66 35;
+  }
+  .bg-graphite,
+  .bg-graphite\/95,
+  .surface-dark {
+    --accent: 233 117 84;
+  }
+  .bg-graphite .bg-white,
+  .bg-graphite .bg-ash-tint,
+  .bg-graphite .bg-ash {
+    --accent: 173 66 35;
+  }
+
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
@@ -12,14 +32,14 @@
   }
 
   body {
-    @apply bg-cream text-espresso;
+    @apply bg-white text-graphite;
     overflow-x: hidden;
     max-width: 100%;
     -webkit-overflow-scrolling: touch;
   }
 
   ::selection {
-    @apply bg-amber/20 text-espresso;
+    @apply bg-ember/20 text-graphite;
   }
 
   /* Fluid type scale using clamp */
@@ -40,14 +60,14 @@
 @layer components {
   /* Enterprise buttons: squared, confident, precise */
   .btn-primary {
-    @apply inline-flex items-center justify-center px-8 py-4 bg-amber text-white font-semibold
-           hover:bg-amber-hover transition-all duration-200 text-base tracking-wide;
+    @apply inline-flex items-center justify-center px-8 py-4 bg-ember-button text-graphite font-semibold
+           hover:bg-ember-hover transition-all duration-200 text-base tracking-wide;
     border-radius: 3px;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-8 py-4 border-2 border-espresso text-espresso font-semibold
-           hover:bg-espresso hover:text-cream transition-all duration-200 text-base tracking-wide;
+    @apply inline-flex items-center justify-center px-8 py-4 border-2 border-graphite text-graphite font-semibold
+           hover:bg-graphite hover:text-white transition-all duration-200 text-base tracking-wide;
     border-radius: 3px;
   }
 
@@ -93,44 +113,44 @@
   }
 
   .body-large {
-    @apply text-lg sm:text-xl leading-relaxed text-muted-brown;
+    @apply text-lg sm:text-xl leading-relaxed text-steel;
   }
 
   /* Enterprise cards: subtle, clean */
   .card {
     @apply bg-white p-8;
-    border: 1px solid rgba(107, 87, 80, 0.08);
+    border: 1px solid rgba(78, 90, 98, 0.08);
     border-radius: 4px;
   }
 
   /* Eyebrow labels */
   .eyebrow {
-    @apply text-amber font-semibold text-xs uppercase;
+    @apply text-accent font-semibold text-xs uppercase;
     letter-spacing: 0.15em;
   }
 
   /* Hairline dividers */
   .hairline {
     @apply border-t;
-    border-color: rgba(40, 16, 16, 0.08);
+    border-color: rgba(28, 31, 35, 0.08);
   }
 
-  .hairline-cream {
+  .hairline-inverse {
     @apply border-t;
-    border-color: rgba(250, 246, 239, 0.1);
+    border-color: rgba(255, 255, 255, 0.1);
   }
 
   /* Pull quote */
   .pull-quote {
     @apply font-display text-2xl sm:text-3xl font-bold leading-snug;
     letter-spacing: -0.02em;
-    border-left: 3px solid #F87000;
+    border-left: 3px solid #E4572E;
     padding-left: 1.5rem;
   }
 
   /* Stat block */
   .stat-number {
-    @apply font-display font-bold text-amber;
+    @apply font-display font-bold text-accent;
     font-size: clamp(2.5rem, 5vw, 4rem);
     letter-spacing: -0.03em;
     line-height: 1;
@@ -139,7 +159,7 @@
 
   .stat-label {
     @apply text-sm mt-2 leading-snug;
-    color: rgba(107, 87, 80, 0.7);
+    color: rgba(78, 90, 98, 0.7);
   }
 
   /* Animated link underline */
@@ -148,7 +168,7 @@
   }
   .link-underline::after {
     content: '';
-    @apply absolute bottom-0 left-0 w-0 h-px bg-amber;
+    @apply absolute bottom-0 left-0 w-0 h-px bg-ember;
     transition: width 0.3s ease;
   }
   .link-underline:hover::after {
@@ -158,12 +178,12 @@
   /* Interactive card lift */
   .card-interactive {
     @apply bg-white p-8 transition-all duration-300;
-    border: 1px solid rgba(107, 87, 80, 0.08);
+    border: 1px solid rgba(78, 90, 98, 0.08);
     border-radius: 4px;
   }
   .card-interactive:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(40, 16, 16, 0.08);
+    box-shadow: 0 8px 30px rgba(28, 31, 35, 0.08);
   }
 }
 
@@ -219,9 +239,9 @@
   will-change: transform;
 }
 
-/* Hero warm duotone treatment */
+/* Hero image treatment: cool, slightly desaturated */
 .hero-image-warm {
-  filter: sepia(0.15) saturate(1.1) brightness(0.85);
+  filter: grayscale(0.35) brightness(0.8) contrast(1.05);
 }
 
 /* Hero logo: gentle fade + scale-in + optional soft float */
@@ -330,7 +350,7 @@
   }
 }
 
-/* Dark section depth: subtle radial vignette and warm gradient */
+/* Dark section depth: subtle radial vignette and gradient */
 .dark-depth {
   position: relative;
 }
@@ -339,8 +359,8 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at center, transparent 50%, rgba(20, 8, 8, 0.4) 100%),
-    linear-gradient(180deg, rgba(40, 16, 16, 0) 0%, rgba(50, 20, 10, 0.15) 50%, rgba(40, 16, 16, 0) 100%);
+    radial-gradient(ellipse at center, transparent 50%, rgba(10, 12, 14, 0.4) 100%),
+    linear-gradient(180deg, rgba(28, 31, 35, 0) 0%, rgba(28, 31, 35, 0.15) 50%, rgba(28, 31, 35, 0) 100%);
   pointer-events: none;
   z-index: 1;
 }
@@ -360,7 +380,7 @@ img {
 
 /* Glossary / progressive disclosure letter grouping */
 .glossary-letter-badge {
-  @apply font-display font-bold text-amber;
+  @apply font-display font-bold text-accent;
   font-size: 1.25rem;
   letter-spacing: -0.02em;
 }
@@ -371,7 +391,7 @@ img {
 }
 .path-connector::after {
   content: '';
-  @apply absolute left-5 top-full w-px bg-cream/15;
+  @apply absolute left-5 top-full w-px bg-white/15;
   height: 1rem;
 }
 .path-connector:last-child::after {
@@ -418,7 +438,7 @@ img {
 /* Keyboard focus ring: visible amber ring on all interactive elements */
 .btn-primary:focus-visible,
 .btn-secondary:focus-visible {
-  outline: 2px solid #F87000;
+  outline: 2px solid #E4572E;
   outline-offset: 2px;
 }
 a:focus-visible,
@@ -427,11 +447,11 @@ input:focus-visible,
 textarea:focus-visible,
 select:focus-visible,
 [tabindex]:focus-visible {
-  outline: 2px solid #F87000;
+  outline: 2px solid #E4572E;
   outline-offset: 2px;
 }
 .card-interactive:focus-visible {
-  outline: 2px solid #F87000;
+  outline: 2px solid #E4572E;
   outline-offset: 2px;
 }
 
@@ -451,4 +471,22 @@ a, button {
 p a, li a, span a, .text-sm a {
   min-height: auto;
   min-width: auto;
+}
+
+/* Display serif: Source Serif 4 at its display optical size */
+.font-display,
+.heading-1,
+.heading-2,
+.heading-3,
+.heading-4,
+.pull-quote,
+.stat-number,
+.glossary-letter-badge {
+  font-variation-settings: 'opsz' 60;
+}
+
+/* The client proposal keeps its own palette */
+.proposal-root ::selection {
+  background: rgba(248, 112, 0, 0.2);
+  color: #281010;
 }

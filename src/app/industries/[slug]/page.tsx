@@ -69,7 +69,7 @@ export default async function IndustryPage({ params }: Props) {
         }}
       />
 
-      <section className="bg-cream">
+      <section className="bg-white">
         <div className="container-wide section-padding">
           <Breadcrumbs
             items={[
@@ -92,11 +92,11 @@ export default async function IndustryPage({ params }: Props) {
       </section>
 
       {/* Industry Introduction */}
-      <section className="section-padding bg-deep-cream">
+      <section className="section-padding bg-ash-tint">
         <div className="container-wide">
           <div className="max-w-4xl">
             {data.intro.map((paragraph, i) => (
-              <p key={i} className="text-muted-brown leading-relaxed mb-6 last:mb-0">
+              <p key={i} className="text-steel leading-relaxed mb-6 last:mb-0">
                 {paragraph}
               </p>
             ))}
@@ -105,7 +105,7 @@ export default async function IndustryPage({ params }: Props) {
       </section>
 
       {/* Why This Industry Franchises Well */}
-      <section className="section-padding bg-cream">
+      <section className="section-padding bg-white">
         <div className="container-wide">
           <div className="max-w-4xl">
             <h2 className="heading-2 mb-8">Why {industry.name} Franchises Well</h2>
@@ -113,10 +113,10 @@ export default async function IndustryPage({ params }: Props) {
               <ul className="space-y-4">
                 {data.whyFranchisesWell.map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-amber flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-muted-brown leading-relaxed">{item}</span>
+                    <span className="text-steel leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -126,13 +126,13 @@ export default async function IndustryPage({ params }: Props) {
       </section>
 
       {/* Investment Range */}
-      <section className="section-padding bg-espresso text-cream">
+      <section className="section-padding bg-graphite text-white">
         <div className="container-wide text-center">
-          <h2 className="heading-2 text-cream mb-4">Typical Investment Range</h2>
-          <div className="text-4xl sm:text-5xl font-display font-bold text-amber mb-6">
+          <h2 className="heading-2 text-white mb-4">Typical Investment Range</h2>
+          <div className="text-4xl sm:text-5xl font-display font-bold text-accent mb-6">
             {data.investmentRange}
           </div>
-          <p className="text-cream/70 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-white/70 max-w-3xl mx-auto leading-relaxed">
             {data.investmentDetails}
           </p>
           <div className="mt-8">
@@ -144,11 +144,11 @@ export default async function IndustryPage({ params }: Props) {
       </section>
 
       {/* Success Factors */}
-      <section className="section-padding bg-deep-cream">
+      <section className="section-padding bg-ash-tint">
         <div className="container-wide">
           <div className="max-w-4xl">
             <h2 className="heading-2 mb-8">Key Success Factors</h2>
-            <p className="text-muted-brown leading-relaxed mb-8">
+            <p className="text-steel leading-relaxed mb-8">
               Franchising in the {industry.name.toLowerCase()} space requires more than a good business. These
               are the factors that separate franchise systems that scale from those that stall.
             </p>
@@ -156,7 +156,7 @@ export default async function IndustryPage({ params }: Props) {
               {data.successFactors.map((factor) => (
                 <div key={factor.title} className="card">
                   <h3 className="heading-4 mb-3">{factor.title}</h3>
-                  <p className="text-muted-brown leading-relaxed">{factor.body}</p>
+                  <p className="text-steel leading-relaxed">{factor.body}</p>
                 </div>
               ))}
             </div>
@@ -165,11 +165,11 @@ export default async function IndustryPage({ params }: Props) {
       </section>
 
       {/* Common Challenges */}
-      <section className="section-padding bg-cream">
+      <section className="section-padding bg-white">
         <div className="container-wide">
           <div className="max-w-4xl">
             <h2 className="heading-2 mb-8">Common Challenges in {industry.name} Franchising</h2>
-            <p className="text-muted-brown leading-relaxed mb-8">
+            <p className="text-steel leading-relaxed mb-8">
               Every industry has friction points that can derail a franchise system. Knowing these challenges
               before you start development is not pessimism. It is preparation. Here is what to watch for.
             </p>
@@ -177,7 +177,7 @@ export default async function IndustryPage({ params }: Props) {
               {data.challenges.map((challenge) => (
                 <div key={challenge.title} className="card">
                   <h3 className="heading-4 mb-3">{challenge.title}</h3>
-                  <p className="text-muted-brown leading-relaxed">{challenge.body}</p>
+                  <p className="text-steel leading-relaxed">{challenge.body}</p>
                 </div>
               ))}
             </div>
@@ -186,12 +186,12 @@ export default async function IndustryPage({ params }: Props) {
       </section>
 
       {/* What It Takes */}
-      <section className="section-padding bg-deep-cream">
+      <section className="section-padding bg-ash-tint">
         <div className="container-wide">
           <div className="max-w-4xl">
             <h2 className="heading-2 mb-8">What It Takes to Franchise Your {industry.shortName} Business</h2>
             <div className="card">
-              <p className="text-muted-brown leading-relaxed mb-6">
+              <p className="text-steel leading-relaxed mb-6">
                 Before you invest in franchise development, make sure your business meets these baseline
                 requirements. If you are missing one or two items, that does not mean franchising is off
                 the table. It means there is work to do before you start the process.
@@ -199,10 +199,10 @@ export default async function IndustryPage({ params }: Props) {
               <ul className="space-y-4">
                 {data.whatItTakes.map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-amber flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-muted-brown leading-relaxed">{item}</span>
+                    <span className="text-steel leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -212,26 +212,26 @@ export default async function IndustryPage({ params }: Props) {
       </section>
 
       {/* Related Resources */}
-      <section className="section-padding bg-cream">
+      <section className="section-padding bg-white">
         <div className="container-wide">
           <div className="max-w-4xl">
             <h2 className="heading-2 mb-8">Next Steps</h2>
             <div className="grid sm:grid-cols-3 gap-6">
               <Link href="/how-it-works" className="card-interactive">
                 <h3 className="heading-4 mb-2">Our Process</h3>
-                <p className="text-muted-brown text-sm">
+                <p className="text-steel text-sm">
                   See the four phase franchise development process we use for every concept.
                 </p>
               </Link>
               <Link href="/calculator" className="card-interactive">
                 <h3 className="heading-4 mb-2">Franchise Calculator</h3>
-                <p className="text-muted-brown text-sm">
+                <p className="text-steel text-sm">
                   Estimate your franchise development costs and potential ROI.
                 </p>
               </Link>
               <Link href="/contact" className="card-interactive">
                 <h3 className="heading-4 mb-2">Talk to Us</h3>
-                <p className="text-muted-brown text-sm">
+                <p className="text-steel text-sm">
                   Book a free feasibility call to discuss your {industry.name.toLowerCase()} concept.
                 </p>
               </Link>

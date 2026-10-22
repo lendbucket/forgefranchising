@@ -44,3 +44,4 @@ next-env.d.ts
 # local tooling and brand source files
 .claude/
 brand-assets/
+qa-screenshots/

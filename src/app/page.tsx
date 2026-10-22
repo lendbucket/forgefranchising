@@ -18,7 +18,7 @@ export const metadata = createMetadata({
 })
 
 export const viewport: Viewport = {
-  themeColor: '#281010',
+  themeColor: '#1C1F23',
   viewportFit: 'cover',
 }
 
@@ -82,7 +82,7 @@ export default function HomePage() {
 
       {/* HERO: Full-bleed with centered logo, transparent header overlays this */}
       <section
-        className="relative bg-espresso overflow-hidden dark-depth"
+        className="relative bg-graphite overflow-hidden dark-depth"
         style={{ marginTop: 'calc(-5rem - env(safe-area-inset-top, 0px))' }}
       >
         {/* Background image: desktop right split */}
@@ -97,8 +97,8 @@ export default function HomePage() {
               sizes="50vw"
             />
           </div>
-          <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-r from-espresso via-espresso/70 to-transparent z-10" />
-          <div className="absolute inset-y-0 right-0 w-1/2 mix-blend-multiply bg-amber/20" />
+          <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-r from-graphite via-graphite/70 to-transparent z-10" />
+          <div className="absolute inset-y-0 right-0 w-1/2 mix-blend-multiply bg-ember/20" />
         </div>
 
         {/* Background image: mobile subtle overlay */}
@@ -132,10 +132,10 @@ export default function HomePage() {
 
           {/* Hero copy: centered on mobile, left-aligned on desktop */}
           <div className="max-w-3xl lg:max-w-2xl text-center lg:text-left mx-auto lg:mx-0">
-            <h1 className="heading-1 text-cream mb-6 text-balance hero-entrance hero-entrance-2">
+            <h1 className="heading-1 text-white mb-6 text-balance hero-entrance hero-entrance-2">
               Franchise Development for Owners Who Built Something Worth Replicating.
             </h1>
-            <p className="text-lg sm:text-xl text-cream/60 leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0 hero-entrance hero-entrance-3">
+            <p className="text-lg sm:text-xl text-white/60 leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0 hero-entrance hero-entrance-3">
               Forge is a franchise development firm that turns profitable, owner operated businesses into franchise brands that grow on other people's capital, in other people's markets, under your name.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start hero-entrance hero-entrance-4">
@@ -144,13 +144,13 @@ export default function HomePage() {
               </Link>
               <Link
                 href="/how-it-works"
-                className="inline-flex items-center justify-center px-10 py-5 border-2 border-cream/20 text-cream font-semibold hover:bg-cream hover:text-espresso transition-all duration-200 text-lg active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber focus-visible:outline-offset-2"
+                className="inline-flex items-center justify-center px-10 py-5 border-2 border-white/20 text-white font-semibold hover:bg-white hover:text-graphite transition-all duration-200 text-lg active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-ember focus-visible:outline-offset-2"
                 style={{ borderRadius: '3px' }}
               >
                 See the Process
               </Link>
             </div>
-            <p className="text-cream/35 text-sm mt-4 hero-entrance hero-entrance-4 text-center lg:text-left">
+            <p className="text-white/60 text-sm mt-4 hero-entrance hero-entrance-4 text-center lg:text-left">
               Two minutes. Eight questions. No sales pitch.
             </p>
           </div>

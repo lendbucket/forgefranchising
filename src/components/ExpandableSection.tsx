@@ -30,25 +30,25 @@ export function ExpandableSection({
 
   return (
     <div
-      className="border border-espresso/8 bg-white overflow-hidden"
+      className="border border-graphite/8 bg-white overflow-hidden"
       style={{ borderRadius: '4px' }}
     >
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="flex items-center justify-between gap-4 w-full text-left px-6 py-5 hover:bg-cream/50 transition-colors min-h-[52px]"
+        className="flex items-center justify-between gap-4 w-full text-left px-6 py-5 hover:bg-white/50 transition-colors min-h-[52px]"
         aria-expanded={open}
       >
         <div className="flex-1 min-w-0">
-          <span className="font-semibold text-espresso block">{title}</span>
+          <span className="font-semibold text-graphite block">{title}</span>
           {preview && !open && (
-            <span className="text-sm text-muted-brown/70 mt-1 block truncate">
+            <span className="text-sm text-steel mt-1 block truncate">
               {preview}
             </span>
           )}
         </div>
         <svg
-          className={`w-5 h-5 text-amber flex-shrink-0 transition-transform duration-200 ${
+          className={`w-5 h-5 text-accent flex-shrink-0 transition-transform duration-200 ${
             open ? 'rotate-180' : ''
           }`}
           fill="none"
@@ -61,7 +61,7 @@ export function ExpandableSection({
       </button>
       {open && (
         <div className="px-6 pb-6 pt-0">
-          <div className="border-t border-espresso/10 pt-4">
+          <div className="border-t border-graphite/10 pt-4">
             {children}
           </div>
         </div>

@@ -35,7 +35,7 @@ export default function IndustriesPage() {
         }}
       />
 
-      <section className="bg-cream">
+      <section className="bg-white">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'Industries' }]} />
           <div className="max-w-3xl">
@@ -60,7 +60,7 @@ export default function IndustriesPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-deep-cream">
+      <section className="section-padding bg-ash-tint">
         <div className="container-wide">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {INDUSTRIES.map((industry) => (
@@ -69,13 +69,13 @@ export default function IndustriesPage() {
                 href={`/industries/${industry.slug}`}
                 className="card-interactive group"
               >
-                <h2 className="heading-4 mb-3 group-hover:text-amber transition-colors">
+                <h2 className="heading-4 mb-3 group-hover:text-accent transition-colors">
                   {industry.name}
                 </h2>
-                <p className="text-muted-brown text-sm leading-relaxed mb-4">
+                <p className="text-steel text-sm leading-relaxed mb-4">
                   {industry.description}
                 </p>
-                <span className="text-amber font-semibold text-sm inline-flex items-center gap-1">
+                <span className="text-accent font-semibold text-sm inline-flex items-center gap-1">
                   Learn more
                   <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -87,7 +87,7 @@ export default function IndustriesPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-cream">
+      <section className="section-padding bg-white">
         <div className="container-wide text-center">
           <h2 className="heading-2 mb-6">What Makes an Industry Franchise Well?</h2>
           <p className="body-large max-w-3xl mx-auto mb-12">
@@ -111,7 +111,7 @@ export default function IndustriesPage() {
             ].map((item) => (
               <div key={item.title} className="card text-left">
                 <h3 className="heading-4 mb-3">{item.title}</h3>
-                <p className="text-muted-brown text-sm leading-relaxed">{item.body}</p>
+                <p className="text-steel text-sm leading-relaxed">{item.body}</p>
               </div>
             ))}
           </div>

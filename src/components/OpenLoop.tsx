@@ -25,9 +25,9 @@ export function OpenLoop({ teaser, linkText, href, variant = 'inline' }: OpenLoo
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div
           className="bg-white p-8 sm:p-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6"
-          style={{ borderRadius: '4px', border: '1px solid rgba(107, 87, 80, 0.08)' }}
+          style={{ borderRadius: '4px', border: '1px solid rgba(78, 90, 98, 0.08)' }}
         >
-          <p className="font-display font-bold text-lg sm:text-xl text-espresso leading-snug max-w-xl" style={{ letterSpacing: '-0.015em' }}>
+          <p className="font-display font-bold text-lg sm:text-xl text-graphite leading-snug max-w-xl" style={{ letterSpacing: '-0.015em' }}>
             {teaser}
           </p>
           <Link
@@ -42,13 +42,13 @@ export function OpenLoop({ teaser, linkText, href, variant = 'inline' }: OpenLoo
   }
 
   return (
-    <div className="my-8 py-6" style={{ borderTop: '1px solid rgba(40, 16, 16, 0.08)', borderBottom: '1px solid rgba(40, 16, 16, 0.08)' }}>
-      <p className="text-muted-brown leading-relaxed mb-3">
+    <div className="my-8 py-6" style={{ borderTop: '1px solid rgba(28, 31, 35, 0.08)', borderBottom: '1px solid rgba(28, 31, 35, 0.08)' }}>
+      <p className="text-steel leading-relaxed mb-3">
         {teaser}
       </p>
       <Link
         href={href}
-        className="text-amber font-semibold text-sm link-underline"
+        className="text-accent font-semibold text-sm link-underline"
       >
         {linkText}
       </Link>

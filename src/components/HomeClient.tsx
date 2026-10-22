@@ -22,7 +22,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
   return (
     <>
       {/* STAKES: Short, punchy problem statement. Image-led asymmetric layout. */}
-      <section className="py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 bg-cream">
+      <section className="py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             {/* Photograph: real business scenario */}
@@ -37,7 +37,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 40vw"
                   />
-                  <div className="absolute inset-0 mix-blend-multiply bg-amber/10" />
+                  <div className="absolute inset-0 mix-blend-multiply bg-ember/10" />
                 </div>
               </ScrollReveal>
             </div>
@@ -56,7 +56,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={2}>
-                <div className="pull-quote text-espresso my-10">
+                <div className="pull-quote text-graphite my-10">
                   That gap between operating expertise and franchise development expertise is where most attempts fail.
                 </div>
               </ScrollReveal>
@@ -80,7 +80,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
       />
 
       {/* AUTHORITY: Process overview. Horizontal timeline, not card grid. */}
-      <section className="py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 bg-cream">
+      <section className="py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <div className="max-w-2xl mb-16">
@@ -92,26 +92,26 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
             </div>
           </ScrollReveal>
           {/* Timeline layout on desktop, stacked on mobile */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-espresso/8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-graphite/8">
             {phases.map((phase, i) => (
               <ScrollReveal key={phase.number} delay={i as 1 | 2 | 3 | 4}>
-                <div className="bg-cream p-8 lg:p-10 h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-lg phase-cell">
+                <div className="bg-white p-8 lg:p-10 h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-lg phase-cell">
                   {/* Phase number with horizontal connector */}
                   <div className="relative flex items-center mb-6">
-                    <span className="font-display font-bold text-amber relative z-10 bg-cream pr-3" style={{ fontSize: '2.5rem', letterSpacing: '-0.03em', lineHeight: '1' }}>
+                    <span className="font-display font-bold text-accent relative z-10 bg-white pr-3" style={{ fontSize: '2.5rem', letterSpacing: '-0.03em', lineHeight: '1' }}>
                       {phase.number}
                     </span>
                     {/* Desktop horizontal hairline */}
                     {i < phases.length - 1 && (
-                      <span className="hidden lg:block absolute top-1/2 left-0 w-full h-px bg-espresso/10" style={{ transform: 'translateY(-50%)' }} aria-hidden="true" />
+                      <span className="hidden lg:block absolute top-1/2 left-0 w-full h-px bg-graphite/10" style={{ transform: 'translateY(-50%)' }} aria-hidden="true" />
                     )}
                     {/* Mobile vertical connector */}
                     {i < phases.length - 1 && (
-                      <span className="lg:hidden absolute left-5 top-full w-px h-6 bg-espresso/10 sm:hidden" aria-hidden="true" />
+                      <span className="lg:hidden absolute left-5 top-full w-px h-6 bg-graphite/10 sm:hidden" aria-hidden="true" />
                     )}
                   </div>
                   <h3 className="heading-4 mb-3">{phase.title}</h3>
-                  <p className="text-muted-brown text-sm leading-relaxed">{phase.description}</p>
+                  <p className="text-steel text-sm leading-relaxed">{phase.description}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -127,7 +127,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
       </section>
 
       {/* READINESS METHOD: Four-pillar framework teaser */}
-      <section className="py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 bg-deep-cream">
+      <section className="py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 bg-ash-tint">
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <div className="max-w-2xl mb-16">
@@ -141,7 +141,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
               </p>
             </div>
           </ScrollReveal>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-espresso/8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-graphite/8">
             {[
               { title: 'Profitability and Unit Economics', desc: 'Can the model support two layers of ownership and still deliver a strong operator return?' },
               { title: 'Systems and Operations', desc: 'Are your processes documented well enough that a new operator can learn them without you?' },
@@ -149,12 +149,12 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
               { title: 'Replicability and Market Demand', desc: 'Can the concept reproduce in a new market by a new operator, and does that market want it?' },
             ].map((pillar, i) => (
               <ScrollReveal key={pillar.title} delay={i as 1 | 2 | 3 | 4}>
-                <div className="bg-deep-cream p-8 lg:p-10 h-full">
-                  <span className="font-display font-bold text-amber text-2xl mb-4 block" style={{ letterSpacing: '-0.03em' }}>
+                <div className="bg-ash-tint p-8 lg:p-10 h-full">
+                  <span className="font-display font-bold text-accent text-2xl mb-4 block" style={{ letterSpacing: '-0.03em' }}>
                     {String(i + 1).padStart(2, '0')}
                   </span>
                   <h3 className="heading-4 mb-3">{pillar.title}</h3>
-                  <p className="text-muted-brown text-sm leading-relaxed">{pillar.desc}</p>
+                  <p className="text-steel text-sm leading-relaxed">{pillar.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -176,27 +176,27 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
       <WhyForge />
 
       {/* MICRO-COMMITMENT: Assessment teaser. Full-bleed dark section. */}
-      <section className="py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 bg-espresso text-cream dark-depth">
+      <section className="py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 bg-graphite text-white dark-depth">
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             <div>
               <ScrollReveal>
                 <p className="eyebrow mb-4">Are You Ready?</p>
-                <h2 className="heading-2 text-cream mb-6">The Real Question Is Not "Can I Franchise?" It Is "Should I, and What Would It Take?"</h2>
-                <p className="text-lg text-cream/50 leading-relaxed mb-10">
+                <h2 className="heading-2 text-white mb-6">The Real Question Is Not "Can I Franchise?" It Is "Should I, and What Would It Take?"</h2>
+                <p className="text-lg text-white/60 leading-relaxed mb-10">
                   Our free assessment evaluates seven readiness factors specific to your business.
                   Two minutes, no login, and you get a score with specific recommendations.
                 </p>
                 <Link href="/is-my-business-franchisable" className="btn-primary">
                   Take the Free Assessment
                 </Link>
-                <p className="text-cream/30 text-xs mt-3">No email required. Results are immediate.</p>
+                <p className="text-white/60 text-xs mt-3">No email required. Results are immediate.</p>
               </ScrollReveal>
             </div>
             <div>
               <ScrollReveal delay={1}>
-                <div className="bg-cream/5 border border-cream/10 p-8 sm:p-10" style={{ borderRadius: '4px' }}>
-                  <h3 className="heading-4 text-cream mb-6">7 signs your business is ready:</h3>
+                <div className="bg-white/5 border border-white/10 p-8 sm:p-10" style={{ borderRadius: '4px' }}>
+                  <h3 className="heading-4 text-white mb-6">7 signs your business is ready:</h3>
                   <ul className="space-y-4">
                     {[
                       'Profitable for at least two years',
@@ -208,10 +208,10 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
                       'You are ready to lead a network, not just a location',
                     ].map((sign, i) => (
                       <li key={i} className="flex items-start gap-3">
-                        <svg className="w-5 h-5 text-amber flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
-                        <span className="text-cream/60 text-sm leading-relaxed">{sign}</span>
+                        <span className="text-white/60 text-sm leading-relaxed">{sign}</span>
                       </li>
                     ))}
                   </ul>
@@ -223,7 +223,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
       </section>
 
       {/* INDUSTRIES: Text-led left + compact grid right */}
-      <section className="py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 bg-cream">
+      <section className="py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-12 gap-16 items-start">
             <div className="lg:col-span-5">
@@ -247,10 +247,10 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
                       href={industry.href}
                       className="card-interactive block py-5 px-6 group"
                     >
-                      <span className="text-sm font-semibold text-espresso group-hover:text-amber transition-colors">
+                      <span className="text-sm font-semibold text-graphite group-hover:text-accent transition-colors">
                         {industry.name}
                       </span>
-                      <svg className="inline-block ml-2 w-4 h-4 text-muted-brown/30 group-hover:text-amber group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="inline-block ml-2 w-4 h-4 text-steel group-hover:text-accent group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
                     </Link>
@@ -263,7 +263,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
       </section>
 
       {/* EDUCATION: Blog teasers. Asymmetric featured + two-column. */}
-      <section className="py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 bg-deep-cream">
+      <section className="py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 bg-ash-tint">
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <div className="max-w-2xl mb-12">
@@ -279,7 +279,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
           {/* Featured post: large */}
           <ScrollReveal>
             <Link href="/blog/how-to-franchise-your-business" className="group block mb-8">
-              <div className="grid lg:grid-cols-2 gap-8 bg-white p-8 sm:p-10 transition-all duration-300 hover:shadow-lg" style={{ borderRadius: '4px', border: '1px solid rgba(107, 87, 80, 0.08)' }}>
+              <div className="grid lg:grid-cols-2 gap-8 bg-white p-8 sm:p-10 transition-all duration-300 hover:shadow-lg" style={{ borderRadius: '4px', border: '1px solid rgba(78, 90, 98, 0.08)' }}>
                 <div className="relative aspect-[16/10] overflow-hidden" style={{ borderRadius: '3px' }}>
                   <Image
                     src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80"
@@ -289,18 +289,18 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
                     className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
                     sizes="(max-width: 1024px) 100vw, 45vw"
                   />
-                  <div className="absolute inset-0 mix-blend-multiply bg-amber/5" />
+                  <div className="absolute inset-0 mix-blend-multiply bg-ember/5" />
                 </div>
                 <div className="flex flex-col justify-center">
                   <span className="eyebrow">Complete Guide</span>
-                  <h3 className="heading-3 mt-4 mb-3 group-hover:text-amber transition-colors">
+                  <h3 className="heading-3 mt-4 mb-3 group-hover:text-accent transition-colors">
                     How to Franchise Your Business in 2026
                   </h3>
-                  <p className="text-muted-brown text-base leading-relaxed mb-4">
+                  <p className="text-steel text-base leading-relaxed mb-4">
                     Most owners start with the legal work. That is backwards. This guide covers feasibility,
                     structure, FDD filing, and your first franchise sale in the right order.
                   </p>
-                  <span className="text-amber text-sm font-semibold">
+                  <span className="text-accent text-sm font-semibold">
                     Read the full guide
                     <svg className="inline-block ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -330,9 +330,9 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
               <ScrollReveal key={post.href} delay={(i + 1) as 1 | 2}>
                 <Link href={post.href} className="card-interactive group block h-full">
                   <span className="eyebrow">{post.category}</span>
-                  <h3 className="heading-4 mt-4 mb-3 group-hover:text-amber transition-colors">{post.title}</h3>
-                  <p className="text-sm text-muted-brown leading-relaxed mb-4">{post.teaser}</p>
-                  <span className="text-amber text-sm font-medium link-underline">
+                  <h3 className="heading-4 mt-4 mb-3 group-hover:text-accent transition-colors">{post.title}</h3>
+                  <p className="text-sm text-steel leading-relaxed mb-4">{post.teaser}</p>
+                  <span className="text-accent text-sm font-medium link-underline">
                     Read the full guide
                   </span>
                 </Link>

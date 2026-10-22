@@ -250,7 +250,7 @@ export function AssessmentClient() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-cream">
+      <section className="bg-white">
         <div className="container-wide section-padding">
           <div className="max-w-3xl">
             <p className="eyebrow mb-4">
@@ -268,11 +268,11 @@ export function AssessmentClient() {
       </section>
 
       {/* Assessment */}
-      <section className="section-padding bg-deep-cream">
+      <section className="section-padding bg-ash-tint">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Progress Bar: goal gradient pulls completion */}
           <div className="mb-8">
-            <div className="flex items-center justify-between text-sm text-muted-brown mb-2">
+            <div className="flex items-center justify-between text-sm text-steel mb-2">
               <span>
                 {showResults
                   ? 'Assessment Complete'
@@ -282,7 +282,7 @@ export function AssessmentClient() {
             </div>
             <div className="w-full h-2 bg-white overflow-hidden" style={{ borderRadius: '2px' }}>
               <div
-                className="h-full bg-amber transition-all duration-500 ease-out"
+                className="h-full bg-ember transition-all duration-500 ease-out"
                 style={{ width: `${progress}%`, borderRadius: '2px' }}
               />
             </div>
@@ -303,8 +303,8 @@ export function AssessmentClient() {
                       }
                       className={`w-full text-left p-4 border-2 transition-all duration-200 min-h-[52px] ${
                         isSelected
-                          ? 'border-amber bg-amber/5 text-espresso'
-                          : 'border-deep-cream hover:border-amber/40 bg-white text-espresso'
+                          ? 'border-ember bg-ember/5 text-graphite'
+                          : 'border-ash-tint hover:border-ember/40 bg-white text-graphite'
                       }`}
                     >
                       <span className="font-medium">{option.label}</span>
@@ -316,7 +316,7 @@ export function AssessmentClient() {
               {currentStep > 0 && (
                 <button
                   onClick={goBack}
-                  className="mt-6 text-sm text-muted-brown hover:text-espresso transition-colors"
+                  className="mt-6 text-sm text-steel hover:text-graphite transition-colors"
                 >
                   &larr; Previous question
                 </button>
@@ -335,7 +335,7 @@ export function AssessmentClient() {
                     <path
                       d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
                       fill="none"
-                      stroke="#E8E0D4"
+                      stroke="#D9D5CF"
                       strokeWidth="3"
                     />
                     <path
@@ -343,10 +343,10 @@ export function AssessmentClient() {
                       fill="none"
                       stroke={
                         outcome.tier === 'strong'
-                          ? '#F87000'
+                          ? '#E4572E'
                           : outcome.tier === 'promising'
-                          ? '#F87000'
-                          : '#8B7355'
+                          ? '#E4572E'
+                          : '#4E5A62'
                       }
                       strokeWidth="3"
                       strokeDasharray={`${scorePct}, 100`}
@@ -354,7 +354,7 @@ export function AssessmentClient() {
                     />
                   </svg>
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-3xl font-display font-bold text-espresso">
+                    <span className="text-3xl font-display font-bold text-graphite">
                       {scorePct}
                     </span>
                   </div>
@@ -362,27 +362,27 @@ export function AssessmentClient() {
                 <h2
                   className={`heading-3 mb-2 ${
                     outcome.tier === 'strong'
-                      ? 'text-amber'
+                      ? 'text-accent'
                       : outcome.tier === 'promising'
-                      ? 'text-espresso'
-                      : 'text-muted-brown'
+                      ? 'text-graphite'
+                      : 'text-steel'
                   }`}
                 >
                   {outcome.title}
                 </h2>
-                <p className="text-sm text-muted-brown mb-4">{outcome.summary}</p>
-                <p className="text-xs text-muted-brown/60">
+                <p className="text-sm text-steel mb-4">{outcome.summary}</p>
+                <p className="text-xs text-steel">
                   Illustrative assessment based on self-reported answers.
                 </p>
               </div>
 
               {/* Email gate: reciprocity (score given, details follow) */}
               {!gateUnlocked ? (
-                <div className="card bg-espresso border-espresso text-center">
-                  <h3 className="heading-4 text-cream mb-3">
+                <div className="card bg-graphite border-graphite text-center">
+                  <h3 className="heading-4 text-white mb-3">
                     Get Your Personalized Recommendations
                   </h3>
-                  <p className="text-sm text-cream/70 mb-6 max-w-md mx-auto">
+                  <p className="text-sm text-white/70 mb-6 max-w-md mx-auto">
                     Enter your name and email to see your detailed franchise readiness
                     breakdown with specific next steps for your score.
                   </p>
@@ -393,7 +393,7 @@ export function AssessmentClient() {
                       onChange={(e) => setGateName(e.target.value)}
                       placeholder="Your name"
                       required
-                      className="w-full px-4 py-3 border border-cream/20 bg-white/10 text-cream placeholder:text-cream/40 focus:outline-none focus:ring-2 focus:ring-amber/50 min-h-[48px]"
+                      className="w-full px-4 py-3 border border-white/20 bg-white/10 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-ember/50 min-h-[48px]"
                       style={{ borderRadius: '3px' }}
                     />
                     <input
@@ -402,7 +402,7 @@ export function AssessmentClient() {
                       onChange={(e) => setGateEmail(e.target.value)}
                       placeholder="you@company.com"
                       required
-                      className="w-full px-4 py-3 border border-cream/20 bg-white/10 text-cream placeholder:text-cream/40 focus:outline-none focus:ring-2 focus:ring-amber/50 min-h-[48px]"
+                      className="w-full px-4 py-3 border border-white/20 bg-white/10 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-ember/50 min-h-[48px]"
                       style={{ borderRadius: '3px' }}
                     />
                     {gateError && <p className="text-red-400 text-sm">{gateError}</p>}
@@ -413,7 +413,7 @@ export function AssessmentClient() {
                     >
                       {gateSubmitting ? 'Sending...' : 'Show My Full Report'}
                     </button>
-                    <p className="text-xs text-cream/40">No spam. We will follow up with your personalized analysis.</p>
+                    <p className="text-xs text-white/60">No spam. We will follow up with your personalized analysis.</p>
                   </form>
                 </div>
               ) : (
@@ -426,10 +426,10 @@ export function AssessmentClient() {
                     <div className="space-y-4">
                       {outcome.details.map((detail, i) => (
                         <div key={i} className="flex items-start gap-3">
-                          <span className="flex-shrink-0 w-6 h-6 bg-amber/10 flex items-center justify-center mt-0.5" style={{ borderRadius: '3px' }}>
-                            <span className="text-amber text-xs font-bold">{i + 1}</span>
+                          <span className="flex-shrink-0 w-6 h-6 bg-ember/10 flex items-center justify-center mt-0.5" style={{ borderRadius: '3px' }}>
+                            <span className="text-accent text-xs font-bold">{i + 1}</span>
                           </span>
-                          <p className="text-sm text-muted-brown leading-relaxed">{detail}</p>
+                          <p className="text-sm text-steel leading-relaxed">{detail}</p>
                         </div>
                       ))}
                     </div>
@@ -444,9 +444,9 @@ export function AssessmentClient() {
                       {QUESTIONS.map((q) => {
                         const selected = q.options.find((o) => o.value === answers[q.id])
                         return (
-                          <div key={q.id} className="flex items-start justify-between gap-4 py-2 border-b border-deep-cream last:border-0">
-                            <span className="text-sm text-muted-brown">{q.question}</span>
-                            <span className="text-sm font-semibold text-espresso text-right flex-shrink-0 max-w-[200px]">
+                          <div key={q.id} className="flex items-start justify-between gap-4 py-2 border-b border-ash-tint last:border-0">
+                            <span className="text-sm text-steel">{q.question}</span>
+                            <span className="text-sm font-semibold text-graphite text-right flex-shrink-0 max-w-[200px]">
                               {selected?.label}
                             </span>
                           </div>
@@ -456,15 +456,15 @@ export function AssessmentClient() {
                   </div>
 
                   {/* CTA */}
-                  <div className="card bg-espresso border-espresso">
-                    <h3 className="heading-4 text-cream mb-3">
+                  <div className="card bg-graphite border-graphite">
+                    <h3 className="heading-4 text-white mb-3">
                       {outcome.tier === 'strong'
                         ? 'Your business looks ready. Let us confirm it.'
                         : outcome.tier === 'promising'
                         ? 'You are closer than you think. Let us show you the path.'
                         : 'Want to know what it would take?'}
                     </h3>
-                    <p className="text-sm text-cream/70 mb-6">
+                    <p className="text-sm text-white/70 mb-6">
                       {outcome.tier === 'strong'
                         ? 'A feasibility call confirms whether your unit economics, market position, and operations support a franchise launch. No cost, no obligation.'
                         : outcome.tier === 'promising'
@@ -477,7 +477,7 @@ export function AssessmentClient() {
                       </Link>
                       <Link
                         href="/calculator"
-                        className="btn-secondary border-cream/30 text-cream hover:bg-cream hover:text-espresso flex-1 text-center"
+                        className="btn-secondary border-white/30 text-white hover:bg-white hover:text-graphite flex-1 text-center"
                       >
                         Model Your Franchise Economics
                       </Link>
@@ -490,13 +490,13 @@ export function AssessmentClient() {
               <div className="text-center">
                 <button
                   onClick={restart}
-                  className="text-sm text-muted-brown hover:text-espresso transition-colors underline"
+                  className="text-sm text-steel hover:text-graphite transition-colors underline"
                 >
                   Retake the assessment
                 </button>
               </div>
 
-              <p className="text-xs text-muted-brown/60 text-center leading-relaxed">
+              <p className="text-xs text-steel text-center leading-relaxed">
                 This assessment provides illustrative guidance based on self-reported answers.
                 It is not a guarantee of franchise viability, a legal opinion, or a financial projection.
               </p>
@@ -507,12 +507,12 @@ export function AssessmentClient() {
 
       {/* Open loop teaser below assessment */}
       {!showResults && (
-        <section className="bg-espresso text-cream">
+        <section className="bg-graphite text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 text-center">
-            <h2 className="heading-2 text-cream mb-6">
+            <h2 className="heading-2 text-white mb-6">
               Prefer to Talk to a Human?
             </h2>
-            <p className="body-large !text-cream/60 mb-10 max-w-2xl mx-auto">
+            <p className="body-large !text-white/60 mb-10 max-w-2xl mx-auto">
               If you already know you want to explore franchising, skip the self-assessment and book
               a feasibility call directly. Our team will evaluate your business and give you a straight answer.
             </p>

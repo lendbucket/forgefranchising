@@ -37,7 +37,7 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="bg-espresso text-cream/80">
+    <footer className="bg-graphite text-white/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24">
         <div className="grid grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-8">
           {/* Brand column with white logo */}
@@ -52,11 +52,11 @@ export function Footer() {
                 style={{ objectFit: 'contain' }}
               />
             </Link>
-            <p className="text-cream/50 text-sm leading-relaxed max-w-md">
+            <p className="text-white/60 text-sm leading-relaxed max-w-md">
               {MISSION_STATEMENT}
             </p>
-            <p className="mt-6 text-sm text-cream/50">
-              <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-amber transition-colors">
+            <p className="mt-6 text-sm text-white/60">
+              <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-accent transition-colors">
                 {CONTACT_EMAIL}
               </a>
             </p>
@@ -65,7 +65,7 @@ export function Footer() {
           {/* Link columns */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h3 className="font-semibold text-cream text-xs uppercase tracking-widest mb-6">
+              <h3 className="font-semibold text-white text-xs uppercase tracking-widest mb-6">
                 {category}
               </h3>
               <ul className="space-y-3">
@@ -73,7 +73,7 @@ export function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-cream/50 hover:text-amber transition-colors"
+                      className="text-sm text-white/60 hover:text-accent transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -85,8 +85,8 @@ export function Footer() {
         </div>
 
         {/* Offering disclaimer */}
-        <div className="mt-16 pt-8" style={{ borderTop: '1px solid rgba(250, 246, 239, 0.06)' }}>
-          <p className="text-cream/25 text-xs leading-relaxed max-w-4xl">
+        <div className="mt-16 pt-8" style={{ borderTop: '1px solid rgba(255, 255, 255, 0.06)' }}>
+          <p className="text-white/60 text-xs leading-relaxed max-w-4xl">
             This website is not an offer to sell, or the solicitation of an offer to buy, a franchise.
             Forge Franchising offers franchises solely by means of its Franchise Disclosure Document.
             Certain jurisdictions require registration or other actions before franchises can be offered
@@ -95,18 +95,18 @@ export function Footer() {
           </p>
         </div>
 
-        <div className="mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4" style={{ borderTop: '1px solid rgba(250, 246, 239, 0.08)' }}>
-          <p className="text-cream/30 text-sm">
+        <div className="mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4" style={{ borderTop: '1px solid rgba(255, 255, 255, 0.08)' }}>
+          <p className="text-white/60 text-sm">
             &copy; {new Date().getFullYear()} Forge Franchising Group. All rights reserved.
           </p>
           <div className="flex items-center gap-8">
-            <Link href="/privacy" className="text-sm text-cream/30 hover:text-cream/50 transition-colors">
+            <Link href="/privacy" className="text-sm text-white/60 hover:text-white/60 transition-colors">
               Privacy
             </Link>
-            <Link href="/terms" className="text-sm text-cream/30 hover:text-cream/50 transition-colors">
+            <Link href="/terms" className="text-sm text-white/60 hover:text-white/60 transition-colors">
               Terms
             </Link>
-            <Link href="/own-a-franchise/disclosures" className="text-sm text-cream/30 hover:text-cream/50 transition-colors">
+            <Link href="/own-a-franchise/disclosures" className="text-sm text-white/60 hover:text-white/60 transition-colors">
               Disclosures
             </Link>
           </div>

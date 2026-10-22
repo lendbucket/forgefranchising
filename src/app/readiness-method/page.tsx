@@ -117,7 +117,7 @@ export default function ReadinessMethodPage() {
       />
 
       {/* INTRO */}
-      <section className="bg-cream">
+      <section className="bg-white">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'Readiness Method' }]} />
           <div className="max-w-3xl">
@@ -138,7 +138,7 @@ export default function ReadinessMethodPage() {
       </section>
 
       {/* CREDIBILITY ROW */}
-      <section className="bg-deep-cream">
+      <section className="bg-ash-tint">
         <div className="container-wide py-12 px-4 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
@@ -148,10 +148,10 @@ export default function ReadinessMethodPage() {
               { label: 'Modern software', detail: 'Data analysis and reporting, not spreadsheets and guesswork' },
             ].map((item) => (
               <div key={item.label} className="text-center">
-                <p className="font-display font-bold text-espresso text-lg mb-1" style={{ letterSpacing: '-0.02em' }}>
+                <p className="font-display font-bold text-graphite text-lg mb-1" style={{ letterSpacing: '-0.02em' }}>
                   {item.label}
                 </p>
-                <p className="text-muted-brown text-sm">{item.detail}</p>
+                <p className="text-steel text-sm">{item.detail}</p>
               </div>
             ))}
           </div>
@@ -163,32 +163,32 @@ export default function ReadinessMethodPage() {
         <section
           key={pillar.number}
           id={`pillar-${pillar.number}`}
-          className={index % 2 === 0 ? 'section-padding bg-cream' : 'section-padding bg-deep-cream'}
+          className={index % 2 === 0 ? 'section-padding bg-white' : 'section-padding bg-ash-tint'}
         >
           <div className="container-wide">
             <div className="grid lg:grid-cols-12 gap-12">
               <div className="lg:col-span-4">
                 <div className="sticky top-28">
-                  <div className="text-amber font-display text-6xl font-bold mb-4">{pillar.number}</div>
+                  <div className="text-accent font-display text-6xl font-bold mb-4">{pillar.number}</div>
                   <h2 className="heading-2 mb-3">{pillar.title}</h2>
                 </div>
               </div>
               <div className="lg:col-span-8">
                 <div className="card">
                   <h3 className="heading-4 mb-4">What this pillar measures</h3>
-                  <p className="text-muted-brown leading-relaxed mb-8">{pillar.what}</p>
+                  <p className="text-steel leading-relaxed mb-8">{pillar.what}</p>
 
                   <h3 className="heading-4 mb-4">Why it determines franchisability</h3>
-                  <p className="text-muted-brown leading-relaxed mb-8">{pillar.why}</p>
+                  <p className="text-steel leading-relaxed mb-8">{pillar.why}</p>
 
                   <h3 className="heading-4 mb-4">Questions we ask</h3>
                   <ul className="space-y-3">
                     {pillar.questions.map((q, i) => (
                       <li key={i} className="flex items-start gap-3">
-                        <svg className="w-5 h-5 text-amber flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd" />
                         </svg>
-                        <span className="text-muted-brown leading-relaxed">{q}</span>
+                        <span className="text-steel leading-relaxed">{q}</span>
                       </li>
                     ))}
                   </ul>
@@ -200,12 +200,12 @@ export default function ReadinessMethodPage() {
       ))}
 
       {/* WHAT THE ASSESSMENT REVEALS */}
-      <section className="section-padding bg-espresso text-cream">
+      <section className="section-padding bg-graphite text-white">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto">
-            <p className="eyebrow text-amber mb-4">Diagnosis, Then Path</p>
-            <h2 className="heading-2 text-cream mb-8">What the Assessment Reveals</h2>
-            <p className="text-lg text-cream/60 leading-relaxed mb-8">
+            <p className="eyebrow text-accent mb-4">Diagnosis, Then Path</p>
+            <h2 className="heading-2 text-white mb-8">What the Assessment Reveals</h2>
+            <p className="text-lg text-white/60 leading-relaxed mb-8">
               The Forge Franchise Readiness Method does not produce a pass or fail verdict. It
               produces a detailed picture of where your business stands across each pillar and
               what gaps exist between where you are today and where you need to be to franchise
@@ -213,7 +213,7 @@ export default function ReadinessMethodPage() {
             </p>
             <div className="grid sm:grid-cols-2 gap-8 mb-10">
               <div>
-                <h3 className="heading-4 text-cream mb-4">Gaps it surfaces</h3>
+                <h3 className="heading-4 text-white mb-4">Gaps it surfaces</h3>
                 <ul className="space-y-3">
                   {[
                     'Margins that cannot support a two-layer ownership model',
@@ -223,14 +223,14 @@ export default function ReadinessMethodPage() {
                     'Systems that work at one location but break at three',
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      <span className="w-1.5 h-1.5 bg-amber rounded-full flex-shrink-0 mt-2" />
-                      <span className="text-cream/60 text-sm leading-relaxed">{item}</span>
+                      <span className="w-1.5 h-1.5 bg-ember rounded-full flex-shrink-0 mt-2" />
+                      <span className="text-white/60 text-sm leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
               <div>
-                <h3 className="heading-4 text-cream mb-4">What readiness looks like</h3>
+                <h3 className="heading-4 text-white mb-4">What readiness looks like</h3>
                 <ul className="space-y-3">
                   {[
                     'Unit economics that work for both franchisor and franchisee',
@@ -240,17 +240,17 @@ export default function ReadinessMethodPage() {
                     'An owner ready to lead a network, not just manage a location',
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      <svg className="w-5 h-5 text-amber flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
-                      <span className="text-cream/60 text-sm leading-relaxed">{item}</span>
+                      <span className="text-white/60 text-sm leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
-            <div className="bg-cream/5 border border-cream/10 px-6 py-5" style={{ borderRadius: '4px' }}>
-              <p className="text-cream/50 text-sm leading-relaxed">
+            <div className="bg-white/5 border border-white/10 px-6 py-5" style={{ borderRadius: '4px' }}>
+              <p className="text-white/60 text-sm leading-relaxed">
                 A readiness assessment does not guarantee franchise success, regulatory approval, or specific
                 financial outcomes. It identifies whether foundational conditions are present. Franchise
                 offerings are made only through a Franchise Disclosure Document in compliance with applicable law.
@@ -261,14 +261,14 @@ export default function ReadinessMethodPage() {
       </section>
 
       {/* FROM ASSESSMENT TO LAUNCH */}
-      <section className="section-padding bg-cream">
+      <section className="section-padding bg-white">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center">
             <p className="eyebrow mb-4">From Assessment to Launch</p>
             <h2 className="heading-2 mb-6">The Method Connects to the Process</h2>
             <p className="body-large mb-10">
               The Forge Franchise Readiness Method is the first stage of our{' '}
-              <Link href="/how-it-works" className="text-amber font-semibold hover:underline">
+              <Link href="/how-it-works" className="text-accent font-semibold hover:underline">
                 four-phase franchise development process
               </Link>. Once the assessment confirms readiness, you move directly into Structure,
               Launch, and Scale with a clear foundation. If gaps exist, we identify exactly
@@ -277,9 +277,9 @@ export default function ReadinessMethodPage() {
             <div className="grid sm:grid-cols-2 gap-6 text-left mb-10">
               <div className="card">
                 <h3 className="heading-4 mb-3">Ready now</h3>
-                <p className="text-muted-brown text-sm leading-relaxed">
+                <p className="text-steel text-sm leading-relaxed">
                   You move into our{' '}
-                  <Link href="/how-it-works" className="text-amber font-semibold hover:underline">
+                  <Link href="/how-it-works" className="text-accent font-semibold hover:underline">
                     Structure phase
                   </Link>{' '}
                   with confidence. FDD preparation, franchise agreement, and operations manual
@@ -288,16 +288,16 @@ export default function ReadinessMethodPage() {
               </div>
               <div className="card">
                 <h3 className="heading-4 mb-3">Gaps to close first</h3>
-                <p className="text-muted-brown text-sm leading-relaxed">
+                <p className="text-steel text-sm leading-relaxed">
                   You get a specific roadmap of what needs to change. Some gaps close in weeks.
                   Others take months. Either way, you know exactly what to work on and why, so
                   when you do launch, the system holds.
                 </p>
               </div>
             </div>
-            <p className="text-muted-brown text-sm leading-relaxed">
+            <p className="text-steel text-sm leading-relaxed">
               See our{' '}
-              <Link href="/packages" className="text-amber font-semibold hover:underline">
+              <Link href="/packages" className="text-accent font-semibold hover:underline">
                 engagement packages
               </Link>{' '}
               for how the method connects to full franchise development scope and pricing.
@@ -307,7 +307,7 @@ export default function ReadinessMethodPage() {
       </section>
 
       {/* FAQ SECTION */}
-      <section className="section-padding bg-deep-cream">
+      <section className="section-padding bg-ash-tint">
         <div className="container-wide max-w-3xl mx-auto">
           <div className="text-center mb-12">
             <p className="eyebrow mb-4">Common Questions</p>
@@ -338,7 +338,7 @@ export default function ReadinessMethodPage() {
             ].map((item) => (
               <div key={item.q} className="card" style={{ borderRadius: '4px' }}>
                 <h3 className="heading-4 mb-3">{item.q}</h3>
-                <p className="text-muted-brown leading-relaxed">{item.a}</p>
+                <p className="text-steel leading-relaxed">{item.a}</p>
               </div>
             ))}
           </div>

@@ -103,9 +103,9 @@ export function Header() {
         className={`sticky top-0 z-50 transition-all duration-300 safe-top ${
           isTransparent
             ? 'bg-transparent'
-            : 'bg-cream/97 backdrop-blur-md shadow-sm'
+            : 'bg-white/97 backdrop-blur-md shadow-sm'
         }`}
-        style={isTransparent ? {} : { borderBottom: '1px solid rgba(40, 16, 16, 0.06)' }}
+        style={isTransparent ? {} : { borderBottom: '1px solid rgba(28, 31, 35, 0.06)' }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`flex items-center justify-between transition-all duration-300 ${
@@ -146,8 +146,8 @@ export function Header() {
                     type="button"
                     className={`px-4 py-2 text-sm font-medium transition-colors ${
                       isTransparent
-                        ? (openPanel === key ? 'text-cream' : 'text-cream/70 hover:text-cream')
-                        : (openPanel === key ? 'text-espresso' : 'text-espresso/70 hover:text-espresso')
+                        ? (openPanel === key ? 'text-white' : 'text-white/70 hover:text-white')
+                        : (openPanel === key ? 'text-graphite' : 'text-graphite/70 hover:text-graphite')
                     }`}
                     aria-expanded={openPanel === key}
                     aria-haspopup="true"
@@ -180,7 +180,7 @@ export function Header() {
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               className={`lg:hidden p-2 min-w-[44px] min-h-[44px] flex items-center justify-center active:scale-95 transition-transform ${
-                isTransparent ? 'text-cream' : 'text-espresso'
+                isTransparent ? 'text-white' : 'text-graphite'
               }`}
               aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={mobileOpen}
@@ -201,7 +201,7 @@ export function Header() {
         {/* Desktop Mega Menu Panel */}
         {openPanel && (
           <div
-            className="hidden lg:block absolute left-0 right-0 top-full bg-cream border-t border-deep-cream/30 shadow-lg z-50"
+            className="hidden lg:block absolute left-0 right-0 top-full bg-white border-t border-ash-tint/30 shadow-lg z-50"
             onMouseEnter={() => { if (closeTimer.current) clearTimeout(closeTimer.current) }}
             onMouseLeave={handleMouseLeave}
             role="menu"
@@ -219,10 +219,10 @@ export function Header() {
                         onClick={() => setOpenPanel(null)}
                         role="menuitem"
                       >
-                        <span className="text-sm font-semibold text-espresso group-hover:text-amber transition-colors">
+                        <span className="text-sm font-semibold text-graphite group-hover:text-accent transition-colors">
                           {link.label}
                         </span>
-                        <span className="block text-xs text-muted-brown/70 mt-0.5">
+                        <span className="block text-xs text-steel mt-0.5">
                           {link.desc}
                         </span>
                       </Link>
@@ -232,15 +232,15 @@ export function Header() {
 
                 <div className="col-span-4">
                   {openPanel === 'Own a Franchise' ? (
-                    <div className="bg-espresso rounded p-8 h-full flex flex-col justify-between">
+                    <div className="bg-graphite rounded p-8 h-full flex flex-col justify-between">
                       <div>
-                        <p className="text-amber text-xs font-semibold uppercase tracking-widest mb-3">
+                        <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">
                           Franchise Opportunity
                         </p>
-                        <h3 className="font-display font-bold text-xl text-cream mb-3" style={{ letterSpacing: '-0.02em' }}>
+                        <h3 className="font-display font-bold text-xl text-white mb-3" style={{ letterSpacing: '-0.02em' }}>
                           Build a franchise consulting business
                         </h3>
-                        <p className="text-cream/60 text-sm leading-relaxed mb-6">
+                        <p className="text-white/60 text-sm leading-relaxed mb-6">
                           Work from home. Two income streams. $15,000 franchise fee. Limited territories.
                         </p>
                       </div>
@@ -253,15 +253,15 @@ export function Header() {
                       </Link>
                     </div>
                   ) : (
-                    <div className="bg-espresso rounded p-8 h-full flex flex-col justify-between">
+                    <div className="bg-graphite rounded p-8 h-full flex flex-col justify-between">
                       <div>
-                        <p className="text-amber text-xs font-semibold uppercase tracking-widest mb-3">
+                        <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">
                           Get Started
                         </p>
-                        <h3 className="font-display font-bold text-xl text-cream mb-3" style={{ letterSpacing: '-0.02em' }}>
+                        <h3 className="font-display font-bold text-xl text-white mb-3" style={{ letterSpacing: '-0.02em' }}>
                           See if your business qualifies
                         </h3>
-                        <p className="text-cream/60 text-sm leading-relaxed mb-6">
+                        <p className="text-white/60 text-sm leading-relaxed mb-6">
                           Take our free assessment and get a clear, honest answer in under five minutes.
                         </p>
                       </div>
@@ -284,7 +284,7 @@ export function Header() {
       {/* Desktop mega menu overlay */}
       {openPanel && (
         <div
-          className={`hidden lg:block fixed inset-0 bg-espresso/20 z-40 menu-overlay ${openPanel ? 'active' : ''}`}
+          className={`hidden lg:block fixed inset-0 bg-graphite/20 z-40 menu-overlay ${openPanel ? 'active' : ''}`}
           style={{ top: scrolled ? '64px' : '80px' }}
           onClick={() => setOpenPanel(null)}
           aria-hidden="true"
@@ -294,10 +294,10 @@ export function Header() {
       {/* Mobile fullscreen menu */}
       {mobileOpen && (
         <div
-          className="lg:hidden fixed inset-0 z-50 bg-cream flex flex-col safe-top"
+          className="lg:hidden fixed inset-0 z-50 bg-white flex flex-col safe-top"
           style={{ height: '100dvh' }}
         >
-          <div className="flex items-center justify-between px-4 h-20 flex-shrink-0" style={{ borderBottom: '1px solid rgba(40, 16, 16, 0.06)' }}>
+          <div className="flex items-center justify-between px-4 h-20 flex-shrink-0" style={{ borderBottom: '1px solid rgba(28, 31, 35, 0.06)' }}>
             <Link href="/" className="flex items-center" onClick={() => setMobileOpen(false)}>
               <Image
                 src="/forge-franchising-logo.png"
@@ -311,7 +311,7 @@ export function Header() {
             </Link>
             <button
               onClick={() => setMobileOpen(false)}
-              className="p-2 text-espresso min-w-[44px] min-h-[44px] flex items-center justify-center active:scale-95 transition-transform"
+              className="p-2 text-graphite min-w-[44px] min-h-[44px] flex items-center justify-center active:scale-95 transition-transform"
               aria-label="Close menu"
             >
               <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -322,16 +322,16 @@ export function Header() {
 
           <div className="flex-1 overflow-y-auto px-4 py-6 overscroll-contain">
             {menuKeys.map((key) => (
-              <div key={key} style={{ borderBottom: '1px solid rgba(40, 16, 16, 0.06)' }}>
+              <div key={key} style={{ borderBottom: '1px solid rgba(28, 31, 35, 0.06)' }}>
                 <button
                   type="button"
                   onClick={() => setMobileAccordion(mobileAccordion === key ? null : key)}
                   className="w-full flex items-center justify-between py-4 text-left min-h-[52px] active:opacity-70 transition-opacity"
                   aria-expanded={mobileAccordion === key}
                 >
-                  <span className="text-lg font-display font-semibold text-espresso">{key}</span>
+                  <span className="text-lg font-display font-semibold text-graphite">{key}</span>
                   <svg
-                    className={`w-5 h-5 text-muted-brown transition-transform duration-200 ${
+                    className={`w-5 h-5 text-steel transition-transform duration-200 ${
                       mobileAccordion === key ? 'rotate-180' : ''
                     }`}
                     fill="none"
@@ -351,8 +351,8 @@ export function Header() {
                         onClick={() => setMobileOpen(false)}
                         className="block py-3 min-h-[44px] active:opacity-70 transition-opacity"
                       >
-                        <span className="text-base font-medium text-espresso">{link.label}</span>
-                        <span className="block text-sm text-muted-brown/70 mt-0.5">{link.desc}</span>
+                        <span className="text-base font-medium text-graphite">{link.label}</span>
+                        <span className="block text-sm text-steel mt-0.5">{link.desc}</span>
                       </Link>
                     ))}
                   </div>
@@ -361,7 +361,7 @@ export function Header() {
             ))}
           </div>
 
-          <div className="flex-shrink-0 px-4 pb-6 pt-4 safe-bottom" style={{ borderTop: '1px solid rgba(40, 16, 16, 0.06)' }}>
+          <div className="flex-shrink-0 px-4 pb-6 pt-4 safe-bottom" style={{ borderTop: '1px solid rgba(28, 31, 35, 0.06)' }}>
             <Link
               href="/contact"
               onClick={() => setMobileOpen(false)}

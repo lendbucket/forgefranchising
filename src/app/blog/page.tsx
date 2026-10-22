@@ -18,7 +18,7 @@ const categories = [
 ]
 
 const categoryColors: Record<string, string> = {
-  Guide: 'bg-amber/10 text-amber',
+  Guide: 'bg-ember/10 text-accent',
   Education: 'bg-blue-50 text-blue-700',
   Finance: 'bg-emerald-50 text-emerald-700',
   'Case Study': 'bg-purple-50 text-purple-700',
@@ -49,16 +49,16 @@ export default function BlogIndexPage() {
 
   return (
     <>
-      <section className="bg-espresso text-cream">
+      <section className="bg-graphite text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
           <div className="max-w-3xl">
             <p className="eyebrow mb-4">
               Franchise Knowledge Hub
             </p>
-            <h1 className="heading-1 text-cream mb-6">
+            <h1 className="heading-1 text-white mb-6">
               The Franchise Blog
             </h1>
-            <p className="text-lg sm:text-xl text-cream/70 leading-relaxed">
+            <p className="text-lg sm:text-xl text-white/70 leading-relaxed">
               Practical guides, real cost breakdowns, and proven strategies for
               business owners who want to franchise the right way. No fluff. No
               gated content. Just the information you need.
@@ -67,7 +67,7 @@ export default function BlogIndexPage() {
         </div>
       </section>
 
-      <section className="bg-cream">
+      <section className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           {/* Category Filter */}
           <div className="flex flex-wrap gap-2 mb-12">
@@ -86,8 +86,8 @@ export default function BlogIndexPage() {
                   style={{ borderRadius: '3px' }}
                   className={`px-4 py-2 text-sm font-medium transition-colors duration-200 min-h-[44px] ${
                     activeCategory === category
-                      ? 'bg-espresso text-cream'
-                      : 'bg-deep-cream text-muted-brown hover:bg-espresso/10'
+                      ? 'bg-graphite text-white'
+                      : 'bg-ash-tint text-steel hover:bg-graphite/10'
                   }`}
                 >
                   {category}
@@ -117,24 +117,24 @@ export default function BlogIndexPage() {
                       >
                         {post.category}
                       </span>
-                      <span className="text-xs text-muted-brown">
+                      <span className="text-xs text-steel">
                         {post.readTime}
                       </span>
                     </div>
-                    <h2 className="font-display text-lg sm:text-xl font-bold text-espresso mb-3 group-hover:text-amber transition-colors duration-200 leading-snug">
+                    <h2 className="font-display text-lg sm:text-xl font-bold text-graphite mb-3 group-hover:text-accent transition-colors duration-200 leading-snug">
                       {post.title}
                     </h2>
-                    <p className="text-sm text-muted-brown leading-relaxed mb-4 line-clamp-3">
+                    <p className="text-sm text-steel leading-relaxed mb-4 line-clamp-3">
                       {post.description}
                     </p>
                     <div className="flex items-center justify-between">
                       <time
                         dateTime={post.datePublished}
-                        className="text-xs text-muted-brown/70"
+                        className="text-xs text-steel"
                       >
                         {formatDate(post.datePublished)}
                       </time>
-                      <span className="text-amber text-sm font-semibold group-hover:translate-x-1 transition-transform duration-200">
+                      <span className="text-accent text-sm font-semibold group-hover:translate-x-1 transition-transform duration-200">
                         Read more &rarr;
                       </span>
                     </div>
@@ -144,7 +144,7 @@ export default function BlogIndexPage() {
             </div>
           ) : (
             <div className="text-center py-16">
-              <p className="text-muted-brown text-lg">
+              <p className="text-steel text-lg">
                 No posts found in this category yet. Check back soon.
               </p>
             </div>
@@ -153,12 +153,12 @@ export default function BlogIndexPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-espresso text-cream">
+      <section className="bg-graphite text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 text-center">
-          <h2 className="heading-2 text-cream mb-6">
+          <h2 className="heading-2 text-white mb-6">
             Ready to Explore Franchising?
           </h2>
-          <p className="body-large text-cream/70 mb-10 max-w-2xl mx-auto">
+          <p className="body-large text-white/70 mb-10 max-w-2xl mx-auto">
             Get a free, honest assessment of whether your business is ready to
             franchise. No obligations, no sales pitch. Just clarity.
           </p>

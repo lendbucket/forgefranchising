@@ -90,13 +90,13 @@ function InputField({
 } & React.InputHTMLAttributes<HTMLInputElement>) {
   return (
     <div>
-      <label className="block text-sm font-medium text-espresso mb-2">
-        {label} {required && <span className="text-amber">*</span>}
+      <label className="block text-sm font-medium text-graphite mb-2">
+        {label} {required && <span className="text-accent">*</span>}
       </label>
       <input
         {...props}
         required={required}
-        className="w-full px-5 py-4 border border-espresso/12 bg-white text-espresso placeholder:text-muted-brown/40 focus:outline-none focus:ring-2 focus:ring-amber/40 focus:border-amber/60 transition-all duration-200 min-h-[52px] text-base"
+        className="w-full px-5 py-4 border border-graphite/12 bg-white text-graphite placeholder:text-steel focus:outline-none focus:ring-2 focus:ring-ember/40 focus:border-ember/60 transition-all duration-200 min-h-[52px] text-base"
         style={{ borderRadius: '3px' }}
       />
     </div>
@@ -117,13 +117,13 @@ function SelectField({
 } & React.SelectHTMLAttributes<HTMLSelectElement>) {
   return (
     <div>
-      <label className="block text-sm font-medium text-espresso mb-2">
-        {label} {required && <span className="text-amber">*</span>}
+      <label className="block text-sm font-medium text-graphite mb-2">
+        {label} {required && <span className="text-accent">*</span>}
       </label>
       <select
         {...props}
         required={required}
-        className="w-full px-5 py-4 border border-espresso/12 bg-white text-espresso focus:outline-none focus:ring-2 focus:ring-amber/40 focus:border-amber/60 transition-all duration-200 min-h-[52px] text-base"
+        className="w-full px-5 py-4 border border-graphite/12 bg-white text-graphite focus:outline-none focus:ring-2 focus:ring-ember/40 focus:border-ember/60 transition-all duration-200 min-h-[52px] text-base"
         style={{ borderRadius: '3px' }}
       >
         <option value="">{placeholder || 'Select...'}</option>
@@ -147,13 +147,13 @@ function TextAreaField({
 } & React.TextareaHTMLAttributes<HTMLTextAreaElement>) {
   return (
     <div>
-      <label className="block text-sm font-medium text-espresso mb-2">
-        {label} {required && <span className="text-amber">*</span>}
+      <label className="block text-sm font-medium text-graphite mb-2">
+        {label} {required && <span className="text-accent">*</span>}
       </label>
       <textarea
         {...props}
         required={required}
-        className="w-full px-5 py-4 border border-espresso/12 bg-white text-espresso placeholder:text-muted-brown/40 focus:outline-none focus:ring-2 focus:ring-amber/40 focus:border-amber/60 transition-all duration-200 resize-y text-base leading-relaxed"
+        className="w-full px-5 py-4 border border-graphite/12 bg-white text-graphite placeholder:text-steel focus:outline-none focus:ring-2 focus:ring-ember/40 focus:border-ember/60 transition-all duration-200 resize-y text-base leading-relaxed"
         style={{ borderRadius: '3px' }}
       />
     </div>
@@ -218,22 +218,22 @@ export default function ContactPage() {
   if (status === 'success') {
     return (
       <>
-        <section className="bg-cream">
+        <section className="bg-white">
           <div className="container-wide section-padding">
             <nav aria-label="Breadcrumb" className="py-4">
-              <ol className="flex items-center gap-2 text-sm text-muted-brown">
+              <ol className="flex items-center gap-2 text-sm text-steel">
                 <li className="flex items-center gap-2">
-                  <Link href="/" className="hover:text-espresso transition-colors">Home</Link>
+                  <Link href="/" className="hover:text-graphite transition-colors">Home</Link>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-muted-brown/40">/</span>
-                  <span className="text-espresso font-medium">Contact</span>
+                  <span className="text-steel">/</span>
+                  <span className="text-graphite font-medium">Contact</span>
                 </li>
               </ol>
             </nav>
             <div className="max-w-2xl mx-auto text-center py-16 sm:py-24">
-              <div className="w-16 h-16 bg-amber/20 flex items-center justify-center mx-auto mb-6" style={{ borderRadius: '4px' }}>
-                <svg className="w-8 h-8 text-amber" fill="currentColor" viewBox="0 0 20 20">
+              <div className="w-16 h-16 bg-ember/20 flex items-center justify-center mx-auto mb-6" style={{ borderRadius: '4px' }}>
+                <svg className="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
               </div>
@@ -242,13 +242,13 @@ export default function ContactPage() {
                 We review every submission personally. If your business looks like a strong candidate
                 for franchising, we will reach out within one business day to schedule a feasibility call.
               </p>
-              <p className="text-muted-brown mb-8">
+              <p className="text-steel mb-8">
                 During that call, we will walk through your business model, your goals, and whether
                 franchising is the right growth path for you. There is no cost and no obligation.
               </p>
-              <p className="text-muted-brown mb-8 text-sm">
+              <p className="text-steel mb-8 text-sm">
                 Need to add something? Email us at{' '}
-                <a href={`mailto:${CONTACT_EMAIL}`} className="text-amber hover:underline">
+                <a href={`mailto:${CONTACT_EMAIL}`} className="text-accent hover:underline">
                   {CONTACT_EMAIL}
                 </a>.
               </p>
@@ -277,16 +277,16 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="bg-cream">
+      <section className="bg-white">
         <div className="container-wide section-padding">
           <nav aria-label="Breadcrumb" className="py-4">
-            <ol className="flex items-center gap-2 text-sm text-muted-brown">
+            <ol className="flex items-center gap-2 text-sm text-steel">
               <li className="flex items-center gap-2">
-                <Link href="/" className="hover:text-espresso transition-colors">Home</Link>
+                <Link href="/" className="hover:text-graphite transition-colors">Home</Link>
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-muted-brown/40">/</span>
-                <span className="text-espresso font-medium">Contact</span>
+                <span className="text-steel">/</span>
+                <span className="text-graphite font-medium">Contact</span>
               </li>
             </ol>
           </nav>
@@ -306,7 +306,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-deep-cream">
+      <section className="section-padding bg-ash-tint">
         <div className="container-wide">
           <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
             {/* Form Column */}
@@ -320,7 +320,7 @@ export default function ContactPage() {
                       type="button"
                       onClick={() => { if (i < step) setStep(i) }}
                       className={`text-xs font-semibold uppercase tracking-wider transition-colors ${
-                        i === step ? 'text-amber' : i < step ? 'text-espresso cursor-pointer' : 'text-muted-brown/40'
+                        i === step ? 'text-accent' : i < step ? 'text-graphite cursor-pointer' : 'text-steel'
                       }`}
                       disabled={i > step}
                     >
@@ -330,11 +330,11 @@ export default function ContactPage() {
                 </div>
                 <div className="w-full h-1.5 bg-white overflow-hidden" style={{ borderRadius: '2px' }}>
                   <div
-                    className="h-full bg-amber transition-all duration-500 ease-out"
+                    className="h-full bg-ember transition-all duration-500 ease-out"
                     style={{ width: `${progress}%` }}
                   />
                 </div>
-                <p className="text-xs text-muted-brown/60 mt-2">Step {step + 1} of {STEPS.length}</p>
+                <p className="text-xs text-steel mt-2">Step {step + 1} of {STEPS.length}</p>
               </div>
 
               <form onSubmit={handleSubmit}>
@@ -342,7 +342,7 @@ export default function ContactPage() {
                 {step === 0 && (
                   <div className="card">
                     <h2 className="heading-3 mb-2">Tell us about you</h2>
-                    <p className="text-sm text-muted-brown mb-6">We will use this to reach out after reviewing your inquiry.</p>
+                    <p className="text-sm text-steel mb-6">We will use this to reach out after reviewing your inquiry.</p>
                     <div className="grid sm:grid-cols-2 gap-6">
                       <InputField
                         label="Full Name"
@@ -389,7 +389,7 @@ export default function ContactPage() {
                       >
                         Continue to Business Details
                       </button>
-                      <p className="text-xs text-muted-brown/50 mt-3">Takes about 90 seconds total. We never share your information.</p>
+                      <p className="text-xs text-steel mt-3">Takes about 90 seconds total. We never share your information.</p>
                     </div>
                   </div>
                 )}
@@ -398,7 +398,7 @@ export default function ContactPage() {
                 {step === 1 && (
                   <div className="card">
                     <h2 className="heading-3 mb-2">Tell us about your business</h2>
-                    <p className="text-sm text-muted-brown mb-6">This helps us assess fit before your feasibility call.</p>
+                    <p className="text-sm text-steel mb-6">This helps us assess fit before your feasibility call.</p>
                     <div className="grid sm:grid-cols-2 gap-6">
                       <SelectField
                         label="Industry"
@@ -454,7 +454,7 @@ export default function ContactPage() {
                       <button
                         type="button"
                         onClick={prevStep}
-                        className="text-sm text-muted-brown hover:text-espresso transition-colors min-h-[44px]"
+                        className="text-sm text-steel hover:text-graphite transition-colors min-h-[44px]"
                       >
                         Back
                       </button>
@@ -473,7 +473,7 @@ export default function ContactPage() {
                 {step === 2 && (
                   <div className="card">
                     <h2 className="heading-3 mb-2">What are your goals?</h2>
-                    <p className="text-sm text-muted-brown mb-6">The more context you share, the more useful our first call will be.</p>
+                    <p className="text-sm text-steel mb-6">The more context you share, the more useful our first call will be.</p>
                     <div className="space-y-6">
                       <TextAreaField
                         label="Why do you want to franchise your business?"
@@ -509,7 +509,7 @@ export default function ContactPage() {
                       <button
                         type="button"
                         onClick={prevStep}
-                        className="text-sm text-muted-brown hover:text-espresso transition-colors min-h-[44px]"
+                        className="text-sm text-steel hover:text-graphite transition-colors min-h-[44px]"
                       >
                         Back
                       </button>
@@ -531,7 +531,7 @@ export default function ContactPage() {
                         )}
                       </button>
                     </div>
-                    <p className="text-xs text-muted-brown mt-3">
+                    <p className="text-xs text-steel mt-3">
                       We respond within one business day. Your information is kept strictly confidential.
                     </p>
                   </div>
@@ -563,24 +563,24 @@ export default function ContactPage() {
                       },
                     ].map((item) => (
                       <li key={item.step} className="flex gap-4">
-                        <span className="flex-shrink-0 w-8 h-8 bg-amber text-cream flex items-center justify-center text-sm font-bold" style={{ borderRadius: '3px' }}>
+                        <span className="flex-shrink-0 w-8 h-8 bg-ember-button text-graphite flex items-center justify-center text-sm font-bold" style={{ borderRadius: '3px' }}>
                           {item.step}
                         </span>
                         <div>
-                          <p className="font-semibold text-espresso text-sm">{item.title}</p>
-                          <p className="text-muted-brown text-sm leading-relaxed mt-1">{item.body}</p>
+                          <p className="font-semibold text-graphite text-sm">{item.title}</p>
+                          <p className="text-steel text-sm leading-relaxed mt-1">{item.body}</p>
                         </div>
                       </li>
                     ))}
                   </ol>
                 </div>
 
-                <div className="card bg-espresso text-cream">
-                  <h3 className="heading-4 mb-3 text-cream">Not ready for a form?</h3>
-                  <p className="text-cream/70 text-sm leading-relaxed mb-4">
+                <div className="card bg-graphite text-white">
+                  <h3 className="heading-4 mb-3 text-white">Not ready for a form?</h3>
+                  <p className="text-white/70 text-sm leading-relaxed mb-4">
                     Take our two-minute franchise readiness assessment first and see where you stand.
                   </p>
-                  <Link href="/is-my-business-franchisable" className="text-amber text-sm font-semibold link-underline">
+                  <Link href="/is-my-business-franchisable" className="text-accent text-sm font-semibold link-underline">
                     Get your free readiness score
                   </Link>
                 </div>

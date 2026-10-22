@@ -135,7 +135,7 @@ export default function FranchiseBrandingPage() {
         }}
       />
 
-      <section className="bg-cream">
+      <section className="bg-white">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'Franchise Branding' }]} />
           <div className="max-w-3xl">
@@ -161,7 +161,7 @@ export default function FranchiseBrandingPage() {
             </p>
             <p className="body-large mb-8">
               Brand strength is one of the four pillars in the{' '}
-              <Link href="/readiness-method" className="text-amber font-semibold hover:underline">
+              <Link href="/readiness-method" className="text-accent font-semibold hover:underline">
                 Forge Franchise Readiness Method
               </Link>. If you have not assessed where your brand stands relative to the other
               three pillars, start there.
@@ -184,13 +184,13 @@ export default function FranchiseBrandingPage() {
       {spokes.map((spoke, index) => (
         <section
           key={spoke.number}
-          className={index % 2 === 0 ? 'section-padding bg-deep-cream' : 'section-padding bg-cream'}
+          className={index % 2 === 0 ? 'section-padding bg-ash-tint' : 'section-padding bg-white'}
         >
           <div className="container-wide">
             <div className="grid lg:grid-cols-12 gap-12">
               <div className="lg:col-span-4">
                 <div className="sticky top-28">
-                  <div className="text-amber font-display text-6xl font-bold mb-4">{spoke.number}</div>
+                  <div className="text-accent font-display text-6xl font-bold mb-4">{spoke.number}</div>
                   <h2 className="heading-2 mb-3">{spoke.title}</h2>
                   <p className="body-large">{spoke.summary}</p>
                 </div>
@@ -201,10 +201,10 @@ export default function FranchiseBrandingPage() {
                   <ul className="space-y-4">
                     {spoke.points.map((point, i) => (
                       <li key={i} className="flex items-start gap-3">
-                        <svg className="w-5 h-5 text-amber flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
-                        <span className="text-muted-brown leading-relaxed">{point}</span>
+                        <span className="text-steel leading-relaxed">{point}</span>
                       </li>
                     ))}
                   </ul>
@@ -223,10 +223,10 @@ export default function FranchiseBrandingPage() {
         </section>
       ))}
 
-      <section className="section-padding bg-espresso text-cream">
+      <section className="section-padding bg-graphite text-white">
         <div className="container-wide text-center">
-          <h2 className="heading-2 text-cream mb-6">The Brand Advantage</h2>
-          <p className="text-xl text-cream/60 max-w-3xl mx-auto leading-relaxed mb-12">
+          <h2 className="heading-2 text-white mb-6">The Brand Advantage</h2>
+          <p className="text-xl text-white/60 max-w-3xl mx-auto leading-relaxed mb-12">
             Franchise systems with strong brands sell more units, command higher franchise fees,
             and retain franchisees longer. The brand is not a marketing exercise. It is the
             economic foundation of the entire system.
@@ -238,15 +238,15 @@ export default function FranchiseBrandingPage() {
               { stat: '47%', label: 'lower franchisee turnover in systems with strong brand standards' },
             ].map((item) => (
               <div key={item.stat}>
-                <div className="text-4xl font-display font-bold text-amber mb-2">{item.stat}</div>
-                <p className="text-cream/50 text-sm">{item.label}</p>
+                <div className="text-4xl font-display font-bold text-accent mb-2">{item.stat}</div>
+                <p className="text-white/60 text-sm">{item.label}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section-padding bg-cream">
+      <section className="section-padding bg-white">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto">
             <p className="eyebrow mb-4">Frequently Asked Questions</p>
@@ -258,7 +258,7 @@ export default function FranchiseBrandingPage() {
                   className="card"
                 >
                   <h3 className="heading-4 mb-3">{faq.q}</h3>
-                  <p className="text-muted-brown leading-relaxed">{faq.a}</p>
+                  <p className="text-steel leading-relaxed">{faq.a}</p>
                 </div>
               ))}
             </div>

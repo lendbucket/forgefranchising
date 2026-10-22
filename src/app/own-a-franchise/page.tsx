@@ -95,7 +95,7 @@ const faqItems = [
 
 function CheckIcon() {
   return (
-    <svg className="w-5 h-5 text-amber flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+    <svg className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
     </svg>
   )
@@ -103,7 +103,7 @@ function CheckIcon() {
 
 function XIcon() {
   return (
-    <svg className="w-5 h-5 text-muted-brown/40 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 20 20" stroke="currentColor" strokeWidth={2}>
+    <svg className="w-5 h-5 text-steel flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 20 20" stroke="currentColor" strokeWidth={2}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M6 6l8 8M14 6l-8 8" />
     </svg>
   )
@@ -113,10 +113,10 @@ function OfferingDisclaimer({ variant }: { variant: 'light' | 'dark' }) {
   const isDark = variant === 'dark'
   return (
     <div
-      className={`${isDark ? 'bg-cream/5 border-cream/10' : 'bg-espresso/5 border-espresso/10'} border px-6 py-5`}
+      className={`${isDark ? 'bg-white/5 border-white/10' : 'bg-graphite/5 border-graphite/10'} border px-6 py-5`}
       style={{ borderRadius: '4px' }}
     >
-      <p className={`text-sm leading-relaxed ${isDark ? 'text-cream/50' : 'text-muted-brown'}`}>
+      <p className={`text-sm leading-relaxed ${isDark ? 'text-white/60' : 'text-steel'}`}>
         This is not an offer to sell, or the solicitation of an offer to buy, a franchise. Forge Franchising offers franchises solely by means of its Franchise Disclosure Document. Certain jurisdictions require registration or other actions before franchises can be offered or sold there. We will not offer or sell a franchise in any jurisdiction unless we are first in compliance with applicable law.
       </p>
     </div>
@@ -127,10 +127,10 @@ function EarningsDisclaimer({ variant }: { variant: 'light' | 'dark' }) {
   const isDark = variant === 'dark'
   return (
     <div
-      className={`${isDark ? 'bg-cream/5 border-cream/10' : 'bg-espresso/5 border-espresso/10'} border px-6 py-5`}
+      className={`${isDark ? 'bg-white/5 border-white/10' : 'bg-graphite/5 border-graphite/10'} border px-6 py-5`}
       style={{ borderRadius: '4px' }}
     >
-      <p className={`text-sm leading-relaxed ${isDark ? 'text-cream/50' : 'text-muted-brown'}`}>
+      <p className={`text-sm leading-relaxed ${isDark ? 'text-white/60' : 'text-steel'}`}>
         Any financial figures referenced on this page are illustrative and for educational purposes only. They are not a guarantee or projection of earnings. Individual results vary based on market, effort, and other factors. No financial performance representation is made by Forge Franchising except as set out in Item 19 of its Franchise Disclosure Document.
       </p>
     </div>
@@ -160,7 +160,7 @@ export default function OwnAFranchisePage() {
       />
 
       {/* HERO */}
-      <section className="relative bg-espresso overflow-hidden">
+      <section className="relative bg-graphite overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80"
@@ -172,22 +172,22 @@ export default function OwnAFranchisePage() {
         </div>
         <div className="relative container-wide section-padding py-24 sm:py-32 lg:py-40">
           <div className="max-w-3xl">
-            <p className="eyebrow text-amber mb-4">Franchise Opportunity</p>
-            <h1 className="heading-1 text-cream mb-6">
+            <p className="eyebrow text-accent mb-4">Franchise Opportunity</p>
+            <h1 className="heading-1 text-white mb-6">
               Build a Six-Figure Franchise Consulting Business. Work From Home. Help Business Owners Scale.
             </h1>
-            <p className="text-lg sm:text-xl text-cream/60 leading-relaxed mb-4 max-w-2xl">
+            <p className="text-lg sm:text-xl text-white/60 leading-relaxed mb-4 max-w-2xl">
               You are an ambitious professional who wants to own a business, not just work a job. Forge gives you the brand, the training, the technology, and the deal flow to build a consulting practice that helps business owners franchise and grow.
             </p>
-            <p className="text-lg sm:text-xl text-cream/60 leading-relaxed mb-4 max-w-2xl">
+            <p className="text-lg sm:text-xl text-white/60 leading-relaxed mb-4 max-w-2xl">
               This is how you go from employee to business owner without starting from scratch.
             </p>
-            <p className="text-sm text-cream/40 leading-relaxed mb-10 max-w-2xl">
+            <p className="text-sm text-white/60 leading-relaxed mb-10 max-w-2xl">
               Wondering how to fund the investment? See our{' '}
-              <Link href="/financing" className="text-amber/80 hover:text-amber underline">
+              <Link href="/financing" className="text-accent/80 hover:text-accent underline">
                 financing options for franchise development
               </Link>. Not sure if franchising or licensing fits your goals? Read our{' '}
-              <Link href="/franchise-vs-license" className="text-amber/80 hover:text-amber underline">
+              <Link href="/franchise-vs-license" className="text-accent/80 hover:text-accent underline">
                 franchise vs license comparison
               </Link>.
             </p>
@@ -196,7 +196,7 @@ export default function OwnAFranchisePage() {
                 Apply to Own a Forge Franchise
               </Link>
             </div>
-            <p className="text-cream/40 text-sm">
+            <p className="text-white/60 text-sm">
               Limited territories available. No franchise experience required.
             </p>
           </div>
@@ -204,14 +204,14 @@ export default function OwnAFranchisePage() {
       </section>
 
       {/* OFFERING DISCLAIMER (after hero) */}
-      <section className="bg-cream">
+      <section className="bg-white">
         <div className="container-wide pt-12 pb-0 px-6 sm:px-10 lg:px-16">
           <OfferingDisclaimer variant="light" />
         </div>
       </section>
 
       {/* THE PROBLEM / OPPORTUNITY */}
-      <section className="section-padding bg-cream">
+      <section className="section-padding bg-white">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <p className="eyebrow mb-4">The Opportunity</p>
@@ -227,23 +227,23 @@ export default function OwnAFranchisePage() {
           </div>
           <div className="grid sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="text-center">
-              <p className="stat-number text-amber">$827B</p>
-              <p className="text-muted-brown text-sm mt-2">U.S. franchise industry annual output</p>
+              <p className="stat-number text-accent">$827B</p>
+              <p className="text-steel text-sm mt-2">U.S. franchise industry annual output</p>
             </div>
             <div className="text-center">
-              <p className="stat-number text-amber">4,000+</p>
-              <p className="text-muted-brown text-sm mt-2">Active franchise brands in the U.S.</p>
+              <p className="stat-number text-accent">4,000+</p>
+              <p className="text-steel text-sm mt-2">Active franchise brands in the U.S.</p>
             </div>
             <div className="text-center">
-              <p className="stat-number text-amber">300+</p>
-              <p className="text-muted-brown text-sm mt-2">New franchise brands launched each year</p>
+              <p className="stat-number text-accent">300+</p>
+              <p className="text-steel text-sm mt-2">New franchise brands launched each year</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* WHAT YOU GET (Value Stack) */}
-      <section className="section-padding bg-deep-cream">
+      <section className="section-padding bg-ash-tint">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <p className="eyebrow mb-4">What You Get</p>
@@ -258,7 +258,7 @@ export default function OwnAFranchisePage() {
             {valueStackItems.map((item) => (
               <div key={item.title} className="card" style={{ borderRadius: '4px' }}>
                 <h3 className="heading-4 mb-3">{item.title}</h3>
-                <p className="text-muted-brown text-sm leading-relaxed">{item.description}</p>
+                <p className="text-steel text-sm leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>
@@ -266,7 +266,7 @@ export default function OwnAFranchisePage() {
       </section>
 
       {/* THE MODEL EXPLAINED */}
-      <section className="section-padding bg-cream">
+      <section className="section-padding bg-white">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <p className="eyebrow mb-4">How It Works</p>
@@ -279,36 +279,36 @@ export default function OwnAFranchisePage() {
           </div>
           <div className="grid lg:grid-cols-2 gap-8 mb-12">
             <div className="card" style={{ borderRadius: '4px' }}>
-              <div className="bg-amber/10 w-12 h-12 flex items-center justify-center mb-4" style={{ borderRadius: '4px' }}>
-                <svg className="w-6 h-6 text-amber" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <div className="bg-ember/10 w-12 h-12 flex items-center justify-center mb-4" style={{ borderRadius: '4px' }}>
+                <svg className="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
               </div>
               <h3 className="heading-3 mb-3">Franchise Consulting</h3>
-              <p className="text-muted-brown leading-relaxed mb-4">
+              <p className="text-steel leading-relaxed mb-4">
                 You help business owners turn their proven concept into a franchise brand. This includes feasibility analysis, FDD preparation, operations manual development, state registration, and launch strategy. You are the expert guiding them from "I think I should franchise" to "I am legally selling franchises."
               </p>
-              <p className="text-muted-brown leading-relaxed">
+              <p className="text-steel leading-relaxed">
                 Consulting engagements are project-based, typically ranging from several months to a year. You set the scope with the client and deliver using Forge methodology and templates.
               </p>
             </div>
             <div className="card" style={{ borderRadius: '4px' }}>
-              <div className="bg-amber/10 w-12 h-12 flex items-center justify-center mb-4" style={{ borderRadius: '4px' }}>
-                <svg className="w-6 h-6 text-amber" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <div className="bg-ember/10 w-12 h-12 flex items-center justify-center mb-4" style={{ borderRadius: '4px' }}>
+                <svg className="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
               <h3 className="heading-3 mb-3">Franchise Brokerage</h3>
-              <p className="text-muted-brown leading-relaxed mb-4">
+              <p className="text-steel leading-relaxed mb-4">
                 You match qualified buyers with franchise brands looking for new owners. When a buyer you represent signs a franchise agreement, the franchisor pays you a referral commission. You are the matchmaker between people who want to own a franchise and brands looking to grow.
               </p>
-              <p className="text-muted-brown leading-relaxed">
+              <p className="text-steel leading-relaxed">
                 Brokerage is commission-based and can produce significant recurring income as you build your referral network and pipeline of qualified buyers.
               </p>
             </div>
           </div>
           <div className="max-w-3xl mx-auto">
-            <div className="card bg-deep-cream" style={{ borderRadius: '4px' }}>
+            <div className="card bg-ash-tint" style={{ borderRadius: '4px' }}>
               <h3 className="heading-4 mb-4">The Lifestyle</h3>
               <ul className="space-y-3">
                 {[
@@ -320,7 +320,7 @@ export default function OwnAFranchisePage() {
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <CheckIcon />
-                    <span className="text-muted-brown text-sm leading-relaxed">{item}</span>
+                    <span className="text-steel text-sm leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -333,23 +333,23 @@ export default function OwnAFranchisePage() {
       </section>
 
       {/* THE FEE */}
-      <section className="section-padding bg-espresso text-cream">
+      <section className="section-padding bg-graphite text-white">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center">
-            <p className="eyebrow text-amber mb-4">The Investment</p>
-            <h2 className="heading-2 text-cream mb-8">
+            <p className="eyebrow text-accent mb-4">The Investment</p>
+            <h2 className="heading-2 text-white mb-8">
               Everything You Need to Launch for $15,000
             </h2>
-            <p className="stat-number text-amber mb-8">$15,000</p>
-            <p className="text-lg text-cream/60 leading-relaxed mb-8">
+            <p className="stat-number text-accent mb-8">$15,000</p>
+            <p className="text-lg text-white/60 leading-relaxed mb-8">
               You are getting a complete business system, brand, technology, training, and ongoing support for $15,000. That is the total franchise fee. Not a down payment. Not the first installment. The entire fee.
             </p>
-            <div className="card bg-cream/5 border border-cream/10 text-left mb-8" style={{ borderRadius: '4px' }}>
-              <h3 className="heading-4 text-cream mb-4">Compare That to the Alternative</h3>
-              <p className="text-cream/60 leading-relaxed mb-4">
+            <div className="card bg-white/5 border border-white/10 text-left mb-8" style={{ borderRadius: '4px' }}>
+              <h3 className="heading-4 text-white mb-4">Compare That to the Alternative</h3>
+              <p className="text-white/60 leading-relaxed mb-4">
                 Most franchise consultant training programs charge $10,000 to $20,000 for training alone. No brand. No technology platform. No CRM. No lead generation systems. No templates. No ongoing support. No protected territory. Just a course and a certificate.
               </p>
-              <p className="text-cream/60 leading-relaxed">
+              <p className="text-white/60 leading-relaxed">
                 With Forge, you get the training plus the brand, the tech stack, the methodology, the deal flow infrastructure, and a team that has a financial stake in your success. The $15,000 is not a course fee. It is a business acquisition.
               </p>
             </div>
@@ -362,7 +362,7 @@ export default function OwnAFranchisePage() {
       </section>
 
       {/* WHO THIS IS FOR / NOT FOR */}
-      <section className="section-padding bg-cream">
+      <section className="section-padding bg-white">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <p className="eyebrow mb-4">Is This You?</p>
@@ -375,7 +375,7 @@ export default function OwnAFranchisePage() {
           </div>
           <div className="grid lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="card" style={{ borderRadius: '4px' }}>
-              <h3 className="heading-3 text-amber mb-6">Strong Fit</h3>
+              <h3 className="heading-3 text-accent mb-6">Strong Fit</h3>
               <ul className="space-y-4">
                 {[
                   'Driven professionals who want to own a business, not buy a job',
@@ -387,13 +387,13 @@ export default function OwnAFranchisePage() {
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <CheckIcon />
-                    <span className="text-muted-brown text-sm leading-relaxed">{item}</span>
+                    <span className="text-steel text-sm leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
             <div className="card" style={{ borderRadius: '4px' }}>
-              <h3 className="heading-3 text-muted-brown mb-6">Not a Fit</h3>
+              <h3 className="heading-3 text-steel mb-6">Not a Fit</h3>
               <ul className="space-y-4">
                 {[
                   'People looking for passive income or a hands-off investment',
@@ -404,7 +404,7 @@ export default function OwnAFranchisePage() {
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <XIcon />
-                    <span className="text-muted-brown text-sm leading-relaxed">{item}</span>
+                    <span className="text-steel text-sm leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -414,7 +414,7 @@ export default function OwnAFranchisePage() {
       </section>
 
       {/* SOCIAL PROOF / AUTHORITY */}
-      <section className="section-padding bg-deep-cream">
+      <section className="section-padding bg-ash-tint">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <p className="eyebrow mb-4">The Industry</p>
@@ -433,18 +433,18 @@ export default function OwnAFranchisePage() {
               { stat: '$827B', label: 'Total franchise industry output' },
             ].map((item) => (
               <div key={item.label} className="card text-center" style={{ borderRadius: '4px' }}>
-                <p className="stat-number text-amber mb-2">{item.stat}</p>
-                <p className="text-muted-brown text-sm">{item.label}</p>
+                <p className="stat-number text-accent mb-2">{item.stat}</p>
+                <p className="text-steel text-sm">{item.label}</p>
               </div>
             ))}
           </div>
           <div className="max-w-3xl mx-auto">
             <div className="card" style={{ borderRadius: '4px' }}>
               <h3 className="heading-4 mb-4">Forge&apos;s Track Record</h3>
-              <p className="text-muted-brown leading-relaxed mb-4">
+              <p className="text-steel leading-relaxed mb-4">
                 Forge Franchising Group has helped businesses across dozens of industries develop their franchise systems. Our methodology has been tested in restaurants, home services, fitness, beauty, healthcare, education, and more. Every template, every process, every system in your franchise was built from real engagements with real businesses.
               </p>
-              <p className="text-muted-brown leading-relaxed">
+              <p className="text-steel leading-relaxed">
                 When you join Forge, you are not getting a theoretical framework. You are getting a battle-tested playbook refined through years of franchise development work.
               </p>
             </div>
@@ -453,7 +453,7 @@ export default function OwnAFranchisePage() {
       </section>
 
       {/* FAQ */}
-      <section className="section-padding bg-cream">
+      <section className="section-padding bg-white">
         <div className="container-wide max-w-3xl mx-auto">
           <div className="text-center mb-16">
             <p className="eyebrow mb-4">Common Questions</p>
@@ -463,7 +463,7 @@ export default function OwnAFranchisePage() {
             {faqItems.map((item) => (
               <div key={item.q} className="card" style={{ borderRadius: '4px' }}>
                 <h3 className="heading-4 mb-3">{item.q}</h3>
-                <p className="text-muted-brown leading-relaxed">{item.a}</p>
+                <p className="text-steel leading-relaxed">{item.a}</p>
               </div>
             ))}
           </div>
@@ -471,15 +471,15 @@ export default function OwnAFranchisePage() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="section-padding bg-espresso text-cream">
+      <section className="section-padding bg-graphite text-white">
         <div className="container-wide text-center">
-          <h2 className="heading-2 text-cream mb-6">
+          <h2 className="heading-2 text-white mb-6">
             Your Territory Is Not Going to Wait for You
           </h2>
-          <p className="text-lg text-cream/60 max-w-2xl mx-auto leading-relaxed mb-4">
+          <p className="text-lg text-white/60 max-w-2xl mx-auto leading-relaxed mb-4">
             Every week we receive applications from professionals who want to build a franchise consulting business under the Forge brand. Territories are awarded on a first-qualified, first-committed basis. If you are serious about owning a business that helps other business owners grow, now is the time to apply.
           </p>
-          <p className="text-cream/40 text-sm max-w-2xl mx-auto mb-10">
+          <p className="text-white/60 text-sm max-w-2xl mx-auto mb-10">
             The application takes less than five minutes. There is no commitment and no fee to apply. We will review your background and schedule a discovery call to answer every question you have.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">

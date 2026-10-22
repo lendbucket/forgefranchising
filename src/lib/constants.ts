@@ -2,6 +2,12 @@ export const SITE_NAME = 'Forge Franchising Group'
 export const SITE_URL = 'https://www.forgefranchising.com'
 export const SITE_DESCRIPTION =
   'Forge Franchising Group turns proven local businesses into national franchise brands. Operator built franchise development with real experience, modern software, and a documented process.'
+export const DEFAULT_OG_IMAGE = {
+  url: '/og-image.png',
+  width: 1200,
+  height: 630,
+  alt: 'Forge Franchising Group',
+}
 export const CONTACT_EMAIL = 'inquiry@forgefranchising.com'
 export const SUPPORT_EMAIL = 'info@forgefranchising.com'
 export const MISSION_STATEMENT =

@@ -37,7 +37,7 @@ export default function ProtectingYourBrandPage() {
         }}
       />
 
-      <section className="bg-cream">
+      <section className="bg-white">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[
             { label: 'Franchise Branding', href: '/franchise-branding' },
@@ -77,7 +77,7 @@ export default function ProtectingYourBrandPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-deep-cream">
+      <section className="section-padding bg-ash-tint">
         <div className="container-wide">
           <div className="max-w-3xl">
             <Image
@@ -90,22 +90,22 @@ export default function ProtectingYourBrandPage() {
             />
 
             <h2 className="heading-2 mb-6">Why Trademarks Are Non-Negotiable in Franchising</h2>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               A franchise is, at its core, a license to use a trademark. The FTC Franchise
               Rule defines a franchise partly by the fact that the franchisee operates
               under the franchisor's trademark or trade name. Without that trademark,
               the legal structure that makes franchising work collapses.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               But trademark protection in franchising goes beyond legal compliance. When
               a franchisee invests $200,000 or more to open a unit, they are betting that
               your brand name has value in their market. If someone else can use the same
               name, or a confusingly similar one, that investment is at risk. Trademark
               registration is how you protect the asset that every franchisee is paying for.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               Understanding{' '}
-              <Link href="/franchise-branding/why-brand-matters" className="text-amber font-semibold link-underline">
+              <Link href="/franchise-branding/why-brand-matters" className="text-accent font-semibold link-underline">
                 why brand matters in franchising
               </Link>{' '}
               makes the trademark requirement intuitive. If the brand is the product, the
@@ -114,21 +114,21 @@ export default function ProtectingYourBrandPage() {
             </p>
 
             <h2 className="heading-2 mb-6 mt-12">Federal Trademark Registration: Before the First Unit</h2>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               Federal trademark registration through the United States Patent and Trademark
               Office (USPTO) provides nationwide protection for your brand name, logo, and
               other distinctive elements. The registration process typically takes 8 to 14
               months from initial application to final registration, which is one reason
               trademark filing should happen early in the franchise development timeline.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               Before filing, a comprehensive trademark search is essential. This search
               identifies existing registrations, pending applications, and common law
               uses that could conflict with your mark. Discovering a conflict after you
               have printed signage, built a website, and prepared your FDD is exponentially
               more expensive than discovering it before.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               Your franchise attorney will advise on the appropriate trademark classes for
               your business. Most franchise systems file in at least two classes: one for
               the products or services the franchisee delivers to customers, and one for
@@ -136,53 +136,53 @@ export default function ProtectingYourBrandPage() {
               file in additional classes to protect brand extensions, proprietary products,
               or technology platforms.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               The cost of federal trademark registration ranges from $250 to $350 per
               class for USPTO filing fees, plus attorney fees of $1,500 to $3,000 for
               a straightforward filing. That investment protects an asset worth orders
               of magnitude more. Trademark registration is addressed in the{' '}
-              <Link href="/how-it-works" className="text-amber font-semibold link-underline">
+              <Link href="/how-it-works" className="text-accent font-semibold link-underline">
                 Structure phase of our franchise development process
               </Link>.
             </p>
 
             <h2 className="heading-2 mb-6 mt-12">Item 13: Trademark Disclosure in the FDD</h2>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               Item 13 of the Franchise Disclosure Document requires detailed disclosure
               about your trademarks. This is one of the items that state franchise
               examiners review most carefully, and it is one of the items that
               sophisticated franchise buyers scrutinize during due diligence.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               Item 13 must disclose the principal trademarks the franchisee will use,
               the registration status of each mark (pending, registered, or unregistered),
               any known challenges or infringement claims, agreements that significantly
               limit the franchisor's rights to use or license the marks, and whether the
               franchisor is required to protect the franchisee's right to use the marks.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               A clean Item 13 with fully registered trademarks signals to prospective
               franchisees that the franchisor has invested in protecting the brand they
               are buying into. An Item 13 with pending or unregistered marks raises
               questions about the franchisor's commitment to IP protection and creates
               uncertainty about the long-term security of the brand.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               For a detailed overview of the full FDD, including Item 13 in context, read
               our guide on the{' '}
-              <Link href="/blog/franchise-disclosure-document" className="text-amber font-semibold link-underline">
+              <Link href="/blog/franchise-disclosure-document" className="text-accent font-semibold link-underline">
                 Franchise Disclosure Document
               </Link>.
             </p>
 
             <h2 className="heading-2 mb-6 mt-12">Policing the Mark: An Ongoing Obligation</h2>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               Trademark registration is not a one time event. It creates an ongoing
               obligation to police and enforce the mark. If you allow others to use your
               mark without authorization, or if you fail to enforce consistent use among
               your franchisees, you risk weakening or losing your trademark rights.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               Policing your mark involves several activities: monitoring trademark filings
               for potentially conflicting applications, conducting periodic internet
               searches for unauthorized use of your brand name and logo, enforcing
@@ -190,9 +190,9 @@ export default function ProtectingYourBrandPage() {
               against infringers through cease and desist letters and, when necessary,
               legal proceedings.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               The connection to{' '}
-              <Link href="/franchise-branding/brand-standards-enforcement" className="text-amber font-semibold link-underline">
+              <Link href="/franchise-branding/brand-standards-enforcement" className="text-accent font-semibold link-underline">
                 brand standards enforcement
               </Link>{' '}
               is direct. When franchisees modify your logo, use unauthorized color
@@ -203,7 +203,7 @@ export default function ProtectingYourBrandPage() {
             </p>
 
             <h2 className="heading-2 mb-6 mt-12">What Happens to Systems With Weak IP</h2>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               Franchise systems with weak trademark protection face predictable problems.
               Competitors or unaffiliated businesses use similar names, creating customer
               confusion and diluting the brand. Former franchisees continue operating
@@ -212,39 +212,39 @@ export default function ProtectingYourBrandPage() {
               examiners delay or deny registration, preventing the franchisor from
               selling in key markets.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               In the worst cases, a franchisor discovers that another party has superior
               rights to the mark. This scenario, sometimes called a "knockout" situation,
               can force a complete rebrand of the franchise system, including every
               existing franchisee location. The financial and operational consequences
               are devastating.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               The lesson is clear: invest in trademark protection early, register before
               you sell, and police continuously. The cost of proper trademark protection
               is a fraction of the cost of the problems that arise without it.
             </p>
 
             <h2 className="heading-2 mb-6 mt-12">Beyond Trademarks: Other IP Considerations</h2>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               While trademarks are the primary IP concern in franchising, other
               intellectual property rights may also be relevant. Trade secrets (your
               proprietary recipes, processes, or formulas), copyrights (your operations
               manual, training materials, and marketing content), and patents (proprietary
               equipment or technology) may all require protection.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               Your franchise agreement should include comprehensive IP provisions that
               require the franchisee to protect your trade secrets, restrict them from
               using your copyrighted materials outside the franchise relationship, and
               establish clear ownership of any IP developed during the franchise term.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               Again, this is an area where qualified franchise counsel is essential. IP
               law is complex, jurisdiction specific, and high stakes. The franchise
               attorney who prepares your FDD should also advise on your comprehensive
               IP strategy. Learn more about the legal framework in our{' '}
-              <Link href="/blog/protect-brand-trademarks" className="text-amber font-semibold link-underline">
+              <Link href="/blog/protect-brand-trademarks" className="text-accent font-semibold link-underline">
                 trademark protection guide for franchisors
               </Link>.
             </p>

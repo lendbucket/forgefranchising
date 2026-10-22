@@ -25,7 +25,7 @@ export function ContinueLearning({
   links,
 }: ContinueLearningProps) {
   return (
-    <section className="section-padding bg-deep-cream">
+    <section className="section-padding bg-ash-tint">
       <div className="container-wide">
         <p className="eyebrow mb-4">Next Steps</p>
         <h2 className="heading-3 mb-10">{heading}</h2>
@@ -36,13 +36,13 @@ export function ContinueLearning({
               href={link.href}
               className="card-interactive group block h-full"
             >
-              <span className="text-amber font-display font-bold text-2xl mb-3 block" style={{ letterSpacing: '-0.02em' }}>
+              <span className="text-accent font-display font-bold text-2xl mb-3 block" style={{ letterSpacing: '-0.02em' }}>
                 {String(i + 1).padStart(2, '0')}
               </span>
-              <h3 className="heading-4 mb-2 group-hover:text-amber transition-colors">
+              <h3 className="heading-4 mb-2 group-hover:text-accent transition-colors">
                 {link.label}
               </h3>
-              <p className="text-muted-brown text-sm leading-relaxed">
+              <p className="text-steel text-sm leading-relaxed">
                 {link.description}
               </p>
             </Link>

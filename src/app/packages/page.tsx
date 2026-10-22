@@ -97,7 +97,7 @@ const comparisonFeatures = [
 
 function CheckIcon() {
   return (
-    <svg className="w-5 h-5 text-amber" fill="currentColor" viewBox="0 0 20 20">
+    <svg className="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
     </svg>
   )
@@ -105,7 +105,7 @@ function CheckIcon() {
 
 function DashIcon() {
   return (
-    <svg className="w-5 h-5 text-muted-brown/30" fill="none" viewBox="0 0 20 20">
+    <svg className="w-5 h-5 text-steel" fill="none" viewBox="0 0 20 20">
       <path stroke="currentColor" strokeWidth="2" strokeLinecap="round" d="M6 10h8" />
     </svg>
   )
@@ -144,7 +144,7 @@ export default function PackagesPage() {
         }}
       />
 
-      <section className="bg-cream">
+      <section className="bg-white">
         <div className="container-wide section-padding">
           <Breadcrumbs
             items={[
@@ -164,11 +164,11 @@ export default function PackagesPage() {
             </p>
             <p className="body-large">
               Not sure which tier fits? Start with the{' '}
-              <Link href="/readiness-method" className="text-amber font-semibold hover:underline">
+              <Link href="/readiness-method" className="text-accent font-semibold hover:underline">
                 Forge Franchise Readiness Method
               </Link>{' '}
               to understand where your business stands across all four pillars, or book a{' '}
-              <Link href="/contact" className="text-amber font-semibold hover:underline">
+              <Link href="/contact" className="text-accent font-semibold hover:underline">
                 free feasibility call
               </Link>{' '}
               and we will recommend the right starting point.
@@ -178,7 +178,7 @@ export default function PackagesPage() {
       </section>
 
       {/* Package Cards */}
-      <section className="section-padding bg-deep-cream">
+      <section className="section-padding bg-ash-tint">
         <div className="container-wide">
           <div className="grid lg:grid-cols-3 gap-8">
             {tiers.map((tier) => (
@@ -186,30 +186,30 @@ export default function PackagesPage() {
                 key={tier.name}
                 className={`card relative flex flex-col ${
                   tier.popular
-                    ? 'ring-2 ring-amber lg:scale-105 lg:z-10'
+                    ? 'ring-2 ring-ember lg:scale-105 lg:z-10'
                     : ''
                 }`}
               >
                 {tier.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-amber text-cream text-xs font-bold uppercase tracking-widest px-4 py-1.5" style={{ borderRadius: '3px', letterSpacing: '0.1em' }}>
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-ember-button text-graphite text-xs font-bold uppercase tracking-widest px-4 py-1.5" style={{ borderRadius: '3px', letterSpacing: '0.1em' }}>
                     Most Popular
                   </div>
                 )}
                 <div className="mb-6">
                   <h2 className="heading-2 mb-2">{tier.name}</h2>
-                  <p className="text-amber font-semibold text-sm">{tier.tagline}</p>
+                  <p className="text-accent font-semibold text-sm">{tier.tagline}</p>
                 </div>
-                <p className="text-muted-brown leading-relaxed mb-6 text-sm">{tier.description}</p>
-                <div className="bg-deep-cream p-4 mb-6" style={{ borderRadius: '4px' }}>
-                  <p className="text-espresso font-medium text-sm">{tier.priceHint}</p>
+                <p className="text-steel leading-relaxed mb-6 text-sm">{tier.description}</p>
+                <div className="bg-ash-tint p-4 mb-6" style={{ borderRadius: '4px' }}>
+                  <p className="text-graphite font-medium text-sm">{tier.priceHint}</p>
                 </div>
                 <ul className="space-y-3 mb-8 flex-1">
                   {tier.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      <svg className="w-5 h-5 text-amber flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
-                      <span className="text-muted-brown text-sm leading-relaxed">{feature}</span>
+                      <span className="text-steel text-sm leading-relaxed">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -223,7 +223,7 @@ export default function PackagesPage() {
       </section>
 
       {/* Who each tier is for */}
-      <section className="section-padding bg-cream">
+      <section className="section-padding bg-white">
         <div className="container-wide">
           <h2 className="heading-2 text-center mb-4">Which Package Is Right for You?</h2>
           <p className="body-large text-center max-w-3xl mx-auto mb-12">
@@ -235,12 +235,12 @@ export default function PackagesPage() {
               <div key={tier.name} className="card">
                 <h3 className="heading-3 mb-4">{tier.name}</h3>
                 <div className="mb-6">
-                  <h4 className="heading-4 mb-2 text-amber">Ideal for</h4>
-                  <p className="text-muted-brown text-sm leading-relaxed">{tier.ideal}</p>
+                  <h4 className="heading-4 mb-2 text-accent">Ideal for</h4>
+                  <p className="text-steel text-sm leading-relaxed">{tier.ideal}</p>
                 </div>
                 <div>
-                  <h4 className="heading-4 mb-2 text-muted-brown">Not the best fit if</h4>
-                  <p className="text-muted-brown text-sm leading-relaxed">{tier.notIdeal}</p>
+                  <h4 className="heading-4 mb-2 text-steel">Not the best fit if</h4>
+                  <p className="text-steel text-sm leading-relaxed">{tier.notIdeal}</p>
                 </div>
               </div>
             ))}
@@ -249,7 +249,7 @@ export default function PackagesPage() {
       </section>
 
       {/* Comparison Table */}
-      <section className="section-padding bg-deep-cream">
+      <section className="section-padding bg-ash-tint">
         <div className="container-wide">
           <h2 className="heading-2 text-center mb-4">Side by Side Comparison</h2>
           <p className="body-large text-center max-w-3xl mx-auto mb-12">
@@ -258,21 +258,21 @@ export default function PackagesPage() {
           <div className="overflow-scroll-x">
             <table className="w-full min-w-[600px]">
               <thead>
-                <tr className="border-b-2 border-espresso/10">
-                  <th className="text-left py-4 pr-4 text-sm font-semibold text-espresso">Feature</th>
-                  <th className="text-center py-4 px-4 text-sm font-semibold text-espresso">Launch</th>
-                  <th className="text-center py-4 px-4 text-sm font-semibold text-amber">Growth</th>
-                  <th className="text-center py-4 px-4 text-sm font-semibold text-espresso">Empire</th>
+                <tr className="border-b-2 border-graphite/10">
+                  <th className="text-left py-4 pr-4 text-sm font-semibold text-graphite">Feature</th>
+                  <th className="text-center py-4 px-4 text-sm font-semibold text-graphite">Launch</th>
+                  <th className="text-center py-4 px-4 text-sm font-semibold text-accent">Growth</th>
+                  <th className="text-center py-4 px-4 text-sm font-semibold text-graphite">Empire</th>
                 </tr>
               </thead>
               <tbody>
                 {comparisonFeatures.map((row, i) => (
-                  <tr key={i} className="border-b border-espresso/5">
-                    <td className="py-3 pr-4 text-sm text-muted-brown">{row.feature}</td>
+                  <tr key={i} className="border-b border-graphite/5">
+                    <td className="py-3 pr-4 text-sm text-steel">{row.feature}</td>
                     <td className="py-3 px-4 text-center">
                       <div className="flex justify-center">{row.launch ? <CheckIcon /> : <DashIcon />}</div>
                     </td>
-                    <td className="py-3 px-4 text-center bg-amber/5">
+                    <td className="py-3 px-4 text-center bg-ember/5">
                       <div className="flex justify-center">{row.growth ? <CheckIcon /> : <DashIcon />}</div>
                     </td>
                     <td className="py-3 px-4 text-center">
@@ -287,7 +287,7 @@ export default function PackagesPage() {
       </section>
 
       {/* FAQ-style section */}
-      <section className="section-padding bg-cream">
+      <section className="section-padding bg-white">
         <div className="container-narrow">
           <h2 className="heading-2 text-center mb-12">Common Questions About Our Packages</h2>
           <div className="space-y-8">
@@ -315,17 +315,17 @@ export default function PackagesPage() {
             ].map((item) => (
               <div key={item.q}>
                 <h3 className="heading-4 mb-3">{item.q}</h3>
-                <p className="text-muted-brown leading-relaxed">{item.a}</p>
+                <p className="text-steel leading-relaxed">{item.a}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section-padding bg-espresso text-cream">
+      <section className="section-padding bg-graphite text-white">
         <div className="container-wide text-center">
-          <h2 className="heading-2 text-cream mb-6">The Math Is Simple</h2>
-          <p className="text-xl text-cream/60 max-w-3xl mx-auto leading-relaxed mb-12">
+          <h2 className="heading-2 text-white mb-6">The Math Is Simple</h2>
+          <p className="text-xl text-white/60 max-w-3xl mx-auto leading-relaxed mb-12">
             A franchise sale produces an initial fee, typically between $25,000 and $50,000 across the
             industry, plus a royalty for the life of the agreement. Development is a one time cost. The
             royalty base is not. That is the whole case for building the system properly, and it is

@@ -19,7 +19,7 @@ function formatDate(dateString: string) {
 }
 
 const categoryColors: Record<string, string> = {
-  Guide: 'bg-amber/10 text-amber',
+  Guide: 'bg-ember/10 text-accent',
   Education: 'bg-blue-50 text-blue-700',
   Finance: 'bg-emerald-50 text-emerald-700',
   'Case Study': 'bg-purple-50 text-purple-700',
@@ -78,7 +78,7 @@ function InlineRenderer({ text }: { text: string }) {
 
         if (part.startsWith('**') && part.endsWith('**')) {
           return (
-            <strong key={i} className="text-espresso font-semibold">
+            <strong key={i} className="text-graphite font-semibold">
               {part.slice(2, -2)}
             </strong>
           )
@@ -89,7 +89,7 @@ function InlineRenderer({ text }: { text: string }) {
           const [, label, href] = link
           if (href.startsWith('/')) {
             return (
-              <Link key={i} href={href} className="text-amber font-medium hover:underline">
+              <Link key={i} href={href} className="text-accent font-medium hover:underline">
                 {label}
               </Link>
             )
@@ -98,7 +98,7 @@ function InlineRenderer({ text }: { text: string }) {
             <a
               key={i}
               href={href}
-              className="text-amber font-medium hover:underline"
+              className="text-accent font-medium hover:underline"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -130,7 +130,7 @@ function MarkdownRenderer({ content }: { content: string }) {
           const text = trimmed.slice(3)
           const id = text.replace(/\*\*/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
           return (
-            <h2 key={i} id={id} className="font-display text-2xl sm:text-3xl font-bold text-espresso mt-12 mb-6 scroll-mt-24">
+            <h2 key={i} id={id} className="font-display text-2xl sm:text-3xl font-bold text-graphite mt-12 mb-6 scroll-mt-24">
               <InlineRenderer text={text} />
             </h2>
           )
@@ -140,7 +140,7 @@ function MarkdownRenderer({ content }: { content: string }) {
           const text = trimmed.slice(4)
           const id = text.replace(/\*\*/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
           return (
-            <h3 key={i} id={id} className="font-display text-xl sm:text-2xl font-semibold text-espresso mt-10 mb-4 scroll-mt-24">
+            <h3 key={i} id={id} className="font-display text-xl sm:text-2xl font-semibold text-graphite mt-10 mb-4 scroll-mt-24">
               <InlineRenderer text={text} />
             </h3>
           )
@@ -156,9 +156,9 @@ function MarkdownRenderer({ content }: { content: string }) {
               <div key={i} className="overflow-scroll-x my-8">
                 <table className="w-full text-sm border-collapse">
                   <thead>
-                    <tr className="border-b-2 border-espresso/20">
+                    <tr className="border-b-2 border-graphite/20">
                       {headerCells.map((cell, ci) => (
-                        <th key={ci} className="text-left py-3 px-4 font-semibold text-espresso">
+                        <th key={ci} className="text-left py-3 px-4 font-semibold text-graphite">
                           <InlineRenderer text={cell} />
                         </th>
                       ))}
@@ -168,9 +168,9 @@ function MarkdownRenderer({ content }: { content: string }) {
                     {dataRows.map((row, ri) => {
                       const cells = row.split('|').map((c) => c.trim()).filter(Boolean)
                       return (
-                        <tr key={ri} className="border-b border-deep-cream">
+                        <tr key={ri} className="border-b border-ash-tint">
                           {cells.map((cell, ci) => (
-                            <td key={ci} className="py-3 px-4 text-muted-brown">
+                            <td key={ci} className="py-3 px-4 text-steel">
                               <InlineRenderer text={cell} />
                             </td>
                           ))}
@@ -189,8 +189,8 @@ function MarkdownRenderer({ content }: { content: string }) {
           return (
             <ul key={i} className="my-6 space-y-3">
               {items.map((item, li) => (
-                <li key={li} className="flex items-start text-muted-brown leading-relaxed">
-                  <span className="text-amber mr-3 mt-1.5 text-xs flex-shrink-0">&#9679;</span>
+                <li key={li} className="flex items-start text-steel leading-relaxed">
+                  <span className="text-accent mr-3 mt-1.5 text-xs flex-shrink-0">&#9679;</span>
                   <span><InlineRenderer text={item.replace(/^[-*]\s+/, '')} /></span>
                 </li>
               ))}
@@ -203,8 +203,8 @@ function MarkdownRenderer({ content }: { content: string }) {
           return (
             <ol key={i} className="my-6 space-y-3">
               {items.map((item, li) => (
-                <li key={li} className="flex items-start text-muted-brown leading-relaxed">
-                  <span className="text-amber font-semibold mr-3 flex-shrink-0 min-w-[1.5rem]">{li + 1}.</span>
+                <li key={li} className="flex items-start text-steel leading-relaxed">
+                  <span className="text-accent font-semibold mr-3 flex-shrink-0 min-w-[1.5rem]">{li + 1}.</span>
                   <span><InlineRenderer text={item.replace(/^\d+\.\s+/, '')} /></span>
                 </li>
               ))}
@@ -213,7 +213,7 @@ function MarkdownRenderer({ content }: { content: string }) {
         }
 
         return (
-          <p key={i} className="text-muted-brown leading-relaxed text-base sm:text-lg my-5">
+          <p key={i} className="text-steel leading-relaxed text-base sm:text-lg my-5">
             <InlineRenderer text={trimmed} />
           </p>
         )
@@ -243,7 +243,7 @@ function ReadingProgressBar() {
   return (
     <div className="fixed top-0 left-0 w-full h-1 bg-transparent z-50">
       <div
-        className="h-full bg-amber transition-[width] duration-100 ease-out"
+        className="h-full bg-ember transition-[width] duration-100 ease-out"
         style={{ width: `${progress}%` }}
       />
     </div>
@@ -279,10 +279,10 @@ function TableOfContents({ headings }: { headings: Heading[] }) {
 
   return (
     <nav className="hidden xl:block sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto">
-      <p className="text-xs font-semibold uppercase tracking-widest text-muted-brown/60 mb-4">
+      <p className="text-xs font-semibold uppercase tracking-widest text-steel mb-4">
         On this page
       </p>
-      <ul className="space-y-2 border-l border-deep-cream pl-4">
+      <ul className="space-y-2 border-l border-ash-tint pl-4">
         {headings.map((h) => (
           <li key={h.id}>
             <a
@@ -291,8 +291,8 @@ function TableOfContents({ headings }: { headings: Heading[] }) {
                 h.level === 3 ? 'pl-3' : ''
               } ${
                 activeId === h.id
-                  ? 'text-amber font-medium'
-                  : 'text-muted-brown/70 hover:text-espresso'
+                  ? 'text-accent font-medium'
+                  : 'text-steel hover:text-graphite'
               }`}
             >
               {h.text}
@@ -310,11 +310,11 @@ function TableOfContents({ headings }: { headings: Heading[] }) {
 
 function InlineCTA() {
   return (
-    <div className="my-12 bg-espresso p-8 sm:p-10 text-center" style={{ borderRadius: '4px' }}>
-      <h3 className="font-display text-xl sm:text-2xl font-bold text-cream mb-4">
+    <div className="my-12 bg-graphite p-8 sm:p-10 text-center" style={{ borderRadius: '4px' }}>
+      <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-4">
         Find Out If Your Business Is Ready to Franchise
       </h3>
-      <p className="text-cream/70 mb-6 max-w-lg mx-auto">
+      <p className="text-white/70 mb-6 max-w-lg mx-auto">
         Take our two-minute assessment and get a franchise readiness score
         with personalized recommendations. No cost, no obligation.
       </p>
@@ -351,15 +351,15 @@ export default function BlogPostClient({
       <ReadingProgressBar />
 
       {/* Hero */}
-      <section className="bg-espresso text-cream">
+      <section className="bg-graphite text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <nav className="mb-8" aria-label="Breadcrumb">
-            <ol className="flex items-center gap-2 text-sm text-cream/50">
-              <li><Link href="/" className="hover:text-cream transition-colors">Home</Link></li>
+            <ol className="flex items-center gap-2 text-sm text-white/60">
+              <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
               <li>/</li>
-              <li><Link href="/blog" className="hover:text-cream transition-colors">Blog</Link></li>
+              <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
               <li>/</li>
-              <li className="text-cream/70 truncate max-w-[200px] sm:max-w-none">{post.title}</li>
+              <li className="text-white/70 truncate max-w-[200px] sm:max-w-none">{post.title}</li>
             </ol>
           </nav>
 
@@ -368,15 +368,15 @@ export default function BlogPostClient({
               <span className={`inline-block px-3 py-1 text-xs font-semibold ${categoryColors[post.category] || 'bg-gray-100 text-gray-700'}`}>
                 {post.category}
               </span>
-              <span className="text-cream/50 text-sm">{post.readTime}</span>
+              <span className="text-white/60 text-sm">{post.readTime}</span>
             </div>
-            <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-cream mb-6">
+            <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">
               {post.title}
             </h1>
-            <p className="text-lg text-cream/70 leading-relaxed mb-4">
+            <p className="text-lg text-white/70 leading-relaxed mb-4">
               {post.description}
             </p>
-            <time dateTime={post.datePublished} className="text-sm text-cream/50">
+            <time dateTime={post.datePublished} className="text-sm text-white/60">
               Published {formatDate(post.datePublished)}
             </time>
           </div>
@@ -384,7 +384,7 @@ export default function BlogPostClient({
       </section>
 
       {/* Article Content */}
-      <section className="bg-cream">
+      <section className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className="flex gap-12">
             <article className="max-w-3xl flex-1 min-w-0">
@@ -406,12 +406,12 @@ export default function BlogPostClient({
       </section>
 
       {/* Bottom CTA: placed at natural decision point after value delivery */}
-      <section className="bg-espresso text-cream">
+      <section className="bg-graphite text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 text-center">
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-cream mb-6">
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">
             See Where Your Business Stands
           </h2>
-          <p className="text-lg sm:text-xl leading-relaxed text-cream/70 mb-10 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl leading-relaxed text-white/70 mb-10 max-w-2xl mx-auto">
             If this article raised questions about franchising your business, get
             a concrete answer. Our free assessment scores your readiness and gives
             you specific next steps.
@@ -420,7 +420,7 @@ export default function BlogPostClient({
             Get Your Free Readiness Score
           </Link>
           <div className="mt-4">
-            <Link href="/contact" className="text-sm text-cream/50 link-underline">
+            <Link href="/contact" className="text-sm text-white/60 link-underline">
               Or book a feasibility call directly
             </Link>
           </div>
@@ -429,10 +429,10 @@ export default function BlogPostClient({
 
       {/* Continue Learning: 3 curated next steps (reduces paralysis, pulls deeper) */}
       {relatedPosts.length > 0 && (
-        <section className="bg-deep-cream">
+        <section className="bg-ash-tint">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
             <p className="eyebrow mb-4">Continue Learning</p>
-            <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-espresso mb-10" style={{ letterSpacing: '-0.02em' }}>
+            <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-graphite mb-10" style={{ letterSpacing: '-0.02em' }}>
               Read These Next
             </h2>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -447,12 +447,12 @@ export default function BlogPostClient({
                       <span className={`inline-block px-3 py-1 text-xs font-semibold ${categoryColors[rp.category] || 'bg-gray-100 text-gray-700'}`}>
                         {rp.category}
                       </span>
-                      <span className="text-xs text-muted-brown">{rp.readTime}</span>
+                      <span className="text-xs text-steel">{rp.readTime}</span>
                     </div>
-                    <h3 className="font-display text-lg font-bold text-espresso mb-3 group-hover:text-amber transition-colors duration-200 leading-snug">
+                    <h3 className="font-display text-lg font-bold text-graphite mb-3 group-hover:text-accent transition-colors duration-200 leading-snug">
                       {rp.title}
                     </h3>
-                    <p className="text-sm text-muted-brown leading-relaxed line-clamp-2">
+                    <p className="text-sm text-steel leading-relaxed line-clamp-2">
                       {rp.description}
                     </p>
                   </div>

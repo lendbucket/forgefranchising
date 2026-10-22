@@ -15,7 +15,7 @@ type FAQCategory = {
 function ChevronIcon({ open }: { open: boolean }) {
   return (
     <svg
-      className={`w-5 h-5 text-amber flex-shrink-0 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
+      className={`w-5 h-5 text-accent flex-shrink-0 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
@@ -56,16 +56,16 @@ export function FAQAccordion({ categories }: { categories: FAQCategory[] }) {
                   <button
                     type="button"
                     onClick={() => toggle(key)}
-                    className="flex items-center justify-between gap-4 w-full text-left px-6 py-5 hover:bg-cream/50 transition-colors min-h-[52px]"
+                    className="flex items-center justify-between gap-4 w-full text-left px-6 py-5 hover:bg-white/50 transition-colors min-h-[52px]"
                     aria-expanded={isOpen}
                   >
-                    <span className="font-semibold text-espresso pr-4">{item.question}</span>
+                    <span className="font-semibold text-graphite pr-4">{item.question}</span>
                     <ChevronIcon open={isOpen} />
                   </button>
                   {isOpen && (
                     <div className="px-6 pb-6 pt-0">
-                      <div className="border-t border-espresso/10 pt-4">
-                        <p className="text-muted-brown leading-relaxed">{item.answer}</p>
+                      <div className="border-t border-graphite/10 pt-4">
+                        <p className="text-steel leading-relaxed">{item.answer}</p>
                       </div>
                     </div>
                   )}

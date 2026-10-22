@@ -403,7 +403,7 @@ export default function GlossaryPage() {
       />
 
       {/* Hero */}
-      <section className="bg-cream">
+      <section className="bg-white">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'Learn', href: '/learn' }, { label: 'Franchise Glossary' }]} />
           <div className="max-w-3xl">
@@ -426,7 +426,7 @@ export default function GlossaryPage() {
       </section>
 
       {/* Jump-to-Letter Navigation */}
-      <section className="bg-deep-cream border-b border-espresso/10 sticky top-16 lg:top-20 z-40">
+      <section className="bg-ash-tint border-b border-graphite/10 sticky top-16 lg:top-20 z-40">
         <div className="container-wide py-4">
           <nav aria-label="Alphabetical navigation" className="flex flex-wrap gap-1 sm:gap-2 justify-center">
             {alphabet.map((letter) => {
@@ -435,14 +435,14 @@ export default function GlossaryPage() {
                 <a
                   key={letter}
                   href={`#letter-${letter}`}
-                  className="w-9 h-9 flex items-center justify-center rounded-md text-sm font-semibold text-espresso hover:bg-amber hover:text-cream transition-colors"
+                  className="w-9 h-9 flex items-center justify-center rounded-md text-sm font-semibold text-graphite hover:bg-ember-button hover:text-graphite transition-colors"
                 >
                   {letter}
                 </a>
               ) : (
                 <span
                   key={letter}
-                  className="w-9 h-9 flex items-center justify-center rounded-md text-sm text-muted-brown/30"
+                  className="w-9 h-9 flex items-center justify-center rounded-md text-sm text-steel"
                 >
                   {letter}
                 </span>
@@ -453,7 +453,7 @@ export default function GlossaryPage() {
       </section>
 
       {/* Glossary Terms: progressive disclosure via expandable sections */}
-      <section className="section-padding bg-cream">
+      <section className="section-padding bg-white">
         <div className="container-wide max-w-4xl">
           <GlossaryTerms grouped={grouped} letters={letters} />
         </div>

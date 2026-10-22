@@ -158,7 +158,7 @@ export default function ServicesPage() {
         }}
       />
 
-      <section className="bg-cream">
+      <section className="bg-white">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'Services' }]} />
           <div className="max-w-3xl">
@@ -175,15 +175,15 @@ export default function ServicesPage() {
             </p>
             <p className="body-large mb-8">
               Every service below is available as part of our{' '}
-              <Link href="/packages" className="text-amber font-semibold hover:underline">
+              <Link href="/packages" className="text-accent font-semibold hover:underline">
                 engagement packages
               </Link>
               . Start with our{' '}
-              <Link href="/readiness-method" className="text-amber font-semibold hover:underline">
+              <Link href="/readiness-method" className="text-accent font-semibold hover:underline">
                 readiness method
               </Link>{' '}
               to see which services your business needs, or learn about{' '}
-              <Link href="/how-it-works" className="text-amber font-semibold hover:underline">
+              <Link href="/how-it-works" className="text-accent font-semibold hover:underline">
                 how our process works
               </Link>{' '}
               from start to finish.
@@ -196,7 +196,7 @@ export default function ServicesPage() {
               <a
                 key={service.id}
                 href={`#${service.id}`}
-                className="text-sm font-medium text-espresso bg-deep-cream px-4 py-2 hover:bg-amber hover:text-cream transition-colors"
+                className="text-sm font-medium text-graphite bg-ash-tint px-4 py-2 hover:bg-ember-button hover:text-graphite transition-colors"
                 style={{ borderRadius: '3px' }}
               >
                 {service.title}
@@ -210,7 +210,7 @@ export default function ServicesPage() {
         <section
           key={service.id}
           id={service.id}
-          className={index % 2 === 0 ? 'section-padding bg-deep-cream' : 'section-padding bg-cream'}
+          className={index % 2 === 0 ? 'section-padding bg-ash-tint' : 'section-padding bg-white'}
         >
           <div className="container-wide">
             <div className="grid lg:grid-cols-12 gap-12">
@@ -220,25 +220,25 @@ export default function ServicesPage() {
                     {String(index + 1).padStart(2, '0')} / {String(services.length).padStart(2, '0')}
                   </p>
                   <h2 className="heading-2 mb-3">{service.title}</h2>
-                  <p className="body-large italic text-muted-brown">{service.tagline}</p>
+                  <p className="body-large italic text-steel">{service.tagline}</p>
                 </div>
               </div>
               <div className="lg:col-span-7">
                 <div className="card">
                   <h3 className="heading-4 mb-4">What it is</h3>
-                  <p className="text-muted-brown leading-relaxed mb-8">{service.what}</p>
+                  <p className="text-steel leading-relaxed mb-8">{service.what}</p>
 
                   <h3 className="heading-4 mb-4">Why it matters</h3>
-                  <p className="text-muted-brown leading-relaxed mb-8">{service.why}</p>
+                  <p className="text-steel leading-relaxed mb-8">{service.why}</p>
 
                   <h3 className="heading-4 mb-4">What we deliver</h3>
                   <ul className="space-y-3">
                     {service.deliver.map((item, i) => (
                       <li key={i} className="flex items-start gap-3">
-                        <svg className="w-5 h-5 text-amber flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
-                        <span className="text-muted-brown leading-relaxed">{item}</span>
+                        <span className="text-steel leading-relaxed">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -249,10 +249,10 @@ export default function ServicesPage() {
         </section>
       ))}
 
-      <section className="section-padding bg-espresso text-cream">
+      <section className="section-padding bg-graphite text-white">
         <div className="container-wide text-center">
-          <h2 className="heading-2 text-cream mb-6">How These Services Fit Together</h2>
-          <p className="text-xl text-cream/60 max-w-3xl mx-auto leading-relaxed mb-12">
+          <h2 className="heading-2 text-white mb-6">How These Services Fit Together</h2>
+          <p className="text-xl text-white/60 max-w-3xl mx-auto leading-relaxed mb-12">
             These seven services are not a menu you pick from at random. They build on each other in a
             specific sequence. Feasibility informs your FDD. Your FDD drives your registration strategy.
             Your operations manual feeds your training program. Your sales system fills your pipeline.
@@ -265,8 +265,8 @@ export default function ServicesPage() {
               { stat: '14', label: 'Registration states we file and manage for you' },
             ].map((item) => (
               <div key={item.stat}>
-                <div className="text-4xl font-display font-bold text-amber mb-2">{item.stat}</div>
-                <p className="text-cream/50 text-sm">{item.label}</p>
+                <div className="text-4xl font-display font-bold text-accent mb-2">{item.stat}</div>
+                <p className="text-white/60 text-sm">{item.label}</p>
               </div>
             ))}
           </div>

@@ -93,10 +93,10 @@ const DISCLAIMER_TEXT =
   'This is not an offer to sell, or the solicitation of an offer to buy, a franchise. Forge Franchising offers franchises solely by means of its Franchise Disclosure Document. Certain jurisdictions require registration or other actions before franchises can be offered or sold there. We will not offer or sell a franchise in any jurisdiction unless we are first in compliance with applicable law.';
 
 const inputClasses =
-  'w-full px-5 py-4 border border-espresso/12 bg-white text-espresso min-h-[52px] rounded-[3px] focus:outline-none focus:ring-2 focus:ring-amber/40 transition-shadow';
+  'w-full px-5 py-4 border border-graphite/12 bg-white text-graphite min-h-[52px] rounded-[3px] focus:outline-none focus:ring-2 focus:ring-ember/40 transition-shadow';
 
 const selectClasses =
-  'w-full px-5 py-4 border border-espresso/12 bg-white text-espresso min-h-[52px] rounded-[3px] focus:outline-none focus:ring-2 focus:ring-amber/40 transition-shadow appearance-none';
+  'w-full px-5 py-4 border border-graphite/12 bg-white text-graphite min-h-[52px] rounded-[3px] focus:outline-none focus:ring-2 focus:ring-ember/40 transition-shadow appearance-none';
 
 export default function ApplyPage() {
   const [step, setStep] = useState(0);
@@ -166,20 +166,20 @@ export default function ApplyPage() {
   if (isSuccess) {
     return (
       <main>
-        <section className="bg-espresso py-20">
+        <section className="bg-graphite py-20">
           <div className="container mx-auto px-6 text-center">
-            <h2 className="heading-1 text-cream mb-6">Application Received</h2>
-            <p className="body-large text-cream/80 max-w-2xl mx-auto">
+            <h2 className="heading-1 text-white mb-6">Application Received</h2>
+            <p className="body-large text-white/80 max-w-2xl mx-auto">
               Thank you for your interest in Forge Franchising. Our franchise development team
               will review your application and reach out within 2 business days.
             </p>
           </div>
         </section>
-        <section className="bg-cream py-16">
+        <section className="bg-white py-16">
           <div className="container mx-auto px-6 text-center">
             <div className="card max-w-xl mx-auto p-10">
-              <h2 className="heading-3 text-espresso mb-4">What to Expect Next</h2>
-              <p className="body-large text-muted-brown mb-8">
+              <h2 className="heading-3 text-graphite mb-4">What to Expect Next</h2>
+              <p className="body-large text-steel mb-8">
                 A member of our team will contact you to schedule an introductory call.
                 In the meantime, feel free to explore more about the Forge opportunity.
               </p>
@@ -196,31 +196,31 @@ export default function ApplyPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-espresso py-20">
+      <section className="bg-graphite py-20">
         <div className="container mx-auto px-6">
           {/* Breadcrumbs */}
           <nav className="mb-8" aria-label="Breadcrumb">
-            <ol className="flex items-center gap-2 text-cream/60 text-sm">
+            <ol className="flex items-center gap-2 text-white/60 text-sm">
               <li>
-                <Link href="/" className="hover:text-cream transition-colors">
+                <Link href="/" className="hover:text-white transition-colors">
                   Home
                 </Link>
               </li>
               <li>/</li>
               <li>
-                <Link href="/own-a-franchise" className="hover:text-cream transition-colors">
+                <Link href="/own-a-franchise" className="hover:text-white transition-colors">
                   Own a Franchise
                 </Link>
               </li>
               <li>/</li>
-              <li className="text-cream">Apply</li>
+              <li className="text-white">Apply</li>
             </ol>
           </nav>
 
           <div className="max-w-3xl">
-            <span className="eyebrow text-amber mb-4 block">Franchise Application</span>
-            <h1 className="heading-1 text-cream mb-6">Apply to Own a Forge Franchise</h1>
-            <p className="body-large text-cream/80">
+            <span className="eyebrow text-accent mb-4 block">Franchise Application</span>
+            <h1 className="heading-1 text-white mb-6">Apply to Own a Forge Franchise</h1>
+            <p className="body-large text-white/80">
               Complete the three steps below to submit your franchise application. The process
               takes about 5 minutes, and all information is kept strictly confidential.
             </p>
@@ -229,7 +229,7 @@ export default function ApplyPage() {
       </section>
 
       {/* Form Section */}
-      <section className="bg-cream py-16">
+      <section className="bg-white py-16">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
             {/* Main Form Column */}
@@ -246,19 +246,19 @@ export default function ApplyPage() {
                       }}
                       className={`text-sm font-medium transition-colors ${
                         i === step
-                          ? 'text-espresso'
+                          ? 'text-graphite'
                           : i < step
-                          ? 'text-amber cursor-pointer hover:text-espresso'
-                          : 'text-muted-brown'
+                          ? 'text-accent cursor-pointer hover:text-graphite'
+                          : 'text-steel'
                       }`}
                     >
                       {i + 1}. {label}
                     </button>
                   ))}
                 </div>
-                <div className="w-full h-2 bg-espresso/10 rounded-full overflow-hidden">
+                <div className="w-full h-2 bg-graphite/10 rounded-full overflow-hidden">
                   <div
-                    className="h-full bg-amber rounded-full transition-all duration-500"
+                    className="h-full bg-ember rounded-full transition-all duration-500"
                     style={{ width: `${((step + 1) / STEPS.length) * 100}%` }}
                   />
                 </div>
@@ -268,14 +268,14 @@ export default function ApplyPage() {
                 {/* Step 1: About You */}
                 {step === 0 && (
                   <div className="space-y-6">
-                    <h2 className="heading-3 text-espresso mb-2">About You</h2>
-                    <p className="body-large text-muted-brown mb-6">
+                    <h2 className="heading-3 text-graphite mb-2">About You</h2>
+                    <p className="body-large text-steel mb-6">
                       Tell us a bit about yourself so we can get to know you.
                     </p>
 
                     <div>
-                      <label htmlFor="fullName" className="block text-sm font-medium text-espresso mb-2">
-                        Full Name <span className="text-amber">*</span>
+                      <label htmlFor="fullName" className="block text-sm font-medium text-graphite mb-2">
+                        Full Name <span className="text-accent">*</span>
                       </label>
                       <input
                         id="fullName"
@@ -289,8 +289,8 @@ export default function ApplyPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-espresso mb-2">
-                        Email Address <span className="text-amber">*</span>
+                      <label htmlFor="email" className="block text-sm font-medium text-graphite mb-2">
+                        Email Address <span className="text-accent">*</span>
                       </label>
                       <input
                         id="email"
@@ -304,8 +304,8 @@ export default function ApplyPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-espresso mb-2">
-                        Phone Number <span className="text-amber">*</span>
+                      <label htmlFor="phone" className="block text-sm font-medium text-graphite mb-2">
+                        Phone Number <span className="text-accent">*</span>
                       </label>
                       <input
                         id="phone"
@@ -323,14 +323,14 @@ export default function ApplyPage() {
                 {/* Step 2: Location & Capital */}
                 {step === 1 && (
                   <div className="space-y-6">
-                    <h2 className="heading-3 text-espresso mb-2">Location & Capital</h2>
-                    <p className="body-large text-muted-brown mb-6">
+                    <h2 className="heading-3 text-graphite mb-2">Location & Capital</h2>
+                    <p className="body-large text-steel mb-6">
                       Help us understand where you want to operate and your financial readiness.
                     </p>
 
                     <div>
-                      <label htmlFor="city" className="block text-sm font-medium text-espresso mb-2">
-                        City <span className="text-amber">*</span>
+                      <label htmlFor="city" className="block text-sm font-medium text-graphite mb-2">
+                        City <span className="text-accent">*</span>
                       </label>
                       <input
                         id="city"
@@ -344,8 +344,8 @@ export default function ApplyPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="state" className="block text-sm font-medium text-espresso mb-2">
-                        State <span className="text-amber">*</span>
+                      <label htmlFor="state" className="block text-sm font-medium text-graphite mb-2">
+                        State <span className="text-accent">*</span>
                       </label>
                       <select
                         id="state"
@@ -364,8 +364,8 @@ export default function ApplyPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="liquidCapital" className="block text-sm font-medium text-espresso mb-2">
-                        Available Liquid Capital <span className="text-amber">*</span>
+                      <label htmlFor="liquidCapital" className="block text-sm font-medium text-graphite mb-2">
+                        Available Liquid Capital <span className="text-accent">*</span>
                       </label>
                       <select
                         id="liquidCapital"
@@ -384,7 +384,7 @@ export default function ApplyPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="netWorth" className="block text-sm font-medium text-espresso mb-2">
+                      <label htmlFor="netWorth" className="block text-sm font-medium text-graphite mb-2">
                         Net Worth
                       </label>
                       <select
@@ -403,7 +403,7 @@ export default function ApplyPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="currentProfession" className="block text-sm font-medium text-espresso mb-2">
+                      <label htmlFor="currentProfession" className="block text-sm font-medium text-graphite mb-2">
                         Current Profession
                       </label>
                       <input
@@ -421,14 +421,14 @@ export default function ApplyPage() {
                 {/* Step 3: Your Goals */}
                 {step === 2 && (
                   <div className="space-y-6">
-                    <h2 className="heading-3 text-espresso mb-2">Your Goals</h2>
-                    <p className="body-large text-muted-brown mb-6">
+                    <h2 className="heading-3 text-graphite mb-2">Your Goals</h2>
+                    <p className="body-large text-steel mb-6">
                       Tell us what draws you to Forge and what you hope to achieve.
                     </p>
 
                     <div>
-                      <label htmlFor="whyForge" className="block text-sm font-medium text-espresso mb-2">
-                        Why Forge? <span className="text-amber">*</span>
+                      <label htmlFor="whyForge" className="block text-sm font-medium text-graphite mb-2">
+                        Why Forge? <span className="text-accent">*</span>
                       </label>
                       <textarea
                         id="whyForge"
@@ -442,7 +442,7 @@ export default function ApplyPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="timeline" className="block text-sm font-medium text-espresso mb-2">
+                      <label htmlFor="timeline" className="block text-sm font-medium text-graphite mb-2">
                         Desired Timeline
                       </label>
                       <select
@@ -461,7 +461,7 @@ export default function ApplyPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="franchiseExperience" className="block text-sm font-medium text-espresso mb-2">
+                      <label htmlFor="franchiseExperience" className="block text-sm font-medium text-graphite mb-2">
                         Franchise Experience
                       </label>
                       <select
@@ -480,7 +480,7 @@ export default function ApplyPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="salesExperience" className="block text-sm font-medium text-espresso mb-2">
+                      <label htmlFor="salesExperience" className="block text-sm font-medium text-graphite mb-2">
                         Sales Experience
                       </label>
                       <select
@@ -499,7 +499,7 @@ export default function ApplyPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="heardAboutUs" className="block text-sm font-medium text-espresso mb-2">
+                      <label htmlFor="heardAboutUs" className="block text-sm font-medium text-graphite mb-2">
                         How Did You Hear About Us?
                       </label>
                       <select
@@ -533,7 +533,7 @@ export default function ApplyPage() {
                       <button
                         type="button"
                         onClick={handleBack}
-                        className="text-espresso font-medium hover:text-amber transition-colors"
+                        className="text-graphite font-medium hover:text-accent transition-colors"
                       >
                         Back
                       </button>
@@ -562,7 +562,7 @@ export default function ApplyPage() {
                   </div>
                 </div>
 
-                <p className="mt-4 text-xs text-muted-brown text-center">
+                <p className="mt-4 text-xs text-steel text-center">
                   Your information is confidential and will only be used to evaluate your application.
                 </p>
               </form>
@@ -571,48 +571,48 @@ export default function ApplyPage() {
             {/* Right Sidebar */}
             <div className="lg:col-span-2">
               <div className="card p-8 mb-8">
-                <h3 className="heading-4 text-espresso mb-6">What Happens After You Apply</h3>
+                <h3 className="heading-4 text-graphite mb-6">What Happens After You Apply</h3>
                 <ol className="space-y-5">
                   <li className="flex gap-4">
-                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-amber/20 text-amber flex items-center justify-center text-sm font-bold">
+                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-ember/20 text-accent flex items-center justify-center text-sm font-bold">
                       1
                     </span>
                     <div>
-                      <p className="font-medium text-espresso">Application Review</p>
-                      <p className="text-sm text-muted-brown mt-1">
+                      <p className="font-medium text-graphite">Application Review</p>
+                      <p className="text-sm text-steel mt-1">
                         Our franchise development team reviews your application within 2 business days.
                       </p>
                     </div>
                   </li>
                   <li className="flex gap-4">
-                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-amber/20 text-amber flex items-center justify-center text-sm font-bold">
+                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-ember/20 text-accent flex items-center justify-center text-sm font-bold">
                       2
                     </span>
                     <div>
-                      <p className="font-medium text-espresso">Introductory Call</p>
-                      <p className="text-sm text-muted-brown mt-1">
+                      <p className="font-medium text-graphite">Introductory Call</p>
+                      <p className="text-sm text-steel mt-1">
                         We schedule a call to learn more about your goals and answer your questions.
                       </p>
                     </div>
                   </li>
                   <li className="flex gap-4">
-                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-amber/20 text-amber flex items-center justify-center text-sm font-bold">
+                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-ember/20 text-accent flex items-center justify-center text-sm font-bold">
                       3
                     </span>
                     <div>
-                      <p className="font-medium text-espresso">Discovery Day</p>
-                      <p className="text-sm text-muted-brown mt-1">
+                      <p className="font-medium text-graphite">Discovery Day</p>
+                      <p className="text-sm text-steel mt-1">
                         Visit our team in person to experience the Forge brand and operations firsthand.
                       </p>
                     </div>
                   </li>
                   <li className="flex gap-4">
-                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-amber/20 text-amber flex items-center justify-center text-sm font-bold">
+                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-ember/20 text-accent flex items-center justify-center text-sm font-bold">
                       4
                     </span>
                     <div>
-                      <p className="font-medium text-espresso">Franchise Agreement</p>
-                      <p className="text-sm text-muted-brown mt-1">
+                      <p className="font-medium text-graphite">Franchise Agreement</p>
+                      <p className="text-sm text-steel mt-1">
                         Review and sign your franchise agreement to officially join the Forge family.
                       </p>
                     </div>
@@ -620,8 +620,8 @@ export default function ApplyPage() {
                 </ol>
               </div>
 
-              <div className="p-6 bg-espresso/5 rounded-[3px]">
-                <p className="text-xs text-muted-brown leading-relaxed">
+              <div className="p-6 bg-graphite/5 rounded-[3px]">
+                <p className="text-xs text-steel leading-relaxed">
                   {DISCLAIMER_TEXT}
                 </p>
               </div>

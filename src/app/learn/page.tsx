@@ -135,7 +135,7 @@ export default function LearnPage() {
       />
 
       {/* Hero */}
-      <section className="bg-cream">
+      <section className="bg-white">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'Learn & Resources' }]} />
           <div className="max-w-3xl">
@@ -174,7 +174,7 @@ export default function LearnPage() {
       />
 
       {/* Tools & Quick References */}
-      <section className="section-padding bg-deep-cream">
+      <section className="section-padding bg-ash-tint">
         <div className="container-wide">
           <div className="text-center mb-12">
             <h2 className="heading-2 mb-4">Tools and Quick References</h2>
@@ -187,7 +187,7 @@ export default function LearnPage() {
             {toolsAndCalculators.map((tool) => (
               <div key={tool.title} className="card flex flex-col">
                 <h3 className="heading-4 mb-3">{tool.title}</h3>
-                <p className="text-muted-brown text-sm leading-relaxed mb-6 flex-1">
+                <p className="text-steel text-sm leading-relaxed mb-6 flex-1">
                   {tool.description}
                 </p>
                 <Link href={tool.href} className="btn-secondary text-center">
@@ -200,7 +200,7 @@ export default function LearnPage() {
       </section>
 
       {/* In-Depth Guides */}
-      <section className="section-padding bg-cream">
+      <section className="section-padding bg-white">
         <div className="container-wide">
           <div className="text-center mb-12">
             <h2 className="heading-2 mb-4">In-Depth Guides</h2>
@@ -213,7 +213,7 @@ export default function LearnPage() {
             {guides.map((guide) => (
               <div key={guide.title} className="card flex flex-col">
                 <h3 className="heading-4 mb-3">{guide.title}</h3>
-                <p className="text-muted-brown text-sm leading-relaxed mb-6 flex-1">
+                <p className="text-steel text-sm leading-relaxed mb-6 flex-1">
                   {guide.description}
                 </p>
                 <Link href={guide.href} className="btn-primary text-center">
@@ -226,7 +226,7 @@ export default function LearnPage() {
       </section>
 
       {/* Featured Articles */}
-      <section className="section-padding bg-deep-cream">
+      <section className="section-padding bg-ash-tint">
         <div className="container-wide">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-12 gap-4">
             <div>
@@ -247,10 +247,10 @@ export default function LearnPage() {
                 href={article.href}
                 className="card group hover:shadow-lg transition-shadow"
               >
-                <h3 className="heading-4 mb-3 group-hover:text-amber transition-colors">
+                <h3 className="heading-4 mb-3 group-hover:text-accent transition-colors">
                   {article.title}
                 </h3>
-                <p className="text-muted-brown text-sm leading-relaxed">{article.description}</p>
+                <p className="text-steel text-sm leading-relaxed">{article.description}</p>
               </Link>
             ))}
           </div>
@@ -258,7 +258,7 @@ export default function LearnPage() {
       </section>
 
       {/* Industry Resources */}
-      <section className="section-padding bg-cream">
+      <section className="section-padding bg-white">
         <div className="container-wide">
           <div className="text-center mb-12">
             <h2 className="heading-2 mb-4">Franchise Guides by Industry</h2>
@@ -274,7 +274,7 @@ export default function LearnPage() {
                 href={industry.href}
                 className="card text-center py-6 hover:shadow-lg transition-shadow group"
               >
-                <span className="text-sm font-semibold text-espresso group-hover:text-amber transition-colors">
+                <span className="text-sm font-semibold text-graphite group-hover:text-accent transition-colors">
                   {industry.title}
                 </span>
               </Link>

@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import palette from './src/lib/palette.json'
 
 const config: Config = {
   content: [
@@ -9,18 +10,30 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        espresso: '#281010',
-        amber: {
-          DEFAULT: '#F87000',
-          hover: '#D9620A',
+        graphite: palette.graphite,
+        steel: palette.steel,
+        ember: {
+          DEFAULT: palette.ember,
+          // Fill for buttons that carry graphite text. Lifted slightly from
+          // the brand ember so graphite text clears 4.5:1.
+          button: palette.emberButton,
+          hover: palette.emberHover,
+          // Ember for text on light surfaces. Passes 4.5:1 on white and ash tint.
+          dark: palette.emberDark,
+          // Ember for text on graphite. Passes 4.5:1 on graphite.
+          light: palette.emberHover,
         },
-        cream: '#FAF6EF',
-        'deep-cream': '#F3EBDD',
-        'muted-brown': '#6B5750',
+        ash: {
+          DEFAULT: palette.ash,
+          tint: palette.ashTint,
+        },
+        // Accent text that adapts to its surface: dark ember on light
+        // surfaces, light ember on graphite. See --accent in globals.css.
+        accent: 'rgb(var(--accent) / <alpha-value>)',
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        display: ['var(--font-fraunces)', 'Georgia', 'serif'],
+        display: ['var(--font-display)', 'Georgia', 'serif'],
       },
       fontSize: {
         '5xl': ['3rem', { lineHeight: '1.1' }],

@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { SITE_NAME, SITE_URL } from './constants'
+import { SITE_NAME, SITE_URL, DEFAULT_OG_IMAGE } from './constants'
 
 type MetadataArgs = {
   title: string
@@ -26,12 +26,13 @@ export function createMetadata({ title, description, path = '', ogImage }: Metad
       url,
       siteName: SITE_NAME,
       type: 'website',
-      ...(ogImage && { images: [{ url: ogImage, width: 1200, height: 630 }] }),
+      images: [ogImage ? { url: ogImage, width: 1200, height: 630 } : DEFAULT_OG_IMAGE],
     },
     twitter: {
       card: 'summary_large_image',
       title: ogTitle,
       description,
+      images: [ogImage ?? DEFAULT_OG_IMAGE.url],
     },
   }
 }

@@ -37,7 +37,7 @@ export default function BrandStandardsEnforcementPage() {
         }}
       />
 
-      <section className="bg-cream">
+      <section className="bg-white">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[
             { label: 'Franchise Branding', href: '/franchise-branding' },
@@ -76,7 +76,7 @@ export default function BrandStandardsEnforcementPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-deep-cream">
+      <section className="section-padding bg-ash-tint">
         <div className="container-wide">
           <div className="max-w-3xl">
             <Image
@@ -89,13 +89,13 @@ export default function BrandStandardsEnforcementPage() {
             />
 
             <h2 className="heading-2 mb-6">Brand Standards in the Franchise Agreement</h2>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               The franchise agreement is the legal foundation of brand standards
               enforcement. Without contractual authority to require brand compliance,
               a franchisor has no enforcement mechanism beyond persuasion. And persuasion
               alone does not scale.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               Every franchise agreement should contain explicit provisions that require
               the franchisee to operate in accordance with the brand standards manual
               (which is typically incorporated by reference), use only approved signage,
@@ -103,24 +103,24 @@ export default function BrandStandardsEnforcementPage() {
               according to specified standards, participate in required training programs,
               and submit to periodic inspections and audits.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               The agreement should also define the consequences of non-compliance: notice
               and cure periods, required remediation steps, additional training
               requirements, and ultimately, termination rights for persistent or material
               violations. These provisions are prepared as part of the{' '}
-              <Link href="/services" className="text-amber font-semibold link-underline">
+              <Link href="/services" className="text-accent font-semibold link-underline">
                 FDD and franchise agreement development process
               </Link>{' '}
               and should be reviewed by experienced franchise counsel.
             </p>
 
             <h2 className="heading-2 mb-6 mt-12">Brand Standards in the Operations Manual</h2>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               Where the franchise agreement establishes the obligation to comply, the
               operations manual defines what compliance actually looks like. This is
               where brand standards become operational reality.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               Your operations manual should contain a dedicated brand standards section
               that covers every customer touchpoint. For a restaurant franchise, that
               means everything from the exterior signage specifications to the font on
@@ -128,23 +128,23 @@ export default function BrandStandardsEnforcementPage() {
               it includes vehicle wrap specifications, uniform guidelines, email
               signatures, and proposal templates.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               The key is specificity. "Maintain a clean, professional appearance" is a
               guideline. "Exterior windows must be cleaned weekly. Interior floors must
               be mopped daily and deep cleaned monthly. All customer facing signage must
               use the approved brand font at the specified size" is a standard. Standards
               are auditable. Guidelines are not.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               Read more about why{' '}
-              <Link href="/blog/franchise-operations-manual" className="text-amber font-semibold link-underline">
+              <Link href="/blog/franchise-operations-manual" className="text-accent font-semibold link-underline">
                 your operations manual is the product
               </Link>{' '}
               when you franchise.
             </p>
 
             <h2 className="heading-2 mb-6 mt-12">Building a Field Audit Program</h2>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               Standards without enforcement are suggestions. A field audit program is the
               mechanism that turns brand standards from a document into a reality. The
               most effective audit programs combine multiple methods:
@@ -158,14 +158,14 @@ export default function BrandStandardsEnforcementPage() {
                 'Customer feedback analysis: systematic review of online reviews, NPS scores, and complaint data for brand standard indicators',
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <svg className="w-5 h-5 text-amber flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-muted-brown leading-relaxed">{item}</span>
+                  <span className="text-steel leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               The scoring rubric is critical. Each audit item should be scored on a clear
               scale (compliant, needs improvement, non-compliant) with specific criteria
               for each score. This removes subjectivity from the process and gives both
@@ -173,35 +173,35 @@ export default function BrandStandardsEnforcementPage() {
             </p>
 
             <h2 className="heading-2 mb-6 mt-12">Handling Non-Compliance Without Crushing Franchisees</h2>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               This is where many franchise systems get it wrong. They either ignore
               violations until they become systemic (destroying brand equity) or they
               come down so hard on minor infractions that franchisees become resentful
               and disengaged (destroying the relationship). The right approach is a
               graduated response framework.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               <strong>Level 1: Coaching.</strong> For first time minor violations, the
               field support team identifies the issue, provides specific guidance on the
               correct standard, and sets a timeline for correction. Most brand drift is
               not willful. It is a training gap or an oversight. Coaching fixes 80
               percent of compliance issues.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               <strong>Level 2: Formal notice.</strong> For repeated minor violations or
               first time significant violations, the franchisor issues a written notice
               specifying the violation, the required correction, and the cure period.
               This triggers the contractual remediation process defined in the franchise
               agreement.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               <strong>Level 3: Required retraining.</strong> For persistent compliance
               failures, the franchisor may require the franchisee or their management
               team to complete additional brand standards training, typically at the
               franchisee's expense. This is a serious escalation that signals the issue
               is material.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               <strong>Level 4: Termination.</strong> For material or persistent violations
               that damage the brand and remain uncured after escalation, termination is
               the last resort. It is painful, expensive, and disruptive. But a single
@@ -211,16 +211,16 @@ export default function BrandStandardsEnforcementPage() {
             </p>
 
             <h2 className="heading-2 mb-6 mt-12">Building a Culture of Brand Pride</h2>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               The best franchise systems do not rely on audits alone. They build a culture
               where franchisees take pride in brand execution because they understand
               that the brand is what drives their revenue. When franchisees see brand
               standards as protection for their investment rather than interference
               from corporate, compliance becomes self-reinforcing.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               Build this culture from the beginning. During{' '}
-              <Link href="/how-it-works" className="text-amber font-semibold link-underline">
+              <Link href="/how-it-works" className="text-accent font-semibold link-underline">
                 initial training
               </Link>, dedicate significant time to explaining why each brand
               standard exists, not just what it is. Share data that connects brand
@@ -229,20 +229,20 @@ export default function BrandStandardsEnforcementPage() {
               the network so top performers are celebrated and laggards feel constructive
               pressure.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               Franchise systems like Chick-fil-A, which consistently ranks at the top
               of customer satisfaction surveys, achieve brand consistency not through
               heavy handed enforcement but through intensive selection, training, and
               a culture that treats brand standards as a competitive advantage. That
               approach starts with{' '}
-              <Link href="/franchise-branding/building-a-franchise-brand" className="text-amber font-semibold link-underline">
+              <Link href="/franchise-branding/building-a-franchise-brand" className="text-accent font-semibold link-underline">
                 building the brand
               </Link>{' '}
               correctly from the foundation.
             </p>
 
             <h2 className="heading-2 mb-6 mt-12">Technology for Brand Compliance</h2>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               Modern franchise systems use technology to make brand compliance easier
               to achieve and easier to monitor. Marketing asset management platforms
               give franchisees access to approved templates, images, and copy so they
@@ -251,7 +251,7 @@ export default function BrandStandardsEnforcementPage() {
               documentation and automatic scoring. CRM systems can flag brand standard
               deviations in customer facing communications.
             </p>
-            <p className="text-muted-brown leading-relaxed mb-6">
+            <p className="text-steel leading-relaxed mb-6">
               The goal is to make compliance the path of least resistance. When it is
               easier to use the approved template than to create your own, most
               franchisees will comply without enforcement. When the technology

@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { blogPosts } from '@/data/blog-posts'
-import { SITE_URL, SITE_NAME } from '@/lib/constants'
+import { SITE_URL, SITE_NAME, DEFAULT_OG_IMAGE } from '@/lib/constants'
 import { articleSchema, webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 import BlogPostClient from './BlogPostClient'
 
@@ -43,11 +43,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       publishedTime: post.datePublished,
       authors: [SITE_NAME],
       section: post.category,
+      images: [DEFAULT_OG_IMAGE],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.description,
+      images: [DEFAULT_OG_IMAGE.url],
     },
     alternates: {
       canonical: `${SITE_URL}/blog/${post.slug}`,

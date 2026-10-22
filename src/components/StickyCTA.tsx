@@ -41,9 +41,9 @@ export function StickyCTA({ text, href, showAfter = 600 }: StickyCTAProps) {
         visible ? 'translate-y-0' : 'translate-y-full'
       }`}
     >
-      <div className="bg-espresso/95 backdrop-blur-sm safe-bottom">
+      <div className="bg-graphite/95 backdrop-blur-sm safe-bottom">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-4">
-          <p className="text-cream/80 text-sm hidden sm:block flex-1">{text}</p>
+          <p className="text-white/80 text-sm hidden sm:block flex-1">{text}</p>
           <div className="flex items-center gap-3 w-full sm:w-auto">
             <Link
               href={href}
@@ -53,7 +53,7 @@ export function StickyCTA({ text, href, showAfter = 600 }: StickyCTAProps) {
             </Link>
             <button
               onClick={() => setDismissed(true)}
-              className="text-cream/40 hover:text-cream/70 transition-colors p-1 min-w-[44px] min-h-[44px] flex items-center justify-center"
+              className="text-white/60 hover:text-white/70 transition-colors p-1 min-w-[44px] min-h-[44px] flex items-center justify-center"
               aria-label="Dismiss"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

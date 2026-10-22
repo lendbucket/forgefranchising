@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter, Fraunces } from 'next/font/google'
+import { Inter, Source_Serif_4 } from 'next/font/google'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { SiteChrome } from '@/components/SiteChrome'
-import { SITE_NAME, SITE_URL, SITE_DESCRIPTION } from '@/lib/constants'
+import { SITE_NAME, SITE_URL, SITE_DESCRIPTION, DEFAULT_OG_IMAGE } from '@/lib/constants'
 import { organizationSchema, websiteSchema, renderSchema } from '@/lib/schema'
 import './globals.css'
 
@@ -13,15 +13,18 @@ const inter = Inter({
   display: 'swap',
 })
 
-const fraunces = Fraunces({
+// Display serif. Swap the family here; every heading reads --font-display.
+// The opsz axis is loaded so headings can use the display optical size.
+const displaySerif = Source_Serif_4({
   subsets: ['latin'],
-  variable: '--font-fraunces',
+  axes: ['opsz'],
+  variable: '--font-display',
   display: 'swap',
 })
 
 export const viewport: Viewport = {
   viewportFit: 'cover',
-  themeColor: '#FAF6EF',
+  themeColor: '#FFFFFF',
 }
 
 export const metadata: Metadata = {
@@ -35,9 +38,11 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: SITE_NAME,
     locale: 'en_US',
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     card: 'summary_large_image',
+    images: [DEFAULT_OG_IMAGE.url],
   },
   robots: {
     index: true,
@@ -51,7 +56,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${fraunces.variable}`}>
+    <html lang="en" className={`${inter.variable} ${displaySerif.variable}`}>
       <head>
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
