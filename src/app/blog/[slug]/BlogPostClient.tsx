@@ -5,6 +5,9 @@ import Link from 'next/link'
 import type { BlogPost, BlogCTA } from '@/data/blog-posts'
 import { KeyTakeaways } from '@/components/KeyTakeaways'
 import { StickyCTA } from '@/components/StickyCTA'
+import { PostCard } from '@/components/PostCard'
+import { SectionCTA } from '@/components/SectionCTA'
+import { sentenceCase } from '@/lib/text'
 
 /* ------------------------------------------------------------------ */
 /*  Helpers                                                            */
@@ -18,18 +21,18 @@ function formatDate(dateString: string) {
   })
 }
 
-const categoryColors: Record<string, string> = {
-  Guide: 'bg-ember/10 text-accent',
-  Education: 'bg-blue-50 text-blue-700',
-  Finance: 'bg-emerald-50 text-emerald-700',
-  'Case Study': 'bg-purple-50 text-purple-700',
-  Legal: 'bg-red-50 text-red-700',
-  Industry: 'bg-teal-50 text-teal-700',
-  Operations: 'bg-orange-50 text-orange-700',
-  Sales: 'bg-indigo-50 text-indigo-700',
-  Technology: 'bg-cyan-50 text-cyan-700',
-  Brokerage: 'bg-ash text-graphite',
-}
+/** Insight card covers rotate through three surfaces, as on the homepage. */
+const covers = [
+  { cover: 'bg-graphite text-white', markColor: 'text-ember' },
+  { cover: 'bg-ember-fill text-graphite', markColor: 'text-graphite' },
+  { cover: 'bg-ash text-graphite', markColor: 'text-graphite' },
+]
+
+/** Article links: ember text, 1px underline that thickens on hover. */
+const linkClass = 'text-ember-text underline underline-offset-[3px] decoration-1 hover:decoration-2'
+
+/** Headings clear the sticky header and the mobile contents row. */
+const headingScroll = 'scroll-mt-[144px] min-[1141px]:scroll-mt-[168px] xl:scroll-mt-[120px]'
 
 type Heading = { id: string; text: string; level: number }
 
@@ -45,7 +48,7 @@ function extractHeadings(content: string): Heading[] {
         .toLowerCase()
         .replace(/[^a-z0-9]+/g, '-')
         .replace(/(^-|-$)/g, '')
-    headings.push({ id, text, level })
+      headings.push({ id, text, level })
     }
   }
   return headings
@@ -90,7 +93,7 @@ function InlineRenderer({ text }: { text: string }) {
           const [, label, href] = link
           if (href.startsWith('/')) {
             return (
-              <Link key={i} href={href} className="text-accent font-medium hover:underline">
+              <Link key={i} href={href} className={linkClass}>
                 {label}
               </Link>
             )
@@ -99,7 +102,7 @@ function InlineRenderer({ text }: { text: string }) {
             <a
               key={i}
               href={href}
-              className="text-accent font-medium hover:underline"
+              className={linkClass}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -131,7 +134,11 @@ function MarkdownRenderer({ content }: { content: string }) {
           const text = trimmed.slice(3)
           const id = text.replace(/\*\*/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
           return (
-            <h2 key={i} id={id} className="font-display text-2xl sm:text-3xl font-bold text-graphite mt-12 mb-6 scroll-mt-24">
+            <h2
+              key={i}
+              id={id}
+              className={`font-display font-bold text-graphite text-[30px] min-[721px]:text-[36px] lg:text-[40px] leading-[1.08] tracking-[-0.03em] mt-20 mb-6 max-[720px]:mt-14 ${headingScroll}`}
+            >
               <InlineRenderer text={text} />
             </h2>
           )
@@ -141,7 +148,11 @@ function MarkdownRenderer({ content }: { content: string }) {
           const text = trimmed.slice(4)
           const id = text.replace(/\*\*/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
           return (
-            <h3 key={i} id={id} className="font-display text-xl sm:text-2xl font-semibold text-graphite mt-10 mb-4 scroll-mt-24">
+            <h3
+              key={i}
+              id={id}
+              className={`font-display font-bold text-graphite text-[22px] min-[721px]:text-[24px] leading-[1.2] tracking-[-0.02em] mt-12 mb-4 ${headingScroll}`}
+            >
               <InlineRenderer text={text} />
             </h3>
           )
@@ -154,12 +165,12 @@ function MarkdownRenderer({ content }: { content: string }) {
             const headerCells = rows[0].split('|').map((c) => c.trim()).filter(Boolean)
             const dataRows = rows.slice(2)
             return (
-              <div key={i} className="overflow-scroll-x my-8">
-                <table className="w-full text-sm border-collapse">
+              <div key={i} className="overflow-scroll-x my-10">
+                <table className="w-full text-[15px] leading-relaxed border-collapse">
                   <thead>
-                    <tr className="border-b-2 border-graphite/20">
+                    <tr className="border-b-2 border-graphite">
                       {headerCells.map((cell, ci) => (
-                        <th key={ci} className="text-left py-3 px-4 font-semibold text-graphite">
+                        <th key={ci} className="text-left align-bottom py-4 pr-6 font-semibold text-graphite">
                           <InlineRenderer text={cell} />
                         </th>
                       ))}
@@ -169,9 +180,9 @@ function MarkdownRenderer({ content }: { content: string }) {
                     {dataRows.map((row, ri) => {
                       const cells = row.split('|').map((c) => c.trim()).filter(Boolean)
                       return (
-                        <tr key={ri} className="border-b border-stone">
+                        <tr key={ri} className="border-b border-line">
                           {cells.map((cell, ci) => (
-                            <td key={ci} className="py-3 px-4 text-steel">
+                            <td key={ci} className="align-top py-4 pr-6 text-steel">
                               <InlineRenderer text={cell} />
                             </td>
                           ))}
@@ -188,10 +199,10 @@ function MarkdownRenderer({ content }: { content: string }) {
         if (trimmed.match(/^[-*]\s/m)) {
           const items = trimmed.split('\n').filter((l) => l.match(/^[-*]\s/))
           return (
-            <ul key={i} className="my-6 space-y-3">
+            <ul key={i} className="my-8 space-y-3">
               {items.map((item, li) => (
-                <li key={li} className="flex items-start text-steel leading-relaxed">
-                  <span className="text-accent mr-3 mt-1.5 text-xs flex-shrink-0">&#9679;</span>
+                <li key={li} className="grid grid-cols-[24px_minmax(0,1fr)] text-[18px] leading-[1.75] text-steel">
+                  <span className="mt-[0.72em] w-1.5 h-1.5 bg-ember" aria-hidden="true" />
                   <span><InlineRenderer text={item.replace(/^[-*]\s+/, '')} /></span>
                 </li>
               ))}
@@ -201,11 +212,15 @@ function MarkdownRenderer({ content }: { content: string }) {
 
         if (trimmed.match(/^\d+\.\s/m)) {
           const items = trimmed.split('\n').filter((l) => l.match(/^\d+\.\s/))
+          // Items separated by blank lines arrive as separate blocks; keep the
+          // number written in the post and join consecutive blocks into one list.
+          const continues = /^\d+\.\s/.test(blocks[i - 1]?.trim() ?? '')
+          const start = Number(items[0]?.match(/^(\d+)\./)?.[1] ?? 1)
           return (
-            <ol key={i} className="my-6 space-y-3">
+            <ol key={i} start={start} className={continues ? '-mt-8 mb-8' : 'my-8 border-t border-line'}>
               {items.map((item, li) => (
-                <li key={li} className="flex items-start text-steel leading-relaxed">
-                  <span className="text-accent font-semibold mr-3 flex-shrink-0 min-w-[1.5rem]">{li + 1}.</span>
+                <li key={li} className="grid grid-cols-[40px_minmax(0,1fr)] py-4 border-b border-line text-[18px] leading-[1.75] text-steel">
+                  <span className="font-display font-bold text-ember-text tabular-nums">{String(start + li).padStart(2, '0')}</span>
                   <span><InlineRenderer text={item.replace(/^\d+\.\s+/, '')} /></span>
                 </li>
               ))}
@@ -214,7 +229,7 @@ function MarkdownRenderer({ content }: { content: string }) {
         }
 
         return (
-          <p key={i} className="text-steel leading-relaxed text-base sm:text-lg my-5">
+          <p key={i} className="text-steel text-[18px] leading-[1.75] my-6">
             <InlineRenderer text={trimmed} />
           </p>
         )
@@ -255,7 +270,7 @@ function ReadingProgressBar() {
 /*  Table of Contents                                                  */
 /* ------------------------------------------------------------------ */
 
-function TableOfContents({ headings }: { headings: Heading[] }) {
+function useActiveHeading(headings: Heading[]) {
   const [activeId, setActiveId] = useState('')
 
   useEffect(() => {
@@ -276,23 +291,29 @@ function TableOfContents({ headings }: { headings: Heading[] }) {
     return () => observer.disconnect()
   }, [headings])
 
+  return activeId
+}
+
+/** Desktop: sticky sidebar of hairline rows. */
+function TableOfContents({ headings, activeId }: { headings: Heading[]; activeId: string }) {
   if (headings.length === 0) return null
 
   return (
-    <nav className="hidden xl:block sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto">
-      <p className="text-xs font-semibold uppercase tracking-widest text-steel mb-4">
+    <nav aria-label="On this page" className="sticky top-28 max-h-[calc(100vh-8rem)] overflow-y-auto">
+      <p className="text-sm font-semibold text-graphite mb-3">
         On this page
       </p>
-      <ul className="space-y-2 border-l border-stone pl-4">
+      <ul className="border-t border-line">
         {headings.map((h) => (
-          <li key={h.id}>
+          <li key={h.id} className="border-b border-line">
             <a
               href={`#${h.id}`}
-              className={`block text-sm leading-snug py-1 transition-colors duration-200 ${
-                h.level === 3 ? 'pl-3' : ''
+              aria-current={activeId === h.id ? 'location' : undefined}
+              className={`flex items-center py-3 min-h-[44px] text-sm leading-snug transition-colors ${
+                h.level === 3 ? 'pl-4' : ''
               } ${
                 activeId === h.id
-                  ? 'text-accent font-medium'
+                  ? 'text-graphite font-semibold'
                   : 'text-steel hover:text-graphite'
               }`}
             >
@@ -305,21 +326,52 @@ function TableOfContents({ headings }: { headings: Heading[] }) {
   )
 }
 
+/** Mobile and tablet: a horizontal, scrollable row of square chips (section headings only). */
+function TableOfContentsChips({ headings, activeId }: { headings: Heading[]; activeId: string }) {
+  const sections = headings.filter((h) => h.level === 2)
+  if (sections.length === 0) return null
+
+  return (
+    <nav
+      aria-label="On this page"
+      className="xl:hidden sticky top-[68px] min-[1141px]:top-[88px] z-30 bg-white border-y border-line mb-10 [contain:inline-size]"
+    >
+      <ol className="flex gap-2 overflow-x-auto py-2.5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        {sections.map((h) => (
+          <li key={h.id} className="flex-shrink-0">
+            <a
+              href={`#${h.id}`}
+              aria-current={activeId === h.id ? 'location' : undefined}
+              className={`flex items-center min-h-[44px] px-4 border text-sm font-medium whitespace-nowrap transition-colors ${
+                activeId === h.id
+                  ? 'bg-graphite border-graphite text-white'
+                  : 'border-line text-graphite hover:border-graphite'
+              }`}
+            >
+              {h.text}
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+  )
+}
+
 /* ------------------------------------------------------------------ */
 /*  Inline CTA: value-driven, placed at a natural decision point      */
 /* ------------------------------------------------------------------ */
 
 function InlineCTA({ cta }: { cta?: BlogCTA }) {
   return (
-    <div className="my-12 bg-graphite p-8 sm:p-10 text-center" style={{ borderRadius: '0px' }}>
-      <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-4">
-        {cta?.heading ?? 'Find Out If Your Business Is Ready to Franchise'}
+    <div className="my-16 max-[720px]:my-12 bg-graphite surface-dark p-10 max-[720px]:p-6">
+      <h3 className="heading-3 text-white mb-4">
+        {cta?.heading ? sentenceCase(cta.heading) : 'Find out if your business is ready to franchise'}
       </h3>
-      <p className="text-white/70 mb-6 max-w-lg mx-auto">
+      <p className="text-[17px] leading-relaxed text-fog mb-8 max-w-[560px]">
         {cta?.body ?? 'Take our two-minute assessment and get a franchise readiness score with personalized recommendations. No cost, no obligation.'}
       </p>
       <Link href={cta?.href ?? '/is-my-business-franchisable'} className="btn-primary">
-        {cta?.buttonText ?? 'Get Your Free Readiness Score'}
+        {cta?.buttonText ? sentenceCase(cta.buttonText) : 'Get your free readiness score'}
       </Link>
     </div>
   )
@@ -340,6 +392,7 @@ export default function BlogPostClient({
 }: BlogPostClientProps) {
   const headings = useMemo(() => extractHeadings(post.content), [post.content])
   const takeaways = useMemo(() => post.keyTakeaways ?? extractTakeaways(post.content), [post.keyTakeaways, post.content])
+  const activeId = useActiveHeading(headings)
 
   const contentBlocks = post.content.split('\n\n')
   const midpoint = Math.floor(contentBlocks.length / 2)
@@ -351,43 +404,45 @@ export default function BlogPostClient({
       <ReadingProgressBar />
 
       {/* Hero */}
-      <section className="bg-graphite text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-          <nav className="mb-8" aria-label="Breadcrumb">
-            <ol className="flex items-center gap-2 text-sm text-white/60">
+      <section className="bg-graphite surface-dark">
+        <div className="container-wide section-padding">
+          <nav className="mb-10 max-[720px]:mb-8" aria-label="Breadcrumb">
+            <ol className="flex items-center gap-2 text-sm">
               <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
-              <li>/</li>
+              <li aria-hidden="true">/</li>
               <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
-              <li>/</li>
-              <li className="text-white/70 truncate max-w-[200px] sm:max-w-none">{post.title}</li>
+              <li aria-hidden="true">/</li>
+              <li className="text-white truncate min-w-0 max-w-[200px] sm:max-w-none">{post.title}</li>
             </ol>
           </nav>
 
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-3 mb-6">
-              <span className={`inline-block px-3 py-1 text-xs font-semibold ${categoryColors[post.category] || 'bg-gray-100 text-gray-700'}`}>
-                {post.category}
-              </span>
-              <span className="text-white/60 text-sm">{post.readTime}</span>
-            </div>
-            <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">
+          <div className="max-w-[880px]">
+            <p className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-fog mb-6">
+              <span className="text-white font-semibold">{sentenceCase(post.category)}</span>
+              <span aria-hidden="true">/</span>
+              <span>{post.readTime}</span>
+              <span aria-hidden="true">/</span>
+              <time dateTime={post.datePublished}>
+                Published {formatDate(post.datePublished)}
+              </time>
+            </p>
+            <h1 className="heading-1 text-white mb-8 max-[720px]:mb-6">
               {post.title}
             </h1>
-            <p className="text-lg text-white/70 leading-relaxed mb-4">
+            <p className="lead max-w-[720px]">
               {post.description}
             </p>
-            <time dateTime={post.datePublished} className="text-sm text-white/60">
-              Published {formatDate(post.datePublished)}
-            </time>
           </div>
         </div>
       </section>
 
-      {/* Article Content */}
-      <section className="bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-          <div className="flex gap-12">
-            <article className="max-w-3xl flex-1 min-w-0">
+      {/* Article content */}
+      <section className="section-padding bg-white">
+        <div className="container-wide">
+          <div className="xl:grid xl:grid-cols-[minmax(0,720px)_256px] xl:justify-between xl:gap-16">
+            <article className="max-w-reading mx-auto xl:mx-0 w-full min-w-0">
+              <TableOfContentsChips headings={headings} activeId={activeId} />
+
               {/* Key Takeaways: chunking for skimmers (Miller's law) */}
               {takeaways.length > 0 && (
                 <KeyTakeaways items={takeaways} readTime={post.readTime} />
@@ -398,72 +453,53 @@ export default function BlogPostClient({
               <MarkdownRenderer content={secondHalf} />
             </article>
 
-            <aside className="hidden xl:block w-64 flex-shrink-0">
-              <TableOfContents headings={headings} />
+            <aside className="hidden xl:block">
+              <TableOfContents headings={headings} activeId={activeId} />
             </aside>
           </div>
         </div>
       </section>
 
-      {/* Bottom CTA: placed at natural decision point after value delivery */}
-      <section className="bg-graphite text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 text-center">
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">
-            {post.cta?.heading ?? 'See Where Your Business Stands'}
-          </h2>
-          <p className="text-lg sm:text-xl leading-relaxed text-white/70 mb-10 max-w-2xl mx-auto">
-            {post.cta?.body ??
-              'If this article raised questions about franchising your business, get a concrete answer. Our free assessment scores your readiness and gives you specific next steps.'}
-          </p>
-          <Link href={post.cta?.href ?? '/is-my-business-franchisable'} className="btn-primary">
-            {post.cta?.buttonText ?? 'Get Your Free Readiness Score'}
-          </Link>
-          <div className="mt-4">
-            <Link href="/contact" className="text-sm text-white/60 link-underline">
-              {post.cta ? 'Or contact us directly' : 'Or book a feasibility call directly'}
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Continue Learning: 3 curated next steps (reduces paralysis, pulls deeper) */}
+      {/* Continue learning: up to 3 related posts (reduces paralysis, pulls deeper) */}
       {relatedPosts.length > 0 && (
-        <section className="bg-stone">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-            <p className="eyebrow mb-4">Continue Learning</p>
-            <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-graphite mb-10" style={{ letterSpacing: '-0.02em' }}>
-              Read These Next
+        <section className="section-padding bg-stone">
+          <div className="container-wide">
+            <h2 className="heading-2 mb-14 max-[720px]:mb-8">
+              Read these next
             </h2>
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {relatedPosts.map((rp) => (
-                <Link
+            <div className="grid min-[961px]:grid-cols-3 min-[721px]:grid-cols-2 gap-x-8 gap-y-16 max-[720px]:gap-y-12">
+              {relatedPosts.map((rp, i) => (
+                <PostCard
                   key={rp.slug}
+                  category={sentenceCase(rp.category)}
+                  mark={rp.category}
+                  meta={rp.readTime}
+                  title={rp.title}
                   href={`/blog/${rp.slug}`}
-                  className="card-interactive group block"
-                >
-                  <div className="p-6 sm:p-8">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className={`inline-block px-3 py-1 text-xs font-semibold ${categoryColors[rp.category] || 'bg-gray-100 text-gray-700'}`}>
-                        {rp.category}
-                      </span>
-                      <span className="text-xs text-steel">{rp.readTime}</span>
-                    </div>
-                    <h3 className="font-display text-lg font-bold text-graphite mb-3 group-hover:text-accent transition-colors duration-200 leading-snug">
-                      {rp.title}
-                    </h3>
-                    <p className="text-sm text-steel leading-relaxed line-clamp-2">
-                      {rp.description}
-                    </p>
-                  </div>
-                </Link>
+                  teaser={rp.description}
+                  {...covers[i % covers.length]}
+                />
               ))}
             </div>
           </div>
         </section>
       )}
 
+      {/* Closing CTA: placed at natural decision point after value delivery */}
+      <SectionCTA
+        heading={post.cta?.heading ? sentenceCase(post.cta.heading) : 'See where your business stands'}
+        body={
+          post.cta?.body ??
+          'If this article raised questions about franchising your business, get a concrete answer. Our free assessment scores your readiness and gives you specific next steps.'
+        }
+        buttonText={post.cta?.buttonText ? sentenceCase(post.cta.buttonText) : 'Get your free readiness score'}
+        buttonHref={post.cta?.href ?? '/is-my-business-franchisable'}
+        secondaryText={post.cta ? 'Or contact us directly' : 'Or book a feasibility call directly'}
+        secondaryHref="/contact"
+      />
+
       <StickyCTA
-        text={post.cta?.buttonText ?? 'Get Your Free Readiness Score'}
+        text={post.cta?.buttonText ? sentenceCase(post.cta.buttonText) : 'Get your free readiness score'}
         href={post.cta?.href ?? '/is-my-business-franchisable'}
       />
     </>

@@ -406,10 +406,7 @@ export default function GlossaryPage() {
       <section className="bg-graphite surface-dark">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'Learn', href: '/learn' }, { label: 'Franchise Glossary' }]} />
-          <div className="max-w-3xl">
-            <p className="eyebrow mb-4">
-              Franchise Education
-            </p>
+          <div className="max-w-[880px]">
             <h1 className="heading-1 mb-8">Franchise Glossary</h1>
             <p className="body-large mb-6">
               Franchising has its own language. If you are considering turning your business into a
@@ -426,23 +423,26 @@ export default function GlossaryPage() {
       </section>
 
       {/* Jump-to-Letter Navigation */}
-      <section className="bg-stone border-b border-graphite/10 sticky top-16 lg:top-20 z-40">
-        <div className="container-wide py-4">
-          <nav aria-label="Alphabetical navigation" className="flex flex-wrap gap-1 sm:gap-2 justify-center">
+      <section className="bg-stone border-b border-line sticky top-[68px] min-[1141px]:top-[88px] z-40">
+        <div className="wrap py-4">
+          <nav
+            aria-label="Alphabetical navigation"
+            className="flex flex-nowrap md:flex-wrap gap-1 md:justify-center overflow-x-auto md:overflow-visible"
+          >
             {alphabet.map((letter) => {
               const hasTerms = letters.includes(letter)
               return hasTerms ? (
                 <a
                   key={letter}
                   href={`#letter-${letter}`}
-                  className="w-9 h-9 flex items-center justify-center text-sm font-semibold text-graphite hover:bg-ember-fill hover:text-graphite transition-colors"
+                  className="flex-shrink-0 w-11 min-h-[44px] flex items-center justify-center border border-line bg-white text-sm font-semibold text-graphite hover:bg-graphite hover:border-graphite hover:text-white transition-colors"
                 >
                   {letter}
                 </a>
               ) : (
                 <span
                   key={letter}
-                  className="w-9 h-9 flex items-center justify-center text-sm text-steel"
+                  className="flex-shrink-0 w-11 min-h-[44px] flex items-center justify-center border border-line text-sm text-fog"
                 >
                   {letter}
                 </span>
@@ -454,29 +454,29 @@ export default function GlossaryPage() {
 
       {/* Glossary Terms: progressive disclosure via expandable sections */}
       <section className="section-padding bg-white">
-        <div className="container-wide max-w-4xl">
+        <div className="container-narrow">
           <GlossaryTerms grouped={grouped} letters={letters} />
         </div>
       </section>
 
       <ContinueLearning
-        heading="Put These Terms in Context"
+        heading="Put these terms in context"
         links={[
-          { label: 'How the Franchise Process Works', href: '/how-it-works', description: 'See where these terms fit in the four-phase franchise development process.' },
-          { label: 'What Is an FDD?', href: '/blog/franchise-disclosure-document', description: 'The most important franchise document, broken down item by item.' },
-          { label: 'Get Your Readiness Score', href: '/is-my-business-franchisable', description: 'Two-minute assessment to see if your business is ready to franchise.' },
+          { label: 'How the franchise process works', href: '/how-it-works', description: 'See where these terms fit in the four-phase franchise development process.' },
+          { label: 'What is an FDD?', href: '/blog/franchise-disclosure-document', description: 'The most important franchise document, broken down item by item.' },
+          { label: 'Get your readiness score', href: '/is-my-business-franchisable', description: 'Two-minute assessment to see if your business is ready to franchise.' },
         ]}
       />
 
       <SectionCTA
-        heading="Know the Terms. Now Learn the Process."
+        heading="Know the terms. Now learn the process."
         body="Understanding franchise terminology is the first step. The next step is understanding whether your business is ready to franchise. Book a free feasibility call and we will walk through it together."
-        buttonText="Book a Free Feasibility Call"
+        buttonText="Book a free feasibility call"
         buttonHref="/contact"
       />
 
       <StickyCTA
-        text="Get Your Free Readiness Score"
+        text="Get your free readiness score"
         href="/is-my-business-franchisable"
       />
     </>

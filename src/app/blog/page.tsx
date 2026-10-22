@@ -1,8 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
 import { blogPosts } from '@/data/blog-posts'
+import { PostCard } from '@/components/PostCard'
+import { SectionCTA } from '@/components/SectionCTA'
+import { sentenceCase } from '@/lib/text'
 
 const categories = [
   'All',
@@ -18,26 +20,12 @@ const categories = [
   'Brokerage',
 ]
 
-const categoryColors: Record<string, string> = {
-  Guide: 'bg-ember/10 text-accent',
-  Education: 'bg-blue-50 text-blue-700',
-  Finance: 'bg-emerald-50 text-emerald-700',
-  'Case Study': 'bg-purple-50 text-purple-700',
-  Legal: 'bg-red-50 text-red-700',
-  Industry: 'bg-teal-50 text-teal-700',
-  Operations: 'bg-orange-50 text-orange-700',
-  Sales: 'bg-indigo-50 text-indigo-700',
-  Technology: 'bg-cyan-50 text-cyan-700',
-  Brokerage: 'bg-ash text-graphite',
-}
-
-function formatDate(dateString: string) {
-  return new Date(dateString + 'T00:00:00').toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  })
-}
+/** Insight card covers rotate through three surfaces, as on the homepage. */
+const covers = [
+  { cover: 'bg-graphite text-white', markColor: 'text-ember' },
+  { cover: 'bg-ember-fill text-graphite', markColor: 'text-graphite' },
+  { cover: 'bg-ash text-graphite', markColor: 'text-graphite' },
+]
 
 export default function BlogIndexPage() {
   const [activeCategory, setActiveCategory] = useState('All')
@@ -51,16 +39,13 @@ export default function BlogIndexPage() {
 
   return (
     <>
-      <section className="bg-graphite text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
-          <div className="max-w-3xl">
-            <p className="eyebrow mb-4">
-              Franchise Knowledge Hub
-            </p>
-            <h1 className="heading-1 text-white mb-6">
+      <section className="bg-graphite surface-dark">
+        <div className="container-wide section-padding">
+          <div className="max-w-[880px]">
+            <h1 className="heading-1 mb-8 max-[720px]:mb-6">
               The Franchise Blog
             </h1>
-            <p className="text-lg sm:text-xl text-white/70 leading-relaxed">
+            <p className="lead max-w-[720px]">
               Practical guides, real cost breakdowns, and proven strategies for
               business owners who want to franchise the right way. No fluff. No
               gated content. Just the information you need.
@@ -69,10 +54,10 @@ export default function BlogIndexPage() {
         </div>
       </section>
 
-      <section className="bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          {/* Category Filter */}
-          <div className="flex flex-wrap gap-2 mb-12">
+      <section className="section-padding bg-white">
+        <div className="container-wide">
+          {/* Category filter */}
+          <div className="flex flex-wrap gap-2 mb-16 max-[720px]:mb-10">
             {categories.map((category) => {
               const count =
                 category === 'All'
@@ -81,72 +66,45 @@ export default function BlogIndexPage() {
                       (p) => p.category === category && p.content.length > 0
                     ).length
               if (count === 0 && category !== 'All') return null
+              const active = activeCategory === category
               return (
                 <button
                   key={category}
+                  type="button"
                   onClick={() => setActiveCategory(category)}
-                  style={{ borderRadius: '2px' }}
-                  className={`px-4 py-2 text-sm font-medium transition-colors duration-200 min-h-[44px] ${
-                    activeCategory === category
-                      ? 'bg-graphite text-white'
-                      : 'bg-stone text-steel hover:bg-graphite/10'
+                  aria-pressed={active}
+                  className={`inline-flex items-center min-h-[44px] px-4 border text-sm font-medium transition-colors ${
+                    active
+                      ? 'bg-graphite border-graphite text-white'
+                      : 'bg-white border-line text-graphite hover:border-graphite'
                   }`}
                 >
-                  {category}
-                  <span className="ml-1.5 opacity-60">({count})</span>
+                  {sentenceCase(category)}
+                  <span className={`ml-1.5 ${active ? 'text-fog' : 'text-steel'}`}>({count})</span>
                 </button>
               )
             })}
           </div>
 
-          {/* Posts Grid */}
+          {/* Posts grid */}
           {publishedPosts.length > 0 ? (
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {publishedPosts.map((post) => (
-                <Link
+            <div className="grid min-[961px]:grid-cols-3 min-[721px]:grid-cols-2 gap-x-8 gap-y-16 max-[720px]:gap-y-12">
+              {publishedPosts.map((post, i) => (
+                <PostCard
                   key={post.slug}
+                  category={sentenceCase(post.category)}
+                  mark={post.category}
+                  meta={post.readTime}
+                  title={post.title}
                   href={`/blog/${post.slug}`}
-                  className="card-interactive group block"
-                >
-                  <div className="p-6 sm:p-8">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span
-                        className={`inline-block px-3 py-1 text-xs font-semibold ${
-                          categoryColors[post.category] ||
-                          'bg-gray-100 text-gray-700'
-                        }`}
-                        style={{ borderRadius: '2px' }}
-                      >
-                        {post.category}
-                      </span>
-                      <span className="text-xs text-steel">
-                        {post.readTime}
-                      </span>
-                    </div>
-                    <h2 className="font-display text-lg sm:text-xl font-bold text-graphite mb-3 group-hover:text-accent transition-colors duration-200 leading-snug">
-                      {post.title}
-                    </h2>
-                    <p className="text-sm text-steel leading-relaxed mb-4 line-clamp-3">
-                      {post.description}
-                    </p>
-                    <div className="flex items-center justify-between">
-                      <time
-                        dateTime={post.datePublished}
-                        className="text-xs text-steel"
-                      >
-                        {formatDate(post.datePublished)}
-                      </time>
-                      <span className="text-accent text-sm font-semibold group-hover:translate-x-1 transition-transform duration-200">
-                        Read more &rarr;
-                      </span>
-                    </div>
-                  </div>
-                </Link>
+                  teaser={post.description}
+                  {...covers[i % covers.length]}
+                />
               ))}
             </div>
           ) : (
-            <div className="text-center py-16">
-              <p className="text-steel text-lg">
+            <div className="border-t border-graphite py-16">
+              <p className="text-steel text-[17px] leading-relaxed">
                 No posts found in this category yet. Check back soon.
               </p>
             </div>
@@ -154,21 +112,12 @@ export default function BlogIndexPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-graphite text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 text-center">
-          <h2 className="heading-2 text-white mb-6">
-            Ready to Explore Franchising?
-          </h2>
-          <p className="body-large text-white/70 mb-10 max-w-2xl mx-auto">
-            Get a free, honest assessment of whether your business is ready to
-            franchise. No obligations, no sales pitch. Just clarity.
-          </p>
-          <Link href="/contact" className="btn-primary">
-            Book a Free Feasibility Call
-          </Link>
-        </div>
-      </section>
+      <SectionCTA
+        heading="Ready to explore franchising?"
+        body="Get a free, honest assessment of whether your business is ready to franchise. No obligations, no sales pitch. Just clarity."
+        buttonText="Book a free feasibility call"
+        buttonHref="/contact"
+      />
     </>
   )
 }

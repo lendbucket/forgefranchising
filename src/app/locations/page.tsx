@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { createMetadata } from '@/lib/metadata'
 import { cities } from '@/data/cities'
+import { Breadcrumbs } from '@/components/Breadcrumbs'
+import { Arrow } from '@/components/Arrow'
 import { SITE_URL } from '@/lib/constants'
 import { webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 
@@ -38,39 +40,34 @@ export default function LocationsPage() {
         }}
       />
 
-      <section className="bg-graphite">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <nav aria-label="Breadcrumb">
-            <ol className="flex items-center gap-2 text-sm text-white/60">
-              <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
-              <li className="flex items-center gap-2"><span className="text-white/60">/</span><span className="text-white font-medium">Locations</span></li>
-            </ol>
-          </nav>
-        </div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-20">
-          <p className="eyebrow mb-4">Service Areas</p>
-          <h1 className="heading-1 text-white mb-6">Franchise Consultant Coverage Across the United States</h1>
-          <p className="text-lg text-white/60 leading-relaxed max-w-2xl">
-            Forge Franchising helps business owners franchise their proven concepts and connects qualified buyers
-            with franchise opportunities. Find a franchise consultant in your city.
-          </p>
+      <section className="bg-graphite surface-dark">
+        <div className="container-wide section-padding">
+          <Breadcrumbs items={[{ label: 'Locations' }]} withSchema={false} />
+          <div className="max-w-[880px]">
+            <h1 className="heading-1 mb-8">Franchise Consultant Coverage Across the United States</h1>
+            <p className="body-large">
+              Forge Franchising helps business owners franchise their proven concepts and connects qualified buyers
+              with franchise opportunities. Find a franchise consultant in your city.
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+      <section className="section-padding bg-white">
+        <div className="container-wide">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-14">
             {sortedStates.map((state) => (
               <div key={state}>
                 <h2 className="heading-4 mb-4">{state}</h2>
-                <ul className="space-y-2">
+                <ul className="border-t border-graphite">
                   {stateGroups[state].map((city) => (
-                    <li key={city.slug}>
+                    <li key={city.slug} className="border-b border-line">
                       <Link
                         href={"/locations/" + city.slug}
-                        className="text-sm text-steel hover:text-accent transition-colors"
+                        className="group flex items-center justify-between gap-4 min-h-[52px] py-3 text-[15px] text-steel hover:text-accent transition-colors"
                       >
                         {city.name} Franchise Consulting
+                        <Arrow size={14} className="text-accent" />
                       </Link>
                     </li>
                   ))}
@@ -78,16 +75,22 @@ export default function LocationsPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div className="mt-20 text-center">
-            <h2 className="heading-3 mb-4">Do Not See Your City?</h2>
-            <p className="body-large mb-8 max-w-xl mx-auto">
-              We serve business owners nationwide. Contact us to discuss franchise consulting
-              or brokerage services in your market.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="btn-primary">Franchise Your Business</Link>
-              <Link href="/own-a-franchise/apply" className="btn-secondary">Own a Forge Franchise</Link>
+      <section className="section-padding bg-stone">
+        <div className="container-wide">
+          <div className="grid min-[961px]:grid-cols-2 gap-10 min-[961px]:gap-20 items-end">
+            <div>
+              <h2 className="heading-2 mb-6">Do not see your city?</h2>
+              <p className="text-steel text-[17px] leading-relaxed max-w-[560px]">
+                We serve business owners nationwide. Contact us to discuss franchise consulting
+                or brokerage services in your market.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 min-[961px]:justify-end">
+              <Link href="/contact" className="btn-primary">Franchise your business</Link>
+              <Link href="/own-a-franchise/apply" className="btn-secondary">Own a Forge franchise</Link>
             </div>
           </div>
         </div>

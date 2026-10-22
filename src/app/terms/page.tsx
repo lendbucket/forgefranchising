@@ -15,8 +15,8 @@ export default function TermsPage() {
       <section className="bg-graphite surface-dark">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'Terms of Service' }]} />
-          <div className="max-w-3xl">
-            <h1 className="heading-1 mb-4">Terms of Service</h1>
+          <div className="max-w-[880px]">
+            <h1 className="heading-1 mb-6">Terms of Service</h1>
             <p className="text-steel text-sm">Last updated: June 9, 2026</p>
           </div>
         </div>
@@ -24,10 +24,10 @@ export default function TermsPage() {
 
       <section className="section-padding bg-white">
         <div className="container-wide">
-          <div className="max-w-3xl prose-legal">
+          <div className="max-w-[720px] prose-legal">
 
-            <h2 className="heading-3 mb-4 mt-0">1. Acceptance of Terms</h2>
-            <p className="text-steel leading-relaxed mb-6">
+            <h2 className="font-display text-[28px] min-[961px]:text-[32px] font-bold leading-[1.15] tracking-[-0.02em] text-graphite mb-4 mt-0">1. Acceptance of Terms</h2>
+            <p className="text-steel text-[17px] min-[721px]:text-[18px] leading-[1.75] mb-6">
               By accessing or using the website located at {SITE_URL} (the "Site"), operated by{' '}
               {SITE_NAME} ("Company," "we," "us," or "our"), you agree to be bound by these Terms
               of Service ("Terms"). If you do not agree to all of these Terms, you must not access
@@ -35,8 +35,8 @@ export default function TermsPage() {
               continued use of the Site following any changes constitutes acceptance of those changes.
             </p>
 
-            <h2 className="heading-3 mb-4 mt-10">2. Description of Services</h2>
-            <p className="text-steel leading-relaxed mb-6">
+            <h2 className="font-display text-[28px] min-[961px]:text-[32px] font-bold leading-[1.15] tracking-[-0.02em] text-graphite mb-4 mt-14">2. Description of services</h2>
+            <p className="text-steel text-[17px] min-[721px]:text-[18px] leading-[1.75] mb-6">
               {SITE_NAME} provides franchise development consulting services, educational content,
               tools, and resources designed to help business owners evaluate, plan, and execute
               franchise expansion strategies. The Site offers informational content including blog
@@ -47,11 +47,11 @@ export default function TermsPage() {
               only.
             </p>
 
-            <h2 className="heading-3 mb-4 mt-10">3. User Responsibilities</h2>
-            <p className="text-steel leading-relaxed mb-4">
+            <h2 className="font-display text-[28px] min-[961px]:text-[32px] font-bold leading-[1.15] tracking-[-0.02em] text-graphite mb-4 mt-14">3. User responsibilities</h2>
+            <p className="text-steel text-[17px] min-[721px]:text-[18px] leading-[1.75] mb-4">
               When using the Site, you agree to:
             </p>
-            <ul className="list-disc pl-6 text-steel leading-relaxed mb-6 space-y-2">
+            <ul className="list-disc pl-6 text-steel text-[17px] min-[721px]:text-[18px] leading-[1.75] mb-6 space-y-3 marker:text-accent">
               <li>Provide accurate and complete information when submitting forms or communicating with us</li>
               <li>Use the Site only for lawful purposes and in compliance with all applicable laws and regulations</li>
               <li>Refrain from attempting to gain unauthorized access to any portion of the Site, its servers, or any connected systems</li>
@@ -60,8 +60,8 @@ export default function TermsPage() {
               <li>Not use automated systems, bots, or scrapers to access the Site for any purpose without our express permission</li>
             </ul>
 
-            <h2 className="heading-3 mb-4 mt-10">4. Intellectual Property</h2>
-            <p className="text-steel leading-relaxed mb-6">
+            <h2 className="font-display text-[28px] min-[961px]:text-[32px] font-bold leading-[1.15] tracking-[-0.02em] text-graphite mb-4 mt-14">4. Intellectual property</h2>
+            <p className="text-steel text-[17px] min-[721px]:text-[18px] leading-[1.75] mb-6">
               All content on the Site, including text, graphics, logos, images, data compilations,
               software, and the overall design and arrangement of the Site, is the property of{' '}
               {SITE_NAME} or its content suppliers and is protected by United States and international
@@ -69,15 +69,15 @@ export default function TermsPage() {
               and all related marks are trademarks of the Company. You may not use, reproduce, or
               distribute any of our intellectual property without prior written authorization.
             </p>
-            <p className="text-steel leading-relaxed mb-6">
+            <p className="text-steel text-[17px] min-[721px]:text-[18px] leading-[1.75] mb-6">
               You are granted a limited, non-exclusive, non-transferable license to access and use
               the Site for personal, non-commercial purposes. This license does not include the
               right to collect or harvest any data, copy or distribute any content for commercial
               purposes, or modify or create derivative works from the Site or its content.
             </p>
 
-            <h2 className="heading-3 mb-4 mt-10">5. Disclaimer of Warranties</h2>
-            <p className="text-steel leading-relaxed mb-6">
+            <h2 className="font-display text-[28px] min-[961px]:text-[32px] font-bold leading-[1.15] tracking-[-0.02em] text-graphite mb-4 mt-14">5. Disclaimer of warranties</h2>
+            <p className="text-steel text-[17px] min-[721px]:text-[18px] leading-[1.75] mb-6">
               The Site and all content, tools, and services provided through it are offered on an
               "as is" and "as available" basis without warranties of any kind, either express or
               implied. To the fullest extent permitted by law, we disclaim all warranties, including
@@ -87,8 +87,8 @@ export default function TermsPage() {
               completeness, or usefulness of any information provided on the Site.
             </p>
 
-            <h2 className="heading-3 mb-4 mt-10">6. Limitation of Liability</h2>
-            <p className="text-steel leading-relaxed mb-6">
+            <h2 className="font-display text-[28px] min-[961px]:text-[32px] font-bold leading-[1.15] tracking-[-0.02em] text-graphite mb-4 mt-14">6. Limitation of liability</h2>
+            <p className="text-steel text-[17px] min-[721px]:text-[18px] leading-[1.75] mb-6">
               To the maximum extent permitted by applicable law, {SITE_NAME}, its officers,
               directors, employees, agents, and affiliates shall not be liable for any indirect,
               incidental, special, consequential, or punitive damages, including loss of profits,
@@ -99,8 +99,8 @@ export default function TermsPage() {
               preceding the event giving rise to the claim.
             </p>
 
-            <h2 className="heading-3 mb-4 mt-10">7. Indemnification</h2>
-            <p className="text-steel leading-relaxed mb-6">
+            <h2 className="font-display text-[28px] min-[961px]:text-[32px] font-bold leading-[1.15] tracking-[-0.02em] text-graphite mb-4 mt-14">7. Indemnification</h2>
+            <p className="text-steel text-[17px] min-[721px]:text-[18px] leading-[1.75] mb-6">
               You agree to indemnify, defend, and hold harmless {SITE_NAME} and its officers,
               directors, employees, and agents from and against any claims, liabilities, damages,
               losses, costs, and expenses (including reasonable attorneys' fees) arising out of or
@@ -108,16 +108,16 @@ export default function TermsPage() {
               of any third-party rights.
             </p>
 
-            <h2 className="heading-3 mb-4 mt-10">8. Third-Party Links</h2>
-            <p className="text-steel leading-relaxed mb-6">
+            <h2 className="font-display text-[28px] min-[961px]:text-[32px] font-bold leading-[1.15] tracking-[-0.02em] text-graphite mb-4 mt-14">8. Third-party links</h2>
+            <p className="text-steel text-[17px] min-[721px]:text-[18px] leading-[1.75] mb-6">
               The Site may contain links to third-party websites, services, or resources that are
               not owned or controlled by us. We are not responsible for the content, privacy
               policies, or practices of any third-party websites. Inclusion of any link does not
               imply endorsement by {SITE_NAME}. You access third-party sites at your own risk.
             </p>
 
-            <h2 className="heading-3 mb-4 mt-10">9. Governing Law and Jurisdiction</h2>
-            <p className="text-steel leading-relaxed mb-6">
+            <h2 className="font-display text-[28px] min-[961px]:text-[32px] font-bold leading-[1.15] tracking-[-0.02em] text-graphite mb-4 mt-14">9. Governing law and jurisdiction</h2>
+            <p className="text-steel text-[17px] min-[721px]:text-[18px] leading-[1.75] mb-6">
               These Terms shall be governed by and construed in accordance with the laws of the
               State of Texas, without regard to its conflict of law provisions. Any disputes arising
               under or in connection with these Terms shall be subject to the exclusive jurisdiction
@@ -125,8 +125,8 @@ export default function TermsPage() {
               consent to the personal jurisdiction of such courts.
             </p>
 
-            <h2 className="heading-3 mb-4 mt-10">10. Severability</h2>
-            <p className="text-steel leading-relaxed mb-6">
+            <h2 className="font-display text-[28px] min-[961px]:text-[32px] font-bold leading-[1.15] tracking-[-0.02em] text-graphite mb-4 mt-14">10. Severability</h2>
+            <p className="text-steel text-[17px] min-[721px]:text-[18px] leading-[1.75] mb-6">
               If any provision of these Terms is found to be invalid, illegal, or unenforceable by
               a court of competent jurisdiction, that provision shall be modified to the minimum
               extent necessary to make it enforceable, or if modification is not possible, it shall
@@ -134,8 +134,8 @@ export default function TermsPage() {
               effect.
             </p>
 
-            <h2 className="heading-3 mb-4 mt-10">11. Termination</h2>
-            <p className="text-steel leading-relaxed mb-6">
+            <h2 className="font-display text-[28px] min-[961px]:text-[32px] font-bold leading-[1.15] tracking-[-0.02em] text-graphite mb-4 mt-14">11. Termination</h2>
+            <p className="text-steel text-[17px] min-[721px]:text-[18px] leading-[1.75] mb-6">
               We reserve the right to terminate or suspend your access to the Site, without prior
               notice or liability, for any reason, including if you breach these Terms. All
               provisions of these Terms that by their nature should survive termination shall
@@ -143,8 +143,8 @@ export default function TermsPage() {
               obligations, and limitations of liability.
             </p>
 
-            <h2 className="heading-3 mb-4 mt-10">12. Changes to These Terms</h2>
-            <p className="text-steel leading-relaxed mb-6">
+            <h2 className="font-display text-[28px] min-[961px]:text-[32px] font-bold leading-[1.15] tracking-[-0.02em] text-graphite mb-4 mt-14">12. Changes to these Terms</h2>
+            <p className="text-steel text-[17px] min-[721px]:text-[18px] leading-[1.75] mb-6">
               We reserve the right to update or modify these Terms at any time. Changes will be
               effective immediately upon posting to the Site. The "Last updated" date at the top of
               this page will be revised accordingly. It is your responsibility to review these Terms
@@ -152,21 +152,21 @@ export default function TermsPage() {
               acceptance of the updated Terms.
             </p>
 
-            <h2 className="heading-3 mb-4 mt-10">13. Contact Us</h2>
-            <p className="text-steel leading-relaxed mb-2">
+            <h2 className="font-display text-[28px] min-[961px]:text-[32px] font-bold leading-[1.15] tracking-[-0.02em] text-graphite mb-4 mt-14">13. Contact us</h2>
+            <p className="text-steel text-[17px] min-[721px]:text-[18px] leading-[1.75] mb-2">
               If you have any questions about these Terms of Service, please contact us at:
             </p>
-            <div className="text-steel leading-relaxed mb-6">
+            <div className="text-steel text-[17px] min-[721px]:text-[18px] leading-[1.75] mb-6">
               <p className="font-semibold text-graphite">{SITE_NAME}</p>
               <p>
                 Email:{' '}
-                <a href={`mailto:${CONTACT_EMAIL}`} className="text-accent hover:underline">
+                <a href={`mailto:${CONTACT_EMAIL}`} className="text-link break-all">
                   {CONTACT_EMAIL}
                 </a>
               </p>
               <p>
                 Website:{' '}
-                <a href={SITE_URL} className="text-accent hover:underline">
+                <a href={SITE_URL} className="text-link break-all">
                   {SITE_URL}
                 </a>
               </p>
