@@ -13,7 +13,7 @@ export const metadata = createMetadata({
 export default function PrivacyPage() {
   return (
     <>
-      <section className="bg-white">
+      <section className="bg-graphite surface-dark">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'Privacy Policy' }]} />
           <div className="max-w-3xl">

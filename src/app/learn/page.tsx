@@ -135,7 +135,7 @@ export default function LearnPage() {
       />
 
       {/* Hero */}
-      <section className="bg-white">
+      <section className="bg-graphite surface-dark">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'Learn & Resources' }]} />
           <div className="max-w-3xl">

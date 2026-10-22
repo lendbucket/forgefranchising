@@ -30,7 +30,7 @@ export function PageTOC({ items, title = 'On This Page' }: { items: TOCItem[]; t
 
   return (
     <>
-      <details className="lg:hidden mb-10 bg-ash-tint p-5" style={{ borderRadius: '4px' }}>
+      <details className="lg:hidden mb-10 bg-ash-tint p-5" style={{ borderRadius: '0px' }}>
         <summary className="cursor-pointer font-semibold text-graphite text-sm uppercase tracking-widest min-h-[44px] flex items-center">
           {title}
         </summary>

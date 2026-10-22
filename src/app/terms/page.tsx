@@ -12,7 +12,7 @@ export const metadata = createMetadata({
 export default function TermsPage() {
   return (
     <>
-      <section className="bg-white">
+      <section className="bg-graphite surface-dark">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'Terms of Service' }]} />
           <div className="max-w-3xl">

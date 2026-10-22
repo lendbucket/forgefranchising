@@ -96,8 +96,8 @@ function InputField({
       <input
         {...props}
         required={required}
-        className="w-full px-5 py-4 border border-graphite/10 bg-white text-graphite placeholder:text-steel focus:outline-none focus:ring-2 focus:ring-ember/40 focus:border-ember/60 transition-all duration-200 min-h-[52px] text-base"
-        style={{ borderRadius: '3px' }}
+        className="w-full px-5 py-4 border border-steel/70 bg-white text-graphite placeholder:text-steel focus:outline-none focus:ring-2 focus:ring-ember/40 focus:border-ember/60 transition-all duration-200 min-h-[52px] text-base"
+        style={{ borderRadius: '2px' }}
       />
     </div>
   )
@@ -123,8 +123,8 @@ function SelectField({
       <select
         {...props}
         required={required}
-        className="w-full px-5 py-4 border border-graphite/10 bg-white text-graphite focus:outline-none focus:ring-2 focus:ring-ember/40 focus:border-ember/60 transition-all duration-200 min-h-[52px] text-base"
-        style={{ borderRadius: '3px' }}
+        className="w-full px-5 py-4 border border-steel/70 bg-white text-graphite focus:outline-none focus:ring-2 focus:ring-ember/40 focus:border-ember/60 transition-all duration-200 min-h-[52px] text-base"
+        style={{ borderRadius: '2px' }}
       >
         <option value="">{placeholder || 'Select...'}</option>
         {options.map((opt) => (
@@ -153,8 +153,8 @@ function TextAreaField({
       <textarea
         {...props}
         required={required}
-        className="w-full px-5 py-4 border border-graphite/10 bg-white text-graphite placeholder:text-steel focus:outline-none focus:ring-2 focus:ring-ember/40 focus:border-ember/60 transition-all duration-200 resize-y text-base leading-relaxed"
-        style={{ borderRadius: '3px' }}
+        className="w-full px-5 py-4 border border-steel/70 bg-white text-graphite placeholder:text-steel focus:outline-none focus:ring-2 focus:ring-ember/40 focus:border-ember/60 transition-all duration-200 resize-y text-base leading-relaxed"
+        style={{ borderRadius: '2px' }}
       />
     </div>
   )
@@ -232,7 +232,7 @@ export default function ContactPage() {
               </ol>
             </nav>
             <div className="max-w-2xl mx-auto text-center py-16 sm:py-24">
-              <div className="w-16 h-16 bg-ember/20 flex items-center justify-center mx-auto mb-6" style={{ borderRadius: '4px' }}>
+              <div className="w-16 h-16 bg-ember/20 flex items-center justify-center mx-auto mb-6" style={{ borderRadius: '0px' }}>
                 <svg className="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
@@ -495,7 +495,7 @@ export default function ContactPage() {
                     </div>
 
                     {status === 'error' && (
-                      <div className="p-4 bg-red-50 border border-red-200 mt-6" style={{ borderRadius: '3px' }}>
+                      <div className="p-4 bg-red-50 border border-red-200 mt-6" style={{ borderRadius: '2px' }}>
                         <p className="text-red-800 text-sm">
                           {errorMessage}{' '}
                           <a href={`mailto:${CONTACT_EMAIL}`} className="underline">
@@ -563,7 +563,7 @@ export default function ContactPage() {
                       },
                     ].map((item) => (
                       <li key={item.step} className="flex gap-4">
-                        <span className="flex-shrink-0 w-8 h-8 bg-ember-button text-graphite flex items-center justify-center text-sm font-bold" style={{ borderRadius: '3px' }}>
+                        <span className="flex-shrink-0 w-8 h-8 bg-ember-button text-graphite flex items-center justify-center text-sm font-bold" style={{ borderRadius: '2px' }}>
                           {item.step}
                         </span>
                         <div>

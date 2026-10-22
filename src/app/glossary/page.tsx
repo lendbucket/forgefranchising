@@ -403,7 +403,7 @@ export default function GlossaryPage() {
       />
 
       {/* Hero */}
-      <section className="bg-white">
+      <section className="bg-graphite surface-dark">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'Learn', href: '/learn' }, { label: 'Franchise Glossary' }]} />
           <div className="max-w-3xl">
@@ -435,14 +435,14 @@ export default function GlossaryPage() {
                 <a
                   key={letter}
                   href={`#letter-${letter}`}
-                  className="w-9 h-9 flex items-center justify-center rounded-md text-sm font-semibold text-graphite hover:bg-ember-button hover:text-graphite transition-colors"
+                  className="w-9 h-9 flex items-center justify-center text-sm font-semibold text-graphite hover:bg-ember-button hover:text-graphite transition-colors"
                 >
                   {letter}
                 </a>
               ) : (
                 <span
                   key={letter}
-                  className="w-9 h-9 flex items-center justify-center rounded-md text-sm text-steel"
+                  className="w-9 h-9 flex items-center justify-center text-sm text-steel"
                 >
                   {letter}
                 </span>

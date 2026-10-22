@@ -347,7 +347,7 @@ export default function HowToSellABusinessPage() {
         }}
       />
 
-      <section className="bg-white">
+      <section className="bg-graphite surface-dark">
         <div className="container-wide section-padding !pb-12">
           <Breadcrumbs
             withSchema={false}
@@ -449,7 +449,7 @@ export default function HowToSellABusinessPage() {
                     </ul>
                   )}
                   <div className="grid sm:grid-cols-2 gap-4 mt-8">
-                    <div className="bg-ash-tint p-6" style={{ borderRadius: '4px' }}>
+                    <div className="bg-ash-tint p-6" style={{ borderRadius: '0px' }}>
                       <p className="text-xs font-semibold uppercase tracking-widest text-graphite mb-2">Documents you need</p>
                       <ul className="space-y-1.5 text-steel text-sm leading-relaxed list-disc pl-5">
                         {step.documents.map((d) => (
@@ -459,7 +459,7 @@ export default function HowToSellABusinessPage() {
                     </div>
                     <div
                       className="bg-white p-6"
-                      style={{ borderRadius: '4px', border: '1px solid rgba(78, 90, 98, 0.18)', borderTop: '3px solid #E4572E' }}
+                      style={{ borderRadius: '0px', border: '1px solid rgba(78, 90, 98, 0.18)', borderTop: '2px solid #1C1F23' }}
                     >
                       <p className="text-xs font-semibold uppercase tracking-widest text-graphite mb-2">Common mistakes</p>
                       <p className="text-steel text-sm leading-relaxed">{step.mistakes}</p>

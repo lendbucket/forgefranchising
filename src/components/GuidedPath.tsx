@@ -50,12 +50,12 @@ export function GuidedPath({
               key={item.href}
               href={item.href}
               className="group block bg-white/5 hover:bg-white/10 border border-white/10 hover:border-ember/30 transition-all duration-200 p-6 sm:p-8"
-              style={{ borderRadius: '4px' }}
+              style={{ borderRadius: '0px' }}
             >
               <div className="flex items-start gap-6">
                 {/* Step number with connecting line */}
                 <div className="flex-shrink-0 flex flex-col items-center">
-                  <div className="w-10 h-10 bg-ember-button flex items-center justify-center text-graphite font-bold text-sm" style={{ borderRadius: '3px' }}>
+                  <div className="w-10 h-10 border border-ember flex items-center justify-center text-accent font-display font-bold text-base" style={{ borderRadius: '0px' }}>
                     {item.step}
                   </div>
                   {index < steps.length - 1 && (

@@ -158,7 +158,7 @@ export default function ServicesPage() {
         }}
       />
 
-      <section className="bg-white">
+      <section className="bg-graphite surface-dark">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'Services' }]} />
           <div className="max-w-3xl">
@@ -201,7 +201,7 @@ export default function ServicesPage() {
                 key={service.id}
                 href={`#${service.id}`}
                 className="text-sm font-medium text-graphite bg-ash-tint px-4 py-2 hover:bg-ember-button hover:text-graphite transition-colors"
-                style={{ borderRadius: '3px' }}
+                style={{ borderRadius: '2px' }}
               >
                 {service.title}
               </a>

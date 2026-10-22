@@ -85,7 +85,7 @@ export default function BlogIndexPage() {
                 <button
                   key={category}
                   onClick={() => setActiveCategory(category)}
-                  style={{ borderRadius: '3px' }}
+                  style={{ borderRadius: '2px' }}
                   className={`px-4 py-2 text-sm font-medium transition-colors duration-200 min-h-[44px] ${
                     activeCategory === category
                       ? 'bg-graphite text-white'
@@ -115,7 +115,7 @@ export default function BlogIndexPage() {
                           categoryColors[post.category] ||
                           'bg-gray-100 text-gray-700'
                         }`}
-                        style={{ borderRadius: '3px' }}
+                        style={{ borderRadius: '2px' }}
                       >
                         {post.category}
                       </span>

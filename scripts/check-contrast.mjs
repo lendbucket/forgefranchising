@@ -39,6 +39,8 @@ const pairs = [
   ['White text on Graphite', p.white, 1, p.graphite, 'normal'],
   ['White 80% text on Graphite', p.white, 0.8, p.graphite, 'normal'],
   ['White 70% text on Graphite', p.white, 0.7, p.graphite, 'normal'],
+  ['White 72% text on Graphite (dark hero body)', p.white, 0.72, p.graphite, 'normal'],
+  ['White 65% text on Graphite (dark hero breadcrumbs)', p.white, 0.65, p.graphite, 'normal'],
   ['White 60% text on Graphite', p.white, 0.6, p.graphite, 'normal'],
   ['White text on Steel', p.white, 1, p.steel, 'normal'],
   ['Graphite text on Ember button', p.graphite, 1, p.emberButton, 'normal'],

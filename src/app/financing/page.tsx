@@ -71,7 +71,7 @@ export default function FinancingPage() {
       />
 
       {/* Hero */}
-      <section className="bg-white">
+      <section className="bg-graphite surface-dark">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'Resources', href: '/learn' }, { label: 'Franchise Financing' }]} />
           <div className="max-w-3xl">

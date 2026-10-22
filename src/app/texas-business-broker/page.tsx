@@ -136,7 +136,7 @@ export default function TexasBusinessBrokerPage() {
         }}
       />
 
-      <section className="bg-white">
+      <section className="bg-graphite surface-dark">
         <div className="container-wide section-padding !pb-12">
           <Breadcrumbs
             withSchema={false}
@@ -187,7 +187,7 @@ export default function TexasBusinessBrokerPage() {
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4 mb-8">
                   {duties.map((d) => (
-                    <div key={d.term} className="bg-ash-tint p-6" style={{ borderRadius: '4px' }}>
+                    <div key={d.term} className="bg-ash-tint p-6" style={{ borderRadius: '0px' }}>
                       <p className="text-xs font-semibold uppercase tracking-widest text-graphite mb-2">{d.term}</p>
                       <p className="text-steel text-sm leading-relaxed">{d.text}</p>
                     </div>

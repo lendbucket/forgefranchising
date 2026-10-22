@@ -37,7 +37,7 @@ export default function BuildingAFranchiseBrandPage() {
         }}
       />
 
-      <section className="bg-white">
+      <section className="bg-graphite surface-dark">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[
             { label: 'Franchise Branding', href: '/franchise-branding' },
@@ -83,7 +83,7 @@ export default function BuildingAFranchiseBrandPage() {
               width={1200}
               height={600}
               className="w-full h-auto mb-10"
-              style={{ borderRadius: '4px' }}
+              style={{ borderRadius: '0px' }}
             />
 
             <h2 className="heading-2 mb-6">The Founder Dependency Problem</h2>

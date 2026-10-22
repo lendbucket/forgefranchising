@@ -19,7 +19,10 @@
   }
   .bg-graphite .bg-white,
   .bg-graphite .bg-ash-tint,
-  .bg-graphite .bg-ash {
+  .bg-graphite .bg-ash,
+  .surface-dark .bg-white,
+  .surface-dark .bg-ash-tint,
+  .surface-dark .bg-ash {
     --accent: 173 66 35;
   }
 
@@ -44,13 +47,13 @@
 
   /* Fluid type scale using clamp */
   h1, .heading-1 {
-    font-size: clamp(2.25rem, 5vw + 0.5rem, 4.5rem);
+    font-size: clamp(2.5rem, 5.6vw + 0.5rem, 5.25rem);
   }
   h2, .heading-2 {
-    font-size: clamp(1.875rem, 3.5vw + 0.5rem, 3.25rem);
+    font-size: clamp(2rem, 3.9vw + 0.5rem, 3.75rem);
   }
   h3, .heading-3 {
-    font-size: clamp(1.5rem, 2.5vw + 0.25rem, 2rem);
+    font-size: clamp(1.5rem, 2.6vw + 0.25rem, 2.125rem);
   }
   h4, .heading-4 {
     font-size: clamp(1.25rem, 1.5vw + 0.25rem, 1.5rem);
@@ -60,19 +63,39 @@
 @layer components {
   /* Enterprise buttons: squared, confident, precise */
   .btn-primary {
-    @apply inline-flex items-center justify-center px-8 py-4 bg-ember-button text-graphite font-semibold
-           hover:bg-ember-hover transition-all duration-200 text-base tracking-wide;
-    border-radius: 3px;
+    @apply inline-flex items-center justify-center px-9 py-4 bg-ember-button text-graphite font-semibold
+           hover:bg-ember-hover transition-all duration-200 text-base;
+    border-radius: 2px;
+    letter-spacing: 0.02em;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-8 py-4 border-2 border-graphite text-graphite font-semibold
-           hover:bg-graphite hover:text-white transition-all duration-200 text-base tracking-wide;
-    border-radius: 3px;
+    @apply inline-flex items-center justify-center px-9 py-4 text-graphite font-semibold
+           transition-all duration-200 text-base;
+    border-radius: 2px;
+    letter-spacing: 0.02em;
+    border: 1.5px solid #1C1F23;
+  }
+  .btn-secondary:hover {
+    background-color: #1C1F23;
+    color: #FFFFFF;
+  }
+
+  /* On graphite, the secondary button is a white outline */
+  .bg-graphite .btn-secondary,
+  .surface-dark .btn-secondary {
+    color: #FFFFFF;
+    border-color: rgba(255, 255, 255, 0.6);
+  }
+  .bg-graphite .btn-secondary:hover,
+  .surface-dark .btn-secondary:hover {
+    background-color: #FFFFFF;
+    color: #1C1F23;
+    border-color: #FFFFFF;
   }
 
   .section-padding {
-    @apply px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-32;
+    @apply px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-40;
   }
 
   .container-narrow {
@@ -90,20 +113,20 @@
   /* Serif display headings with tight tracking */
   .heading-1 {
     @apply font-display font-bold;
-    letter-spacing: -0.03em;
-    line-height: 1.05;
+    letter-spacing: -0.035em;
+    line-height: 1.02;
   }
 
   .heading-2 {
     @apply font-display font-bold;
-    letter-spacing: -0.025em;
-    line-height: 1.1;
+    letter-spacing: -0.03em;
+    line-height: 1.06;
   }
 
   .heading-3 {
     @apply font-display font-bold;
-    letter-spacing: -0.02em;
-    line-height: 1.15;
+    letter-spacing: -0.022em;
+    line-height: 1.12;
   }
 
   .heading-4 {
@@ -113,20 +136,20 @@
   }
 
   .body-large {
-    @apply text-lg sm:text-xl leading-relaxed text-steel;
+    @apply text-lg sm:text-xl leading-relaxed text-steel font-normal;
   }
 
-  /* Enterprise cards: subtle, clean */
+  /* Cards: square corners, steel hairline, generous padding, no soft shadow */
   .card {
-    @apply bg-white p-8;
-    border: 1px solid rgba(78, 90, 98, 0.08);
-    border-radius: 4px;
+    @apply bg-white p-8 sm:p-10;
+    border: 1px solid rgba(78, 90, 98, 0.22);
+    border-radius: 0;
   }
 
-  /* Eyebrow labels */
+  /* Eyebrow labels: ember on dark, dark ember on light (via --accent) */
   .eyebrow {
     @apply text-accent font-semibold text-xs uppercase;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.2em;
   }
 
   /* Hairline dividers */
@@ -158,8 +181,7 @@
   }
 
   .stat-label {
-    @apply text-sm mt-2 leading-snug;
-    color: rgba(78, 90, 98, 0.7);
+    @apply text-sm mt-2 leading-snug text-steel;
   }
 
   /* Animated link underline */
@@ -177,13 +199,13 @@
 
   /* Interactive card lift */
   .card-interactive {
-    @apply bg-white p-8 transition-all duration-300;
-    border: 1px solid rgba(78, 90, 98, 0.08);
-    border-radius: 4px;
+    @apply bg-white p-8 sm:p-10 transition-all duration-300;
+    border: 1px solid rgba(78, 90, 98, 0.22);
+    border-radius: 0;
   }
   .card-interactive:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(28, 31, 35, 0.08);
+    border-color: rgba(28, 31, 35, 0.6);
   }
 }
 
@@ -241,7 +263,13 @@
 
 /* Hero image treatment: cool, slightly desaturated */
 .hero-image-warm {
-  filter: grayscale(0.35) brightness(0.8) contrast(1.05);
+  filter: grayscale(0.7) contrast(1.15) brightness(0.72);
+}
+
+/* Every photograph gets the cool treatment. Low specificity so a page
+   specific filter can still override it. */
+:where(main) :where(img[src*="images.unsplash.com"], img[src*="images.pexels.com"]) {
+  filter: grayscale(0.55) contrast(1.12) brightness(0.95);
 }
 
 /* Hero logo: gentle fade + scale-in + optional soft float */
@@ -489,4 +517,48 @@ p a, li a, span a, .text-sm a {
 .proposal-root ::selection {
   background: rgba(248, 112, 0, 0.2);
   color: #281010;
+}
+
+/*
+ * Dark page hero. Applied to the hero section of inner pages so the top of
+ * every page sits on graphite under the graphite header. Text colors adapt;
+ * light boxes nested inside (takeaways, disclosures) keep light colors.
+ */
+.surface-dark {
+  background-color: #1C1F23;
+  color: #FFFFFF;
+}
+.surface-dark .body-large,
+.surface-dark .text-steel {
+  color: rgba(255, 255, 255, 0.72);
+}
+.surface-dark .text-graphite {
+  color: #FFFFFF;
+}
+.surface-dark nav[aria-label="Breadcrumb"] ol,
+.surface-dark nav[aria-label="Breadcrumb"] a {
+  color: rgba(255, 255, 255, 0.65);
+}
+.surface-dark nav[aria-label="Breadcrumb"] a:hover,
+.surface-dark nav[aria-label="Breadcrumb"] .text-graphite {
+  color: #FFFFFF;
+}
+.surface-dark :is(.bg-white, .bg-ash-tint, .bg-ash, .card) {
+  color: #1C1F23;
+}
+.surface-dark :is(.bg-white, .bg-ash-tint, .bg-ash, .card) .text-steel {
+  color: #4E5A62;
+}
+.surface-dark :is(.bg-white, .bg-ash-tint, .bg-ash, .card) .text-graphite {
+  color: #1C1F23;
+}
+
+/* Inner page heroes sit directly under the header; trim their top padding. */
+section.surface-dark > .section-padding:first-child {
+  padding-top: 3rem;
+}
+@media (min-width: 1024px) {
+  section.surface-dark > .section-padding:first-child {
+    padding-top: 5rem;
+  }
 }

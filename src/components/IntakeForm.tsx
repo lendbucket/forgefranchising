@@ -12,7 +12,7 @@ import { INTAKE_FIELDS, type IntakeField } from '@/lib/intake'
  */
 
 const inputClass =
-  'w-full px-4 py-3 border border-graphite/10 bg-white text-graphite placeholder:text-steel focus:outline-none focus:ring-2 focus:ring-ember/40 focus:border-ember/60 transition-all duration-200 min-h-[48px] text-base'
+  'w-full px-4 py-3 border border-steel/70 bg-white text-graphite placeholder:text-steel focus:outline-none focus:ring-2 focus:ring-ember/40 focus:border-ember/60 transition-all duration-200 min-h-[48px] text-base'
 
 function Field({ field, value, onChange }: { field: IntakeField; value: string; onChange: (v: string) => void }) {
   const id = `intake-${field.name}`
@@ -27,7 +27,7 @@ function Field({ field, value, onChange }: { field: IntakeField; value: string; 
     return (
       <div>
         {label}
-        <select id={id} name={field.name} required={field.required} value={value} onChange={(e) => onChange(e.target.value)} className={inputClass} style={{ borderRadius: '3px' }}>
+        <select id={id} name={field.name} required={field.required} value={value} onChange={(e) => onChange(e.target.value)} className={inputClass} style={{ borderRadius: '2px' }}>
           <option value="">Select one</option>
           {field.options?.map((o) => (
             <option key={o} value={o}>{o}</option>
@@ -41,7 +41,7 @@ function Field({ field, value, onChange }: { field: IntakeField; value: string; 
     return (
       <div className="sm:col-span-2">
         {label}
-        <textarea id={id} name={field.name} rows={4} required={field.required} value={value} onChange={(e) => onChange(e.target.value)} className={`${inputClass} resize-y leading-relaxed`} style={{ borderRadius: '3px' }} />
+        <textarea id={id} name={field.name} rows={4} required={field.required} value={value} onChange={(e) => onChange(e.target.value)} className={`${inputClass} resize-y leading-relaxed`} style={{ borderRadius: '2px' }} />
       </div>
     )
   }
@@ -49,7 +49,7 @@ function Field({ field, value, onChange }: { field: IntakeField; value: string; 
   return (
     <div>
       {label}
-      <input id={id} name={field.name} type="text" required={field.required} placeholder={field.placeholder} value={value} onChange={(e) => onChange(e.target.value)} className={inputClass} style={{ borderRadius: '3px' }} />
+      <input id={id} name={field.name} type="text" required={field.required} placeholder={field.placeholder} value={value} onChange={(e) => onChange(e.target.value)} className={inputClass} style={{ borderRadius: '2px' }} />
     </div>
   )
 }
@@ -95,8 +95,8 @@ export function IntakeForm({ inquiryType, heading, intro, submitLabel = 'Send Co
 
   if (status === 'success') {
     return (
-      <div className="bg-white p-8 sm:p-10 text-center" style={{ borderRadius: '4px', border: '1px solid rgba(78, 90, 98, 0.15)' }} role="status" aria-live="polite">
-        <div className="w-14 h-14 bg-ember/15 flex items-center justify-center mx-auto mb-5" style={{ borderRadius: '4px' }}>
+      <div className="bg-white p-8 sm:p-10 text-center" style={{ borderRadius: '0px', border: '1px solid rgba(78, 90, 98, 0.15)' }} role="status" aria-live="polite">
+        <div className="w-14 h-14 bg-ember/15 flex items-center justify-center mx-auto mb-5" style={{ borderRadius: '0px' }}>
           <svg className="w-7 h-7 text-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
           </svg>
@@ -110,7 +110,7 @@ export function IntakeForm({ inquiryType, heading, intro, submitLabel = 'Send Co
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white p-6 sm:p-10" style={{ borderRadius: '4px', border: '1px solid rgba(78, 90, 98, 0.15)' }}>
+    <form onSubmit={handleSubmit} className="bg-white p-6 sm:p-10" style={{ borderRadius: '0px', border: '1px solid rgba(78, 90, 98, 0.15)' }}>
       <p className="eyebrow mb-3">{INQUIRY_TYPES[inquiryType]}</p>
       {heading && <h3 className="heading-3 mb-3">{heading}</h3>}
       {intro && <p className="text-steel leading-relaxed mb-8">{intro}</p>}
@@ -121,13 +121,13 @@ export function IntakeForm({ inquiryType, heading, intro, submitLabel = 'Send Co
           <label htmlFor="intake-email" className="block text-sm font-semibold text-graphite mb-2">
             Email<span className="text-accent"> *</span>
           </label>
-          <input id="intake-email" name="email" type="email" required autoComplete="email" value={values.email ?? ''} onChange={(e) => set('email')(e.target.value)} className={inputClass} style={{ borderRadius: '3px' }} />
+          <input id="intake-email" name="email" type="email" required autoComplete="email" value={values.email ?? ''} onChange={(e) => set('email')(e.target.value)} className={inputClass} style={{ borderRadius: '2px' }} />
         </div>
         <div>
           <label htmlFor="intake-phone" className="block text-sm font-semibold text-graphite mb-2">
             Phone<span className="text-accent"> *</span>
           </label>
-          <input id="intake-phone" name="phone" type="tel" required autoComplete="tel" value={values.phone ?? ''} onChange={(e) => set('phone')(e.target.value)} className={inputClass} style={{ borderRadius: '3px' }} />
+          <input id="intake-phone" name="phone" type="tel" required autoComplete="tel" value={values.phone ?? ''} onChange={(e) => set('phone')(e.target.value)} className={inputClass} style={{ borderRadius: '2px' }} />
         </div>
         {fields.map((field) => (
           <Field key={field.name} field={field} value={values[field.name] ?? ''} onChange={set(field.name)} />
@@ -140,7 +140,7 @@ export function IntakeForm({ inquiryType, heading, intro, submitLabel = 'Send Co
       </div>
 
       {status === 'error' && (
-        <div className="p-4 bg-red-50 border border-red-200 mt-6" style={{ borderRadius: '3px' }} role="alert">
+        <div className="p-4 bg-red-50 border border-red-200 mt-6" style={{ borderRadius: '2px' }} role="alert">
           <p className="text-red-800 text-sm">
             {errorMessage}{' '}
             <a href={`mailto:${CONTACT_EMAIL}`} className="underline">{CONTACT_EMAIL}</a>

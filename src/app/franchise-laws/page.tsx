@@ -43,7 +43,7 @@ export default function FranchiseLawsPage() {
         }}
       />
       {/* Hero */}
-      <section className="bg-white">
+      <section className="bg-graphite surface-dark">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'Franchise Laws by State' }]} />
           <div className="max-w-3xl">

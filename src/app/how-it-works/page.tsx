@@ -112,7 +112,7 @@ export default function HowItWorksPage() {
         }}
       />
 
-      <section className="bg-white">
+      <section className="bg-graphite surface-dark">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'How It Works' }]} />
           <div className="max-w-3xl">
@@ -190,7 +190,7 @@ export default function HowItWorksPage() {
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-8 p-6 bg-ash-tint" style={{ borderRadius: '4px' }}>
+                  <div className="mt-8 p-6 bg-ash-tint" style={{ borderRadius: '0px' }}>
                     <p className="font-semibold text-graphite mb-1">Phase Outcome:</p>
                     <p className="text-steel">{phase.outcome}</p>
                   </div>

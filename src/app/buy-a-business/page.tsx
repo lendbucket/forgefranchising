@@ -186,7 +186,7 @@ export default function BuyABusinessPage() {
         }}
       />
 
-      <section className="bg-white">
+      <section className="bg-graphite surface-dark">
         <div className="container-wide section-padding !pb-12">
           <Breadcrumbs withSchema={false} items={[{ label: 'Buy a Business' }]} />
           <div className="max-w-3xl">
@@ -323,7 +323,7 @@ export default function BuyABusinessPage() {
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4 mt-8">
                   {diligenceAreas.map((area) => (
-                    <div key={area.title} className="bg-ash-tint p-6" style={{ borderRadius: '4px' }}>
+                    <div key={area.title} className="bg-ash-tint p-6" style={{ borderRadius: '0px' }}>
                       <p className="text-xs font-semibold uppercase tracking-widest text-graphite mb-2">{area.title}</p>
                       <p className="text-steel text-sm leading-relaxed">{area.body}</p>
                     </div>

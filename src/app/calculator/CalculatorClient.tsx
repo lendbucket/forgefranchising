@@ -143,7 +143,7 @@ export function CalculatorClient() {
   }
 
   const inputClasses =
-    'w-full px-4 py-3 border border-ash-tint bg-white text-graphite placeholder-steel focus:outline-none focus:ring-2 focus:ring-ember/50 focus:border-ember transition-colors min-h-[48px]'
+    'w-full px-4 py-3 border border-steel/70 bg-white text-graphite placeholder-steel focus:outline-none focus:ring-2 focus:ring-ember/50 focus:border-ember transition-colors min-h-[48px]'
   const labelClasses = 'block text-sm font-semibold text-graphite mb-2'
 
   return (
@@ -395,7 +395,7 @@ export function CalculatorClient() {
                           placeholder="Your name"
                           required
                           className="w-full px-4 py-3 border border-white/20 bg-white/10 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-ember/50 min-h-[48px]"
-                          style={{ borderRadius: '3px' }}
+                          style={{ borderRadius: '2px' }}
                         />
                         <input
                           type="email"
@@ -404,7 +404,7 @@ export function CalculatorClient() {
                           placeholder="you@company.com"
                           required
                           className="w-full px-4 py-3 border border-white/20 bg-white/10 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-ember/50 min-h-[48px]"
-                          style={{ borderRadius: '3px' }}
+                          style={{ borderRadius: '2px' }}
                         />
                         {error && <p className="text-red-400 text-sm">{error}</p>}
                         <button
@@ -460,7 +460,7 @@ export function CalculatorClient() {
                           team evaluates your specific business model, market conditions, competitive landscape, and
                           unit economics to determine whether franchising is the right growth path.
                         </p>
-                        <div className="bg-ember/10 border border-ember/30 p-4 mb-4" style={{ borderRadius: '3px' }}>
+                        <div className="bg-ember/10 border border-ember/30 p-4 mb-4" style={{ borderRadius: '2px' }}>
                           <p className="text-white font-semibold text-sm">
                             We received your information and will be in touch within one business day.
                           </p>

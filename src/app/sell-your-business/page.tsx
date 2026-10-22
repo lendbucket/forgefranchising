@@ -198,7 +198,7 @@ export default function SellYourBusinessPage() {
         }}
       />
 
-      <section className="bg-white">
+      <section className="bg-graphite surface-dark">
         <div className="container-wide section-padding !pb-12">
           <Breadcrumbs withSchema={false} items={[{ label: 'Sell Your Business' }]} />
           <div className="max-w-3xl">
@@ -288,7 +288,7 @@ export default function SellYourBusinessPage() {
                   in specific ways, and you should know those limits before you sign an engagement agreement.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4 mt-8">
-                  <div className="bg-ash-tint p-6" style={{ borderRadius: '4px' }}>
+                  <div className="bg-ash-tint p-6" style={{ borderRadius: '0px' }}>
                     <p className="text-xs font-semibold uppercase tracking-widest text-graphite mb-3">What a broker does</p>
                     <ul className="space-y-2 text-steel text-sm leading-relaxed list-disc pl-5">
                       <li>Reviews your financials and prepares a broker opinion of value with a recommended asking price.</li>
@@ -302,7 +302,7 @@ export default function SellYourBusinessPage() {
                   </div>
                   <div
                     className="bg-white p-6"
-                    style={{ borderRadius: '4px', border: '1px solid rgba(78, 90, 98, 0.18)', borderTop: '3px solid #E4572E' }}
+                    style={{ borderRadius: '0px', border: '1px solid rgba(78, 90, 98, 0.18)', borderTop: '2px solid #1C1F23' }}
                   >
                     <p className="text-xs font-semibold uppercase tracking-widest text-graphite mb-3">What a broker does not do</p>
                     <ul className="space-y-2 text-steel text-sm leading-relaxed list-disc pl-5">
@@ -404,7 +404,7 @@ export default function SellYourBusinessPage() {
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4 mt-8">
                   {sellerDocuments.map((doc) => (
-                    <div key={doc.item} className="bg-ash-tint p-6" style={{ borderRadius: '4px' }}>
+                    <div key={doc.item} className="bg-ash-tint p-6" style={{ borderRadius: '0px' }}>
                       <h3 className="font-semibold text-graphite mb-2">{doc.item}</h3>
                       <p className="text-steel text-sm leading-relaxed">{doc.why}</p>
                     </div>

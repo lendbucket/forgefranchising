@@ -17,7 +17,7 @@ export function KeyTakeaways({ items, readTime }: KeyTakeawaysProps) {
   return (
     <div
       className="bg-ash-tint p-6 sm:p-8 mb-10"
-      style={{ borderRadius: '4px', borderLeft: '3px solid #E4572E' }}
+      style={{ borderRadius: '0px', borderLeft: '3px solid #E4572E' }}
     >
       <div className="flex items-center justify-between mb-4">
         <p className="eyebrow">Key Takeaways</p>

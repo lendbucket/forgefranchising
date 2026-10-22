@@ -114,7 +114,7 @@ function OfferingDisclaimer({ variant }: { variant: 'light' | 'dark' }) {
   return (
     <div
       className={`${isDark ? 'bg-white/5 border-white/10' : 'bg-graphite/5 border-graphite/10'} border px-6 py-5`}
-      style={{ borderRadius: '4px' }}
+      style={{ borderRadius: '0px' }}
     >
       <p className={`text-sm leading-relaxed ${isDark ? 'text-white/60' : 'text-steel'}`}>
         This is not an offer to sell, or the solicitation of an offer to buy, a franchise. Forge Franchising offers franchises solely by means of its Franchise Disclosure Document. Certain jurisdictions require registration or other actions before franchises can be offered or sold there. We will not offer or sell a franchise in any jurisdiction unless we are first in compliance with applicable law.
@@ -128,7 +128,7 @@ function EarningsDisclaimer({ variant }: { variant: 'light' | 'dark' }) {
   return (
     <div
       className={`${isDark ? 'bg-white/5 border-white/10' : 'bg-graphite/5 border-graphite/10'} border px-6 py-5`}
-      style={{ borderRadius: '4px' }}
+      style={{ borderRadius: '0px' }}
     >
       <p className={`text-sm leading-relaxed ${isDark ? 'text-white/60' : 'text-steel'}`}>
         Any financial figures referenced on this page are illustrative and for educational purposes only. They are not a guarantee or projection of earnings. Individual results vary based on market, effort, and other factors. No financial performance representation is made by Forge Franchising except as set out in Item 19 of its Franchise Disclosure Document.
@@ -256,7 +256,7 @@ export default function OwnAFranchisePage() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {valueStackItems.map((item) => (
-              <div key={item.title} className="card" style={{ borderRadius: '4px' }}>
+              <div key={item.title} className="card" style={{ borderRadius: '0px' }}>
                 <h3 className="heading-4 mb-3">{item.title}</h3>
                 <p className="text-steel text-sm leading-relaxed">{item.description}</p>
               </div>
@@ -278,8 +278,8 @@ export default function OwnAFranchisePage() {
             </p>
           </div>
           <div className="grid lg:grid-cols-2 gap-8 mb-12">
-            <div className="card" style={{ borderRadius: '4px' }}>
-              <div className="bg-ember/10 w-12 h-12 flex items-center justify-center mb-4" style={{ borderRadius: '4px' }}>
+            <div className="card" style={{ borderRadius: '0px' }}>
+              <div className="bg-ember/10 w-12 h-12 flex items-center justify-center mb-4" style={{ borderRadius: '0px' }}>
                 <svg className="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
@@ -292,8 +292,8 @@ export default function OwnAFranchisePage() {
                 Consulting engagements are project-based, typically ranging from several months to a year. You set the scope with the client and deliver using Forge methodology and templates.
               </p>
             </div>
-            <div className="card" style={{ borderRadius: '4px' }}>
-              <div className="bg-ember/10 w-12 h-12 flex items-center justify-center mb-4" style={{ borderRadius: '4px' }}>
+            <div className="card" style={{ borderRadius: '0px' }}>
+              <div className="bg-ember/10 w-12 h-12 flex items-center justify-center mb-4" style={{ borderRadius: '0px' }}>
                 <svg className="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
@@ -308,7 +308,7 @@ export default function OwnAFranchisePage() {
             </div>
           </div>
           <div className="max-w-3xl mx-auto">
-            <div className="card bg-ash-tint" style={{ borderRadius: '4px' }}>
+            <div className="card bg-ash-tint" style={{ borderRadius: '0px' }}>
               <h3 className="heading-4 mb-4">The Lifestyle</h3>
               <ul className="space-y-3">
                 {[
@@ -344,7 +344,7 @@ export default function OwnAFranchisePage() {
             <p className="text-lg text-white/60 leading-relaxed mb-8">
               You are getting a complete business system, brand, technology, training, and ongoing support for $15,000. That is the total franchise fee. Not a down payment. Not the first installment. The entire fee.
             </p>
-            <div className="card bg-white/5 border border-white/10 text-left mb-8" style={{ borderRadius: '4px' }}>
+            <div className="card bg-white/5 border border-white/10 text-left mb-8" style={{ borderRadius: '0px' }}>
               <h3 className="heading-4 text-white mb-4">Compare That to the Alternative</h3>
               <p className="text-white/60 leading-relaxed mb-4">
                 Most franchise consultant training programs charge $10,000 to $20,000 for training alone. No brand. No technology platform. No CRM. No lead generation systems. No templates. No ongoing support. No protected territory. Just a course and a certificate.
@@ -374,7 +374,7 @@ export default function OwnAFranchisePage() {
             </p>
           </div>
           <div className="grid lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="card" style={{ borderRadius: '4px' }}>
+            <div className="card" style={{ borderRadius: '0px' }}>
               <h3 className="heading-3 text-accent mb-6">Strong Fit</h3>
               <ul className="space-y-4">
                 {[
@@ -392,7 +392,7 @@ export default function OwnAFranchisePage() {
                 ))}
               </ul>
             </div>
-            <div className="card" style={{ borderRadius: '4px' }}>
+            <div className="card" style={{ borderRadius: '0px' }}>
               <h3 className="heading-3 text-steel mb-6">Not a Fit</h3>
               <ul className="space-y-4">
                 {[
@@ -432,14 +432,14 @@ export default function OwnAFranchisePage() {
               { stat: '3%+', label: 'Annual franchise industry growth rate' },
               { stat: '$827B', label: 'Total franchise industry output' },
             ].map((item) => (
-              <div key={item.label} className="card text-center" style={{ borderRadius: '4px' }}>
+              <div key={item.label} className="card text-center" style={{ borderRadius: '0px' }}>
                 <p className="stat-number text-accent mb-2">{item.stat}</p>
                 <p className="text-steel text-sm">{item.label}</p>
               </div>
             ))}
           </div>
           <div className="max-w-3xl mx-auto">
-            <div className="card" style={{ borderRadius: '4px' }}>
+            <div className="card" style={{ borderRadius: '0px' }}>
               <h3 className="heading-4 mb-4">Forge&apos;s Track Record</h3>
               <p className="text-steel leading-relaxed mb-4">
                 Forge Franchising Group has helped businesses across dozens of industries develop their franchise systems. Our methodology has been tested in restaurants, home services, fitness, beauty, healthcare, education, and more. Every template, every process, every system in your franchise was built from real engagements with real businesses.
@@ -461,7 +461,7 @@ export default function OwnAFranchisePage() {
           </div>
           <div className="space-y-6">
             {faqItems.map((item) => (
-              <div key={item.q} className="card" style={{ borderRadius: '4px' }}>
+              <div key={item.q} className="card" style={{ borderRadius: '0px' }}>
                 <h3 className="heading-4 mb-3">{item.q}</h3>
                 <p className="text-steel leading-relaxed">{item.a}</p>
               </div>

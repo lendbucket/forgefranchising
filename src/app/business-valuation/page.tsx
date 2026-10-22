@@ -158,7 +158,7 @@ export default function BusinessValuationPage() {
         }}
       />
 
-      <section className="bg-white">
+      <section className="bg-graphite surface-dark">
         <div className="container-wide section-padding !pb-12">
           <Breadcrumbs
             withSchema={false}
@@ -237,7 +237,7 @@ export default function BusinessValuationPage() {
                 <h3 className="heading-4 mb-4 mt-8">Standard add backs</h3>
                 <div className="space-y-4 mb-8">
                   {addBacks.map((a) => (
-                    <div key={a.term} className="bg-ash-tint p-6" style={{ borderRadius: '4px' }}>
+                    <div key={a.term} className="bg-ash-tint p-6" style={{ borderRadius: '0px' }}>
                       <p className="text-xs font-semibold uppercase tracking-widest text-graphite mb-2">{a.term}</p>
                       <p className="text-steel text-sm leading-relaxed">{a.text}</p>
                     </div>
@@ -331,7 +331,7 @@ export default function BusinessValuationPage() {
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {factors.map((f) => (
-                    <div key={f.term} className="bg-white p-6" style={{ borderRadius: '4px', border: '1px solid rgba(78, 90, 98, 0.18)', borderTop: '3px solid #E4572E' }}>
+                    <div key={f.term} className="bg-white p-6" style={{ borderRadius: '0px', border: '1px solid rgba(78, 90, 98, 0.18)', borderTop: '2px solid #1C1F23' }}>
                       <p className="text-xs font-semibold uppercase tracking-widest text-graphite mb-2">{f.term}</p>
                       <p className="text-steel text-sm leading-relaxed">{f.text}</p>
                     </div>
@@ -353,7 +353,7 @@ export default function BusinessValuationPage() {
                   estimate a business broker prepares to show where a business is likely to price in the current market, based
                   on its financial records and on the factors buyers and lenders weigh.
                 </p>
-                <div className="bg-white p-6 sm:p-8 mb-8" style={{ borderRadius: '4px', border: '1px solid rgba(78, 90, 98, 0.18)', borderLeft: '3px solid #E4572E' }}>
+                <div className="bg-white p-6 sm:p-8 mb-8" style={{ borderRadius: '0px', border: '1px solid rgba(78, 90, 98, 0.18)', borderLeft: '3px solid #E4572E' }}>
                   <p className="text-xs font-semibold uppercase tracking-widest text-graphite mb-3">Read this first</p>
                   <p className="text-graphite font-semibold leading-relaxed mb-2">
                     A broker opinion of value is not a certified appraisal.

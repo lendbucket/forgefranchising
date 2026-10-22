@@ -148,8 +148,8 @@ export default function HomePage() {
               </Link>
               <Link
                 href="/how-it-works"
-                className="inline-flex items-center justify-center px-10 py-5 border-2 border-white/20 text-white font-semibold hover:bg-white hover:text-graphite transition-all duration-200 text-lg active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-ember focus-visible:outline-offset-2"
-                style={{ borderRadius: '3px' }}
+                className="inline-flex items-center justify-center px-10 py-5 border-[1.5px] border-white/60 text-white font-semibold hover:bg-white hover:text-graphite hover:border-white transition-all duration-200 text-lg active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-ember focus-visible:outline-offset-2"
+                style={{ borderRadius: '2px' }}
               >
                 See the Process
               </Link>

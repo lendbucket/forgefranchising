@@ -69,7 +69,7 @@ export default async function IndustryPage({ params }: Props) {
         }}
       />
 
-      <section className="bg-white">
+      <section className="bg-graphite surface-dark">
         <div className="container-wide section-padding">
           <Breadcrumbs
             items={[

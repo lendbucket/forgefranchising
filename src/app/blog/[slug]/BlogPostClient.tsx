@@ -311,7 +311,7 @@ function TableOfContents({ headings }: { headings: Heading[] }) {
 
 function InlineCTA({ cta }: { cta?: BlogCTA }) {
   return (
-    <div className="my-12 bg-graphite p-8 sm:p-10 text-center" style={{ borderRadius: '4px' }}>
+    <div className="my-12 bg-graphite p-8 sm:p-10 text-center" style={{ borderRadius: '0px' }}>
       <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-4">
         {cta?.heading ?? 'Find Out If Your Business Is Ready to Franchise'}
       </h3>

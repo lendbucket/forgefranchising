@@ -304,7 +304,7 @@ export function AssessmentClient() {
                       className={`w-full text-left p-4 border-2 transition-all duration-200 min-h-[52px] ${
                         isSelected
                           ? 'border-ember bg-ember/5 text-graphite'
-                          : 'border-ash-tint hover:border-ember/40 bg-white text-graphite'
+                          : 'border-steel/40 hover:border-graphite bg-white text-graphite'
                       }`}
                     >
                       <span className="font-medium">{option.label}</span>
@@ -394,7 +394,7 @@ export function AssessmentClient() {
                       placeholder="Your name"
                       required
                       className="w-full px-4 py-3 border border-white/20 bg-white/10 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-ember/50 min-h-[48px]"
-                      style={{ borderRadius: '3px' }}
+                      style={{ borderRadius: '2px' }}
                     />
                     <input
                       type="email"
@@ -403,7 +403,7 @@ export function AssessmentClient() {
                       placeholder="you@company.com"
                       required
                       className="w-full px-4 py-3 border border-white/20 bg-white/10 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-ember/50 min-h-[48px]"
-                      style={{ borderRadius: '3px' }}
+                      style={{ borderRadius: '2px' }}
                     />
                     {gateError && <p className="text-red-400 text-sm">{gateError}</p>}
                     <button
@@ -426,7 +426,7 @@ export function AssessmentClient() {
                     <div className="space-y-4">
                       {outcome.details.map((detail, i) => (
                         <div key={i} className="flex items-start gap-3">
-                          <span className="flex-shrink-0 w-6 h-6 bg-ember/10 flex items-center justify-center mt-0.5" style={{ borderRadius: '3px' }}>
+                          <span className="flex-shrink-0 w-6 h-6 bg-ember/10 flex items-center justify-center mt-0.5" style={{ borderRadius: '2px' }}>
                             <span className="text-accent text-xs font-bold">{i + 1}</span>
                           </span>
                           <p className="text-sm text-steel leading-relaxed">{detail}</p>

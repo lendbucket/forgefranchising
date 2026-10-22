@@ -22,13 +22,13 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
   return (
     <>
       {/* STAKES: Short, punchy problem statement. Image-led asymmetric layout. */}
-      <section className="py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-24 sm:py-32 lg:py-44 px-4 sm:px-6 lg:px-8 bg-graphite surface-dark border-t border-white/10">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             {/* Photograph: real business scenario */}
             <div className="lg:col-span-5 lg:order-2">
               <ScrollReveal>
-                <div className="relative aspect-[4/5] overflow-hidden" style={{ borderRadius: '4px' }}>
+                <div className="relative aspect-[4/5] overflow-hidden" style={{ borderRadius: '0px' }}>
                   <Image
                     src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=800&q=80"
                     alt="Forge Franchising client reviewing franchise compliance and FDD documents"
@@ -37,7 +37,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 40vw"
                   />
-                  <div className="absolute inset-0 mix-blend-multiply bg-ember/10" />
+                  <div className="absolute inset-0 bg-graphite/25" />
                 </div>
               </ScrollReveal>
             </div>
@@ -56,7 +56,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={2}>
-                <div className="pull-quote text-graphite my-10">
+                <div className="pull-quote text-white my-10">
                   That gap between operating expertise and franchise development expertise is where most attempts fail.
                 </div>
               </ScrollReveal>
@@ -80,7 +80,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
       />
 
       {/* AUTHORITY: Process overview. Horizontal timeline, not card grid. */}
-      <section className="py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-24 sm:py-32 lg:py-44 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <div className="max-w-2xl mb-16">
@@ -92,7 +92,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
             </div>
           </ScrollReveal>
           {/* Timeline layout on desktop, stacked on mobile */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-graphite/5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-steel/20 border border-steel/20">
             {phases.map((phase, i) => (
               <ScrollReveal key={phase.number} delay={i as 1 | 2 | 3 | 4}>
                 <div className="bg-white p-8 lg:p-10 h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-lg phase-cell">
@@ -127,7 +127,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
       </section>
 
       {/* READINESS METHOD: Four-pillar framework teaser */}
-      <section className="py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 bg-ash-tint">
+      <section className="py-24 sm:py-32 lg:py-44 px-4 sm:px-6 lg:px-8 bg-graphite surface-dark">
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <div className="max-w-2xl mb-16">
@@ -141,7 +141,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
               </p>
             </div>
           </ScrollReveal>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-graphite/5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10">
             {[
               { title: 'Profitability and Unit Economics', desc: 'Can the model support two layers of ownership and still deliver a strong operator return?' },
               { title: 'Systems and Operations', desc: 'Are your processes documented well enough that a new operator can learn them without you?' },
@@ -149,7 +149,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
               { title: 'Replicability and Market Demand', desc: 'Can the concept reproduce in a new market by a new operator, and does that market want it?' },
             ].map((pillar, i) => (
               <ScrollReveal key={pillar.title} delay={i as 1 | 2 | 3 | 4}>
-                <div className="bg-ash-tint p-8 lg:p-10 h-full">
+                <div className="bg-graphite p-8 lg:p-10 h-full">
                   <span className="font-display font-bold text-accent text-2xl mb-4 block" style={{ letterSpacing: '-0.03em' }}>
                     {String(i + 1).padStart(2, '0')}
                   </span>
@@ -176,7 +176,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
       <WhyForge />
 
       {/* MICRO-COMMITMENT: Assessment teaser. Full-bleed dark section. */}
-      <section className="py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 bg-graphite text-white dark-depth">
+      <section className="py-24 sm:py-32 lg:py-44 px-4 sm:px-6 lg:px-8 bg-graphite text-white dark-depth">
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             <div>
@@ -195,7 +195,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
             </div>
             <div>
               <ScrollReveal delay={1}>
-                <div className="bg-white/5 border border-white/10 p-8 sm:p-10" style={{ borderRadius: '4px' }}>
+                <div className="border border-white/15 p-8 sm:p-12" style={{ borderRadius: '0px' }}>
                   <h3 className="heading-4 text-white mb-6">7 signs your business is ready:</h3>
                   <ul className="space-y-4">
                     {[
@@ -223,7 +223,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
       </section>
 
       {/* INDUSTRIES: Text-led left + compact grid right */}
-      <section className="py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-24 sm:py-32 lg:py-44 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-12 gap-16 items-start">
             <div className="lg:col-span-5">
@@ -263,7 +263,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
       </section>
 
       {/* EDUCATION: Blog teasers. Asymmetric featured + two-column. */}
-      <section className="py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 bg-ash-tint">
+      <section className="py-24 sm:py-32 lg:py-44 px-4 sm:px-6 lg:px-8 bg-ash-tint">
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <div className="max-w-2xl mb-12">
@@ -279,8 +279,8 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
           {/* Featured post: large */}
           <ScrollReveal>
             <Link href="/blog/how-to-franchise-your-business" className="group block mb-8">
-              <div className="grid lg:grid-cols-2 gap-8 bg-white p-8 sm:p-10 transition-all duration-300 hover:shadow-lg" style={{ borderRadius: '4px', border: '1px solid rgba(78, 90, 98, 0.08)' }}>
-                <div className="relative aspect-[16/10] overflow-hidden" style={{ borderRadius: '3px' }}>
+              <div className="grid lg:grid-cols-2 gap-8 bg-white p-8 sm:p-12 transition-colors duration-300 border border-steel/20 hover:border-graphite/60">
+                <div className="relative aspect-[16/10] overflow-hidden" style={{ borderRadius: '2px' }}>
                   <Image
                     src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80"
                     alt="Forge Franchising guide to franchise development strategy and business planning"
@@ -289,7 +289,6 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
                     className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
                     sizes="(max-width: 1024px) 100vw, 45vw"
                   />
-                  <div className="absolute inset-0 mix-blend-multiply bg-ember/5" />
                 </div>
                 <div className="flex flex-col justify-center">
                   <span className="eyebrow">Complete Guide</span>
@@ -316,7 +315,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
             {[
               {
                 title: 'What a Franchise Disclosure Document Is and Why It Matters',
-                href: '/blog/franchise-disclosure-document-explained',
+                href: '/blog/franchise-disclosure-document',
                 category: 'Education',
                 teaser: 'The FDD is not a formality. It is the single document that determines whether your franchise can legally sell.',
               },

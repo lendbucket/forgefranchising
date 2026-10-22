@@ -144,7 +144,7 @@ export default function PackagesPage() {
         }}
       />
 
-      <section className="bg-white">
+      <section className="bg-graphite surface-dark">
         <div className="container-wide section-padding">
           <Breadcrumbs
             items={[
@@ -196,7 +196,7 @@ export default function PackagesPage() {
                 }`}
               >
                 {tier.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-ember-button text-graphite text-xs font-bold uppercase tracking-widest px-4 py-1.5" style={{ borderRadius: '3px', letterSpacing: '0.1em' }}>
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-ember-button text-graphite text-xs font-bold uppercase tracking-widest px-4 py-1.5" style={{ borderRadius: '2px', letterSpacing: '0.1em' }}>
                     Most Popular
                   </div>
                 )}
@@ -205,7 +205,7 @@ export default function PackagesPage() {
                   <p className="text-accent font-semibold text-sm">{tier.tagline}</p>
                 </div>
                 <p className="text-steel leading-relaxed mb-6 text-sm">{tier.description}</p>
-                <div className="bg-ash-tint p-4 mb-6" style={{ borderRadius: '4px' }}>
+                <div className="bg-ash-tint p-4 mb-6" style={{ borderRadius: '0px' }}>
                   <p className="text-graphite font-medium text-sm">{tier.priceHint}</p>
                 </div>
                 <ul className="space-y-3 mb-8 flex-1">

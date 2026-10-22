@@ -117,7 +117,7 @@ export default function ReadinessMethodPage() {
       />
 
       {/* INTRO */}
-      <section className="bg-white">
+      <section className="bg-graphite surface-dark">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'Readiness Method' }]} />
           <div className="max-w-3xl">
@@ -249,7 +249,7 @@ export default function ReadinessMethodPage() {
                 </ul>
               </div>
             </div>
-            <div className="bg-white/5 border border-white/10 px-6 py-5" style={{ borderRadius: '4px' }}>
+            <div className="bg-white/5 border border-white/10 px-6 py-5" style={{ borderRadius: '0px' }}>
               <p className="text-white/60 text-sm leading-relaxed">
                 A readiness assessment does not guarantee franchise success, regulatory approval, or specific
                 financial outcomes. It identifies whether foundational conditions are present. Franchise
@@ -336,7 +336,7 @@ export default function ReadinessMethodPage() {
                 a: 'You receive a detailed report. If the business is ready, the next step is franchise structure development (FDD, franchise agreement, operations manual). If gaps exist, the report outlines what needs to change before proceeding and approximately how long each gap takes to close.',
               },
             ].map((item) => (
-              <div key={item.q} className="card" style={{ borderRadius: '4px' }}>
+              <div key={item.q} className="card" style={{ borderRadius: '0px' }}>
                 <h3 className="heading-4 mb-3">{item.q}</h3>
                 <p className="text-steel leading-relaxed">{item.a}</p>
               </div>

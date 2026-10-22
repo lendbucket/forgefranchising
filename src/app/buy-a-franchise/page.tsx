@@ -31,7 +31,7 @@ function CompensationDisclosure({ className = '' }: { className?: string }) {
     <aside
       aria-label="Consultant compensation disclosure"
       className={`bg-white p-6 sm:p-8 ${className}`}
-      style={{ borderRadius: '4px', border: '1px solid rgba(78, 90, 98, 0.18)', borderLeft: '3px solid #E4572E' }}
+      style={{ borderRadius: '0px', border: '1px solid rgba(78, 90, 98, 0.18)', borderLeft: '3px solid #E4572E' }}
     >
       <p className="text-xs font-semibold uppercase tracking-widest text-graphite mb-3">Disclosure</p>
       <ul className="space-y-2 text-sm text-steel leading-relaxed">
@@ -164,7 +164,7 @@ export default function BuyAFranchisePage() {
         }}
       />
 
-      <section className="bg-white">
+      <section className="bg-graphite surface-dark">
         <div className="container-wide section-padding !pb-12">
           <Breadcrumbs withSchema={false} items={[{ label: 'Buy a Franchise' }]} />
           <div className="max-w-3xl">
@@ -303,7 +303,7 @@ export default function BuyAFranchisePage() {
                 </p>
                 <div className="space-y-4 mt-8">
                   {fddItems.map((item) => (
-                    <div key={item.items} className="bg-ash-tint p-6" style={{ borderRadius: '4px' }}>
+                    <div key={item.items} className="bg-ash-tint p-6" style={{ borderRadius: '0px' }}>
                       <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-1">{item.items}</p>
                       <h3 className="heading-4 mb-2">{item.title}</h3>
                       <p className="text-steel text-sm sm:text-base leading-relaxed">{item.body}</p>

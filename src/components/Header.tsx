@@ -92,8 +92,21 @@ export function Header() {
     }
   }, [])
 
-  /* Homepage: transparent until scrolled. All other pages: always solid cream. */
+  /* Homepage: transparent over the hero until scrolled. Everywhere else: solid graphite. */
   const isTransparent = isHome && !scrolled && !openPanel
+
+  /* The nav group that owns the current page, for the active underline. */
+  const activeKey = (() => {
+    if (!pathname || pathname === '/') return null
+    let best: { key: string; len: number } | null = null
+    for (const group of NAV_LINKS) {
+      for (const link of group.links) {
+        const match = pathname === link.href || pathname.startsWith(link.href + '/')
+        if (match && (!best || link.href.length > best.len)) best = { key: group.label, len: link.href.length }
+      }
+    }
+    return best?.key ?? null
+  })()
 
   return (
     <>
@@ -102,9 +115,9 @@ export function Header() {
         className={`sticky top-0 z-50 transition-all duration-300 safe-top ${
           isTransparent
             ? 'bg-transparent'
-            : 'bg-white/95 backdrop-blur-md shadow-sm'
+            : 'bg-graphite shadow-sm'
         }`}
-        style={isTransparent ? {} : { borderBottom: '1px solid rgba(28, 31, 35, 0.06)' }}
+        style={isTransparent ? {} : { borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`flex items-center justify-between transition-all duration-300 ${
@@ -120,7 +133,7 @@ export function Header() {
               aria-hidden={isHome && !scrolled ? true : undefined}
             >
               <Image
-                src={isTransparent ? '/forge-franchising-logo-white.png' : '/forge-franchising-logo.png'}
+                src="/forge-franchising-logo-white.png"
                 alt="Forge Franchising Group logo"
                 width={232}
                 height={112}
@@ -143,15 +156,16 @@ export function Header() {
                 >
                   <button
                     type="button"
-                    className={`px-2.5 xl:px-4 py-2 text-sm font-medium whitespace-nowrap transition-colors ${
-                      isTransparent
-                        ? (openPanel === key ? 'text-white' : 'text-white/70 hover:text-white')
-                        : (openPanel === key ? 'text-graphite' : 'text-graphite/70 hover:text-graphite')
+                    className={`relative px-2.5 xl:px-4 py-2 text-sm font-medium whitespace-nowrap transition-colors ${
+                      openPanel === key || activeKey === key ? 'text-white' : 'text-white/75 hover:text-white'
                     }`}
                     aria-expanded={openPanel === key}
                     aria-haspopup="true"
                     onKeyDown={(e) => handleKeyDown(e, key)}
                   >
+                    {activeKey === key && (
+                      <span className="absolute left-2.5 right-2.5 xl:left-4 xl:right-4 -bottom-0.5 h-0.5 bg-ember" aria-hidden="true" />
+                    )}
                     {key}
                     <svg
                       className={`inline-block ml-1 w-3 h-3 transition-transform duration-200 ${
@@ -178,9 +192,7 @@ export function Header() {
             {/* Mobile hamburger */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className={`lg:hidden p-2 min-w-[44px] min-h-[44px] flex items-center justify-center active:scale-95 transition-transform ${
-                isTransparent ? 'text-white' : 'text-graphite'
-              }`}
+              className="lg:hidden p-2 min-w-[44px] min-h-[44px] flex items-center justify-center active:scale-95 transition-transform text-white"
               aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={mobileOpen}
             >
@@ -233,7 +245,7 @@ export function Header() {
                   {(() => {
                     const panel = panels[openPanel] ?? assessmentPanel
                     return (
-                      <div className="bg-graphite rounded p-8 h-full flex flex-col justify-between">
+                      <div className="bg-graphite p-8 h-full flex flex-col justify-between">
                         <div>
                           <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">
                             {panel.eyebrow}

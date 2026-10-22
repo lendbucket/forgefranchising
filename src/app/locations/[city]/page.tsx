@@ -185,7 +185,7 @@ export default async function CityPage({ params }: Props) {
                     const href = industryLinkMap[industry]
                     const cardContent = (
                       <>
-                        <div className="w-10 h-10 rounded-lg bg-ember/10 flex items-center justify-center flex-shrink-0">
+                        <div className="w-10 h-10 bg-ember/10 flex items-center justify-center flex-shrink-0">
                           <svg
                             className="w-5 h-5 text-accent"
                             fill="none"
@@ -236,7 +236,7 @@ export default async function CityPage({ params }: Props) {
                 <div className="grid sm:grid-cols-2 gap-6">
                   {/* Franchise Your Business Card */}
                   <div className="card-interactive p-6 group">
-                    <div className="w-12 h-12 rounded-lg bg-graphite/10 flex items-center justify-center mb-4">
+                    <div className="w-12 h-12 bg-graphite/10 flex items-center justify-center mb-4">
                       <svg
                         className="w-6 h-6 text-graphite"
                         fill="none"
@@ -266,7 +266,7 @@ export default async function CityPage({ params }: Props) {
 
                   {/* Own a Forge Franchise Card */}
                   <div className="card-interactive p-6 group">
-                    <div className="w-12 h-12 rounded-lg bg-ember/10 flex items-center justify-center mb-4">
+                    <div className="w-12 h-12 bg-ember/10 flex items-center justify-center mb-4">
                       <svg
                         className="w-6 h-6 text-accent"
                         fill="none"

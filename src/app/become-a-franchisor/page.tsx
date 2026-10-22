@@ -227,7 +227,7 @@ export default function BecomeAFranchisorPage() {
         }}
       />
 
-      <section className="bg-white">
+      <section className="bg-graphite surface-dark">
         <div className="container-wide section-padding !pb-12">
           <Breadcrumbs
             withSchema={false}
@@ -286,11 +286,11 @@ export default function BecomeAFranchisorPage() {
                     </p>
                   ))}
                   <div className="grid sm:grid-cols-2 gap-4 mt-8">
-                    <div className="bg-ash-tint p-6" style={{ borderRadius: '4px' }}>
+                    <div className="bg-ash-tint p-6" style={{ borderRadius: '0px' }}>
                       <p className="text-xs font-semibold uppercase tracking-widest text-graphite mb-2">What it produces</p>
                       <p className="text-steel text-sm leading-relaxed">{step.produces}</p>
                     </div>
-                    <div className="bg-white p-6" style={{ borderRadius: '4px', border: '1px solid rgba(78, 90, 98, 0.18)', borderTop: '3px solid #E4572E' }}>
+                    <div className="bg-white p-6" style={{ borderRadius: '0px', border: '1px solid rgba(78, 90, 98, 0.18)', borderTop: '2px solid #1C1F23' }}>
                       <p className="text-xs font-semibold uppercase tracking-widest text-graphite mb-2">When it is skipped</p>
                       <p className="text-steel text-sm leading-relaxed">{step.skipped}</p>
                     </div>

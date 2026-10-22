@@ -20,7 +20,7 @@ const pillars = [
 
 export function WhyForge() {
   return (
-    <section className="py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 bg-ash-tint">
+    <section className="py-24 sm:py-32 lg:py-44 px-4 sm:px-6 lg:px-8 bg-ash-tint">
       <div className="max-w-7xl mx-auto">
         <ScrollReveal>
           <div className="max-w-2xl mb-16 lg:mb-20">
