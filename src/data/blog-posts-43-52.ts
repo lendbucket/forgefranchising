@@ -14,7 +14,7 @@ export const blogPosts43to52 = [
     category: 'Guide',
     datePublished: '2026-08-04',
     readTime: '11 min read',
-    content: `## What Does It Actually Mean to Turn Your Business Into a Franchise?
+    content: `## What does it actually mean to turn your business into a franchise?
 
 When owners ask how to turn your business into a franchise, they are usually picturing the outcome: more locations, other people's capital, their name on buildings in cities they have never visited. That outcome is real. The path to it is narrower and more technical than most people expect.
 
@@ -22,7 +22,7 @@ Turning a business into a franchise means three things happening at once. First,
 
 Most owners underestimate the second and third parts. They think franchising is a marketing exercise. It is closer to a manufacturing exercise. You are building a product, and the product is a repeatable operating system that a stranger can run at an acceptable standard.
 
-## Is Your Business Actually Ready to Franchise?
+## Is your business actually ready to franchise?
 
 Before any legal work begins, the honest question is whether the business can survive being copied. Four things determine that answer.
 
@@ -36,7 +36,7 @@ Before any legal work begins, the honest question is whether the business can su
 
 We score these four pillars formally in [the Forge Franchise Readiness Method](/readiness-method), because a written score is harder to argue with than a hopeful conversation.
 
-## What Legal Documents Do You Need?
+## What legal documents do you need?
 
 Two documents carry the entire relationship.
 
@@ -48,7 +48,7 @@ Item 19 of the FDD is where financial performance representations live. You are 
 
 Fourteen states require you to register or file the FDD before you may offer a franchise to a resident. Registration states review the document and often return comments. Filing states take it on record without substantive review. Our [state by state breakdown](/franchise-laws) covers where you fall.
 
-## How Do You Document the System?
+## How do you document the system?
 
 The operations manual is the deliverable franchisees actually consume. It should let a new operator open and run at a defensible standard without calling you every afternoon.
 
@@ -56,7 +56,7 @@ A workable manual covers site selection criteria, buildout specifications and eq
 
 Treat it as a living system. The version that opens unit five should not be the version that opens unit fifty. Every franchisee who solves a problem in the field is doing free research and development for the system, and the manual is where that knowledge gets captured so it stops being tribal.
 
-## What Does the Money Look Like on the Franchisor Side?
+## What does the money look like on the franchisor side?
 
 Franchisor revenue comes from three places: an initial franchise fee paid once at signing, an ongoing royalty calculated on gross revenue, and often a brand fund contribution that is restricted to marketing use.
 
@@ -64,7 +64,7 @@ The mistake is treating the initial fee as profit. It rarely is. That fee typica
 
 That timing gap is why franchisors fail. Development costs are front loaded. Royalty revenue arrives slowly. Capitalize for the gap, not for the optimistic case. Our [franchise development packages](/packages) are structured in tiers precisely so the investment matches where a business actually is.
 
-## How Long Does It Take?
+## How long does it take?
 
 Assume six to fourteen months from decision to a first franchisee opening, with the wide range driven by four variables: how clean your financials are when you start, whether documentation already exists, whether you sell into registration states, and how quickly you make decisions and stop revisiting them.
 
@@ -72,7 +72,7 @@ Feasibility runs two to six weeks. Legal drafting runs six to ten weeks. The ope
 
 The [four phase process](/how-it-works) exists to run these tracks in parallel rather than in sequence, which is where most of the compressible time lives.
 
-## What Goes Wrong Most Often?
+## What goes wrong most often?
 
 **Selling before the system is documented.** The first franchisee becomes an unpaid beta tester and tells everyone about it.
 
@@ -84,7 +84,7 @@ The [four phase process](/how-it-works) exists to run these tracks in parallel r
 
 **Talking about earnings casually.** A well meaning answer to "what do you make" during a discovery call becomes a violation if it is not in a compliant Item 19.
 
-## What Support Will Franchisees Expect After They Open?
+## What support will franchisees expect after they open?
 
 The build is the visible half of franchising. The support obligation is the half that runs for the next decade, and it is disclosed in Item 11 of your FDD, which means it is a promise you have to keep.
 
@@ -94,7 +94,7 @@ Staff for it honestly. A single field consultant can meaningfully support somewh
 
 Underpromising here is a competitive advantage. A franchisor who commits to quarterly visits and delivers them builds more trust than one who commits to monthly and misses.
 
-## How Do You Choose the Right First Franchisees?
+## How do you choose the right first franchisees?
 
 Your first three to five franchisees will define the system. They set the operating benchmark, they become the validation calls every future candidate makes, and their results populate the outlet data in your disclosure document.
 
@@ -104,7 +104,7 @@ Then hold the line. The pressure to accept a well capitalized but poorly matched
 
 Keep your first markets close enough to reach in a day. Early support is hands on, and distance makes it worse.
 
-## What Is the First Step?
+## What is the first step?
 
 The first step is not calling a lawyer. It is getting an honest answer on whether the business clears the readiness bar, because every dollar spent on legal work before that answer is a dollar at risk.
 
@@ -122,7 +122,7 @@ This article is general information, not legal advice. Franchises are offered on
     category: 'Industry',
     datePublished: '2026-08-06',
     readTime: '11 min read',
-    content: `## Why Do Service Businesses Franchise So Well?
+    content: `## Why do service businesses franchise so well?
 
 If you are working out how to franchise a service business, you are starting from a stronger position than most. Service concepts, plumbing, HVAC, cleaning, landscaping, pest control, mobile repair, and the rest, franchise more readily than almost any other category, and the reasons are structural rather than lucky.
 
@@ -130,7 +130,7 @@ Demand is non discretionary. A failed water heater is not a preference. Work is 
 
 That last point matters more than founders expect. A candidate who needs less capital is a candidate who can actually get funded, and funding is where a large share of franchise deals die.
 
-## What Has to Be True Before You Franchise?
+## What has to be true before you franchise?
 
 The advantages above are real, and they are not sufficient. Four conditions decide whether a service business can be licensed.
 
@@ -144,7 +144,7 @@ The advantages above are real, and they are not sufficient. Four conditions deci
 
 Run the four pillars formally through [the Forge Franchise Readiness Method](/readiness-method) before spending on legal work.
 
-## How Should You Design Service Territories?
+## How should you design service territories?
 
 Territory design is more consequential in services than in retail, because a service franchisee's revenue is bounded by drive time rather than foot traffic.
 
@@ -154,7 +154,7 @@ Decide exclusivity deliberately. Exclusive territories are easier to sell and co
 
 Also decide now how commercial accounts and national accounts are handled. A national contract that crosses twenty franchise territories will create a dispute if the agreement is silent on it.
 
-## What Does the Training Program Need to Cover?
+## What does the training program need to cover?
 
 Service franchisees fall into two groups: trade professionals who can do the work but have never run a business, and business operators who can manage but cannot hold a wrench. Your training has to serve both, which usually means two tracks.
 
@@ -162,7 +162,7 @@ The business track covers pricing, estimating, scheduling and dispatch, cash flo
 
 The most valuable module is usually the one founders skip: how to recruit technicians. Your franchisee's growth ceiling is set by their ability to hire. Handing them your interview guide, your compensation benchmarks, your ride along evaluation, and your onboarding checklist is worth more than another week of technical review.
 
-## What Systems and Technology Are Non Negotiable?
+## What systems and technology are non negotiable?
 
 Service delivery runs on software, and the franchisor decides the stack.
 
@@ -170,7 +170,7 @@ You need a field service management platform handling scheduling, dispatch, mobi
 
 Mandate the stack in the franchise agreement. A system where each franchisee chooses their own software is a system with no comparable data, no way to identify who needs help, and no way to prove what good performance looks like. Disclose required technology and its cost in Item 11 and Item 6 so candidates understand the commitment before signing.
 
-## How Do You Talk About Money Without Creating Liability?
+## How do you talk about money without creating liability?
 
 Service candidates ask what they can earn. It is the first question and the most dangerous one.
 
@@ -178,13 +178,13 @@ You may only make a financial performance representation through Item 19 of your
 
 There is no informal version of this rule. Not a range, not a hypothetical, not "one of our guys does well." Train everyone who touches a prospect, including any broker you engage, and document that training. Our [franchise development services](/services) include building the Item 19 substantiation file precisely because this is where new franchisors most often get themselves into trouble.
 
-## What Does This Cost and How Long Does It Take?
+## What does this cost and how long does it take?
 
 Expect a service franchise program to take six to twelve months to build. Feasibility and financial modeling take a few weeks. FDD preparation runs six to ten weeks with a franchise specialist. The operations manual, split across business and technical tracks, runs eight to twelve weeks and can proceed in parallel. State registration adds four to twelve weeks where required.
 
 Costs concentrate in three places: legal drafting and registrations, operations and training development, and the technology stack. Our [package tiers](/packages) map to business stage rather than to a single fixed scope, because a two truck operation and a forty truck operation need different depth.
 
-## What Does Ongoing Support Look Like in a Service System?
+## What does ongoing support look like in a service system?
 
 Service franchisees fail for two reasons above all others: they cannot recruit technicians, and they cannot price work correctly. Your support model should be built around those two failure modes rather than around generic check ins.
 
@@ -194,7 +194,7 @@ On pricing, the risk is a franchisee quietly discounting to win work and destroy
 
 Beyond those two, expect to provide field visits on a defined cadence, quarterly business reviews using system benchmarks, ongoing technical updates as equipment and codes change, and marketing assets franchisees can localize without breaking brand standards.
 
-## How Do You Protect Brand Consistency in Someone Else's Home?
+## How do you protect brand consistency in someone else's home?
 
 Service is delivered inside a customer's house, usually by an employee the franchisor has never met. That makes consistency harder than in a retail setting where the environment itself carries the brand.
 
@@ -202,7 +202,7 @@ Specify the touchpoints that customers actually judge. Vehicle presentation and 
 
 Write these into the operations manual so they are enforceable through the franchise agreement, then measure them. Mystery shopping, post job customer surveys, and photo documentation on completed work all give you evidence rather than impressions. This is [brand standards enforcement](/franchise-branding/brand-standards-enforcement) applied to a mobile workforce, and it is the difference between a service brand and a group of vans with the same logo.
 
-## Where Should You Start?
+## Where should you start?
 
 Start by rebuilding your unit economics with your own labor priced at market. That single exercise tells you more than any other diagnostic, and you can do it this week without hiring anyone.
 
@@ -222,13 +222,13 @@ This article is general information, not legal advice. Franchises are offered on
     category: 'Education',
     datePublished: '2026-08-08',
     readTime: '11 min read',
-    content: `## What Is Franchise Development, Precisely?
+    content: `## What is franchise development, precisely?
 
 Franchise development is the work of converting an operating business into a licensable system and then building the legal, operational, and commercial infrastructure required to sell and support that system. It is not marketing, and it is not a single document. What franchise development actually involves is five distinct workstreams that overlap in time and depend on each other for inputs.
 
 The confusion is understandable. The industry uses the phrase loosely. Some firms mean FDD preparation. Some mean franchise sales brokerage. Some mean consulting that stops at a strategy deck. Knowing which parts you are buying, and which parts remain yours, is the difference between a system that launches and a binder on a shelf.
 
-## Workstream One: What Does Feasibility Determine?
+## Workstream one: What does feasibility determine?
 
 Feasibility answers one question. Can this business be replicated by someone else, at an acceptable standard, profitably enough to support a royalty?
 
@@ -238,7 +238,7 @@ Feasibility should produce a number and a recommendation, including a recommenda
 
 This phase runs two to six weeks and gates everything downstream. Spending on legal drafting before feasibility is finished is the most common way founders waste money.
 
-## Workstream Two: What Legal Structure Has to Be Built?
+## Workstream two: What legal structure has to be built?
 
 Two instruments and, frequently, a corporate reorganization.
 
@@ -250,7 +250,7 @@ Most founders also create a separate franchisor entity. Keeping the franchising 
 
 Budget six to ten weeks with a franchise specialist. This is not general commercial work.
 
-## Workstream Three: How Does the Operating System Get Documented?
+## Workstream three: How does the operating system get documented?
 
 This is the largest workstream by hours and the one most often underestimated.
 
@@ -260,7 +260,7 @@ Alongside it sits the training program: pre opening classroom or online modules,
 
 The manual is incorporated by reference into the franchise agreement, which means it is enforceable. That cuts both ways. It gives you standing to require compliance, and it obligates you to keep it accurate. Plan eight to twelve weeks, running parallel to legal drafting.
 
-## Workstream Four: Where Do You Have to Register?
+## Workstream four: Where do you have to register?
 
 Fourteen states require registration of the FDD before any offer or sale to a resident: California, Hawaii, Illinois, Indiana, Maryland, Michigan, Minnesota, New York, North Dakota, Rhode Island, South Dakota, Virginia, Washington, and Wisconsin. Several of these review the document substantively and return comments that must be resolved before an effective date.
 
@@ -270,7 +270,7 @@ The remainder rely on the federal rule alone. Registration is per state, annual,
 
 Allow four to twelve weeks depending on which states you enter and how clean the filing is.
 
-## Workstream Five: What Does the Sales Infrastructure Include?
+## Workstream five: What does the sales infrastructure include?
 
 A franchise system without a candidate pipeline is a very expensive document set.
 
@@ -278,13 +278,13 @@ Sales infrastructure means a franchise development website with a clear opportun
 
 That last item is where most new franchisors are exposed. Outside a compliant Item 19, nobody on your team may make a financial performance representation, and that prohibition extends to brokers acting on your behalf. Train it, document the training, and audit it. Our [franchise development services](/services) treat the compliance framework as a deliverable rather than an assumption.
 
-## How Do the Phases Fit Together?
+## How do the phases fit together?
 
 They overlap. Feasibility must finish first because it feeds every other workstream. Legal and operations then run in parallel, which is where most of the compressible time lives. Registration begins when the FDD is final. Sales infrastructure builds during registration so you are ready to sell on the effective date.
 
 Realistic end to end timing is six to fourteen months to a first franchisee opening. Our [four phase process](/how-it-works) sequences the tracks, and our [package tiers](/packages) scope depth to business stage.
 
-## What Does Franchise Development Cost?
+## What does franchise development cost?
 
 Costs concentrate in four places, and the ranges are wide because scope varies with how much already exists.
 
@@ -298,7 +298,7 @@ Costs concentrate in four places, and the ranges are wide because scope varies w
 
 Then there is the cost founders forget: franchisor overhead before royalties cover it. Development spending is front loaded, royalty revenue arrives slowly, and most franchisors do not reach breakeven on the franchisor entity until a meaningful number of units are open and producing. Capitalize for that gap rather than for the optimistic case. Our [package tiers](/packages) are scoped by business stage for this reason.
 
-## Who Does What on a Development Engagement?
+## Who does what on a development engagement?
 
 Confusion about roles is the most common source of friction, so it is worth stating the division explicitly.
 
@@ -310,7 +310,7 @@ Confusion about roles is the most common source of friction, so it is worth stat
 
 If a firm offers to prepare your FDD without franchise counsel, treat it as a warning. If your attorney is setting your territory model, that is misallocated too.
 
-## What Should You Do First?
+## What should you do first?
 
 Do the feasibility work before anything else. If the unit economics do not support a royalty once your labor is priced at market, no amount of legal drafting fixes that.
 
@@ -328,7 +328,7 @@ This article is general information, not legal advice. Franchises are offered on
     category: 'Operations',
     datePublished: '2026-08-11',
     readTime: '11 min read',
-    content: `## Why Is Franchise Brand Development the Core of the Offer?
+    content: `## Why is franchise brand development the core of the offer?
 
 Franchise brand development is the work of turning a reputation that lives in one trade area into an asset a stranger can license, operate under, and pay you for. It is the single most misunderstood part of building a franchise system, because owners tend to file brand under marketing when it actually belongs under product.
 
@@ -336,7 +336,7 @@ Consider what a franchisee is buying. Not your recipes. Not your equipment list,
 
 Strip the brand out and you are selling a consulting engagement. Nobody pays a franchise fee plus a perpetual royalty for a consulting engagement. That is the entire argument for treating brand as foundational rather than cosmetic, and it is why [brand is the product](/franchise-branding) in franchising.
 
-## What Is the Difference Between a Local Reputation and a Franchisable Brand?
+## What is the difference between a local reputation and a franchisable brand?
 
 A local reputation is personal, informal, and non transferable. Customers come because they know you, because your longest tenured employee remembers their order, because you fixed something once at no charge. None of that survives a transfer to a franchisee in another state.
 
@@ -352,7 +352,7 @@ The conversion has four components.
 
 **Customer facing standards.** Greeting, response time, resolution policy, cleanliness, presentation. These are brand, not operations, because they are what the customer experiences. See [how customers recognize a brand](/franchise-branding/how-customers-know-a-brand).
 
-## What Legal Protection Does the Brand Require?
+## What legal protection does the brand require?
 
 You cannot license what you do not own, and the FDD forces the issue.
 
@@ -364,7 +364,7 @@ Ownership structure matters too. The cleanest arrangement places the marks in th
 
 Then police the marks. A trademark is weakened by unaddressed infringement, and franchisors who tolerate off standard usage inside their own system create evidence that the mark is not being controlled. More detail in [protecting your franchise brand](/franchise-branding/protecting-your-brand).
 
-## How Do You Enforce Standards Without Destroying the Relationship?
+## How do you enforce standards without destroying the relationship?
 
 Enforcement is where brand systems break, and the failure is almost always structural rather than interpersonal.
 
@@ -376,7 +376,7 @@ The practical approach is graduated. Most non compliance is a training gap, not 
 
 Two things make this survivable. First, explain the reasoning. A franchisee who understands that the arrival window standard drives repeat business complies without supervision. A franchisee who experiences it as an arbitrary rule complies only when watched. Second, apply standards uniformly. Selective enforcement is both a relationship problem and a legal exposure. See [brand standards enforcement](/franchise-branding/brand-standards-enforcement) for the operating detail.
 
-## How Does Brand Development Fit the Development Timeline?
+## How does brand development fit the development timeline?
 
 Early, and earlier than most founders schedule it.
 
@@ -384,7 +384,7 @@ Trademark clearance and filing should start in the feasibility phase, because re
 
 Founders who leave brand until after legal drafting end up amending documents, which costs money and, in registration states, time. Our [franchise development services](/services) sequence brand work into the front of the engagement for exactly this reason.
 
-## How Do You Know If Your Brand Is Ready?
+## How do you know if your brand is ready?
 
 Four questions, answered honestly.
 
@@ -394,7 +394,7 @@ Four yes answers means the brand is a licensable asset. Anything less means ther
 
 Brand is one of the four pillars scored in [the Forge Franchise Readiness Method](/readiness-method).
 
-## How Do You Measure Brand Consistency Across a System?
+## How do you measure brand consistency across a system?
 
 Standards that are not measured are suggestions. Once you have more than a handful of units, you need evidence rather than impressions.
 
@@ -404,7 +404,7 @@ Publish the scores back to franchisees. Comparative data is the single most effe
 
 Set the measurement framework before you sell units, not after. Retrofitting audits onto a system that never had them reads as a new imposition, and franchisees resist it accordingly.
 
-## What Happens to the Brand as the System Grows?
+## What happens to the brand as the system grows?
 
 A brand that is never updated decays. A brand that is updated carelessly fractures. Both problems are governance problems, and both are solved in the franchise agreement.
 
@@ -414,7 +414,7 @@ The reasonable pattern is to tie major visual updates to renewal or remodel cycl
 
 There is also an inbound direction to manage. Franchisees in the field generate genuinely good ideas, and a brand that cannot absorb them ossifies. Create a formal channel, a franchise advisory council or equivalent, that lets operators propose changes. Adopting a franchisee's idea system wide, with credit, buys more goodwill than almost anything else a franchisor can do.
 
-## What Should You Do Next?
+## What should you do next?
 
 Run a trademark clearance search this month. It is inexpensive relative to everything else in the process, it is the longest lead item, and a bad result changes your entire plan. Do not sell a territory under a mark you have not cleared.
 
@@ -432,13 +432,13 @@ This article is general information, not legal advice. Trademark and franchise m
     category: 'Education',
     datePublished: '2026-08-13',
     readTime: '10 min read',
-    content: `## What Does a Franchise Development Consultant Do?
+    content: `## What does a franchise development consultant do?
 
 A franchise development consultant takes an operating business and builds the system, documents, and infrastructure required to franchise it legally and support it afterward. What does a franchise development consultant do in practice? They run the feasibility analysis, design the fee and territory structure, direct the legal drafting, write the operations and training materials, manage state registrations, and build the sales and compliance framework the franchisor will operate under.
 
 The title is used loosely across the industry, which causes real problems for buyers. Three very different roles share overlapping language, and confusing them is expensive.
 
-## How Is a Consultant Different From a Franchise Broker?
+## How is a consultant different from a franchise broker?
 
 This is the distinction that costs founders the most money when they get it wrong.
 
@@ -450,7 +450,7 @@ A **franchise attorney** drafts and files the legal instruments. They prepare th
 
 You will likely need all three. Hiring one expecting the work of another is the common failure. More on the buy side role in [what is a franchise consultant and when you need one](/blog/what-is-a-franchise-consultant).
 
-## What Does the Consultant Actually Produce?
+## What does the consultant actually produce?
 
 Six deliverables, in rough order.
 
@@ -466,13 +466,13 @@ Six deliverables, in rough order.
 
 **Sales and compliance infrastructure.** The development site, CRM, qualification criteria, discovery day agenda, validation process, and the compliance rules governing what anyone on your side may say about earnings.
 
-## What Does a Consultant Not Do?
+## What does a consultant not do?
 
 Set expectations here, because unmet ones sour otherwise good engagements.
 
 They do not practice law. They do not guarantee franchise sales, and any promise of a specific number of units should end the conversation. They do not fix unit economics; if the model does not support a royalty, the honest deliverable is that finding. They do not run your business while you focus on franchising, which is a resourcing problem you have to solve internally. And they cannot make earnings claims on your behalf, because financial performance representations are confined to a compliant Item 19.
 
-## How Are Consultants Paid?
+## How are consultants paid?
 
 Three models, each with a different incentive.
 
@@ -484,7 +484,7 @@ Three models, each with a different incentive.
 
 Be skeptical of any structure that pays primarily on units sold rather than on system quality. Our [package tiers](/packages) are fixed scope by business stage for this reason.
 
-## How Do You Evaluate One?
+## How do you evaluate one?
 
 Ask these, and listen for specifics rather than reassurance.
 
@@ -492,7 +492,7 @@ Have you operated a franchise unit yourself, or only advised? Operator experienc
 
 The most telling answer is the third one about negative conclusions. A consultant who has never told a prospective client no is a consultant whose feasibility work is a formality.
 
-## When Should You Bring One In?
+## When should you bring one in?
 
 Earlier than most founders do. The instinct is to call an attorney first, but legal drafting depends on decisions that feasibility produces. Drafting an FDD before the fee structure and territory model are settled means paying to redraft.
 
@@ -500,7 +500,7 @@ The right sequence is feasibility, then economic structure, then legal drafting 
 
 The one legitimate exception is trademark clearance, which should start immediately regardless, because it takes months and a bad result changes everything.
 
-## What Does a Good Engagement Look Like Month by Month?
+## What does a good engagement look like month by month?
 
 Scope is easier to judge against a timeline than against a list, so here is the shape of a typical build.
 
@@ -516,7 +516,7 @@ Scope is easier to judge against a timeline than against a list, so here is the 
 
 A consultant who cannot describe the sequence in this kind of detail before you sign is a consultant who has not run it often.
 
-## How Does Brand Work Fit Into the Engagement?
+## How does brand work fit into the engagement?
 
 Brand is where scope most often gets quietly dropped, and it is expensive to add back late.
 
@@ -524,7 +524,7 @@ Trademark clearance and filing belong in month one because Item 13 of the FDD di
 
 Ask any prospective consultant directly whether [franchise brand development](/franchise-branding) is inside their scope or assumed to be handled elsewhere. Both answers are workable. An unstated assumption is not, and founders routinely discover the gap when counsel asks for the signage specification that nobody was assigned to write.
 
-## What Is the Practical Next Step?
+## What is the practical next step?
 
 Get the feasibility answer before you spend on anything else. Take the [free franchise readiness assessment](/is-my-business-franchisable), which scores profitability, systems, brand, and replicability in about two minutes, then book a feasibility call and bring twelve to eighteen months of clean financials.
 
@@ -542,7 +542,7 @@ This article is general information, not legal advice. Franchises are offered on
     category: 'Guide',
     datePublished: '2026-08-15',
     readTime: '10 min read',
-    content: `## You Said "I Want to Franchise My Business." Now What?
+    content: `## You said "I want to franchise my business." Now what?
 
 Almost every franchise system in America began with an owner saying some version of I want to franchise my business. Usually a customer or a friend planted the idea, the numbers looked good, and the ambition made sense. The gap between that sentence and a signed franchise agreement is where most of the value and most of the risk sit.
 
@@ -550,7 +550,7 @@ Here is the useful reframe. Franchising is not an expansion tactic you bolt onto
 
 Owners who internalize that early make good decisions. Owners who do not tend to spend twenty thousand dollars on legal documents before discovering the model does not support a royalty.
 
-## Move One: Do Your Unit Economics Survive a Transfer?
+## Move one: Do your unit economics survive a transfer?
 
 Do this before you call anyone. It costs nothing and it answers the only question that matters first.
 
@@ -562,7 +562,7 @@ If a competent operator can still earn a living on what remains, you have someth
 
 This single exercise disqualifies more concepts than any other step, and you can complete it this week.
 
-## Move Two: Is Your System Actually Documented?
+## Move two: Is your system actually documented?
 
 Walk your business and ask what exists in writing that a stranger could follow.
 
@@ -572,7 +572,7 @@ Make a list under three headings: written and current, written but stale, and on
 
 The test for readiness is specific. Could a competent operator with no experience in your industry reach an acceptable standard using written materials plus a defined training program? If the honest answer is no, franchising is premature.
 
-## Move Three: Do You Own the Brand You Want to License?
+## Move three: Do you own the brand you want to license?
 
 This is the one item that should begin before anything else, because it has the longest lead time and the worst failure mode.
 
@@ -582,7 +582,7 @@ Item 13 of your Franchise Disclosure Document requires you to disclose the statu
 
 Registration takes months. Start it now and it will be resolved when you need it. More detail in [protecting your franchise brand](/franchise-branding/protecting-your-brand).
 
-## Move Four: Do You Actually Want the Franchisor Job?
+## Move four: Do you actually want the franchisor job?
 
 Franchising changes your job, and the change is larger than most owners anticipate.
 
@@ -592,7 +592,7 @@ Some owners love this. Some find it a poor fit and would be better served by com
 
 You should also understand the capital reality. Development costs are front loaded and royalty revenue arrives slowly. Most franchisors do not reach breakeven on the franchisor entity until a meaningful number of units are open and producing. Capitalize for that gap.
 
-## Move Five: What Does Formal Feasibility Tell You?
+## Move five: What does formal feasibility tell you?
 
 Only after the first four moves should money start going out the door.
 
@@ -600,7 +600,7 @@ Feasibility should evaluate four pillars: profitability under transferred condit
 
 If the conclusion is favorable, the sequence from there is economic structure, then legal drafting in parallel with operations documentation, then state registration, then sales infrastructure. That is [the four phase process](/how-it-works), and the parallelism is where the schedule is won.
 
-## What Are the Expensive Early Mistakes?
+## What are the expensive early mistakes?
 
 **Hiring an attorney first.** Legal drafting depends on decisions feasibility produces. Draft before those are settled and you pay to redraft.
 
@@ -612,7 +612,7 @@ If the conclusion is favorable, the sequence from there is economic structure, t
 
 **Taking the first candidate with money.** A wrong franchisee damages a market, absorbs disproportionate support, and is difficult to remove.
 
-## What Does the Brand Have to Become?
+## What does the brand have to become?
 
 There is a step between having a good local reputation and having something licensable, and it catches owners by surprise.
 
@@ -622,7 +622,7 @@ Converting a reputation into a licensable asset means writing down the promise i
 
 This is [franchise brand development](/franchise-branding), and it belongs early. Buildout specifications, approved suppliers, and signage standards all flow into the FDD, so leaving brand work until after drafting means amending documents and, in registration states, refiling them.
 
-## How Much Capital Does Franchising Require?
+## How much capital does franchising require?
 
 Two numbers matter, and founders usually only plan for the first.
 
@@ -632,7 +632,7 @@ The second is the operating gap. Franchisor revenue comes from an initial fee pa
 
 So development spending is front loaded and royalty revenue arrives slowly. Most franchisors do not reach breakeven on the franchisor entity until a meaningful number of units are operating. Capitalize for that gap rather than assuming the first few franchise fees will fund the support organization. Running out of money at unit eight is the most common way a promising system dies, and it is entirely predictable from the model.
 
-## What Is the Single Next Step?
+## What is the single next step?
 
 Rebuild your unit economics with your own labor at market rate. Today. It is free, it takes an afternoon, and it determines whether anything else is worth doing.
 
@@ -650,7 +650,7 @@ This article is general information, not legal advice. Franchises are offered on
     category: 'Education',
     datePublished: '2026-08-18',
     readTime: '10 min read',
-    content: `## What Are Franchise Development Services?
+    content: `## What are franchise development services?
 
 Franchise development services are the professional deliverables that convert an operating business into a franchise system that can be sold and supported legally. Franchise development services explained plainly: feasibility analysis, economic structuring, legal document direction, operations and training documentation, state registration management, and franchise sales infrastructure.
 
@@ -658,7 +658,7 @@ The reason this needs explaining is that the phrase is used to describe very dif
 
 This piece breaks the category into its actual components so you can scope an engagement and know what remains yours.
 
-## What Does Feasibility Analysis Include?
+## What does feasibility analysis include?
 
 Feasibility determines whether the business can be replicated by someone else, at standard, profitably enough to support a royalty.
 
@@ -668,7 +668,7 @@ The deliverable should be a score with a written recommendation, and it must be 
 
 Typical duration is two to six weeks. This gates everything downstream.
 
-## What Does Economic Structuring Cover?
+## What does economic structuring cover?
 
 Every number in your FDD traces back to decisions made here, which is why this precedes legal drafting rather than following it.
 
@@ -676,7 +676,7 @@ Structuring sets the initial franchise fee and what it covers, the royalty rate 
 
 It also builds the franchisor overhead model. That model answers a question founders rarely ask early enough: how many open units are required before royalty revenue covers the cost of supporting them? Development spending is front loaded and royalties arrive slowly. The gap between those two facts is where undercapitalized franchisors fail.
 
-## What Is Included in Legal Document Direction?
+## What is included in legal document direction?
 
 A development firm directs the legal work. It does not perform it.
 
@@ -686,7 +686,7 @@ The division matters. If your consultant claims to prepare your FDD without a fr
 
 Expect six to ten weeks for drafting with a franchise specialist. A generalist commercial attorney will typically cost more overall through longer comment cycles.
 
-## What Goes Into Operations and Training Documentation?
+## What goes into operations and training documentation?
 
 Usually the largest block of hours in any engagement, and the deliverable franchisees consume daily.
 
@@ -696,7 +696,7 @@ The training program covers pre opening modules, hands on training at a company 
 
 One structural point that founders often miss: the manual is incorporated by reference into the franchise agreement, which makes it enforceable. That gives you standing to require compliance and obligates you to keep it accurate. Plan eight to twelve weeks, running parallel to legal drafting.
 
-## What Does Registration Management Involve?
+## What does registration management involve?
 
 Fourteen states require FDD registration before any offer or sale to a resident, and several of those review the document substantively and return comments that must be cleared before an effective date. A further group requires a filing or exemption notice without review. The rest rely on the federal rule alone.
 
@@ -704,7 +704,7 @@ Registration management means preparing and submitting filings, responding to ex
 
 Allow four to twelve weeks depending on which states you enter. Our [state by state guide](/franchise-laws) covers requirements, fees, and regulators.
 
-## What Is Franchise Sales Infrastructure?
+## What is franchise sales infrastructure?
 
 A complete document set with no candidate pipeline is an expensive shelf ornament.
 
@@ -712,19 +712,19 @@ Sales infrastructure includes a franchise development web presence with a clear 
 
 That compliance framework is not optional and is where new franchisors are most exposed. Outside a compliant Item 19, no one on your side may make a financial performance representation, and that includes any broker acting on your behalf. Train it, document the training, audit it.
 
-## What Stays Your Responsibility?
+## What stays your responsibility?
 
 Scope conversations go wrong when this is left implicit.
 
 You keep running the operating business, which is a resourcing problem worth planning for since franchise development consumes founder attention. You make the strategic decisions on fees, territory, and candidate criteria. You engage and pay franchise counsel. You provide clean financials, ideally twelve to eighteen months. You participate in documentation, because your knowledge is the raw material. And you deliver support to franchisees after launch, which no external firm can do for you permanently.
 
-## How Should You Scope and Sequence an Engagement?
+## How should you scope and sequence an engagement?
 
 Scope to business stage rather than to a single fixed template. A two location concept and a fifteen location concept need different depth in every workstream, which is why our [service packages](/packages) come in tiers.
 
 Sequence matters as much as scope. Feasibility first because it feeds everything. Legal and operations in parallel, which is where compressible time lives. Registration when the FDD is final. Sales infrastructure during registration so you can sell on the effective date. That sequencing is [our four phase process](/how-it-works), and realistic end to end timing is six to fourteen months to a first franchisee opening.
 
-## Where Does Brand Work Sit in the Scope?
+## Where does brand work sit in the scope?
 
 Brand is the most commonly dropped item in a development scope, and adding it back late is expensive.
 
@@ -734,7 +734,7 @@ The sequencing is not flexible. Trademark clearance belongs at the very start be
 
 Ask directly whether brand is inside the scope you are buying or assumed to be handled elsewhere. Either answer works. An unexamined assumption does not.
 
-## How Do You Compare Two Proposals?
+## How do you compare two proposals?
 
 Proposals in this category are hard to compare because firms bundle differently. Normalize them against the same questions.
 
@@ -744,7 +744,7 @@ Then ask the question that separates builders from salespeople: when did you las
 
 Finally, be cautious with structures paid primarily on units sold rather than on system quality. Aligned incentives are good. Incentives that reward closing a marginal candidate into a territory you cannot reclaim are not.
 
-## What Should You Do First?
+## What should you do first?
 
 Do not buy services before you have a feasibility answer. Take the [free franchise readiness assessment](/is-my-business-franchisable), get a scored view across profitability, systems, brand, and replicability in about two minutes, then bring twelve to eighteen months of clean financials to a feasibility call.
 
@@ -762,13 +762,13 @@ This article is general information, not legal advice. Franchises are offered on
     category: 'Guide',
     datePublished: '2026-08-20',
     readTime: '11 min read',
-    content: `## How Do I Franchise My Business?
+    content: `## How do I franchise my business?
 
 How do I franchise my business is a question with a real, ordered answer, and the order matters more than any single step. Founders who follow the sequence below reach a first franchisee opening in roughly six to fourteen months. Founders who improvise usually pay twice for the same work.
 
 The process has nine steps. Some run in parallel, which is where schedule is won. None can be skipped without creating a problem that surfaces later at a worse moment.
 
-## Step One: Do the Unit Economics Survive a Transfer?
+## Step one: Do the unit economics survive a transfer?
 
 Rebuild your best location's profit and loss as a stranger would experience it. Price your own labor at market. Remove advantages that do not transfer, including a below market lease, a vendor discount rooted in friendship, and family working under market. Then subtract a royalty of roughly five to seven percent of gross plus a brand fund contribution of one to two percent.
 
@@ -776,7 +776,7 @@ If a competent operator still earns a living on the remainder, proceed. If not, 
 
 Cost: nothing but your time. Duration: an afternoon. This is the highest leverage step in the entire process and it comes first for that reason.
 
-## Step Two: Is the System Documented Enough to Teach?
+## Step two: Is the system documented enough to teach?
 
 Inventory what exists in writing. Sort it into three groups: current and usable, written but stale, and existing only in someone's head.
 
@@ -784,7 +784,7 @@ The third group is your project. The test is whether a competent operator with n
 
 Cost: nothing yet. Duration: a week of honest walkthroughs.
 
-## Step Three: Do You Own the Brand You Intend to License?
+## Step three: Do you own the brand you intend to license?
 
 Start trademark clearance immediately, in parallel with everything else, because it has the longest lead time and the worst failure mode.
 
@@ -794,7 +794,7 @@ Discovering a conflict after fifteen units are open is a system wide rebrand rat
 
 Duration: months, which is why it starts now.
 
-## Step Four: Does Feasibility Confirm It, With a Score?
+## Step four: Does feasibility confirm it, with a score?
 
 Formal feasibility evaluates four pillars: profitability under transferred conditions, systems maturity, brand strength outside its current trade area, and replicability in markets lacking your location's advantages.
 
@@ -802,7 +802,7 @@ The output should be a score and a written recommendation capable of concluding 
 
 Duration: two to six weeks. This gates all spending that follows.
 
-## Step Five: What Is the Economic Structure?
+## Step five: What is the economic structure?
 
 Every figure in the FDD traces to this step, so it precedes drafting.
 
@@ -812,7 +812,7 @@ Then build the franchisor overhead model, which answers how many open units are 
 
 Duration: two to four weeks, and the decisions must then hold. Reopening them mid drafting costs money and time.
 
-## Step Six: Who Drafts the Legal Documents?
+## Step six: Who drafts the legal documents?
 
 A franchise attorney, specifically. Not a capable generalist.
 
@@ -824,7 +824,7 @@ On Item 19: you are never obligated to include a financial performance represent
 
 Duration: six to ten weeks. Cost varies with complexity.
 
-## Step Seven: How Does the System Get Written Down?
+## Step seven: How does the system get written down?
 
 The operations manual runs parallel to legal drafting, and this parallelism is where most compressible time lives.
 
@@ -834,7 +834,7 @@ Because it is incorporated by reference into the franchise agreement, it is enfo
 
 Duration: eight to twelve weeks, in parallel with step six.
 
-## Step Eight: Where Must You Register?
+## Step eight: Where must you register?
 
 Fourteen states require FDD registration before any offer or sale to a resident, and several review the document substantively and return comments that must be cleared before an effective date. Another group requires a filing or exemption notice without review. The rest rely on the federal rule alone.
 
@@ -842,7 +842,7 @@ Registration is per state, annual, and tied to your fiscal year end. Renewal is 
 
 Duration: four to twelve weeks after the FDD is final.
 
-## Step Nine: How Do You Actually Sell a Franchise?
+## Step nine: How do you actually sell a franchise?
 
 Build sales infrastructure during registration so you can sell on the effective date.
 
@@ -850,13 +850,13 @@ You need a development web presence with a clear opportunity page and inquiry ca
 
 Then hold the line on candidate quality. A wrong franchisee damages a market, consumes disproportionate support, and is difficult to remove. An empty territory is cheaper than a bad operator in it.
 
-## Where Do Founders Lose the Most Time?
+## Where do founders lose the most time?
 
 Four places, consistently. Messy financials at the start, which adds weeks before feasibility can even begin. Reopening structural decisions after drafting has started, which triggers redrafting and refiling. Using a non specialist attorney, which lengthens examiner comment cycles. And running the workstreams sequentially instead of in parallel, which alone can add two to three months.
 
 Our [four phase process](/how-it-works) sequences these deliberately, and our [package tiers](/packages) scope depth to business stage.
 
-## What Happens After the First Franchisee Opens?
+## What happens after the first franchisee opens?
 
 Opening the first unit is a milestone, not a finish line. The franchisor business begins the day that door opens.
 
@@ -866,7 +866,7 @@ The first franchisee also becomes something more valuable and more dangerous tha
 
 So over invest in the first three to five units. Be present more than your agreement requires. Fix problems in the system rather than blaming the operator, because early failures are usually documentation gaps rather than effort gaps. What you learn in those units is what makes units six through fifty work.
 
-## How Do You Know When to Slow Down?
+## How do you know when to slow down?
 
 Growth pace is the decision that separates durable systems from ones that stall around unit twenty.
 
@@ -874,7 +874,7 @@ Three signals mean stop selling and consolidate. First, support capacity: a sing
 
 The counterintuitive part is that slowing down usually accelerates the system. Satisfied franchisees validate well, expand into second units, and refer candidates. Dissatisfied ones appear in your outlet data forever. Our [four phase process](/how-it-works) treats scale as a distinct phase for this reason, with its own entry conditions rather than an assumption that selling continues indefinitely.
 
-## What Is the Next Concrete Action?
+## What is the next concrete action?
 
 Complete step one this week. Rebuild your unit economics with your own labor at market rate and a royalty subtracted. It is free and it determines whether steps two through nine are worth starting.
 
@@ -892,13 +892,13 @@ This article is general information, not legal advice. Franchises are offered on
     category: 'Education',
     datePublished: '2026-08-22',
     readTime: '10 min read',
-    content: `## What Is a Franchise Consultant?
+    content: `## What is a franchise consultant?
 
 What is a franchise consultant? The honest answer is that the title describes two opposite jobs, and the industry has never bothered to separate them. One works for people buying a franchise. The other works for companies building one. They sit on opposite sides of the table and are paid by opposite parties.
 
 Sorting out which one you are talking to is not pedantry. It determines whose interests they serve, who pays them, and whether their advice is useful to you.
 
-## What Does a Buy Side Franchise Consultant Do?
+## What does a buy side franchise consultant do?
 
 A buy side franchise consultant, more accurately a franchise broker, helps individuals choose a franchise to purchase.
 
@@ -912,7 +912,7 @@ Two practical questions for any broker: how many brands are in your network, and
 
 Note also that brokers presenting a franchise opportunity are subject to the same restrictions franchisors are. They may not make financial performance representations outside the franchisor's compliant Item 19.
 
-## What Does a Franchisor Side Consultant Do?
+## What does a franchisor side consultant do?
 
 A franchisor side consultant, usually called a franchise development consultant, works for a business owner who wants to franchise their company.
 
@@ -922,7 +922,7 @@ They are paid by the franchisor, on a fixed fee, a retainer with milestones, or 
 
 Full detail on the role is in [what does a franchise development consultant do](/blog/what-does-a-franchise-development-consultant-do).
 
-## How Do They Differ From a Franchise Attorney?
+## How do they differ from a franchise attorney?
 
 Neither type of consultant practices law, and this boundary is worth stating plainly.
 
@@ -932,7 +932,7 @@ A development consultant is not responsible for the legal accuracy of your docum
 
 You will most likely need both. Budget for both.
 
-## Which One Do You Actually Need?
+## Which one do you actually need?
 
 Work out which side of the transaction you are on.
 
@@ -942,7 +942,7 @@ If you want to **franchise your own business**, meaning you own a working compan
 
 If you are genuinely unsure which path fits, that is a strategy question worth answering before hiring anyone.
 
-## When Should You Bring a Development Consultant In?
+## When should you bring a development consultant in?
 
 Earlier than instinct suggests. The natural first call is to a lawyer, but legal drafting depends on commercial decisions that feasibility produces. Drafting an FDD before the fee structure and territory model are settled means paying to redraft, and in registration states it means refiling too.
 
@@ -950,7 +950,7 @@ The right sequence is feasibility, then economic structure, then legal drafting 
 
 The single legitimate exception is trademark clearance, which should start immediately regardless of where you are in the sequence.
 
-## How Do You Evaluate a Development Consultant?
+## How do you evaluate a development consultant?
 
 Ask specifics and listen for specifics.
 
@@ -958,7 +958,7 @@ Have you operated a franchise unit, or only advised on them? Operator experience
 
 The question about negative conclusions is the most revealing. A consultant who has never delivered a not ready finding is a consultant whose feasibility work is decorative.
 
-## What Does Each Type of Consultant Cost?
+## What does each type of consultant cost?
 
 Pricing works completely differently on the two sides, and knowing which model you are in tells you a lot about the incentives.
 
@@ -970,7 +970,7 @@ Franchise counsel bills separately in nearly every arrangement. Budget for it as
 
 Our [package tiers](/packages) are fixed scope by business stage, which makes comparison against other proposals straightforward.
 
-## What Should a Franchisor Side Engagement Deliver?
+## What should a franchisor side engagement deliver?
 
 If you are on the build side, judge a consultant by deliverables rather than by meetings.
 
@@ -978,7 +978,7 @@ A complete engagement produces a scored feasibility conclusion capable of saying
 
 It should also cover [franchise brand development](/franchise-branding), or state plainly that brand sits outside scope so you can assign it elsewhere. Trademark clearance has the longest lead time of anything in the process, and Item 13 depends on the outcome, so an unowned brand workstream is a schedule risk hiding in plain sight.
 
-## What Should You Do Next?
+## What should you do next?
 
 If you are looking to franchise your own business, get a feasibility answer before hiring anyone. Take the [free franchise readiness assessment](/is-my-business-franchisable). Eight questions, about two minutes, scored across profitability, systems, brand, and replicability.
 
@@ -996,7 +996,7 @@ This article is general information, not legal advice. Franchises are offered on
     category: 'Sales',
     datePublished: '2026-08-25',
     readTime: '10 min read',
-    content: `## What Is Franchise Development Marketing?
+    content: `## What is franchise development marketing?
 
 Franchise development marketing is the work of attracting, qualifying, and converting people who want to buy a franchise in your system. It is distinct from the consumer marketing your units run, and confusing the two produces expensive noise.
 
@@ -1004,7 +1004,7 @@ Your unit marketing sells a service to customers in a trade area. Your developme
 
 The most important correction most new franchisors need: the goal is not lead volume. It is qualified candidate volume. A thousand inquiries from people without the capital to close is worse than fifty from people who can, because unqualified leads consume the scarcest resource you have, which is your own time.
 
-## Who Are You Actually Trying to Reach?
+## Who are you actually trying to reach?
 
 Write a candidate profile before you spend a dollar, and make it specific enough to disqualify people.
 
@@ -1014,7 +1014,7 @@ Then write down what disqualifies someone. Founders resist this, but a written d
 
 Our post on [what franchisees look for](/blog/what-franchisees-look-for) covers the other side of this evaluation.
 
-## What Channels Actually Produce Qualified Candidates?
+## What channels actually produce qualified candidates?
 
 Five channels carry most of the volume, and they differ sharply in quality.
 
@@ -1028,7 +1028,7 @@ Five channels carry most of the volume, and they differ sharply in quality.
 
 **Existing franchisees.** Once you have satisfied operators, multi unit expansion from within is often the most efficient growth channel available. A franchisee opening a second unit needs no convincing and no validation.
 
-## What Does the Message Have to Do?
+## What does the message have to do?
 
 Your development marketing has to answer four questions honestly and quickly.
 
@@ -1036,7 +1036,7 @@ What is the business, in terms an outsider understands. What does it cost, state
 
 Two things to avoid. Do not lead with lifestyle imagery and vague freedom language, which attracts people shopping for a feeling rather than a business. And do not oversell. A candidate who signs based on an inflated picture becomes a dissatisfied franchisee, and dissatisfied franchisees appear in Item 20 outlet data and speak to every future candidate during validation.
 
-## What Are the Compliance Rules?
+## What are the compliance rules?
 
 This is the part that creates real legal exposure, and it applies to every channel, every conversation, and every person acting on your behalf.
 
@@ -1048,7 +1048,7 @@ This is the part that creates real legal exposure, and it applies to every chann
 
 **Everyone is covered.** Your marketing copy, your discovery day script, your sales team, and any broker representing you. Train them, document the training, and audit it. Our [franchise sales compliance guide](/blog/franchise-sales-compliance) goes deeper, and compliance framework construction is part of our [franchise development services](/services).
 
-## How Should the Funnel Be Structured?
+## How should the funnel be structured?
 
 A working franchise development funnel has six stages, and each one should narrow.
 
@@ -1056,13 +1056,13 @@ Inquiry captures interest with minimal friction. Qualification screens against y
 
 Measure conversion between each stage. If inquiries are plentiful but qualification conversion is poor, your targeting is wrong. If discovery days rarely close, either your qualification is too loose or something in the offer is not landing.
 
-## What Does Good Performance Look Like?
+## What does good performance look like?
 
 Track cost per qualified candidate rather than cost per lead, since the second number flatters channels that produce volume without substance. Track conversion at each funnel stage. Track time from inquiry to signed agreement, which for most systems runs several months. Track source quality by measuring which channels produce franchisees who succeed, not merely franchisees who sign.
 
 That last metric takes years to mature and is the most valuable one you will ever have.
 
-## How Much Does Brand Strength Affect Recruitment?
+## How much does brand strength affect recruitment?
 
 Development marketing is much easier when the brand is already doing work, and much more expensive when it is not.
 
@@ -1072,7 +1072,7 @@ This is why [franchise brand development](/franchise-branding) is a development 
 
 There is also a substantive point candidates are testing. They are trying to determine whether the brand will make them money that they could not make independently. If your units look and feel interchangeable with any independent operator in the category, a sophisticated candidate will conclude, correctly, that they are being asked to pay a royalty for very little.
 
-## How Do You Know If You Are Ready to Market at All?
+## How do you know if you are ready to market at all?
 
 Spending on development marketing before the system can support franchisees is the most reversible looking mistake that is not actually reversible.
 
@@ -1082,7 +1082,7 @@ If any of those is missing, the responsible move is to delay marketing rather th
 
 Score your readiness against [the Forge Franchise Readiness Method](/readiness-method) before you build a pipeline you cannot serve.
 
-## What Should You Do First?
+## What should you do first?
 
 Write your candidate profile and your disqualification criteria before you spend anything on lead generation. Most wasted development marketing budget traces back to a founder who never defined who they were trying to reach.
 

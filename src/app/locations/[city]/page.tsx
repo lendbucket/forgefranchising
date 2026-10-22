@@ -1,3 +1,4 @@
+import { sentenceCase } from '@/lib/text'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
@@ -199,7 +200,7 @@ export default async function CityPage({ params }: Props) {
                           />
                         </svg>
                         <div>
-                          <h4 className="heading-4 text-graphite">{industry}</h4>
+                          <h4 className="heading-4 text-graphite">{sentenceCase(industry)}</h4>
                           <p className="text-sm text-steel leading-relaxed mt-2">
                             High demand in the {city.metroArea} market
                           </p>

@@ -8,7 +8,7 @@ export const blogPosts11to20 = [
     category: 'Legal',
     datePublished: '2026-05-10',
     readTime: '12 min read',
-    content: `## The FDD Is Done. Now You Need Permission to Use It.
+    content: `## The FDD is done. Now you need permission to use it.
 
 Most founders think the hard part is over once the Franchise Disclosure Document is written. They assume that once the FDD exists, they can start selling franchises anywhere. That assumption can cost you tens of thousands of dollars in fines and, in some cases, rescission of every deal you close.
 
@@ -16,7 +16,7 @@ The reality: the United States does not have a single, unified franchise registr
 
 If you skip registration in a state that requires it, your franchisees can unwind the deal. They get their money back. You eat the legal fees. And your brand reputation takes a hit before it even gets started.
 
-## The 14 Registration States
+## The 14 registration states
 
 These states require full franchise registration before you can offer or sell a franchise to a resident of that state. The key word is "offer." Even marketing to prospects in these states can trigger the registration requirement.
 
@@ -34,7 +34,7 @@ These states require full franchise registration before you can offer or sell a 
 
 The point is this: each state reviews independently. Getting registered in California does not help you in New York. You file separately in every registration state where you want to sell.
 
-## Filing and Notice States
+## Filing and notice states
 
 Eight states require a filing or notice but not a full registration review. These are sometimes called "filing states."
 
@@ -42,13 +42,13 @@ Eight states require a filing or notice but not a full registration review. Thes
 
 Filing states are generally faster and less expensive than registration states. But "less expensive" does not mean "optional." If you skip the filing, you are still in violation, and your franchise agreements can still be challenged.
 
-## The Remaining States
+## The remaining states
 
 The rest of the country operates under the FTC Franchise Rule alone. No state registration. No state filing. You still need a compliant FDD, and you still need to deliver it to prospects on the required timeline (at least 14 calendar days before any payment or signing). But there is no state examiner reviewing your document.
 
 This is why many new franchisors start selling in non-registration states first. It is faster and cheaper to get units on the ground in Texas, Georgia, or Arizona than in California or New York. Smart franchisors use that early traction to fund the registrations they need later.
 
-## The Annual Renewal Problem
+## The annual renewal problem
 
 Here is something that catches first-time franchisors off guard. Registration is not a one-time event. Every registration state requires an annual renewal of your FDD, typically tied to the end of your fiscal year. You generally have 90 to 120 days after your fiscal year ends to update and refile.
 
@@ -56,7 +56,7 @@ That means if you are registered in 10 states, you are managing 10 renewal filin
 
 Miss a renewal? Your registration lapses. You cannot legally sell in that state until it is reinstated. This is a real operational burden that you need to budget for in both time and money.
 
-## The Cost of Registration
+## The cost of registration
 
 Let us talk numbers. Filing fees vary by state, ranging from a few hundred dollars in some states to over $700 in others. But the real cost is your franchise attorney's time. Preparing state-specific amendments, responding to examiner comments, and managing the back-and-forth can cost $1,500 to $4,000 per state for initial registration.
 
@@ -64,13 +64,13 @@ For a new franchisor registering in all 14 registration states plus the filing s
 
 This is why phased registration is a legitimate strategy. Register in the states where you have the most demand first. Expand your registrations as your franchise program grows and your revenue supports it.
 
-## The "Offer" Trap
+## The "offer" trap
 
 One of the most misunderstood aspects of franchise registration law is the definition of "offer." You do not have to close a sale to trigger the requirement. Advertising, attending a trade show, responding to an inquiry from a prospect in a registration state, or even having a website that targets residents of that state can be considered an offer.
 
 This is why your franchise marketing materials, your website, and your lead generation campaigns all need to be reviewed with registration status in mind. Many franchisors include disclaimers on their websites stating that franchises are not being offered in states where registration is required but not yet completed.
 
-## Exemptions Worth Knowing
+## Exemptions Worth knowing
 
 Some registration states offer exemptions for certain types of franchise sales. The most common exemptions include:
 
@@ -82,7 +82,7 @@ Some registration states offer exemptions for certain types of franchise sales. 
 
 These exemptions are state-specific and come with their own paperwork. Do not try to self-diagnose whether an exemption applies. Let your franchise attorney make that call.
 
-## Building Your Registration Strategy
+## Building your registration strategy
 
 Here is how smart franchisors approach this:
 
@@ -94,7 +94,7 @@ Here is how smart franchisors approach this:
 
 **Phase 4.** Achieve full registration as your unit count and royalty revenue can support the annual cost of maintaining registrations in all 14 states.
 
-## The Bottom Line
+## The bottom line
 
 Franchise registration is not optional. It is not a suggestion. It is a legal requirement that varies by state, and the penalties for getting it wrong range from fines to full rescission of your franchise sales.
 
@@ -110,7 +110,7 @@ Budget for it. Plan for it. And work with a franchise attorney who has filed in 
     category: 'Operations',
     datePublished: '2026-05-12',
     readTime: '13 min read',
-    content: `## Your Operations Manual Is Your Brand Insurance Policy
+    content: `## Your operations manual is your brand insurance policy
 
 Every franchise system lives or dies on consistency. A customer walking into unit number 47 should have the same experience as a customer walking into unit number 1. The operations manual is how you make that happen. It is the single most important document in your franchise system after the FDD.
 
@@ -118,7 +118,7 @@ But most founders treat it like an afterthought. They throw together a few SOPs,
 
 A real operations manual is not a formality. It is the document your franchise attorney will point to in a dispute. It is the training tool your support team uses daily. And it is the brand standard that gives you the legal right to enforce quality across every location.
 
-## What Goes In an Operations Manual
+## What goes in an operations manual
 
 The manual needs to cover every aspect of running the business. Not vaguely. Specifically. Here are the core sections:
 
@@ -138,7 +138,7 @@ The manual needs to cover every aspect of running the business. Not vaguely. Spe
 
 **Compliance.** Health and safety requirements, ADA compliance, industry-specific regulations, required licenses and permits.
 
-## The Level of Detail That Matters
+## The level of detail that matters
 
 Here is where most operations manuals fail. They stay at the 30,000-foot level. "Maintain a clean facility" is not an operations manual entry. "Mop all hard-surface floors with the approved cleaning solution (see Vendor List, Section 12) every evening after close, using the figure-eight pattern described in Training Module 4" is an operations manual entry.
 
@@ -148,7 +148,7 @@ First, it actually works. New franchisees, especially those who have never run t
 
 Second, it protects you legally. If a franchisee violates brand standards and you need to issue a default notice or terminate the agreement, your ability to enforce depends on whether the standard was clearly documented. Vague standards are nearly impossible to enforce. Specific, written standards that the franchisee acknowledged receiving give you solid ground.
 
-## Format: Digital, Searchable, and Version-Controlled
+## Format: Digital, searchable, and version-controlled
 
 The days of handing franchisees a 400-page binder are over. Modern operations manuals should be digital, searchable, and easy to update. Here is why.
 
@@ -160,7 +160,7 @@ The days of handing franchisees a 400-page binder are over. Modern operations ma
 
 Several franchise-specific platforms exist for hosting digital operations manuals. FranConnect, Trainual, and similar tools let you organize content by section, track completion, and manage updates. Some franchisors build custom solutions. The format matters less than the discipline of keeping it current.
 
-## The Legal Connection
+## The legal connection
 
 Your FDD references the operations manual. Item 11 of the FDD specifically describes the franchisor's obligations, and Item 16 covers restrictions on what the franchisee can sell or how they must operate. Both of these sections point back to the operations manual.
 
@@ -168,7 +168,7 @@ This creates a legal framework. The franchise agreement gives you the right to s
 
 If you ever need to enforce compliance (and you will), this chain of documentation is what gives your enforcement teeth. A franchisor who says "we told them how to do it" loses. A franchisor who can produce a documented standard, a signed acknowledgment, and a record of training wins.
 
-## Writing the Manual: Process, Not Inspiration
+## Writing the manual: Process, not inspiration
 
 Do not sit down and try to write the entire manual from memory. That approach produces gaps. Instead, use this process:
 
@@ -184,7 +184,7 @@ Do not sit down and try to write the entire manual from memory. That approach pr
 
 **Step 6: Test it.** Before you hand the manual to your first franchisee, have someone unfamiliar with your business try to follow it. Their confusion points are your revision opportunities.
 
-## The Joint Employer Risk
+## The joint employer risk
 
 This deserves its own section because it trips up so many franchisors. The operations manual tells franchisees how to run the business. But if it goes too far in dictating how they manage their employees (scheduling, pay rates, hiring and firing decisions), you risk being classified as a joint employer of their staff.
 
@@ -194,7 +194,7 @@ The rule of thumb: you can set standards for the customer experience. You can re
 
 Your franchise attorney will help you draw these lines. Take their advice seriously.
 
-## Keeping the Manual Alive
+## Keeping the manual alive
 
 The biggest mistake franchisors make with operations manuals is treating them as a launch document instead of a living system. Your business will change. Regulations will change. Customer expectations will change. The manual has to change with them.
 
@@ -202,7 +202,7 @@ Build a quarterly review cycle. Every 90 days, review one major section of the m
 
 Track acknowledgments. When you push an update, require franchisees to confirm they have read and understood the changes. This is not bureaucracy. It is documentation that protects your system.
 
-## The Competitive Advantage Nobody Talks About
+## The competitive advantage nobody talks about
 
 Here is something most franchise consultants will not tell you. The quality of your operations manual is one of the first things a sophisticated multi-unit franchisee evaluates before buying into a system. Experienced operators know that a thin, vague manual signals a franchisor who has not done the work. A comprehensive, well-organized, regularly updated manual signals a franchisor who takes the business seriously.
 
@@ -220,13 +220,13 @@ For a deeper look at how the operations manual connects to your overall franchis
     category: 'Finance',
     datePublished: '2026-05-14',
     readTime: '14 min read',
-    content: `## The Question Every Founder Asks First
+    content: `## The question every founder asks first
 
 "How do I actually make money as a franchisor?" It is the first thing business owners want to know when they consider franchising. And the answer is more nuanced than most people expect.
 
 Franchisors generate revenue from multiple streams. The initial franchise fee gets the headlines, but it is rarely where the real money comes from. Ongoing royalties, advertising fund contributions, product markups, technology fees, and supplier rebates all play a role. Understanding how each stream works, and how they interact, is critical to building a franchise model that is profitable for both you and your franchisees.
 
-## The Initial Franchise Fee
+## The initial franchise fee
 
 This is the upfront payment a franchisee makes when they sign the franchise agreement. It covers the cost of onboarding a new franchisee: training, site selection support, initial marketing guidance, and access to your brand and systems.
 
@@ -236,7 +236,7 @@ Here is the critical point most new franchisors miss: the initial franchise fee 
 
 If your franchise model depends on initial fees for profitability, you have a problem. That model only works if you are constantly selling new units. The moment sales slow down, your revenue disappears. Sustainable franchise systems are built on recurring revenue.
 
-## Royalties: The Engine of the Business
+## Royalties: The engine of the business
 
 Royalties are the ongoing payments franchisees make to the franchisor, usually calculated as a percentage of gross revenue. This is where franchisors build real, sustainable businesses.
 
@@ -250,7 +250,7 @@ The most common royalty structure is a flat percentage of gross sales, typically
 
 **Graduated royalties.** Some systems use a sliding scale where the royalty percentage decreases as revenue increases. For example, 6% on the first $500,000 in annual revenue, 5% on the next $500,000, and 4% on everything above $1 million. This rewards high-performing franchisees and incentivizes growth.
 
-## The Brand or Advertising Fund
+## The brand or advertising fund
 
 Most franchise systems require franchisees to contribute to a brand fund (sometimes called an advertising fund or marketing fund). This is separate from royalties and typically runs 1% to 3% of gross revenue.
 
@@ -260,7 +260,7 @@ Transparency matters enormously here. Franchisees pay into this fund, and they w
 
 The FDD requires you to disclose how the brand fund works, how much you collect, and how it was spent in the prior fiscal year. If you are using brand fund money to cover your own overhead, franchisees will find out, and it will destroy trust.
 
-## Technology Fees
+## Technology fees
 
 This is a revenue stream that has become increasingly common. Franchisors provide proprietary software, POS systems, CRM platforms, or other technology tools and charge franchisees a monthly technology fee to access them.
 
@@ -268,7 +268,7 @@ Technology fees range widely. Some franchisors charge $200 to $500 per month for
 
 The key is that the technology needs to deliver genuine value. If franchisees feel they are paying $400 a month for software they could replace with a $50 subscription, you will face pushback and resentment. Build or curate technology that actually makes franchisees more efficient or more profitable, and the fee becomes easy to justify.
 
-## Supplier Rebates and Preferred Vendor Programs
+## Supplier rebates and preferred vendor programs
 
 When a franchise system reaches meaningful scale, suppliers will offer volume-based rebates and preferred pricing in exchange for being the approved or required vendor for the system. These rebates flow to the franchisor.
 
@@ -276,17 +276,17 @@ This is a legitimate and common revenue stream, but it must be disclosed in the 
 
 Some franchisors pass rebates through to franchisees. Others retain them as revenue. The approach you choose affects franchisee satisfaction and should be decided intentionally, not by accident.
 
-## Transfer Fees
+## Transfer fees
 
 When a franchisee sells their business to a new owner, the franchisor typically charges a transfer fee. This covers the cost of vetting the new buyer, providing training, and processing the ownership change. Transfer fees typically range from $5,000 to $15,000.
 
 Transfer fees are not a major revenue driver in the early years of a franchise system. But as the system matures and resales become more common, they become a steady secondary stream.
 
-## Renewal Fees
+## Renewal fees
 
 Franchise agreements have a defined term, usually 5 to 10 years. When a franchisee renews, the franchisor may charge a renewal fee. This is typically smaller than the initial franchise fee and covers the administrative cost of extending the agreement and any updated training requirements.
 
-## Building a Fee Structure That Works
+## Building a fee structure that works
 
 Here is where most new franchisors go wrong. They either set fees too high (making the unit economics unattractive to prospective franchisees) or too low (making the franchisor unprofitable even with dozens of units open).
 
@@ -298,7 +298,7 @@ The math has to work from both sides. Start with the franchisee's perspective:
 
 **Step 3.** Now model the franchisor's side. How many units do you need at your proposed royalty rate to cover your overhead (staff, legal, accounting, technology, marketing, compliance)? Most franchisors need 20 to 40 open and operating units before the royalty stream covers all franchisor expenses. Plan for that runway.
 
-## The Profitability Timeline
+## The profitability timeline
 
 New franchisors need to understand this reality: you will likely lose money for the first two to three years. The cost of building the franchise infrastructure, registering the FDD, onboarding early franchisees, and supporting new locations exceeds what you collect in fees and royalties.
 
@@ -308,7 +308,7 @@ Initial franchise fees help offset onboarding costs. Royalties build slowly as u
 
 After that, every new unit is incremental profit. This is why successful franchise systems are so valuable. The marginal cost of adding unit number 50 is much lower than the cost of adding unit number 5. And the royalty stream from unit number 50 flows to a franchisor that has already covered its fixed costs.
 
-## What the Best Franchisors Do Differently
+## What the best franchisors do differently
 
 The most successful franchise systems treat their fee structure as a value exchange, not a tax. Every dollar a franchisee pays should come back to them in the form of brand value, operational support, technology, marketing, and purchasing power.
 
@@ -325,13 +325,13 @@ Set your fees with that principle in mind, and the revenue will follow.`,
     category: 'Sales',
     datePublished: '2026-05-16',
     readTime: '13 min read',
-    content: `## Your First Franchisees Will Define Your Brand
+    content: `## Your first franchisees will define your brand
 
 The first five franchisees you bring into your system will shape everything that follows. They will be your case studies, your references, your proof of concept. If they succeed, you have momentum. If they fail, you have a credibility problem that takes years to recover from.
 
 This is why recruiting and qualifying franchisees is not the same as selling a product. You are not trying to close anyone who has a checkbook. You are selecting business partners who will carry your [franchise brand](/franchise-branding) into new markets. The quality of that selection process determines the trajectory of your entire franchise system.
 
-## Where Franchise Leads Come From
+## Where franchise leads come from
 
 Before you can qualify anyone, you need a pipeline. Here are the channels that actually produce franchise leads, ranked roughly by quality and cost.
 
@@ -347,7 +347,7 @@ Before you can qualify anyone, you need a pipeline. Here are the channels that a
 
 **Social media and content marketing.** Building thought leadership around your concept attracts candidates who resonate with your brand story. This is a slower channel but produces highly aligned leads.
 
-## The Franchise Sales Process
+## The franchise sales process
 
 Selling a franchise is not like selling a widget. It is a consultative process that typically takes 60 to 120 days from first contact to a signed agreement. Here is what a healthy process looks like:
 
@@ -363,7 +363,7 @@ Selling a franchise is not like selling a widget. It is a consultative process t
 
 **Stage 6: Approval and signing.** After Discovery Day, you make a mutual decision. You decide whether to approve the candidate, and the candidate decides whether to move forward. If both sides say yes, you execute the franchise agreement.
 
-## Qualifying: The Part Most New Franchisors Get Wrong
+## Qualifying: The part most new franchisors get wrong
 
 The temptation for new franchisors is to approve everyone who can write a check. Resist this with everything you have. One bad franchisee in a five-unit system is a 20% failure rate. That number will haunt you in franchise sales conversations for years.
 
@@ -381,7 +381,7 @@ A good rule of thumb: the prospect should have liquid capital equal to at least 
 
 **Territory commitment.** Is the prospect interested in the market where you have available territory? If they want a territory you have already assigned or a market that does not make strategic sense, it is not a fit regardless of how qualified they are.
 
-## Red Flags That Should Stop the Process
+## Red flags that should stop the process
 
 After reviewing hundreds of franchise candidates over the years, certain patterns predict problems. Watch for these:
 
@@ -395,7 +395,7 @@ After reviewing hundreds of franchise candidates over the years, certain pattern
 
 **The prospect who has never visited your business.** Someone willing to invest $200,000 or more without seeing the operation in person is either reckless with money or not serious about operating the business.
 
-## Setting Up Your Franchise Sales Infrastructure
+## Setting up your franchise sales infrastructure
 
 Even before your first lead comes in, you need basic infrastructure:
 
@@ -407,7 +407,7 @@ Even before your first lead comes in, you need basic infrastructure:
 
 **Compliance tracking.** You must be able to prove that every prospect received the FDD at least 14 days before signing. Track delivery dates meticulously.
 
-## The Numbers You Need to Know
+## The numbers you need to know
 
 Franchise sales is a funnel, and the conversion rates at each stage matter.
 
@@ -415,7 +415,7 @@ A healthy franchise sales funnel converts roughly 1% to 3% of raw leads into sig
 
 Understanding these numbers helps you plan your lead generation budget. If you need to sell 5 units in year one and your close rate is 2%, you need approximately 250 qualified leads. Work backward from there to determine your marketing spend.
 
-## Your First Franchisees Are Partners, Not Customers
+## Your first franchisees are partners, not customers
 
 Approach franchise recruitment with the mindset that you are building a team, not making sales. Your first franchisees are taking a bet on an unproven system. They deserve your best support, your honest assessment of the opportunity, and your commitment to their success.
 
@@ -431,13 +431,13 @@ In return, they give you something no amount of money can buy: proof that your f
     category: 'Education',
     datePublished: '2026-05-18',
     readTime: '12 min read',
-    content: `## Three Ways to Sell Franchises. Each Changes Your Business.
+    content: `## Three ways to sell franchises. Each changes your business.
 
 When you franchise your business, you are not just deciding whether to franchise. You are deciding how to franchise. The structure you choose for awarding franchise rights affects your growth speed, your control over the brand, the type of franchisee you attract, and how much capital flows into your system.
 
 The three primary structures are single-unit franchising, multi-unit franchising, and area development agreements. Most mature franchise systems use a combination of all three. But as a new franchisor, understanding the differences is essential to building a growth strategy that actually works.
 
-## Single-Unit Franchising: One Location, One Agreement
+## Single-unit franchising: One location, one agreement
 
 This is the simplest and most common franchise structure. A franchisee signs an agreement to open and operate one location in a defined territory. One agreement, one unit, one fee.
 
@@ -461,7 +461,7 @@ More relationships to manage. Each single-unit franchisee is a separate relation
 
 Most new franchisors should start here. Single-unit agreements let you prove the model, build your support capabilities, and learn what works before committing to more complex structures. Your first 5 to 10 franchise agreements should probably be single-unit deals unless you have a compelling reason to go bigger.
 
-## Multi-Unit Franchising: One Franchisee, Multiple Locations
+## Multi-unit franchising: One franchisee, multiple locations
 
 In a multi-unit franchise arrangement, a single franchisee commits to opening multiple locations within a defined timeframe. The franchisee signs a development agreement (sometimes called a multi-unit development agreement) that outlines how many units they will open and the schedule for opening them.
 
@@ -491,7 +491,7 @@ Less control over who actually runs each location. Multi-unit franchisees typica
 
 Once your franchise system has proven itself with 10 to 15 single-unit locations, multi-unit agreements become a powerful growth accelerator. They are particularly effective in markets where you want to establish a meaningful presence quickly.
 
-## Area Development Agreements: Exclusive Rights to a Region
+## Area development agreements: Exclusive rights to a region
 
 Area development agreements (sometimes called ADAs) grant a franchisee the exclusive right to develop a defined geographic area with a specified number of units over a specified timeframe. This is similar to multi-unit franchising but typically covers a larger territory and includes exclusivity protections.
 
@@ -521,7 +521,7 @@ Higher stakes if the relationship goes wrong. Losing an area developer who contr
 
 ADAs are best suited for franchise systems that have a proven track record, strong unit economics, and the support infrastructure to manage large-scale development. Most franchisors should have at least 20 to 30 operating units before entering into their first area development agreement. The risks of granting territorial exclusivity to an unproven partner are simply too high in the early stages.
 
-## Master Franchising: A Fourth Option for Specific Situations
+## Master franchising: A fourth option for specific situations
 
 While not as common domestically, master franchising deserves a brief mention. A master franchisee buys the right to sub-franchise within a defined territory. They essentially become a mini-franchisor, responsible for recruiting, training, and supporting franchisees within their region.
 
@@ -529,7 +529,7 @@ This model is most common in international franchising, where a master franchise
 
 Domestically, master franchise agreements are less common and carry significant risk. You are essentially handing control of your brand in a market to someone else. The quality of franchisees they recruit reflects on you, but you have limited oversight.
 
-## Choosing Your Strategy
+## Choosing your strategy
 
 Here is a practical framework for deciding which structures to use:
 
@@ -541,7 +541,7 @@ Here is a practical framework for deciding which structures to use:
 
 **Pricing each structure.** Your single-unit franchise fee is the baseline. Multi-unit agreements typically offer a 10% to 25% discount on the franchise fee for the second and subsequent units. Area development agreements may offer a larger discount, offset by the significant development fee paid upfront.
 
-## One Size Does Not Fit All
+## One size does not fit all
 
 The franchise systems that scale most effectively use a blended approach. They award single-unit agreements in smaller markets, multi-unit agreements in mid-size markets, and area development agreements in major metros. The structure matches the market opportunity and the franchisee's capabilities.
 
@@ -556,13 +556,13 @@ Your job as a franchisor is to match the right structure to the right candidate 
     category: 'Education',
     datePublished: '2026-05-20',
     readTime: '14 min read',
-    content: `## Most Franchise Systems Fail. Here Is Why.
+    content: `## Most franchise systems fail. Here is why.
 
 There is a hard truth that franchise consultants rarely lead with: a significant number of new franchise systems never reach 20 units. Many never reach 10. The reasons vary, but the mistakes are predictable. They follow patterns that have repeated across industries and decades.
 
 This is not meant to discourage you from franchising. It is meant to arm you with the knowledge to avoid the mistakes that sink most systems before they gain traction. Every mistake on this list has cost real founders real money. Some lost hundreds of thousands of dollars. Others lost their original business entirely.
 
-## Mistake 1: Franchising a Business That Is Not Ready
+## Mistake 1: Franchising a business that is not ready
 
 This is the most fundamental error, and it happens constantly. A business owner has a successful single location and decides to franchise based on that success alone. But a business that works with the owner behind the counter every day is not the same as a business that works with a franchisee running it from day one.
 
@@ -570,7 +570,7 @@ Before you franchise, your business needs to be systematized. That means documen
 
 If your business depends on your personal relationships, your specific expertise, or your daily presence to function, it is not ready for franchising. Fix that first.
 
-## Mistake 2: Choosing the Wrong Franchise Attorney
+## Mistake 2: Choosing the wrong franchise attorney
 
 Not all franchise attorneys are created equal. Some attorneys practice franchise law as one of 15 specialties. Others have spent their entire careers in franchising and know every state examiner by name.
 
@@ -578,7 +578,7 @@ The difference matters enormously. A generalist attorney might produce an FDD th
 
 The cost difference between a mediocre franchise attorney and a great one is a few thousand dollars. The cost difference in outcomes can be hundreds of thousands. This is not the place to bargain hunt.
 
-## Mistake 3: Undercapitalizing the Franchise Launch
+## Mistake 3: Undercapitalizing the franchise launch
 
 Franchising a business requires significant upfront investment. The FDD, operations manual, legal registrations, franchise sales infrastructure, marketing materials, and initial support staff all require capital before your first franchisee signs.
 
@@ -586,7 +586,7 @@ Most new franchisors need $150,000 to $350,000 to properly launch a franchise pr
 
 The mistake is launching a franchise program with $50,000 and hoping franchise fees from early sales will fund the rest. This creates a cash flow trap. You sell a franchise, collect the fee, spend it all on onboarding that franchisee, and have nothing left to fund the next sale or support the existing one. Franchisees feel the strain. Quality suffers. The system stalls.
 
-## Mistake 4: Selling Franchises to the Wrong People
+## Mistake 4: Selling franchises to the wrong people
 
 We covered franchisee qualification in depth in another post, but it belongs on this list because the consequences are so severe. Your first franchisees are your proof of concept. If they fail, every prospective franchisee who calls them (and they will call, because they are listed in your FDD) hears a failure story.
 
@@ -594,7 +594,7 @@ The pressure to close deals, especially early on, leads many franchisors to lowe
 
 The discipline to say no to a $40,000 franchise fee today can save your entire system tomorrow. Treat franchisee selection like hiring for the most important position in your company, because that is exactly what it is.
 
-## Mistake 5: Weak or Nonexistent Franchisee Support
+## Mistake 5: Weak or nonexistent franchisee support
 
 Selling a franchise is not the end of the transaction. It is the beginning. The real work starts after the agreement is signed: helping the franchisee find a location, build out the space, hire a team, launch marketing, and open the doors.
 
@@ -602,7 +602,7 @@ Franchisors who treat franchise sales as the product (collect the fee and move o
 
 The best franchise systems invest heavily in support. They have dedicated field support staff, regular check-in calls, performance benchmarking tools, and ongoing training programs. This costs money, which is why undercapitalization (Mistake 3) compounds this problem.
 
-## Mistake 6: Pricing the Franchise Wrong
+## Mistake 6: Pricing the franchise wrong
 
 Setting your franchise fee, royalty rate, and other financial terms is a balancing act. Too high, and franchisees cannot make money, which means they cannot sustain the business and your royalty stream dries up. Too low, and the franchisor cannot afford to provide meaningful support.
 
@@ -610,13 +610,13 @@ The most common pricing mistake is setting royalties too low to seem attractive 
 
 Run the numbers from both sides before you set your pricing. Model the franchisee P&L at various revenue levels and make sure it works after all fees. Model the franchisor P&L at 10, 20, and 50 units and make sure the royalty rate supports the infrastructure needed to serve those franchisees.
 
-## Mistake 7: Ignoring the Operations Manual
+## Mistake 7: Ignoring the operations manual
 
 We dedicated an entire post to the operations manual, and still, most new franchisors treat it as a box to check rather than a living document. The consequences show up six months after the first franchise opens, when the franchisee has drifted from brand standards and the franchisor has no documented basis for enforcement.
 
 The operations manual is not just a training tool. It is a legal document that defines the standards your franchise agreement gives you the right to enforce. Without it, your enforcement rights are theoretical.
 
-## Mistake 8: Growing Too Fast
+## Mistake 8: Growing too fast
 
 This sounds counterintuitive. Is the whole point of franchising not to grow? Yes. But growth that outpaces your ability to support it is worse than slow growth.
 
@@ -624,7 +624,7 @@ Here is what happens when franchisors sell too many units too quickly. Training 
 
 A franchise system that opens 5 well-supported units per year will outperform a system that opens 20 poorly supported units per year. Always. The well-supported units generate better revenue, have higher satisfaction, and create positive references that fuel future sales. The poorly supported units create problems that take years to resolve.
 
-## Mistake 9: Failing to Enforce Brand Standards
+## Mistake 9: Failing to enforce brand standards
 
 The first time a franchisee deviates from brand standards and you let it slide, you set a precedent. The second time, it becomes the norm. By the third time, you have lost control.
 
@@ -632,7 +632,7 @@ Enforcement is uncomfortable, especially with your early franchisees who took a 
 
 Build a compliance monitoring system from day one. Conduct regular audits. Document violations and follow your escalation process. Most issues can be resolved with a conversation. Some require formal notices. A very small percentage require termination. But the framework has to exist before you need it.
 
-## Mistake 10: No Exit Strategy or Long-Term Vision
+## Mistake 10: No exit strategy or long-term vision
 
 Some founders franchise their business without a clear vision for where the franchise system is headed. They have no target unit count, no geographic strategy, no plan for what happens when they want to step back from daily management.
 
@@ -640,7 +640,7 @@ This lack of vision leads to reactive decision-making. Territories get awarded h
 
 Before you sell your first franchise, answer these questions: What does this system look like at 25 units? At 100? Who is running it day to day? What is the geographic footprint? Is the end goal an acquisition by a larger franchise organization, a private equity recapitalization, or a lifestyle business that generates passive income? Your answers should shape every decision you make from day one.
 
-## The Common Thread
+## The common thread
 
 Every mistake on this list shares a root cause: prioritizing speed over quality. Speed of launch. Speed of sales. Speed of growth. The franchisors who succeed are the ones who do the hard, slow work of building systems, selecting the right partners, and supporting them relentlessly.
 
@@ -658,13 +658,13 @@ One of the most common mistakes is underinvesting in the brand. Your [franchise 
     category: 'Legal',
     datePublished: '2026-05-22',
     readTime: '12 min read',
-    content: `## Your Brand Is the Product. Protect It Accordingly.
+    content: `## Your brand is the product. Protect it accordingly.
 
 When you franchise, you are not selling hamburgers or haircuts or home cleanings. You are licensing a brand. The franchisee pays for the right to use your name, your logo, your systems, and your reputation. If those assets are not legally protected, you are selling something you do not fully own.
 
 Trademark protection is not optional in franchising. It is foundational. Your FDD includes an entire section (Item 13) dedicated to your trademarks. State examiners will review your trademark status. Franchisees and their attorneys will scrutinize it. And if a competitor starts using a similar name or logo, your ability to stop them depends entirely on the protections you have put in place.
 
-## Trademark Basics for Franchise Founders
+## Trademark basics for franchise founders
 
 A trademark is a word, phrase, symbol, design, or combination that identifies and distinguishes your goods or services from those of others. Your business name, your logo, your tagline, and even distinctive elements of your trade dress (the overall visual appearance of your business) can all be trademarked.
 
@@ -674,7 +674,7 @@ There are two levels of trademark protection:
 
 **Federal trademark registration.** Registering your mark with the United States Patent and Trademark Office (USPTO) provides nationwide protection, creates a legal presumption of ownership, and gives you access to federal courts for enforcement. Federal registration is what you need before franchising.
 
-## The Trademark Search: Do This First
+## The trademark search: Do this first
 
 Before you file a trademark application, conduct a comprehensive trademark search. This is not just typing your business name into the USPTO database (though that is a start). A proper trademark search includes:
 
@@ -688,7 +688,7 @@ Before you file a trademark application, conduct a comprehensive trademark searc
 
 Professional trademark search firms charge $500 to $1,500 for a comprehensive search with a legal opinion. This is money well spent. Discovering a conflict after you have spent $50,000 on franchise development is a nightmare.
 
-## Filing Your Federal Trademark Application
+## Filing your federal trademark application
 
 Once the search comes back clean (or clean enough to proceed with acceptable risk), file your trademark application with the USPTO. Here is what to know:
 
@@ -704,7 +704,7 @@ Once the search comes back clean (or clean enough to proceed with acceptable ris
 
 Start this process early. Do not wait until your FDD is being drafted to file your trademark application. The registration process takes longer than most people expect, and having a registered mark (or at least a pending application) strengthens your FDD.
 
-## What to Trademark Before Franchising
+## What to trademark before franchising
 
 At minimum, you should seek federal registration for:
 
@@ -716,7 +716,7 @@ At minimum, you should seek federal registration for:
 
 **Consider also:** proprietary product names, proprietary process names, distinctive design elements, and any other brand identifiers that are central to your franchise concept.
 
-## Item 13 of the FDD: What Examiners Look For
+## Item 13 of the FDD: What examiners look for
 
 Item 13 of the Franchise Disclosure Document requires detailed disclosure about your trademarks. Here is what must be included:
 
@@ -724,7 +724,7 @@ The principal trademarks you will license to franchisees. The registration statu
 
 State franchise examiners, particularly in California and New York, pay close attention to Item 13. If your marks are not registered, they may require additional disclosures or risk factors. If there are pending oppositions or known conflicts, you must disclose them. Trying to obscure trademark issues in your FDD is a fast track to examiner comment letters and registration delays.
 
-## Monitoring and Enforcement
+## Monitoring and enforcement
 
 Registration is not the end of the process. It is the beginning of ongoing brand protection.
 
@@ -734,7 +734,7 @@ Registration is not the end of the process. It is the beginning of ongoing brand
 
 **Police your franchisees.** Your franchise agreement gives you the right to control how franchisees use your marks. Logos, signage, marketing materials, social media accounts, and any other use of your brand should comply with your brand standards. This is as much about protecting the trademark as it is about maintaining brand consistency.
 
-## Common Trademark Mistakes in Franchising
+## Common trademark mistakes in franchising
 
 **Waiting too long to file.** Some founders wait until the FDD is almost complete to start the trademark process. By then, there is time pressure, and if a conflict surfaces, the entire franchise launch gets delayed.
 
@@ -746,7 +746,7 @@ Registration is not the end of the process. It is the beginning of ongoing brand
 
 **Not registering key domain names.** While not a trademark issue per se, securing domain names that match your brand (including common misspellings and variations) prevents confusion and protects your online presence.
 
-## The Investment That Pays for Itself
+## The investment that pays for itself
 
 Full trademark protection for a franchise launch, including comprehensive search, federal registration of your primary marks, and legal guidance, typically costs $3,000 to $8,000. For multi-class or multi-mark filings, it can be more.
 
@@ -766,13 +766,13 @@ For the complete framework on franchise brand strategy, from building to enforci
     category: 'Operations',
     datePublished: '2026-05-24',
     readTime: '13 min read',
-    content: `## Territory Design Will Make or Break Your Franchise System
+    content: `## Territory design will make or break your franchise system
 
 Territory issues are one of the top three sources of conflict in franchise systems. Franchisees who feel their territory is too small, too competitive, or poorly defined become frustrated and litigious. Franchisors who assign territories carelessly end up with gaps, overlaps, and legal disputes.
 
 Getting territory design right from the start saves you years of headaches. Getting it wrong creates problems that compound with every unit you add.
 
-## Exclusive vs. Non-Exclusive Territories
+## Exclusive vs. non-exclusive territories
 
 The first decision is whether to offer exclusive territories. This is one of the most consequential choices you will make as a franchisor.
 
@@ -786,7 +786,7 @@ Most franchise systems offer some form of territorial protection. Item 12 of the
 
 The practical advice: offering some form of protected territory makes your franchise easier to sell. Prospective franchisees want to know they will not have a sister location opening across the street. But the protections need to be carefully defined so they do not prevent you from maximizing market coverage as the system grows.
 
-## How to Define Territory Boundaries
+## How to define territory boundaries
 
 There are several methods for defining territory boundaries. Each has trade-offs.
 
@@ -802,7 +802,7 @@ There are several methods for defining territory boundaries. Each has trade-offs
 
 For most franchise systems, a combination of approaches works best. Use population data as the foundation, draw boundaries along recognizable features (major roads, zip code lines, municipal borders), and validate each territory against drive-time analysis and competitor mapping.
 
-## The Data That Drives Good Territory Design
+## The data that drives good territory design
 
 Effective territory design is data-driven. Here is what you need to analyze:
 
@@ -818,7 +818,7 @@ Effective territory design is data-driven. Here is what you need to analyze:
 
 **Growth projections.** A territory that is marginal today might be excellent in three years if a major residential development is under construction. Conversely, a strong territory might weaken if a major employer relocates.
 
-## Sizing Territories Correctly
+## Sizing territories correctly
 
 The single biggest territory design mistake is making territories too large. It feels generous. The franchisee loves hearing they have a massive exclusive area. But oversized territories create two serious problems.
 
@@ -830,7 +830,7 @@ The right territory size is the minimum area needed to support one profitable lo
 
 Study how your existing corporate locations draw customers. Where do they come from? How far do they drive? This real data is the best foundation for territory sizing.
 
-## Selling Territories: The Conversation That Matters
+## Selling territories: The conversation that matters
 
 When you present a territory to a prospective franchisee, you are making a case for why that specific geography can support a profitable business. This is not the time for hand-waving. Come prepared with:
 
@@ -842,7 +842,7 @@ When you present a territory to a prospective franchisee, you are making a case 
 
 **Performance data from comparable markets** (if available). If you have existing locations in markets with similar demographics, share those numbers. This gives the prospect confidence that the territory can produce the revenue you are projecting.
 
-## Territory Development Schedules
+## Territory development schedules
 
 For multi-unit and area development agreements, territory design becomes even more critical. You are not just defining where a franchisee can operate. You are defining the sequence and timeline for development.
 
@@ -850,7 +850,7 @@ A well-designed development schedule identifies which sub-territories within the
 
 The development schedule should also address what happens if the franchisee falls behind. Common provisions include cure periods (additional time to get back on schedule), territory reduction (shrinking the exclusive area if development benchmarks are missed), and ultimately, termination of the development agreement if the shortfall persists.
 
-## Protecting Yourself With Smart Territory Language
+## Protecting yourself with smart territory language
 
 Your franchise agreement's territory provisions need to account for scenarios you have not yet imagined. Work with your franchise attorney to address:
 
@@ -864,7 +864,7 @@ Your franchise agreement's territory provisions need to account for scenarios yo
 
 **Encroachment.** Define what constitutes encroachment and what remedies are available. This is the source of more franchise litigation than almost any other issue.
 
-## The Long Game
+## The long game
 
 Territory design is not a one-time exercise. As your system grows, you will learn more about optimal territory sizing, identify markets you undervalued, and discover gaps in your original plan. Build flexibility into your approach.
 
@@ -881,13 +881,13 @@ A system of 50 profitable territories is worth far more than a system of 100 ter
     category: 'Industry',
     datePublished: '2026-05-26',
     readTime: '14 min read',
-    content: `## You Built a Restaurant People Love. Now What?
+    content: `## You built a restaurant people love. Now what?
 
 Restaurants are the most franchised business category in the United States. From fast food giants to fast-casual concepts to full-service dining, the restaurant industry has decades of franchising history to learn from. That is both an advantage and a warning. The playbook is well established, but so are the ways things go wrong.
 
 If you own a restaurant with strong unit economics, a replicable concept, and customer demand beyond your current location, franchising might be the right growth strategy. But restaurant franchising has unique challenges that do not exist in other industries. This post walks through the specific considerations that restaurant owners need to address before they franchise.
 
-## The Unit Economics Have to Be Bulletproof
+## The unit economics have to be bulletproof
 
 Restaurant margins are notoriously thin. The industry average for net profit margins sits in the range of 3% to 9%, depending on the concept type. When you add franchise royalties (typically 4% to 6% of gross sales) and a brand fund contribution (1% to 2%), the math gets tight quickly.
 
@@ -903,7 +903,7 @@ Before you franchise, you need to know your numbers cold:
 
 Run these numbers conservatively. Use your worst month, not your best. A franchise model built on best-case scenarios will fail under normal conditions.
 
-## Menu Standardization: The Hardest Conversation
+## Menu standardization: The hardest conversation
 
 Every restaurant owner believes their menu is the core of their success. And they are usually right. But a menu that works with you personally cooking or overseeing every dish is different from a menu that works with a franchisee's team executing it in another city.
 
@@ -915,7 +915,7 @@ Every restaurant owner believes their menu is the core of their success. And the
 
 **Test with non-you kitchen staff.** Before franchising, have your recipes executed by cooks who have never worked in your restaurant. Time the preparation. Evaluate the results. Identify where they struggle. Revise the process until the output is consistently acceptable.
 
-## Supply Chain: Your Hidden Vulnerability
+## Supply chain: Your hidden vulnerability
 
 A single-location restaurant can source locally, build relationships with individual suppliers, and adapt when products are unavailable. A franchise system cannot operate that way. You need a supply chain strategy that works across multiple markets.
 
@@ -929,7 +929,7 @@ A single-location restaurant can source locally, build relationships with indivi
 
 **Pricing protection.** Negotiate system-wide pricing with your major distributors. One of the benefits of franchising is collective purchasing power. Pass meaningful savings to franchisees, and they will appreciate the value of the system.
 
-## Kitchen Design and Equipment Standardization
+## Kitchen design and equipment standardization
 
 Your existing kitchen was probably designed around your specific building, your personal workflow preferences, and the equipment you accumulated over time. A franchise system needs a standardized kitchen design that can be adapted to different spaces while maintaining operational efficiency.
 
@@ -937,7 +937,7 @@ Create a detailed equipment list with exact specifications. Not just "a commerci
 
 This standardization serves two purposes. First, it ensures franchisees can execute your menu efficiently. Second, it creates leverage for equipment purchasing. When you are ordering the same equipment for every new location, manufacturers and dealers offer volume pricing.
 
-## Build-Out Costs and Timelines
+## Build-out costs and timelines
 
 Restaurant build-outs are expensive and time-consuming. This is one of the biggest differences between restaurant franchising and service-based business franchising. A home cleaning franchise might have a total investment of $80,000. A restaurant franchise commonly requires $300,000 to $800,000 or more, depending on the concept and market.
 
@@ -947,7 +947,7 @@ Factors that affect build-out costs include: whether the franchisee is convertin
 
 Provide franchisees with a detailed build-out guide, approved contractor lists where possible, and realistic timeline expectations. A restaurant build-out commonly takes 4 to 8 months from lease signing to opening day. Some take longer, depending on permitting and construction conditions.
 
-## Training: More Than Recipes
+## Training: More than recipes
 
 Restaurant franchise training needs to cover far more than how to cook the food. Your training program should address:
 
@@ -965,7 +965,7 @@ Restaurant franchise training needs to cover far more than how to cook the food.
 
 Most restaurant franchise training programs run 3 to 6 weeks and include both classroom instruction and hands-on training in an operating location. Some franchisors require the franchisee and their management team to work in a corporate location for the duration of training. This immersive approach produces better results than classroom-only training.
 
-## Health Codes, Permits, and Regulatory Compliance
+## Health codes, permits, and regulatory compliance
 
 Restaurants face more regulatory oversight than most franchise categories. Health department inspections, food handler certifications, liquor licenses (if applicable), fire safety compliance, ADA requirements, and local business permits all need to be addressed.
 
@@ -973,13 +973,13 @@ Your franchise system needs to account for the fact that these requirements vary
 
 If your concept serves alcohol, add another layer of complexity. Liquor licensing requirements vary dramatically by state and locality. Some jurisdictions limit the number of licenses available, creating scarcity and cost. This affects site selection, build-out timelines, and total investment.
 
-## The Delivery and Online Ordering Question
+## The delivery and online ordering question
 
 Third-party delivery platforms (DoorDash, Uber Eats, Grubhub) have reshaped restaurant economics over the past decade. Commission rates of 15% to 30% on delivery orders significantly affect profitability. Your franchise model needs to account for this.
 
 Define your system's delivery strategy. Will franchisees be required to participate in third-party platforms? Will you negotiate a system-wide rate? Will you build proprietary online ordering to reduce commission costs? These decisions affect unit economics and should be made before you franchise, not after.
 
-## Learning From the Category
+## Learning from the category
 
 Restaurant franchising is a well-established field. Study the systems that have scaled successfully. McDonald's built an empire on operational consistency and real estate strategy. Chick-fil-A demonstrates the power of selective franchisee recruitment and brand culture. Chipotle (before they began franchising internationally) showed how a focused menu and strong supply chain drive unit economics.
 
@@ -996,7 +996,7 @@ Restaurant franchising is harder than most categories. It requires more capital,
     category: 'Industry',
     datePublished: '2026-05-28',
     readTime: '13 min read',
-    content: `## The Beauty and Wellness Industry Has a Franchising Advantage
+    content: `## The beauty and wellness industry has a franchising advantage
 
 Salon and med spa concepts are among the most natural fits for franchising. The reasons are straightforward. The services are recurring (customers come back regularly). The business model is relatively simple to systematize. The initial investment is moderate compared to restaurants. And demand for beauty and wellness services has grown consistently across economic cycles.
 
@@ -1004,7 +1004,7 @@ But the industry also has unique challenges that make franchising more nuanced t
 
 If you own a successful salon, barbershop, or med spa and you are considering franchising, this is what you need to know.
 
-## Unit Economics: What the Numbers Need to Look Like
+## Unit economics: What the numbers need to look like
 
 Beauty and wellness businesses have a favorable cost structure for franchising. There is no perishable inventory (unlike restaurants). The primary costs are labor, rent, and products. Here are the benchmarks that matter:
 
@@ -1018,7 +1018,7 @@ Beauty and wellness businesses have a favorable cost structure for franchising. 
 
 **Franchisee EBITDA.** After all location-level expenses (including royalties and brand fund), the franchisee needs to earn 15% to 22% EBITDA for the model to be compelling. If your current location runs at those margins before adding franchise fees, you need to find efficiencies before the model works.
 
-## The Licensing Challenge: Your Biggest Industry-Specific Hurdle
+## The licensing challenge: Your biggest industry-specific hurdle
 
 Beauty and wellness businesses are licensed professions. Cosmetologists, barbers, estheticians, nail technicians, and medical aesthetics practitioners all require state-specific licenses. This creates several challenges for franchising:
 
@@ -1030,7 +1030,7 @@ Beauty and wellness businesses are licensed professions. Cosmetologists, barbers
 
 **Impact on franchise operations.** Your operations manual needs to address licensing compliance in detail. Your training program needs to account for different baseline skill levels among licensed professionals. And your franchisee qualification criteria need to consider whether the franchisee themselves holds relevant licenses or will need to hire licensed practitioners.
 
-## Staffing Models: The Decision That Shapes Everything
+## Staffing models: The decision that shapes everything
 
 The salon industry uses several different staffing models, and the one you choose fundamentally affects your franchise structure.
 
@@ -1044,7 +1044,7 @@ The salon industry uses several different staffing models, and the one you choos
 
 If you currently use a booth rental model, you may need to restructure before franchising. This is a significant operational change that affects every aspect of the business, from revenue recognition to tax obligations.
 
-## Service Standardization: More Art Than Science
+## Service standardization: More art than science
 
 Standardizing salon and spa services is inherently challenging. A haircut is not a hamburger. There is artistry involved, and clients expect personalization. Your franchise system needs to strike a balance between consistency and creative freedom.
 
@@ -1056,7 +1056,7 @@ Standardizing salon and spa services is inherently challenging. A haircut is not
 
 **Client consultation protocols.** One of the biggest sources of inconsistency in salons is the consultation process. Develop a standardized consultation framework that ensures every client interaction starts the same way, regardless of which stylist or technician they see. This protects against miscommunication and establishes the professional tone that defines your brand.
 
-## Training: Building Skills at Scale
+## Training: Building skills at scale
 
 Salon and spa franchise training is typically more intensive than in other industries because you are training both business operations and technical skills.
 
@@ -1066,7 +1066,7 @@ Salon and spa franchise training is typically more intensive than in other indus
 
 **Technical vs. business training.** Many salon owners are excellent technicians but weak business operators. Your training program needs to address both. Financial management, staff recruiting, client retention strategies, and local marketing are just as important as teaching your signature service techniques.
 
-## Product Programs: A Revenue and Control Lever
+## Product programs: A revenue and control lever
 
 Retail products serve multiple purposes in a salon franchise. They generate high-margin revenue. They extend the brand experience beyond the salon visit. And they create a control mechanism for the franchisor.
 
@@ -1076,7 +1076,7 @@ Retail products serve multiple purposes in a salon franchise. They generate high
 
 **Professional products used in services.** The products your stylists use during services (color, treatments, styling products) need to be standardized. If one location uses a different color line than another, the service results will differ, and your brand consistency suffers.
 
-## Site Selection for Salons and Spas
+## Site selection for salons and spas
 
 Location criteria for beauty and wellness businesses have some unique characteristics:
 
@@ -1090,7 +1090,7 @@ Location criteria for beauty and wellness businesses have some unique characteri
 
 **Demographics.** Your ideal territory should have a sufficient concentration of your target demographic. Income levels, age distribution, and population density all matter. A luxury med spa targeting affluent women ages 30 to 55 needs a different territory than a value-priced barbershop.
 
-## Building the Med Spa Franchise Layer
+## Building the med spa franchise layer
 
 If your concept includes medical aesthetics, you have additional considerations:
 
@@ -1102,7 +1102,7 @@ If your concept includes medical aesthetics, you have additional considerations:
 
 **Regulatory monitoring.** Medical aesthetics regulations change frequently. Your franchise system needs a process for monitoring regulatory changes in every state where you operate and updating protocols accordingly.
 
-## The Growth Opportunity
+## The growth opportunity
 
 The beauty and wellness industry generates over $100 billion in annual revenue in the United States. It is fragmented, with most businesses still independently owned. That fragmentation is the opportunity for franchise brands that can offer consistency, professional marketing, technology, and purchasing power.
 

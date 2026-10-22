@@ -13,13 +13,13 @@ export const blogPosts57to60: BlogPost[] = [
     category: 'Brokerage',
     datePublished: '2026-10-22',
     readTime: '8 min read',
-    content: `## How Much Can I Sell My Business For, and Who Decides?
+    content: `## How much can I sell my business for, and who decides?
 
 "How much can I sell my business for" is the first question most owners ask, and the accurate answer is that the market decides, within limits set by the numbers you can document. A price is the point where a qualified buyer, the buyer's lender, and the seller agree. No formula produces that number on its own. A valuation shows the range of outcomes the evidence supports and explains why.
 
 This article explains how that evidence is assembled: the earnings measure buyers start from, what the multiple represents, how buyers and lenders test the figures, where asset value and market comparables fit, and why the price in a letter of intent is rarely the amount that reaches your bank account. It does not tell you what your business is worth. Nobody can do that responsibly without reviewing your records.
 
-## Which Earnings Measure Do Buyers Start From?
+## Which earnings measure do buyers start from?
 
 Most small and lower middle market businesses are priced from one of two earnings measures.
 
@@ -29,7 +29,7 @@ Most small and lower middle market businesses are priced from one of two earning
 
 The two measures are not interchangeable. Applying a multiple meant for EBITDA to an SDE figure, or the reverse, distorts the result. A buyer will recast your numbers into whichever measure fits the business, so it is better to do that work yourself first and know where the figures land.
 
-## What Does the Multiple Actually Represent?
+## What does the multiple actually represent?
 
 The multiple is shorthand for risk and transferability. A buyer is paying for a stream of future earnings, and the multiple expresses how confident that buyer is that the stream will continue under new ownership.
 
@@ -46,7 +46,7 @@ Factors that tend to pull a multiple down are the mirror image: owner dependence
 
 Published multiples circulate widely, and owners often anchor on a figure they heard from a peer or read online. Those figures describe other businesses, in other years, under other deal terms. They are not a reliable shortcut for your company, which is why we do not quote them.
 
-## How Do Buyers and Lenders Test the Numbers?
+## How do buyers and lenders test the numbers?
 
 A buyer's first look is at your recast financial statements. The serious review comes later, in due diligence, and it is designed to confirm that the earnings you presented are real and likely to continue.
 
@@ -63,7 +63,7 @@ When the buyer uses SBA financing, the lender runs a parallel review. The lender
 
 The practical point is that the price a buyer offers is bounded by what can be financed and verified, not by what the owner believes the earnings to be.
 
-## Where Do Asset Value and Market Comparables Fit?
+## Where do asset value and market comparables fit?
 
 Earnings drive most valuations of profitable operating businesses, but two other approaches inform the range.
 
@@ -73,7 +73,7 @@ Earnings drive most valuations of profitable operating businesses, but two other
 
 A credible opinion of value considers all three approaches and explains which one carries the most weight for your business and why.
 
-## Why Does Deal Structure Change the Number?
+## Why does deal structure change the number?
 
 Two offers with the same headline price can be very different offers. Structure determines how much you receive at closing, how much you receive later, and how much depends on future performance.
 
@@ -85,7 +85,7 @@ Two offers with the same headline price can be very different offers. Structure 
 
 Other terms affect the outcome as well: whether the deal is an asset sale or a stock sale, how working capital is handled, the length and pay of any transition period, and the scope of a noncompete.
 
-## Why Is the Headline Price Different From What You Receive?
+## Why is the headline price different from what you receive?
 
 The price in the purchase agreement is a gross figure. Several items come out of it before the seller's net proceeds are known.
 
@@ -96,7 +96,7 @@ The price in the purchase agreement is a gross figure. Several items come out of
 
 An owner who plans around the headline price and ignores these items can be surprised at closing. A useful exercise before going to market is to estimate net proceeds under a few different structures with your CPA.
 
-## What Is a Broker Opinion of Value, and How Is It Different From an Appraisal?
+## What is a broker opinion of value, and how is it different from an appraisal?
 
 A broker opinion of value is an estimate of the price range a business could reasonably achieve in the current market, prepared by a broker using your financials, market data, and knowledge of how buyers and lenders behave. It is a practical tool for deciding whether and when to sell and for setting an asking price.
 
@@ -104,7 +104,7 @@ A broker opinion of value is not a certified appraisal. A certified appraisal is
 
 Forge's [business valuation](/business-valuation) service provides a broker opinion of value for owners considering a sale. It recasts your financials, identifies the add backs a buyer and lender are likely to accept, and explains the factors pushing value up or down.
 
-## How Should You Prepare Before Asking the Question?
+## How should you prepare before asking the question?
 
 The most useful preparation is the same work a buyer will do. Gather three years of profit and loss statements, balance sheets, and tax returns, plus the current year to date. List each add back with its supporting documentation. Note which customers, employees, and contracts are critical, and whether each would transfer to a new owner.
 
@@ -134,13 +134,13 @@ When you are ready to see the full process, our guide to [selling your business]
     category: 'Brokerage',
     datePublished: '2026-10-22',
     readTime: '8 min read',
-    content: `## What Goes Into an HVAC Business Valuation?
+    content: `## What goes into an HVAC business valuation?
 
 An HVAC business valuation follows the same framework as any small business valuation. Buyers start from documented earnings, then judge how much risk comes with those earnings and how well they will transfer to a new owner. What makes HVAC different is where that risk sits. Licensing, technicians, seasonality, the maintenance agreement base, and the split between replacement and service work all shape how a buyer reads the numbers.
 
 This article covers the factors buyers and their lenders examine when they review an HVAC company. For the general framework of earnings measures, multiples, and deal structure, see our guide on [how much can I sell my business for](/blog/how-much-can-i-sell-my-business-for). Nothing here states what any HVAC company is worth or quotes a multiple; those conclusions depend on your records.
 
-## How Does the Residential and Commercial Mix Affect Value?
+## How does the residential and commercial mix affect value?
 
 Residential and commercial HVAC work behave differently, and buyers want to see the split clearly in your financials.
 
@@ -150,7 +150,7 @@ Commercial work usually means fewer customers, larger contracts, and relationshi
 
 Neither mix is better in the abstract. What matters is that the revenue by segment is documented, the margins by segment are understood, and a buyer can see which part of the business produces the earnings.
 
-## Why Do Service Agreements and Maintenance Contracts Matter So Much?
+## Why do service agreements and maintenance contracts matter so much?
 
 Maintenance agreements are the closest thing an HVAC company has to recurring revenue. A customer on a maintenance plan pays in advance or on a schedule for periodic tune ups, and that customer is far more likely to call the same company for repairs and eventually for a replacement.
 
@@ -164,7 +164,7 @@ Buyers look at the agreement base in detail:
 
 A well documented agreement base with healthy renewals reduces the risk a buyer sees. An agreement base that exists mostly on paper, with visits behind schedule, can be treated as a liability rather than an asset.
 
-## How Do Buyers Read Replacement Revenue Versus Service Revenue?
+## How do buyers read replacement revenue versus service revenue?
 
 Replacement revenue, meaning new system installations, produces large tickets and can make a strong year look stronger. It is also sensitive to weather, consumer financing conditions, equipment pricing, and changes in efficiency standards and refrigerant rules that pull demand forward or push it back.
 
@@ -172,7 +172,7 @@ Service and repair revenue tends to be steadier and is often closely tied to the
 
 Buyers will separate the two and look at the trend in each. A company whose earnings rest mainly on replacement volume in one or two strong years will draw more scrutiny than one with a stable service base underneath. Gross margin by revenue type, and how equipment cost increases have been passed through to customers, are common diligence questions.
 
-## What Happens to the License When an HVAC Business Sells?
+## What happens to the license when an HVAC business sells?
 
 Licensing is one of the most important transferability questions in an HVAC sale. In Texas, air conditioning and refrigeration contractor licensing is administered by the Texas Department of Licensing and Regulation (TDLR). A contractor license is issued to an individual, not to the business, so the license does not transfer with the company in the way equipment or a phone number does.
 
@@ -180,7 +180,7 @@ That means the business must plan how licensing continues after the sale. Common
 
 Licensing rules change, and the specific requirements for how a company operates under a licensed individual should be confirmed directly with TDLR and with counsel before a sale is structured. Local permitting and registration requirements in the cities where you work should be checked as well.
 
-## How Do Buyers Evaluate the Technician Workforce?
+## How do buyers evaluate the technician workforce?
 
 Technicians are the production capacity of an HVAC company, and qualified technicians are difficult to recruit. Buyers want to know who does the work and whether those people will stay.
 
@@ -188,43 +188,43 @@ Expect questions about the number of technicians and installers, their tenure, t
 
 A stable, credentialed team with documented training reduces risk. A company that depends on one or two senior technicians who might leave after the sale increases it.
 
-## How Does Seasonality Show Up in the Numbers?
+## How does seasonality show up in the numbers?
 
 HVAC demand peaks in the hottest and coldest months, and in Texas the cooling season dominates. Monthly revenue and cash flow can swing widely across the year.
 
 Buyers and lenders review monthly financials, not just annual totals, to understand those swings. They look at how the company manages cash and labor through slower months, whether maintenance agreements help fill the shoulder seasons, and how much working capital the business needs to carry through a slow period. Working capital needs affect how a deal is structured and how much cash a buyer must bring.
 
-## What Do Buyers Look for in Fleet and Equipment?
+## What do buyers look for in fleet and equipment?
 
 Service vehicles, tools, diagnostic equipment, and any inventory of parts and equipment are tangible assets a buyer will inspect.
 
 Buyers will ask for a fleet list with year, mileage, ownership or lease status, and maintenance history. An aging fleet that will need replacement soon after closing is a cost the buyer will factor in. Leased vehicles and financed equipment must be paid off or assumed, which affects net proceeds. Parts inventory should be counted and valued, and slow moving or obsolete stock should be identified before diligence rather than during it.
 
-## Where Do Leads Come From, and Does the Brand Transfer?
+## Where do leads come from, and does the brand transfer?
 
 Buyers want to understand how the phone rings. Common lead sources include search and online reviews, paid advertising, referrals from existing customers, home builder and contractor relationships, manufacturer dealer programs, and warranty work.
 
 For each source, a buyer asks two questions: how much revenue it produces, and whether it will continue under new ownership. Review profiles, website domains, phone numbers, and advertising accounts should be owned by the business, not by the owner personally. Manufacturer dealer status and warranty relationships may require approval to continue after a change of ownership, and those terms should be reviewed early. A brand that customers recognize independently of the owner's name is more transferable than one built on the owner's personal reputation.
 
-## Why Does Customer Concentration Matter for Commercial Accounts?
+## Why does customer concentration matter for commercial accounts?
 
 Commercial HVAC companies often have a handful of large accounts: a property management firm, a school district, a builder, or a facilities contract. If one account carries a large share of revenue, losing it after the sale would change the economics of the deal.
 
 Buyers will ask for revenue by customer and for copies of commercial contracts. They will look at contract terms, renewal dates, assignment clauses, and whether the relationship depends on the selling owner personally. Where concentration exists, deal structure often absorbs the risk through seller financing, an earnout, or a longer transition period.
 
-## How Much Does the Business Depend on the Owner?
+## How much does the business depend on the owner?
 
 Many HVAC owners started as technicians and still run sales calls, estimates, dispatch, or key commercial relationships. Buyers discount businesses where the owner is the system.
 
 The useful test is what happens if the owner is away for a month in peak season. If calls are answered, jobs are dispatched, estimates go out, and invoices are collected, the business is more transferable. If those functions stop, a buyer will see the earnings as dependent on someone who is leaving. Delegating estimating, dispatch, and commercial account management before a sale is one of the most practical steps an owner can take.
 
-## What Records and Software Do Buyers Expect to See?
+## What records and software do buyers expect to see?
 
 Field service management software, accounting records, and customer history are part of what a buyer is purchasing.
 
 Buyers expect clean monthly financials that reconcile to tax returns, revenue reported by segment, a customer database with service history and equipment records, a maintenance agreement list with renewal dates, and job costing that shows margins by job type. Records that are complete and consistent support the earnings a seller presents. Records that are scattered or incomplete lead buyers and lenders to discount or exclude figures they cannot verify.
 
-## How Does a Broker Opinion of Value Fit In?
+## How does a broker opinion of value fit in?
 
 A broker opinion of value applies these factors to your actual records and explains which ones move value up or down for your company. It is a planning tool for owners deciding whether and when to sell. A broker opinion of value is not a certified appraisal; a certified appraisal from a credentialed appraiser is required for tax, legal, and some lending purposes.
 
@@ -252,13 +252,13 @@ Forge's [business valuation](/business-valuation) service prepares a broker opin
     category: 'Brokerage',
     datePublished: '2026-10-22',
     readTime: '8 min read',
-    content: `## What Are Seller's Discretionary Earnings?
+    content: `## What are seller's discretionary earnings?
 
 Seller's discretionary earnings, usually shortened to SDE, is the total financial benefit a business provides to one full time owner operator in a year. It starts with pretax profit and adds back the owner's compensation, certain noncash and financing costs, and expenses that are personal to the owner or will not recur under new ownership.
 
 SDE is the earnings measure most commonly used to price owner operated small businesses. It answers a practical question a buyer has: if I buy this business and run it myself, how much cash does it generate before I pay myself, service any debt, and pay income taxes? Because nearly every small business sale starts from this figure, sellers benefit from understanding how it is built and where buyers push back.
 
-## How Do You Calculate SDE?
+## How do you calculate SDE?
 
 The calculation starts with net profit before income taxes from the profit and loss statement or tax return, then adds back specific categories:
 
@@ -271,7 +271,7 @@ The calculation starts with net profit before income taxes from the profit and l
 
 Only one owner's compensation is added back. If two owners both work in the business, the second owner's role still has to be filled, so a market cost for that role stays in the expenses.
 
-## What Does a Worked SDE Example Look Like?
+## What does a worked SDE example look like?
 
 The figures below are hypothetical round numbers chosen only to illustrate the arithmetic. They do not describe any real business, and they do not suggest what any business earns or is worth.
 
@@ -291,7 +291,7 @@ In this illustration, each add back would need support: payroll records for the 
 
 The SDE figure is a starting point for a valuation discussion, not a valuation. How a buyer prices it depends on the risk and transferability of the earnings, which is covered in our guide on [how much can I sell my business for](/blog/how-much-can-i-sell-my-business-for).
 
-## Which Add Backs Do Buyers Usually Accept?
+## Which add backs do buyers usually accept?
 
 Add backs that are clearly documented and clearly would not continue under a new owner are the easiest to defend. Common examples include:
 
@@ -304,7 +304,7 @@ Add backs that are clearly documented and clearly would not continue under a new
 
 The common thread is documentation. Each accepted add back has a paper trail that a buyer and lender can review.
 
-## Which Add Backs Do Buyers Usually Reject?
+## Which add backs do buyers usually reject?
 
 Buyers and lenders are skeptical of add backs that look like ordinary operating costs relabeled. Common examples that draw rejection include:
 
@@ -318,7 +318,7 @@ Buyers and lenders are skeptical of add backs that look like ordinary operating 
 
 Each rejected add back reduces the earnings a buyer will price from. Owners who present aggressive add backs often see the figure cut during diligence, which can damage trust in the rest of the numbers.
 
-## How Does SDE Differ From EBITDA and Net Income?
+## How does SDE differ from EBITDA and net income?
 
 The three measures answer different questions.
 
@@ -330,7 +330,7 @@ The three measures answer different questions.
 
 Because the measures are different, multiples associated with one should never be applied to the other.
 
-## Why Does Documentation Matter So Much to Lenders?
+## Why does documentation matter so much to lenders?
 
 Many small business acquisitions are financed with SBA 7(a) loans. The lender's central test is whether the business's historical cash flow can cover the new debt payments with a margin of safety. Lenders build that cash flow from tax returns and financial statements, and they generally give credit only for add backs they can verify.
 
@@ -338,7 +338,7 @@ If a seller's SDE depends on add backs that the lender excludes, the lender's ca
 
 The practical step for a seller is to build an add back schedule before going to market, with each line tied to a document, a ledger account, and the year it occurred.
 
-## How Do You Normalize Owner Compensation When a Buyer Will Hire a Manager?
+## How do you normalize owner compensation when a buyer will hire a manager?
 
 Some buyers will not run the business themselves. A private equity group, an investor, or an existing company making an acquisition will hire a manager. For those buyers, adding back the full owner compensation overstates the earnings available, because a manager has to be paid.
 
@@ -346,7 +346,7 @@ Normalizing means replacing the owner's actual compensation with the market cost
 
 Two points matter in practice. First, the market cost of the role should reflect what the owner actually does; an owner who handles sales, operations, and estimating may be performing more than one job. Second, if the owner currently pays themself well below market, a buyer will normalize upward, which reduces earnings. Presenting both SDE and a normalized figure shows buyers that the seller understands how different buyer types will view the business.
 
-## How Many Years of SDE Do Buyers Review?
+## How many years of SDE do buyers review?
 
 Buyers and lenders rarely price from a single year. A typical review covers the last three full years plus the current year to date, with SDE calculated the same way for each period.
 
@@ -354,7 +354,7 @@ Looking across several years shows the direction of earnings. A business with st
 
 Consistency in method matters as much as the figures. An add back taken in one year and not in another, or a category of expense that moves between years without explanation, will draw questions. Preparing every period on the same basis, using the same chart of accounts, shows a buyer the trend without distortion.
 
-## Who Should Prepare the SDE Calculation?
+## Who should prepare the SDE calculation?
 
 Your CPA can produce clean financial statements and confirm the accuracy of the underlying figures. A business broker can recast those statements into SDE the way buyers and lenders will view them and flag add backs likely to be challenged.
 
@@ -382,31 +382,31 @@ Forge's [business valuation](/business-valuation) service includes an SDE recast
     category: 'Finance',
     datePublished: '2026-10-22',
     readTime: '8 min read',
-    content: `## What Are SBA 7(a) Loans for Buying a Business?
+    content: `## What are SBA 7(a) loans for buying a business?
 
 SBA 7(a) loans for buying a business are the most common way individual buyers finance the acquisition of an existing small business. The 7(a) program is the U.S. Small Business Administration's primary loan guarantee program. The SBA does not lend the money itself. Participating lenders, including banks, credit unions, and licensed nonbank lenders, make the loans, and the SBA guarantees a portion of each loan against loss. That guarantee is what allows lenders to finance business acquisitions on terms they might not offer on a conventional loan.
 
 For a buyer in Texas, the program works the same way it does in every state. The practical difference is the lender: you will work with a lender active in Texas that understands the local market and has experience with acquisition loans. This article covers how the program is structured, what lenders underwrite, how seller notes are treated, and what a buyer should prepare.
 
-## How Much Can You Borrow Under the 7(a) Program?
+## How much can you borrow under the 7(a) program?
 
 The maximum 7(a) loan amount is $5 million. That cap applies to the SBA loan itself; the total purchase can be larger if the rest is funded by buyer equity, seller financing, or other sources the lender accepts.
 
 The amount a lender will actually approve depends on the business's documented cash flow, the buyer's equity, collateral, and the lender's own credit policy. The cap is a ceiling, not a target. Loan proceeds can typically cover the purchase price, working capital, and certain closing costs, subject to SBA rules and lender approval.
 
-## What Is the Equity Injection, and Where Can It Come From?
+## What is the equity injection, and where can it come from?
 
 Buyers must make an equity injection, meaning they contribute their own money toward the purchase. The SBA sets minimum requirements for change of ownership transactions, and those minimums have changed over time, so confirm the current requirement with your lender rather than relying on a figure you read online. Many lenders also set their own requirements above the SBA minimum based on the risk of the deal.
 
 Equity commonly comes from personal savings, the proceeds of selling other assets, documented gifts, or retirement funds used through a properly structured arrangement. Lenders will require you to document the source of the funds, typically with bank statements covering a period before closing. Borrowed money generally cannot be used as equity unless SBA rules and the lender permit it.
 
-## Who Has to Sign a Personal Guarantee?
+## Who has to sign a personal guarantee?
 
 SBA rules require a personal guarantee from every person who owns 20 percent or more of the borrowing business. A personal guarantee means the guarantor is personally responsible for repaying the loan if the business cannot. Lenders may require guarantees from other owners or from spouses in some circumstances, depending on how assets are held.
 
 Buyers should understand the guarantee before signing a letter of intent. It is a significant personal commitment, and it is worth reviewing with your own attorney.
 
-## What Do Lenders Underwrite in a Business Acquisition?
+## What do lenders underwrite in a business acquisition?
 
 Lenders evaluate three main areas.
 
@@ -418,7 +418,7 @@ Lenders evaluate three main areas.
 
 Lenders commonly order an independent business valuation for an acquisition loan. That third party valuation helps the lender confirm the price is supported. A buyer can prepare by understanding how the business is likely to be valued; Forge's [business valuation](/business-valuation) service provides a broker opinion of value, which is not a certified appraisal and does not replace the valuation a lender orders.
 
-## How Do Lenders Treat Seller Notes?
+## How do lenders treat seller notes?
 
 A seller note is a loan from the seller to the buyer for part of the purchase price. Lenders often like to see one because it keeps the seller invested in a successful transition.
 
@@ -426,7 +426,7 @@ How a seller note fits into an SBA financed deal is governed by SBA rules. Those
 
 Whatever the equity treatment, a seller note in an SBA deal is subordinate to the lender's loan, and its payments are included in the lender's debt service coverage analysis if payments are allowed. Buyers and sellers should negotiate the note's terms with the lender's requirements in mind, not after the fact.
 
-## What Documents Should a Buyer Prepare?
+## What documents should a buyer prepare?
 
 Lenders ask for a large package. Having it ready shortens the back and forth. A typical package includes:
 
@@ -442,7 +442,7 @@ Lenders ask for a large package. Having it ready shortens the back and forth. A 
 
 Lenders will request more as underwriting proceeds, including a lease review, licenses, and insurance.
 
-## What Does the Seller Need to Provide?
+## What does the seller need to provide?
 
 An SBA acquisition loan depends on the seller's records as much as the buyer's. Lenders will ask the seller, through the buyer, for business tax returns for recent years, year end and interim financial statements, a list of the assets being sold, a copy of the lease, and details on any debt that will be paid off at closing. If the business holds licenses, permits, or franchise rights that must transfer or be reissued, the lender will want to see how that will happen.
 
@@ -450,19 +450,19 @@ Lenders also look closely at the seller's role after closing. A written transiti
 
 Delays in SBA deals often come from the seller side: missing returns, books that do not reconcile, or a landlord who has not agreed to assign the lease. Buyers should raise these items at the letter of intent stage, before paying for third party reports.
 
-## How Long Does SBA Financing Take?
+## How long does SBA financing take?
 
 Timing depends on the lender. Lenders with delegated authority under the SBA's Preferred Lenders Program can make credit decisions without sending the file to the SBA for review, which can shorten the process. Other lenders submit the loan to the SBA for approval. Either way, the pace depends on how quickly the buyer and seller provide documents, how long the third party valuation and any appraisals take, and how complex the deal is.
 
 Buyers should not commit to a closing date with a seller until the lender has reviewed the package and given a realistic schedule.
 
-## How Should Texas Buyers Choose a Lender?
+## How should Texas buyers choose a lender?
 
 Texas has a large market of SBA lenders, from national banks to community banks, credit unions, and nonbank lenders. Experience with acquisition loans matters more than size. Ask each lender how many change of ownership loans it closes, whether it has delegated authority, what its own equity and collateral requirements are, and how it treats seller notes under current SBA rules.
 
 Working with a broker who understands lender requirements also helps. A [Texas business broker](/texas-business-broker) can identify early whether a business's records will support SBA financing, which saves time for buyers and sellers alike. When you are ready to look at businesses, start with our [buy a business](/buy-a-business) page.
 
-## Is an SBA 7(a) Loan Right for Your Purchase?
+## Is an SBA 7(a) loan right for your purchase?
 
 For many individual buyers, a 7(a) loan is the practical way to acquire a business with a manageable equity contribution and a longer repayment term than conventional financing usually offers. It also comes with obligations: personal guarantees, collateral, detailed documentation, and lender review of the deal. Talk with lenders early, before you sign a letter of intent, so the terms you negotiate with a seller fit what can actually be financed.`,
     keyTakeaways: [

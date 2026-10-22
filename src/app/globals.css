@@ -85,8 +85,7 @@
 
 @layer components {
   /* Layout */
-  .wrap,
-  .container-full {
+  .wrap {
     width: 100%;
     max-width: 1360px;
     margin-left: auto;
@@ -183,11 +182,6 @@
   }
   .stat-label {
     @apply text-sm mt-2 leading-snug text-steel;
-  }
-
-  /* Eyebrow labels are retired in Direction C. */
-  .eyebrow {
-    display: none;
   }
 
   /* Buttons: square, 58px tall, sentence case labels */
@@ -337,7 +331,6 @@ button:hover .arrow,
 /* Responsive gutters and spacing */
 @media (max-width: 720px) {
   .wrap,
-  .container-full,
   .gutter {
     padding-left: 20px;
     padding-right: 20px;
@@ -358,22 +351,6 @@ button:hover .arrow,
   }
 }
 
-/* Scroll reveal */
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
-
 /* Photographs get a cool, desaturated treatment. Low specificity so a page
    specific filter can still override it. */
 :where(main) :where(img[src*="images.unsplash.com"], img[src*="images.pexels.com"]) {
@@ -384,17 +361,6 @@ button:hover .arrow,
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-  .reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-  .reveal-delay-1,
-  .reveal-delay-2,
-  .reveal-delay-3,
-  .reveal-delay-4 {
-    transition-delay: 0s;
   }
   .arrow,
   .card-interactive,
@@ -422,15 +388,6 @@ button:hover .arrow,
 img {
   max-width: 100%;
   height: auto;
-}
-
-/* Glossary letter grouping */
-.glossary-letter-badge {
-  font-family: var(--font-display), var(--font-sans), sans-serif;
-  font-weight: 700;
-  font-size: 1.25rem;
-  letter-spacing: -0.02em;
-  color: rgb(var(--accent));
 }
 
 /* Keyboard focus ring: 2px ember outline, 3px offset, on every control */

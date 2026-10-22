@@ -13,13 +13,13 @@ export const blogPosts53to56: BlogPost[] = [
     category: 'Brokerage',
     datePublished: '2026-10-22',
     readTime: '9 min read',
-    content: `## Can You Sell a Small Business by Owner Without a Broker?
+    content: `## Can you sell a small business by owner without a broker?
 
 Yes. No law requires a broker to sell a privately held business, and owners complete sales on their own every year. The real question behind how to sell a small business by owner is whether you can carry the full workload of a sale while you keep running the company, and whether your particular buyer situation calls for outside help.
 
 This guide is a comparison, not a pitch. Both paths work. An owner sale suits some situations very well, and a brokered sale suits others. The sections below lay out what an owner takes on alone, the situations where owners usually manage fine, and the specific places where a broker adds value that justifies the fee. If you want the full sequence of a sale first, our guide on [how to sell a business](/sell-your-business/how-to-sell-a-business) walks through every stage.
 
-## What Does an Owner Have to Handle Alone in a Sale by Owner?
+## What does an owner have to handle alone in a sale by owner?
 
 Selling without representation means every task that a broker would normally run falls to you. None of these tasks is mysterious. The challenge is that they arrive together, they take months, and they compete with the daily work of keeping revenue steady while buyers watch.
 
@@ -37,7 +37,7 @@ Selling without representation means every task that a broker would normally run
 
 **Closing.** The purchase agreement, bill of sale, lease assignment, license transfers, and any lender requirements must come together on one date. Your attorney drafts and reviews the legal documents, but coordinating all the parties remains your job.
 
-## When Does Selling a Business by Owner Usually Work Well?
+## When does selling a business by owner usually work well?
 
 Owner sales tend to go smoothly when the buyer is already known and trusted, because the hardest parts of a sale are finding the buyer and protecting confidentiality during the search. When the buyer is already in the room, those parts mostly disappear.
 
@@ -51,7 +51,7 @@ Owner sales tend to go smoothly when the buyer is already known and trusted, bec
 
 In each of these cases, the work that remains is valuation, documentation, and legal drafting. Owners usually fill those gaps with an accountant, a transaction attorney, and, where useful, an independent opinion of value.
 
-## Where Does a Business Broker Earn the Fee?
+## Where does a business broker earn the fee?
 
 A broker earns the fee in the situations an owner sale handles poorly: when no buyer is known yet, when confidentiality is fragile, and when the owner cannot step away from operations to run a months long process. A broker is paid mainly on a successful close, so the incentives line up with getting the deal done.
 
@@ -69,7 +69,7 @@ A broker earns the fee in the situations an owner sale handles poorly: when no b
 
 If you are a Texas owner weighing this decision, our [Texas business broker](/texas-business-broker) page explains how a brokered engagement works and what you can expect at each stage.
 
-## How Do the Two Paths Compare Side by Side?
+## How do the two paths compare side by side?
 
 The table below summarizes who typically carries each task. It describes common practice, not a rule, and the split can vary by engagement.
 
@@ -86,7 +86,7 @@ The table below summarizes who typically carries each task. It describes common 
 
 Notice that an attorney appears on both sides of the table. A broker does not replace legal counsel, and neither path should close without one.
 
-## What Should You Do Before Choosing a Path?
+## What should you do before choosing a path?
 
 The decision is easier once you know two things: roughly what the business may support in price, and whether a buyer is already identifiable. Both can be worked out before you commit to either route.
 
@@ -98,7 +98,7 @@ The decision is easier once you know two things: roughly what the business may s
 
 If your list in step three has a strong name on it, an owner sale with good advisers may serve you well. If it is empty, or if a leak would damage the business, a brokered process is often the better fit. If you are still early, our [sell your business](/sell-your-business) hub collects every resource on preparing and selling.
 
-## What Mistakes Do Owners Commonly Make When Selling Alone?
+## What mistakes do owners commonly make when selling alone?
 
 These mistakes come up on both paths, but they are harder to catch without someone reviewing the process from outside.
 
@@ -112,7 +112,7 @@ These mistakes come up on both paths, but they are harder to catch without someo
 
 **Closing without counsel.** Representations, warranties, indemnification, and noncompete terms carry real risk after closing. A transaction attorney protects you against claims that can surface long after the sale.
 
-## Is a Hybrid Approach an Option?
+## Is a hybrid approach an option?
 
 Some owners combine the two paths. An owner who already has a likely buyer may hire a broker or adviser for a narrower scope, such as preparing a valuation, reviewing an offer, or managing due diligence, instead of a full marketing engagement. Whether that arrangement is available, and how it is priced, depends on the broker and the deal. Ask about limited scope options directly when you interview brokers, and get the scope and fee in writing before work begins.
 
@@ -140,7 +140,7 @@ Whichever route you choose, the fundamentals do not change. Clean books, a defen
     category: 'Brokerage',
     datePublished: '2026-10-22',
     readTime: '8 min read',
-    content: `## What Is a Business Broker?
+    content: `## What is a business broker?
 
 A business broker is an intermediary who represents the owner of a privately held company in selling it, or less often represents a buyer in acquiring one. If you have asked what is a business broker, the short answer is this: the broker runs the sale process so the owner can keep running the business. That process covers valuation, marketing, buyer screening, negotiation, and coordination through closing.
 
@@ -148,7 +148,7 @@ Business brokers usually work with small and lower middle market companies, the 
 
 A broker is not a lawyer and not an accountant. A broker does not draft the purchase agreement or give tax advice. The broker manages the market side of the transaction and works alongside your attorney and CPA, who handle the legal and tax work.
 
-## What Does a Business Broker Do During an Engagement?
+## What does a business broker do during an engagement?
 
 A typical engagement moves through a series of stages. The order is fairly consistent across the industry, though the time each stage takes depends on the business, the market, and the buyer.
 
@@ -165,7 +165,7 @@ A typical engagement moves through a series of stages. The order is fairly consi
 
 Each stage protects the next. A credible valuation keeps the right buyers interested. Careful screening keeps confidential information away from people who cannot close. Organized documents shorten due diligence.
 
-## How Is a Business Broker Paid?
+## How is a business broker paid?
 
 Most business brokers are paid primarily through a success fee, which is a commission due only when the sale closes. The success fee is usually calculated as a percentage of the total transaction value. Many brokers also set a minimum fee so the engagement makes economic sense on smaller deals.
 
@@ -183,7 +183,7 @@ When you review a listing agreement, look closely at these terms:
 
 None of these terms are unusual. They simply need to be understood before you sign. Your attorney should review the agreement.
 
-## How Is a Business Broker Different From an M&A Advisor?
+## How is a business broker different from an M&A advisor?
 
 The difference is mostly size and process. Business brokers typically handle smaller transactions with individual buyers. M&A advisors and investment bankers typically handle larger companies, where buyers are private equity firms, strategic corporations, or family offices.
 
@@ -191,7 +191,7 @@ An M&A process is often more structured. It may involve a formal auction with bi
 
 There is overlap in the middle. Some brokers handle companies at the upper end of the small business range, and some M&A firms take smaller engagements. The label matters less than whether the intermediary has sold companies similar to yours in size and industry.
 
-## How Is a Business Broker Different From a Real Estate Agent?
+## How is a business broker different from a real estate agent?
 
 A real estate agent sells property. A business broker sells an operating company. The two skill sets overlap only at the edges.
 
@@ -201,13 +201,13 @@ Confidentiality also works differently. A home listing is public by design. A bu
 
 If your sale includes real property owned by the business or by you personally, real estate licensing rules may apply to that part of the transaction, and a licensed real estate professional may need to be involved. Ask your attorney how the rules apply to your sale.
 
-## What Does a Business Broker Do for Buyers?
+## What does a business broker do for buyers?
 
 Most brokers represent the seller, and the seller pays the fee. Buyers still interact with brokers constantly, because brokers control access to most listed small businesses. A seller's broker will screen the buyer, share information under an NDA, answer questions, and coordinate due diligence. The buyer should remember that the broker's duty runs to the seller and should rely on the buyer's own attorney, CPA, and lender for independent advice.
 
 Some brokers offer buy side representation, where the buyer hires the broker to search for and evaluate targets. That arrangement is less common and is usually paid by the buyer through a retainer, a success fee, or both. If you are looking to acquire rather than sell, our page on how to [buy a business](/buy-a-business) covers that side of the market.
 
-## How Do You Vet a Business Broker?
+## How do you vet a business broker?
 
 The right broker has experience with businesses like yours, a clear process, and terms you understand. Use these questions in an interview:
 
@@ -224,7 +224,7 @@ Listen for specific answers. A broker who promises a particular sale price or a 
 
 Also check whether the broker belongs to a professional association, holds an industry credential, or has disciplinary history with any licensing body that applies to them. Requirements vary by state and by the type of transaction, so confirm what applies where you are.
 
-## When Should You Talk to a Business Broker?
+## When should you talk to a business broker?
 
 Earlier than most owners expect. A conversation a year or more before a planned sale gives you time to fix issues a buyer would discount, such as heavy owner dependence, customer concentration, or messy books. A broker can also prepare a broker opinion of value, which is a market based estimate of likely sale price. A broker opinion of value is not a certified appraisal and should not be used where a court, lender, or tax authority requires one from a credentialed appraiser. Our [business valuation](/business-valuation) page explains what that review covers.
 
@@ -252,13 +252,13 @@ If you are ready to talk about your company, our [Texas business broker](/texas-
     category: 'Brokerage',
     datePublished: '2026-10-22',
     readTime: '8 min read',
-    content: `## What Should You Do First When You Think, I Want to Sell My Business?
+    content: `## What should you do first when you think, I want to sell my business?
 
 When an owner says "I want to sell my business," the most useful next step is usually preparation, not listing. Buyers, lenders, and their advisers will review the company in detail. Issues that are easy to fix with a year of lead time can lower the price or stop a deal when they surface during due diligence.
 
 The plan below spreads that preparation across twelve months in four quarters. Treat it as a typical plan, not a promise. Some businesses are ready in less time. Others need longer, especially when the owner performs most of the critical work personally or when the books need significant cleanup. The order matters more than the exact calendar. For the full sale process once preparation is done, see our guide on [how to sell a business](/sell-your-business/how-to-sell-a-business).
 
-## What Happens in Months 1 to 3: Financial Cleanup?
+## What happens in months 1 to 3: Financial cleanup?
 
 The first quarter focuses on the numbers, because every later conversation depends on them. A buyer pays for the earnings they can verify, and a lender will finance only what the records support.
 
@@ -272,7 +272,7 @@ The first quarter focuses on the numbers, because every later conversation depen
 
 **Consider a review by an outside CPA.** A reviewed set of financial statements is not required for most small business sales, but outside review can catch issues before a buyer does.
 
-## How Do You Document Add Backs in the First Quarter?
+## How do you document add backs in the first quarter?
 
 Add backs are expenses that appear on the books but will not continue under a new owner. Recasting the financials with documented add backs shows a buyer the earnings the business can produce for them. This figure is often called seller's discretionary earnings in smaller sales, and our guide on [sellers discretionary earnings](/blog/sellers-discretionary-earnings) explains the calculation.
 
@@ -286,7 +286,7 @@ Common add backs include:
 
 Every add back needs a receipt, invoice, or ledger entry behind it. Buyers and lenders disregard add backs they cannot verify, and an aggressive list without support reduces credibility on everything else.
 
-## What Happens in Months 4 to 6: Reducing Owner Dependence?
+## What happens in months 4 to 6: Reducing owner dependence?
 
 The second quarter addresses the biggest discount factor in many small businesses: the company depends on the owner. If customers call you directly, if you are the only person who can quote a job, or if the key supplier relationship exists in your phone, a buyer is purchasing risk.
 
@@ -298,13 +298,13 @@ The second quarter addresses the biggest discount factor in many small businesse
 
 **Address customer concentration.** If one customer accounts for a large share of revenue, a buyer will see that as a risk. You cannot change concentration quickly, but you can document the relationship, put a written contract in place if one does not exist, and add new customers over the year.
 
-## How Should You Handle Key Employees During Preparation?
+## How should you handle key employees during preparation?
 
 Key employees often matter as much to a buyer as the financial statements. A buyer will want to know who stays after closing and whether those people are likely to remain.
 
 Identify the employees whose departure would hurt operations. Review their compensation against the market. Some owners put retention or stay bonuses in place that pay out after a successful transition. Whether and when to tell these employees about a planned sale is a judgment call that depends on how much you rely on each person and how likely the news is to spread. In most cases, the broader staff is told late in the process.
 
-## What Happens in Months 7 to 9: Contracts, Lease, Licenses, and Equipment?
+## What happens in months 7 to 9: Contracts, lease, licenses, and equipment?
 
 The third quarter focuses on everything a buyer's attorney will review. Problems here rarely kill a deal outright, but they can delay closing or force a price adjustment.
 
@@ -318,7 +318,7 @@ The third quarter focuses on everything a buyer's attorney will review. Problems
 
 **Clean up corporate records.** Make sure the entity is in good standing with the state, ownership records are accurate, and any past disputes are resolved or documented.
 
-## When Should You Get a Broker Opinion of Value?
+## When should you get a broker opinion of value?
 
 Around the ninth month is a practical time, though some owners request one earlier to decide whether a sale makes sense at all. A broker opinion of value is a market based estimate of the price a business is likely to bring, prepared by a business broker using recast financials and the broker's view of current buyer demand.
 
@@ -326,7 +326,7 @@ A broker opinion of value is not a certified appraisal. It is not prepared to ap
 
 The opinion often reveals the issues that have the most effect on price, which gives you a final quarter to address them.
 
-## What Happens in Months 10 to 12: Engaging a Broker and Going to Market?
+## What happens in months 10 to 12: Engaging a broker and going to market?
 
 The final quarter turns preparation into a sale process.
 
@@ -336,7 +336,7 @@ The final quarter turns preparation into a sale process.
 4. **Set up a data room.** Load the documents you gathered over the year so due diligence can start quickly once a letter of intent is signed.
 5. **Keep running the business.** Revenue and margins during the sale period receive close scrutiny. Owners who let performance slip while marketing the company give buyers a reason to renegotiate.
 
-## How Does the Plan Fit Together?
+## How does the plan fit together?
 
 The table below summarizes the typical sequence. Adjust it to your business; some steps will take longer and some will not apply.
 
@@ -347,7 +347,7 @@ The table below summarizes the typical sequence. Adjust it to your business; som
 | Months 7 to 9 | Legal and physical assets | Lease review, consent list, license list, equipment list |
 | Months 10 to 12 | Valuation and engagement | Broker opinion of value, signed engagement, marketing materials, data room |
 
-## What If You Need to Sell Sooner Than 12 Months?
+## What if you need to sell sooner than 12 months?
 
 Not every owner has a year. Health, partnership disputes, relocation, or an unsolicited offer can compress the timeline. In that case, prioritize the items buyers weigh most: reconciled financials, documented add backs, and the lease. Those three issues affect financing and price more directly than most others. A broker can also help decide which issues are worth fixing before going to market and which are better disclosed and priced into the deal.
 
@@ -375,7 +375,7 @@ When you are ready to begin, our [sell your business](/sell-your-business) hub e
     category: 'Brokerage',
     datePublished: '2026-10-22',
     readTime: '8 min read',
-    content: `## Why Does Confidentiality When Selling a Business Matter So Much?
+    content: `## Why does confidentiality when selling a business matter so much?
 
 Confidentiality when selling a business protects the value you are trying to sell. A sale often takes months, and during that time the business has to keep performing. If employees, customers, vendors, or competitors learn about the sale too early, they may act in ways that hurt revenue, staffing, or your negotiating position.
 
@@ -389,7 +389,7 @@ Confidentiality when selling a business protects the value you are trying to sel
 
 A deliberate confidentiality process does not eliminate every risk, but it greatly reduces the number of people who know and controls what they learn.
 
-## How Does a Blind Teaser Keep the Business Anonymous?
+## How does a blind teaser keep the business anonymous?
 
 A blind teaser is a one or two page summary that describes the business without identifying it. It is the first document most buyers see, and its job is to generate interest without revealing which company is for sale.
 
@@ -397,7 +397,7 @@ A teaser typically includes the industry, a general location such as a region or
 
 That last point requires judgment. In a small market or a specialized niche, even a vague description can give the business away. A teaser for a highly specialized company may need a broader location and fewer specifics. Review the draft with the question: could a competitor recognize us from this?
 
-## What Should a Nondisclosure Agreement Cover?
+## What should a nondisclosure agreement cover?
 
 A nondisclosure agreement is the legal foundation of confidentiality in a sale. No buyer should receive identifying information or financial detail until they sign one. Have a qualified attorney draft or review your NDA, because enforceability depends on state law and on how the terms are written.
 
@@ -415,7 +415,7 @@ A sale NDA commonly addresses these points:
 
 An NDA is only as useful as your ability to enforce it. That is one more reason to screen buyers before they sign, so that the people bound by your NDA are also people with a real reason to honor it.
 
-## How Do You Release Information in Stages?
+## How do you release information in stages?
 
 Staged disclosure means each buyer receives only the information appropriate to how far along they are. More sensitive details come later, after the buyer has shown both capacity and commitment.
 
@@ -429,7 +429,7 @@ Staged disclosure means each buyer receives only the information appropriate to 
 
 Customer identities and employee details are usually the last items released. Some owners redact customer names in early documents and replace them with a code, then release the full list only when closing is near.
 
-## How Do You Screen Buyers Before Revealing Identifying Details?
+## How do you screen buyers before revealing identifying details?
 
 Screening confirms that a buyer can actually complete a purchase before they learn which business they are looking at. It protects confidentiality and saves time.
 
@@ -445,7 +445,7 @@ Watch for warning signs. A buyer who refuses to provide financial information, w
 
 A broker handles this screening as part of the engagement, which keeps your name out of early conversations entirely. Our [Texas business broker](/texas-business-broker) page explains how that works for a Texas sale.
 
-## How and When Should You Tell Employees?
+## How and when should you tell employees?
 
 Most owners tell the broader staff late in the process, often after the purchase agreement is signed or at closing. Telling employees early increases the chance that the news spreads to customers and competitors, and it creates uncertainty that can drive people away before anything is decided.
 
@@ -460,7 +460,7 @@ When the time comes to tell the full team, plan the announcement. Ideally the ow
 
 For more on when to start preparing and who to involve, see our [12 month plan for owners who want to sell](/blog/i-want-to-sell-my-business).
 
-## What Practical Steps Keep a Sale Quiet Day to Day?
+## What practical steps keep a sale quiet day to day?
 
 Small habits prevent most accidental leaks.
 
@@ -470,7 +470,7 @@ Small habits prevent most accidental leaks.
 - Prepare a short, truthful answer for staff who ask about visitors, such as a meeting with advisers or a lender.
 - Limit the number of advisers who know, and confirm that each one is bound by professional duties or a confidentiality agreement.
 
-## What Should You Do If Word Gets Out?
+## What should you do if word gets out?
 
 Leaks happen even with careful processes. The goal is to respond quickly and calmly.
 
@@ -484,7 +484,7 @@ Leaks happen even with careful processes. The goal is to respond quickly and cal
 
 **Adjust the process.** Tighten disclosure for remaining buyers and consider whether the sale timeline needs to change.
 
-## Who Should Draft Your Sale NDA?
+## Who should draft your sale NDA?
 
 Your attorney. Template NDAs from the internet often lack sale specific provisions such as non solicitation, no contact clauses, and clear return or destruction terms, and they may not reflect the law of your state. A transaction attorney can draft an NDA suited to your business, review a buyer's proposed changes, and advise you if a breach occurs.
 
