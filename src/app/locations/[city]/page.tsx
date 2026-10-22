@@ -120,56 +120,55 @@ export default async function CityPage({ params }: Props) {
       />
 
       {/* Hero */}
-      <section className="bg-graphite">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <nav aria-label="Breadcrumb">
-            <ol className="flex items-center gap-2 text-sm text-white/60">
+      <section className="bg-graphite surface-dark">
+        <div className="container-wide section-padding">
+          <nav aria-label="Breadcrumb" className="py-4">
+            <ol className="flex flex-wrap items-center gap-2 text-sm">
               <li>
-                <Link href="/" className="hover:text-white transition-colors">
+                <Link href="/" className="transition-colors">
                   Home
                 </Link>
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-white/60">/</span>
-                <Link href="/locations" className="hover:text-white transition-colors">
+                <span>/</span>
+                <Link href="/locations" className="transition-colors">
                   Locations
                 </Link>
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-white/60">/</span>
-                <span className="text-white font-medium">
+                <span>/</span>
+                <span className="text-graphite font-medium">
                   {city.name}, {city.stateAbbr}
                 </span>
               </li>
             </ol>
           </nav>
-        </div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-20">
-          <p className="eyebrow mb-4">Franchise Consulting Services</p>
-          <h1 className="heading-1 text-white mb-6">
-            Franchise Consultant in {city.name}, {city.stateAbbr}
-          </h1>
-          <p className="text-lg text-white/60 leading-relaxed max-w-2xl">
-            Franchise development and consulting across the {city.metroArea} metro,
-            from {city.topIndustries[0]?.toLowerCase() || 'local'} concepts to multi-unit
-            growth strategies. We help {city.name} owners build franchise systems
-            and connect qualified buyers with the right opportunities.
-          </p>
+          <div className="max-w-[880px]">
+            <h1 className="heading-1 mb-6">
+              Franchise Consultant in {city.name}, {city.stateAbbr}
+            </h1>
+            <p className="body-large">
+              Franchise development and consulting across the {city.metroArea} metro,
+              from {city.topIndustries[0]?.toLowerCase() || 'local'} concepts to multi-unit
+              growth strategies. We help {city.name} owners build franchise systems
+              and connect qualified buyers with the right opportunities.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Main Content */}
-      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-3 gap-12">
+      <section className="section-padding bg-white">
+        <div className="container-wide">
+          <div className="grid lg:grid-cols-3 gap-12 lg:gap-16">
             {/* Left Content - 2 columns */}
-            <div className="lg:col-span-2 space-y-16">
+            <div className="lg:col-span-2 space-y-20 min-w-0">
               {/* City Landscape */}
               <div>
-                <h2 className="heading-2 mb-6">
+                <h2 className="heading-2 mb-8">
                   Franchising in {city.name}, {city.stateAbbr}
                 </h2>
-                <div className="space-y-6 text-steel">
+                <div className="space-y-6 text-steel text-[17px] leading-relaxed">
                   <p className="body-large">{city.localInsight}</p>
                   <p>{city.franchiseActivity}</p>
                 </div>
@@ -177,32 +176,31 @@ export default async function CityPage({ params }: Props) {
 
               {/* Top Industries */}
               <div>
-                <h3 className="heading-3 mb-6">
-                  Top Franchise Industries in {city.name}
+                <h3 className="heading-3 mb-8">
+                  Top franchise industries in {city.name}
                 </h3>
-                <div className="grid sm:grid-cols-2 gap-4">
+                <div className="tile-grid md:grid-cols-2">
                   {city.topIndustries.map((industry) => {
                     const href = industryLinkMap[industry]
                     const cardContent = (
                       <>
-                        <div className="w-10 h-10 bg-ember/10 flex items-center justify-center flex-shrink-0">
-                          <svg
-                            className="w-5 h-5 text-accent"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            strokeWidth={1.5}
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M13.5 21v-7.5a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349M3.75 21V9.349m0 0a3.001 3.001 0 0 0 3.75-.615A2.993 2.993 0 0 0 9.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 0 0 2.25 1.016c.896 0 1.7-.393 2.25-1.015a3.001 3.001 0 0 0 3.75.614m-16.5 0a3.004 3.004 0 0 1-.621-4.72l1.189-1.19A1.5 1.5 0 0 1 5.378 3h13.243a1.5 1.5 0 0 1 1.06.44l1.19 1.189a3 3 0 0 1-.621 4.72M6.75 18h3.75a.75.75 0 0 0 .75-.75V13.5a.75.75 0 0 0-.75-.75H6.75a.75.75 0 0 0-.75.75v3.75c0 .414.336.75.75.75Z"
-                            />
-                          </svg>
-                        </div>
+                        <svg
+                          className="w-6 h-6 text-accent flex-shrink-0 mt-0.5"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1.5}
+                          stroke="currentColor"
+                          aria-hidden="true"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M13.5 21v-7.5a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349M3.75 21V9.349m0 0a3.001 3.001 0 0 0 3.75-.615A2.993 2.993 0 0 0 9.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 0 0 2.25 1.016c.896 0 1.7-.393 2.25-1.015a3.001 3.001 0 0 0 3.75.614m-16.5 0a3.004 3.004 0 0 1-.621-4.72l1.189-1.19A1.5 1.5 0 0 1 5.378 3h13.243a1.5 1.5 0 0 1 1.06.44l1.19 1.189a3 3 0 0 1-.621 4.72M6.75 18h3.75a.75.75 0 0 0 .75-.75V13.5a.75.75 0 0 0-.75-.75H6.75a.75.75 0 0 0-.75.75v3.75c0 .414.336.75.75.75Z"
+                          />
+                        </svg>
                         <div>
                           <h4 className="heading-4 text-graphite">{industry}</h4>
-                          <p className="text-sm text-steel mt-1">
+                          <p className="text-sm text-steel leading-relaxed mt-2">
                             High demand in the {city.metroArea} market
                           </p>
                         </div>
@@ -212,14 +210,14 @@ export default async function CityPage({ params }: Props) {
                       <Link
                         key={industry}
                         href={href}
-                        className="card-interactive p-5 flex items-start gap-4 group"
+                        className="card-interactive flex items-start gap-4 group"
                       >
                         {cardContent}
                       </Link>
                     ) : (
                       <div
                         key={industry}
-                        className="card p-5 flex items-start gap-4"
+                        className="card flex items-start gap-4"
                       >
                         {cardContent}
                       </div>
@@ -230,65 +228,63 @@ export default async function CityPage({ params }: Props) {
 
               {/* Two-Way Help Section */}
               <div>
-                <h3 className="heading-3 mb-6">
-                  How We Help in {city.name}
+                <h3 className="heading-3 mb-8">
+                  How we help in {city.name}
                 </h3>
-                <div className="grid sm:grid-cols-2 gap-6">
+                <div className="tile-grid md:grid-cols-2">
                   {/* Franchise Your Business Card */}
-                  <div className="card-interactive p-6 group">
-                    <div className="w-12 h-12 bg-graphite/10 flex items-center justify-center mb-4">
-                      <svg
-                        className="w-6 h-6 text-graphite"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5m.75-9 3-3 2.148 2.148A12.061 12.061 0 0 1 16.5 7.605"
-                        />
-                      </svg>
-                    </div>
-                    <h4 className="heading-4 mb-2">Franchise Your Business</h4>
-                    <p className="text-sm text-steel mb-4">
+                  <div className="card flex flex-col">
+                    <svg
+                      className="w-7 h-7 text-accent mb-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5m.75-9 3-3 2.148 2.148A12.061 12.061 0 0 1 16.5 7.605"
+                      />
+                    </svg>
+                    <h4 className="heading-4 mb-3">Franchise your business</h4>
+                    <p className="text-steel text-[17px] leading-relaxed mb-6">
                       Own a successful business in {city.name}? We help you build a franchise system
                       from the ground up, including your FDD, operations manual, and growth strategy.
                     </p>
                     <Link
                       href="/services"
-                      className="text-accent text-sm font-semibold group-hover:underline"
+                      className="text-link text-sm font-semibold mt-auto inline-flex items-center min-h-[44px] self-start"
                     >
                       Learn about our services
                     </Link>
                   </div>
 
                   {/* Own a Forge Franchise Card */}
-                  <div className="card-interactive p-6 group">
-                    <div className="w-12 h-12 bg-ember/10 flex items-center justify-center mb-4">
-                      <svg
-                        className="w-6 h-6 text-accent"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
-                        />
-                      </svg>
-                    </div>
-                    <h4 className="heading-4 mb-2">Own a Forge Franchise</h4>
-                    <p className="text-sm text-steel mb-4">
+                  <div className="card flex flex-col">
+                    <svg
+                      className="w-7 h-7 text-accent mb-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
+                      />
+                    </svg>
+                    <h4 className="heading-4 mb-3">Own a Forge franchise</h4>
+                    <p className="text-steel text-[17px] leading-relaxed mb-6">
                       Interested in owning a franchise consulting business in the {city.metroArea} area?
                       Forge Franchising is expanding and looking for qualified operators.
                     </p>
                     <Link
                       href="/own-a-franchise"
-                      className="text-accent text-sm font-semibold group-hover:underline"
+                      className="text-link text-sm font-semibold mt-auto inline-flex items-center min-h-[44px] self-start"
                     >
                       Explore the opportunity
                     </Link>
@@ -298,28 +294,28 @@ export default async function CityPage({ params }: Props) {
 
               {/* City Stats */}
               <div>
-                <h3 className="heading-3 mb-6">{city.name} Market Snapshot</h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                  <div className="card p-5 text-center">
-                    <p className="text-2xl font-bold text-graphite">{city.population}</p>
-                    <p className="text-xs text-steel mt-1 uppercase tracking-wider">
+                <h3 className="heading-3 mb-8">{city.name} market snapshot</h3>
+                <div className="tile-grid grid-cols-2 md:grid-cols-3">
+                  <div className="card">
+                    <p className="heading-3 text-graphite">{city.population}</p>
+                    <p className="text-sm text-steel mt-2">
                       Population
                     </p>
                   </div>
-                  <div className="card p-5 text-center">
-                    <p className="text-2xl font-bold text-graphite">
+                  <div className="card">
+                    <p className="heading-3 text-graphite">
                       {city.topIndustries.length}
                     </p>
-                    <p className="text-xs text-steel mt-1 uppercase tracking-wider">
-                      Top Industries
+                    <p className="text-sm text-steel mt-2">
+                      Top industries
                     </p>
                   </div>
-                  <div className="card p-5 text-center col-span-2 sm:col-span-1">
-                    <p className="text-lg font-bold text-graphite leading-tight">
+                  <div className="card col-span-2 md:col-span-1">
+                    <p className="heading-4 text-graphite">
                       {city.metroArea}
                     </p>
-                    <p className="text-xs text-steel mt-1 uppercase tracking-wider">
-                      Metro Area
+                    <p className="text-sm text-steel mt-2">
+                      Metro area
                     </p>
                   </div>
                 </div>
@@ -327,82 +323,82 @@ export default async function CityPage({ params }: Props) {
             </div>
 
             {/* Right Sidebar */}
-            <div className="lg:col-span-1 space-y-6">
-              <div className="sticky top-24 space-y-6">
+            <div className="lg:col-span-1 min-w-0">
+              <div className="lg:sticky lg:top-24 space-y-6">
                 {/* Assessment CTA Card */}
-                <div className="card p-6 bg-stone">
-                  <h3 className="heading-4 mb-3">Is Your Business Ready to Franchise?</h3>
-                  <p className="text-sm text-steel mb-4">
+                <div className="card bg-stone border-stone">
+                  <h3 className="heading-4 mb-3">Is your business ready to franchise?</h3>
+                  <p className="text-sm text-steel leading-relaxed mb-6">
                     Take our free assessment to find out if your {city.name} business
                     is a strong franchise candidate. No commitment required.
                   </p>
                   <Link
                     href="/is-my-business-franchisable"
-                    className="btn-primary text-sm w-full text-center block"
+                    className="btn-primary w-full"
                   >
-                    Get Your Free Readiness Score
+                    Get your free readiness score
                   </Link>
                 </div>
 
                 {/* Franchise Opportunity CTA Card */}
-                <div className="card p-6">
-                  <h3 className="heading-4 mb-3">Own a Franchise in {city.name}</h3>
-                  <p className="text-sm text-steel mb-4">
+                <div className="card">
+                  <h3 className="heading-4 mb-3">Own a franchise in {city.name}</h3>
+                  <p className="text-sm text-steel leading-relaxed mb-6">
                     Qualified candidates can apply to own a Forge Franchising
                     territory in the {city.metroArea} market.
                   </p>
                   <Link
                     href="/own-a-franchise/apply"
-                    className="btn-secondary text-sm w-full text-center block"
+                    className="btn-secondary w-full"
                   >
-                    Apply Now
+                    Apply now
                   </Link>
                 </div>
 
                 {/* Related Resource Links */}
-                <div className="card p-6">
-                  <h4 className="text-sm font-semibold text-graphite mb-4 uppercase tracking-wider">
-                    Related Resources
+                <div className="card">
+                  <h4 className="heading-4 mb-4">
+                    Related resources
                   </h4>
-                  <ul className="space-y-3">
-                    <li>
+                  <ul className="border-t border-graphite">
+                    <li className="border-b border-line">
                       <Link
                         href="/services"
-                        className="text-sm text-steel hover:text-accent transition-colors"
+                        className="flex items-center min-h-[44px] py-2 text-sm text-steel hover:text-accent transition-colors"
                       >
-                        Our Franchise Development Services
+                        Our franchise development services
                       </Link>
                     </li>
-                    <li>
+                    <li className="border-b border-line">
                       <Link
                         href="/how-it-works"
-                        className="text-sm text-steel hover:text-accent transition-colors"
+                        className="flex items-center min-h-[44px] py-2 text-sm text-steel hover:text-accent transition-colors"
                       >
-                        How the Process Works
+                        How the process works
                       </Link>
                     </li>
-                    <li>
+                    <li className="border-b border-line">
                       <Link
                         href="/franchise-laws"
-                        className="text-sm text-steel hover:text-accent transition-colors"
+                        className="flex items-center min-h-[44px] py-2 text-sm text-steel hover:text-accent transition-colors"
                       >
-                        Franchise Laws by State
+                        Franchise laws by state
                       </Link>
                     </li>
-                    <li>
+                    <li className="border-b border-line">
                       <Link
                         href="/calculator"
-                        className="text-sm text-steel hover:text-accent transition-colors"
+                        className="flex items-center min-h-[44px] py-2 text-sm text-steel hover:text-accent transition-colors"
                       >
-                        Franchise Cost Calculator
+                        Franchise cost calculator
                       </Link>
                     </li>
-                    <li>
+                    <li className="border-b border-line">
                       <Link
                         href="/blog"
-                        className="text-sm text-steel hover:text-accent transition-colors"
+                        className="flex items-center min-h-[44px] py-2 text-sm text-steel hover:text-accent transition-colors"
                       >
-                        Franchise Blog
+                        Franchise blog
                       </Link>
                     </li>
                   </ul>
@@ -410,28 +406,28 @@ export default async function CityPage({ params }: Props) {
 
                 {/* Nearby Cities */}
                 {nearbyLinks.length > 0 && (
-                  <div className="card p-6">
-                    <h4 className="text-sm font-semibold text-graphite mb-4 uppercase tracking-wider">
-                      Nearby Markets
+                  <div className="card">
+                    <h4 className="heading-4 mb-4">
+                      Nearby markets
                     </h4>
-                    <ul className="space-y-3">
+                    <ul className="border-t border-graphite">
                       {nearbyLinks.map((c) => (
-                        <li key={c.slug}>
+                        <li key={c.slug} className="border-b border-line">
                           <Link
                             href={`/locations/${c.slug}`}
-                            className="text-sm text-steel hover:text-accent transition-colors"
+                            className="flex items-center min-h-[44px] py-2 text-sm text-steel hover:text-accent transition-colors"
                           >
                             {c.name}, {c.stateAbbr}
                           </Link>
                         </li>
                       ))}
                     </ul>
-                    <div className="mt-4 pt-4 border-t border-graphite/10">
+                    <div className="mt-4">
                       <Link
                         href="/locations"
-                        className="text-sm text-accent font-semibold hover:underline"
+                        className="text-link text-sm font-semibold inline-flex items-center min-h-[44px]"
                       >
-                        View All Locations
+                        View all locations
                       </Link>
                     </div>
                   </div>
@@ -444,7 +440,7 @@ export default async function CityPage({ params }: Props) {
 
       {/* Bottom CTA */}
       <SectionCTA
-        heading={`Ready to Franchise in ${city.name}?`}
+        heading={`Ready to franchise in ${city.name}?`}
         body={`Whether you want to franchise your ${city.name} business or invest in a franchise opportunity in the ${city.metroArea} area, Forge Franchising can help. Start with a free consultation.`}
         secondaryText="Or explore our services first"
         secondaryHref="/services"

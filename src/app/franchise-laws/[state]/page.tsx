@@ -11,7 +11,6 @@ import {
   FRANCHISE_LAWS,
   getStateBySlug,
   getCategoryLabel,
-  getCategoryColor,
   type FranchiseStateData,
 } from '@/data/franchise-laws'
 
@@ -58,10 +57,9 @@ export async function generateMetadata({ params }: Props) {
 }
 
 function CategoryBadge({ category }: { category: FranchiseStateData['category'] }) {
-  const colorClass = getCategoryColor(category)
   const label = getCategoryLabel(category)
   return (
-    <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold border ${colorClass}`}>
+    <span className="inline-flex items-center px-3 py-1 text-sm font-semibold border border-current">
       {label}
     </span>
   )
@@ -125,8 +123,8 @@ export default async function StateFranchiseLawPage({ params }: Props) {
               { label: stateData.name },
             ]}
           />
-          <div className="max-w-3xl">
-            <div className="mb-4">
+          <div className="max-w-[880px]">
+            <div className="mb-6">
               <CategoryBadge category={stateData.category} />
             </div>
             <h1 className="heading-1 mb-6">{pageTitle}</h1>
@@ -148,14 +146,14 @@ export default async function StateFranchiseLawPage({ params }: Props) {
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Main Content */}
             <div className="lg:col-span-2">
-              <h2 className="heading-2 mb-6">
-                What Franchisors Must Do in {stateData.name}
+              <h2 className="heading-2 mb-12">
+                What franchisors must do in {stateData.name}
               </h2>
 
               {/* Key Requirements */}
-              <div className="mb-10">
-                <h3 className="heading-3 mb-4">Key Requirements</h3>
-                <ul className="space-y-3">
+              <div className="mb-12">
+                <h3 className="heading-3 mb-6">Key requirements</h3>
+                <ul className="space-y-4">
                   {stateData.keyRequirements.map((req, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <svg
@@ -169,41 +167,41 @@ export default async function StateFranchiseLawPage({ params }: Props) {
                           clipRule="evenodd"
                         />
                       </svg>
-                      <span className="text-steel">{req}</span>
+                      <span className="text-steel text-[17px] leading-relaxed">{req}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
               {/* Renewal Info */}
-              <div className="mb-10">
-                <h3 className="heading-3 mb-4">Renewal Requirements</h3>
-                <p className="text-steel">{stateData.renewalInfo}</p>
+              <div className="mb-12 pt-10 border-t border-line">
+                <h3 className="heading-3 mb-4">Renewal requirements</h3>
+                <p className="text-steel text-[17px] leading-relaxed">{stateData.renewalInfo}</p>
               </div>
 
               {/* Fees */}
-              <div className="mb-10">
-                <h3 className="heading-3 mb-4">Filing Fees</h3>
-                <p className="text-steel">{stateData.fees}</p>
+              <div className="mb-12 pt-10 border-t border-line">
+                <h3 className="heading-3 mb-4">Filing fees</h3>
+                <p className="text-steel text-[17px] leading-relaxed">{stateData.fees}</p>
               </div>
 
               {/* Special Notes */}
               {stateData.notes && (
-                <div className="mb-10">
-                  <h3 className="heading-3 mb-4">Important Notes</h3>
-                  <div className="card p-6 border border-ember/20 bg-ember/5">
-                    <p className="text-steel">{stateData.notes}</p>
+                <div className="mb-12 pt-10 border-t border-line">
+                  <h3 className="heading-3 mb-4">Important notes</h3>
+                  <div className="card border-t-2 border-t-graphite">
+                    <p className="text-steel text-[17px] leading-relaxed">{stateData.notes}</p>
                   </div>
                 </div>
               )}
 
               {/* Category-specific guidance */}
               {stateData.category === 'registration' && (
-                <div className="mb-10">
-                  <h3 className="heading-3 mb-4">
-                    Understanding {stateData.name} Franchise Registration
+                <div className="mb-12 pt-10 border-t border-line">
+                  <h3 className="heading-3 mb-6">
+                    Understanding {stateData.name} franchise registration
                   </h3>
-                  <div className="space-y-4 text-steel">
+                  <div className="space-y-4 text-steel text-[17px] leading-relaxed">
                     <p>
                       As a registration state, {stateData.name} requires franchisors to submit their
                       FDD for review by a state examiner before any franchise can be offered or sold.
@@ -227,11 +225,11 @@ export default async function StateFranchiseLawPage({ params }: Props) {
               )}
 
               {stateData.category === 'filing' && (
-                <div className="mb-10">
-                  <h3 className="heading-3 mb-4">
-                    Understanding {stateData.name} Franchise Filing
+                <div className="mb-12 pt-10 border-t border-line">
+                  <h3 className="heading-3 mb-6">
+                    Understanding {stateData.name} franchise filing
                   </h3>
-                  <div className="space-y-4 text-steel">
+                  <div className="space-y-4 text-steel text-[17px] leading-relaxed">
                     <p>
                       As a filing state, {stateData.name} requires franchisors to file their FDD (or
                       a notice of filing) with the designated state agency before offering or selling
@@ -253,11 +251,11 @@ export default async function StateFranchiseLawPage({ params }: Props) {
               )}
 
               {stateData.category === 'no-filing' && (
-                <div className="mb-10">
-                  <h3 className="heading-3 mb-4">
-                    Franchising in {stateData.name} Without a State Filing
+                <div className="mb-12 pt-10 border-t border-line">
+                  <h3 className="heading-3 mb-6">
+                    Franchising in {stateData.name} without a state filing
                   </h3>
-                  <div className="space-y-4 text-steel">
+                  <div className="space-y-4 text-steel text-[17px] leading-relaxed">
                     <p>
                       {stateData.name} does not have a franchise-specific registration or filing law.
                       This means franchisors can offer and sell franchises in {stateData.name}{' '}
@@ -284,55 +282,53 @@ export default async function StateFranchiseLawPage({ params }: Props) {
 
             {/* Sidebar */}
             <div className="lg:col-span-1">
-              <div className="card p-6 sticky top-24">
-                <h3 className="heading-4 mb-4">Regulatory Information</h3>
-                <dl className="space-y-4">
-                  <div>
-                    <dt className="text-xs font-semibold uppercase tracking-wider text-steel mb-1">
+              <div className="card lg:sticky lg:top-24">
+                <h3 className="heading-4 mb-6">Regulatory information</h3>
+                <dl className="border-t border-graphite">
+                  <div className="py-4 border-b border-line">
+                    <dt className="text-sm text-steel mb-1">
                       State
                     </dt>
                     <dd className="text-graphite font-medium">{stateData.name}</dd>
                   </div>
-                  <div>
-                    <dt className="text-xs font-semibold uppercase tracking-wider text-steel mb-1">
+                  <div className="py-4 border-b border-line">
+                    <dt className="text-sm text-steel mb-2">
                       Category
                     </dt>
-                    <dd>
+                    <dd className="text-graphite">
                       <CategoryBadge category={stateData.category} />
                     </dd>
                   </div>
-                  <div>
-                    <dt className="text-xs font-semibold uppercase tracking-wider text-steel mb-1">
-                      Regulatory Body
+                  <div className="py-4 border-b border-line">
+                    <dt className="text-sm text-steel mb-1">
+                      Regulatory body
                     </dt>
                     <dd className="text-graphite text-sm">{stateData.regulatoryBody}</dd>
                   </div>
-                  <div>
-                    <dt className="text-xs font-semibold uppercase tracking-wider text-steel mb-1">
-                      Official Resource
+                  <div className="py-4 border-b border-line">
+                    <dt className="text-sm text-steel mb-1">
+                      Official resource
                     </dt>
                     <dd>
                       <a
                         href={stateData.officialUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-accent hover:text-accent/80 text-sm underline transition-colors"
+                        className="text-link text-sm inline-flex items-center min-h-[44px]"
                       >
-                        Visit State Website
+                        Visit state website
                       </a>
                     </dd>
                   </div>
                 </dl>
 
-                <hr className="my-6 border-graphite/10" />
-
-                <h4 className="text-sm font-semibold text-graphite mb-3">Need Help?</h4>
-                <p className="text-xs text-steel mb-4">
+                <h4 className="heading-4 mt-8 mb-3">Need help?</h4>
+                <p className="text-sm text-steel leading-relaxed mb-6">
                   We manage state franchise registrations and filings as part of our franchise
                   development services.
                 </p>
-                <Link href="/contact" className="btn-primary text-sm w-full text-center block">
-                  Schedule a Consultation
+                <Link href="/contact" className="btn-primary w-full">
+                  Schedule a consultation
                 </Link>
               </div>
             </div>
@@ -344,16 +340,16 @@ export default async function StateFranchiseLawPage({ params }: Props) {
       {sameCategory.length > 0 && (
         <section className="section-padding bg-stone">
           <div className="container-wide">
-            <h2 className="heading-2 mb-4">
+            <h2 className="heading-2 mb-6">
               Other{' '}
               {stateData.category === 'registration'
-                ? 'Registration'
+                ? 'registration'
                 : stateData.category === 'filing'
-                  ? 'Filing'
-                  : 'No-Filing'}{' '}
-              States
+                  ? 'filing'
+                  : 'no-filing'}{' '}
+              states
             </h2>
-            <p className="body-large mb-8 max-w-2xl">
+            <p className="body-large mb-12 max-w-[880px]">
               Explore franchise requirements in other states with{' '}
               {stateData.category === 'registration'
                 ? 'registration requirements'
@@ -362,23 +358,23 @@ export default async function StateFranchiseLawPage({ params }: Props) {
                   : 'no state-level filing requirements'}
               .
             </p>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="tile-grid md:grid-cols-2 lg:grid-cols-3">
               {sameCategory.map((s) => (
                 <Link
                   key={s.slug}
                   href={`/franchise-laws/${s.slug}`}
-                  className="card p-5 hover:shadow-md transition-shadow group"
+                  className="card-interactive group"
                 >
-                  <h3 className="heading-4 mb-2 group-hover:text-accent transition-colors">
+                  <h3 className="heading-4 mb-3">
                     {s.name}
                   </h3>
-                  <p className="text-sm text-steel line-clamp-2">{s.overview}</p>
+                  <p className="text-sm text-steel leading-relaxed line-clamp-2">{s.overview}</p>
                 </Link>
               ))}
             </div>
-            <div className="mt-8 text-center">
+            <div className="mt-12">
               <Link href="/franchise-laws" className="btn-secondary">
-                View All States
+                View all states
               </Link>
             </div>
           </div>
@@ -388,85 +384,81 @@ export default async function StateFranchiseLawPage({ params }: Props) {
       {/* Internal Links */}
       <section className="section-padding bg-white">
         <div className="container-wide">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="heading-2 mb-6 text-center">Related Resources</h2>
-            <div className="grid sm:grid-cols-2 gap-4">
-              <Link
-                href="/franchise-laws"
-                className="card p-5 hover:shadow-md transition-shadow group"
-              >
-                <h3 className="heading-4 mb-2 group-hover:text-accent transition-colors">
-                  All State Franchise Laws
-                </h3>
-                <p className="text-sm text-steel">
-                  Complete directory of franchise laws across all 50 states.
-                </p>
-              </Link>
-              <Link
-                href="/services"
-                className="card p-5 hover:shadow-md transition-shadow group"
-              >
-                <h3 className="heading-4 mb-2 group-hover:text-accent transition-colors">
-                  Franchise Development Services
-                </h3>
-                <p className="text-sm text-steel">
-                  We handle FDD preparation, state registrations, and ongoing compliance.
-                </p>
-              </Link>
-              <Link
-                href="/glossary"
-                className="card p-5 hover:shadow-md transition-shadow group"
-              >
-                <h3 className="heading-4 mb-2 group-hover:text-accent transition-colors">
-                  Franchise Glossary
-                </h3>
-                <p className="text-sm text-steel">
-                  Definitions of FDD, franchise agreement, and other key terms.
-                </p>
-              </Link>
-              <Link
-                href="/contact"
-                className="card p-5 hover:shadow-md transition-shadow group"
-              >
-                <h3 className="heading-4 mb-2 group-hover:text-accent transition-colors">
-                  Contact Us
-                </h3>
-                <p className="text-sm text-steel">
-                  Questions about {stateData.name} franchise compliance? Talk to our team.
-                </p>
-              </Link>
-            </div>
+          <h2 className="heading-2 mb-12">Related resources</h2>
+          <div className="tile-grid md:grid-cols-2 lg:grid-cols-4">
+            <Link
+              href="/franchise-laws"
+              className="card-interactive group"
+            >
+              <h3 className="heading-4 mb-3">
+                All state franchise laws
+              </h3>
+              <p className="text-sm text-steel leading-relaxed">
+                Complete directory of franchise laws across all 50 states.
+              </p>
+            </Link>
+            <Link
+              href="/services"
+              className="card-interactive group"
+            >
+              <h3 className="heading-4 mb-3">
+                Franchise development services
+              </h3>
+              <p className="text-sm text-steel leading-relaxed">
+                We handle FDD preparation, state registrations, and ongoing compliance.
+              </p>
+            </Link>
+            <Link
+              href="/glossary"
+              className="card-interactive group"
+            >
+              <h3 className="heading-4 mb-3">
+                Franchise glossary
+              </h3>
+              <p className="text-sm text-steel leading-relaxed">
+                Definitions of FDD, franchise agreement, and other key terms.
+              </p>
+            </Link>
+            <Link
+              href="/contact"
+              className="card-interactive group"
+            >
+              <h3 className="heading-4 mb-3">
+                Contact us
+              </h3>
+              <p className="text-sm text-steel leading-relaxed">
+                Questions about {stateData.name} franchise compliance? Talk to our team.
+              </p>
+            </Link>
+          </div>
+
+          {/* Disclaimer */}
+          <div className="mt-16 pt-8 border-t border-line">
+            <p className="text-sm text-steel leading-relaxed max-w-[880px]">
+              This content is general education and does not constitute legal advice. Franchise laws
+              change. Consult a franchise attorney and verify current requirements with the relevant
+              state agency.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Disclaimer */}
-      <div className="bg-white border-t border-graphite/10">
-        <div className="container-wide py-8">
-          <p className="text-xs text-steel max-w-3xl mx-auto text-center">
-            This content is general education and does not constitute legal advice. Franchise laws
-            change. Consult a franchise attorney and verify current requirements with the relevant
-            state agency.
-          </p>
-        </div>
-      </div>
-
       <ContinueLearning
-        heading="Continue Your Research"
+        heading="Continue your research"
         links={[
-          { label: 'All State Franchise Laws', href: '/franchise-laws', description: 'See requirements for all 50 states in one view.' },
-          { label: 'How Our Process Works', href: '/how-it-works', description: 'The four phases from feasibility to franchise brand, including state registration.' },
-          { label: 'Franchise Glossary', href: '/glossary', description: 'Every franchise term defined in plain language.' },
+          { label: 'All state franchise laws', href: '/franchise-laws', description: 'See requirements for all 50 states in one view.' },
+          { label: 'How our process works', href: '/how-it-works', description: 'The four phases from feasibility to franchise brand, including state registration.' },
+          { label: 'Franchise glossary', href: '/glossary', description: 'Every franchise term defined in plain language.' },
         ]}
       />
 
       <SectionCTA
-        heading={`Need Help With ${stateData.name} Franchise Compliance?`}
+        heading={`Need help with ${stateData.name} franchise compliance?`}
         body={`We handle state franchise registrations, filings, and annual renewals so you can focus on growing your brand. Let us manage the ${stateData.name} process for you.`}
       />
 
       <StickyCTA
-        text="Get Your Free Readiness Score"
+        text="Get your free readiness score"
         href="/is-my-business-franchisable"
       />
     </>

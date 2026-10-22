@@ -3,10 +3,10 @@ import { createMetadata } from '@/lib/metadata'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { SectionCTA } from '@/components/SectionCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
-import { OpenLoop } from '@/components/OpenLoop'
 import { StickyCTA } from '@/components/StickyCTA'
 import { INDUSTRIES, SITE_URL } from '@/lib/constants'
 import { webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
+import { sentenceCase } from '@/lib/text'
 
 export const metadata = createMetadata({
   title: 'Industries We Franchise',
@@ -38,8 +38,7 @@ export default function IndustriesPage() {
       <section className="bg-graphite surface-dark">
         <div className="container-wide section-padding">
           <Breadcrumbs items={[{ label: 'Industries' }]} />
-          <div className="max-w-3xl">
-            <p className="eyebrow mb-4">Industries</p>
+          <div className="max-w-[880px]">
             <h1 className="heading-1 mb-8">
               Every Industry Franchises Differently. Here Is What Matters in Yours.
             </h1>
@@ -62,22 +61,22 @@ export default function IndustriesPage() {
 
       <section className="section-padding bg-stone">
         <div className="container-wide">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="tile-grid md:grid-cols-2 lg:grid-cols-3">
             {INDUSTRIES.map((industry) => (
               <Link
                 key={industry.slug}
                 href={`/industries/${industry.slug}`}
-                className="card-interactive group"
+                className="card-interactive group flex flex-col"
               >
-                <h2 className="heading-4 mb-3 group-hover:text-accent transition-colors">
-                  {industry.name}
+                <h2 className="heading-4 mb-3">
+                  {sentenceCase(industry.name)}
                 </h2>
-                <p className="text-steel text-sm leading-relaxed mb-4">
+                <p className="text-steel text-[17px] leading-relaxed mb-6">
                   {industry.description}
                 </p>
-                <span className="text-accent font-semibold text-sm inline-flex items-center gap-1">
+                <span className="text-accent font-semibold text-sm inline-flex items-center gap-1 mt-auto min-h-[44px]">
                   Learn more
-                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                   </svg>
                 </span>
@@ -88,64 +87,56 @@ export default function IndustriesPage() {
       </section>
 
       <section className="section-padding bg-white">
-        <div className="container-wide text-center">
-          <h2 className="heading-2 mb-6">What Makes an Industry Franchise Well?</h2>
-          <p className="body-large max-w-3xl mx-auto mb-12">
+        <div className="container-wide">
+          <h2 className="heading-2 mb-6">What makes an industry franchise well?</h2>
+          <p className="body-large max-w-[880px] mb-12">
             Not every business model is built for franchising. The industries that scale best through
             franchising share a few common characteristics.
           </p>
-          <div className="grid sm:grid-cols-3 gap-8">
+          <div className="tile-grid md:grid-cols-3">
             {[
               {
-                title: 'Repeatable Operations',
+                title: 'Repeatable operations',
                 body: 'The business can be documented, trained, and replicated by someone who did not build it. If the founder is the secret ingredient, franchising will not work.',
               },
               {
-                title: 'Proven Unit Economics',
+                title: 'Proven unit economics',
                 body: 'There is a clear financial model: known costs, predictable revenue patterns, and margins that support both the franchisee and the franchisor royalty structure.',
               },
               {
-                title: 'Local Demand, National Appeal',
+                title: 'Local demand, national appeal',
                 body: 'The concept works in the local market and there is evidence that demand exists in other geographies. Consumers in different cities want the same thing.',
               },
             ].map((item) => (
-              <div key={item.title} className="card text-left">
+              <div key={item.title} className="card">
                 <h3 className="heading-4 mb-3">{item.title}</h3>
-                <p className="text-steel text-sm leading-relaxed">{item.body}</p>
+                <p className="text-steel text-[17px] leading-relaxed">{item.body}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Open loop: curiosity about what makes certain industries fail */}
-      <OpenLoop
-        teaser="Some of the most profitable local businesses make terrible franchises. The difference comes down to three structural factors that most owners never think about until it is too late."
-        linkText="Learn what makes a business franchisable"
-        href="/blog/is-your-business-ready-to-franchise"
-        variant="section"
-      />
-
       <ContinueLearning
-        heading="Keep Exploring"
+        heading="Keep exploring"
         links={[
-          { label: 'How Our Process Works', href: '/how-it-works', description: 'The four phases that take a business from proven concept to franchise brand.' },
-          { label: 'Franchise Glossary', href: '/glossary', description: 'Over 40 franchise terms defined in plain language with real context.' },
-          { label: 'Franchise Laws by State', href: '/franchise-laws', description: 'Know the regulatory landscape before you plan your expansion.' },
+          { label: 'How our process works', href: '/how-it-works', description: 'The four phases that take a business from proven concept to franchise brand.' },
+          { label: 'Franchise glossary', href: '/glossary', description: 'Over 40 franchise terms defined in plain language with real context.' },
+          { label: 'Franchise laws by state', href: '/franchise-laws', description: 'Know the regulatory landscape before you plan your expansion.' },
         ]}
       />
 
       <SectionCTA
-        heading="Not Sure If Your Industry Is Right for Franchising?"
+        heading="Not sure if your industry is right for franchising?"
         body="Take our two-minute assessment and get an honest answer. Your score reflects your specific business, not just your industry."
-        buttonText="See If Your Business Qualifies"
+        buttonText="See if your business qualifies"
         buttonHref="/is-my-business-franchisable"
         secondaryText="Or talk to our team directly"
         secondaryHref="/contact"
       />
 
       <StickyCTA
-        text="See If Your Business Qualifies"
+        text="See if your business qualifies"
         href="/is-my-business-franchisable"
       />
     </>
