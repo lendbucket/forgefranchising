@@ -120,7 +120,8 @@ export default async function StateFranchiseLawPage({ params }: Props) {
           <Breadcrumbs
             withSchema={false}
             items={[
-              { label: 'Franchise Laws', href: '/franchise-laws' },
+              { label: 'Resources', href: '/learn' },
+              { label: 'Franchise Laws by State', href: '/franchise-laws' },
               { label: stateData.name },
             ]}
           />

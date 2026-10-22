@@ -35,10 +35,14 @@ const tiers = [
   },
   {
     name: 'Growth',
-    tagline: 'The complete package most brands choose',
+    tagline: 'The engagement we recommend for most first time franchisors',
     popular: true,
     description:
       'Growth includes everything in Launch, plus the systems that actually drive franchise sales and franchisee success. This is the package for owners who do not just want to be legally ready to franchise. They want to be operationally ready to scale. Most of our clients choose Growth because it covers the gap between "we have an FDD" and "we are actually selling and supporting franchises."',
+    // Shown on the page. `description` above still feeds the OfferCatalog
+    // schema unchanged until Robert approves updating structured data.
+    pageDescription:
+      'Growth includes everything in Launch, plus the systems that actually drive franchise sales and franchisee success. This is the package for owners who do not just want to be legally ready to franchise. They want to be operationally ready to scale. Growth is the tier we recommend for most first time franchisors because it covers the gap between "we have an FDD" and "we are actually selling and supporting franchises."',
     priceHint: 'The complete package most brands choose. Contact us for a tailored quote.',
     features: [
       'Everything in the Launch package',
@@ -198,7 +202,7 @@ export default function PackagesPage() {
                   <h2 className="heading-2 mb-2">{tier.name}</h2>
                   <p className="text-accent font-semibold text-sm">{tier.tagline}</p>
                 </div>
-                <p className="text-steel text-[17px] leading-relaxed mb-6">{tier.description}</p>
+                <p className="text-steel text-[17px] leading-relaxed mb-6">{tier.pageDescription ?? tier.description}</p>
                 <div className="bg-stone p-4 mb-6">
                   <p className="text-graphite font-medium text-sm">{tier.priceHint}</p>
                 </div>
