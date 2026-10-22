@@ -464,7 +464,7 @@ export default function GlossaryPage() {
         links={[
           { label: 'How the franchise process works', href: '/how-it-works', description: 'See where these terms fit in the four-phase franchise development process.' },
           { label: 'What is an FDD?', href: '/blog/franchise-disclosure-document', description: 'The most important franchise document, broken down item by item.' },
-          { label: 'Get your readiness score', href: '/is-my-business-franchisable', description: 'Two-minute assessment to see if your business is ready to franchise.' },
+          { label: 'Get your readiness score', href: '/is-my-business-franchisable', description: 'Eight questions across the four pillars of the Forge Franchise Readiness Method. About two minutes.' },
         ]}
       />
 

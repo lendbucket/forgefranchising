@@ -163,7 +163,7 @@ export default function LearnPage() {
         heading="Not sure where to start? Follow this path."
         subheading="These five steps take you from first question to informed decision. Work through them in order, or jump to the one that matches where you are right now."
         steps={[
-          { step: 1, title: 'Find out if your business qualifies', description: 'Take our free readiness assessment. Eight questions, two minutes, honest answer.', href: '/is-my-business-franchisable', time: '2 min' },
+          { step: 1, title: 'Find out if your business qualifies', description: 'Eight questions across the four pillars of the Forge Franchise Readiness Method. About two minutes.', href: '/is-my-business-franchisable', time: '2 min' },
           { step: 2, title: 'Understand the four-phase process', description: 'See exactly how a proven business becomes a franchise brand, from feasibility to scale.', href: '/how-it-works', time: '5 min read' },
           { step: 3, title: 'Model your franchise economics', description: 'Plug in your numbers and see what a franchise system could generate in fees and royalties.', href: '/calculator', time: '3 min' },
           { step: 4, title: 'Read the complete franchise guide', description: 'Everything you need to know about franchising, from legal requirements to first sale.', href: '/blog/how-to-franchise-your-business', time: '14 min read' },

@@ -368,7 +368,7 @@ function InlineCTA({ cta }: { cta?: BlogCTA }) {
         {cta?.heading ? sentenceCase(cta.heading) : 'Find out if your business is ready to franchise'}
       </h3>
       <p className="text-[17px] leading-relaxed text-fog mb-8 max-w-[560px]">
-        {cta?.body ?? 'Take our two-minute assessment and get a franchise readiness score with personalized recommendations. No cost, no obligation.'}
+        {cta?.body ?? 'Eight questions across the four pillars of the Forge Franchise Readiness Method. About two minutes. You get a readiness score with recommendations for each pillar. No cost, no obligation.'}
       </p>
       <Link href={cta?.href ?? '/is-my-business-franchisable'} className="btn-primary">
         {cta?.buttonText ? sentenceCase(cta.buttonText) : 'Get your free readiness score'}

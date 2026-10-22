@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { CONTACT_EMAIL } from '@/lib/constants'
+import { TIERS, isTierKey } from '@/lib/assessment'
 
 function getResend() {
   return new Resend(process.env.RESEND_API_KEY || '')
@@ -19,9 +20,24 @@ function validateEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
 }
 
-function sanitize(value: unknown): string {
+/** Trimmed text for plain contexts such as the subject line. */
+function plain(value: unknown): string {
   if (typeof value !== 'string') return ''
   return value.trim().slice(0, 2000)
+}
+
+/** Trimmed and HTML escaped, for the email body. */
+function sanitize(value: unknown): string {
+  return escapeHtml(plain(value))
+}
+
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
 }
 
 export async function POST(request: Request) {
@@ -63,6 +79,15 @@ export async function POST(request: Request) {
     const targetTimeline = sanitize(body.targetTimeline)
     const biggestQuestion = sanitize(body.biggestQuestion)
 
+    // Optional handoff from the readiness assessment. Ignored unless both
+    // values are valid: an integer score from 0 to 100 and a known tier.
+    const assessmentScore = body.assessmentScore
+    const assessmentTier = body.assessmentTier
+    const assessment =
+      Number.isInteger(assessmentScore) && assessmentScore >= 0 && assessmentScore <= 100 && isTierKey(assessmentTier)
+        ? `${assessmentScore}/100, ${TIERS[assessmentTier].title}`
+        : ''
+
     const fromEmail = process.env.LEAD_FROM_EMAIL || 'Forge Franchising <leads@forgefranchising.com>'
 
     const htmlBody = `
@@ -79,16 +104,17 @@ export async function POST(request: Request) {
         <tr><td style="padding: 8px; font-weight: bold; color: #1C1F23; border-bottom: 1px solid #D9D5CF;">Currently Profitable</td><td style="padding: 8px; color: #4E5A62; border-bottom: 1px solid #D9D5CF;">${currentlyProfitable || 'Not provided'}</td></tr>
         <tr><td style="padding: 8px; font-weight: bold; color: #1C1F23; border-bottom: 1px solid #D9D5CF;">Reason for Franchising</td><td style="padding: 8px; color: #4E5A62; border-bottom: 1px solid #D9D5CF;">${reasonForFranchising}</td></tr>
         <tr><td style="padding: 8px; font-weight: bold; color: #1C1F23; border-bottom: 1px solid #D9D5CF;">Target Timeline</td><td style="padding: 8px; color: #4E5A62; border-bottom: 1px solid #D9D5CF;">${targetTimeline || 'Not provided'}</td></tr>
-        <tr><td style="padding: 8px; font-weight: bold; color: #1C1F23;">Biggest Question</td><td style="padding: 8px; color: #4E5A62;">${biggestQuestion || 'Not provided'}</td></tr>
+        <tr><td style="padding: 8px; font-weight: bold; color: #1C1F23;${assessment ? ' border-bottom: 1px solid #D9D5CF;' : ''}">Biggest Question</td><td style="padding: 8px; color: #4E5A62;${assessment ? ' border-bottom: 1px solid #D9D5CF;' : ''}">${biggestQuestion || 'Not provided'}</td></tr>
+        ${assessment ? `<tr><td style="padding: 8px; font-weight: bold; color: #1C1F23;">Readiness assessment</td><td style="padding: 8px; color: #4E5A62;">${assessment}</td></tr>` : ''}
       </table>
     `
 
     const { error } = await getResend().emails.send({
       from: fromEmail,
       to: CONTACT_EMAIL,
-      subject: `Franchise Inquiry: ${businessName} (${industry})`,
+      subject: `Franchise Inquiry: ${plain(body.businessName)} (${plain(body.industry)})${assessment ? `, assessment ${assessment}` : ''}`,
       html: htmlBody,
-      replyTo: email,
+      replyTo: plain(body.email),
     })
 
     if (error) {

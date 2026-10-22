@@ -416,7 +416,7 @@ export default function FranchiseLawsPage() {
         links={[
           { label: 'Franchise glossary', href: '/glossary', description: 'Every franchise term you will encounter during state registration and beyond.' },
           { label: 'How the process works', href: '/how-it-works', description: 'See where state registration fits in the four-phase franchise development process.' },
-          { label: 'Get your readiness score', href: '/is-my-business-franchisable', description: 'Two-minute assessment to see if your business is ready to franchise.' },
+          { label: 'Get your readiness score', href: '/is-my-business-franchisable', description: 'Eight questions across the four pillars of the Forge Franchise Readiness Method. About two minutes.' },
         ]}
       />
 

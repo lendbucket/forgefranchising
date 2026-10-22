@@ -344,7 +344,7 @@ export default function PackagesPage() {
       <ContinueLearning
         heading="Continue your research"
         links={[
-          { label: 'How the process works', href: '/how-it-works', description: 'The four phases every franchise we build moves through, from feasibility to scale.' },
+          { label: 'How the process works', href: '/how-it-works', description: 'The four phases of franchise development, from feasibility to scale.' },
           { label: 'Financing your development', href: '/financing', description: 'Common funding paths, what lenders look for, and how to prepare your business case.' },
           { label: 'Franchise vs license', href: '/franchise-vs-license', description: 'Compare both growth paths side by side before you choose a package.' },
         ]}

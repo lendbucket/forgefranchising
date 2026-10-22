@@ -78,7 +78,7 @@ Your product got you here. It proved the concept and built the customer base. Bu
 
 Build the brand before you sell the franchise. Invest in visual identity, voice, consistency, and trademark protection. Make the brand look like it belongs to a system ten times your current size. Because in franchising, the brand is the product. Everything else is a supporting detail.
 
-Ready to evaluate whether your brand is ready for franchising? [Take the free readiness assessment](/is-my-business-franchisable) and get a clear, honest answer in under five minutes.`,
+Ready to evaluate whether your brand is ready for franchising? [Take the free readiness assessment](/is-my-business-franchisable) and get a clear, scored answer in about two minutes.`,
   },
   {
     slug: 'what-franchisee-is-buying',

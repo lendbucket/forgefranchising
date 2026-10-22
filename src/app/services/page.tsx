@@ -285,7 +285,7 @@ export default function ServicesPage() {
         links={[
           { label: 'See how the process works', href: '/how-it-works', description: 'Four phases, one system. Understand the sequence before you start.' },
           { label: 'Compare our packages', href: '/packages', description: 'Three tiers with clear scoping so you know exactly what you are getting.' },
-          { label: 'Get your readiness score', href: '/is-my-business-franchisable', description: 'A two-minute assessment to see where your business stands today.' },
+          { label: 'Get your readiness score', href: '/is-my-business-franchisable', description: 'Eight questions across the four pillars of the Forge Franchise Readiness Method. About two minutes.' },
         ]}
       />
 

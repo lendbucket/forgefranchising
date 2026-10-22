@@ -375,7 +375,7 @@ export default function FranchiseVsLicensePage() {
 
       <SectionCTA
         heading="Find out which path fits your business"
-        body="Take the free readiness assessment to see if your business is ready to franchise, license, or both. You will get a clear, honest answer in under five minutes."
+        body="Take the free readiness assessment to see if your business is ready to franchise, license, or both. Eight questions across the four pillars of the Forge Franchise Readiness Method. About two minutes."
         buttonText="Take the free assessment"
         buttonHref="/is-my-business-franchisable"
         secondaryText="Or book a call to discuss your specific situation"

@@ -347,7 +347,7 @@ export default function ReadinessMethodPage() {
         links={[
           { label: 'How the full process works', href: '/how-it-works', description: 'See the four phases that follow the readiness assessment.' },
           { label: 'Our services', href: '/services', description: 'Seven core franchise development services under one roof.' },
-          { label: 'Is my business franchisable?', href: '/is-my-business-franchisable', description: 'Take the quick online assessment for an initial readiness signal.' },
+          { label: 'Is my business franchisable?', href: '/is-my-business-franchisable', description: 'Eight questions across the four pillars of the Forge Franchise Readiness Method. About two minutes.' },
         ]}
       />
 

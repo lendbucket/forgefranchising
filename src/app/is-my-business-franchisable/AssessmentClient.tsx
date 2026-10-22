@@ -1,252 +1,257 @@
 'use client'
 
-import { useState, type ReactNode } from 'react'
+import { useEffect, useRef, useState, type FormEvent, type KeyboardEvent, type ReactNode } from 'react'
 import Link from 'next/link'
 import { ContinueLearning } from '@/components/ContinueLearning'
-import { sentenceCase } from '@/lib/text'
+import { CONTACT_EMAIL } from '@/lib/constants'
+import {
+  DISCLAIMER,
+  PILLAR_MAX,
+  QUESTIONS,
+  TIERS,
+  answerLabel,
+  pillarLabel,
+  scoreAssessment,
+  type Answers,
+  type AssessmentResult,
+  type QuestionId,
+} from '@/lib/assessment'
 
 /**
- * Assessment with email-gated results.
- *
- * Psychology: The assessment itself uses commitment and consistency
- * (answering 8 questions builds investment). The score reveal is
- * shown immediately (variable reward), but detailed recommendations
- * are gated behind email (reciprocity: we gave you a score, now
- * exchange email for the full breakdown). Partial lead capture
- * even if they abandon the detail gate.
+ * Franchise readiness assessment on the four pillars of the Forge Franchise
+ * Readiness Method. Start screen, one question per screen, an immediate
+ * score, then a short form that sends the full report by email and shows it
+ * here. Scoring lives in src/lib/assessment.ts, shared with /api/assessment.
  */
 
-type Question = {
-  id: string
-  question: string
-  options: { label: string; value: string; points: number }[]
+type Stage = 'start' | 'questions' | 'score' | 'report'
+type Stored = { stage: Stage; step: number; answers: Partial<Answers> }
+
+const STORAGE_KEY = 'forge-readiness-assessment'
+const ADVANCE_MS = 250
+const TOTAL = QUESTIONS.length
+
+function readStored(): Stored | null {
+  try {
+    const raw = window.sessionStorage.getItem(STORAGE_KEY)
+    if (!raw) return null
+    const parsed = JSON.parse(raw) as Stored
+    if (!parsed || typeof parsed.step !== 'number' || typeof parsed.answers !== 'object') return null
+    return parsed
+  } catch {
+    return null
+  }
 }
 
-const QUESTIONS: Question[] = [
-  {
-    id: 'years',
-    question: 'How many years has your business been operating?',
-    options: [
-      { label: 'Less than 1 year', value: 'lt1', points: 2 },
-      { label: '1 to 2 years', value: '1-2', points: 5 },
-      { label: '2 to 5 years', value: '2-5', points: 8 },
-      { label: '5+ years', value: '5+', points: 12 },
-    ],
-  },
-  {
-    id: 'profitable',
-    question: 'Is your business currently profitable?',
-    options: [
-      { label: 'Yes, consistently profitable', value: 'yes', points: 15 },
-      { label: 'Break-even', value: 'break-even', points: 7 },
-      { label: 'No, not yet profitable', value: 'no', points: 2 },
-    ],
-  },
-  {
-    id: 'locations',
-    question: 'How many locations do you currently operate?',
-    options: [
-      { label: '1 location', value: '1', points: 5 },
-      { label: '2 to 3 locations', value: '2-3', points: 10 },
-      { label: '4 to 10 locations', value: '4-10', points: 14 },
-      { label: '10+ locations', value: '10+', points: 15 },
-    ],
-  },
-  {
-    id: 'owner-dependent',
-    question: 'Can your business operate without you managing daily operations?',
-    options: [
-      { label: 'Yes, it runs without me day to day', value: 'yes', points: 15 },
-      { label: 'Partially. I am involved but not required for everything.', value: 'partially', points: 8 },
-      { label: 'No, the business depends on me being there', value: 'no', points: 2 },
-    ],
-  },
-  {
-    id: 'systems',
-    question: 'Do you have documented systems and processes?',
-    options: [
-      { label: 'Comprehensive. Everything is documented and trainable.', value: 'comprehensive', points: 15 },
-      { label: 'Some documentation exists, but there are gaps', value: 'some', points: 8 },
-      { label: 'Minimal. Most knowledge is in my head or my team\'s heads.', value: 'minimal', points: 4 },
-      { label: 'None. We have no documented processes.', value: 'none', points: 1 },
-    ],
-  },
-  {
-    id: 'demand',
-    question: 'Is there demand for your product or service in other markets?',
-    options: [
-      { label: 'Strong. People in other cities regularly ask about us.', value: 'strong', points: 12 },
-      { label: 'Moderate. We believe there is demand based on industry trends.', value: 'moderate', points: 8 },
-      { label: 'Uncertain. We have not tested other markets.', value: 'uncertain', points: 4 },
-      { label: 'Unlikely. Our product is very niche or location-specific.', value: 'unlikely', points: 1 },
-    ],
-  },
-  {
-    id: 'revenue',
-    question: 'What is your approximate annual revenue per location?',
-    options: [
-      { label: 'Under $250,000', value: 'lt250k', points: 3 },
-      { label: '$250,000 to $500,000', value: '250k-500k', points: 6 },
-      { label: '$500,000 to $1,000,000', value: '500k-1m', points: 10 },
-      { label: 'Over $1,000,000', value: 'gt1m', points: 12 },
-    ],
-  },
-  {
-    id: 'brand',
-    question: 'Do you have a recognizable brand in your local market?',
-    options: [
-      { label: 'Yes. People know us by name and reputation.', value: 'yes', points: 10 },
-      { label: 'Somewhat. We have some brand recognition.', value: 'somewhat', points: 5 },
-      { label: 'No. We are not well known yet.', value: 'no', points: 2 },
-    ],
-  },
-]
-
-const MAX_SCORE = 106
-
-type Outcome = {
-  tier: 'strong' | 'promising' | 'not-ready'
-  title: string
-  summary: string
-  details: string[]
+function writeStored(value: Stored | null) {
+  try {
+    if (value) window.sessionStorage.setItem(STORAGE_KEY, JSON.stringify(value))
+    else window.sessionStorage.removeItem(STORAGE_KEY)
+  } catch {
+    // Storage can be unavailable (private mode, blocked site data). The
+    // assessment still works; only refresh recovery is lost.
+  }
 }
 
-function getOutcome(score: number, pct: number, answers: Record<string, string>): Outcome {
-  if (pct >= 70) {
-    return {
-      tier: 'strong',
-      title: 'Strong Candidate for Franchising',
-      summary:
-        'Based on your responses, your business shows strong indicators for franchise viability. You have the fundamentals that franchise development firms look for: a track record, profitability signals, operational maturity, and market potential.',
-      details: [
-        'Your combination of operating history, revenue, and systems puts you in a favorable position to begin the franchise development process.',
-        'The next step is a proper feasibility analysis where we evaluate your unit economics, competitive landscape, legal requirements, and market opportunity in detail.',
-        'Most businesses at this stage can move into active franchise development within 60 to 90 days of completing feasibility.',
-        answers['systems'] === 'comprehensive'
-          ? 'Your documented systems are a significant advantage. Well-documented operations reduce the time and cost of building a franchise operations manual.'
-          : 'Strengthening your documentation and systems before launch will improve franchisee success rates and reduce your development timeline.',
-      ],
-    }
-  }
+function isComplete(answers: Partial<Answers>): answers is Answers {
+  return QUESTIONS.every((q) => typeof answers[q.id] === 'string')
+}
 
-  if (pct >= 45) {
-    return {
-      tier: 'promising',
-      title: 'Promising, With Work Needed',
-      summary:
-        'Your business has real potential for franchising, but there are areas that need development before you would be ready to launch a franchise system. This is not a rejection. It is a roadmap.',
-      details: [
-        answers['profitable'] !== 'yes'
-          ? 'Profitability is a prerequisite for franchising. Franchise buyers need to see that the model generates returns. Focus on reaching consistent profitability before pursuing franchise development.'
-          : 'Your profitability is a strong foundation. That is one of the hardest boxes to check.',
-        answers['systems'] === 'minimal' || answers['systems'] === 'none'
-          ? 'Documenting your systems and processes is critical. You cannot franchise what you cannot teach. Start by writing down your core operating procedures, training workflows, and quality standards.'
-          : 'Your existing documentation gives you a head start. Continue refining it with the goal of making every process teachable to someone with no prior experience.',
-        answers['owner-dependent'] === 'no'
-          ? 'Reducing owner dependence is essential. A franchise model requires that the business can operate under a trained manager. Start delegating and building management capacity.'
-          : 'Your ability to step back from daily operations is a good sign for franchise scalability.',
-        'A feasibility analysis can identify exactly which gaps to close and give you a prioritized action plan. Many businesses in your position are 6 to 12 months away from being ready.',
-      ],
-    }
-  }
+type Contact = {
+  fullName: string
+  email: string
+  businessName: string
+  industry: string
+  location: string
+  phone: string
+  wantsCall: boolean
+  website: string
+}
 
-  return {
-    tier: 'not-ready',
-    title: 'Not Ready Yet',
-    summary:
-      'Based on your responses, franchising is likely premature for your business right now. That does not mean it will never work. It means there are foundational elements that need to be in place first.',
-    details: [
-      'Focus on building a profitable, repeatable business model at your current location before thinking about expansion through franchising.',
-      answers['years'] === 'lt1'
-        ? 'Operating history matters. Lenders, franchise buyers, and regulators all want to see a track record. Give your business at least two to three years of operations data before exploring franchising.'
-        : 'Continue building your operating track record. The longer and more consistent your results, the stronger your franchise offering will be.',
-      'Document everything you do. Standard operating procedures, training checklists, vendor lists, hiring processes. This documentation is the foundation of any franchise system.',
-      'Consider opening a second location yourself first. Proving the model works in a new market with a different team is one of the strongest validations for franchise readiness.',
-      'Franchising is not the only path to growth. Licensing, management agreements, or simply scaling your existing operations may be better fits for where you are today.',
-    ],
-  }
+const EMPTY_CONTACT: Contact = {
+  fullName: '',
+  email: '',
+  businessName: '',
+  industry: '',
+  location: '',
+  phone: '',
+  wantsCall: false,
+  website: '',
+}
+
+function validate(c: Contact): Partial<Record<keyof Contact, string>> {
+  const errors: Partial<Record<keyof Contact, string>> = {}
+  if (!c.fullName.trim()) errors.fullName = 'Enter your full name.'
+  if (!c.email.trim()) errors.email = 'Enter your email address.'
+  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(c.email.trim())) errors.email = 'Enter a valid email address.'
+  if (!c.businessName.trim()) errors.businessName = 'Enter your business name.'
+  if (!c.industry.trim()) errors.industry = 'Enter your industry.'
+  if (!c.location.trim()) errors.location = 'Enter your city and state.'
+  if (c.phone.trim() && !/^[0-9+().\s-]{7,40}$/.test(c.phone.trim())) errors.phone = 'Enter a valid phone number, or leave it blank.'
+  return errors
 }
 
 export function AssessmentClient({ breadcrumbs }: { breadcrumbs?: ReactNode }) {
-  const [currentStep, setCurrentStep] = useState(0)
-  const [answers, setAnswers] = useState<Record<string, string>>({})
-  const [scores, setScores] = useState<Record<string, number>>({})
-  const [showResults, setShowResults] = useState(false)
-  /* Email gate state */
-  const [gateEmail, setGateEmail] = useState('')
-  const [gateName, setGateName] = useState('')
-  const [gateUnlocked, setGateUnlocked] = useState(false)
-  const [gateSubmitting, setGateSubmitting] = useState(false)
-  const [gateError, setGateError] = useState('')
+  const [stage, setStage] = useState<Stage>('start')
+  const [step, setStep] = useState(0)
+  const [answers, setAnswers] = useState<Partial<Answers>>({})
+  const [contact, setContact] = useState<Contact>(EMPTY_CONTACT)
+  const [errors, setErrors] = useState<Partial<Record<keyof Contact, string>>>({})
+  const [submitting, setSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState('')
+  const [report, setReport] = useState<{ result: AssessmentResult; answers: Answers; emailed: boolean } | null>(null)
+  const advanceTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const headingRef = useRef<HTMLHeadingElement>(null)
+  const restored = useRef(false)
+  const moved = useRef(false)
 
-  const totalQuestions = QUESTIONS.length
-  const progress = showResults ? 100 : Math.round((currentStep / totalQuestions) * 100)
-
-  function selectAnswer(questionId: string, value: string, points: number) {
-    setAnswers((prev) => ({ ...prev, [questionId]: value }))
-    setScores((prev) => ({ ...prev, [questionId]: points }))
-
-    if (currentStep < totalQuestions - 1) {
-      setTimeout(() => setCurrentStep((prev) => prev + 1), 300)
-    } else {
-      setTimeout(() => setShowResults(true), 300)
+  // Restore progress after a refresh.
+  useEffect(() => {
+    const saved = readStored()
+    if (saved && saved.stage !== 'report' && saved.stage !== 'start') {
+      setAnswers(saved.answers)
+      setStep(Math.min(Math.max(saved.step, 0), TOTAL - 1))
+      setStage(saved.stage === 'score' && isComplete(saved.answers) ? 'score' : 'questions')
     }
+    restored.current = true
+  }, [])
+
+  // Save progress on every change, once restored.
+  useEffect(() => {
+    if (!restored.current) return
+    if (stage === 'questions' || stage === 'score') writeStored({ stage, step, answers })
+  }, [stage, step, answers])
+
+  // Move focus to the new heading whenever the screen changes.
+  useEffect(() => {
+    if (!moved.current) return
+    headingRef.current?.focus()
+  }, [stage, step])
+
+  useEffect(() => () => {
+    if (advanceTimer.current) clearTimeout(advanceTimer.current)
+  }, [])
+
+  const result = isComplete(answers) ? scoreAssessment(answers) : null
+  const question = QUESTIONS[step]
+
+  function go(next: () => void) {
+    moved.current = true
+    next()
   }
 
-  function goBack() {
-    if (showResults) {
-      setShowResults(false)
-    } else if (currentStep > 0) {
-      setCurrentStep((prev) => prev - 1)
-    }
+  function start() {
+    go(() => {
+      setStage('questions')
+      setStep(0)
+    })
+  }
+
+  function choose(id: QuestionId, value: string) {
+    setAnswers((prev) => ({ ...prev, [id]: value }))
+    if (advanceTimer.current) clearTimeout(advanceTimer.current)
+    advanceTimer.current = setTimeout(() => {
+      go(() => {
+        if (step < TOTAL - 1) setStep(step + 1)
+        else setStage('score')
+      })
+    }, ADVANCE_MS)
+  }
+
+  function previous() {
+    if (advanceTimer.current) clearTimeout(advanceTimer.current)
+    go(() => {
+      if (stage === 'score') {
+        setStage('questions')
+        setStep(TOTAL - 1)
+      } else if (step > 0) setStep(step - 1)
+    })
   }
 
   function restart() {
-    setCurrentStep(0)
+    if (advanceTimer.current) clearTimeout(advanceTimer.current)
+    writeStored(null)
     setAnswers({})
-    setScores({})
-    setShowResults(false)
-    setGateUnlocked(false)
-    setGateEmail('')
-    setGateName('')
+    setContact(EMPTY_CONTACT)
+    setErrors({})
+    setSubmitError('')
+    setReport(null)
+    go(() => {
+      setStep(0)
+      setStage('start')
+    })
   }
 
-  async function unlockResults(e: React.FormEvent) {
+  function onOptionKey(e: KeyboardEvent<HTMLButtonElement>, index: number) {
+    const keys: Record<string, number> = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }
+    const count = question.options.length
+    let next: number | null = null
+    if (e.key in keys) next = (index + keys[e.key] + count) % count
+    if (e.key === 'Home') next = 0
+    if (e.key === 'End') next = count - 1
+    if (next === null) return
     e.preventDefault()
-    if (!gateEmail.trim() || !gateName.trim()) return
-    setGateSubmitting(true)
-    setGateError('')
+    const group = e.currentTarget.parentElement
+    group?.querySelectorAll<HTMLButtonElement>('[role="radio"]')[next]?.focus()
+  }
 
+  async function submit(e: FormEvent) {
+    e.preventDefault()
+    if (!result || !isComplete(answers)) return
+    const found = validate(contact)
+    setErrors(found)
+    setSubmitError('')
+    if (Object.keys(found).length > 0) {
+      const first = Object.keys(found)[0]
+      document.getElementById(`assessment-${first}`)?.focus()
+      return
+    }
+    setSubmitting(true)
+    const params = new URLSearchParams(window.location.search)
+    const utm = Object.fromEntries(
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']
+        .map((k) => [k, params.get(k)?.slice(0, 200) ?? ''])
+        .filter(([, v]) => v)
+    )
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch('/api/assessment', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          fullName: gateName,
-          businessName: 'Assessment Lead',
-          email: gateEmail,
-          phone: 'Not provided',
-          industry: 'Not specified',
-          reasonForFranchising: `Assessment score: ${scorePct}% (${outcome.title}). Answers: ${JSON.stringify(answers)}`,
+          answers,
+          fullName: contact.fullName.trim(),
+          email: contact.email.trim(),
+          businessName: contact.businessName.trim(),
+          industry: contact.industry.trim(),
+          location: contact.location.trim(),
+          phone: contact.phone.trim(),
+          wantsCall: contact.wantsCall,
+          website: contact.website,
+          source: (document.referrer || 'direct').slice(0, 200),
+          utm,
         }),
       })
-      if (res.ok) {
-        setGateUnlocked(true)
-      } else {
-        setGateError('Something went wrong. Please try again.')
+      const data = await res.json().catch(() => ({}))
+      if (!res.ok || !data.success) {
+        setSubmitError(data.error || 'We could not send your report. Please try again.')
+        return
       }
+      setReport({ result: data.result ?? result, answers, emailed: data.reportEmailed !== false })
+      writeStored(null)
+      go(() => setStage('report'))
     } catch {
-      setGateError('Network error. Please try again.')
+      setSubmitError('We could not reach the server. Please check your connection and try again.')
     } finally {
-      setGateSubmitting(false)
+      setSubmitting(false)
     }
   }
 
-  const totalScore = Object.values(scores).reduce((sum, s) => sum + s, 0)
-  const scorePct = Math.round((totalScore / MAX_SCORE) * 100)
-  const outcome = getOutcome(totalScore, scorePct, answers)
-
-  const currentQuestion = QUESTIONS[currentStep]
+  const progress = stage === 'start' ? 0 : stage === 'questions' ? step : TOTAL
+  const field = (key: keyof Contact) => ({
+    id: `assessment-${key}`,
+    'aria-invalid': errors[key] ? true : undefined,
+    'aria-describedby': errors[key] ? `assessment-${key}-error` : undefined,
+  })
 
   return (
     <>
@@ -255,275 +260,336 @@ export function AssessmentClient({ breadcrumbs }: { breadcrumbs?: ReactNode }) {
         <div className="container-wide section-padding">
           {breadcrumbs}
           <div className="max-w-[880px]">
-            <h1 className="heading-1 mb-6">
-              Turn My Business Into a Franchise: Get Your Score
-            </h1>
+            <h1 className="heading-1 mb-6">Turn My Business Into a Franchise: Get Your Score</h1>
             <p className="body-large">
-              Wondering how to turn my business into a franchise? Answer eight questions and get an
-              honest assessment of your franchise readiness. Takes about two minutes.
+              Wondering how to turn my business into a franchise? Eight questions across the four pillars of the
+              Forge Franchise Readiness Method. About two minutes.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Assessment */}
       <section className="section-padding bg-white">
         <div className="container-narrow">
-          {/* Progress Bar: goal gradient pulls completion */}
-          <div className="mb-8">
-            <div className="flex items-center justify-between text-sm text-steel mb-2">
-              <span>
-                {showResults
-                  ? 'Assessment Complete'
-                  : `Question ${currentStep + 1} of ${totalQuestions}`}
-              </span>
-              <span>{progress}%</span>
-            </div>
-            <div className="w-full h-2 bg-stone overflow-hidden">
+          {stage !== 'start' && stage !== 'report' && (
+            <div className="mb-10">
+              <div className="flex items-center justify-between text-sm text-steel mb-2">
+                <span>{stage === 'questions' ? `${pillarLabel(question.pillar)}, question ${step + 1} of ${TOTAL}` : 'Assessment complete'}</span>
+                <span>{Math.round((progress / TOTAL) * 100)}%</span>
+              </div>
               <div
-                className="h-full bg-ember transition-all duration-500 ease-out"
-                style={{ width: `${progress}%` }}
-              />
+                role="progressbar"
+                aria-label="Assessment progress"
+                aria-valuemin={0}
+                aria-valuemax={TOTAL}
+                aria-valuenow={progress}
+                aria-valuetext={stage === 'questions' ? `Question ${step + 1} of ${TOTAL}` : 'All questions answered'}
+                className="w-full h-2 bg-ash"
+              >
+                <div className="h-full bg-ember transition-[width] duration-300" style={{ width: `${(progress / TOTAL) * 100}%` }} />
+              </div>
             </div>
-          </div>
+          )}
 
-          {!showResults ? (
-            /* Question Card */
-            <div className="card">
-              <h2 className="heading-3 mb-8">{currentQuestion.question}</h2>
-              <div className="space-y-3">
-                {currentQuestion.options.map((option) => {
-                  const isSelected = answers[currentQuestion.id] === option.value
+          {stage === 'start' && (
+            <div className="card !p-10 max-[720px]:!p-6" style={{ borderTop: '3px solid #E4572E' }}>
+              <h2 ref={headingRef} tabIndex={-1} className="heading-3 mb-4 focus:outline-none">
+                Find out how ready your business is to franchise
+              </h2>
+              <p className="text-steel text-[17px] leading-relaxed mb-6">
+                Eight questions across the four pillars of the Forge Franchise Readiness Method. About two minutes.
+              </p>
+              <ul className="border-t border-line mb-8">
+                {['A score out of 100', 'A breakdown across the four pillars of the Forge Franchise Readiness Method', 'Specific recommendations for each pillar'].map((item, i) => (
+                  <li key={item} className="grid grid-cols-[36px_minmax(0,1fr)] py-3 border-b border-line text-[16px] text-graphite">
+                    <span className="font-display font-bold text-accent">{String(i + 1).padStart(2, '0')}</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <button type="button" onClick={start} className="btn-primary">
+                Start the assessment
+              </button>
+            </div>
+          )}
+
+          {stage === 'questions' && (
+            <div className="card !p-10 max-[720px]:!p-6">
+              <p className="text-sm font-semibold text-accent mb-2">{pillarLabel(question.pillar)}</p>
+              <h2 ref={headingRef} id="assessment-question" tabIndex={-1} className="heading-3 mb-8 focus:outline-none">
+                {question.question}
+              </h2>
+              <div role="radiogroup" aria-labelledby="assessment-question" className="space-y-3">
+                {question.options.map((option, i) => {
+                  const selected = answers[question.id] === option.value
+                  const tabbable = selected || (!answers[question.id] && i === 0)
                   return (
                     <button
                       key={option.value}
-                      onClick={() =>
-                        selectAnswer(currentQuestion.id, option.value, option.points)
-                      }
-                      className={`w-full text-left px-5 py-4 border transition-colors duration-200 min-h-[56px] ${
-                        isSelected
-                          ? 'border-graphite bg-graphite text-white'
-                          : 'border-line hover:border-graphite bg-white text-graphite'
+                      type="button"
+                      role="radio"
+                      aria-checked={selected}
+                      tabIndex={tabbable ? 0 : -1}
+                      onClick={() => choose(question.id, option.value)}
+                      onKeyDown={(e) => onOptionKey(e, i)}
+                      className={`w-full flex items-center gap-4 text-left px-5 py-4 min-h-[56px] border transition-colors duration-200 ${
+                        selected ? 'border-graphite bg-graphite text-white' : 'border-line bg-white text-graphite hover:border-graphite'
                       }`}
                     >
+                      <span
+                        aria-hidden="true"
+                        className={`flex-shrink-0 w-4 h-4 border ${selected ? 'border-white bg-ember' : 'border-steel'}`}
+                      />
                       <span className="font-medium">{option.label}</span>
                     </button>
                   )
                 })}
               </div>
-
-              {currentStep > 0 && (
-                <button
-                  onClick={goBack}
-                  className="mt-6 text-sm text-steel hover:text-graphite transition-colors min-h-[44px]"
-                >
-                  &larr; Previous question
+              <p className="mt-4 text-sm text-steel">Use the arrow keys to move between options, and Space or Enter to choose one.</p>
+              {step > 0 && (
+                <button type="button" onClick={previous} className="mt-6 inline-flex items-center min-h-[44px] text-sm font-semibold text-graphite underline underline-offset-4">
+                  Previous question
                 </button>
               )}
             </div>
-          ) : (
-            /* Results */
-            <div className="space-y-6">
-              {/* Score Card: shown immediately (variable reward) */}
-              <div className="card text-center">
-                <div className="relative w-32 h-32 mx-auto mb-6">
-                  <svg className="w-32 h-32 -rotate-90" viewBox="0 0 36 36">
-                    <path
-                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                      fill="none"
-                      stroke="#D9D5CF"
-                      strokeWidth="3"
-                    />
-                    <path
-                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                      fill="none"
-                      stroke={
-                        outcome.tier === 'strong'
-                          ? '#E4572E'
-                          : outcome.tier === 'promising'
-                          ? '#E4572E'
-                          : '#4E5A62'
-                      }
-                      strokeWidth="3"
-                      strokeDasharray={`${scorePct}, 100`}
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-3xl font-display font-bold text-graphite">
-                      {scorePct}
-                    </span>
-                  </div>
-                </div>
-                <h2
-                  className={`heading-3 mb-2 ${
-                    outcome.tier === 'strong'
-                      ? 'text-accent'
-                      : outcome.tier === 'promising'
-                      ? 'text-graphite'
-                      : 'text-steel'
-                  }`}
-                >
-                  {sentenceCase(outcome.title)}
-                </h2>
-                <p className="text-steel text-[17px] leading-relaxed mb-4">{outcome.summary}</p>
-                <p className="text-xs text-steel">
-                  Illustrative assessment based on self-reported answers.
+          )}
+
+          {stage === 'score' && result && (
+            <div className="space-y-8">
+              <div className="card !p-10 max-[720px]:!p-6">
+                <p className="text-sm text-steel mb-2">Your franchise readiness score</p>
+                <p className="font-display font-bold text-graphite leading-none" style={{ letterSpacing: '-0.05em' }}>
+                  <span className="text-[96px] max-[720px]:text-[72px]">{result.overall}</span>
+                  <span className="text-[32px] text-steel">/100</span>
                 </p>
+                <h2 ref={headingRef} tabIndex={-1} className="heading-3 mt-4 mb-2 focus:outline-none">
+                  {result.tierTitle}
+                </h2>
+                <p className="text-steel text-[17px] leading-relaxed mb-8">{result.tierSummary}</p>
+                <PillarBars result={result} />
+                <p className="mt-6 text-sm text-steel">Illustrative assessment based on self-reported answers.</p>
+                <button type="button" onClick={previous} className="mt-4 inline-flex items-center min-h-[44px] text-sm font-semibold text-graphite underline underline-offset-4">
+                  Previous question
+                </button>
               </div>
 
-              {/* Email gate: reciprocity (score given, details follow) */}
-              {!gateUnlocked ? (
-                <div className="card bg-graphite border-graphite text-white text-center">
-                  <h3 className="heading-4 text-white mb-3">
-                    Get your personalized recommendations
-                  </h3>
-                  <p className="text-sm text-white/70 mb-6 max-w-md mx-auto">
-                    Enter your name and email to see your detailed franchise readiness
-                    breakdown with specific next steps for your score.
-                  </p>
-                  <form onSubmit={unlockResults} className="max-w-sm mx-auto space-y-3">
-                    <input
-                      type="text"
-                      value={gateName}
-                      onChange={(e) => setGateName(e.target.value)}
-                      placeholder="Your name"
-                      required
-                      className="field"
-                    />
-                    <input
-                      type="email"
-                      value={gateEmail}
-                      onChange={(e) => setGateEmail(e.target.value)}
-                      placeholder="you@company.com"
-                      required
-                      className="field"
-                    />
-                    {gateError && <p className="text-accent text-sm">{gateError}</p>}
-                    <button
-                      type="submit"
-                      disabled={gateSubmitting}
-                      className="btn-primary w-full disabled:opacity-60"
-                    >
-                      {gateSubmitting ? 'Sending...' : 'Show my full report'}
-                    </button>
-                    <p className="text-xs text-white/60">No spam. We will follow up with your personalized analysis.</p>
-                  </form>
+              <form onSubmit={submit} noValidate className="card !p-10 max-[720px]:!p-6" aria-labelledby="assessment-gate-heading">
+                <h2 id="assessment-gate-heading" className="heading-3 mb-3">
+                  Get your full readiness report
+                </h2>
+                <p className="text-steel text-[17px] leading-relaxed mb-8">
+                  We will show your pillar by pillar recommendations here and send a copy of the full report to your inbox.
+                </p>
+                <div className="grid sm:grid-cols-2 gap-5">
+                  <Field label="Full name" required error={errors.fullName} {...field('fullName')}>
+                    <input {...field('fullName')} name="fullName" type="text" autoComplete="name" className="field" value={contact.fullName} onChange={(e) => setContact({ ...contact, fullName: e.target.value })} />
+                  </Field>
+                  <Field label="Email" required error={errors.email} {...field('email')}>
+                    <input {...field('email')} name="email" type="email" autoComplete="email" className="field" value={contact.email} onChange={(e) => setContact({ ...contact, email: e.target.value })} />
+                  </Field>
+                  <Field label="Business name" required error={errors.businessName} {...field('businessName')}>
+                    <input {...field('businessName')} name="businessName" type="text" autoComplete="organization" className="field" value={contact.businessName} onChange={(e) => setContact({ ...contact, businessName: e.target.value })} />
+                  </Field>
+                  <Field label="Industry" required error={errors.industry} {...field('industry')}>
+                    <input {...field('industry')} name="industry" type="text" placeholder="For example, coffee shop" className="field" value={contact.industry} onChange={(e) => setContact({ ...contact, industry: e.target.value })} />
+                  </Field>
+                  <Field label="City and state" required error={errors.location} {...field('location')}>
+                    <input {...field('location')} name="location" type="text" autoComplete="address-level2" placeholder="For example, San Antonio, TX" className="field" value={contact.location} onChange={(e) => setContact({ ...contact, location: e.target.value })} />
+                  </Field>
+                  <Field label="Phone" error={errors.phone} {...field('phone')}>
+                    <input {...field('phone')} name="phone" type="tel" autoComplete="tel" className="field" value={contact.phone} onChange={(e) => setContact({ ...contact, phone: e.target.value })} />
+                  </Field>
+                  {/* Honeypot, hidden from people and assistive technology */}
+                  <div className="hidden" aria-hidden="true">
+                    <label htmlFor="assessment-website">Website</label>
+                    <input id="assessment-website" name="website" type="text" tabIndex={-1} autoComplete="off" value={contact.website} onChange={(e) => setContact({ ...contact, website: e.target.value })} />
+                  </div>
                 </div>
-              ) : (
-                <>
-                  {/* Detailed Results: shown after email */}
-                  <div className="card">
-                    <h3 className="heading-4 mb-4">What this means for you</h3>
-                    <div className="space-y-4">
-                      {outcome.details.map((detail, i) => (
-                        <div key={i} className="flex items-start gap-3">
-                          <span className="flex-shrink-0 w-6 flex items-center justify-center mt-0.5">
-                            <span className="text-accent text-sm font-bold">{i + 1}</span>
-                          </span>
-                          <p className="text-steel text-[17px] leading-relaxed">{detail}</p>
-                        </div>
-                      ))}
-                    </div>
+                <label className="mt-6 flex items-start gap-3 min-h-[44px] cursor-pointer text-[15px] text-graphite">
+                  <input
+                    type="checkbox"
+                    name="wantsCall"
+                    checked={contact.wantsCall}
+                    onChange={(e) => setContact({ ...contact, wantsCall: e.target.checked })}
+                    className="mt-1 w-5 h-5 flex-shrink-0 accent-[#1C1F23]"
+                  />
+                  <span>I would like Forge to contact me about a feasibility call</span>
+                </label>
+                {submitError && (
+                  <div role="alert" className="mt-6 p-4 border border-ember bg-stone text-[15px] text-graphite">
+                    {submitError}{' '}
+                    <a href={`mailto:${CONTACT_EMAIL}`} className="text-link">
+                      {CONTACT_EMAIL}
+                    </a>
                   </div>
+                )}
+                <div className="mt-8">
+                  <button type="submit" disabled={submitting} className="btn-primary disabled:opacity-60 disabled:cursor-not-allowed">
+                    {submitting ? 'Sending your report' : 'Send my full report'}
+                  </button>
+                  <p className="mt-3 text-sm text-steel">Your answers stay between you and Forge.</p>
+                </div>
+              </form>
+            </div>
+          )}
 
-                  {/* Answer Summary */}
-                  <div className="card">
-                    <h3 className="heading-4 mb-4">Your responses</h3>
-                    <div className="border-t border-graphite">
-                      {QUESTIONS.map((q) => {
-                        const selected = q.options.find((o) => o.value === answers[q.id])
-                        return (
-                          <div key={q.id} className="flex items-start justify-between gap-4 py-4 border-b border-line last:border-0">
-                            <span className="text-sm text-steel">{q.question}</span>
-                            <span className="text-sm font-semibold text-graphite text-right flex-shrink-0 max-w-[200px]">
-                              {selected?.label}
-                            </span>
-                          </div>
-                        )
-                      })}
+          {stage === 'report' && report && (
+            <div className="space-y-8">
+              <div className="card !p-10 max-[720px]:!p-6">
+                <p className="text-sm text-steel mb-2">Your franchise readiness score</p>
+                <p className="font-display font-bold text-graphite leading-none" style={{ letterSpacing: '-0.05em' }}>
+                  <span className="text-[72px]">{report.result.overall}</span>
+                  <span className="text-[28px] text-steel">/100</span>
+                </p>
+                <h2 ref={headingRef} tabIndex={-1} className="heading-3 mt-4 mb-2 focus:outline-none">
+                  {report.result.tierTitle}
+                </h2>
+                <p className="text-steel text-[17px] leading-relaxed mb-8">
+                  {report.emailed
+                    ? `A copy of this report is on its way to ${contact.email.trim()}.`
+                    : 'We could not email a copy just now, so keep this page open or save it. Forge has your results.'}
+                </p>
+                <PillarBars result={report.result} />
+              </div>
+
+              <div className="card !p-10 max-[720px]:!p-6">
+                <h2 className="heading-3 mb-6">Pillar by pillar</h2>
+                <div className="border-t border-graphite">
+                  {report.result.recommendations.map((p, i) => (
+                    <div key={p.key} className="py-6 border-b border-line">
+                      {i === 0 && <p className="text-sm font-semibold text-accent mb-1">Your priority</p>}
+                      <h3 className="heading-4 mb-2">
+                        {p.label}: {p.score}/{PILLAR_MAX}
+                      </h3>
+                      <p className="text-steel text-[17px] leading-relaxed">{p.assessment}</p>
                     </div>
-                  </div>
+                  ))}
+                </div>
+              </div>
 
-                  {/* CTA */}
-                  <div className="card bg-graphite border-graphite text-white">
-                    <h3 className="heading-4 text-white mb-3">
-                      {outcome.tier === 'strong'
-                        ? 'Your business looks ready. Let us confirm it.'
-                        : outcome.tier === 'promising'
-                        ? 'You are closer than you think. Let us show you the path.'
-                        : 'Want to know what it would take?'}
-                    </h3>
-                    <p className="text-sm text-white/70 mb-6">
-                      {outcome.tier === 'strong'
-                        ? 'A feasibility call confirms whether your unit economics, market position, and operations support a franchise launch. No cost, no obligation.'
-                        : outcome.tier === 'promising'
-                        ? 'A feasibility call identifies exactly which gaps to close and gives you a clear timeline. Many businesses in your position are closer than they think.'
-                        : 'A conversation can help you understand what it would take and whether alternative growth paths make more sense right now.'}
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4">
-                      <Link href="/contact" className="btn-primary flex-1 text-center">
-                        Book a free feasibility call
-                      </Link>
-                      <Link
-                        href="/calculator"
-                        className="btn-secondary flex-1 text-center"
-                      >
-                        Model your franchise economics
-                      </Link>
+              <div className="card !p-10 max-[720px]:!p-6">
+                <h2 className="heading-3 mb-6">Your responses</h2>
+                <dl className="border-t border-graphite">
+                  {QUESTIONS.map((q) => (
+                    <div key={q.id} className="grid sm:grid-cols-[minmax(0,1fr)_minmax(0,0.8fr)] gap-x-6 gap-y-1 py-4 border-b border-line">
+                      <dt className="text-[15px] text-steel">{q.question}</dt>
+                      <dd className="text-[15px] font-semibold text-graphite">{answerLabel(q.id, report.answers[q.id])}</dd>
                     </div>
-                  </div>
-                </>
-              )}
+                  ))}
+                </dl>
+              </div>
 
-              {/* Restart */}
+              <div className="bg-graphite surface-dark p-10 max-[720px]:p-6">
+                <h2 className="heading-3 mb-3 text-white">Your next step</h2>
+                <p className="body-large mb-8">A feasibility call looks at your unit economics, market, and operations against the gaps this report shows. No cost, no obligation.</p>
+                <div className="flex flex-wrap gap-4">
+                  <Link
+                    href={`/contact?source=assessment&score=${report.result.overall}&tier=${report.result.tier}`}
+                    className="btn-primary"
+                  >
+                    {TIERS[report.result.tier].cta}
+                  </Link>
+                  <Link href="/calculator" className="btn-secondary">
+                    Model your franchise economics
+                  </Link>
+                </div>
+              </div>
+
               <div className="text-center">
-                <button
-                  onClick={restart}
-                  className="text-sm text-steel hover:text-graphite transition-colors underline min-h-[44px]"
-                >
+                <button type="button" onClick={restart} className="inline-flex items-center min-h-[44px] text-sm font-semibold text-graphite underline underline-offset-4">
                   Retake the assessment
                 </button>
               </div>
-
-              <p className="text-xs text-steel text-center leading-relaxed">
-                This assessment provides illustrative guidance based on self-reported answers.
-                It is not a guarantee of franchise viability, a legal opinion, or a financial projection.
-              </p>
+              <p className="text-sm text-steel text-center leading-relaxed">{DISCLAIMER}</p>
             </div>
+          )}
+
+          {stage === 'score' && (
+            <p className="mt-8 text-sm text-steel text-center leading-relaxed">{DISCLAIMER}</p>
           )}
         </div>
       </section>
 
-      {/* Open loop teaser below assessment */}
-      {!showResults && (
+      {stage !== 'report' && (
         <section className="section-padding bg-graphite surface-dark">
           <div className="container-narrow text-center">
-            <h2 className="heading-2 text-white mb-6">
-              Prefer to talk to a human?
-            </h2>
+            <h2 className="heading-2 text-white mb-6">Prefer to talk to a human?</h2>
             <p className="body-large mb-10 max-w-2xl mx-auto">
-              If you already know you want to explore franchising, skip the self-assessment and book
-              a feasibility call directly. Our team will evaluate your business and give you a straight answer.
+              If you already know you want to explore franchising, skip the self-assessment and book a feasibility call
+              directly. Our team will evaluate your business and give you a straight answer.
             </p>
             <Link href="/contact" className="btn-primary">
-              Get your free franchise evaluation
+              Book a free feasibility call
             </Link>
           </div>
         </section>
       )}
 
-      {/* Continue learning after results */}
-      {showResults && gateUnlocked && (
+      {stage === 'report' && (
         <ContinueLearning
           heading="Explore what comes next"
           links={[
-            { label: 'How the franchise process works', href: '/how-it-works', description: 'See the four phases every franchise we build moves through, from feasibility to scale.' },
+            { label: 'How the franchise process works', href: '/how-it-works', description: 'See the four phases of franchise development, from feasibility to scale.' },
             { label: 'Model your franchise economics', href: '/calculator', description: 'Plug in your numbers and see what your franchise system could generate in royalty income.' },
             { label: 'The complete franchise guide', href: '/blog/how-to-franchise-your-business', description: 'Everything a business owner needs to know about franchising, in one guide.' },
           ]}
         />
       )}
     </>
+  )
+}
+
+function PillarBars({ result }: { result: AssessmentResult }) {
+  return (
+    <ul className="space-y-4">
+      {result.pillars.map((p) => (
+        <li key={p.key}>
+          <div className="flex items-baseline justify-between gap-4 mb-1.5 text-[15px]">
+            <span className="font-semibold text-graphite">{p.label}</span>
+            <span className="text-steel tabular-nums">
+              {p.score}/{PILLAR_MAX}
+            </span>
+          </div>
+          <div
+            className="h-2.5 bg-ash"
+            role="img"
+            aria-label={`${p.label}: ${p.score} out of ${PILLAR_MAX}`}
+          >
+            <div className="h-full bg-ember" style={{ width: `${(p.score / PILLAR_MAX) * 100}%` }} />
+          </div>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+function Field({
+  id,
+  label,
+  required,
+  error,
+  children,
+}: {
+  id: string
+  label: string
+  required?: boolean
+  error?: string
+  children: ReactNode
+  'aria-invalid'?: boolean
+  'aria-describedby'?: string
+}) {
+  return (
+    <div>
+      <label htmlFor={id} className="block text-sm font-semibold text-graphite mb-2">
+        {label}
+        {required ? <span className="text-accent"> *</span> : <span className="font-normal text-steel"> (optional)</span>}
+      </label>
+      {children}
+      {error && (
+        <p id={`${id}-error`} className="mt-2 text-sm text-ember-text">
+          {error}
+        </p>
+      )}
+    </div>
   )
 }

@@ -1,6 +1,7 @@
 'use client'
 
-import { useState, FormEvent } from 'react'
+import { useEffect, useState, FormEvent } from 'react'
+import { TIERS, isTierKey, type TierKey } from '@/lib/assessment'
 import Link from 'next/link'
 import { StickyCTA } from '@/components/StickyCTA'
 import { ContinueLearning } from '@/components/ContinueLearning'
@@ -162,6 +163,20 @@ export default function ContactPage() {
   const [step, setStep] = useState(0)
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
+  const [assessment, setAssessment] = useState<{ score: number; tier: TierKey } | null>(null)
+
+  // Handoff from the readiness assessment (?source=assessment&score=..&tier=..).
+  // Both values are validated; anything else is ignored.
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const source = params.get('source')
+    const scoreParam = params.get('score') ?? ''
+    const tier = params.get('tier')
+    const score = /^\d{1,3}$/.test(scoreParam) ? Number(scoreParam) : NaN
+    if ((source === 'assessment' || source === 'assessment-email') && score >= 0 && score <= 100 && isTierKey(tier)) {
+      setAssessment({ score, tier })
+    }
+  }, [])
 
   /* Goal gradient: progress fills as steps complete */
   const progress = Math.round(((step + 1) / STEPS.length) * 100)
@@ -193,7 +208,9 @@ export default function ContactPage() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify(
+          assessment ? { ...form, assessmentScore: assessment.score, assessmentTier: assessment.tier } : form
+        ),
       })
 
       const data = await res.json()
@@ -329,6 +346,12 @@ export default function ContactPage() {
                 <p className="text-xs text-steel mt-2">Step {step + 1} of {STEPS.length}</p>
               </div>
 
+              {assessment && (
+                <p className="mb-6 p-4 bg-stone text-[15px] text-graphite" style={{ borderLeft: '3px solid #E4572E' }}>
+                  You completed the readiness assessment with a score of {assessment.score}.
+                  <span className="sr-only"> {TIERS[assessment.tier].title}.</span>
+                </p>
+              )}
               <form onSubmit={handleSubmit}>
                 {/* Step 1: About You (email first for partial capture) */}
                 {step === 0 && (

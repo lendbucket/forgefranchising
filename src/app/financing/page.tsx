@@ -413,7 +413,7 @@ export default function FinancingPage() {
         links={[
           { label: 'Franchise development packages', href: '/packages', description: 'See the scope, deliverables, and structure at each engagement level.' },
           { label: 'How the process works', href: '/how-it-works', description: 'The four phases from feasibility to scale, step by step.' },
-          { label: 'Is my business franchisable?', href: '/is-my-business-franchisable', description: 'Take the free readiness assessment and get a clear answer in five minutes.' },
+          { label: 'Is my business franchisable?', href: '/is-my-business-franchisable', description: 'Eight questions across the four pillars of the Forge Franchise Readiness Method. About two minutes.' },
         ]}
       />
 

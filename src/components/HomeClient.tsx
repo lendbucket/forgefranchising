@@ -96,7 +96,7 @@ const posts = [
 ]
 
 const steps = [
-  { step: '1', title: 'Find out if your business qualifies', description: 'Eight questions, two minutes, and you will know where you stand.', href: '/is-my-business-franchisable', time: '2 min' },
+  { step: '1', title: 'Find out if your business qualifies', description: 'Eight questions across the four pillars of the Forge Franchise Readiness Method. About two minutes.', href: '/is-my-business-franchisable', time: '2 min' },
   { step: '2', title: 'Understand the four phases', description: 'See how a proven business becomes a franchise brand, step by step.', href: '/how-it-works', time: '5 min read' },
   { step: '3', title: 'Model your franchise economics', description: 'Plug in your numbers and see projected royalty income at 10, 25, or 50 units.', href: '/calculator', time: '3 min' },
   { step: '4', title: 'Read the complete franchise guide', description: 'Feasibility through FDD filing and first franchise sale, all in one guide.', href: '/blog/how-to-franchise-your-business', time: '14 min read' },
@@ -104,7 +104,7 @@ const steps = [
 ]
 
 const contact = [
-  { title: 'Get your free readiness score', desc: 'The assessment takes about two minutes.', href: '/is-my-business-franchisable' },
+  { title: 'Get your free readiness score', desc: 'Eight questions across the four pillars of the Forge Franchise Readiness Method. About two minutes.', href: '/is-my-business-franchisable' },
   { title: 'Book a free feasibility call', desc: 'Talk to our team about your business.', href: '/contact' },
   { title: CONTACT_EMAIL, desc: 'Write to us directly.', href: `mailto:${CONTACT_EMAIL}` },
 ]
@@ -294,7 +294,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
           <div>
             <h2 className="heading-2 mb-7 max-[720px]:mb-5">Find out whether your business is ready to franchise</h2>
             <p className="lead mb-10 max-[720px]:mb-7">
-              Our free assessment evaluates seven readiness factors specific to your business. Two minutes, no login, and you get a score with specific recommendations.
+              Eight questions across the four pillars of the Forge Franchise Readiness Method. About two minutes. You get a score out of 100, a breakdown across the four pillars, and specific recommendations.
             </p>
             <div className="max-[960px]:hidden">
               <Link href="/is-my-business-franchisable" className="btn-primary">
@@ -464,7 +464,7 @@ export function HomeClient({ phases, industries }: { phases: Phase[]; industries
       {/* Contact */}
       <ContactRows
         heading="Talk to Forge about your business"
-        body="Take our two-minute assessment and get a franchise readiness score with specific recommendations for your business. No cost, no obligation."
+        body="Get a franchise readiness score with specific recommendations for your business. Eight questions across the four pillars of the Forge Franchise Readiness Method. About two minutes. No cost, no obligation."
         rows={contact}
       />
 

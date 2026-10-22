@@ -114,7 +114,11 @@ export async function POST(request: Request) {
     utm,
   }
 
-  const resend = new Resend(process.env.RESEND_API_KEY || '')
+  if (!process.env.RESEND_API_KEY) {
+    console.error('Assessment email not sent: RESEND_API_KEY is not set.')
+    return NextResponse.json({ success: false, error: GENERIC_ERROR }, { status: 500 })
+  }
+  const resend = new Resend(process.env.RESEND_API_KEY)
   const fromEmail = process.env.LEAD_FROM_EMAIL || 'Forge Franchising <leads@forgefranchising.com>'
 
   const [internal, report] = await Promise.allSettled([
