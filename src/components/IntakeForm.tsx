@@ -59,10 +59,12 @@ type IntakeFormProps = {
   heading?: string
   intro?: string
   submitLabel?: string
+  /** Optional starting values, such as a city or industry the page already knows. Field names are unchanged. */
+  defaults?: Record<string, string>
 }
 
-export function IntakeForm({ inquiryType, heading, intro, submitLabel = 'Send confidential inquiry' }: IntakeFormProps) {
-  const [values, setValues] = useState<Record<string, string>>({})
+export function IntakeForm({ inquiryType, heading, intro, submitLabel = 'Send confidential inquiry', defaults }: IntakeFormProps) {
+  const [values, setValues] = useState<Record<string, string>>(() => ({ ...defaults }))
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
   const fields = INTAKE_FIELDS[inquiryType]
@@ -86,7 +88,7 @@ export function IntakeForm({ inquiryType, heading, intro, submitLabel = 'Send co
         return
       }
       setStatus('success')
-      setValues({})
+      setValues({ ...defaults })
     } catch {
       setStatus('error')
       setErrorMessage('Network error. Please check your connection and try again.')

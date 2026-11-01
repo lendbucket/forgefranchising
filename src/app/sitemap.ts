@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next'
 import { SITE_URL, INDUSTRIES } from '@/lib/constants'
 import { cities } from '@/data/cities'
+import { SELL_INDUSTRIES } from '@/data/sell-industries'
 import { blogPosts } from '@/data/blog-posts'
 import { FRANCHISE_LAWS } from '@/data/franchise-laws'
 
@@ -263,6 +264,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     }))
 
+  const sellIndustryPages: MetadataRoute.Sitemap = SELL_INDUSTRIES.map((i) => ({
+    url: `${SITE_URL}/sell-your-business/${i.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+
   const cityPages: MetadataRoute.Sitemap = cities.map((city) => ({
     url: `${SITE_URL}/locations/${city.slug}`,
     lastModified: now,
@@ -278,5 +286,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...statePages,
     ...blogPages,
     ...cityPages,
+    ...sellIndustryPages,
   ]
 }

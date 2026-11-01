@@ -10,6 +10,8 @@ import { BrokerageNotice } from '@/components/BrokerageNotice'
 import { IntakeForm } from '@/components/IntakeForm'
 import { HeroActions } from '@/components/HeroActions'
 import { MidCTA } from '@/components/MidCTA'
+import { Arrow } from '@/components/Arrow'
+import { SELL_INDUSTRIES } from '@/data/sell-industries'
 import { SITE_URL } from '@/lib/constants'
 import { webPageSchema, breadcrumbSchema, serviceSchema, faqSchema, renderSchema, TEXAS_AREA } from '@/lib/schema'
 
@@ -170,6 +172,7 @@ const tocItems = [
   { id: 'buyer-qualification', label: 'Qualifying buyers' },
   { id: 'seller-preparation', label: 'What you prepare' },
   { id: 'value', label: 'Setting the price' },
+  { id: 'sell-by-industry', label: 'Sell by industry' },
   { id: 'franchise-owners', label: 'Franchise owners' },
   { id: 'how-we-work', label: 'How we work' },
   { id: 'faq', label: 'Questions' },
@@ -427,6 +430,28 @@ export default function SellYourBusinessPage() {
                   </Link>
                   .
                 </p>
+              </section>
+
+              <section id="sell-by-industry" className="scroll-mt-header">
+                <h2 className="heading-2 mb-6">Sell by industry</h2>
+                <p className={bodyText}>
+                  Buyers in each industry check different things first, and licensing rules differ from trade to trade.
+                  These pages cover what buyers review, the records to prepare, how earnings are measured, and the Texas
+                  licensing questions for each type of business.
+                </p>
+                <ul className="grid md:grid-cols-2 gap-x-10 border-t border-graphite">
+                  {SELL_INDUSTRIES.map((i) => (
+                    <li key={i.slug} className="border-b border-line">
+                      <Link
+                        href={`/sell-your-business/${i.slug}`}
+                        className="group flex items-center justify-between gap-4 min-h-[52px] py-3 text-[15px] text-steel hover:text-accent transition-colors"
+                      >
+                        {i.h1}
+                        <Arrow size={14} className="text-accent" />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </section>
 
               <section id="franchise-owners" className="scroll-mt-header">

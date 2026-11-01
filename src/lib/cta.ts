@@ -70,6 +70,11 @@ const ROUTES: Record<string, PageCTA> = {
     primary: { label: 'Send a buyer profile', href: '/buy-a-franchise#inquiry' },
     mid: { heading: 'Evaluating a franchise?', body: 'Send a buyer profile and Forge can review the brand and its FDD with you before you sign.' },
   },
+  '/franchise-broker': {
+    audience: 'buyer',
+    primary: { label: 'Send a buyer profile', href: '/franchise-broker#inquiry' },
+    mid: { heading: 'Comparing franchise brands?', body: 'Send a buyer profile and Forge can work through the brands and their FDDs with you before you sign.' },
+  },
   '/sell-your-franchise': {
     audience: 'resale',
     primary: { label: 'Send a confidential inquiry', href: '/sell-your-franchise#inquiry' },
@@ -96,6 +101,8 @@ const NO_STICKY = [
 export function ctaFor(path: string): PageCTA | null {
   const clean = path.replace(/\/$/, '') || '/'
   if (ROUTES[clean]) return ROUTES[clean]
+  if (clean.startsWith('/sell-your-business/')) return brokerage(clean, 'Thinking about selling?', CONFIDENTIAL)
+  if (clean.startsWith('/texas-business-broker/')) return brokerage(clean, 'Talk to Forge about your sale', CONFIDENTIAL)
   if (clean.startsWith('/industries/')) return development('See how your business scores')
   if (clean.startsWith('/locations/')) return development('See how your business scores')
   if (clean.startsWith('/franchise-laws/')) return development('Check readiness before you register')
@@ -114,7 +121,7 @@ export function stickyFor(path: string): Action | null {
 }
 
 /** Brokerage and buyer pages whose intake form sits at #inquiry. */
-const INTAKE_PAGES = ['/sell-your-business', '/sell-your-business/how-to-sell-a-business', '/business-valuation', '/texas-business-broker', '/buy-a-business', '/buy-a-franchise', '/sell-your-franchise']
+const INTAKE_PAGES = ['/sell-your-business', '/sell-your-business/how-to-sell-a-business', '/business-valuation', '/texas-business-broker', '/buy-a-business', '/buy-a-franchise', '/sell-your-franchise', '/franchise-broker']
 
 /** Send links to a brokerage or buyer page straight to its intake form. */
 export function toIntake(href: string): string {

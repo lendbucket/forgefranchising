@@ -8,6 +8,7 @@ import {
   TREC_CPN_URL,
   NAV_LINKS,
 } from '@/lib/constants'
+import { SELL_INDUSTRIES } from '@/data/sell-industries'
 
 /** Footer only links, added to the end of the matching nav group. */
 const footerExtras: Record<string, { label: string; href: string }[]> = {
@@ -18,9 +19,18 @@ const footerExtras: Record<string, { label: string; href: string }[]> = {
   ],
 }
 
+/** Footer only sub groups, listed under a small heading at the end of the matching nav group. */
+const footerSubgroups: Record<string, { heading: string; links: { label: string; href: string }[] }> = {
+  'Sell or Buy a Business': {
+    heading: 'Sell by industry',
+    links: SELL_INDUSTRIES.map((i) => ({ label: i.breadcrumb, href: `/sell-your-business/${i.slug}` })),
+  },
+}
+
 const footerGroups = NAV_LINKS.map((group) => ({
   label: group.label,
   links: [...group.links.map(({ label, href }) => ({ label, href })), ...(footerExtras[group.label] ?? [])],
+  sub: footerSubgroups[group.label],
 }))
 
 const linkClass = 'flex items-center min-h-[34px] text-sm text-fog hover:text-white transition-colors'
@@ -66,6 +76,20 @@ export function Footer() {
                   </li>
                 ))}
               </ul>
+              {group.sub && (
+                <>
+                  <p className="text-white text-sm font-semibold mt-6 mb-2">{group.sub.heading}</p>
+                  <ul>
+                    {group.sub.links.map((link) => (
+                      <li key={link.href}>
+                        <Link href={link.href} className={linkClass}>
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
             </div>
           ))}
         </div>
@@ -99,6 +123,18 @@ export function Footer() {
                     </Link>
                   </li>
                 ))}
+                {group.sub && (
+                  <>
+                    <li className="pt-3 pb-1 text-white text-sm font-semibold">{group.sub.heading}</li>
+                    {group.sub.links.map((link) => (
+                      <li key={link.href}>
+                        <Link href={link.href} className="flex items-center min-h-[44px] text-[15px] text-fog hover:text-white">
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </>
+                )}
               </ul>
             </details>
           ))}
