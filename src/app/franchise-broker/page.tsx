@@ -17,8 +17,9 @@ const TITLE = 'Franchise Broker in Texas'
 const DESCRIPTION =
   'Franchise broker in Texas for buyers evaluating a franchise: setting goals and capital, narrowing brands, reading the FDD, validation calls, and financing.'
 
-/** Shown verbatim until Robert confirms how Forge is compensated. Do not replace with a guess. */
-const COMPENSATION_PLACEHOLDER = '[CONFIRM HOW FORGE IS COMPENSATED ON FRANCHISE PLACEMENTS]'
+/** Robert's approved wording, pending final compensation terms. Change only on his instruction. */
+const COMPENSATION_STATEMENT =
+  'Forge discloses in writing how it is compensated on any franchise placement, including any fee paid by a franchisor, before you sign an agreement with Forge or a franchisor.'
 
 export const metadata = createMetadata({ title: TITLE, description: DESCRIPTION, path: PATH })
 
@@ -203,9 +204,9 @@ export default function FranchiseBrokerPage() {
 
               <section id="paid" className="scroll-mt-header">
                 <h2 className="heading-2 mb-6">How Forge is paid</h2>
-                <div className="bg-stone p-8 max-[720px]:p-6" style={{ borderLeft: '4px solid #E4572E' }} data-placeholder="compensation">
+                <div className="bg-stone p-8 max-[720px]:p-6" style={{ borderLeft: '4px solid #E4572E' }}>
                   <p className="font-display text-xl font-bold text-graphite" style={{ letterSpacing: '-0.01em' }}>
-                    {COMPENSATION_PLACEHOLDER}
+                    {COMPENSATION_STATEMENT}
                   </p>
                 </div>
                 <p className={`${p} mt-6`}>
