@@ -127,7 +127,7 @@ export default function TexasBusinessBrokerPage() {
             ]),
             serviceSchema({
               url,
-              name: 'Business Sale Broker in Texas',
+              name: 'Business Broker in Texas',
               description: DESCRIPTION,
               serviceType: 'Business Brokerage',
               areaServed: TEXAS_AREA,
