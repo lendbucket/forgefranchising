@@ -93,7 +93,6 @@ export default function LocationsPage() {
             </div>
             <div className="flex flex-col sm:flex-row gap-4 min-[961px]:justify-end">
               <Link href="/contact" className="btn-primary">Franchise your business</Link>
-              <Link href="/own-a-franchise/apply" className="btn-secondary">Own a Forge franchise</Link>
             </div>
           </div>
         </div>
