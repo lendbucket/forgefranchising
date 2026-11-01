@@ -15,7 +15,7 @@ import { SITE_URL } from '@/lib/constants'
 import { webPageSchema, breadcrumbSchema, serviceSchema, faqSchema, renderSchema, TEXAS_AREA } from '@/lib/schema'
 
 const PATH = '/texas-business-broker'
-const TITLE = 'Business Sale Broker in Texas'
+const TITLE = 'Business Broker in Texas'
 const DESCRIPTION =
   'Business sale broker in Texas: what a broker does, how to choose one, fees and listing terms, buyer screening, and market notes for five major Texas metros.'
 
@@ -144,7 +144,7 @@ export default function TexasBusinessBrokerPage() {
             items={[{ label: 'Sell Your Business', href: '/sell-your-business' }, { label: 'Texas Business Broker' }]}
           />
           <div className="max-w-[880px]">
-            <h1 className="heading-1 mb-8">Business Sale Broker in Texas: What a Broker Does and How to Choose One</h1>
+            <h1 className="heading-1 mb-8">Business Broker in Texas: What a Broker Does and How to Choose One</h1>
             <p className="body-large mb-6">
               A business sale broker represents an owner who wants to sell a privately held company. The broker prices the
               business, markets it without revealing its name, screens buyers, negotiates terms, and keeps diligence moving

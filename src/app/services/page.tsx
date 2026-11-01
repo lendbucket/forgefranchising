@@ -167,9 +167,8 @@ export default function ServicesPage() {
               Franchise Development Services: Everything You Need. Nothing You Do Not.
             </h1>
             <p className="body-large mb-6">
-              Our franchise development services exist to close one gap. Most business owners who are
-              ready to franchise know
-              their concept works, but they do not have the legal structure, operational documentation,
+              Our franchise development services exist to close one gap. Most owners who talk to a franchise consultant about
+              franchising already know their concept works, but they do not have the legal structure, operational documentation,
               or sales infrastructure to actually sell a franchise. The Forge Franchise Readiness Method
               identifies exactly where those gaps are. The seven services below close them.
             </p>

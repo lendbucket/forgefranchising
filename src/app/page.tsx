@@ -7,7 +7,7 @@ import { HomeClient } from '@/components/HomeClient'
 export const metadata = createMetadata({
   title: 'Franchise Development, Operator Built',
   description:
-    'Franchise development for profitable owners who want a real system, not a stack of paperwork. Feasibility, FDD, operations, and franchise sales in one place.',
+    'Franchise development for profitable owners who want a real system. Work with a franchise consultant on feasibility, FDD, operations, and franchise sales.',
   path: '',
 })
 
