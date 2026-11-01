@@ -334,6 +334,9 @@ export default function TexasBusinessBrokerPage() {
                       veterans and military retirees who settle in the area, and companies looking to add service territory
                       in South Texas.
                     </p>
+                    <Link href="/texas-business-broker/san-antonio" className={`${link} inline-flex items-center min-h-[44px]`}>
+                      Business broker in San Antonio, Texas
+                    </Link>
                   </article>
 
                   <article id="corpus-christi" className="scroll-mt-header py-10 border-b border-line">
@@ -352,6 +355,9 @@ export default function TexasBusinessBrokerPage() {
                       include operators already working in the industrial supply chain and individuals relocating to the
                       Coastal Bend.
                     </p>
+                    <Link href="/texas-business-broker/corpus-christi" className={`${link} inline-flex items-center min-h-[44px]`}>
+                      Business broker in Corpus Christi, Texas
+                    </Link>
                   </article>
 
                   <article id="houston" className="scroll-mt-header py-10 border-b border-line">
@@ -370,6 +376,9 @@ export default function TexasBusinessBrokerPage() {
                       professionals who want to own a business in the field they know, companies adding capabilities or
                       territory, and private equity firms acquiring add on businesses for existing platforms.
                     </p>
+                    <Link href="/texas-business-broker/houston" className={`${link} inline-flex items-center min-h-[44px]`}>
+                      Business broker in Houston, Texas
+                    </Link>
                   </article>
 
                   <article id="dallas-fort-worth" className="scroll-mt-header py-10 border-b border-line">
@@ -387,6 +396,9 @@ export default function TexasBusinessBrokerPage() {
                       corporate professionals moving into ownership and companies expanding across the metro. The size of the market means buyers often compare several similar businesses at once, which
                       makes clean records and a well supported price especially important.
                     </p>
+                    <Link href="/texas-business-broker/dallas-fort-worth" className={`${link} inline-flex items-center min-h-[44px]`}>
+                      Business broker in Dallas Fort Worth, Texas
+                    </Link>
                   </article>
 
                   <article id="austin" className="scroll-mt-header py-10 border-b border-line">
@@ -403,6 +415,9 @@ export default function TexasBusinessBrokerPage() {
                       region, restaurants and hospitality, and consumer businesses. Buyers include technology professionals
                       moving into ownership and people relocating to Central Texas.
                     </p>
+                    <Link href="/texas-business-broker/austin" className={`${link} inline-flex items-center min-h-[44px]`}>
+                      Business broker in Austin, Texas
+                    </Link>
                   </article>
                 </div>
 

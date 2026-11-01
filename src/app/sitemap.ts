@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next'
 import { SITE_URL, INDUSTRIES } from '@/lib/constants'
 import { cities } from '@/data/cities'
 import { SELL_INDUSTRIES } from '@/data/sell-industries'
+import { TEXAS_BROKERAGE_MARKETS } from '@/data/texas-brokerage-markets'
 import { blogPosts } from '@/data/blog-posts'
 import { FRANCHISE_LAWS } from '@/data/franchise-laws'
 
@@ -271,6 +272,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
+  const texasMarketPages: MetadataRoute.Sitemap = TEXAS_BROKERAGE_MARKETS.map((m) => ({
+    url: `${SITE_URL}/texas-business-broker/${m.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+
   const cityPages: MetadataRoute.Sitemap = cities.map((city) => ({
     url: `${SITE_URL}/locations/${city.slug}`,
     lastModified: now,
@@ -287,5 +295,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...blogPages,
     ...cityPages,
     ...sellIndustryPages,
+    ...texasMarketPages,
   ]
 }

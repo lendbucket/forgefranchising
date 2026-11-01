@@ -870,7 +870,7 @@ export const SELL_INDUSTRIES: SellIndustry[] = [
     breadcrumb: 'Franchise Location',
     title: 'Sell a Franchise Location in Texas',
     description:
-      'Sell a franchise location in Texas: how a franchise resale compares with an independent sale, who the buyers are, and what a unit owner should check.',
+      'Sell a franchise location in Texas: how a franchise resale compares with an independent sale, who the buyers are, and what a unit owner should check first.',
     h1: 'Sell a franchise location in Texas',
     serviceName: 'Business Brokerage for Franchise Locations in Texas',
     intro: [

@@ -14,6 +14,7 @@ import { Arrow } from '@/components/Arrow'
 import { SITE_URL } from '@/lib/constants'
 import { webPageSchema, breadcrumbSchema, serviceSchema, faqSchema, renderSchema, TEXAS_AREA } from '@/lib/schema'
 import { SELL_INDUSTRIES, getSellIndustry } from '@/data/sell-industries'
+import { TEXAS_BROKERAGE_MARKETS } from '@/data/texas-brokerage-markets'
 
 type Props = { params: Promise<{ industry: string }> }
 
@@ -38,6 +39,7 @@ export default async function SellIndustryPage({ params }: Props) {
 
   const path = `/sell-your-business/${data.slug}`
   const url = `${SITE_URL}${path}`
+  const markets = TEXAS_BROKERAGE_MARKETS.filter((m) => data.markets.includes(m.slug))
   const siblings = data.siblings.map((s) => getSellIndustry(s)).filter((s) => s !== undefined)
 
   const toc = [
@@ -240,6 +242,9 @@ export default async function SellIndustryPage({ params }: Props) {
                     <RelatedLink href={data.industryPage.href} label={data.industryPage.label} />
                   )}
                   {data.blogPost && <RelatedLink href={data.blogPost.href} label={data.blogPost.label} />}
+                  {markets.map((m) => (
+                    <RelatedLink key={m.slug} href={`/texas-business-broker/${m.slug}`} label={m.h1} />
+                  ))}
                   {siblings.map((s) => (
                     <RelatedLink key={s.slug} href={`/sell-your-business/${s.slug}`} label={s.h1} />
                   ))}
