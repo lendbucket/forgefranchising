@@ -1,12 +1,8 @@
-'use client'
-
-import { useState } from 'react'
 import { blogPosts } from '@/data/blog-posts'
-import { PostCard } from '@/components/PostCard'
 import { SectionCTA } from '@/components/SectionCTA'
 import { HeroActions } from '@/components/HeroActions'
 import { MidCTA } from '@/components/MidCTA'
-import { sentenceCase } from '@/lib/text'
+import { BlogIndexGrid, type PostSummary } from './BlogIndexGrid'
 
 const categories = [
   'All',
@@ -22,26 +18,12 @@ const categories = [
   'Brokerage',
 ]
 
-/** Insight card covers rotate through three surfaces, as on the homepage. */
-const covers = [
-  { cover: 'bg-graphite text-white', markColor: 'text-ember' },
-  { cover: 'bg-ember-fill text-graphite', markColor: 'text-graphite' },
-  { cover: 'bg-ash text-graphite', markColor: 'text-graphite' },
-]
+/** Published posts only, reduced to the fields a card shows. */
+const posts: PostSummary[] = blogPosts
+  .filter((post) => post.content.length > 0)
+  .map(({ slug, title, description, category, readTime }) => ({ slug, title, description, category, readTime }))
 
 export default function BlogIndexPage() {
-  const [activeCategory, setActiveCategory] = useState('All')
-
-  const filteredPosts =
-    activeCategory === 'All'
-      ? blogPosts
-      : blogPosts.filter((post) => post.category === activeCategory)
-
-  const publishedPosts = filteredPosts.filter((post) => post.content.length > 0)
-  // The mid page panel sits after the first half of the grid, on a full row of three.
-  const splitAt = Math.max(3, Math.round(publishedPosts.length / 6) * 3)
-  const postGroups = [publishedPosts.slice(0, splitAt), publishedPosts.slice(splitAt)]
-
   return (
     <>
       <section className="bg-graphite surface-dark">
@@ -62,73 +44,12 @@ export default function BlogIndexPage() {
 
       <section className="section-padding bg-white">
         <div className="container-wide">
-          {/* Category filter */}
-          <div className="flex flex-wrap gap-2 mb-16 max-[720px]:mb-10">
-            {categories.map((category) => {
-              const count =
-                category === 'All'
-                  ? blogPosts.filter((p) => p.content.length > 0).length
-                  : blogPosts.filter(
-                      (p) => p.category === category && p.content.length > 0
-                    ).length
-              if (count === 0 && category !== 'All') return null
-              const active = activeCategory === category
-              return (
-                <button
-                  key={category}
-                  type="button"
-                  onClick={() => setActiveCategory(category)}
-                  aria-pressed={active}
-                  className={`inline-flex items-center min-h-[44px] px-4 border text-sm font-medium transition-colors ${
-                    active
-                      ? 'bg-graphite border-graphite text-white'
-                      : 'bg-white border-line text-graphite hover:border-graphite'
-                  }`}
-                >
-                  {sentenceCase(category)}
-                  <span className={`ml-1.5 ${active ? 'text-fog' : 'text-steel'}`}>({count})</span>
-                </button>
-              )
-            })}
-          </div>
-
-          {/* Posts grid */}
-          {publishedPosts.length > 0 ? (
-            <>
-              {postGroups.map((group, g) =>
-                group.length > 0 ? (
-                  <div key={g}>
-                    <div className="grid min-[961px]:grid-cols-3 min-[721px]:grid-cols-2 gap-x-8 gap-y-16 max-[720px]:gap-y-12">
-                      {group.map((post, i) => (
-                        <PostCard
-                          key={post.slug}
-                          category={sentenceCase(post.category)}
-                          mark={post.category}
-                          meta={post.readTime}
-                          title={post.title}
-                          href={`/blog/${post.slug}`}
-                          teaser={post.description}
-                          {...covers[(i + g * splitAt) % covers.length]}
-                        />
-                      ))}
-                    </div>
-                    {g === 0 && (
-                      <MidCTA
-                        route="/blog"
-                        className={postGroups[1].length > 0 ? 'my-16 max-[720px]:my-12' : 'mt-16 max-[720px]:mt-12'}
-                      />
-                    )}
-                  </div>
-                ) : null
-              )}
-            </>
-          ) : (
-            <div className="border-t border-graphite py-16">
-              <p className="text-steel text-[17px] leading-relaxed">
-                No posts found in this category yet. Check back soon.
-              </p>
-            </div>
-          )}
+          <BlogIndexGrid
+            posts={posts}
+            categories={categories}
+            midCtaBetween={<MidCTA route="/blog" className="my-16 max-[720px]:my-12" />}
+            midCtaEnd={<MidCTA route="/blog" className="mt-16 max-[720px]:mt-12" />}
+          />
         </div>
       </section>
 

@@ -1,12 +1,10 @@
-'use client'
-
-import { useEffect, useState, useMemo } from 'react'
 import type { SellingLink } from '@/data/selling-links'
 import { Arrow } from '@/components/Arrow'
 import Link from 'next/link'
 import type { BlogPost, BlogCTA } from '@/data/blog-posts'
 import { KeyTakeaways } from '@/components/KeyTakeaways'
 import { StickyCTA } from '@/components/StickyCTA'
+import { ReadingProgressBar, TableOfContents, TableOfContentsChips, type Heading } from './ArticleNav'
 import { PostCard } from '@/components/PostCard'
 import { SectionCTA } from '@/components/SectionCTA'
 import { sentenceCase } from '@/lib/text'
@@ -37,7 +35,6 @@ const linkClass = 'text-ember-text underline underline-offset-[3px] decoration-1
 /** Headings clear the sticky header and the mobile contents row. */
 const headingScroll = 'scroll-mt-header-bar xl-no-bar'
 
-type Heading = { id: string; text: string; level: number }
 
 function extractHeadings(content: string): Heading[] {
   const headings: Heading[] = []
@@ -241,124 +238,6 @@ function MarkdownRenderer({ content }: { content: string }) {
   )
 }
 
-/* ------------------------------------------------------------------ */
-/*  Reading Progress Bar                                               */
-/* ------------------------------------------------------------------ */
-
-function ReadingProgressBar() {
-  const [progress, setProgress] = useState(0)
-
-  useEffect(() => {
-    function handleScroll() {
-      const scrollTop = window.scrollY
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight
-      const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0
-      setProgress(Math.min(scrollPercent, 100))
-    }
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  return (
-    <div className="fixed top-0 left-0 w-full h-1 bg-transparent z-50">
-      <div
-        className="h-full bg-ember transition-[width] duration-100 ease-out"
-        style={{ width: `${progress}%` }}
-      />
-    </div>
-  )
-}
-
-/* ------------------------------------------------------------------ */
-/*  Table of Contents                                                  */
-/* ------------------------------------------------------------------ */
-
-function useActiveHeading(headings: Heading[]) {
-  const [activeId, setActiveId] = useState('')
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            setActiveId(entry.target.id)
-          }
-        }
-      },
-      { rootMargin: '-80px 0px -80% 0px', threshold: 0 }
-    )
-    for (const heading of headings) {
-      const el = document.getElementById(heading.id)
-      if (el) observer.observe(el)
-    }
-    return () => observer.disconnect()
-  }, [headings])
-
-  return activeId
-}
-
-/** Desktop: sticky sidebar of hairline rows. */
-function TableOfContents({ headings, activeId }: { headings: Heading[]; activeId: string }) {
-  if (headings.length === 0) return null
-
-  return (
-    <nav aria-label="On this page" className="sticky top-header-gap max-h-[calc(100vh_-_var(--header-h)_-_48px)] overflow-y-auto">
-      <p className="text-sm font-semibold text-graphite mb-3">
-        On this page
-      </p>
-      <ul className="border-t border-line">
-        {headings.map((h) => (
-          <li key={h.id} className="border-b border-line">
-            <a
-              href={`#${h.id}`}
-              aria-current={activeId === h.id ? 'location' : undefined}
-              className={`flex items-center py-3 min-h-[44px] text-sm leading-snug transition-colors ${
-                h.level === 3 ? 'pl-4' : ''
-              } ${
-                activeId === h.id
-                  ? 'text-graphite font-semibold'
-                  : 'text-steel hover:text-graphite'
-              }`}
-            >
-              {h.text}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </nav>
-  )
-}
-
-/** Mobile and tablet: a horizontal, scrollable row of square chips (section headings only). */
-function TableOfContentsChips({ headings, activeId }: { headings: Heading[]; activeId: string }) {
-  const sections = headings.filter((h) => h.level === 2)
-  if (sections.length === 0) return null
-
-  return (
-    <nav
-      aria-label="On this page"
-      className="xl:hidden sticky top-header z-30 bg-white border-y border-line mb-10 [contain:inline-size]"
-    >
-      <ol className="flex gap-2 overflow-x-auto py-2.5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        {sections.map((h) => (
-          <li key={h.id} className="flex-shrink-0">
-            <a
-              href={`#${h.id}`}
-              aria-current={activeId === h.id ? 'location' : undefined}
-              className={`flex items-center min-h-[44px] px-4 border text-sm font-medium whitespace-nowrap transition-colors ${
-                activeId === h.id
-                  ? 'bg-graphite border-graphite text-white'
-                  : 'border-line text-graphite hover:border-graphite'
-              }`}
-            >
-              {h.text}
-            </a>
-          </li>
-        ))}
-      </ol>
-    </nav>
-  )
-}
 
 /* ------------------------------------------------------------------ */
 /*  Inline CTA: value-driven, placed at a natural decision point      */
@@ -401,23 +280,22 @@ function InlineCTA({ cta, href }: { cta?: BlogCTA; href: string }) {
 }
 
 /* ------------------------------------------------------------------ */
-/*  Main Client Component                                              */
+/*  Article view (server rendered)                                     */
 /* ------------------------------------------------------------------ */
 
-type BlogPostClientProps = {
+type BlogPostViewProps = {
   post: BlogPost
   relatedPosts: BlogPost[]
   sellingLinks?: SellingLink[]
 }
 
-export default function BlogPostClient({
+export default function BlogPostView({
   post,
   relatedPosts,
   sellingLinks = [],
-}: BlogPostClientProps) {
-  const headings = useMemo(() => extractHeadings(post.content), [post.content])
-  const takeaways = useMemo(() => post.keyTakeaways ?? extractTakeaways(post.content), [post.keyTakeaways, post.content])
-  const activeId = useActiveHeading(headings)
+}: BlogPostViewProps) {
+  const headings = extractHeadings(post.content)
+  const takeaways = post.keyTakeaways ?? extractTakeaways(post.content)
 
   const contentBlocks = post.content.split('\n\n')
   // The inline panel goes after the second H2 section, just before the third
@@ -473,7 +351,7 @@ export default function BlogPostClient({
         <div className="container-wide">
           <div className="xl:grid xl:grid-cols-[minmax(0,720px)_256px] xl:justify-between xl:gap-16">
             <article className="max-w-reading mx-auto xl:mx-0 w-full min-w-0">
-              <TableOfContentsChips headings={headings} activeId={activeId} />
+              <TableOfContentsChips headings={headings} />
 
               {/* Key Takeaways: chunking for skimmers (Miller's law) */}
               {takeaways.length > 0 && (
@@ -487,7 +365,7 @@ export default function BlogPostClient({
             </article>
 
             <aside className="hidden xl:block">
-              <TableOfContents headings={headings} activeId={activeId} />
+              <TableOfContents headings={headings} />
             </aside>
           </div>
         </div>

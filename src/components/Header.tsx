@@ -111,9 +111,9 @@ export function Header() {
             <Image
               src="/forge-franchising-logo-white.png"
               alt="Forge Franchising Group"
-              width={900}
-              height={405}
-              className="h-12 min-[720px]:h-14 min-[1140px]:h-16 w-auto"
+              width={160}
+              height={72}
+              className="h-12 min-[720px]:h-14 min-[1140px]:h-16 w-auto aspect-[900/405]"
               priority
             />
           </Link>
@@ -216,7 +216,7 @@ export function Header() {
         >
           <div className="flex items-center justify-between h-[76px] px-5 flex-shrink-0" style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
             <Link href="/" aria-label="Forge Franchising Group home" className="flex items-center" onClick={() => setMobileOpen(false)}>
-              <Image src="/forge-franchising-logo-white.png" alt="Forge Franchising Group" width={900} height={405} className="h-12 w-auto" />
+              <Image src="/forge-franchising-logo-white.png" alt="Forge Franchising Group" width={160} height={72} className="h-12 w-auto aspect-[900/405]" />
             </Link>
             <button
               type="button"

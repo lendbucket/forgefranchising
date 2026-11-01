@@ -45,7 +45,7 @@ export function Footer() {
         >
           <div>
             <Link href="/" aria-label="Forge Franchising Group home" className="inline-flex mb-5">
-              <Image src="/forge-franchising-logo-white.png" alt="Forge Franchising Group" width={900} height={405} className="h-16 min-[720px]:h-20 w-auto" />
+              <Image src="/forge-franchising-logo-white.png" alt="Forge Franchising Group" width={180} height={81} className="h-16 min-[720px]:h-20 w-auto aspect-[900/405]" />
             </Link>
             <p className="font-display text-[22px] font-bold text-white" style={{ letterSpacing: '-0.02em' }}>
               Build Stronger Franchises.

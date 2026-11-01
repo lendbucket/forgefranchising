@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import { blogPosts } from '@/data/blog-posts'
 import { SITE_URL, SITE_NAME, DEFAULT_OG_IMAGE } from '@/lib/constants'
 import { articleSchema, webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
-import BlogPostClient from './BlogPostClient'
+import BlogPostView from './BlogPostView'
 import { sellingLinksFor } from '@/data/selling-links'
 
 type Props = {
@@ -106,7 +106,7 @@ export default async function BlogPostPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: blogGraphJson }}
       />
-      <BlogPostClient post={post} relatedPosts={relatedPosts} sellingLinks={sellingLinksFor(post.slug)} />
+      <BlogPostView post={post} relatedPosts={relatedPosts} sellingLinks={sellingLinksFor(post.slug)} />
     </>
   )
 }
