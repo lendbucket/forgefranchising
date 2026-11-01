@@ -14,9 +14,9 @@ import {
 } from '@/data/franchise-laws'
 
 export const metadata = createMetadata({
-  title: 'Franchise Laws by State',
+  title: 'Franchise Legal Requirements by State',
   description:
-    'Franchise registration and filing requirements in all 50 states. Learn which states require FDD registration, which require filing, and which have no law.',
+    'Franchise legal requirements in all 50 states. See which states require FDD registration, which require a filing, and which have no state franchise law.',
   path: '/franchise-laws',
 })
 
@@ -44,7 +44,7 @@ export default function FranchiseLawsPage() {
           __html: renderSchema([
             webPageSchema({
               url: `${SITE_URL}/franchise-laws`,
-              name: 'Franchise Laws by State',
+              name: 'Franchise Legal Requirements by State',
               description: 'Franchise registration and filing requirements in all 50 states. Learn which states require FDD registration, which require filing, and which have no law.',
               hasBreadcrumb: true,
             }),
@@ -60,7 +60,7 @@ export default function FranchiseLawsPage() {
           <Breadcrumbs items={[{ label: 'Franchise Laws by State' }]} />
           <div className="max-w-[880px]">
             <h1 className="heading-1 mb-8">
-              Franchise Laws by State: Registration, Filing, and Compliance Requirements
+              Franchise legal requirements by state: registration, filing, and compliance
             </h1>
             <p className="body-large mb-6">
               Franchise regulation in the United States operates on two levels: federal and state.

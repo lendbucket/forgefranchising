@@ -676,3 +676,9 @@ export const cities: CityData[] = [
 export function getCityBySlug(slug: string): CityData | undefined {
   return cities.find((city) => city.slug === slug);
 }
+
+/** "City, ST" for link text and titles, without repeating the state ("Washington, DC"). */
+export function cityLabel(city: CityData): string {
+  const name = city.name.endsWith(` ${city.stateAbbr}`) ? city.name.slice(0, -city.stateAbbr.length - 1) : city.name;
+  return `${name}, ${city.stateAbbr}`;
+}

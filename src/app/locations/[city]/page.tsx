@@ -2,21 +2,70 @@ import { sentenceCase } from '@/lib/text'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
-import { cities, getCityBySlug } from '@/data/cities'
+import { cities, getCityBySlug, cityLabel, type CityData } from '@/data/cities'
+import { getStateBySlug, type FranchiseStateData } from '@/data/franchise-laws'
 import { SITE_URL, SITE_NAME, DEFAULT_OG_IMAGE } from '@/lib/constants'
 import { composeDescription } from '@/lib/metadata'
 import {
   webPageSchema,
   breadcrumbSchema as breadcrumbSchemaHelper,
   serviceSchema,
+  faqSchema,
   renderSchema,
 } from '@/lib/schema'
 import { SectionCTA } from '@/components/SectionCTA'
 import { HeroActions } from '@/components/HeroActions'
 import { MidCTA } from '@/components/MidCTA'
+import { FAQList } from '@/components/FAQList'
 
 export function generateStaticParams() {
   return cities.map((c) => ({ city: c.slug }))
+}
+
+/** The franchise law record for a city's state, from src/data/franchise-laws. */
+function lawFor(city: CityData): FranchiseStateData | undefined {
+  return getStateBySlug(city.state.toLowerCase().replace(/\./g, '').replace(/\s+/g, '-'))
+}
+
+/** One factual sentence on the state's franchise law category. */
+function lawSentence(law: FranchiseStateData): string {
+  if (law.category === 'registration') return `${law.name} is a franchise registration state.`
+  if (law.category === 'filing') return `${law.name} is a franchise filing state.`
+  return `${law.name} has no state franchise registration or filing law.`
+}
+
+/** What the category means for an owner who wants to offer franchises in the state. */
+function lawMeaning(law: FranchiseStateData): string {
+  if (law.category === 'registration') {
+    return `Before you offer or sell a franchise in ${law.name}, your Franchise Disclosure Document must be registered with the ${law.regulatoryBody}. The state reviews the filing, so plan for registration in your launch timeline.`
+  }
+  if (law.category === 'filing') {
+    return `Before you offer or sell a franchise in ${law.name}, you file your Franchise Disclosure Document with the ${law.regulatoryBody}. The state does not conduct a substantive review of the FDD the way registration states do.`
+  }
+  return `You do not register or file your Franchise Disclosure Document with the state. You still need an FDD that complies with the federal FTC Franchise Rule before you offer a franchise.`
+}
+
+function cityFaqs(city: CityData, law: FranchiseStateData) {
+  const registration =
+    law.category === 'registration'
+      ? `Yes. ${law.name} is a franchise registration state. Franchisors must register their Franchise Disclosure Document with the ${law.regulatoryBody} before they offer or sell a franchise in ${law.name}.`
+      : law.category === 'filing'
+        ? `No. ${law.name} is a filing state, not a registration state. Franchisors file their Franchise Disclosure Document with the ${law.regulatoryBody} before they offer or sell a franchise in ${law.name}.`
+        : `No. ${law.name} does not have a franchise registration or filing law. Franchisors selling in ${law.name} must still comply with the federal FTC Franchise Rule.`
+  return [
+    {
+      question: `Does ${law.name} require franchise registration?`,
+      answer: registration,
+    },
+    {
+      question: `How do I franchise a business based in ${city.name}?`,
+      answer: `You need a Franchise Disclosure Document that complies with the federal FTC Franchise Rule, delivered to each prospect at least 14 days before they sign an agreement or pay any money. ${lawSentence(law)} Forge helps ${city.name} owners build the franchise system, including the FDD, operations manual, and growth strategy. A free feasibility call is the first step.`,
+    },
+    {
+      question: `Does Forge work with ${city.name} owners remotely or in person?`,
+      answer: `Forge works with business owners across the United States, including owners in ${city.name}. Book a free feasibility call to talk through how an engagement would run for your business.`,
+    },
+  ]
 }
 
 type Props = {
@@ -28,12 +77,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const city = getCityBySlug(slug)
   if (!city) return {}
 
-  const title = `${city.name} Franchise Consultant`
+  const law = lawFor(city)
+  const title = `Franchise Consultant in ${cityLabel(city)}`
   const description = composeDescription(
     `Franchise consultant services in ${city.name}, ${city.stateAbbr}.`,
     [
       ` Local market data for the ${city.metroArea} metro.`,
-      ` See which industries are franchising fastest here.`,
+      ...(law ? [` ${lawSentence(law)}`] : []),
       ` We help owners turn proven concepts into franchise systems.`,
       ` Book a free feasibility call.`,
       ` No obligation.`,
@@ -66,11 +116,13 @@ export default async function CityPage({ params }: Props) {
   }
 
   const cityUrl = `${SITE_URL}/locations/${city.slug}`
+  const law = lawFor(city)
+  const faqs = law ? cityFaqs(city, law) : []
 
   const cityGraphJson = renderSchema([
     webPageSchema({
       url: cityUrl,
-      name: `${city.name} Franchise Consultant`,
+      name: `Franchise Consultant in ${cityLabel(city)}`,
       description: `Franchise consulting in the ${city.metroArea} metro. Forge Franchising helps ${city.name} business owners franchise their proven concepts.`,
       hasBreadcrumb: true,
     }),
@@ -84,6 +136,7 @@ export default async function CityPage({ params }: Props) {
       description: `Franchise consulting services in ${city.name}, ${city.stateAbbr}. We help business owners franchise their proven concepts and connect qualified buyers with franchise opportunities.`,
       serviceType: 'Franchise Consulting',
     }),
+    ...(faqs.length ? [faqSchema({ url: cityUrl, questions: faqs })] : []),
   ])
 
   const industryLinkMap: Record<string, string> = {
@@ -181,7 +234,7 @@ export default async function CityPage({ params }: Props) {
               {/* Top Industries */}
               <div>
                 <h3 className="heading-3 mb-8">
-                  Top franchise industries in {city.name}
+                  Common franchise industries in {city.name}
                 </h3>
                 <div className="tile-grid md:grid-cols-2">
                   {city.topIndustries.map((industry) => {
@@ -202,12 +255,7 @@ export default async function CityPage({ params }: Props) {
                             d="M13.5 21v-7.5a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349M3.75 21V9.349m0 0a3.001 3.001 0 0 0 3.75-.615A2.993 2.993 0 0 0 9.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 0 0 2.25 1.016c.896 0 1.7-.393 2.25-1.015a3.001 3.001 0 0 0 3.75.614m-16.5 0a3.004 3.004 0 0 1-.621-4.72l1.189-1.19A1.5 1.5 0 0 1 5.378 3h13.243a1.5 1.5 0 0 1 1.06.44l1.19 1.189a3 3 0 0 1-.621 4.72M6.75 18h3.75a.75.75 0 0 0 .75-.75V13.5a.75.75 0 0 0-.75-.75H6.75a.75.75 0 0 0-.75.75v3.75c0 .414.336.75.75.75Z"
                           />
                         </svg>
-                        <div>
-                          <h4 className="heading-4 text-graphite">{sentenceCase(industry)}</h4>
-                          <p className="text-sm text-steel leading-relaxed mt-2">
-                            High demand in the {city.metroArea} market
-                          </p>
-                        </div>
+                        <h4 className="heading-4 text-graphite">{sentenceCase(industry)}</h4>
                       </>
                     )
                     return href ? (
@@ -237,7 +285,7 @@ export default async function CityPage({ params }: Props) {
                 <h3 className="heading-3 mb-8">
                   How we help in {city.name}
                 </h3>
-                <div className="tile-grid md:grid-cols-2">
+                <div className="tile-grid">
                   {/* Franchise Your Business Card */}
                   <div className="card flex flex-col">
                     <svg
@@ -267,34 +315,6 @@ export default async function CityPage({ params }: Props) {
                     </Link>
                   </div>
 
-                  {/* Own a Forge Franchise Card */}
-                  <div className="card flex flex-col">
-                    <svg
-                      className="w-7 h-7 text-accent mb-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
-                      />
-                    </svg>
-                    <h4 className="heading-4 mb-3">Own a Forge franchise</h4>
-                    <p className="text-steel text-[17px] leading-relaxed mb-6">
-                      Interested in owning a franchise consulting business in the {city.metroArea} area?
-                      Forge Franchising is expanding and looking for qualified operators.
-                    </p>
-                    <Link
-                      href="/own-a-franchise"
-                      className="text-link text-sm font-semibold mt-auto inline-flex items-center min-h-[44px] self-start"
-                    >
-                      Explore the opportunity
-                    </Link>
-                  </div>
                 </div>
               </div>
 
@@ -326,26 +346,37 @@ export default async function CityPage({ params }: Props) {
                   </div>
                 </div>
               </div>
+
+              {law && (
+                <div>
+                  <h3 className="heading-3 mb-8">Franchise law in {law.name}</h3>
+                  <div className="space-y-6 text-steel text-[17px] leading-relaxed">
+                    <p>
+                      <span className="font-semibold text-graphite">{lawSentence(law)}</span>{' '}
+                      {lawMeaning(law)}
+                    </p>
+                    <p>{law.overview}</p>
+                  </div>
+                  <Link
+                    href={`/franchise-laws/${law.slug}`}
+                    className="text-link text-sm font-semibold mt-6 inline-flex items-center min-h-[44px]"
+                  >
+                    Read the {law.name} franchise law guide
+                  </Link>
+                </div>
+              )}
+
+              {faqs.length > 0 && (
+                <div>
+                  <h3 className="heading-3 mb-8">Frequently asked questions</h3>
+                  <FAQList faqs={faqs} />
+                </div>
+              )}
             </div>
 
             {/* Right Sidebar */}
             <div className="lg:col-span-1 min-w-0">
               <div className="lg:sticky top-header-gap space-y-6">
-                {/* Franchise Opportunity CTA Card */}
-                <div className="card">
-                  <h3 className="heading-4 mb-3">Own a franchise in {city.name}</h3>
-                  <p className="text-sm text-steel leading-relaxed mb-6">
-                    Qualified candidates can apply to own a Forge Franchising
-                    territory in the {city.metroArea} market.
-                  </p>
-                  <Link
-                    href="/own-a-franchise/apply"
-                    className="btn-secondary w-full"
-                  >
-                    Apply now
-                  </Link>
-                </div>
-
                 {/* Related Resource Links */}
                 <div className="card">
                   <h4 className="heading-4 mb-4">
@@ -408,7 +439,7 @@ export default async function CityPage({ params }: Props) {
                             href={`/locations/${c.slug}`}
                             className="flex items-center min-h-[44px] py-2 text-sm text-steel hover:text-accent transition-colors"
                           >
-                            {c.name}, {c.stateAbbr}
+                            Franchise consultant in {cityLabel(c)}
                           </Link>
                         </li>
                       ))}
@@ -432,7 +463,7 @@ export default async function CityPage({ params }: Props) {
       {/* Bottom CTA */}
       <SectionCTA
         heading={`Ready to franchise in ${city.name}?`}
-        body={`Whether you want to franchise your ${city.name} business or invest in a franchise opportunity in the ${city.metroArea} area, Forge Franchising can help. Start with a free consultation.`}
+        body={`If you want to franchise your ${city.name} business, Forge Franchising can help. Start with a free consultation.`}
         secondaryText="Or explore our services first"
         secondaryHref="/services"
       />

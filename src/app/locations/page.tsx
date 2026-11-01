@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { createMetadata } from '@/lib/metadata'
-import { cities } from '@/data/cities'
+import { cities, cityLabel } from '@/data/cities'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { Arrow } from '@/components/Arrow'
 import { SectionCTA } from '@/components/SectionCTA'
@@ -11,7 +11,7 @@ import { webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 export const metadata = createMetadata({
   title: 'Franchise Consultant Near You',
   description:
-    'Franchise consultant coverage across 62 US metros. Get local market data, the industries franchising fastest near you, and a team that has operated units.',
+    'Find a franchise consultant near you. Pages for 60 US metros cover local market data, state franchise law, and how Forge helps owners franchise a business.',
   path: '/locations',
 })
 
@@ -69,7 +69,7 @@ export default function LocationsPage() {
                         href={"/locations/" + city.slug}
                         className="group flex items-center justify-between gap-4 min-h-[52px] py-3 text-[15px] text-steel hover:text-accent transition-colors"
                       >
-                        {city.name} Franchise Consulting
+                        Franchise consultant in {cityLabel(city)}
                         <Arrow size={14} className="text-accent" />
                       </Link>
                     </li>
@@ -98,20 +98,6 @@ export default function LocationsPage() {
           </div>
         </div>
       </section>
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
-              { '@type': 'ListItem', position: 2, name: 'Locations', item: SITE_URL + '/locations' },
-            ],
-          }),
-        }}
-      />
 
       <SectionCTA
         heading="Talk to Forge about your business"
