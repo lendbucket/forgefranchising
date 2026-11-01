@@ -119,6 +119,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${SITE_URL}/franchise-broker`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${SITE_URL}/buy-a-franchise`,
       lastModified: now,
       changeFrequency: 'monthly',

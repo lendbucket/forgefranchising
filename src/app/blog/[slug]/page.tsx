@@ -4,6 +4,7 @@ import { blogPosts } from '@/data/blog-posts'
 import { SITE_URL, SITE_NAME, DEFAULT_OG_IMAGE } from '@/lib/constants'
 import { articleSchema, webPageSchema, breadcrumbSchema, renderSchema } from '@/lib/schema'
 import BlogPostClient from './BlogPostClient'
+import { sellingLinksFor } from '@/data/selling-links'
 
 type Props = {
   params: Promise<{ slug: string }>
@@ -105,7 +106,7 @@ export default async function BlogPostPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: blogGraphJson }}
       />
-      <BlogPostClient post={post} relatedPosts={relatedPosts} />
+      <BlogPostClient post={post} relatedPosts={relatedPosts} sellingLinks={sellingLinksFor(post.slug)} />
     </>
   )
 }

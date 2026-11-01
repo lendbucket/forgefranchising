@@ -1,6 +1,8 @@
 'use client'
 
 import { useEffect, useState, useMemo } from 'react'
+import type { SellingLink } from '@/data/selling-links'
+import { Arrow } from '@/components/Arrow'
 import Link from 'next/link'
 import type { BlogPost, BlogCTA } from '@/data/blog-posts'
 import { KeyTakeaways } from '@/components/KeyTakeaways'
@@ -362,6 +364,26 @@ function TableOfContentsChips({ headings, activeId }: { headings: Heading[]; act
 /*  Inline CTA: value-driven, placed at a natural decision point      */
 /* ------------------------------------------------------------------ */
 
+/** Links brokerage topic posts to the matching industry or Texas market pages. */
+function SellingBlock({ links }: { links: SellingLink[] }) {
+  if (links.length === 0) return null
+  return (
+    <aside aria-labelledby="selling-block-heading" className="mt-16 border-t-2 border-graphite pt-8">
+      <h2 id="selling-block-heading" className="heading-3 mb-4">Selling a business</h2>
+      <ul className="border-t border-line">
+        {links.map((l) => (
+          <li key={l.href} className="border-b border-line">
+            <Link href={l.href} className="flex items-center justify-between gap-4 min-h-[48px] py-2 text-[15px] text-steel hover:text-accent transition-colors">
+              {l.label}
+              <Arrow size={14} className="text-accent" />
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </aside>
+  )
+}
+
 function InlineCTA({ cta, href }: { cta?: BlogCTA; href: string }) {
   return (
     <aside data-cta="mid" aria-label="Next step" className="my-12 bg-graphite surface-dark p-8 max-[720px]:p-6">
@@ -385,11 +407,13 @@ function InlineCTA({ cta, href }: { cta?: BlogCTA; href: string }) {
 type BlogPostClientProps = {
   post: BlogPost
   relatedPosts: BlogPost[]
+  sellingLinks?: SellingLink[]
 }
 
 export default function BlogPostClient({
   post,
   relatedPosts,
+  sellingLinks = [],
 }: BlogPostClientProps) {
   const headings = useMemo(() => extractHeadings(post.content), [post.content])
   const takeaways = useMemo(() => post.keyTakeaways ?? extractTakeaways(post.content), [post.keyTakeaways, post.content])
@@ -459,6 +483,7 @@ export default function BlogPostClient({
               <MarkdownRenderer content={firstHalf} />
               <InlineCTA cta={post.cta} href={ctaHref} />
               <MarkdownRenderer content={secondHalf} />
+              <SellingBlock links={sellingLinks} />
             </article>
 
             <aside className="hidden xl:block">

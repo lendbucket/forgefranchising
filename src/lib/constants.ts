@@ -55,6 +55,7 @@ export const NAV_LINKS: NavGroup[] = [
     intro: 'Evaluate brands, read the FDD, and manage resale and transfer approval.',
     links: [
       { label: 'Buy a Franchise', href: '/buy-a-franchise', desc: 'Evaluate brands, read the FDD, validate with owners' },
+      { label: 'Franchise Broker', href: '/franchise-broker', desc: 'Help comparing brands and reading the FDD' },
       { label: 'Sell Your Franchise', href: '/sell-your-franchise', desc: 'Franchise resale and transfer approval' },
     ],
   },

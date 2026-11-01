@@ -78,6 +78,18 @@ export default function LocationsPage() {
               </div>
             ))}
           </div>
+          <div className="mt-16 border-t-2 border-graphite pt-8 grid min-[961px]:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] gap-6 min-[961px]:gap-20 items-center">
+            <div>
+              <h2 className="heading-3 mb-3">Looking for a franchise broker near you?</h2>
+              <p className="text-steel text-[17px] leading-relaxed max-w-[620px]">
+                If you want to buy a franchise rather than franchise your own business, Forge works with buyers across
+                Texas to compare brands and read the FDD before they sign.
+              </p>
+            </div>
+            <div className="min-[961px]:justify-self-end">
+              <Link href="/franchise-broker" className="btn-secondary">Franchise broker in Texas</Link>
+            </div>
+          </div>
         </div>
       </section>
 

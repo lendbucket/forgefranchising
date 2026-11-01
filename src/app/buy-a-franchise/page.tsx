@@ -217,6 +217,10 @@ export default function BuyAFranchisePage() {
                   is yours, made with your franchise attorney and CPA. Our role is to make sure you are asking the right
                   questions and reading the right parts of the document before you get there.
                 </p>
+                <p className={p}>
+                  Our <Link href="/franchise-broker" className="text-accent font-semibold hover:underline">franchise broker</Link>{' '}
+                  page explains what that work covers for Texas buyers, the FDD items we read with you, and how Forge is paid.
+                </p>
               </article>
 
               <article id="fit" className="scroll-mt-header">
