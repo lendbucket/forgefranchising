@@ -162,7 +162,7 @@ export const cities: CityData[] = [
     population: "905,000",
     metroArea: "Columbus",
     topIndustries: ["Food & Beverage", "Home Services", "Fitness & Wellness", "Business Services"],
-    localInsight: "Columbus is the state capital of Ohio. Major employers include Ohio State University and Nationwide, and Intel is building a semiconductor plant in nearby Licking County. The Short North, German Village, and Easton are established commercial districts.",
+    localInsight: "Columbus is the state capital of Ohio. Major employers include Ohio State University and Nationwide. The Short North, German Village, and Easton are established commercial districts.",
     franchiseActivity: "Dublin, Westerville, and Grove City are major suburbs with their own retail corridors."
   },
   {
@@ -173,7 +173,7 @@ export const cities: CityData[] = [
     population: "880,000",
     metroArea: "Charlotte-Concord-Gastonia",
     topIndustries: ["Food & Beverage", "Fitness & Wellness", "Business Services", "Home Services"],
-    localInsight: "Charlotte is a major banking center, home to the headquarters of Bank of America and Truist. The metro extends into South Carolina, with suburbs on both sides of the state line. SouthPark, Ballantyne, and the Lake Norman area are established commercial and residential areas.",
+    localInsight: "Charlotte is a major banking center. The metro extends into South Carolina, with suburbs on both sides of the state line. SouthPark, Ballantyne, and the Lake Norman area are established commercial and residential areas.",
     franchiseActivity: "Franchise categories in Charlotte include fast-casual dining and boutique fitness. University City, near UNC Charlotte, and the NoDa arts district have younger populations."
   },
   {
@@ -338,7 +338,7 @@ export const cities: CityData[] = [
     population: "545,000",
     metroArea: "Tucson",
     topIndustries: ["Food & Beverage", "Senior Care", "Home Services", "Automotive Services"],
-    localInsight: "Tucson's economy is anchored by the University of Arizona, Raytheon, and Davis-Monthan Air Force Base. Retirees, drawn by the warm climate, are part of the population. Tucson was named a UNESCO City of Gastronomy in 2015.",
+    localInsight: "Tucson's economy is anchored by the University of Arizona, Raytheon, and Davis-Monthan Air Force Base. Retirees, drawn by the warm climate, are part of the population.",
     franchiseActivity: "Franchise categories in Tucson include quick-service restaurants and home services. Oro Valley and Marana are suburbs to the north and northwest of the city."
   },
   {

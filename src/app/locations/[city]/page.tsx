@@ -321,13 +321,7 @@ export default async function CityPage({ params }: Props) {
               {/* City Stats */}
               <div>
                 <h3 className="heading-3 mb-8">{city.name} market snapshot</h3>
-                <div className="tile-grid grid-cols-2 md:grid-cols-3">
-                  <div className="card">
-                    <p className="heading-3 text-graphite">{city.population}</p>
-                    <p className="text-sm text-steel mt-2">
-                      Population
-                    </p>
-                  </div>
+                <div className="tile-grid sm:grid-cols-2">
                   <div className="card">
                     <p className="heading-3 text-graphite">
                       {city.topIndustries.length}
@@ -336,7 +330,7 @@ export default async function CityPage({ params }: Props) {
                       Top industries
                     </p>
                   </div>
-                  <div className="card col-span-2 md:col-span-1">
+                  <div className="card">
                     <p className="heading-4 text-graphite">
                       {city.metroArea}
                     </p>
